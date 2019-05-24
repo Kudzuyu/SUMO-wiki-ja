@@ -1,1 +1,15 @@
-site_name: My Docs
+site_name: SUMO wiki ja
+theme: material
+
+extra:
+  search:
+    language 'ja'
+
+markdown_extensions:
+  - admonition
+
+nav:
+- トップ: 'index.md'
+- ドキュメント:
+  - インストール: 'document/install.md'
+- ダウンロード: 'download.md'

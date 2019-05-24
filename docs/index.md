@@ -1,17 +1,14 @@
-# Welcome to MkDocs
+# Simulation of Urban MObility(SUMO)日本語Wiki
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+ようこそ! このページは交通流シミュレータ[SUMO](https://sumo.dlr.de/index.html)の日本語Wikiです。本家[英語版Wiki](https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki)の内容を翻訳しています。
 
-## Commands
+!!! note "お知らせ"
+    [SUMO User Conference 2020](http://sumo.dlr.de/2019/)が2020年5月11日～13日にベルリンで開かれます
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+"**S**imulation of **U**rban **MO**bility" (Eclipse SUMO)は大規模な道路ネットワークを制御するためにつくられた、オープンソースでポータブルであり、微視的かつ継続的な道路交通シミュレーションパッケージです。SUMOは[Eclipse Public License](https://eclipse.org/legal/epl-v20.html)の下でライセンスされています。"Eclipse SUMO"はEclipse Foundationのトレードマークです。SUMOを使う場合には、出版物を私達に知らせることで開発をサポートしてください。
 
-## Project layout
+このWikiのコンテンツはgithub上でMkdocsにより管理されています。
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+このドキュメントは[本家Wiki](https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki)に対応するように継続的にアップデートされています。
+
+[原文ページ](https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki)
