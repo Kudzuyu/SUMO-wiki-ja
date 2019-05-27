@@ -1,5 +1,7 @@
 # ドキュメント上の記法
 
+[原文ページ](https://sumo.dlr.de/wiki/Basics/Notation)
+
 このWikiでのドキュメントでは色ごとに異なる情報を表現しています。
 こうした記法を以下に示します。
 
@@ -61,6 +63,3 @@ XMLの要素と属性は
 好きな値を入れてください。
 
 **`<SUMO_HOME>`** はSUMOパッケージが保存されているパスです。 
-
-
-[原文ページ](https://sumo.dlr.de/wiki/Basics/Notation)

@@ -1,5 +1,7 @@
 # Simulation of Urban MObility(SUMO)日本語Wiki
 
+[原文ページ(English Wiki)](https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki)
+
 ようこそ! このページは交通流シミュレータ[SUMO](https://sumo.dlr.de/index.html)の日本語Wikiです。本家[英語版Wiki](https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki)の内容を翻訳しています。
 
 !!! note "お知らせ"
@@ -11,4 +13,4 @@
 
 このドキュメントは[本家Wiki](https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki)に対応するように継続的にアップデートされています。
 
-[原文ページ](https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki)
+このWikiは、本家Wikiを継承し[CC-BY-SA](https://creativecommons.org/licenses/by-sa/3.0/deed.ja)ライセンスです。
