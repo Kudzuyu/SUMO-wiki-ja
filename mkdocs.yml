@@ -1,5 +1,7 @@
 site_name: SUMO wiki ja
-theme: material
+theme:
+  name: 'material'
+  language: 'ja'
 
 extra:
   search:
@@ -7,9 +9,22 @@ extra:
 
 markdown_extensions:
   - admonition
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
 
 nav:
 - トップ: 'index.md'
 - ドキュメント:
+  - 概要: 'user_doc.md'
+  - イントロダクション:
+    - SUMO早分かり: 'document/sumo_at_a_glance.md'
+  - 基本的な使い方:
+    - ドキュメントでの記法: 'document/basics_notation.md'
+    - チュートリアル: 'document/tutrials.md'
+  - 理論:
+    - 交通シミュレーション理論: 'document/theory_traffic_simulations.md'
   - インストール: 'document/install.md'
 - ダウンロード: 'download.md'
