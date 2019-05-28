@@ -56,6 +56,11 @@ XMLの要素と属性は
 
 ### ファイルタイプ
 
+- `<NETWORK_FILE>`: [NETGENERATE]()または[NETCONVERT]()によって作られた[SUMOネットワークファイル]()
+- `<ROUTES_FILE>`: [DUAROUTER]()または[JTRROUTER]()あるいは手作業で作られた[SUMOルートファイル]()
+- `<TYPE_FILE>`: ダウンロードされたかあるいは手作業で作られた[SUMOエッジタイプファイル]()
+- `<OSM_FILE>`: [OpenStreetMap](http://www.openstreetmap.org/)からエクスポートされた[OpenStreetMapファイル]()
+
 ## さらに進んだ枠組み
 
 大括弧(角括弧) '['と ']'で囲われた情報は任意(オプショナル)です。
