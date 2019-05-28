@@ -37,6 +37,4 @@ extra_css:
   - "//fonts.googleapis.com/earlyaccess/notosansjp.css"
   - "//fonts.googleapis.com/css?family=Open+Sans:600,800"
 
-google_analytics:
-  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_KEY"]
-  - auto
+google_analytics: ['UA-140953050-1']
