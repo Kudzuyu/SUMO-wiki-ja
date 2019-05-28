@@ -2,6 +2,7 @@ site_name: SUMO wiki ja
 theme:
   name: 'material'
   language: 'ja'
+  logo: 'img/MediaWikiSidebarLogo.png'
 
 extra:
   search:
@@ -23,8 +24,19 @@ nav:
     - SUMO早分かり: 'document/sumo_at_a_glance.md'
   - 基本的な使い方:
     - ドキュメントでの記法: 'document/basics_notation.md'
+    - 基本的なコンピュータスキル: 'document/basics_basic_computer_skills.md'
     - チュートリアル: 'document/tutrials.md'
+    - インストール: 'document/install.md'
+    - コマンドラインアプリケーション: 'document/basics_using_the_command_line_applications.md'
   - 理論:
     - 交通シミュレーション理論: 'document/theory_traffic_simulations.md'
-  - インストール: 'document/install.md'
 - ダウンロード: 'download.md'
+
+extra_css:
+  - css/extra.css
+  - "//fonts.googleapis.com/earlyaccess/notosansjp.css"
+  - "//fonts.googleapis.com/css?family=Open+Sans:600,800"
+
+google_analytics:
+  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_KEY"]
+  - auto
