@@ -1,53 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>None</loc>
-     <lastmod>2019-05-29</lastmod>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/</loc>
+     <lastmod>2019-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-05-29</lastmod>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/user_doc/</loc>
+     <lastmod>2019-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-05-29</lastmod>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/document/sumo_at_a_glance/</loc>
+     <lastmod>2019-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-05-29</lastmod>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/document/basics_notation/</loc>
+     <lastmod>2019-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-05-29</lastmod>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/document/basics_basic_computer_skills/</loc>
+     <lastmod>2019-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-05-29</lastmod>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/document/tutrials/</loc>
+     <lastmod>2019-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-05-29</lastmod>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/document/install/</loc>
+     <lastmod>2019-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-05-29</lastmod>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/document/basics_using_the_command_line_applications/</loc>
+     <lastmod>2019-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-05-29</lastmod>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/document/basics_xmlvalidation/</loc>
+     <lastmod>2019-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-05-29</lastmod>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/document/theory_traffic_simulations/</loc>
+     <lastmod>2019-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://kudzuyu.github.com/SUMO-wiki-ja/download/</loc>
+     <lastmod>2019-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
