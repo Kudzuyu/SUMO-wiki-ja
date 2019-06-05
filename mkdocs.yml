@@ -1,4 +1,5 @@
 site_name: SUMO wiki ja
+site_url: https://kudzuyu.github.com/SUMO-wiki-ja/
 theme:
   name: 'material'
   language: 'ja'
@@ -28,6 +29,7 @@ nav:
     - チュートリアル: 'document/tutrials.md'
     - インストール: 'document/install.md'
     - コマンドラインアプリケーション: 'document/basics_using_the_command_line_applications.md'
+    - アプリへの入力に対するバリデーション: 'document/basics_xmlvalidation.md'
   - 理論:
     - 交通シミュレーション理論: 'document/theory_traffic_simulations.md'
 - ダウンロード: 'download.md'
