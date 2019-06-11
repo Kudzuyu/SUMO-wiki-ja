@@ -30,6 +30,8 @@ nav:
     - インストール: 'document/install.md'
     - コマンドラインアプリケーション: 'document/basics_using_the_command_line_applications.md'
     - アプリへの入力に対するバリデーション: 'document/basics_xmlvalidation.md'
+  - ネットワーク構築:
+    - 抽象的ネットワーク生成: 'document/networks_abstract_network_generation.md'
   - 理論:
     - 交通シミュレーション理論: 'document/theory_traffic_simulations.md'
 - ダウンロード: 'download.md'
