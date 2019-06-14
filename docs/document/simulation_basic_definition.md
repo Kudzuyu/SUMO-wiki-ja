@@ -93,7 +93,7 @@ SUMO/SUMO-GUIはデフォルトで一秒一ステップでシミュレーショ�
 ```
 
 特に、大きな時間ステップ(例: 1秒)において連続的ダイナミクスを用いた車の追従モデルでは弾道型更新はより現実的なダイナミクスを生みだします。
-(Martin Treiber, Venkatesan Kanagaraj, Comparing Numerical Integration Schemes for Time-Continuous Car-Following Models)[http://arxiv.org/abs/1403.4881]も参照してください。
+[Martin Treiber, Venkatesan Kanagaraj, Comparing Numerical Integration Schemes for Time-Continuous Car-Following Models](http://arxiv.org/abs/1403.4881) も参照してください。
 
 弾道型更新は車の位置を、現在の速度ではなくタイムステップ間の平均速度を使ってアップデートします。
 ステップ長1秒において次の例を考えてみましょう:
