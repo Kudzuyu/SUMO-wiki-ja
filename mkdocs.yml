@@ -36,6 +36,7 @@ nav:
     - 地理座標系: 'document/geo-coordinates.md'
   - シミュレーション:
     - 基本的な定義: 'document/simulation_basic_definition.md'
+    - 水路: 'document/simulation_waterways.md'
   - 理論:
     - 交通シミュレーション理論: 'document/theory_traffic_simulations.md'
 - ダウンロード: 'download.md'
