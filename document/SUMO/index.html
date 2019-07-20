@@ -1,0 +1,2362 @@
+
+
+
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/document/SUMO/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="クリップボードへコピー">
+      
+        <meta name="lang:clipboard.copied" content="コピーしました">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="何も見つかりませんでした">
+      
+        <meta name="lang:search.result.one" content="1件見つかりました">
+      
+        <meta name="lang:search.result.other" content="#件見つかりました">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>SUMO - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-140953050-1", "kudzuyu.github.io/SUMO-wiki-ja")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#sumo" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/MediaWikiSidebarLogo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              SUMO wiki ja
+            </span>
+            <span class="md-header-nav__topic">
+              
+                SUMO
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            検索キーワードを入力してください
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo">
+      
+        <img src="../../img/MediaWikiSidebarLogo.png" width="48" height="48">
+      
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="トップ" class="md-nav__link">
+      トップ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      ドキュメント
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        ドキュメント
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user_doc/" title="概要" class="md-nav__link">
+      概要
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      イントロダクション
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        イントロダクション
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sumo_at_a_glance/" title="SUMO早分かり" class="md-nav__link">
+      SUMO早分かり
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      基本的な使い方
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        基本的な使い方
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../basics_notation/" title="ドキュメントでの記法" class="md-nav__link">
+      ドキュメントでの記法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../basics_basic_computer_skills/" title="基本的なコンピュータスキル" class="md-nav__link">
+      基本的なコンピュータスキル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutrials/" title="チュートリアル" class="md-nav__link">
+      チュートリアル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="インストール" class="md-nav__link">
+      インストール
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../basics_using_the_command_line_applications/" title="コマンドラインアプリケーション" class="md-nav__link">
+      コマンドラインアプリケーション
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../basics_xmlvalidation/" title="アプリへの入力に対するバリデーション" class="md-nav__link">
+      アプリへの入力に対するバリデーション
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      ネットワーク構築
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        ネットワーク構築
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networks_abstract_network_generation/" title="抽象的ネットワーク生成" class="md-nav__link">
+      抽象的ネットワーク生成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networks_elevation/" title="標高" class="md-nav__link">
+      標高
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../geo-coordinates/" title="地理座標系" class="md-nav__link">
+      地理座標系
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      シミュレーション
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        シミュレーション
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../simulation_basic_definition/" title="基本的な定義" class="md-nav__link">
+      基本的な定義
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../simulation_traffic_lights/" title="交通信号" class="md-nav__link">
+      交通信号
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../simulation_waterways/" title="水路" class="md-nav__link">
+      水路
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../simulation_randomness/" title="ランダム性" class="md-nav__link">
+      ランダム性
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      理論
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        理論
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../theory_traffic_simulations/" title="交通シミュレーション理論" class="md-nav__link">
+      交通シミュレーション理論
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7" checked>
+    
+    <label class="md-nav__link" for="nav-2-7">
+      アプリケーションマニュアル
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        アプリケーションマニュアル
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        SUMO
+      </label>
+    
+    <a href="./" title="SUMO" class="md-nav__link md-nav__link--active">
+      SUMO
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#俯瞰" title="俯瞰" class="md-nav__link">
+    俯瞰
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#使い方" title="使い方" class="md-nav__link">
+    使い方
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#オプション" title="オプション" class="md-nav__link">
+    オプション
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#設定" title="設定" class="md-nav__link">
+    設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#入力" title="入力" class="md-nav__link">
+    入力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#出力" title="出力" class="md-nav__link">
+    出力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#時間" title="時間" class="md-nav__link">
+    時間
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#処理工程" title="処理工程" class="md-nav__link">
+    処理工程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#経路設定" title="経路設定" class="md-nav__link">
+    経路設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#レポート" title="レポート" class="md-nav__link">
+    レポート
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#排気ガス" title="排気ガス" class="md-nav__link">
+    排気ガス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#通信" title="通信" class="md-nav__link">
+    通信
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#バッテリー" title="バッテリー" class="md-nav__link">
+    バッテリー
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-device" title="Example Device" class="md-nav__link">
+    Example Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssmデバイス" title="Ssmデバイス" class="md-nav__link">
+    Ssmデバイス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tocデバイス" title="Tocデバイス" class="md-nav__link">
+    Tocデバイス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-state-device" title="Driver State Device" class="md-nav__link">
+    Driver State Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bluelight-device" title="Bluelight Device" class="md-nav__link">
+    Bluelight Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fcd-device" title="Fcd Device" class="md-nav__link">
+    Fcd Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traci-server" title="Traci Server" class="md-nav__link">
+    Traci Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesoscopic" title="Mesoscopic" class="md-nav__link">
+    Mesoscopic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-number" title="Random Number" class="md-nav__link">
+    Random Number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-only" title="Gui Only" class="md-nav__link">
+    Gui Only
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#入力ファイルの読みこみ順序" title="入力ファイルの読みこみ順序" class="md-nav__link">
+    入力ファイルの読みこみ順序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#追加ファイルのフォーマット" title="追加ファイルのフォーマット" class="md-nav__link">
+    追加ファイルのフォーマット
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#補助資料" title="補助資料" class="md-nav__link">
+    補助資料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../download/" title="ダウンロード" class="md-nav__link">
+      ダウンロード
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#俯瞰" title="俯瞰" class="md-nav__link">
+    俯瞰
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#使い方" title="使い方" class="md-nav__link">
+    使い方
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#オプション" title="オプション" class="md-nav__link">
+    オプション
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#設定" title="設定" class="md-nav__link">
+    設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#入力" title="入力" class="md-nav__link">
+    入力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#出力" title="出力" class="md-nav__link">
+    出力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#時間" title="時間" class="md-nav__link">
+    時間
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#処理工程" title="処理工程" class="md-nav__link">
+    処理工程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#経路設定" title="経路設定" class="md-nav__link">
+    経路設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#レポート" title="レポート" class="md-nav__link">
+    レポート
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#排気ガス" title="排気ガス" class="md-nav__link">
+    排気ガス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#通信" title="通信" class="md-nav__link">
+    通信
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#バッテリー" title="バッテリー" class="md-nav__link">
+    バッテリー
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-device" title="Example Device" class="md-nav__link">
+    Example Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssmデバイス" title="Ssmデバイス" class="md-nav__link">
+    Ssmデバイス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tocデバイス" title="Tocデバイス" class="md-nav__link">
+    Tocデバイス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-state-device" title="Driver State Device" class="md-nav__link">
+    Driver State Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bluelight-device" title="Bluelight Device" class="md-nav__link">
+    Bluelight Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fcd-device" title="Fcd Device" class="md-nav__link">
+    Fcd Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traci-server" title="Traci Server" class="md-nav__link">
+    Traci Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesoscopic" title="Mesoscopic" class="md-nav__link">
+    Mesoscopic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-number" title="Random Number" class="md-nav__link">
+    Random Number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-only" title="Gui Only" class="md-nav__link">
+    Gui Only
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#入力ファイルの読みこみ順序" title="入力ファイルの読みこみ順序" class="md-nav__link">
+    入力ファイルの読みこみ順序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#追加ファイルのフォーマット" title="追加ファイルのフォーマット" class="md-nav__link">
+    追加ファイルのフォーマット
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#補助資料" title="補助資料" class="md-nav__link">
+    補助資料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="sumo">SUMO<a class="headerlink" href="#sumo" title="Permanent link">&para;</a></h1>
+<h2 id="俯瞰">俯瞰<a class="headerlink" href="#俯瞰" title="Permanent link">&para;</a></h2>
+<p><strong>SUMO</strong>はシミュレーション自身です。
+微視的で連続空間かつ離散時間を持つ交通シミュレーションです。</p>
+<ul>
+<li><strong>目的</strong>: 定義済みのシナリオのシミュレート</li>
+<li><strong>システム</strong>: ポータブル(Linux/Windowsでテスト済み)で、コマンドラインから動作する </li>
+<li><strong>入力(必須)</strong>:<ul>
+<li>A) [NETCONVERT]または[NETGENERATE]により生成された道路ネットワーク、[ネットワーク構築]を参照</li>
+<li>B) 経路の集合([DUAROUTER]、[JTTROUTER]、[DFROUTER]または[ACTIVITYGEN]により生成、[車両、車両タイプ及び経路の定義]も参照</li>
+</ul>
+</li>
+<li><strong>入力(任意)</strong>: 交通信号、様々な速度標識、検知器などその他の定義</li>
+<li><strong>出力</strong>: SUMOでは様々な出力が可能であり、可視化は[SUMO-GUI]で行なわれる</li>
+<li><strong>プログラミング言語</strong>: C++</li>
+</ul>
+<h2 id="使い方">使い方<a class="headerlink" href="#使い方" title="Permanent link">&para;</a></h2>
+<h3 id="オプション">オプション<a class="headerlink" href="#オプション" title="Permanent link">&para;</a></h3>
+<h4 id="設定">設定<a class="headerlink" href="#設定" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-c <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong> <br/> <strong>--configuration-file <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>指定された設定を起動時に読みこむ</td>
+</tr>
+<tr>
+<td><strong>-C <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong> <br/> <strong>--save-configuration <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>現在の設定をファイルに保存する</td>
+</tr>
+<tr>
+<td><strong>--save-templace <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>設定のテンプレート(空)をファイルに保存する</td>
+</tr>
+<tr>
+<td><strong>--save-schema <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>設定のスキーマをファイルに保存</td>
+</tr>
+<tr>
+<td><strong>--save-commented <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>保存されるテンプレート、設定、スキーマにコメントを追加する。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="入力">入力<a class="headerlink" href="#入力" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong><br/><strong>--net-files <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>ファイルから道路ネットワークを読みこむ</td>
+</tr>
+<tr>
+<td><strong>-r <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong><br/><strong>--route-files <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>ファイルから経路ファイルを読みこむ</td>
+</tr>
+<tr>
+<td><strong>-a <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong><br/><strong>--additional-files <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>さらにファイルを読みこむ</td>
+</tr>
+<tr>
+<td><strong>-w <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong><br/><strong>--weight-files <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>オンラインでの再経路設定用の枝(道路)/車線の重みをファイルから読みこむ</td>
+</tr>
+<tr>
+<td><strong>-x <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong> <br/> <strong>--weight-attribute <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td>枝(道路)の重みを与えるxmlの属性の名前。デフォルト: <strong><em>traveltime</em></strong></td>
+</tr>
+<tr>
+<td><strong>--load-state <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>ネットワークの状態をファイルから読みこむ</td>
+</tr>
+<tr>
+<td><strong>--load-state.offset <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td>保存された状態から時間をずらす。デフォルト: <strong><em>0</em></strong></td>
+</tr>
+<tr>
+<td><strong>--load-state.remove-vehicles <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td>読みこまれた状態について与えられたIDの車両を削除する</td>
+</tr>
+</tbody>
+</table>
+<h4 id="出力">出力<a class="headerlink" href="#出力" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--write-license <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>全ての出力ファイルにライセンス情報を付加する。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+<tr>
+<td><strong>--output-prefix <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td>全ての出力ファイルに付加する接頭語を指定する。特別な文字列'TIME'は現在の時刻で置き換えられる</td>
+</tr>
+<tr>
+<td><strong>--precision <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td>小数の出力に対し、小数点以下何桁までの出力を行なうかを指定。デフォルト: <strong><em>2</em></strong></td>
+</tr>
+<tr>
+<td><strong>--precision <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td>緯度経度の出力に対し、小数点以下何桁までの出力を行なうかを指定。デフォルト: <strong><em>6</em></strong></td>
+</tr>
+<tr>
+<td><strong>-H <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong> <br> <strong>--human-readable-time <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>時間の値を秒のみのかわりに 時間:分:秒 あるいは 日:時間:分:秒の形式で書きこむ。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+<tr>
+<td><strong>--netstate-dump <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>完全なネットワークの状態をファイルに保存する</td>
+</tr>
+<tr>
+<td><strong>--netstate-dump.empty-edges <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>ダンプ時に空の枝についても完全に出力する。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+<tr>
+<td><strong>--netstate-dump.precision <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td>位置と速度を指定した精度で出力する。デフォルト: <strong><em>2</em></strong></td>
+</tr>
+<tr>
+<td><strong>emission-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>個々の車両の排気ガスを保存する</td>
+</tr>
+<tr>
+<td><strong>emission-output.precision <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td>排気ガスの値を指定した精度で出力。デフォルト: <strong><em>2</em></strong></td>
+</tr>
+<tr>
+<td><strong>battery-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>個々の車両のバッテリーの値を保存する</td>
+</tr>
+<tr>
+<td><strong>battery-output.precision <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td>バッテリーの値を指定した精度で出力。デフォルト: <strong><em>2</em></strong></td>
+</tr>
+<tr>
+<td><strong>--fcd-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AD%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%AB%E3%83%BC%E3%83%87%E3%83%BC%E3%82%BF">フローティングカーデータ(FCD)</a>を保存する</td>
+</tr>
+<tr>
+<td><strong>--fcd-output.geo <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>FCDを緯度経度を用いて保存する。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+<tr>
+<td><strong>--fcd-output.signals <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>FCD出力に車両のライトの情報(ブレーキランプ等)を含める。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+<tr>
+<td><strong>--fcd-output.filter-edges.input-file <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>FCD出力を指定されたファイルで定義された枝(道路)のみに制限する</td>
+</tr>
+<tr>
+<td><strong>--full-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>タイムステップごとに多くの情報を保存する(かなり冗長)</td>
+</tr>
+<tr>
+<td><strong>--queue-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>交差点での待ち車両列を保存する(実験的)</td>
+</tr>
+<tr>
+<td><strong>--vtk-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>速度を含めた完全な車両位置をVTKフォーマットで保存する(使い方: /path/out は/path/out_$TIMESTEP$.vtpファイルを出力)</td>
+</tr>
+<tr>
+<td><strong>--amitran-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td>車両の軌跡をAmitranフォーマットで保存する</td>
+</tr>
+<tr>
+<td><strong>--summary-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--tripinfo-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--tripinf o-output.write-unfinished <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--vehroute-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--vehroute-output.exit-times <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--vehroute-output.last-route <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--vehroute-output.sorted <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--vehroute-output.dua <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--vehroute-output.cost <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>全経路のコストを出力。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+<tr>
+<td><strong>--vehroute-output.intended-depart <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--vehroute-output.route-length <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--vehroute-output.write-unfinished <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--vehroute-output.skip-ptlines <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--link-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--railsignal-block-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--bt-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--lanechange-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--lanechange-output.started <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--lanechange-output.ended <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--stop-output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--save-state.times <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--save-state.period <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--save-state.prefix <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--save-state.suffix <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--save-state.files <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="時間">時間<a class="headerlink" href="#時間" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-b <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong> <br/> <strong>--begin <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td>開始時刻を秒単位で指定する。シミュレーションは指定された時刻から始まる。デフォルト: <strong><em>0</em></strong></td>
+</tr>
+<tr>
+<td><strong>-e <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong> <br/> <strong>--end <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td>終了時刻を秒単位で指定する。シミュレーションはこの時刻で終了する。デフォルト: <strong><em>-1</em></strong></td>
+</tr>
+<tr>
+<td><strong>--step-length <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td>各ステップの長さを秒単位で指定する。デフォルト: <strong><em>1</em></strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="処理工程">処理工程<a class="headerlink" href="#処理工程" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--step-method.ballistic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>車両の位置更新に弾道型手法を使うか(デフォルト半暗黙のオイラー手法)。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+<tr>
+<td><strong>--threads <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td>並列シミュレーションに用いるスレッド数。デフォルト: <strong><em>1</em></strong></td>
+</tr>
+<tr>
+<td><strong>--lateral-resolution <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-s <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong> <br/> <strong>--route-steps <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--no-internal-links <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--ignore-junction-blocker <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--ignore-route-errors <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--ignore-accidents <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--collision.action <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--collision.stoptime <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--collision.check-junctions <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--collision.mingap-factor <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--max-num-vehicles <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--max-num-teleports <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--scale <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--time-to-teleport <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--time-to-teleport.highways <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--waiting-time-memory <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--max-depart-delay <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--sloppy-insert <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--eager-insert <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--random-depart-offset <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--lanechange.duration <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--lanechange.overtake-right <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--tls.all-off <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--tls.acutuated.show-detectors <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--time-to-impatience [`<TIME>]</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--default.action-step-length <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--default.carfollowmodel <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--default.speeddev <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--default.emergencydecel <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--emergencydecel.warning-threshold <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--pedestrian.model <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td>歩行者のモデルを指定する['noninteracting', 'striping', 'remote']。デフォルト: <strong><em>striping</em></strong></td>
+</tr>
+<tr>
+<td><strong>--pedestrian.striping.stripe-width <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--pedestrian.striping.dawdling <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td>'striping'モデルに仕様するランダムな減速[0, 1]の因子を決める。デフォルト: <strong><em>0.2</em></strong></td>
+</tr>
+<tr>
+<td><strong>--pedestrian.striping.jamtime <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--pedestrian.remote.address <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td>外部シミュレーション用のアドレス(ホスト:ポート)を指定する。デフォルト: <strong><em>localhost:9000</em></strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="経路設定">経路設定<a class="headerlink" href="#経路設定" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--routing-algorithm <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td>経路設定のアルゴリズムを指定する['dijkstra', 'astar', 'CH', 'CHWrapper']。デフォルト: <strong><em>dijkstra</em></strong></td>
+</tr>
+<tr>
+<td><strong>--weights.random-factor <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--weights.minor-penalty <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--astar.all-distances <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--astar.landmark-distances <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--pesontrip.walkfactor <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--pesontrip.transfer.car-walk <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.period <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.pre-period <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.adaptation-weight <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.adaptation-steps <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.adaptation-interval <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.with-taz <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.init-with-loaded-weights <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.threads <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.synchronize <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.output <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--person-device.rerouting.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--person-device.rerouting.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--person-device.rerouting.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--person-device.rerouting.period <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="レポート">レポート<a class="headerlink" href="#レポート" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-v <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong> <br/> <strong>--verbose <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--print-options <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>処理前にオプションの値を出力する。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+<tr>
+<td><strong>-? <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong> <br/> <strong>--help <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-V <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong> <br/> <strong>--version <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-X <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong> <br> <strong>--xml-validation <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--xml-validation.net <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-W <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong> <br/> <strong>--no-warnings <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-l <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong> <br/> <strong>--log <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--message-log <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--error-log <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--duration-log.disable <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>各ステップのパフォーマンスレポートを無効化する。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+<tr>
+<td><strong>--duration-log.statistics <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>車両の移動に関する統計を有効化する。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+<tr>
+<td><strong>--no-step-log <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td>現在のシミュレーションステップでのコンソール出力を無効化する。デフォルト: <strong><em>false</em></strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="排気ガス">排気ガス<a class="headerlink" href="#排気ガス" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--phemlight-path <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.emissions.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.emissions.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.emissions.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="通信">通信<a class="headerlink" href="#通信" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--device.btreceiver.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.btreceiver.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.btreceiver.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.btreceiver.range <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.btreceiver.all-recognitions <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.btreceiver.offtime <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.btsender.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.btsender.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.btsender.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="バッテリー">バッテリー<a class="headerlink" href="#バッテリー" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--device.battery.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td>車両がバッテリーデバイスを持っている確率。デフォルト: <strong><em>-1</em></strong></td>
+</tr>
+<tr>
+<td><strong>--device.battery.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.battery.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-device">Example Device<a class="headerlink" href="#example-device" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--device.example.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.example.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.example.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.example.parameter <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="ssmデバイス">Ssmデバイス<a class="headerlink" href="#ssmデバイス" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--device.ssm.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.ssm.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.ssm.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.ssm.measures <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.ssm.thresholds <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.ssm.trajectories <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.ssm.range <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.ssm.extratime <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.ssm.file <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.ssm.geo <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tocデバイス">Tocデバイス<a class="headerlink" href="#tocデバイス" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--device.toc.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.manualType <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.automatedType <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.responseTime <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.recoveryRate <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.lcAbstinence <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.initialAwareness <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.mrmDecel <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.ogNewTimeHeadway <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.ogNewSpaceHeadway <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.ogMaxDecel <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.ogChangeRate <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.useColorScheme <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.toc.file <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="driver-state-device">Driver State Device<a class="headerlink" href="#driver-state-device" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--device.driverstate.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.initialAwareness <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.errorTimeScaleCoefficient <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.errorNoiseIntensityCoefficient <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.speedDifferenceErrorCoefficient <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.headwayErrorCoefficient <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.speedDifferenceChangePerceptionThreshold <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.headwayChangePerceptionThreshold <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.minAwareness <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.driverstate.maximalReactionTime <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="bluelight-device">Bluelight Device<a class="headerlink" href="#bluelight-device" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--device.bluelight.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.bluelight.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.bluelight.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.bluelight.parameter <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="fcd-device">Fcd Device<a class="headerlink" href="#fcd-device" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--device.fcd.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.fcd.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.fcd.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--device.fcd.period <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--person-device.fcd.probability <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--person-device.fcd.explicit <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--person-device.fcd.deterministic <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--person-device.fcd.period <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="traci-server">Traci Server<a class="headerlink" href="#traci-server" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--remote-port <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--num-clients <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="mesoscopic">Mesoscopic<a class="headerlink" href="#mesoscopic" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--mesosim <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-edgelength <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-tauff <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-taufj <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-taujf <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-taujj <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-jam-threshold <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-multi-queue <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-junction-control <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-junction-control.limited <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-tls-penalty <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-minor-penalty <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-overtaking <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--meso-recheck <a href="../basics_notation/#データタイプ"><code>&lt;TIME&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="random-number">Random Number<a class="headerlink" href="#random-number" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--random <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--seed <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--thread-rngs <a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="gui-only">Gui Only<a class="headerlink" href="#gui-only" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-g <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong> <br/> <strong>--gui-settings-file <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-Q <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong> <br/> <strong>--quit-on-end <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-G <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong> <br/> <strong>--game <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--game.mode <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-S <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong> <br/> <strong>--start <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--breakpoints <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--edgedata-files <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-D <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong> <br/> <strong>--demo <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-T <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong> <br/> <strong>--disable-textures <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--registry-viewport <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--window-size <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--window-pos <a href="../basics_notation/#データタイプ"><code>&lt;STRING&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--tracker-interval <a href="../basics_notation/#データタイプ"><code>&lt;FLOAT&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--osg-view <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--gui-testing <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>--gui-testing-debug <a href="../basics_notation/#データタイプ"><code>&lt;BOOL&gt;</code></a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="入力ファイルの読みこみ順序">入力ファイルの読みこみ順序<a class="headerlink" href="#入力ファイルの読みこみ順序" title="Permanent link">&para;</a></h2>
+<p>入力ファイル中で定義されたシミュレーションオブジェクトA(例: 車)が他のシミュレーションオブジェクトB(例: 車両タイプ)を参照している場合、オブジェクトBは必ずAより前に読みこまれるファイルか、Aと同じ入力ファイルのAより前の行に書かれていなければなりません。</p>
+<h2 id="追加ファイルのフォーマット">追加ファイルのフォーマット<a class="headerlink" href="#追加ファイルのフォーマット" title="Permanent link">&para;</a></h2>
+<p><strong>--additional-files <a href="../basics_notation/#データタイプ"><code>&lt;FILE&gt;</code></a></strong>オプションで追加されるファイルは、<a href="">交通信号</a>、<a href="">検知器</a>、<a href="">種々の速度標識</a>、<a href="">バス停</a>など幅広いネットワーク要素を含んでいます。
+こうしたファイルは</p>
+<pre><code class="xml"> &lt;additional&gt;
+    &lt;inductionLoop id=&quot;myLoop1&quot; lane=&quot;foo_0&quot; pos=&quot;42&quot; freq=&quot;900&quot; file=&quot;out.xml&quot;/&gt;
+    &lt;inductionLoop id=&quot;myLoop2&quot; lane=&quot;foo_2&quot; pos=&quot;42&quot; freq=&quot;900&quot; file=&quot;out.xml&quot;/&gt;
+
+    &lt;busStop id=&quot;station1&quot; lane=&quot;foo_0&quot; startPos=&quot;5&quot; endPos=&quot;20&quot;/&gt;
+
+    &lt;vType id=&quot;bus&quot; maxSpeed=&quot;20&quot; length=&quot;12&quot;/&gt;
+ &lt;/additional&gt;
+</code></pre>
+
+<h2 id="補助資料">補助資料<a class="headerlink" href="#補助資料" title="Permanent link">&para;</a></h2>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../theory_traffic_simulations/" title="交通シミュレーション理論" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                交通シミュレーション理論
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../download/" title="ダウンロード" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                ダウンロード
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
