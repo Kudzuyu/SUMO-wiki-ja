@@ -36,9 +36,13 @@ nav:
     - 地理座標系: 'document/geo-coordinates.md'
   - シミュレーション:
     - 基本的な定義: 'document/simulation_basic_definition.md'
+    - 交通信号: 'document/simulation_traffic_lights.md'
     - 水路: 'document/simulation_waterways.md'
+    - ランダム性: 'document/simulation_randomness.md'
   - 理論:
     - 交通シミュレーション理論: 'document/theory_traffic_simulations.md'
+  - アプリケーションマニュアル:
+    - SUMO: 'document/SUMO.md'
 - ダウンロード: 'download.md'
 
 extra_css:
