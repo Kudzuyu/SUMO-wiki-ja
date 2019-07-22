@@ -32,6 +32,8 @@ nav:
     - アプリへの入力に対するバリデーション: 'document/basics_xmlvalidation.md'
   - ネットワーク構築:
     - 抽象的ネットワーク生成: 'document/networks_abstract_network_generation.md'
+    - NETCONVERTを用いたネットワークのインポート:
+      - 概要: 'document/networks_import.md'
     - 標高: 'document/networks_elevation.md'
     - 地理座標系: 'document/geo-coordinates.md'
   - シミュレーション:
