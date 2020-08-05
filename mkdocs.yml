@@ -5,9 +5,30 @@ theme:
   language: 'ja'
   logo: 'img/MediaWikiSidebarLogo.png'
 
+
 extra:
   search:
     language 'ja'
+  AdditionalFile: '[*additional-file*](/docs/SUMO.html#format_of_additional_files)'
+  AdditionalFiles: '[*additional-files*](/docs/SUMO.html#format_of_additional_files)'
+  DT_2DBoundingBox: '[*&lt;2D-BOUNDING_BOX&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_2DPosition: '[*&lt;2D-POSITION&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_BOOL: '[*&lt;BOOL&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_Color: '[*&lt;COLOR&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_FILE: '[*&lt;FILE&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_FLOAT: '[*&lt;FLOAT&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_IDList: '[*&lt;ID&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_INT: '[*&lt;INT&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_NET: '[*&lt;NETWORK_FILE&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_PATH: '[*&lt;PATH&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_PROJ_DEF: '[*&lt;PROJ_DEFINITION&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_Routes: '[*&lt;ROUTES_FILE&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_STR: '[*&lt;STRING&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  DT_TIME: '[*&lt;TIME&gt;*](/docs/Basics/Notation.html#データタイプ)'
+  Outdated: '<div style="background: #801010; padding: .5em; border: 1px dashed #ffcc44; margin-right:10px; margin-left:10px; color: #ffffff">This information is outdated.</div>'
+  Source: 'https://github.com/eclipse/sumo/blob/master/'
+  SUMO: '***&lt;SUMO_HOME&gt;***'
+  SUMOUSERConference: '[SUMO User Conference](http://sumo.dlr.de/2020/)'
 
 markdown_extensions:
   - admonition
@@ -18,35 +39,9 @@ markdown_extensions:
       slugify: !!python/name:pymdownx.slugs.uslugify
 
 nav:
-- トップ: 'index.md'
-- ドキュメント:
-  - 概要: 'user_doc.md'
-  - イントロダクション:
-    - SUMO早分かり: 'document/sumo_at_a_glance.md'
-  - 基本的な使い方:
-    - ドキュメントでの記法: 'document/basics_notation.md'
-    - 基本的なコンピュータスキル: 'document/basics_basic_computer_skills.md'
-    - チュートリアル: 'document/tutrials.md'
-    - インストール: 'document/install.md'
-    - コマンドラインアプリケーション: 'document/basics_using_the_command_line_applications.md'
-    - アプリへの入力に対するバリデーション: 'document/basics_xmlvalidation.md'
-  - ネットワーク構築:
-    - 抽象的ネットワーク生成: 'document/networks_abstract_network_generation.md'
-    - NETCONVERTを用いたネットワークのインポート:
-      - 概要: 'document/networks_import.md'
-    - 標高: 'document/networks_elevation.md'
-    - 地理座標系: 'document/geo-coordinates.md'
-  - シミュレーション:
-    - 基本的な定義: 'document/simulation_basic_definition.md'
-    - TraCI(オンラインでの相互作用): 'document/simulation_traci.md'
-    - 交通信号: 'document/simulation_traffic_lights.md'
-    - 水路: 'document/simulation_waterways.md'
-    - ランダム性: 'document/simulation_randomness.md'
-  - 理論:
-    - 交通シミュレーション理論: 'document/theory_traffic_simulations.md'
-  - アプリケーションマニュアル:
-    - SUMO: 'document/SUMO.md'
-- ダウンロード: 'download.md'
+  - トップ: 'index.md'
+  - ドキュメント: 'user_doc.md'
+  - ダウンロード: 'download.md'
 
 extra_css:
   - css/extra.css
