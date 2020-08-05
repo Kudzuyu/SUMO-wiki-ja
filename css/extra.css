@@ -1,5 +1,18 @@
 body {
-    font-family: "Noto Sans JP";
+    font-family: "Noto Sans JP Regular";
+    font-size: 12px;
+}
+
+p {
+  font-size: 13px;
+}
+
+ul {
+  font-size: 13px;
+}
+
+li {
+  font-size: 13px;
 }
 
 img[src*='#left'] { 

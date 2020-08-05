@@ -1,0 +1,522 @@
+
+
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/document/Networks/SUMO_Road_Networks/">
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
+    
+    
+      
+        <title>ネットワーク/SUMO道路ネットワーク - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140953050-1","kudzuyu.github.io/SUMO-wiki-ja"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ネットワークsumo道路ネットワーク" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../../../img/MediaWikiSidebarLogo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SUMO wiki ja
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              ネットワーク/SUMO道路ネットワーク
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../../../img/MediaWikiSidebarLogo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="トップ" class="md-nav__link">
+      トップ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../user_doc/" title="ドキュメント" class="md-nav__link">
+      ドキュメント
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../download/" title="ダウンロード" class="md-nav__link">
+      ダウンロード
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ネットワークフォーマット" class="md-nav__link">
+    ネットワークフォーマット
+  </a>
+  
+    <nav class="md-nav" aria-label="ネットワークフォーマット">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#エッジとレーン" class="md-nav__link">
+    エッジとレーン
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#接続" class="md-nav__link">
+    接続
+  </a>
+  
+    <nav class="md-nav" aria-label="接続">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#平易な接続" class="md-nav__link">
+    平易な接続
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ラウンドアバウト" class="md-nav__link">
+    ラウンドアバウト
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#生成編集可視化のためのソフト" class="md-nav__link">
+    生成、編集、可視化のためのソフト
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#より進んだドキュメント" class="md-nav__link">
+    より進んだドキュメント
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="ネットワークsumo道路ネットワーク">ネットワーク/SUMO道路ネットワーク<a class="headerlink" href="#ネットワークsumo道路ネットワーク" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="../img/Eichstaett.net.png" /></p>
+<p>sumo-guiで開いたSUMO netファイルのスクリーンショット。
+この地図ではドイツのEichstättが示されています。</p>
+<table>
+<thead>
+<tr>
+<th>SUMO道路ネットワーク</th>
+<th>　</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>拡張子</td>
+<td>.net.xml</td>
+</tr>
+<tr>
+<td>コンテンツタイプ</td>
+<td>マップ</td>
+</tr>
+<tr>
+<td>オープンなフォーマットか</td>
+<td>はい</td>
+</tr>
+<tr>
+<td>SUMO特有か</td>
+<td>はい</td>
+</tr>
+<tr>
+<td>XMLスキーマ</td>
+<td>[net_file.xsd]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SUMOネットワークファイル</strong>はマップの交通に関係する部分、車両が通過する道路と交差点を表現しています。
+大まかに見れば、SUMOネットワークは有向グラフです。
+ノードはSUMOでは一般に「分岐」と呼ばれ、交差点を表現し、エッジは道路を表現します。
+エッジは一方向なことに注意してください。
+具体的には、SUMOネットワークは以下の情報を含んでいます。</p>
+<ul>
+<li>座標、形状、速度制限を含んだ車線の集合としての道路 (エッジ)</li>
+<li>分岐で参照される交通信号のロジック</li>
+<li>優先通行権を含んだ分岐</li>
+<li>分岐(ノード)と車線の結合</li>
+</ul>
+<p>入力フォーマットや処理のオプションによっては、次も含まれることがあります。</p>
+<ul>
+<li>地区</li>
+<li>ラウンドアバウトの説明</li>
+</ul>
+<p><strong>人間が読める形式 (XML) ではありますが、手作業で修正するものではありません。</strong>
+[SUMO XML説明ファイル]を[NETCONVERT]と共に使うべきです。
+様々なフォーマットで作られたマップを[NETCONVERT]を用いて変換したり、地理的に単純な抽象化されたマップを[NETGENEATE]を用いて生成することもできます。
+すでにある<em>.net.xml-file</em>を編集するには、[NETCONVERTにパッチと共にロードする]、あるいは、自身の道路ネットワークを作成するか、[NETCONVERT]または[NETGENEATE]によって生成されたファイルを再編集するために、[NETEDIT]を用いることができます。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>SUMOネットワークをカスタムした入力データから作成する場合の推奨手段は、[平易なxmlファイル]を作成、生成して、[NETCONVERT]を用いてそれらを<strong><em>.net.xml</em></strong>に変換する方法です。
+[.net.xmlファイルを直接編集する方法は危険]です。</p>
+</div>
+<h2 id="ネットワークフォーマット">ネットワークフォーマット<a class="headerlink" href="#ネットワークフォーマット" title="Permanent link">&para;</a></h2>
+<p>SUMO道路ネットワークはXMLファイルでエンコードされています。
+コンテンツは次の順序で実態がグループ化されています。</p>
+<table>
+<thead>
+<tr>
+<th>名前</th>
+<th>タイプ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>netOffset</td>
+<td>offset ([&lt;2D-POSITION&gt;])</td>
+<td>ネットワークを (0, 0) へ移動させる際のオフセット</td>
+</tr>
+<tr>
+<td>convBoundary</td>
+<td>boundary ([2D-BOUNDING_BOX])</td>
+<td></td>
+</tr>
+<tr>
+<td>origBoundary</td>
+<td>boundary ([2D-BOUNDING_BOX])</td>
+<td></td>
+</tr>
+<tr>
+<td>projParameter</td>
+<td>projection parameter</td>
+<td>ネットワークの投影に関する情報</td>
+</tr>
+</tbody>
+</table>
+<p><code>projParameter</code>は次のいずれかの値をとります:</p>
+<table>
+<thead>
+<tr>
+<th>エンコード</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'!'</td>
+<td>投影は適用されません</td>
+</tr>
+<tr>
+<td>'-'</td>
+<td>「単純な」投影が適用されます</td>
+</tr>
+<tr>
+<td>'.'</td>
+<td>?</td>
+</tr>
+<tr>
+<td>proj-definition ()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>SUMOから受けとったx/y座標から元の座標を復元するには、まずネットワークのオフセットを引く必要があります。
+次に、<code>projParameter</code>に関して最初とは逆の投影を適用する必要があります。
+投影されたネットワークでは、逆の変換をするproj関数であるpj_invを用いることができます。</p>
+<pre><code>Position2D cartesian = sumoXY(x, y);
+projPJ myProjection = pj_init_plus(projParameter.c_str());
+cartesian.sub(netOffset);
+projUV p;
+p.u = cartesian.x();
+p.v = cartesian.y();
+p = pj_inv(p, myProjection);
+p.u *= RAD_TO_DEG;
+p.v *= RAD_TO_DEG;
+cartesian.set(p.u, p.v);
+</code></pre>
+
+<p>投影がなされていないネットワーク (<code>projParameter</code> = '!') では、オフセットのみを適用する必要があります。
+「単純な」投影 (<code>projParameter</code> = '-') に関しては、現在逆投影の方法は知られていません。</p>
+<p>SUMO道路ネットワークは北に向けて揃えられることになっています。
+もちろん、
+しかし、Open Street Mapやshapeファイルからインポートした場合、上方向が北に対応します。</p>
+<h3 id="エッジとレーン">エッジとレーン<a class="headerlink" href="#エッジとレーン" title="Permanent link">&para;</a></h3>
+<p>"plain"と"internal"なエッジ</p>
+<h3 id="接続">接続<a class="headerlink" href="#接続" title="Permanent link">&para;</a></h3>
+<h4 id="平易な接続">平易な接続<a class="headerlink" href="#平易な接続" title="Permanent link">&para;</a></h4>
+<p>平易な接続、あるいは「リンク」は、出発する車線がどの到着する車線から到達できるかを表現しています。
+加えて、交差点を通過する最初の車線も与えられます。
+追加情報は接続の方向と「状態」を表現します。
+接続が信号によって制御されている場合、信号の名前と、信号定義内でその接続をコントロールする信号現示のインデックスが与えられます。
+接続は次のようにエンコードされます。</p>
+<pre><code>&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;TO_EDGE_ID&gt;&quot; fromLane=&quot;&lt;FROM_LANE_INDEX&gt;&quot; toLane=&quot;&lt;TO_LANE_INDEX&gt;&quot;
+            via=&quot;&lt;VIA_LANE_ID&gt;&quot; tl=&quot;&lt;TRAFFIC_LIGHT_ID&gt;&quot; linkIndex=&quot;12&quot; dir=&quot;r&quot; state=&quot;o&quot;/&gt;
+</code></pre>
+
+<h3 id="ラウンドアバウト">ラウンドアバウト<a class="headerlink" href="#ラウンドアバウト" title="Permanent link">&para;</a></h3>
+<p>ネットワーク内のラウンドアバウトは通行権に影響します (ネットワーク生成内の分岐の[Requests] <code>&lt;request&gt;</code>要素にエンコードされています)。
+ネットワークファイル内に存在することについては、2つの理由があります。</p>
+<ul>
+<li><em>.net.xml</em>-fileを[NETCONVERT]で再インポートすることが楽になる</li>
+<li>車線変更をするモデルがラウンドアバウトを考慮するようになる</li>
+</ul>
+<p>ラウンドアバウトは (幾分冗長に) ノードとエッジを用いて定義されています。</p>
+<pre><code>&lt;roundabout nodes=&quot;nodeID1 nodeID2 ...&quot; edges=&quot;edgeID1 edgeID2 ...&quot;/&gt;
+</code></pre>
+
+<h2 id="生成編集可視化のためのソフト">生成、編集、可視化のためのソフト<a class="headerlink" href="#生成編集可視化のためのソフト" title="Permanent link">&para;</a></h2>
+<p>SUMOネットワークファイルの作成には、他のフォーマットからなら[NETCONVERT]を、単純な</p>
+<h2 id="より進んだドキュメント">より進んだドキュメント<a class="headerlink" href="#より進んだドキュメント" title="Permanent link">&para;</a></h2>
+<ul>
+<li>ネットワークのインポート</li>
+<li>[XMLとNETCONVERTを用いたネットワークの定義]</li>
+<li>[NETCONVERTを用いた他のアプリケーションからのネットワークのインポート]</li>
+<li>[NETCONVERT]マニュアル</li>
+<li>抽象的道路ネットワークの生成</li>
+<li>[NETGENEATEを用いた抽象的ネットワークの生成]</li>
+<li>[NETGENEATE]マニュアル</li>
+<li>[NETEDIT]マニュアル</li>
+<li>[開発者向け/ネットワーク生成プロセス]</li>
+</ul>
+<p>!!! note '注意'
+  旧バージョンの[NETCONVERT]/[NETEDIT]で生成されたネットワークを扱う場合は、[ChangeLog]を参照してください。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.9b3611bd.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

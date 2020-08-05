@@ -1,62 +1,38 @@
 
 
 
-
 <!doctype html>
 <html lang="ja" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/user_doc/">
       
       
-      
-        <meta name="lang:clipboard.copy" content="クリップボードへコピー">
-      
-        <meta name="lang:clipboard.copied" content="コピーしました">
-      
-        <meta name="lang:search.language" content="ja">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="何も見つかりませんでした">
-      
-        <meta name="lang:search.result.one" content="1件見つかりました">
-      
-        <meta name="lang:search.result.other" content="#件見つかりました">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
-      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
     
     
       
-        <title>概要 - SUMO wiki ja</title>
+        <title>ドキュメント - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
-    
-      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="../css/extra.css">
@@ -68,97 +44,79 @@
     
       
         
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-140953050-1", "kudzuyu.github.io/SUMO-wiki-ja")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140953050-1","kudzuyu.github.io/SUMO-wiki-ja"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
   </head>
   
+  
     <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#sumo-ユーザードキュメント" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sumo-ユーザードキュメント" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
     
       <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo">
-          
-            <img src="../img/MediaWikiSidebarLogo.png" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              SUMO wiki ja
-            </span>
-            <span class="md-header-nav__topic">
-              
-                概要
-              
-            </span>
-          
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../img/MediaWikiSidebarLogo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SUMO wiki ja
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              ドキュメント
+            
+          </span>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            検索キーワードを入力してください
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -166,31 +124,31 @@
     </div>
   </div>
 </div>
-        
-      </div>
-      
-    </div>
+    
+    
   </nav>
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
         
       
       
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
       
-        <img src="../img/MediaWikiSidebarLogo.png" width="48" height="48">
-      
+  <img src="../img/MediaWikiSidebarLogo.png" alt="logo">
+
     </a>
     SUMO wiki ja
   </label>
@@ -216,118 +174,119 @@
   
 
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
-    
-    <label class="md-nav__link" for="nav-2">
-      ドキュメント
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        ドキュメント
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        概要
+        ドキュメント
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
       </label>
     
-    <a href="./" title="概要" class="md-nav__link md-nav__link--active">
-      概要
+    <a href="./" title="ドキュメント" class="md-nav__link md-nav__link--active">
+      ドキュメント
     </a>
     
       
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="目次">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">目次</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目次
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#はじめに" title="はじめに" class="md-nav__link">
+  <a href="#はじめに" class="md-nav__link">
     はじめに
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#基本的な使いかた" title="基本的な使いかた" class="md-nav__link">
+  <a href="#基本的な使いかた" class="md-nav__link">
     基本的な使いかた
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ネットワーク構築" title="ネットワーク構築" class="md-nav__link">
+  <a href="#ネットワーク構築" class="md-nav__link">
     ネットワーク構築
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#需要のモデリング" title="需要のモデリング" class="md-nav__link">
-    需要のモデリング
+  <a href="#交通需要のモデリング" class="md-nav__link">
+    交通需要のモデリング
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#シミュレーション" title="シミュレーション" class="md-nav__link">
+  <a href="#シミュレーション" class="md-nav__link">
     シミュレーション
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="シミュレーション">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#交通管理とその他の構造" title="交通管理とその他の構造" class="md-nav__link">
+  <a href="#出力" class="md-nav__link">
+    出力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traci-オンライン操作" class="md-nav__link">
+    TraCI (オンライン操作)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#交通管理とその他の構造" class="md-nav__link">
     交通管理とその他の構造
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#交通の種類" title="交通の種類" class="md-nav__link">
+  <a href="#交通の種類" class="md-nav__link">
     交通の種類
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#追加的な特徴" title="追加的な特徴" class="md-nav__link">
+  <a href="#追加的な特徴" class="md-nav__link">
     追加的な特徴
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#モデル詳細" title="モデル詳細" class="md-nav__link">
+  <a href="#モデル詳細" class="md-nav__link">
     モデル詳細
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#よくある問題" title="よくある問題" class="md-nav__link">
+  <a href="#よくある問題" class="md-nav__link">
     よくある問題
   </a>
   
@@ -339,382 +298,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#補助ツール" title="[補助ツール]" class="md-nav__link">
+  <a href="#補助ツール" class="md-nav__link">
     [補助ツール]
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#理論" title="理論" class="md-nav__link">
+  <a href="#理論" class="md-nav__link">
     理論
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#アプリケーションマニュアル" title="アプリケーションマニュアル" class="md-nav__link">
+  <a href="#アプリケーションマニュアル" class="md-nav__link">
     アプリケーションマニュアル
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#付録" title="付録" class="md-nav__link">
+  <a href="#付録" class="md-nav__link">
     付録
   </a>
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
-    
-    <label class="md-nav__link" for="nav-2-2">
-      イントロダクション
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-2">
-        イントロダクション
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/sumo_at_a_glance/" title="SUMO早分かり" class="md-nav__link">
-      SUMO早分かり
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
-    
-    <label class="md-nav__link" for="nav-2-3">
-      基本的な使い方
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-3">
-        基本的な使い方
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/basics_notation/" title="ドキュメントでの記法" class="md-nav__link">
-      ドキュメントでの記法
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/basics_basic_computer_skills/" title="基本的なコンピュータスキル" class="md-nav__link">
-      基本的なコンピュータスキル
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/tutrials/" title="チュートリアル" class="md-nav__link">
-      チュートリアル
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/install/" title="インストール" class="md-nav__link">
-      インストール
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/basics_using_the_command_line_applications/" title="コマンドラインアプリケーション" class="md-nav__link">
-      コマンドラインアプリケーション
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/basics_xmlvalidation/" title="アプリへの入力に対するバリデーション" class="md-nav__link">
-      アプリへの入力に対するバリデーション
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
-    
-    <label class="md-nav__link" for="nav-2-4">
-      ネットワーク構築
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-4">
-        ネットワーク構築
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/networks_abstract_network_generation/" title="抽象的ネットワーク生成" class="md-nav__link">
-      抽象的ネットワーク生成
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/networks_elevation/" title="標高" class="md-nav__link">
-      標高
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/geo-coordinates/" title="地理座標系" class="md-nav__link">
-      地理座標系
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
-    
-    <label class="md-nav__link" for="nav-2-5">
-      シミュレーション
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-5">
-        シミュレーション
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/simulation_basic_definition/" title="基本的な定義" class="md-nav__link">
-      基本的な定義
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/simulation_traffic_lights/" title="交通信号" class="md-nav__link">
-      交通信号
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/simulation_waterways/" title="水路" class="md-nav__link">
-      水路
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/simulation_randomness/" title="ランダム性" class="md-nav__link">
-      ランダム性
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
-    
-    <label class="md-nav__link" for="nav-2-6">
-      理論
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-6">
-        理論
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/theory_traffic_simulations/" title="交通シミュレーション理論" class="md-nav__link">
-      交通シミュレーション理論
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
-    
-    <label class="md-nav__link" for="nav-2-7">
-      アプリケーションマニュアル
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-7">
-        アプリケーションマニュアル
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../document/SUMO/" title="SUMO" class="md-nav__link">
-      SUMO
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -741,81 +355,100 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="目次">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">目次</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目次
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#はじめに" title="はじめに" class="md-nav__link">
+  <a href="#はじめに" class="md-nav__link">
     はじめに
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#基本的な使いかた" title="基本的な使いかた" class="md-nav__link">
+  <a href="#基本的な使いかた" class="md-nav__link">
     基本的な使いかた
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ネットワーク構築" title="ネットワーク構築" class="md-nav__link">
+  <a href="#ネットワーク構築" class="md-nav__link">
     ネットワーク構築
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#需要のモデリング" title="需要のモデリング" class="md-nav__link">
-    需要のモデリング
+  <a href="#交通需要のモデリング" class="md-nav__link">
+    交通需要のモデリング
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#シミュレーション" title="シミュレーション" class="md-nav__link">
+  <a href="#シミュレーション" class="md-nav__link">
     シミュレーション
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="シミュレーション">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#交通管理とその他の構造" title="交通管理とその他の構造" class="md-nav__link">
+  <a href="#出力" class="md-nav__link">
+    出力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traci-オンライン操作" class="md-nav__link">
+    TraCI (オンライン操作)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#交通管理とその他の構造" class="md-nav__link">
     交通管理とその他の構造
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#交通の種類" title="交通の種類" class="md-nav__link">
+  <a href="#交通の種類" class="md-nav__link">
     交通の種類
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#追加的な特徴" title="追加的な特徴" class="md-nav__link">
+  <a href="#追加的な特徴" class="md-nav__link">
     追加的な特徴
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#モデル詳細" title="モデル詳細" class="md-nav__link">
+  <a href="#モデル詳細" class="md-nav__link">
     モデル詳細
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#よくある問題" title="よくある問題" class="md-nav__link">
+  <a href="#よくある問題" class="md-nav__link">
     よくある問題
   </a>
   
@@ -827,36 +460,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#補助ツール" title="[補助ツール]" class="md-nav__link">
+  <a href="#補助ツール" class="md-nav__link">
     [補助ツール]
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#理論" title="理論" class="md-nav__link">
+  <a href="#理論" class="md-nav__link">
     理論
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#アプリケーションマニュアル" title="アプリケーションマニュアル" class="md-nav__link">
+  <a href="#アプリケーションマニュアル" class="md-nav__link">
     アプリケーションマニュアル
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#付録" title="付録" class="md-nav__link">
+  <a href="#付録" class="md-nav__link">
     付録
   </a>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -871,45 +500,48 @@
               
                 
                 
+                  
+                
+                
                 <h1 id="sumo-ユーザードキュメント">SUMO ユーザードキュメント<a class="headerlink" href="#sumo-ユーザードキュメント" title="Permanent link">&para;</a></h1>
 <p><a href="https://sumo.dlr.de/wiki/SUMO_User_Documentation">原文ページ</a></p>
-<p>"<strong>S</strong>imulation of <strong>U</strong>rban <strong>MO</strong>bility" (Eclipse SUMO)は大規模な道路ネットワークを制御するためにつくられた、オープンソースでポータブルであり、微視的かつ連続的な道路交通シミュレーションパッケージです。
-SUMOは主に<a href="http://www.dlr.de/">German Aerospace Center(ドイツ航空宇宙局)</a>にある<a href="http://www.dlr.de/ts">Institute of Transportation Systems(交通システム研究所)</a>の職員によって開発されています。
-SUMOは<a href="https://eclipse.org/legal/epl-v20.html">Eclipse Public License</a>の下でライセンスされています。
-"Eclipse SUMO"はEclipse Foundationのトレードマークです。
-SUMOを使う場合には、出版物を私達に知らせることで開発をサポートしてください。</p>
+<p>"<strong>S</strong>imulation of <strong>U</strong>rban <strong>MO</strong>bility" (SUMO)は，巨大な道路ネットワークを制御するようにデザインされた，オープンソースかつポータブルで，微視的な道路交通流シミュレーションパッケージです。
+SUMO は主に<a href="http://www.dlr.de/">German Aerospace Center(ドイツ航空宇宙局)</a>にある<a href="http://www.dlr.de/ts">Institute of Transportation Systems(交通システム研究所)</a>の職員によって開発されています。
+SUMO は<a href="https://eclipse.org/legal/epl-v20.html">EPL</a>の下でライセンスされています。</p>
+<p>"Eclipse SUMO"は Eclipse Foundation のトレードマークです。
+SUMO を使う場合には、出版物を私達に知らせることで開発をサポートしてください。</p>
 <p>質問の結果を共有するために<a href="https://sumo.dlr.de/wiki/Contact">メーリングリスト(英語)</a>をつかってください。
 一般的な質問の答えは[FAQ]でも見つかるかもしれません。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>一般にSUMOについて引用するときは、現在のレファレンス刊行物を使ってください。<a href="https://elib.dlr.de/124092/">"Microscopic Traffic Simulation using SUMO"</a>; Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner. IEEE Intelligent Transportation Systems Conference (ITSC), 2018.</p>
+<p>一般に SUMO について引用するときは、現在のレファレンス刊行物を使ってください。<a href="https://elib.dlr.de/124092/">"Microscopic Traffic Simulation using SUMO"</a>; Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner. IEEE Intelligent Transportation Systems Conference (ITSC), 2018.</p>
 </div>
 <p>ドキュメントの執筆や訂正、コードの登録や他の結果を含めどんな助力でも高く評価します。</p>
 <div class="admonition info">
 <p class="admonition-title">訳注</p>
-<p>日本語版の翻訳を手伝ってくれる人は<a href="https://github.com/Kudzuyu/SUMO-wiki-ja">このWikiのgithubページ</a>、英語版の本家を手伝いたい人は[本家Wikiの執筆者になる方法]を参照してください</p>
+<p>日本語版の翻訳を手伝ってくれる人は<a href="https://github.com/Kudzuyu/SUMO-wiki-ja">この Wiki の github ページ</a>、英語版の本家を手伝いたい人は[本家 Wiki の執筆者になる方法]を参照してください</p>
 </div>
 <h2 id="はじめに">はじめに<a class="headerlink" href="#はじめに" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../document/sumo_at_a_glance/">SUMO交通流シミュレータ</a></li>
+<li><a href="../document/sumo_at_a_glance/">SUMO 交通流シミュレータ</a></li>
 </ul>
 <h2 id="基本的な使いかた">基本的な使いかた<a class="headerlink" href="#基本的な使いかた" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../document/basics_notation/">ドキュメントでの記法</a></li>
 <li><a href="../document/basics_basic_computer_skills/">必要な基本的コンピュータスキル</a></li>
-<li><a href="../document/install/">SUMOのインストール</a></li>
-<li><a href="../document/basics_using_the_command_line_applications/">コマンドラインアプリケーション</a></li>
+<li><a href="../document/install/">SUMO のインストール</a></li>
+<li><a href="document\basics_using_the_command_line_applications.md">コマンドラインアプリケーション</a></li>
 <li><a href="../document/tutrials/">チュートリアル</a></li>
 </ul>
 <h2 id="ネットワーク構築">ネットワーク構築<a class="headerlink" href="#ネットワーク構築" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[SUMO道路ネットワーク]の紹介</li>
+<li><a href="document/networks_sumo_road_networks.md">SUMO 道路ネットワーク</a>の紹介</li>
 <li><a href="../document/networks_abstract_network_generation/">抽象的ネットワーク構築</a></li>
 <li>[NETCONVERT]からのネットワークインポート<ul>
-<li>[XMLを用いたネットワーク定義]</li>
-<li>[SUMO以外のネットワークのインポート]<ul>
+<li>[XML を用いたネットワーク定義]</li>
+<li>[SUMO 以外のネットワークのインポート]<ul>
 <li>[OpenStreetMap]<ul>
-<li>[3クリックシナリオ生成]</li>
+<li>[3 クリックシナリオ生成]</li>
 </ul>
 </li>
 <li>[VISUM]</li>
@@ -921,20 +553,20 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 <li>[Robocup Simulation League]</li>
 </ul>
 </li>
-<li>[SUMOネットワークのインポート]</li>
+<li>[SUMO ネットワークのインポート]</li>
 <li>[車道シミュレーション用のネットワーク構築]</li>
 <li>[歩行者シミュレーション用のネットワーク構築]</li>
 <li>[より高度な NETCONVERT オプション]</li>
 <li>[追加出力]</li>
 </ul>
 </li>
-<li>[NETEDITを用いたネットワークの生成と編集]</li>
+<li>[NETEDIT を用いたネットワークの生成と編集]</li>
 <li><a href="../document/networks_elevation/">標高</a></li>
 <li><a href="../document/geo-coordinates/">地理情報</a></li>
 </ul>
-<h2 id="需要のモデリング">需要のモデリング<a class="headerlink" href="#需要のモデリング" title="Permanent link">&para;</a></h2>
+<h2 id="交通需要のモデリング">交通需要のモデリング<a class="headerlink" href="#交通需要のモデリング" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[SUMO需要モデリングの紹介]</li>
+<li>[SUMO 交通需要モデリングの紹介]</li>
 <li>[車両、車両タイプ、経路の定義]</li>
 <li>[公共交通のシミュレーション]</li>
 <li>[個人のシミュレーションと]</li>
@@ -946,11 +578,11 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 <li>[歩行者による交通需要の生成]</li>
 <li>[車列生成のための車両タイプ作成]</li>
 </ul>
-<p><strong>需要生成のためのデータソース</strong></p>
+<p><strong>交通需要生成のためのデータソース</strong></p>
 <ul>
-<li>[O/D行列のインポート]<ul>
-<li>[その他のVISUM需要のインポート]</li>
-<li>[その他のVissim需要のインポート]</li>
+<li>[O/D 行列のインポート]<ul>
+<li>[その他の VISUM 需要のインポート]</li>
+<li>[その他の Vissim 需要のインポート]</li>
 </ul>
 </li>
 <li>[目的地からの経路]</li>
@@ -962,9 +594,15 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 <h2 id="シミュレーション">シミュレーション<a class="headerlink" href="#シミュレーション" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../document/simulation_basic_definition/">基本的な定義</a></li>
+<li>[シミュレーション状態の保存と読み込み]</li>
+</ul>
+<h3 id="出力">出力<a class="headerlink" href="#出力" title="Permanent link">&para;</a></h3>
+<ul>
 <li>[シミュレーション出力]</li>
-<li>[TraCI (オンライン)]</li>
-<li>[シミュレーション状態の保存と読みこみ]</li>
+</ul>
+<h3 id="traci-オンライン操作">TraCI (オンライン操作)<a class="headerlink" href="#traci-オンライン操作" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../document/TraCI/">TraCI 概要</a></li>
 </ul>
 <h3 id="交通管理とその他の構造">交通管理とその他の構造<a class="headerlink" href="#交通管理とその他の構造" title="Permanent link">&para;</a></h3>
 <ul>
@@ -985,7 +623,7 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 </ul>
 <h3 id="追加的な特徴">追加的な特徴<a class="headerlink" href="#追加的な特徴" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[排気ガス]</li>
+<li><a href="../document/Models/Emissions/">排気ガス</a></li>
 <li>[電気自動車]</li>
 <li>[物流]</li>
 <li>[一般的なパラメータ]</li>
@@ -1019,15 +657,15 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 <ul>
 <li>[ツール索引]</li>
 </ul>
-<p>[メインアプリケーション(SUMO,SUMO-GUI,NETCONVERT ほか)]に加えて、150以上の補助ツールがあります。
+<p>[メインアプリケーション(SUMO,SUMO-GUI,NETCONVERT ほか)]に加えて、150 以上の補助ツールがあります。
 ツールは交通ネットワークの解析から、需要の生成、出力のための需要の整形までのトピックをカバーしています。
 これらのほとんどは<a href="https://www.python.org/">python</a>で書かれています。
-全てのツールがSUMOディストリビューション中の<code>&lt;SUMO_HOME&gt;</code>/toolsディレクトリにあります。</p>
+全てのツールが SUMO ディストリビューション中の<code>&lt;SUMO_HOME&gt;</code>/tools ディレクトリにあります。</p>
 <p>以下はいくつかの特に重要なツールへのリンクです。</p>
 <ul>
 <li>[osmWebWizard]</li>
-<li>[TraCI/pythonからTraCIを使う]</li>
-<li>[PythonでのSUMOネットワーク読みこみと出力(sumolib)]</li>
+<li>[TraCI/python から TraCI を使う]</li>
+<li>[Python での SUMO ネットワーク読みこみと出力(sumolib)]</li>
 <li>[モビリティトレースのエクスポート(traceExporter)]</li>
 <li>[二つのネットワークの違いの検知]</li>
 <li>[ツール/可視化]</li>
@@ -1062,8 +700,6 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 <li>[ファイル拡張子]</li>
 </ul>
                 
-                  
-                
               
               
                 
@@ -1079,34 +715,34 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href=".." title="トップ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+          <a href=".." title="トップ" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   前
                 </span>
                 トップ
-              </span>
+              </div>
             </div>
           </a>
         
         
-          <a href="../document/sumo_at_a_glance/" title="SUMO早分かり" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+          <a href="../download/" title="ダウンロード" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                SUMO早分かり
-              </span>
+                ダウンロード
+              </div>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -1117,11 +753,10 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
       </div>
       
     </div>
@@ -1130,26 +765,18 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
       
     </div>
     
-      <script src="../assets/javascripts/application.245445c6.js"></script>
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f"}</script>
       
-        
-        
-          
-          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
-          
-            
-              
-                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
-              
-            
-          
-          
-        
-      
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.9b3611bd.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
     
   </body>
