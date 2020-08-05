@@ -57,7 +57,7 @@ TraCI は[SUMO](document/SUMO.md)へのアクセスのために、TCP ベース�
   - [経路]
   - [PoI]
   - [ポリゴン]
-  - [バス停](Traci/BusStop.md)
+  - [バス停](TraCI/BusStop.md)
   - [交差点]
   - [節点]
   - [シミュレーション一般]
