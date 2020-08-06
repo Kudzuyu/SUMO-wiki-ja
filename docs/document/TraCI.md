@@ -61,7 +61,7 @@ TraCI は[SUMO](document/SUMO.md)へのアクセスのために、TCP ベース�
     - [交差点]
     - [節点]
     - [シミュレーション一般]
-    - [GUI]
+    - [GUI](TraCI/GUI_Value_Retrieval.md)
 * 状態の変化
     - [車線]
     - [交通信号]
