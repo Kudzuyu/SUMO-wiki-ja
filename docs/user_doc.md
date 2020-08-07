@@ -2,44 +2,45 @@
 
 [原文ページ](https://sumo.dlr.de/wiki/SUMO_User_Documentation)
 
-"**S**imulation of **U**rban **MO**bility" (Eclipse SUMO)は大規模な道路ネットワークを制御するためにつくられた、オープンソースでポータブルであり、微視的かつ連続的な道路交通シミュレーションパッケージです。
-SUMOは主に[German Aerospace Center(ドイツ航空宇宙局)](http://www.dlr.de/)にある[Institute of Transportation Systems(交通システム研究所)](http://www.dlr.de/ts)の職員によって開発されています。
-SUMOは[Eclipse Public License](https://eclipse.org/legal/epl-v20.html)の下でライセンスされています。
-"Eclipse SUMO"はEclipse Foundationのトレードマークです。
-SUMOを使う場合には、出版物を私達に知らせることで開発をサポートしてください。
+"**S**imulation of **U**rban **MO**bility" (SUMO)は，巨大な道路ネットワークを制御するようにデザインされた，オープンソースかつポータブルで，微視的な道路交通流シミュレーションパッケージです。
+SUMO は主に[German Aerospace Center(ドイツ航空宇宙局)](http://www.dlr.de/)にある[Institute of Transportation Systems(交通システム研究所)](http://www.dlr.de/ts)の職員によって開発されています。
+SUMO は[EPL](https://eclipse.org/legal/epl-v20.html)の下でライセンスされています。
+
+"Eclipse SUMO"は Eclipse Foundation のトレードマークです。
+SUMO を使う場合には、出版物を私達に知らせることで開発をサポートしてください。
 
 質問の結果を共有するために[メーリングリスト(英語)](https://sumo.dlr.de/wiki/Contact)をつかってください。
 一般的な質問の答えは[FAQ]でも見つかるかもしれません。
 
 !!! Note
-    一般にSUMOについて引用するときは、現在のレファレンス刊行物を使ってください。["Microscopic Traffic Simulation using SUMO"](https://elib.dlr.de/124092/); Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner. IEEE Intelligent Transportation Systems Conference (ITSC), 2018.
+    一般に SUMO について引用するときは、現在のレファレンス刊行物を使ってください。["Microscopic Traffic Simulation using SUMO"](https://elib.dlr.de/124092/); Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner. IEEE Intelligent Transportation Systems Conference (ITSC), 2018.
 
 ドキュメントの執筆や訂正、コードの登録や他の結果を含めどんな助力でも高く評価します。
 
 !!! info "訳注"
-    日本語版の翻訳を手伝ってくれる人は[このWikiのgithubページ](https://github.com/Kudzuyu/SUMO-wiki-ja)、英語版の本家を手伝いたい人は[本家Wikiの執筆者になる方法]を参照してください
+    日本語版の翻訳を手伝ってくれる人は[この Wiki の github ページ](https://github.com/Kudzuyu/SUMO-wiki-ja)、英語版の本家を手伝いたい人は[本家 Wiki の執筆者になる方法]を参照してください
 
 ## はじめに
 
-- [SUMO交通流シミュレータ](document/sumo_at_a_glance.md)
+- [SUMO 交通流シミュレータ](document/sumo_at_a_glance.md)
 
 ## 基本的な使いかた
 
 - [ドキュメントでの記法](document/basics_notation.md)
 - [必要な基本的コンピュータスキル](document/basics_basic_computer_skills.md)
-- [SUMOのインストール](document/install.md)
+- [SUMO のインストール](document/install.md)
 - [コマンドラインアプリケーション](document\basics_using_the_command_line_applications.md)
 - [チュートリアル](document/tutrials.md)
 
 ## ネットワーク構築
 
-* [SUMO道路ネットワーク]の紹介
+* [SUMO 道路ネットワーク](document/networks_sumo_road_networks.md)の紹介
 * [抽象的ネットワーク構築](document/networks_abstract_network_generation.md)
 * [NETCONVERT]からのネットワークインポート
-    - [XMLを用いたネットワーク定義]
-    - [SUMO以外のネットワークのインポート]
+    - [XML を用いたネットワーク定義]
+    - [SUMO 以外のネットワークのインポート]
         * [OpenStreetMap]
-            - [3クリックシナリオ生成]
+            - [3 クリックシナリオ生成]
         * [VISUM]
         * [Vissim]
         * [OpenDRIVE]
@@ -47,18 +48,18 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
         * [ArcView(シェープファイル)]
         * [DlrNavTeq]
         * [Robocup Simulation League]
-    - [SUMOネットワークのインポート]
+    - [SUMO ネットワークのインポート]
     - [車道シミュレーション用のネットワーク構築]
     - [歩行者シミュレーション用のネットワーク構築]
     - [より高度な NETCONVERT オプション]
     - [追加出力]
-* [NETEDITを用いたネットワークの生成と編集]
+* [NETEDIT を用いたネットワークの生成と編集]
 * [標高](document/networks_elevation.md)
 * [地理情報](document/geo-coordinates.md)
 
-## 需要のモデリング
+## 交通需要のモデリング
 
-* [SUMO需要モデリングの紹介]
+* [SUMO 交通需要モデリングの紹介]
 * [車両、車両タイプ、経路の定義]
 * [公共交通のシミュレーション]
 * [個人のシミュレーションと]
@@ -70,11 +71,11 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 * [歩行者による交通需要の生成]
 * [車列生成のための車両タイプ作成]
 
-**需要生成のためのデータソース**
+**交通需要生成のためのデータソース**
 
-* [O/D行列のインポート]
-    - [その他のVISUM需要のインポート]
-    - [その他のVissim需要のインポート]
+* [O/D 行列のインポート]
+    - [その他の VISUM 需要のインポート]
+    - [その他の Vissim 需要のインポート]
 * [目的地からの経路]
 * [右左折確率による経路選択]
 * [行動ベースの需要生成]
@@ -84,9 +85,15 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 ## シミュレーション
 
 * [基本的な定義](document/simulation_basic_definition.md)
+* [シミュレーション状態の保存と読み込み]
+
+### 出力
+
 * [シミュレーション出力]
-* [TraCI (オンライン)]
-* [シミュレーション状態の保存と読みこみ]
+
+### TraCI (オンライン操作)
+
+* [TraCI 概要](document/TraCI.md)
 
 ### 交通管理とその他の構造
 
@@ -105,9 +112,10 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 * [鉄道]
 * [水路]
 
+
 ### 追加的な特徴
 
-* [排気ガス]
+* [排気ガス](document/Models/Emissions.md)
 * [電気自動車]
 * [物流]
 * [一般的なパラメータ]
@@ -122,7 +130,7 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 * [車両の挿入]
 * [車両の権限]
 * [交差点のダイナミクス]
-* [ランダム性]
+* [ランダム性](document/Simulation/Randomness.md)
 * [(再)経路設定]
 * [サブレーンモデル]
 * [逆走]
@@ -142,16 +150,16 @@ SUMOを使う場合には、出版物を私達に知らせることで開発を�
 
 * [ツール索引]
 
-[メインアプリケーション(SUMO,SUMO-GUI,NETCONVERT ほか)]に加えて、150以上の補助ツールがあります。
+[メインアプリケーション(SUMO,SUMO-GUI,NETCONVERT ほか)]に加えて、150 以上の補助ツールがあります。
 ツールは交通ネットワークの解析から、需要の生成、出力のための需要の整形までのトピックをカバーしています。
 これらのほとんどは[python](https://www.python.org/)で書かれています。
-全てのツールがSUMOディストリビューション中の`<SUMO_HOME>`/toolsディレクトリにあります。
+全てのツールが SUMO ディストリビューション中の`<SUMO_HOME>`/tools ディレクトリにあります。
 
 以下はいくつかの特に重要なツールへのリンクです。
 
 * [osmWebWizard]
-* [TraCI/pythonからTraCIを使う]
-* [PythonでのSUMOネットワーク読みこみと出力(sumolib)]
+* [TraCI/python から TraCI を使う]
+* [Python での SUMO ネットワーク読みこみと出力(sumolib)]
 * [モビリティトレースのエクスポート(traceExporter)]
 * [二つのネットワークの違いの検知]
 * [ツール/可視化]
