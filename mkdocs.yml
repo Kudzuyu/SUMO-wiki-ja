@@ -39,8 +39,7 @@ markdown_extensions:
       slugify: !!python/name:pymdownx.slugs.uslugify
 
 nav:
-  - トップ: 'index.md'
-  - ドキュメント: 'user_doc.md'
+  - ドキュメント: 'index.md'
   - ダウンロード: 'download.md'
 
 extra_css:
