@@ -8,22 +8,22 @@
       
       
       
-        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/document/demand_modeling_intermodal_routing/">
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/document/TraCI/GUI_Value_Retrieval/">
       
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
     
     
       
-        <title>複数の交通手段を用いる経路設定 - SUMO wiki ja</title>
+        <title>TraCI/GUI 変数の取得 - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6910b76c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6910b76c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.196e0c26.min.css">
         
       
     
@@ -38,7 +38,7 @@
     
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
       <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#複数の交通手段を用いる経路設定" class="md-skip">
+        <a href="#tracigui-変数の取得" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -84,7 +84,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="../../img/MediaWikiSidebarLogo.png" alt="logo">
+  <img src="../../../img/MediaWikiSidebarLogo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -98,7 +98,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              複数の交通手段を用いる経路設定
+              TraCI/GUI 変数の取得
             
           </span>
         </div>
@@ -157,7 +157,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="../../img/MediaWikiSidebarLogo.png" alt="logo">
+  <img src="../../../img/MediaWikiSidebarLogo.png" alt="logo">
 
     </a>
     SUMO wiki ja
@@ -171,7 +171,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." class="md-nav__link">
+    <a href="../../.." class="md-nav__link">
       トップ
     </a>
   </li>
@@ -183,7 +183,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../user_doc/" class="md-nav__link">
+    <a href="../../../user_doc/" class="md-nav__link">
       ドキュメント
     </a>
   </li>
@@ -195,7 +195,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../download/" class="md-nav__link">
+    <a href="../../../download/" class="md-nav__link">
       ダウンロード
     </a>
   </li>
@@ -225,15 +225,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#基本設計" class="md-nav__link">
-    基本設計
+  <a href="#コマンド-0xac-gui-変数の取得" class="md-nav__link">
+    コマンド 0xac: GUI 変数の取得
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#レスポンス-0xbc-gui-の値" class="md-nav__link">
+    レスポンス 0xbc: GUI の値
   </a>
   
 </li>
@@ -251,12 +251,92 @@
               
                 
                 
-                <h1 id="複数の交通手段を用いる経路設定">複数の交通手段を用いる経路設定<a class="headerlink" href="#複数の交通手段を用いる経路設定" title="Permanent link">&para;</a></h1>
-<h2 id="基本設計">基本設計<a class="headerlink" href="#基本設計" title="Permanent link">&para;</a></h2>
-<p>人々には交通手段が複数あります．を持っています。
-今のところは、歩行(これは常に可能と仮定します)、公共交通の使用そして自家用車といった方法があります。
-複数の交通手段を用いる経路設定は交通手段の変化を含めた人の移動を定義するために<a href="">歩行者の移動</a>を使用します。</p>
-<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="tracigui-変数の取得">TraCI/GUI 変数の取得<a class="headerlink" href="#tracigui-変数の取得" title="Permanent link">&para;</a></h1>
+<p><a href="https://sumo.dlr.de/docs/TraCI/GUI_Value_Retrieval.html">原文</a></p>
+<h2 id="コマンド-0xac-gui-変数の取得">コマンド 0xac: GUI 変数の取得<a class="headerlink" href="#コマンド-0xac-gui-変数の取得" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ubyte</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>変数</td>
+<td>View ID</td>
+</tr>
+</tbody>
+</table>
+<p>GUI の変数の値を取得します。
+View ID は"View #0"のような形をとり、最後の桁が GUI シミュレーションとして開かれている(サブ)ウィンドウの数をカウントします。
+id はビューのサブウィンドウが非最大化されたときにビューのタイトルバーに表示されます(これは<a href="">新規ビューを開く</a>ときにも自動的に行なわれます)。</p>
+<div style="text-align: center; font-weight: bold">
+GUI 変数取得の概要
+</div>
+
+<table>
+<thead>
+<tr>
+<th>変数</th>
+<th>型</th>
+<th>説明</th>
+<th>[Python メソッド]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zoom (0xa0)</td>
+<td>double</td>
+<td>現在のズームレベル(%)</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-getZoom">getZoom</a></td>
+</tr>
+<tr>
+<td>offset (id 0xa1)</td>
+<td>2D-position</td>
+<td>現在見える範囲の中心座標のネットワーク中の位置</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-getOffset">getOffset</a></td>
+</tr>
+<tr>
+<td>schema (id 0xa2)</td>
+<td>string</td>
+<td>使用中の可視化方法(例: "standard"や"real world")</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-getSchema">getSchema</a></td>
+</tr>
+<tr>
+<td>boundary (id 0xa3)</td>
+<td>2D-polygon</td>
+<td>見えているネットワークの左下および右上</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-getBoundary">getBoundary</a></td>
+</tr>
+<tr>
+<td>has view (id 0xa7)</td>
+<td>bool</td>
+<td>与えられた ID が見えるか</td>
+<td>[hasView](https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-hasView**</td>
+</tr>
+</tbody>
+</table>
+<h2 id="レスポンス-0xbc-gui-の値">レスポンス 0xbc: GUI の値<a class="headerlink" href="#レスポンス-0xbc-gui-の値" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ubyte</th>
+<th>string</th>
+<th>ubyte</th>
+<th><return_type></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>変数</td>
+<td>ビューの ID</td>
+<td>変数の型</td>
+<td><VARIABLE_VALUE></td>
+</tr>
+</tbody>
+</table>
+<p><strong>"GUI 変数取得コマンド"</strong>への対応になります。</p>
                 
               
               
@@ -288,15 +368,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.fd16492e.min.js"></script>
-      <script src="../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
+          base: "../../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

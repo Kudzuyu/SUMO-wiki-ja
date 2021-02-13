@@ -8,22 +8,22 @@
       
       
       
-        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/document/demand_modeling_intermodal_routing/">
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/document/TraCI/Lane_Value_Retrieval/">
       
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
     
     
       
-        <title>複数の交通手段を用いる経路設定 - SUMO wiki ja</title>
+        <title>TraCI/車線に関する値の取得 - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6910b76c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6910b76c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.196e0c26.min.css">
         
       
     
@@ -38,7 +38,7 @@
     
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
       <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#複数の交通手段を用いる経路設定" class="md-skip">
+        <a href="#traci車線に関する値の取得" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -84,7 +84,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="../../img/MediaWikiSidebarLogo.png" alt="logo">
+  <img src="../../../img/MediaWikiSidebarLogo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -98,7 +98,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              複数の交通手段を用いる経路設定
+              TraCI/車線に関する値の取得
             
           </span>
         </div>
@@ -157,7 +157,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="../../img/MediaWikiSidebarLogo.png" alt="logo">
+  <img src="../../../img/MediaWikiSidebarLogo.png" alt="logo">
 
     </a>
     SUMO wiki ja
@@ -171,7 +171,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." class="md-nav__link">
+    <a href="../../.." class="md-nav__link">
       トップ
     </a>
   </li>
@@ -183,7 +183,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../user_doc/" class="md-nav__link">
+    <a href="../../../user_doc/" class="md-nav__link">
       ドキュメント
     </a>
   </li>
@@ -195,7 +195,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../download/" class="md-nav__link">
+    <a href="../../../download/" class="md-nav__link">
       ダウンロード
     </a>
   </li>
@@ -225,15 +225,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#基本設計" class="md-nav__link">
-    基本設計
+  <a href="#コマンド-0xa3-車線変数の取得" class="md-nav__link">
+    コマンド 0xa3: 車線変数の取得
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#response-0xb3-車線変数" class="md-nav__link">
+    Response 0xb3: 車線変数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#拡張取得メッセージ" class="md-nav__link">
+    拡張取得メッセージ
   </a>
   
 </li>
@@ -251,12 +258,237 @@
               
                 
                 
-                <h1 id="複数の交通手段を用いる経路設定">複数の交通手段を用いる経路設定<a class="headerlink" href="#複数の交通手段を用いる経路設定" title="Permanent link">&para;</a></h1>
-<h2 id="基本設計">基本設計<a class="headerlink" href="#基本設計" title="Permanent link">&para;</a></h2>
-<p>人々には交通手段が複数あります．を持っています。
-今のところは、歩行(これは常に可能と仮定します)、公共交通の使用そして自家用車といった方法があります。
-複数の交通手段を用いる経路設定は交通手段の変化を含めた人の移動を定義するために<a href="">歩行者の移動</a>を使用します。</p>
-<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="traci車線に関する値の取得">TraCI/車線に関する値の取得<a class="headerlink" href="#traci車線に関する値の取得" title="Permanent link">&para;</a></h1>
+<h2 id="コマンド-0xa3-車線変数の取得">コマンド 0xa3: 車線変数の取得<a class="headerlink" href="#コマンド-0xa3-車線変数の取得" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ubyte</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>変数</td>
+<td>Lane ID</td>
+</tr>
+</tbody>
+</table>
+<p>名前の着いた車線に関する値を取得します。
+以下の変数の値を取得することができます。
+返り値の型も表内に示されています。</p>
+<div style="text-align: center; font-weight: bold">
+車線変数取得の概要
+</div>
+
+<table>
+<thead>
+<tr>
+<th>変数</th>
+<th>型</th>
+<th>説明</th>
+<th>[Python メソッド]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id list (0x00)</td>
+<td>stringList</td>
+<td>シナリオ中の全車線の ID リスト (与えられた車線 ID は無視される)</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._lane.html#LaneDomain-getIDList">getIDList</a></td>
+</tr>
+<tr>
+<td>count (0x01)</td>
+<td>int</td>
+<td>シナリオ中の全車線の数 (与えられた車線 ID は無視される)</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._lane.html#LaneDomain-getIDCount">getIDCount</a></td>
+</tr>
+<tr>
+<td>link number (0x30)</td>
+<td>ubyte</td>
+<td>車線から流出するリンクの数 [#]</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._lane.html#LaneDomain-getLinkNumber">getLinkNumber</a></td>
+</tr>
+<tr>
+<td>edge id (0x31)</td>
+<td>string</td>
+<td></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._lane.html#LaneDomain-getEdgeID">getEdgeID</a></td>
+</tr>
+<tr>
+<td>links (0x33)</td>
+<td>compound</td>
+<td></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._lane.html#LaneDomain-getLinks">getLinks</a></td>
+</tr>
+<tr>
+<td>allowed vehicle classes (0x34)</td>
+<td>stringList</td>
+<td></td>
+<td><a href="">getAllowed</a></td>
+</tr>
+<tr>
+<td>disallowed vehicle classes (0x35)</td>
+<td>stringList</td>
+<td></td>
+<td><a href="">getDisallowed</a></td>
+</tr>
+<tr>
+<td>length (0x44)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getLength</a></td>
+</tr>
+<tr>
+<td>vmax (0x41)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getMaxSpeed</a></td>
+</tr>
+<tr>
+<td>shape(0x4e)</td>
+<td>shape</td>
+<td></td>
+<td><a href="">getShape</a></td>
+</tr>
+<tr>
+<td>width (0x4d)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getWidth</a></td>
+</tr>
+<tr>
+<td>CO2 emissions (id 0x60)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getCO2Emission</a></td>
+</tr>
+<tr>
+<td>CO emissions (id 0x61)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getCOEmission</a></td>
+</tr>
+<tr>
+<td>HC emissions (id 0x62)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getHCEmission</a></td>
+</tr>
+<tr>
+<td>PMx emissions (id 0x63)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getPMxEmission</a></td>
+</tr>
+<tr>
+<td>NOx emissions (id 0x64)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getNOxEmission</a></td>
+</tr>
+<tr>
+<td>fuel consumption (id 0x65)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getFuelConsumption</a></td>
+</tr>
+<tr>
+<td>noise emission (id 0x66)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getNoiseEmission</a></td>
+</tr>
+<tr>
+<td>electricity consumption (id 0x71)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-0xb3-車線変数">Response 0xb3: 車線変数<a class="headerlink" href="#response-0xb3-車線変数" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ubyte</th>
+<th>string</th>
+<th>ubyte</th>
+<th><return_type></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>変数</td>
+<td>車線 ID</td>
+<td>変数の型</td>
+<td><VARIABLE_VALUE></td>
+</tr>
+</tbody>
+</table>
+<p><strong>"車線変数取得コマンド"</strong>への応答。</p>
+<h2 id="拡張取得メッセージ">拡張取得メッセージ<a class="headerlink" href="#拡張取得メッセージ" title="Permanent link">&para;</a></h2>
+<p>より進んだメッセージについては，追加でパラメータが必要になります。</p>
+<div style="text-align: center; font-weight: bold">
+車線変数取得の概要
+</div>
+
+<table>
+<thead>
+<tr>
+<th>変数</th>
+<th>リクエストの型</th>
+<th>応答の型</th>
+<th>説明</th>
+<th>[Python メソッド]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foes (0x37)</td>
+<td>toLane (string)</td>
+<td>stringVector</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
                 
               
               
@@ -288,15 +520,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.fd16492e.min.js"></script>
-      <script src="../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
+          base: "../../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

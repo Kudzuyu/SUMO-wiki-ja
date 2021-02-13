@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="ja" class="no-js">
   <head>
@@ -9,25 +7,30 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/document/simulation_randomness/">
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/document/Simulation/Randomness/">
       
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
     
     
       
-        <title>ランダム性 - SUMO wiki ja</title>
+        <title>Simulation/ランダム性 - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6910b76c.min.css">
       
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.196e0c26.min.css">
+        
       
     
     
     
       
+        
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -35,7 +38,7 @@
     
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
       <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
     
@@ -44,7 +47,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140953050-1","kudzuyu.github.io/SUMO-wiki-ja"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140953050-1","kudzuyu.github.io/SUMO-wiki-ja"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -52,16 +55,21 @@
   </head>
   
   
-    <body dir="ltr">
-  
     
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
         
-        <a href="#ランダム性" class="md-skip">
+        <a href="#simulationランダム性" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -70,11 +78,13 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="../../img/MediaWikiSidebarLogo.png" alt="logo">
+  <img src="../../../img/MediaWikiSidebarLogo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -88,7 +98,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              ランダム性
+              Simulation/ランダム性
             
           </span>
         </div>
@@ -103,7 +113,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -131,8 +141,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -143,11 +151,13 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="../../img/MediaWikiSidebarLogo.png" alt="logo">
+  <img src="../../../img/MediaWikiSidebarLogo.png" alt="logo">
 
     </a>
     SUMO wiki ja
@@ -161,7 +171,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="トップ" class="md-nav__link">
+    <a href="../../.." class="md-nav__link">
       トップ
     </a>
   </li>
@@ -173,7 +183,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../user_doc/" title="ドキュメント" class="md-nav__link">
+    <a href="../../../user_doc/" class="md-nav__link">
       ドキュメント
     </a>
   </li>
@@ -185,7 +195,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../download/" title="ダウンロード" class="md-nav__link">
+    <a href="../../../download/" class="md-nav__link">
       ダウンロード
     </a>
   </li>
@@ -209,9 +219,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       目次
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -224,15 +232,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#車両タイプと経路分布" class="md-nav__link">
-    車両タイプと経路分布
+  <a href="#経路分布" class="md-nav__link">
+    経路分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#車両タイプ分布" class="md-nav__link">
+    車両タイプ分布
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#速度分布" class="md-nav__link">
-    [速度分布]
+    速度分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#車両の追従" class="md-nav__link">
+    車両の追従
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#出発時間" class="md-nav__link">
+    出発時間
   </a>
   
 </li>
@@ -259,8 +288,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ランダム性に関する情報" class="md-nav__link">
-    ランダム性に関する情報
+  <a href="#ランダム性に関する補足情報" class="md-nav__link">
+    ランダム性に関する補足情報
   </a>
   
 </li>
@@ -278,19 +307,16 @@
               
                 
                 
-                  
-                
-                
-                <h1 id="ランダム性">ランダム性<a class="headerlink" href="#ランダム性" title="Permanent link">&para;</a></h1>
-<p>偶然性はシミュレーションのシナリオ中で現実を再現する上で重要です。
+                <h1 id="simulationランダム性">Simulation/ランダム性<a class="headerlink" href="#simulationランダム性" title="Permanent link">&para;</a></h1>
+<p>確率性はシミュレーションのシナリオ中で現実を再現する上で重要な側面です。
 シミュレーションに偶然性を与える方法はいくつかあり、以下で解説します。</p>
 <h2 id="乱数生成random-number-generationrng">乱数生成(Random Number Generation:RNG)<a class="headerlink" href="#乱数生成random-number-generationrng" title="Permanent link">&para;</a></h2>
-<p>SUMOは乱数生成に<a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%AB%E3%82%BB%E3%83%B3%E3%83%8C%E3%83%BB%E3%83%84%E3%82%A4%E3%82%B9%E3%82%BF">メルセンヌツイスター</a>アルゴリズムを実装しています。
-この乱数生成器(RNG)は(任意の)seed値で初期化され、デフォルトでは<strong>23423</strong>です。
+<p>SUMO は乱数生成に<a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%AB%E3%82%BB%E3%83%B3%E3%83%8C%E3%83%BB%E3%83%84%E3%82%A4%E3%82%B9%E3%82%BF">メルセンヌツイスター</a>アルゴリズムを実装しています。
+この乱数生成器(RNG)は(任意の)seed 値で初期化され、デフォルトでは<strong>23423*<em>です。
 固定シード値からは同じ乱数列が出現するので、この設定によって全てのアプリケーションは決定論的に動くことになります。
-シード値は<strong>--seed<a href="../basics_notation/#データタイプ"><code>&lt;INT&gt;</code></a></strong>によって変更することができます。
-<strong>--random</strong>を使うとシード値は現在のシステム時刻を使うようになり、完全にランダムな結果になります。</p>
-<p>シミュレーションの異なる側面を分離するために、複数のRNGインスタンスが使われています。</p>
+シード値は<strong>--seed<a href="basics_notation.md#データタイプ"><code>&lt;INT&gt;</code></a></strong>によって変更することができます。
+**--random</em></strong>を使うとシード値は現在のシステム時刻を使うようになり、完全にランダムな結果になります。</p>
+<p>シミュレーションの異なる側面を分離するために、複数の RNG インスタンスが使われています。</p>
 <ul>
 <li>車両読みこみ時のランダム性(車両タイプの分布、速度の分散...)</li>
 <li>確率的交通流</li>
@@ -298,15 +324,28 @@
 <li>車両デバイス</li>
 </ul>
 <p>分離は読みこまれた車両がその前の車両に影響を及ぼさないように行なわれます。
-全てのRNGが同じシード値を使います。</p>
-<h2 id="車両タイプと経路分布">車両タイプと経路分布<a class="headerlink" href="#車両タイプと経路分布" title="Permanent link">&para;</a></h2>
-<p>車両のふるまいを動的に変更する最も簡単な方法は、読みこみ時に経路を確率分布に従って決めることです。
-車両タイプ/経路はそれぞれ決められた確率に従って陽に与えられます。
-詳細は[経路と車両タイプの確率分布]を参照してください。
-これはきめのこまかい結果の制御を生む一方で、例えば車の全長を5m～7mの一葉分布によって選ぶといったモデルを作ることを難しくします。</p>
-<h2 id="速度分布">[速度分布]<a class="headerlink" href="#速度分布" title="Permanent link">&para;</a></h2>
-<p>デフォルトでは、SUMOの車両は通行する車線に決められた最高速度と密接しています(その車両タイプの最高速度が許す限り)。
-こうした振舞いは<code>&lt;vType&gt;</code>-属性の<code>speedFactor</code>で変更することができます。</p>
+全ての RNG が同じシード値を使います。</p>
+<h2 id="経路分布">経路分布<a class="headerlink" href="#経路分布" title="Permanent link">&para;</a></h2>
+<p>車両はシミュレーションにおいて、固定経路(<code>&lt;vehicle&gt;</code>)を用いるか、Origin-Destination 対(<code>&lt;trip&gt;</code>)で生成できます。
+三番目の方法として、経路集合(<code>&lt;routeDistribution&gt;</code>)を指定して車両が分布に従ってランダムな経路をとるようにできます。
+詳細は[経路分布]を参照してください。</p>
+<h2 id="車両タイプ分布">車両タイプ分布<a class="headerlink" href="#車両タイプ分布" title="Permanent link">&para;</a></h2>
+<p><code>&lt;vTypeDistribution&gt;</code>を定義することで、不均一な車群を簡単にモデリングすることができ、車両は自らのタイプをこの分布に従ってランダムに選ぶようになります。
+詳細は[車両タイプ分布]を参照してください。</p>
+<h2 id="速度分布">速度分布<a class="headerlink" href="#速度分布" title="Permanent link">&para;</a></h2>
+<p>デフォルトでは、SUMO の車両は通行する車線に決められた最高速度まで加速します(その車両タイプの最高速度が許す限り**。
+こうした振舞いは<code>&lt;vType&gt;</code>要素の<code>speedFactor</code>属性で変更することができ、車両は現在の速度制限に対してこの因子に慕はって動きます。
+この属性では、オプションにカットオフを含む通常の確率分布を指定することもできます。
+乱数は車両の生成時に一度だけ選ばれます。
+速度が不均一な混合車両群を生成する方法として、速度の分散を用いることが推奨されています。
+詳細は[速度分布]を参照してください。</p>
+<h2 id="車両の追従">車両の追従<a class="headerlink" href="#車両の追従" title="Permanent link">&para;</a></h2>
+<p>デフォルトの[Krauss 追従モデル]は<code>vType</code>の<code>sigma</code>属性(デフォルト: 0.5)を用いた確率的な運転行動をサポートしています。
+この値が 0 以外の時、運転者は上記の RNG を基に車両の速度をランダムに変化させます。
+その他の車両追従モデルでも、この属性を用います。</p>
+<h2 id="出発時間">出発時間<a class="headerlink" href="#出発時間" title="Permanent link">&para;</a></h2>
+<p>車両ごとの出発時間は<strong>--random-depart-offset</strong><a href="intlink"><TIME></a>でランダムに分散させることができます。
+このオプションを仕様した場合、個々の車両にはランダムな[0, <a href="intlink"><TIME></a>]の分布に等しいオフセットが指定されます。</p>
 <h2 id="車両数固定の交通流">車両数固定の交通流<a class="headerlink" href="#車両数固定の交通流" title="Permanent link">&para;</a></h2>
 <p>[DUAROUTER]、[DFROUTER]、[JTRROUTER]、これらのアプリケーションは<strong>--randomize-flows</strong>オプションをサポートしています。
 このオプションが使用されると、<code>&lt;flow&gt;</code>要素で定義された車両はフロー中のインターバルごとに等確率で出発時間が割り当てられます(デフォルトでは車両のフローは丁度よく時間を空けて生成されます)。</p>
@@ -314,14 +353,20 @@
 <p>[DUAROUTER]と[SUMO]はどちらも<code>probability</code>属性を持つ<code>&lt;flow&gt;</code>要素の読みこみをサポートしています。
 この属性が使用されると(<code>vehsPerHour,number</code>または<code>period</code>のかわりに)、毎秒ごとに決められた確率でランダムに車両が放出されます。
 この結果は<a href="https://ja.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%88%86%E5%B8%83">二項分布</a>に従います(小さな確率のもとでは、これはポアソン分布の近似になります)。
-こうした交通流を2車線以上の道路でモデル化する場合、個々の車線に対して<code>&lt;flow&gt;</code>を設定することが推奨されています。</p>
+こうした交通流を 2 車線以上の道路でモデル化する場合、個々の車線に対して<code>&lt;flow&gt;</code>を設定することが推奨されています。</p>
+<div class="admonition note">
+<p class="admonition-title">注</p>
+<p>交通流の効果はステップ長が小さい時に大きくなります。
+これは、離散化誤差が減少するからです。
+(車両は一般的に、安全性制約から毎秒ごとに挿入することができず 2 秒ごとに生成する場合は最大交通流を達成できないためです)。</p>
+</div>
 <h2 id="出発と到着の属性">出発と到着の属性<a class="headerlink" href="#出発と到着の属性" title="Permanent link">&para;</a></h2>
 <p><code>&lt;flow&gt;</code>,<code>&lt;trip&gt;</code>,<code>&lt;vehicle&gt;</code>の要素は属性<code>departLane</code>,<code>departPos</code>,<code>departSpeed</code>,<code>arrivalPos</code>の値に"random"を入れることができます。
 値は挿入試行時(出発(depart)属性の場合)ごとか、到着時の値を再検証する必要があるとき(例: 経路の再選択後)にランダムに選ばれます。</p>
-<h2 id="ランダム性に関する情報">ランダム性に関する情報<a class="headerlink" href="#ランダム性に関する情報" title="Permanent link">&para;</a></h2>
+<h2 id="ランダム性に関する補足情報">ランダム性に関する補足情報<a class="headerlink" href="#ランダム性に関する補足情報" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="">randomTrips.py</a> を使うことで、交通流をランダムな道路上に生成できるようになります。これはまた、到着確率をランダムにする機能もサポートしています。</li>
-<li><a href="">OD2TRIPS</a> はO/D行列から個々の移動を表現するときにランダム性を付加します。</li>
+<li><a href="">OD2TRIPS</a> は O/D 行列から個々の移動を表現するときにランダム性を付加します。</li>
 <li><a href="">DUAROUTER</a> は<a href="">動的ユーザー割り当て</a>時にランダム性を付加します。</li>
 <li><a href="">経路選択をランダムにできる</a>ことは、代替経路が使用されることを保証します。</li>
 </ul>
@@ -356,15 +401,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f"}</script>
+      <script src="../../../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
+          base: "../../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.9b3611bd.min.js"
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
