@@ -25,6 +25,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
       
     
     
@@ -60,7 +64,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
       
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -84,7 +88,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="../../img/MediaWikiSidebarLogo.png" alt="logo">
+  <img src="../../img/sumo-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -143,6 +147,30 @@
       
       
         
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+    
+      
+    
+    <a href="../.." class="md-tabs__link md-tabs__link--active">
+      ドキュメント
+    </a>
+  </li>
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -157,7 +185,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="../../img/MediaWikiSidebarLogo.png" alt="logo">
+  <img src="../../img/sumo-logo.png" alt="logo">
 
     </a>
     SUMO wiki ja
@@ -172,18 +200,6 @@
 
   <li class="md-nav__item">
     <a href="../.." class="md-nav__link">
-      トップ
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../user_doc/" class="md-nav__link">
       ドキュメント
     </a>
   </li>
@@ -288,11 +304,6 @@
                 
                 <h1 id="sumo早分かり">SUMO早分かり<a class="headerlink" href="#sumo早分かり" title="Permanent link">&para;</a></h1>
 <p><a href="https://sumo.dlr.de/wiki/Sumo_at_a_Glance">原文ページ</a></p>
-<div class="admonition caution">
-<p class="admonition-title">警告</p>
-<p>このページは翻訳が完了していません。
-利用の際は十分に注意し、原文ページを参照することを忘れないでください。</p>
-</div>
 <h2 id="sumoについて">SUMOについて<a class="headerlink" href="#sumoについて" title="Permanent link">&para;</a></h2>
 <p>"<strong>S</strong>imulation of <strong>U</strong>rban <strong>MO</strong>bility" または"SUMO"は、オープンソースで微視的かつマルチモーダルな道路交通シミュレーションです。
 SUMOは与えられた道路ネットワークにおいて車一台ごとの動きから構成された交通流がどのようなものかシミュレーションすることができます。
@@ -422,32 +433,11 @@ SUMOは純粋に微視的です。
 <p>いくつかのグループが彼らの仕事の一環としてSUMOパッケージを拡張しコードを申請しています。
 これらのリリースの一部ではない場合、こうした貢献はしばしばあまりテストされておらず、古くなっているでしょう。
 以下の貢献が含まれます。</p>
-<table>
-<thead>
-<tr>
-<th>アプリケーション</th>
-<th>簡単な説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://de.mathworks.com/matlabcentral/fileexchange/44805-traci4matlab">TraCI4Matlab</a></td>
-<td>TraCIを使ったMatlabインターフェース(Andres Acosta)</td>
-</tr>
-<tr>
-<td><a href="">TraaS</a></td>
-<td>TraCIを使ったSOAP(ウェブサービス)インターフェース(Mario Krumnow)。Java TraCIクライアントライブラリでもある</td>
-</tr>
-<tr>
-<td><a href="">LiSuM</a></td>
-<td>LiSuMは<a href="">LISA+</a>とSUMOのミドルウェアであり、SUMOを通して現実世界の交通制御ソフトウェアを起動する。</td>
-</tr>
-</tbody>
-</table>
 <h2 id="歴史">歴史<a class="headerlink" href="#歴史" title="Permanent link">&para;</a></h2>
 <p>SUMOの開発は2000年にスタートしました。
-オープンソースの微視的道路交通シミュレーションを開発した主な理由は、交通研究コミュニティを自分たちのアルゴリズムを実装して評価できる道具でサポートするためです。</p>
-<p>そうしたツールを提供することで、DLRは (i)共通する基盤とモデルベースを用いて、実装されたアルゴリズムが比較しやすいように (ii)ほかのコントリビュータへの追加的な助けられる という二つがなされることを願っています。</p>
+オープンソースの微視的道路交通シミュレーションを開発した主な理由は、交通研究コミュニティを自分たちのアルゴリズムを実装して評価できる道具でサポートするためです。
+ツールは道路ネットワークや交通需要、交通制御の実装を追加で必要とせず、それだけで完全な交通シミュレーションが可能です。
+こうしたツールを提供することで、DLRは (i)共通する基盤とモデルベースを用いて、実装されたアルゴリズムが比較しやすいように (ii)ほかのコントリビュータへの追加的な助けられる という二つがなされることを願っています。</p>
 <h2 id="ソフトウェアデザイン原則">ソフトウェアデザイン原則<a class="headerlink" href="#ソフトウェアデザイン原則" title="Permanent link">&para;</a></h2>
 <p>二つの主なデザインゴールが目標でした: ソフトウェアは高速でかつポータブルである。
 この目的のため、最初期のソフトはコマンドラインからのみ動くように開発されていました。グラフィカルインターフェースはなく、全てのパラメータは手作業で設定する必要がありました。</p>
@@ -466,12 +456,12 @@ SUMOは純粋に微視的です。
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td><img alt="" src="../../img/contributor/Zaik_small.gif" /></td>
 <td>Christian Rössel</td>
 <td>初期の微小シミュレーションのコア、初期の検知器の実装</td>
 </tr>
 <tr>
-<td></td>
+<td><img alt="" src="../../img/contributor/Dlr_small.gif" /></td>
 <td>Peter Wagner</td>
 <td>モデル、組織、精神的指導者</td>
 </tr>
@@ -487,7 +477,47 @@ SUMOは純粋に微視的です。
 </tr>
 <tr>
 <td></td>
+<td>Eric Nicolay</td>
+<td>全般</td>
+</tr>
+<tr>
 <td></td>
+<td>Michale Behrisch</td>
+<td>全般</td>
+</tr>
+<tr>
+<td></td>
+<td>Yun-Pang Wang</td>
+<td>ユーザー割り当て</td>
+</tr>
+<tr>
+<td></td>
+<td>Danilot Teta Boyom</td>
+<td>車両通信モデル(ソースからは削除)</td>
+</tr>
+<tr>
+<td></td>
+<td>Sascha Krieg</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Lena Kalleske</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Laura Bieker</td>
+<td>テスト、 Pythonスクリプト</td>
+</tr>
+<tr>
+<td></td>
+<td>Jakob Erdmann</td>
+<td>ネットワークインポート、[netedit]</td>
+</tr>
+<tr>
+<td></td>
+<td>Andreas GAubats</td>
 <td></td>
 </tr>
 </tbody>
@@ -529,7 +559,7 @@ SUMOは純粋に微視的です。
       <script>
         app = initialize({
           base: "../..",
-          features: [],
+          features: ['navigation.tabs'],
           search: Object.assign({
             worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)

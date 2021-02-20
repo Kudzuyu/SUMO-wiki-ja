@@ -25,6 +25,10 @@
         
         <link rel="stylesheet" href="assets/stylesheets/palette.196e0c26.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
       
     
     
@@ -60,7 +64,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
       
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -69,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simulation-of-urban-mobilitysumo日本語wiki" class="md-skip">
+        <a href="#sumo-ユーザードキュメント" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -84,7 +88,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="img/MediaWikiSidebarLogo.png" alt="logo">
+  <img src="img/sumo-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -98,7 +102,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              トップ
+              ドキュメント
             
           </span>
         </div>
@@ -143,6 +147,30 @@
       
       
         
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+    
+      
+    
+    <a href="." class="md-tabs__link md-tabs__link--active">
+      ドキュメント
+    </a>
+  </li>
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -157,7 +185,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="img/MediaWikiSidebarLogo.png" alt="logo">
+  <img src="img/sumo-logo.png" alt="logo">
 
     </a>
     SUMO wiki ja
@@ -179,22 +207,150 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ドキュメント
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="." class="md-nav__link md-nav__link--active">
-      トップ
-    </a>
-    
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="user_doc/" class="md-nav__link">
       ドキュメント
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#はじめに" class="md-nav__link">
+    はじめに
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#基本的な使いかた" class="md-nav__link">
+    基本的な使いかた
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ネットワーク構築" class="md-nav__link">
+    ネットワーク構築
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#交通需要のモデリング" class="md-nav__link">
+    交通需要のモデリング
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#シミュレーション" class="md-nav__link">
+    シミュレーション
+  </a>
+  
+    <nav class="md-nav" aria-label="シミュレーション">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#出力" class="md-nav__link">
+    出力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traci-オンライン操作" class="md-nav__link">
+    TraCI (オンライン操作)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#交通管理とその他の構造" class="md-nav__link">
+    交通管理とその他の構造
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#交通の種類" class="md-nav__link">
+    交通の種類
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#追加的な特徴" class="md-nav__link">
+    追加的な特徴
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#モデル詳細" class="md-nav__link">
+    モデル詳細
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#よくある問題" class="md-nav__link">
+    よくある問題
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#補助ツール" class="md-nav__link">
+    [補助ツール]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#理論" class="md-nav__link">
+    理論
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#アプリケーションマニュアル" class="md-nav__link">
+    アプリケーションマニュアル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#付録" class="md-nav__link">
+    付録
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -227,6 +383,132 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#はじめに" class="md-nav__link">
+    はじめに
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#基本的な使いかた" class="md-nav__link">
+    基本的な使いかた
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ネットワーク構築" class="md-nav__link">
+    ネットワーク構築
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#交通需要のモデリング" class="md-nav__link">
+    交通需要のモデリング
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#シミュレーション" class="md-nav__link">
+    シミュレーション
+  </a>
+  
+    <nav class="md-nav" aria-label="シミュレーション">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#出力" class="md-nav__link">
+    出力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traci-オンライン操作" class="md-nav__link">
+    TraCI (オンライン操作)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#交通管理とその他の構造" class="md-nav__link">
+    交通管理とその他の構造
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#交通の種類" class="md-nav__link">
+    交通の種類
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#追加的な特徴" class="md-nav__link">
+    追加的な特徴
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#モデル詳細" class="md-nav__link">
+    モデル詳細
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#よくある問題" class="md-nav__link">
+    よくある問題
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#補助ツール" class="md-nav__link">
+    [補助ツール]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#理論" class="md-nav__link">
+    理論
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#アプリケーションマニュアル" class="md-nav__link">
+    アプリケーションマニュアル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#付録" class="md-nav__link">
+    付録
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -238,25 +520,211 @@
               
                 
                 
-                <h1 id="simulation-of-urban-mobilitysumo日本語wiki">Simulation of Urban MObility(SUMO)日本語Wiki<a class="headerlink" href="#simulation-of-urban-mobilitysumo日本語wiki" title="Permanent link">&para;</a></h1>
-<p><a href="https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki">原文ページ(English Wiki)</a></p>
+                <h1 id="sumo-ユーザードキュメント">SUMO ユーザードキュメント<a class="headerlink" href="#sumo-ユーザードキュメント" title="Permanent link">&para;</a></h1>
 <p>このページは交通流シミュレータ<a href="https://sumo.dlr.de/index.html">SUMO</a>の日本語Wikiです。本家<a href="https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki">英語版Wiki</a>の内容を翻訳しています。</p>
-<div class="admonition note">
-<p class="admonition-title">お知らせ</p>
-<p><img alt="" src="img/50px-MediaWikiSidebarLogo.png#right" />
-<a href="http://sumo.dlr.de/2019/">SUMO User Conference 2020</a>が2020年5月11日～13日にベルリンで開かれます</p>
-</div>
-<p>"<strong>S</strong>imulation of <strong>U</strong>rban <strong>MO</strong>bility" (Eclipse SUMO)は大規模な道路ネットワークを制御するためにつくられた、オープンソースでポータブルであり、微視的かつ継続的な道路交通シミュレーションパッケージです。
-SUMOは<a href="https://eclipse.org/legal/epl-v20.html">Eclipse Public License</a>の下でライセンスされています。"Eclipse SUMO"はEclipse Foundationのトレードマークです。SUMOを使う場合には、出版物を私達に知らせることで開発をサポートしてください。</p>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
 <p>このドキュメントは現在翻訳中であり、リンクが繋がっていなかったり、記事が不完全な場所を多く含んでいます。
 正確な情報は原文ページを参照してください。</p>
-</div>
 <p>このドキュメントは<a href="https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki">本家Wiki</a>に対応するように継続的にアップデートされています。
 ソースコードは<a href="https://github.com/Kudzuyu/SUMO-wiki-ja">GitHub</a>で管理されています。
 読んでいて問題がありましたら、issueに挙げていただけると助かります。</p>
 <p>このWikiは、本家Wikiを継承し<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.ja">CC-BY-SA</a>ライセンスです。</p>
+</div>
+<p>"<strong>S</strong>imulation of <strong>U</strong>rban <strong>MO</strong>bility" (SUMO)は、巨大な道路ネットワークを制御するようにデザインされた、オープンソースかつポータブルで、微視的(Microscopic)な道路交通流シミュレーションパッケージです。
+SUMO は主に<a href="http://www.dlr.de/">ドイツ航空宇宙局(German Aerospace Center)</a>にある<a href="http://www.dlr.de/ts">交通システム研究所(Institute of Transportation Systems)</a>の職員によって開発されています。
+SUMO は<a href="https://eclipse.org/legal/epl-v20.html">EPL</a>の下でライセンスされています。</p>
+<p>"Eclipse SUMO"は Eclipse Foundation のトレードマークです。
+SUMO を使う場合には、出版物を私達に知らせることで開発をサポートしてください。</p>
+<p>質問の結果を共有するために<a href="https://sumo.dlr.de/wiki/Contact">メーリングリスト(英語)</a>をつかってください。
+一般的な質問の答えは[FAQ]でも見つかるかもしれません。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>一般に SUMO について引用するときは、現在のレファレンス刊行物を使ってください。<a href="https://elib.dlr.de/124092/">"Microscopic Traffic Simulation using SUMO"</a>; Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner. IEEE Intelligent Transportation Systems Conference (ITSC), 2018.</p>
+</div>
+<p>ドキュメントの執筆や訂正、コードの登録や他の結果を含めどんな助力でも高く評価します。</p>
+<div class="admonition info">
+<p class="admonition-title">訳注</p>
+<p>日本語版の翻訳を手伝ってくれる人は<a href="https://github.com/Kudzuyu/SUMO-wiki-ja">この Wiki の github ページ</a>、英語版の本家を手伝いたい人は[本家 Wiki の執筆者になる方法]を参照してください</p>
+</div>
+<h2 id="はじめに">はじめに<a class="headerlink" href="#はじめに" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="document/sumo_at_a_glance/">SUMO 交通流シミュレータ</a></li>
+</ul>
+<h2 id="基本的な使いかた">基本的な使いかた<a class="headerlink" href="#基本的な使いかた" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="document/basics_notation/">ドキュメントでの記法</a></li>
+<li><a href="document/basics_basic_computer_skills/">必要な基本的コンピュータスキル</a></li>
+<li><a href="document/install/">SUMO のインストール</a></li>
+<li><a href="document\basics_using_the_command_line_applications.md">コマンドラインアプリケーション</a></li>
+<li><a href="document/tutrials/">チュートリアル</a></li>
+</ul>
+<h2 id="ネットワーク構築">ネットワーク構築<a class="headerlink" href="#ネットワーク構築" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="document/networks_sumo_road_networks.md">SUMO 道路ネットワーク</a>の紹介</li>
+<li><a href="document/networks_abstract_network_generation/">抽象的ネットワーク構築</a></li>
+<li>[NETCONVERT]からのネットワークインポート<ul>
+<li>[XML を用いたネットワーク定義]</li>
+<li>[SUMO 以外のネットワークのインポート]<ul>
+<li>[OpenStreetMap]<ul>
+<li>[3 クリックシナリオ生成]</li>
+</ul>
+</li>
+<li>[VISUM]</li>
+<li>[Vissim]</li>
+<li>[OpenDRIVE]</li>
+<li>[MATsim]</li>
+<li>[ArcView(シェープファイル)]</li>
+<li>[DlrNavTeq]</li>
+<li>[Robocup Simulation League]</li>
+</ul>
+</li>
+<li>[SUMO ネットワークのインポート]</li>
+<li>[車道シミュレーション用のネットワーク構築]</li>
+<li>[歩行者シミュレーション用のネットワーク構築]</li>
+<li>[より高度な NETCONVERT オプション]</li>
+<li>[追加出力]</li>
+</ul>
+</li>
+<li>[NETEDIT を用いたネットワークの生成と編集]</li>
+<li><a href="document/networks_elevation/">標高</a></li>
+<li><a href="document/geo-coordinates/">地理情報</a></li>
+</ul>
+<h2 id="交通需要のモデリング">交通需要のモデリング<a class="headerlink" href="#交通需要のモデリング" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[SUMO 交通需要モデリングの紹介]</li>
+<li>[車両、車両タイプ、経路の定義]</li>
+<li>[公共交通のシミュレーション]</li>
+<li>[個人のシミュレーションと]</li>
+<li>[物流のシミュレーション]</li>
+<li>[最短または最適な経路設定]</li>
+<li>[複数交通を用いる経路設定]</li>
+<li>[シミュレーション中の経路設定]</li>
+<li>[動的ユーザー割り当ての計算]</li>
+<li>[歩行者による交通需要の生成]</li>
+<li>[車列生成のための車両タイプ作成]</li>
+</ul>
+<p><strong>交通需要生成のためのデータソース</strong></p>
+<ul>
+<li>[O/D 行列のインポート]<ul>
+<li>[その他の VISUM 需要のインポート]</li>
+<li>[その他の Vissim 需要のインポート]</li>
+</ul>
+</li>
+<li>[目的地からの経路]</li>
+<li>[右左折確率による経路選択]</li>
+<li>[行動ベースの需要生成]</li>
+<li>[ランダムトリップ]</li>
+<li>[マルチモーダルランダム交通]</li>
+</ul>
+<h2 id="シミュレーション">シミュレーション<a class="headerlink" href="#シミュレーション" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="document/simulation_basic_definition/">基本的な定義</a></li>
+<li>[シミュレーション状態の保存と読み込み]</li>
+</ul>
+<h3 id="出力">出力<a class="headerlink" href="#出力" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[シミュレーション出力]</li>
+</ul>
+<h3 id="traci-オンライン操作">TraCI (オンライン操作)<a class="headerlink" href="#traci-オンライン操作" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="document/TraCI/">TraCI 概要</a></li>
+</ul>
+<h3 id="交通管理とその他の構造">交通管理とその他の構造<a class="headerlink" href="#交通管理とその他の構造" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[交通信号]</li>
+<li>[公共交通]</li>
+<li>[様々な速度標識]</li>
+<li>[経路変更器/代替経路表示]</li>
+<li>[蒸発器] (非推奨、かわりに測定器を使ってください)</li>
+<li>[交通流と速度の動的測定]</li>
+<li>[駐車場]</li>
+</ul>
+<h3 id="交通の種類">交通の種類<a class="headerlink" href="#交通の種類" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[歩行者]</li>
+<li>[自転車]</li>
+<li>[鉄道]</li>
+<li>[水路]</li>
+</ul>
+<h3 id="追加的な特徴">追加的な特徴<a class="headerlink" href="#追加的な特徴" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="document/Models/Emissions/">排気ガス</a></li>
+<li>[電気自動車]</li>
+<li>[物流]</li>
+<li>[一般的なパラメータ]</li>
+<li>[シェープの可視化]</li>
+<li>[無線検知]</li>
+<li>[緊急車両]</li>
+<li>[単純な隊列(Simpla)]</li>
+</ul>
+<h3 id="モデル詳細">モデル詳細<a class="headerlink" href="#モデル詳細" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[車両の速度]</li>
+<li>[車両の挿入]</li>
+<li>[車両の権限]</li>
+<li>[交差点のダイナミクス]</li>
+<li><a href="document/Simulation/Randomness/">ランダム性</a></li>
+<li>[(再)経路設定]</li>
+<li>[サブレーンモデル]</li>
+<li>[逆走]</li>
+<li>[安全性]</li>
+<li>[中視的モデル]</li>
+</ul>
+<h3 id="よくある問題">よくある問題<a class="headerlink" href="#よくある問題" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[車両のテレポート]</li>
+<li>[予期しない妨害]</li>
+<li>[予期しない車線変更戦略]</li>
+<li>[高密度交通流を得るには]</li>
+</ul>
+<h2 id="補助ツール">[補助ツール]<a class="headerlink" href="#補助ツール" title="Permanent link">&para;</a></h2>
+<p>全てのツールの索引は以下を参照してください。</p>
+<ul>
+<li>[ツール索引]</li>
+</ul>
+<p>[メインアプリケーション(SUMO,SUMO-GUI,NETCONVERT ほか)]に加えて、150 以上の補助ツールがあります。
+ツールは交通ネットワークの解析から、需要の生成、出力のための需要の整形までのトピックをカバーしています。
+これらのほとんどは<a href="https://www.python.org/">python</a>で書かれています。
+全てのツールが SUMO ディストリビューション中の<code>&lt;SUMO_HOME&gt;</code>/tools ディレクトリにあります。</p>
+<p>以下はいくつかの特に重要なツールへのリンクです。</p>
+<ul>
+<li>[osmWebWizard]</li>
+<li>[TraCI/python から TraCI を使う]</li>
+<li>[Python での SUMO ネットワーク読みこみと出力(sumolib)]</li>
+<li>[モビリティトレースのエクスポート(traceExporter)]</li>
+<li>[二つのネットワークの違いの検知]</li>
+<li>[ツール/可視化]</li>
+</ul>
+<h2 id="理論">理論<a class="headerlink" href="#理論" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="document/theory_traffic_simulations/">一般的な交通シミュレーション</a></li>
+</ul>
+<h2 id="アプリケーションマニュアル">アプリケーションマニュアル<a class="headerlink" href="#アプリケーションマニュアル" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[SUMO]</li>
+<li>[SUMO-GUI]</li>
+<li>[NETCONVERT]</li>
+<li>[NETEDIT]</li>
+<li>[NETGENERATE]</li>
+<li>[OD2TRIPS]</li>
+<li>[DUAROUTER]</li>
+<li>[JTRROUTER]</li>
+<li>[DFROUTER]</li>
+<li>[MAROUTER]</li>
+<li>[POLYCONVERT]</li>
+<li>[ACTIVITYGEN]</li>
+<li>[EMISSIONSMAP]</li>
+<li>[EMISSIONSDRIVINGCYCLE]</li>
+</ul>
+<h2 id="付録">付録<a class="headerlink" href="#付録" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[更新履歴]</li>
+<li>[単語の説明]</li>
+<li>[FAQ]</li>
+<li>[補助ツール]</li>
+<li>[ファイル拡張子]</li>
+</ul>
                 
               
               
@@ -276,13 +744,13 @@ SUMOは<a href="https://eclipse.org/legal/epl-v20.html">Eclipse Public License</
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
         
-          <a href="user_doc/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="download/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                ドキュメント
+                ダウンロード
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -315,7 +783,7 @@ SUMOは<a href="https://eclipse.org/legal/epl-v20.html">Eclipse Public License</
       <script>
         app = initialize({
           base: ".",
-          features: [],
+          features: ['navigation.tabs'],
           search: Object.assign({
             worker: "assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
