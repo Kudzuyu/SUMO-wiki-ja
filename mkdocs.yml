@@ -2,8 +2,12 @@ site_name: SUMO wiki ja
 site_url: https://kudzuyu.github.io/SUMO-wiki-ja/
 theme:
   name: 'material'
+  features:
+    - navigation.tabs
+  palette:
+    primary: green
   language: 'ja'
-  logo: 'img/MediaWikiSidebarLogo.png'
+  logo: 'img/sumo-logo.png'
 
 
 extra:
