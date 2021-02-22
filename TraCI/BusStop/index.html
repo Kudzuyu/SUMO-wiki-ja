@@ -8,20 +8,22 @@
       
       
       
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TraCI/BusStop/">
       
-      <link rel="shortcut icon" href="/SUMO-wiki-ja/assets/images/favicon.png">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
     
     
       
-        <title>SUMO wiki ja</title>
+        <title>TraCI/BusStop - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="/SUMO-wiki-ja/assets/stylesheets/main.6910b76c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6910b76c.min.css">
       
         
-        <link rel="stylesheet" href="/SUMO-wiki-ja/assets/stylesheets/palette.196e0c26.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
         
           
           
@@ -40,7 +42,7 @@
     
     
     
-      <link rel="stylesheet" href="/SUMO-wiki-ja/css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
       <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
     
@@ -70,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#tracibusstop" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +88,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="/SUMO-wiki-ja/images/sumo-logo.png" alt="logo">
+  <img src="../../images/sumo-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -95,7 +102,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              
+              TraCI/BusStop
             
           </span>
         </div>
@@ -122,7 +129,7 @@
     
       
     
-    <a href="/SUMO-wiki-ja/." class="md-tabs__link md-tabs__link--active">
+    <a href="../.." class="md-tabs__link md-tabs__link--active">
       ドキュメント
     </a>
   </li>
@@ -150,7 +157,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="/SUMO-wiki-ja/images/sumo-logo.png" alt="logo">
+  <img src="../../images/sumo-logo.png" alt="logo">
 
     </a>
     SUMO wiki ja
@@ -164,7 +171,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/SUMO-wiki-ja/." class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       ドキュメント
     </a>
   </li>
@@ -176,7 +183,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/SUMO-wiki-ja/Downloads/" class="md-nav__link">
+    <a href="../../Downloads/" class="md-nav__link">
       ダウンロード
     </a>
   </li>
@@ -188,7 +195,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/SUMO-wiki-ja/Publications/" class="md-nav__link">
+    <a href="../../Publications/" class="md-nav__link">
       出版物
     </a>
   </li>
@@ -201,12 +208,96 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                
+                <h1 id="tracibusstop">TraCI/BusStop<a class="headerlink" href="#tracibusstop" title="Permanent link">&para;</a></h1>
+<p>名前の着いたバス停(BusStop)から変数の値を取得します。
+返り値は直前のシミュレーションステップにおける指定された変数の値になります。
+バス停から変数の値を取得するためには，[追加ファイル]内で[バス停を定義]し，シミュレーション開始前に読み込んでおく必要があることに注意してください。
+<code>freq</code>と<code>file</code>の二つの属性は TraCI に影響しません。</p>
+<p>以下の変数の値を取得することができます。
+返り値の型も表内に示されています。</p>
+<table>
+<thead>
+<tr>
+<th>変数</th>
+<th>型</th>
+<th>説明</th>
+<th><a href="https://sumo.dlr.de/docs/TraCI/Interfacing_TraCI_from_Python.html">Python メソッド</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>end pos</td>
+<td>double</td>
+<td>車線内におけるバス停の終端座標(単位: [m])</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._busstop.html#BusStopDomain-getEndPos">getEndPos</a></td>
+</tr>
+<tr>
+<td>lane ID</td>
+<td>string</td>
+<td>バス停の設置されている車線の名前</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._busstop.html#BusStopDomain-getLaneID">getLaneID</a></td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>バス停の名前</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._busstop.html#BusStopDomain-getName">getName</a></td>
+</tr>
+<tr>
+<td>person count</td>
+<td>integer</td>
+<td>総待ち人数の合計</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._busstop.html#BusStopDomain-getPersonCount">getPersonCount</a></td>
+</tr>
+<tr>
+<td>person ID</td>
+<td>stringList</td>
+<td>バス待ちの人の ID</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._busstop.html#BusStopDomain-getPersonIDs">getPersonIDs</a></td>
+</tr>
+<tr>
+<td>start pos</td>
+<td>double</td>
+<td>車線内におけるバス停の始端座標(単位: [m])</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._busstop.html#BusStopDomain-getStartPos">getStartPos</a></td>
+</tr>
+<tr>
+<td>vehicle count</td>
+<td>integer</td>
+<td>バス停に止まった車両の総台数</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._busstop.html#BusStopDomain-getVehicleCount">getVehicleCount</a></td>
+</tr>
+<tr>
+<td>vehicle ID</td>
+<td>stringList</td>
+<td>バス停に止まっている車両の ID</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._busstop.html#BusStopDomain-getVehicleIDs">getVehicleIDs</a></td>
+</tr>
+</tbody>
+</table>
+                
+              
               
                 
 
@@ -236,15 +327,15 @@
       
     </div>
     
-      <script src="/SUMO-wiki-ja/assets/javascripts/vendor.fd16492e.min.js"></script>
-      <script src="/SUMO-wiki-ja/assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "/SUMO-wiki-ja/",
+          base: "../..",
           features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "/SUMO-wiki-ja/assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

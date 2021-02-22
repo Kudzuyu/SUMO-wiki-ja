@@ -8,20 +8,22 @@
       
       
       
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Networks/Import/">
       
-      <link rel="shortcut icon" href="/SUMO-wiki-ja/assets/images/favicon.png">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
     
     
       
-        <title>SUMO wiki ja</title>
+        <title>ネットワークのインポート - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="/SUMO-wiki-ja/assets/stylesheets/main.6910b76c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6910b76c.min.css">
       
         
-        <link rel="stylesheet" href="/SUMO-wiki-ja/assets/stylesheets/palette.196e0c26.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
         
           
           
@@ -40,7 +42,7 @@
     
     
     
-      <link rel="stylesheet" href="/SUMO-wiki-ja/css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
       <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
     
@@ -70,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#ネットワークのインポート" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +88,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="/SUMO-wiki-ja/images/sumo-logo.png" alt="logo">
+  <img src="../../images/sumo-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -95,7 +102,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              
+              ネットワークのインポート
             
           </span>
         </div>
@@ -122,7 +129,7 @@
     
       
     
-    <a href="/SUMO-wiki-ja/." class="md-tabs__link md-tabs__link--active">
+    <a href="../.." class="md-tabs__link md-tabs__link--active">
       ドキュメント
     </a>
   </li>
@@ -150,7 +157,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
       
-  <img src="/SUMO-wiki-ja/images/sumo-logo.png" alt="logo">
+  <img src="../../images/sumo-logo.png" alt="logo">
 
     </a>
     SUMO wiki ja
@@ -164,7 +171,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/SUMO-wiki-ja/." class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       ドキュメント
     </a>
   </li>
@@ -176,7 +183,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/SUMO-wiki-ja/Downloads/" class="md-nav__link">
+    <a href="../../Downloads/" class="md-nav__link">
       ダウンロード
     </a>
   </li>
@@ -188,7 +195,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/SUMO-wiki-ja/Publications/" class="md-nav__link">
+    <a href="../../Publications/" class="md-nav__link">
       出版物
     </a>
   </li>
@@ -201,12 +208,50 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
+                
+                <h1 id="ネットワークのインポート">ネットワークのインポート<a class="headerlink" href="#ネットワークのインポート" title="Permanent link">&para;</a></h1>
+<p>[NETCONVERT]は異なるサードパーティのフォーマットから道路ネットワークを読みこむことができます。
+現在、以下のフォーマットがサポートされています。</p>
+<ul>
+<li>OpenStreetMapデータベース [OpenStreetMapのインポート]を参照</li>
+<li>PTV VISUM(巨視的交通シミュレーションパッケージ) [VISUMのインポート]を参照</li>
+<li>PTV VISSIM(微視的交通シミュレーションパッケージ) [Vissimのインポート]を参照</li>
+<li>OpenDRIVEネットワーク [OpenDRIVEのインポート]を参照</li>
+<li>MATsimネットワーク [MATsimのインポート]を参照</li>
+<li>ArcViewデータベース [ArcViewデータベースのインポート]を参照</li>
+<li>Elmar Brockfelds unsplitted/splitted NavTeqデータ [DlrNavteqのインポート]を参照</li>
+<li>RoboCup Rescue Leagueフォルダ [RoboCupデータのインポート]を参照</li>
+</ul>
+<p>ほとんどの場合で、[NETCONVERT]は二つの引数しか必要としません: ソースとなるアプリケーション/フォーマットの名前とそれに続く出力ファイルの名前です(<strong>--output-file</strong>)。
+VISUMネットワークをインポートしたい場合は、次のコードでSUMOネットワークに変換することができます。</p>
+<pre><code>netconvert --visum=MyVisumNet.inp --output-file=MySUMONet.net.xml
+</code></pre>
 
+<p>インポートは[NETCONVERTのオプション]に影響を受けます。</p>
+<p>本来のフォーマットは[<em>plain-xml</em>]の変種で[NETCONVERT]のための単純な入力としてデザインされており、<em>.net.xml</em>ファイルは[NETCONVERT]の出力として右側通行(日本では左側)ルールや交差点での幾何学形態などヒューリスティックに得られたデータで強化されています。
+両方のフォーマットは互いに損失なく変換することができます。</p>
+                
+              
               
                 
 
@@ -236,15 +281,15 @@
       
     </div>
     
-      <script src="/SUMO-wiki-ja/assets/javascripts/vendor.fd16492e.min.js"></script>
-      <script src="/SUMO-wiki-ja/assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "/SUMO-wiki-ja/",
+          base: "../..",
           features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "/SUMO-wiki-ja/assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

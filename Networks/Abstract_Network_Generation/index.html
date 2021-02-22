@@ -1,0 +1,398 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Networks/Abstract_Network_Generation/">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+    
+    
+      
+        <title>抽象的ネットワーク生成 - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6910b76c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140953050-1","kudzuyu.github.io/SUMO-wiki-ja"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#抽象的ネットワーク生成" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SUMO wiki ja
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              抽象的ネットワーク生成
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+    
+      
+    
+    <a href="../.." class="md-tabs__link md-tabs__link--active">
+      ドキュメント
+    </a>
+  </li>
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      ドキュメント
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Downloads/" class="md-nav__link">
+      ダウンロード
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Publications/" class="md-nav__link">
+      出版物
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#格子型ネットワーク" class="md-nav__link">
+    格子型ネットワーク
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#クモ型ネットワーク" class="md-nav__link">
+    クモ型ネットワーク
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ランダムネットワーク" class="md-nav__link">
+    ランダムネットワーク
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#さらなるオプション" class="md-nav__link">
+    さらなるオプション
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="抽象的ネットワーク生成">抽象的ネットワーク生成<a class="headerlink" href="#抽象的ネットワーク生成" title="Permanent link">&para;</a></h1>
+<p><a href="https://sumo.dlr.de/wiki/Networks/Abstract_Network_Generation">原文ページ</a></p>
+<p><a href="">NETGENERATE</a> は格子型、クモの巣型、ランダムの三種類の抽象的ネットワークを生成することができます。</p>
+<p>作りたいネットワークのタイプは<strong>--grid</strong>,<strong>--spider</strong>,<strong>--rand</strong>のどれかで指定する必要があります。
+生成するネットワークの名前は<strong>--output <code>&lt;ファイル名&gt;</code></strong>か<strong>-o <code>&lt;ファイル名&gt;</code></strong>で指定できます。
+デフォルトでは"net.net.xml"になります。</p>
+<div class="admonition note">
+<p class="admonition-title">訳注</p>
+<p>クモの巣型ネットワークは原文では"Spider"となっており直訳すると「クモ」ですが、見た目との対応を考えこの訳にしました。</p>
+</div>
+<h2 id="格子型ネットワーク">格子型ネットワーク<a class="headerlink" href="#格子型ネットワーク" title="Permanent link">&para;</a></h2>
+<p>X方向とY方向にどれだけの交差点を作るかと、各交差点間の距離を決めることができます。
+交差点の数に関するパラメータは<strong>--grid.x-number</strong>と<strong>--grid.y-number</strong>であり、交差点同士の距離は<strong>--grid.x-length</strong>と<strong>--grid.y-length</strong>です。
+どちらの軸にも同じ値を持つネットワークを作る場合は<strong>--grid.number</strong>と<strong>--grid.length</strong>を使ってください。
+長さの単位はメートルです。
+グリッドの端に道路を追加して全ての交差点が四つの道路を持つようにする<strong>--grid.attach-length</strong>というオプションもあります(X方向とY方向で別の長さの道路を添付するのは現在ではまだ不可能です)。</p>
+<p>使い方の例は:</p>
+<pre><code>netgenerate --grid --grid.number=10 --grid.length=400 --output-file=MySUMOFile.net.xml
+</code></pre>
+
+<p>または:</p>
+<pre><code>netgenerate --grid --grid.x-number=20 --grid.y-number=5 \
+ --grid.y-length=40 --grid.x-length=200 --output-file=MySUMOFile.net.xml
+</code></pre>
+
+<p>この呼びだしはそれぞれ以下のネットワークを生成します。</p>
+<p><img alt="" src="../../images/Netgen_grid1.gif" />
+<img alt="" src="../../images/200px-Netgen_grid2.gif" /></p>
+<h2 id="クモ型ネットワーク">クモ型ネットワーク<a class="headerlink" href="#クモ型ネットワーク" title="Permanent link">&para;</a></h2>
+<p>クモ型ネットワークは分割軸の数(パラメータ <strong>--spider.arm-number</strong> または <strong>--arms</strong>、デフォルトは13)、同心円の数(<strong>--spider.circle-number</strong> または <strong>--circle</strong>、デフォルトは20)そして同心円同士の距離(<strong>--spider.space-radius</strong> または <strong>--radius</strong>、単位はメートルでデフォルトは100)です。</p>
+<div class="admonition cautions">
+<p class="admonition-title">警告</p>
+<p>クモの巣の中心のエッジ数(中心の点に接続されている枝の数)は膨大になることがあり、しばしば信号付き交差点を生成することが不可能になります。
+したがって、この交差点は常に統制のとれていない状態になります。</p>
+</div>
+<p>オプションとして<strong>--spider.omit-center</strong> または <strong>--nocenter</strong>を使うことで中心の交差点を削除することができます。
+このオプションは円周のネットワークを構築する簡単な方法にもなります。</p>
+<p>例えば</p>
+<pre><code>netgenerate --spider --spider.omit-center --output-file=MySUMOFile.net.xml
+</code></pre>
+
+<p>は13個の要素からなる半径100mの円を生成します。</p>
+<p>使用例として:</p>
+<pre><code>netgenerate --spider --spider.arm-number=10 --spider.circle-number=10 \
+ --spider.space-radius=100 --output-file=MySUMOFile.net.xml
+</code></pre>
+
+<p>と:</p>
+<pre><code>netgenerate --spider --spider.arm-number=4 --spider.circle-number=3 \
+ --spider.space-radius=100 --output-file=MySUMOFile.net.xml
+</code></pre>
+
+<p>はそれぞれ以下のネットワークを生成します。</p>
+<p><img alt="" src="../../images/Netgen_spider1.gif" />
+<img alt="" src="../../images/Netgen_spider2.gif" /></p>
+<h2 id="ランダムネットワーク">ランダムネットワーク<a class="headerlink" href="#ランダムネットワーク" title="Permanent link">&para;</a></h2>
+<p>ランダムネットワーク生成器はその名のとおり、ランダムなネットワークを生成します。
+いくつかの設定があります。</p>
+<ul>
+<li><strong>--rand.iterations</strong> <code>&lt;INT&gt;</code></li>
+<li><strong>--rand.bidi-probability</strong> <code>&lt;FLOAT&gt;</code>: 逆方向の枝が生成される確率</li>
+<li><strong>--rand.max-distance</strong> <code>&lt;FLOAT&gt;</code>: 枝の最大長さ</li>
+<li><strong>--rand.min-distance</strong> <code>&lt;FLOAT&gt;</code>: 枝の最小長さ</li>
+<li><strong>--rand.min-angle</strong> <code>&lt;FLOAT&gt;</code>: 二つの枝の最小角度</li>
+<li><strong>--rand.num-tries</strong> <code>&lt;INT&gt;</code></li>
+<li><strong>--rand.num-connectivity</strong> <code>&lt;FLOAT&gt;</code>:</li>
+<li><strong>--rand.neighbor-dist1</strong> <code>&lt;FLOAT&gt;</code>:</li>
+<li><strong>--rand.neighbor-dist2</strong> <code>&lt;FLOAT&gt;</code>:</li>
+<li><strong>--rand.neighbor-dist3</strong> <code>&lt;FLOAT&gt;</code>:</li>
+<li><strong>--rand.neighbor-dist4</strong> <code>&lt;FLOAT&gt;</code>:</li>
+<li><strong>--rand.neighbor-dist5</strong> <code>&lt;FLOAT&gt;</code>:</li>
+<li><strong>--rand.neighbor-dist6</strong> <code>&lt;FLOAT&gt;</code>:</li>
+</ul>
+<p>例として:</p>
+<pre><code>netgenerate --rand -o MySUMOFile.net.xml --rand.iterations=200
+</code></pre>
+
+<p>は以下のネットワークを生成します。</p>
+<p><img alt="" src="../../images/Netgen_random1.gif" /></p>
+<h2 id="さらなるオプション">さらなるオプション<a class="headerlink" href="#さらなるオプション" title="Permanent link">&para;</a></h2>
+<p>抽象的ネットワークはいくつかコマンドラインオプションを共有しています。
+全てのネットワークは接点(交差点)を持つため、接点のタイプを<strong>--default-junction-type-option</strong>(または<strong>-j</strong>)を使って指定することができます。 
+次の交差点タイプがシミュレーションによって許可されています: priority, traffic_light</p>
+<p>さらには、<a href="">NETCONVERT</a>アプリケーションで同じオプションを使うことで、道路の標準形を設定することができます。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

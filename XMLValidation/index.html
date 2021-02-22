@@ -1,0 +1,431 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/XMLValidation/">
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+    
+    
+      
+        <title>XMLのバリデーション - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6910b76c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140953050-1","kudzuyu.github.io/SUMO-wiki-ja"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#xmlのバリデーション" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SUMO wiki ja
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              XMLのバリデーション
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+    
+      
+    
+    <a href=".." class="md-tabs__link md-tabs__link--active">
+      ドキュメント
+    </a>
+  </li>
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      ドキュメント
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Downloads/" class="md-nav__link">
+      ダウンロード
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Publications/" class="md-nav__link">
+      出版物
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xml入力のバリデーション" class="md-nav__link">
+    XML入力のバリデーション
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#スキーマ宣言の追加" class="md-nav__link">
+    スキーマ宣言の追加
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#スキーマファイル" class="md-nav__link">
+    スキーマファイル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sumoファイルタイプ" class="md-nav__link">
+    SUMOファイルタイプ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#スキーマバリデーションの無効化" class="md-nav__link">
+    スキーマバリデーションの無効化
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="xmlのバリデーション">XMLのバリデーション<a class="headerlink" href="#xmlのバリデーション" title="Permanent link">&para;</a></h1>
+<p><a href="https://sumo.dlr.de/docs/XMLValidation.html">原文ページ</a></p>
+<h2 id="xml入力のバリデーション">XML入力のバリデーション<a class="headerlink" href="#xml入力のバリデーション" title="Permanent link">&para;</a></h2>
+<p><a href="">SUMOアプリケーション</a>は全て、入力に対するXMLバリデーションをサポートしています。
+有効化するには、以下のオプションを使います。</p>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-X </strong> <br/> <strong>--xml-validation </strong></td>
+<td>XML入力に対するschemaバリデーションを設定("never", "auto", "always") デフォルト値: <strong>auto</strong></td>
+</tr>
+<tr>
+<td><strong>-xmlm-validation.net </strong></td>
+<td>SUMOネットワークの入力に対するスキーマバリデーションを設定("never", "auto", "always") デフォルト値: <strong>never</strong></td>
+</tr>
+</tbody>
+</table>
+<p>バリデーションはXMLパーサ中で<a href="https://xerces.apache.org/xerces-c/schema-3.html">XML scheme processing</a>を起動させることによって行なわれます。
+スペルミスや属性の誤挿入など多くの一般的な入力エラーを補足します。</p>
+<p>スキーマバリデーションのためのもう一つの必要条件はルート要素に以下のようなスキーマ宣言が含まれていることです。</p>
+<pre><code>&lt;routes xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;http://sumo.dlr.de/xsd/routes_file.xsd&quot;&gt;
+</code></pre>
+
+<p>バリデーション設定が<em>always</em>に設定されている時には、この宣言を削除するようにエラーがでます。
+スキーマバリデーションはXMLのパースを大幅に遅くさせることがあり、従ってネットワーク入力に対してはデフォルトで無効化されています(ネットワークは手作業で編集すべきではなく、有効であることが想定されるから)。</p>
+<div class="admonition note">
+<p class="admonition-title">注</p>
+<p>自動生成された巨大な入力を扱う場合にはスキーマバリデーションを完全に無効化することを考慮すべきです。
+詳しくは<a href="">このFAQ</a>を参照してください。</p>
+</div>
+<h2 id="スキーマ宣言の追加">スキーマ宣言の追加<a class="headerlink" href="#スキーマ宣言の追加" title="Permanent link">&para;</a></h2>
+<p>SUMOアプリケーションのどれかによって作られたファイルには自動的にそのファイルにあったスキーマ宣言が付与されます。
+入力ファイルを一から書く場合、以下のようなスキーマ宣言をルート要素に追加する必要があります。</p>
+<pre><code>&lt;ROOT_ELEMENT xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:noNamespaceSchemaLocation=&quot;http://sumo.dlr.de/xsd/SCHEMA_FILE&quot;&gt;
+</code></pre>
+
+<p>ROOT_ELEMENTとSCHEME_FILEは以下の表を参考に設定してください。</p>
+<table>
+<thead>
+<tr>
+<th>アプリケーションオプション</th>
+<th>ルート要素</th>
+<th>スキーマファイル</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--route-files</strong>, <strong>--trip-files</strong>, <strong>--flow-files</strong></td>
+<td>routes</td>
+<td>routes_file.xsd</td>
+</tr>
+<tr>
+<td><strong>--additional-files</strong></td>
+<td>add</td>
+<td>additional_files.xsd</td>
+</tr>
+<tr>
+<td><strong>--node-files</strong></td>
+<td>nodes</td>
+<td>nodes_file.xsd</td>
+</tr>
+<tr>
+<td><strong>--edge-files</strong></td>
+<td>edges</td>
+<td>edges_file.xsd</td>
+</tr>
+<tr>
+<td><strong>--connection-files</strong></td>
+<td>connections</td>
+<td>connetions_file.xsd</td>
+</tr>
+<tr>
+<td><strong>--tllogic-files</strong></td>
+<td>flLogics</td>
+<td>tllogic_file.xsd</td>
+</tr>
+<tr>
+<td><strong>--type-files</strong></td>
+<td>types</td>
+<td>types_file.xsd</td>
+</tr>
+<tr>
+<td><strong>-weight-files</strong></td>
+<td>meandata</td>
+<td>meandata_file.xsd</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注</p>
+<p>ROOT_ELEMENTの値は慣習的に決まっているものであり、実際には任意の値を取ることができます。</p>
+</div>
+<h2 id="スキーマファイル">スキーマファイル<a class="headerlink" href="#スキーマファイル" title="Permanent link">&para;</a></h2>
+<p>スキーマファイルはSUMOインストール中の<strong><code>&lt;SUMO_HOME&gt;</code></strong>/data/xsdディレクトリにあるでしょう。
+環境変数<a href="./Basics/Basic_Computer_Skills/#sumo_home">SUMO_HOME</a>が設定されていれば、これらのファイルはバリデーションが入力された時に使用されます。</p>
+<h2 id="sumoファイルタイプ">SUMOファイルタイプ<a class="headerlink" href="#sumoファイルタイプ" title="Permanent link">&para;</a></h2>
+<p><a href="">SUMOアプリケーション</a>が扱うファイル拡張子の完全なリストは<a href="">ファイル拡張子</a>にあります。</p>
+<h2 id="スキーマバリデーションの無効化">スキーマバリデーションの無効化<a class="headerlink" href="#スキーマバリデーションの無効化" title="Permanent link">&para;</a></h2>
+<p>スキーマバリデーションを無効化するには、次のどれかを実行してください。</p>
+<ul>
+<li>オプション <strong>--xml-validation never</strong>を設定する</li>
+<li>入力のXMLファイルの先頭から <code>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code> <code>xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/....xsd"</code>の属性を削除する</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

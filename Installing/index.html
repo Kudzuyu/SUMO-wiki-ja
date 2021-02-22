@@ -1,0 +1,375 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Installing/">
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+    
+    
+      
+        <title>SUMO のインストール - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6910b76c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140953050-1","kudzuyu.github.io/SUMO-wiki-ja"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sumo-のインストール" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SUMO wiki ja
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              SUMO のインストール
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+    
+      
+    
+    <a href=".." class="md-tabs__link md-tabs__link--active">
+      ドキュメント
+    </a>
+  </li>
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      ドキュメント
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Downloads/" class="md-nav__link">
+      ダウンロード
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Publications/" class="md-nav__link">
+      出版物
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="sumo-のインストール">SUMO のインストール<a class="headerlink" href="#sumo-のインストール" title="Permanent link">&para;</a></h1>
+<p><a href="https://sumo.dlr.de/wiki/Installing">原文ページ</a></p>
+<h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
+<p>使っているプラットフォーム(64bit、32bit)及び SUMO の使いかたに応じて 4 つのパッケージが存在しています。ローカルマシーンで使用し、管理者権限を持っている場合はインストーラを使うべきです(64bit 版が望ましい)。「ポータブル」版が必要であったり、管理者権限を持っていない場合は、zip をダウンロードして<a href="https://sevenzip.osdn.jp/">7Zip</a>や<a href="https://www.winzip.com/win/jp/">Winzip</a>などのツールを使って任意のフォルダに解凍してください。全てのパッケージは、バイナリ、必要な全ての dll、使用例、ツール及び HTML 版のドキュメント(英語)を含んでいます。</p>
+<div class="admonition note">
+<p class="admonition-title">訳注</p>
+<p>Windows のエクスプローラには標準で zip 解凍機能が付いているので、これらのソフトをダウンロードしなくても zip 版を利用することが可能です</p>
+</div>
+<ul>
+<li>64bit 版インストーラ: <a href="http://prdownloads.sourceforge.net/sumo/sumo-win64-1.6.0.msi?download">sumo-win64-1.6.0.msi</a></li>
+<li>64bit 版 zip: <a href="http://prdownloads.sourceforge.net/sumo/sumo-win64-1.6.0.zip?download">sumo-win64-1.6.0.zip</a></li>
+<li>32bit 版インストーラ: <a href="http://prdownloads.sourceforge.net/sumo/sumo-win32-1.6.0.msi?download">sumo-win32-1.6.0.msi</a></li>
+<li>32bit 版 zip: <a href="http://prdownloads.sourceforge.net/sumo/sumo-win32-1.6.0.zip?download">sumo-win32-1.6.0.zip</a></li>
+</ul>
+<p>インストールフォルダには"bin"という名前のフォルダがあります。
+ここに実行可能ファイル(プログラム)があります。
+<a href="">SUMO-GUI</a>をダブルクリックして <strong>docs/expample</strong> フォルダにある例を見ることができます。
+その他の全てのプログラム(<a href="">DUAROUTER</a>, <a href="">DEFROUTER</a>等) はコマンドラインから実行しなくければなりません。
+これを楽にするために、全体の環境をセットアップする start-comanndline.bat もあります。
+コマンドラインについて不確かなことがある場合は、<a href="">基本的なコンピュータスキル#コマンドラインからのプログラム実行</a> を読んでください。</p>
+<p>最新の nightly build や、テスト、ソースが必要な場合は<a href="">ダウンロード</a>ページからダウンロードすることができます。</p>
+<p>SUMO をソースからビルドする際には<a href="">Windows での SUMO のビルド</a>を参照してください。</p>
+<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<p>debian か ubuntu を使っているならば、SUMO は基本ディストリビューションの一部であり次のようにしてインストールすることができます。</p>
+<pre><code>sudo apt-get install sumo sumo-tools sumo-doc
+</code></pre>
+
+<p>より最新の ubuntu 版が欲しい場合は、次のようにして ppa を追加することで見つかるかもしれません。</p>
+<pre><code>sudo add-apt-repository ppa:sumo/stable
+sudo apt-get update
+</code></pre>
+
+<p>そのあともう一度以下を実行してください。</p>
+<pre><code>sudo apt-get install sumo sumo-tools sumo-doc
+</code></pre>
+
+<p>openSUSE や Fedora のようなディストリビューションむけのコンパイル済みバイナリは<a href="http://download.opensuse.org/repositories/home:/behrisch/">こうしたリポジトリ</a> にあります。
+これらのリポジトリは nightly build も含んでいます。
+ここに挙げた以外のシステムを使っている場合やソースを編集したい場合、<a href="">SUMO をソースからビルドする必要があります。</a></p>
+<h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
+<p>Homebrew[http://brew.sh/]を使って SUMO を簡単にインストールできます。
+もしまだ homebrew をインストールしていない時は、次のようにします。</p>
+<pre><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+
+<p>homebrew を最新にしておいてください。</p>
+<pre><code>brew update
+</code></pre>
+
+<p>以下のコマンドで最新安定版の SUMO をインストールできます。</p>
+<pre><code>brew tap dlr-ts/sumo
+brew install sumo
+</code></pre>
+
+<p>セットアップを完了させるために、環境変数<strong>SUMO_HOME</strong>を設定し SUMO のインストールディレクトリを指すようにしてください。</p>
+<h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
+<p>初心者ユーザーにとって SUMO をソースからビルドするのは簡単なことではありません。
+Docker はこの問題を解決する人気のツールです。
+<a href="https://hub.docker.com/">Docker Hub</a> で"SUMO"と検索することで、SUMO の Docker 化に関しての方法をいくつか得ることができるでしょう。</p>
+<p><a href="https://github.com/bogaotory/docker-sumo">docker-sumo</a> には Ubuntu16.04 上で SUMO バージョン 0.30.0 以上を Docker 化するデモがあります。
+<strong>sumo</strong>や<strong>traci</strong>と同じく<strong>sumo-gui</strong>についても<a href="https://github.com/bogaotory/docker-sumo">docker-sumo</a>で取りあげられているのでユーザーは Docker 化した SUMO 上の GUIを使うことができます。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

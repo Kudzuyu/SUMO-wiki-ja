@@ -1,0 +1,538 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TraCI/Lane_Value_Retrieval/">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+    
+    
+      
+        <title>TraCI/車線に関する値の取得 - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6910b76c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140953050-1","kudzuyu.github.io/SUMO-wiki-ja"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#traci車線に関する値の取得" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-header-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SUMO wiki ja
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TraCI/車線に関する値の取得
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+    
+      
+    
+    <a href="../.." class="md-tabs__link md-tabs__link--active">
+      ドキュメント
+    </a>
+  </li>
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://kudzuyu.github.io/SUMO-wiki-ja/" title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      ドキュメント
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Downloads/" class="md-nav__link">
+      ダウンロード
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Publications/" class="md-nav__link">
+      出版物
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#コマンド-0xa3-車線変数の取得" class="md-nav__link">
+    コマンド 0xa3: 車線変数の取得
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-0xb3-車線変数" class="md-nav__link">
+    Response 0xb3: 車線変数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#拡張取得メッセージ" class="md-nav__link">
+    拡張取得メッセージ
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="traci車線に関する値の取得">TraCI/車線に関する値の取得<a class="headerlink" href="#traci車線に関する値の取得" title="Permanent link">&para;</a></h1>
+<h2 id="コマンド-0xa3-車線変数の取得">コマンド 0xa3: 車線変数の取得<a class="headerlink" href="#コマンド-0xa3-車線変数の取得" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ubyte</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>変数</td>
+<td>Lane ID</td>
+</tr>
+</tbody>
+</table>
+<p>名前の着いた車線に関する値を取得します。
+以下の変数の値を取得することができます。
+返り値の型も表内に示されています。</p>
+<div style="text-align: center; font-weight: bold">
+車線変数取得の概要
+</div>
+
+<table>
+<thead>
+<tr>
+<th>変数</th>
+<th>型</th>
+<th>説明</th>
+<th>[Python メソッド]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id list (0x00)</td>
+<td>stringList</td>
+<td>シナリオ中の全車線の ID リスト (与えられた車線 ID は無視される)</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._lane.html#LaneDomain-getIDList">getIDList</a></td>
+</tr>
+<tr>
+<td>count (0x01)</td>
+<td>int</td>
+<td>シナリオ中の全車線の数 (与えられた車線 ID は無視される)</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._lane.html#LaneDomain-getIDCount">getIDCount</a></td>
+</tr>
+<tr>
+<td>link number (0x30)</td>
+<td>ubyte</td>
+<td>車線から流出するリンクの数 [#]</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._lane.html#LaneDomain-getLinkNumber">getLinkNumber</a></td>
+</tr>
+<tr>
+<td>edge id (0x31)</td>
+<td>string</td>
+<td></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._lane.html#LaneDomain-getEdgeID">getEdgeID</a></td>
+</tr>
+<tr>
+<td>links (0x33)</td>
+<td>compound</td>
+<td></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._lane.html#LaneDomain-getLinks">getLinks</a></td>
+</tr>
+<tr>
+<td>allowed vehicle classes (0x34)</td>
+<td>stringList</td>
+<td></td>
+<td><a href="">getAllowed</a></td>
+</tr>
+<tr>
+<td>disallowed vehicle classes (0x35)</td>
+<td>stringList</td>
+<td></td>
+<td><a href="">getDisallowed</a></td>
+</tr>
+<tr>
+<td>length (0x44)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getLength</a></td>
+</tr>
+<tr>
+<td>vmax (0x41)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getMaxSpeed</a></td>
+</tr>
+<tr>
+<td>shape(0x4e)</td>
+<td>shape</td>
+<td></td>
+<td><a href="">getShape</a></td>
+</tr>
+<tr>
+<td>width (0x4d)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getWidth</a></td>
+</tr>
+<tr>
+<td>CO2 emissions (id 0x60)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getCO2Emission</a></td>
+</tr>
+<tr>
+<td>CO emissions (id 0x61)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getCOEmission</a></td>
+</tr>
+<tr>
+<td>HC emissions (id 0x62)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getHCEmission</a></td>
+</tr>
+<tr>
+<td>PMx emissions (id 0x63)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getPMxEmission</a></td>
+</tr>
+<tr>
+<td>NOx emissions (id 0x64)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getNOxEmission</a></td>
+</tr>
+<tr>
+<td>fuel consumption (id 0x65)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getFuelConsumption</a></td>
+</tr>
+<tr>
+<td>noise emission (id 0x66)</td>
+<td>double</td>
+<td></td>
+<td><a href="">getNoiseEmission</a></td>
+</tr>
+<tr>
+<td>electricity consumption (id 0x71)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-0xb3-車線変数">Response 0xb3: 車線変数<a class="headerlink" href="#response-0xb3-車線変数" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ubyte</th>
+<th>string</th>
+<th>ubyte</th>
+<th><return_type></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>変数</td>
+<td>車線 ID</td>
+<td>変数の型</td>
+<td><VARIABLE_VALUE></td>
+</tr>
+</tbody>
+</table>
+<p><strong>"車線変数取得コマンド"</strong>への応答。</p>
+<h2 id="拡張取得メッセージ">拡張取得メッセージ<a class="headerlink" href="#拡張取得メッセージ" title="Permanent link">&para;</a></h2>
+<p>より進んだメッセージについては，追加でパラメータが必要になります。</p>
+<div style="text-align: center; font-weight: bold">
+車線変数取得の概要
+</div>
+
+<table>
+<thead>
+<tr>
+<th>変数</th>
+<th>リクエストの型</th>
+<th>応答の型</th>
+<th>説明</th>
+<th>[Python メソッド]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foes (0x37)</td>
+<td>toLane (string)</td>
+<td>stringVector</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
