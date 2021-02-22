@@ -110,46 +110,46 @@ SUMOの開発は2000年にスタートしました。
 <tbody>
 <tr class="odd">
 <td><figure>
-<img src="../../img/contributor/Zaik_small.gif" alt="Zaik_small.gif" />
+<img src="../images/Zaik_small.gif" alt="Zaik_small.gif" />
 </figure></td>
 <td><p>Christian Rössel</p></td>
-<td><p>Initial microsimulation core; initial detectors implementation</p></td>
+<td><p>初期の微視的シミュレーションのコア、初期の検知器の実装</p></td>
 </tr>
 <tr class="even">
 <td rowspan="11"><figure>
-<img src="../../img/contributor/Dlr_small.gif" title="dlr_small.gif" alt="" />
+<img src="../images/Dlr_small.gif" title="dlr_small.gif" alt="" />
 </figure></td>
 <td><p>Peter Wagner</p></td>
-<td><p>Models, organisation, spiritual lead</p></td>
+<td><p>モデル、組織、精神的リーダー</p></td>
 </tr>
 <tr class="odd">
 <td><p>Daniel Krajzewicz</p></td>
-<td><p>Everything</p></td>
+<td><p>全般</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Julia Ringel</p></td>
-<td><p>Traffic Light &amp; WAUT Algorithms</p></td>
+<td><p>交通信号信号 &amp; WAUT のアルゴリズム</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Eric Nicolay</p></td>
-<td><p>Everything</p></td>
+<td><p>全般</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Michael Behrisch</p></td>
-<td><p>Everything</p></td>
+<td><p>全般</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Yun-Pang Wang</p></td>
-<td><p>User Assignment</p></td>
+<td><p>ユーザー割り当て</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Danilot Teta Boyom</p></td>
-<td><p>Vehicular Communication Model (removed from the source)</p></td>
+<td><p>車両通信モデル (ソースからは削除済み)</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -164,12 +164,12 @@ SUMOの開発は2000年にスタートしました。
 </tr>
 <tr class="odd">
 <td><p>Laura Bieker</p></td>
-<td><p>Tests, Python scripts</p></td>
+<td><p>テスト、Pythonスクリプト</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Jakob Erdmann</p></td>
-<td><p>network import, <a href="netedit.html" title="wikilink">netedit</a></p></td>
+<td><p>ネットワークインポート、<a href="netedit.html" title="wikilink">netedit</a></p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -185,7 +185,7 @@ SUMOの開発は2000年にスタートしました。
 <tr class="odd">
 <td rowspan="3"><p>Uni Lübeck</p></td>
 <td><p>Axel Wegener</p></td>
-<td><p>TraCI initiator</p></td>
+<td><p>TraCI初期化器</p></td>
 </tr>
 <tr class="even">
 <td><p>Thimor Bohn</p></td>
@@ -208,19 +208,19 @@ SUMOの開発は2000年にスタートしました。
 <td></td>
 </tr>
 <tr class="even">
-<td rowspan="4"><p><img src="images/Uni_erlangen.png" title="fig:uni_erlangen.png" width="149" alt="uni_erlangen.png" /><br />
+<td rowspan="4"><p><img src="../images/Uni_erlangen.png" title="fig:uni_erlangen.png" width="149" alt="uni_erlangen.png" /><br />
 <br />
-<img src="images/Uibk-small.png" title="fig:uibk-small.png" width="64" alt="uibk-small.png" /><br />
+<img src="../images/Uibk-small.png" title="fig:uibk-small.png" width="64" alt="uibk-small.png" /><br />
 <br />
-<img src="images/Logo_cmu.png" title="fig:logo_cmu.png" width="100" alt="logo_cmu.png" /><br />
+<img src="../images/Logo_cmu.png" title="fig:logo_cmu.png" width="100" alt="logo_cmu.png" /><br />
 <br />
-<img src="images/Logo_ucla.png" title="fig:logo_ucla.png" width="100" alt="logo_ucla.png" /></p></td>
+<img src="../images/Logo_ucla.png" title="fig:logo_ucla.png" width="100" alt="logo_ucla.png" /></p></td>
 <td><p>Christoph Sommer</p></td>
-<td><p>TraCI merge with <a href="http://veins.car2x.org/">Veins</a>, Subscription Interface, Misc.</p></td>
+<td><p><a href="http://veins.car2x.org/">Veins</a>とのTraCIマージ, Subscriptionインターフェース、その他</p></td>
 </tr>
 <tr class="odd">
 <td><p>David Eckhoff</p></td>
-<td><p>TraCI, deterministic simulation behavior</p></td>
+<td><p>TraCI、決定的シミュレーションの振舞い</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -230,17 +230,17 @@ SUMOの開発は2000年にスタートしました。
 </tr>
 <tr class="odd">
 <td><p>Tobias Mayer</p></td>
-<td><p>Traffic model abstraction, IDM model port</p></td>
+<td><p>交通モデル抽象化, IDM model port</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>HU Berlin</p></td>
 <td><p>Matthias Heppner</p></td>
-<td><p>Unittests</p></td>
+<td><p>ユニットテスト</p></td>
 </tr>
 <tr class="odd">
 <td rowspan="3"><figure>
-<img src="images/Tum-logo.png" title="tum-logo.png" alt="" />
+<img src="../images/Tum-logo.png" title="tum-logo.png" alt="" />
 </figure></td>
 <td><p>Piotr Woznica</p></td>
 <td><p><a href="activitygen.html" title="wikilink">activitygen</a></p></td>
@@ -262,7 +262,7 @@ SUMOの開発は2000年にスタートしました。
 </tr>
 <tr class="odd">
 <td><figure>
-<img src="images/Torino_small.gif" title="torino_small.gif" alt="" />
+<img src="../images/Torino_small.gif" title="torino_small.gif" alt="" />
 </figure></td>
 <td><p>Enrico Gueli</p></td>
 <td><p><a href="http://sourceforge.net/projects/traci4j/">TraCI4J</a></p></td>
@@ -274,10 +274,10 @@ SUMOの開発は2000年にスタートしました。
 </tr>
 <tr class="odd">
 <td><figure>
-<img src="images/Wroclaw_university_small.jpg" title="Wroclaw_university_small.jpg" alt="" />
+<img src="../images/Wroclaw_university_small.jpg" title="Wroclaw_university_small.jpg" alt="" />
 </figure></td>
 <td><p>Karol Stosiek</p></td>
-<td><p>Documentation, network building</p></td>
+<td><p>ドキュメント、ネットワーク生成</p></td>
 </tr>
 </tbody>
 </table>
