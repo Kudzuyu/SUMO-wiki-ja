@@ -2,10 +2,6 @@
 
 [原文ページ](https://sumo.dlr.de/wiki/Sumo_at_a_Glance)
 
-!!! caution "警告"
-    このページは翻訳が完了していません。
-    利用の際は十分に注意し、原文ページを参照することを忘れないでください。
-
 ## SUMOについて
 
 "**S**imulation of **U**rban **MO**bility" または"SUMO"は、オープンソースで微視的かつマルチモーダルな道路交通シミュレーションです。
@@ -82,18 +78,12 @@ Additional Tools|大きなアプリケーションを作る必要のないタス
 これらのリリースの一部ではない場合、こうした貢献はしばしばあまりテストされておらず、古くなっているでしょう。
 以下の貢献が含まれます。
 
-アプリケーション|簡単な説明
----|---
-[TraCI4Matlab](http://de.mathworks.com/matlabcentral/fileexchange/44805-traci4matlab) | TraCIを使ったMatlabインターフェース(Andres Acosta)
-[TraaS]() | TraCIを使ったSOAP(ウェブサービス)インターフェース(Mario Krumnow)。Java TraCIクライアントライブラリでもある
-[LiSuM]() | LiSuMは[LISA+]()とSUMOのミドルウェアであり、SUMOを通して現実世界の交通制御ソフトウェアを起動する。
-
 ## 歴史
 
 SUMOの開発は2000年にスタートしました。
 オープンソースの微視的道路交通シミュレーションを開発した主な理由は、交通研究コミュニティを自分たちのアルゴリズムを実装して評価できる道具でサポートするためです。
-
-そうしたツールを提供することで、DLRは (i)共通する基盤とモデルベースを用いて、実装されたアルゴリズムが比較しやすいように (ii)ほかのコントリビュータへの追加的な助けられる という二つがなされることを願っています。
+ツールは道路ネットワークや交通需要、交通制御の実装を追加で必要とせず、それだけで完全な交通シミュレーションが可能です。
+こうしたツールを提供することで、DLRは (i)共通する基盤とモデルベースを用いて、実装されたアルゴリズムが比較しやすいように (ii)ほかのコントリビュータへの追加的な助けられる という二つがなされることを願っています。
 
 ## ソフトウェアデザイン原則
 
@@ -109,10 +99,185 @@ SUMOの開発は2000年にスタートしました。
 
 ## 関係者
 
-所属|名前|トピック/貢献
----|---|---
-|Christian Rössel|初期の微小シミュレーションのコア、初期の検知器の実装
-|Peter Wagner|モデル、組織、精神的指導者
-|Daniel Krajzewicz|全般
-|Julia Ringel|交通信号とWAUTアルゴリズム
-|
+<table>
+<thead>
+<tr class="header">
+<th><p>組織</p></th>
+<th><p>氏名</p></th>
+<th><p>項目/貢献</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><figure>
+<img src="../../img/contributor/Zaik_small.gif" alt="Zaik_small.gif" />
+</figure></td>
+<td><p>Christian Rössel</p></td>
+<td><p>Initial microsimulation core; initial detectors implementation</p></td>
+</tr>
+<tr class="even">
+<td rowspan="11"><figure>
+<img src="../../img/contributor/Dlr_small.gif" title="dlr_small.gif" alt="" />
+</figure></td>
+<td><p>Peter Wagner</p></td>
+<td><p>Models, organisation, spiritual lead</p></td>
+</tr>
+<tr class="odd">
+<td><p>Daniel Krajzewicz</p></td>
+<td><p>Everything</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>Julia Ringel</p></td>
+<td><p>Traffic Light &amp; WAUT Algorithms</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>Eric Nicolay</p></td>
+<td><p>Everything</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>Michael Behrisch</p></td>
+<td><p>Everything</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>Yun-Pang Wang</p></td>
+<td><p>User Assignment</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>Danilot Teta Boyom</p></td>
+<td><p>Vehicular Communication Model (removed from the source)</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>Sascha Krieg</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>Lena Kalleske</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>Laura Bieker</p></td>
+<td><p>Tests, Python scripts</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>Jakob Erdmann</p></td>
+<td><p>network import, <a href="netedit.html" title="wikilink">netedit</a></p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><p>Andreas Gaubatz</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><p>Maik Drozdzynski</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td rowspan="3"><p>Uni Lübeck</p></td>
+<td><p>Axel Wegener</p></td>
+<td><p>TraCI initiator</p></td>
+</tr>
+<tr class="even">
+<td><p>Thimor Bohn</p></td>
+<td><p>TraCI</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>Friedemann Wesner</p></td>
+<td><p>TraCI</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><p>Felix Brack</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><p>Tino Morenz</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td rowspan="4"><p><img src="images/Uni_erlangen.png" title="fig:uni_erlangen.png" width="149" alt="uni_erlangen.png" /><br />
+<br />
+<img src="images/Uibk-small.png" title="fig:uibk-small.png" width="64" alt="uibk-small.png" /><br />
+<br />
+<img src="images/Logo_cmu.png" title="fig:logo_cmu.png" width="100" alt="logo_cmu.png" /><br />
+<br />
+<img src="images/Logo_ucla.png" title="fig:logo_ucla.png" width="100" alt="logo_ucla.png" /></p></td>
+<td><p>Christoph Sommer</p></td>
+<td><p>TraCI merge with <a href="http://veins.car2x.org/">Veins</a>, Subscription Interface, Misc.</p></td>
+</tr>
+<tr class="odd">
+<td><p>David Eckhoff</p></td>
+<td><p>TraCI, deterministic simulation behavior</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>Falko Dressler</p></td>
+<td><p>TraCI</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>Tobias Mayer</p></td>
+<td><p>Traffic model abstraction, IDM model port</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>HU Berlin</p></td>
+<td><p>Matthias Heppner</p></td>
+<td><p>Unittests</p></td>
+</tr>
+<tr class="odd">
+<td rowspan="3"><figure>
+<img src="images/Tum-logo.png" title="tum-logo.png" alt="" />
+</figure></td>
+<td><p>Piotr Woznica</p></td>
+<td><p><a href="activitygen.html" title="wikilink">activitygen</a></p></td>
+</tr>
+<tr class="even">
+<td><p>Walter Bamberger</p></td>
+<td><p>Development of <a href="activitygen.html" title="wikilink">activitygen</a> as a base for the evaluation of trust scenarios in VANETs. The work is part of the project <a href="http://www.ldv.ei.tum.de/fidens/">Fidens: Trust between Cooperative Systems</a> featuring trusted probabilistic knowledge processing in vehicular networks.</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>Matthew Fullerton</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>IIT Bombay, India</p></td>
+<td><p>Ashutosh Bajpai</p></td>
+<td><p>randomDepart.py, a python script to generate the real traffic pattern by exponential Distribution.</p></td>
+</tr>
+<tr class="odd">
+<td><figure>
+<img src="images/Torino_small.gif" title="torino_small.gif" alt="" />
+</figure></td>
+<td><p>Enrico Gueli</p></td>
+<td><p><a href="http://sourceforge.net/projects/traci4j/">TraCI4J</a></p></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><p>Leontios Papaleontiou</p></td>
+<td><p><a href="Contributed/SUMO_Traffic_Modeler.html" title="wikilink">Contributed/SUMO Traffic Modeler</a></p></td>
+</tr>
+<tr class="odd">
+<td><figure>
+<img src="images/Wroclaw_university_small.jpg" title="Wroclaw_university_small.jpg" alt="" />
+</figure></td>
+<td><p>Karol Stosiek</p></td>
+<td><p>Documentation, network building</p></td>
+</tr>
+</tbody>
+</table>

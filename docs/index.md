@@ -1,7 +1,7 @@
 
 # SUMO ユーザードキュメント
 
-このページは交通流シミュレータ[SUMO](https://sumo.dlr.de/index.html)の日本語Wikiです。本家[英語版Wiki](https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki)の内容を翻訳しています。
+このページは交通流シミュレータ[SUMO](https://sumo.dlr.de/index.html)の日本語Wikiです。本家[英語版Wiki](https://sumo.dlr.de/docs/index.html)の内容を翻訳しています。
 
 !!! Warning "注意"
     このドキュメントは現在翻訳中であり、リンクが繋がっていなかったり、記事が不完全な場所を多く含んでいます。
@@ -33,20 +33,20 @@ SUMO を使う場合には、出版物を私達に知らせることで開発を
 
 ## はじめに
 
-- [SUMO 交通流シミュレータ](document/sumo_at_a_glance.md)
+- [SUMO 交通流シミュレータ](./SUMO_at_a_Glance.md)
 
 ## 基本的な使いかた
 
-- [ドキュメントでの記法](document/basics_notation.md)
-- [必要な基本的コンピュータスキル](document/basics_basic_computer_skills.md)
-- [SUMO のインストール](document/install.md)
-- [コマンドラインアプリケーション](document\basics_using_the_command_line_applications.md)
-- [チュートリアル](document/tutrials.md)
+- [ドキュメントでの記法](./Basics/Notation.md)
+- [必要な基本的コンピュータスキル](./Basics/Basic_Computer_Skills.md)
+- [SUMO のインストール]
+- [コマンドラインアプリケーション](./Basics/Using_the_Command_Line_Applications.md)
+- [チュートリアル](./Tutorials/index.md)
 
 ## ネットワーク構築
 
-* [SUMO 道路ネットワーク](document/networks_sumo_road_networks.md)の紹介
-* [抽象的ネットワーク構築](document/networks_abstract_network_generation.md)
+* [SUMO 道路ネットワーク](./Networks/SUMO_Road_Networks.md)の紹介
+* [抽象的ネットワーク構築](./Networks/Abstract_Network_Generation.md)
 * [NETCONVERT]からのネットワークインポート
     - [XML を用いたネットワーク定義]
     - [SUMO 以外のネットワークのインポート]
@@ -65,8 +65,8 @@ SUMO を使う場合には、出版物を私達に知らせることで開発を
     - [より高度な NETCONVERT オプション]
     - [追加出力]
 * [NETEDIT を用いたネットワークの生成と編集]
-* [標高](document/networks_elevation.md)
-* [地理情報](document/geo-coordinates.md)
+* [標高](./Networks/Elevation.md)
+* [地理情報](./Geo-Coordinates.md)
 
 ## 交通需要のモデリング
 
@@ -95,7 +95,7 @@ SUMO を使う場合には、出版物を私達に知らせることで開発を
 
 ## シミュレーション
 
-* [基本的な定義](document/simulation_basic_definition.md)
+* [基本的な定義](./Simulation/Basic_Definition.md)
 * [シミュレーション状態の保存と読み込み]
 
 ### 出力
@@ -104,7 +104,7 @@ SUMO を使う場合には、出版物を私達に知らせることで開発を
 
 ### TraCI (オンライン操作)
 
-* [TraCI 概要](document/TraCI.md)
+* [TraCI 概要](./TraCI.md)
 
 ### 交通管理とその他の構造
 
@@ -126,7 +126,7 @@ SUMO を使う場合には、出版物を私達に知らせることで開発を
 
 ### 追加的な特徴
 
-* [排気ガス](document/Models/Emissions.md)
+* [排気ガス](./Models/Emissions.md)
 * [電気自動車]
 * [物流]
 * [一般的なパラメータ]
@@ -141,7 +141,7 @@ SUMO を使う場合には、出版物を私達に知らせることで開発を
 * [車両の挿入]
 * [車両の権限]
 * [交差点のダイナミクス]
-* [ランダム性](document/Simulation/Randomness.md)
+* [ランダム性](./Simulation/Randomness.md)
 * [(再)経路設定]
 * [サブレーンモデル]
 * [逆走]
@@ -177,7 +177,7 @@ SUMO を使う場合には、出版物を私達に知らせることで開発を
 
 ## 理論
 
-* [一般的な交通シミュレーション](document/theory_traffic_simulations.md)
+* [一般的な交通シミュレーション](./Theory/Traffic_Simulations.md)
 
 ## アプリケーションマニュアル
 
