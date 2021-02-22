@@ -1,6 +1,6 @@
 # XMLのバリデーション
 
-[原文ページ](https://sumo.dlr.de/wiki/XMLValidation)
+[原文ページ](https://sumo.dlr.de/docs/XMLValidation.html)
 
 ## XML入力のバリデーション
 
@@ -9,8 +9,8 @@
 
 |オプション|説明
 |--|--|
-**-X [`<STRING>`](basics_notation.md#データタイプ)** <br/> **--xml-validation [`<STRING>`](basics_notation.md#データタイプ)**|XML入力に対するschemaバリデーションを設定("never", "auto", "always") デフォルト値: **auto**
-**-xmlm-validation.net [`<STRING>`](basics_notation.md#データタイプ)** |SUMOネットワークの入力に対するスキーマバリデーションを設定("never", "auto", "always") デフォルト値: **never**
+**-X {{DT_STRING}}** <br/> **--xml-validation {{DT_STRING}}**|XML入力に対するschemaバリデーションを設定("never", "auto", "always") デフォルト値: **auto**
+**-xmlm-validation.net {{DT_STRING}}** |SUMOネットワークの入力に対するスキーマバリデーションを設定("never", "auto", "always") デフォルト値: **never**
 
 バリデーションはXMLパーサ中で[XML scheme processing](https://xerces.apache.org/xerces-c/schema-3.html)を起動させることによって行なわれます。
 スペルミスや属性の誤挿入など多くの一般的な入力エラーを補足します。
@@ -57,7 +57,7 @@ ROOT_ELEMENTとSCHEME_FILEは以下の表を参考に設定してください。
 ## スキーマファイル
 
 スキーマファイルはSUMOインストール中の**`<SUMO_HOME>`**/data/xsdディレクトリにあるでしょう。
-環境変数[SUMO_HOME](basics_basic_computer_skills.md#sumo_home)が設定されていれば、これらのファイルはバリデーションが入力された時に使用されます。
+環境変数[SUMO_HOME](./Basics/Basic_Computer_Skills/#sumo_home)が設定されていれば、これらのファイルはバリデーションが入力された時に使用されます。
 
 ## SUMOファイルタイプ
 

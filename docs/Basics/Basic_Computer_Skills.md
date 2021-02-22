@@ -1,6 +1,6 @@
-# 基本的なコンピュータスキル
+# コンピュータスキル
 
-[原文ページ](https://sumo.dlr.de/wiki/Basics/Basic_Computer_Skills)
+[原文ページ](https://sumo.dlr.de/docs/Basics/Basic_Computer_Skills.html)
 
 ## はじめに
 
@@ -59,7 +59,7 @@ netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=h
 *netconvert*はプログラムの名前であり残りのコマンドはそのプログラムのオプションを設定しています。
 
 下の節を見ればSUMOを始めるのには十分でしょう。
-コマンドラインに関するより詳しい情報については[コマンドラインアプリケーションの使い方](basics_using_the_command_line_applications.md)を見てください。
+コマンドラインに関するより詳しい情報については[コマンドラインアプリケーションの使い方](./Using_the_Command_Line_Applications)を見てください。
 
 !!! note "訳注"
     原文にはコマンドラインの詳しい使いかたとしていくつかリンクが載っていますが、リンク切れなものや日本語版がないとの理由から省略しました。
@@ -72,7 +72,7 @@ SUMOリリース(ダウンロードした全てのSUMOファイル/フォルダ)
 
 1. *start-command-line.bat*をダブルクリック
 1. [cdコマンド](https://eng-entrance.com/cmd-usage)を使って、設定ファイルやネットワークファイルのあるディレクトリに行く
-1． 以下のようなコマンドを入力しEnterキーを押す
+1。 以下のようなコマンドを入力しEnterキーを押す
 
 ```
 netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml 

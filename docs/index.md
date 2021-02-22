@@ -39,7 +39,7 @@ SUMO を使う場合には、出版物を私達に知らせることで開発を
 
 - [ドキュメントでの記法](./Basics/Notation.md)
 - [必要な基本的コンピュータスキル](./Basics/Basic_Computer_Skills.md)
-- [SUMO のインストール]
+- [SUMO のインストール](./Installing/index.md)
 - [コマンドラインアプリケーション](./Basics/Using_the_Command_Line_Applications.md)
 - [チュートリアル](./Tutorials/index.md)
 
@@ -181,7 +181,7 @@ SUMO を使う場合には、出版物を私達に知らせることで開発を
 
 ## アプリケーションマニュアル
 
-* [SUMO]
+* [SUMO](./sumo.md)
 * [SUMO-GUI]
 * [NETCONVERT]
 * [NETEDIT]

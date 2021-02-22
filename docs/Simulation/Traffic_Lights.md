@@ -147,7 +147,7 @@ wautSwitchのフィールドでは以下のようになります。
 !!! note "注"
     感応式信号は自身の検知器を内部で使うため、検知器を改めて定義する必要はありません。
 
-* **generateTLSE2DEtectors.py**は範囲内の検知器を含んだファイルを生成します。全ての交差点に通じる車線はこれらの検知器でカバーできます。交差点からのオフセット(距離)は**--distance-to-TLS[`<FLOAT>`][datatype-link]**(または **-d[`<FLOAT>`][datatype-link]**)で与えられ、標準は1mです。
+* **generateTLSE2DEtectors.py**は範囲内の検知器を含んだファイルを生成します。全ての交差点に通じる車線はこれらの検知器でカバーできます。交差点からのオフセット(距離)は**--distance-to-TLS{{DT_FLOAT}}**(または **-d{{DT_FLOAT}}**)で与えられ、標準は1mです。
 * **generateTLSE3DEtectors.py**は
 
 
@@ -183,4 +183,3 @@ TraCIを用いて適応的な制御を実装する一般的なパターンは(�
 SUMOは *.net.xml*ファイルと[追加ファイル]から複数の信号プログラムを読みこむことができます。
 TraCIの関数**setProgram**を使うことで、スクリプト中でそれらを切りかえることができます。
 
-[datatype-link]: basics_notation.md#データタイプ

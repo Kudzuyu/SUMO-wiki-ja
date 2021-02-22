@@ -1,6 +1,6 @@
 # コマンドラインの使いかた
 
-[原文ページ](https://sumo.dlr.de/wiki/Basics/Using_the_Command_Line_Applications)
+[原文ページ](https://sumo.dlr.de/docs/Basics/Using_the_Command_Line_Applications.html)
 
 SUMOパッケージの多くのアプリケーションはコマンドラインツールです。
 現在[SUMO-GUI]()のみが例外です。
@@ -99,10 +99,10 @@ SUMOスイートのアプリケーションは以下に示すいくつかのオ�
 
 |オプション|説明|
 |---|---|
-**-v [`<BOOL>`](basics_notation.md#データタイプ)** <br/> **--verbose [`<BOOL>`](basics_notation.md#データタイプ)**|冗長な出力に切りかえます<br/> デフォルト値: **false**
-**--print-options [`<BOOL>`](basics_notation.md#データタイプ)** | 処理前にオプションを出力します <br/> デフォルト値: **false**
-**-? [`<BOOL>`](basics_notation.md#データタイプ)** <br/> **--help [`<BOOL>`](basics_notation.md#データタイプ)**| 画面にこの表の情報を出力します <br/> デフォルト値: **false**
-**-V [`<STRING>`](basics_notation.md#データタイプ)** <br/> **--version [`<STRING>`](basics_notation.md#データタイプ)**| バリデーションスキームを設定します("never", "auto" または "always") <br/> デフォルト値: **auto**
+**-v {{DT_BOOL}}** <br/> **--verbose {{DT_BOOL}}**|冗長な出力に切りかえます<br/> デフォルト値: **false**
+**--print-options {{DT_BOOL}}** | 処理前にオプションを出力します <br/> デフォルト値: **false**
+**-? {{DT_BOOL}}** <br/> **--help {{DT_BOOL}}**| 画面にこの表の情報を出力します <br/> デフォルト値: **false**
+**-V {{DT_STRING}}** <br/> **--version {{DT_STRING}}**| バリデーションスキームを設定します("never", "auto" または "always") <br/> デフォルト値: **auto**
 
 
 ### 乱数のオプション
@@ -112,10 +112,10 @@ SUMOスイートのアプリケーションは以下に示すいくつかのオ�
 
 |オプション|説明|
 |---|---|
-**--seed [`<INT>`](basics_notation.md#データタイプ)**|乱数生成器に特定のシード値を設定します。異なる値を使うことで結果が変わりますが、再現が可能になります。
-**--random**|SUMOがシード値を選ぶようにします。設定されるとシード値は/dev/urandom の出力に従うかさもなければ現在のシステム時刻を使います。このオプションは**--seed [`<INT>`](basics_notation.md#データタイプ)**オプションよりも**優先**されます。
+**--seed {{DT_INT}}**|乱数生成器に特定のシード値を設定します。異なる値を使うことで結果が変わりますが、再現が可能になります。
+**--random**|SUMOがシード値を選ぶようにします。設定されるとシード値は/dev/urandom の出力に従うかさもなければ現在のシステム時刻を使います。このオプションは**--seed {{DT_INT}}**オプションよりも**優先**されます。
 
-**注意**: **--random**が**--seed [`<INT>`](basics_notation.md#データタイプ)**より優先するとは、設定ファイルに書かれた**--random**をコマンドラインでの**--seed [`<INT>`](basics_notation.md#データタイプ)**で上書きできないということを示します。
+**注意**: **--random**が**--seed {{DT_INT}}**より優先するとは、設定ファイルに書かれた**--random**をコマンドラインでの**--seed {{DT_INT}}**で上書きできないということを示します。
 将来的にはこの問題への解決策が導入されるでしょう。
 
 ## ファイルの生成と読み込み
@@ -141,7 +141,7 @@ SUMOで使用されるいくつかのファイルタイプについてはxsd(XML
 
 ## ファイルの書き込み
 
-ファイル名(`<FILE>`)にはいくつかのオプションをパラメータとして与えることができます。
+ファイル名{{DT_FILE}}にはいくつかのオプションをパラメータとして与えることができます。
 コマンドラインから与えられたパスは現在のワーキングディレクトリに対して相対パスと見なされます。
 設定ファイルで与えられた時は、設定ファイルのある場所からの相対パスと見なされます。
 絶対パスの指定ももちろん可能です。
