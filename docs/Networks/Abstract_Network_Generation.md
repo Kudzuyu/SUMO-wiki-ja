@@ -34,8 +34,8 @@ netgenerate --grid --grid.x-number=20 --grid.y-number=5 \
 
 この呼びだしはそれぞれ以下のネットワークを生成します。
 
-![](../img/Netgen_grid1.gif)
-![](../img/200px-Netgen_grid2.gif)
+![](../images/Netgen_grid1.gif)
+![](../images/200px-Netgen_grid2.gif)
 
 ## クモ型ネットワーク
 
@@ -72,8 +72,8 @@ netgenerate --spider --spider.arm-number=4 --spider.circle-number=3 \
 
 はそれぞれ以下のネットワークを生成します。
 
-![](../img/Netgen_spider1.gif)
-![](../img/Netgen_spider2.gif)
+![](../images/Netgen_spider1.gif)
+![](../images/Netgen_spider2.gif)
 
 ## ランダムネットワーク
 
@@ -102,7 +102,7 @@ netgenerate --rand -o MySUMOFile.net.xml --rand.iterations=200
 
 は以下のネットワークを生成します。
 
-![](../img/Netgen_random1.gif)
+![](../images/Netgen_random1.gif)
 
 ## さらなるオプション
 

@@ -7,7 +7,7 @@ theme:
   palette:
     primary: green
   language: 'ja'
-  logo: 'img/sumo-logo.png'
+  logo: 'images/sumo-logo.png'
 
 
 extra:
