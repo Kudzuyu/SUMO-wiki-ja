@@ -45,6 +45,7 @@ markdown_extensions:
 nav:
   - ドキュメント: 'index.md'
   - ダウンロード: 'download.md'
+  - 出版物: 'Publications.md'
 
 extra_css:
   - css/extra.css
