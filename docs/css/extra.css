@@ -28,31 +28,3 @@ img[src*='#center'] {
     margin: auto; 
 }
 
-@media only screen and (min-width:60em) {
-  .md-content {
-    max-width: calc(100% - 10rem);
-    margin: 0 auto;
-  }
-
-
-  .md-nav__title .md-nav__button.md-logo img, .md-nav__title .md-nav__button.md-logo svg {
-    border-radius: 50%;
-
-    width: 80px;
-    height: 80px;
-  }
-
-  .md-nav__title {
-  text-indent: -100%;
-  white-space:nowrap;
-  overflow:hidden;
-  }
-
-  .md-grid {
-    max-width: 45rem;
-  }
-
-  .md-sidebar {
-    max-width: 10rem;
-  }
-}
