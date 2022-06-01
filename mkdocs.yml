@@ -10,12 +10,14 @@ theme:
   logo: 'images/sumo-logo.png'
 
 plugins:
-  - macros
-
+  - search
+  - markdownextradata: {}
 
 extra:
   search:
-    language 'ja'
+    language: 'jp'
+  Version: 1.13.0
+  ReleaseDate: 2022.05.03
   AdditionalFile: '[*additional-file*](/SUMO.html#format_of_additional_files)'
   AdditionalFiles: '[*additional-files*](/SUMO.html#format_of_additional_files)'
   DT_2DBoundingBox: '[*&lt;2D-BOUNDING_BOX&gt;*](/Basics/Notation/#データタイプ)'
@@ -36,7 +38,6 @@ extra:
   SUMO_CMD: '[SUMO](sumo.md)'
   Source: 'https://github.com/eclipse/sumo/blob/master/'
   SUMO: '***&lt;SUMO_HOME&gt;***'
-  SUMOUSERConference: '[SUMO User Conference](http://sumo.dlr.de/2020/)'
 
 markdown_extensions:
   - admonition
