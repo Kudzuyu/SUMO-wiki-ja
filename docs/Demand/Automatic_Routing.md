@@ -6,7 +6,7 @@ district : 地区
 Adapting by X : Xによる更新
 apadt : 適用，更新
 insertion : 挿入時, 挿入
-the multiple of **adaptation-interval** and **adaptation-steps** : **adaptation-interval**と**adaptation-steps**の倍数
+the multiple of X and Y : XとYの倍数
 route : （固有名と思われる個所以外は）経路
  -->
 
@@ -18,7 +18,7 @@ route : （固有名と思われる個所以外は）経路
 
 
 次の場面では、シミュレーション実行中の動的ルーティングが適切な場合があります。
-- 動的ユーザー均衡を得るための時間や計算量が不十分な場合
+- 動的利用者均衡を得るための時間や計算量が不十分な場合
 - シミュレーション実行中にネットワークの変更が生じる場合
 - 実行中にvehicleの経路を更新する必要がある場合
 
