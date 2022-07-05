@@ -23,7 +23,7 @@ sumo --save-state.times TIME1,TIME2,TIME3
 
 デフォルトでは*<PREFIX\>_<TIME\><SUFFIX\>*という名前のファイルに状態が書き出されます。*<PREFIX\>*は**--save-state.prefix**オプションで設定できます（デフォルトは*state*）。*<TIME\>*はシミュレーション時刻、*<SUFFIX\>*は*.xml.gz*か*.xml*のいずれかで、**--save-state.suffix**オプションで指定できます（デフォルトは*.xml.gz*）。
 
-!!! note "訳注"
+!!! note "注"
         拡張子'.xml.gz'はgzip形式で圧縮されたxmlファイルであり、全てのSUMOアプリケーションで直接使用したり、標準的なファイル圧縮ツールで解凍することもできます。
 
 **--save-state.times**オプションを使用するとき、次のように**--save-state.files**オプションを使うことで、出力するファイル名を陽に設定することもできます。
