@@ -1,6 +1,6 @@
 # FullOutput
 
-2021/2/11, 6f16726b811a2e7785fa7181cefc8de802c4d96c
+参考原文バージョン: 2021/2/11, 6f16726b811a2e7785fa7181cefc8de802c4d96c
 
 このオプションの背後にあるアイデアは、既存のnetstate-dumpオプションの機能を改善することです。
 生成されるXML構造体はedge、lane、vehicle、traffic lightに関する情報を含んでいます。
