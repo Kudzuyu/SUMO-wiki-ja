@@ -1,7 +1,7 @@
 
 <!-- 
 authority
-permission : パーミッション（なにこれ？）
+permission : パーミッション
 reversible lane : リバーシブル‐レーン
 交通量に応じてセンターラインの位置を移動できる道路。可逆車線。
 https://www.weblio.jp/content/Reversible+lane
