@@ -1,3 +1,6 @@
+<!-- 
+leader : 先行車
+ -->
 
 # FCDOutput
 
@@ -126,7 +129,7 @@ edge:id2
 - **--fcd-output.signals** 出力に[signal state information](../../TraCI/Vehicle_Signalling.md)を加えます。
 - **--fcd-output.distance** 出力に[kilometrage](../Railways.md#kilometrage-mileage-chainage)情報を加えます。
 - **--fcd-output.acceleration** 出力に加速度データを加えます。（[sublane model](../SublaneModel.md)を使う場合は横加速度も出力します。）
-- **--fcd-output.max-leader-distance FLOAT** 与えられた距離内にリーダーのvehicleがいる場合にleaderGap、leaderSpeed、leaderID属性を出力に加えます。そうでない場合、leaderIDは""、leaderGap、leaderSpeedは-1とします。
+- **--fcd-output.max-leader-distance FLOAT** 与えられた距離内に先行車のvehicleがいる場合にleaderGap、leaderSpeed、leaderID属性を出力に加えます。そうでない場合、leaderIDは""、leaderGap、leaderSpeedは-1とします。
 - **--fcd-output.params KEY1,KEY2,...** [generic parameters](../GenericParameters.md)を出力に加えます。（deviceとcarfollowmodelのパラメータ、および任意のユーザー定義値をサポートします。）
 - **--fcd-output.attributes ATTR1,ATTR2,...** 出力を削減するために、書き出す属性を与えられたリストに制限します。次の属性は特殊なものです。
   - **all**: 全ての属性を書き出します。
