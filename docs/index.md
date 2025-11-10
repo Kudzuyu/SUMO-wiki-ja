@@ -1,185 +1,191 @@
-<hTitles >SUMO User Documentation<hr style="border: 0.5px solid #338033;"></hTitles>
+# Simulation of Urban MObility(SUMO)日本語Wiki
 
-"**S**imulation of **U**rban **MO**bility" (SUMO) is an open source, highly portable, microscopic and continuous traffic simulation package designed to handle large networks. It allows for intermodal simulation including pedestrians and comes with a large set of tools for scenario creation. It is mainly developed by employees of the [Institute of Transportation Systems](https://www.dlr.de/ts) at the [German Aerospace Center](https://www.dlr.de). SUMO is licensed under the [EPL 2.0](https://www.eclipse.org/legal/epl-2.0/). The source code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the EPL 2.0 are satisfied: [GPL2 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html).
+"**S**imulation of **U**rban **MO**bility" (SUMO) は、オープンソースで移植性の高い、大規模ネットワークを扱うために設計された微視的かつ連続的な交通シミュレーション・パッケージです。
+歩行者を含むインターモーダルなシミュレーションが可能で、シナリオ作成用のツールも豊富に用意されています。
+SUMOはドイツ航空宇宙センター(https://www.dlr.de)の交通システム研究所(https://www.dlr.de/ts)の職員が中心となって開発しています。
+SUMOは、[EPL 2.0](https://eclipse.org/legal/epl-v20.html)に基づいてライセンスされています。
+ソースコードは、以下の二次ライセンスのもとで利用できるようにすることもできます。
+EPL 2.0に規定された利用可能条件が満たされている場合、ソースコードは[GPL2以降](https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html)の二次ライセンスでも利用可能です。
 
-Please use the [mailing lists](Contact.md) for sharing your results or for asking questions. Answers to some common questions may also be found in the [FAQ](FAQ.md).
+成果報告や質問には[メーリングリスト](Contact.md)を使ってください．
+いくつかのよくある質問は[FAQ](FAQ.md)にあるかもしれません．
 
-If You use SUMO, please tell us about your
-[Publications](Publications.md).
+SUMOを使った時には，私達(訳注: SUMO公式) にその[出版物](Publications.md)について連絡してください．
 
 !!! note
     When citing SUMO in general please use our current reference publication: ["Microscopic Traffic Simulation using SUMO"](https://elib.dlr.de/127994/); Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner. IEEE Intelligent Transportation Systems Conference (ITSC), 2018.
 
-The content of this Documentation is freely editable. In order to edit a certain page, click on the "Edit on GitHub" button on the upper right corner and submit a Pull Request.
-Here is a short help on [editing articles](Editing_Articles.md). You can also [Build](Developer/Documentation_Build.md) the documentation locally, or [Download](https://sumo.dlr.de/sumo_documentation.zip) a copy.
+このドキュメントは自由に編集できます。
+特定のページを編集するには、右上の「GitHubで編集」ボタンをクリックし、プルリクエストを送信してください。
+[記事の編集](Editing_Articles.md)に関する簡単なヘルプはこちらです。
+ドキュメントの[ローカルビルド](Developer/Documentation_Build.md)や，[ダウンロード](https://sumo.dlr.de/sumo_documentation.zip)もできます。
 
-This Documentation is continuously updated and always refers to the latest development version. Documentation for a specific release version of SUMO is included in the download of that version and can be viewed by opening {{SUMO}}/docs/userdoc/index.html.
+このドキュメントは継続的に更新され、常に最新の開発版を参照しています。
+特定のリリース版のSUMO向けドキュメント (訳注: 英語版)はそのバージョンのダウンロードに含まれており、{{SUMO}}/docs/userdoc/index.htmlから閲覧できます。
 
-# Introduction
+## Introduction 
 
-- [The traffic simulation SUMO](SUMO_at_a_Glance.md)
+- [SUMOシミュレーション](SUMO_at_a_Glance.md)
 
-# Basic Usage
+## 基本的な使い方
 
-- [Notation in this Documentation](Basics/Notation.md)
-- [Needed, basic Computer Skills](Basics/Basic_Computer_Skills.md)
-- [Installing SUMO](Installing/index.md)
-- [Using SUMO Command Line Applications](Basics/Using_the_Command_Line_Applications.md)
-- [Tutorials](Tutorials/index.md)
-- [Validating application inputs](XMLValidation.md)
-- [Tabular outputs](TabularOutputs.md)
+- [ドキュメント中の記法](Basics/Notation.md)
+- [必要なコンピュータスキル](Basics/Basic_Computer_Skills.md)
+- [SUMOのインストール](Installing/index.md)
+- [SUMO CLIの使い方](Basics/Using_the_Command_Line_Applications.md)
+- [チュートリアル](Tutorials/index.md)
+- [アプリケーション入力の検証](XMLValidation.md)
+- [表形式出力](TabularOutputs.md)
 
-# Network Building
+## ネットワーク構築
 
-- Introduction to [SUMO Road Networks](Networks/SUMO_Road_Networks.md)
-- [Abstract networks generation](Networks/Abstract_Network_Generation.md)
-- Importing networks with [netconvert](netconvert.md)
-  - [Defining own networks using XML](Networks/PlainXML.md)
-  - [Importing non-SUMO networks](Networks/Import.md)
-    - [from OpenStreetMap](Networks/Import/OpenStreetMap.md)
-      - [3-Click Scenario Generator](Networks/Import/OpenStreetMap.md#3-click_scenario_generation)
-    - [from VISUM](Networks/Import/VISUM.md)
-    - [from Vissim](Networks/Import/Vissim.md)
-    - [from OpenDRIVE](Networks/Import/OpenDRIVE.md)
-    - [from MATsim](Networks/Import/MATsim.md)
-    - [from ArcView (shapefiles)](Networks/Import/ArcView.md)
-    - [from DlrNavTeq](Networks/Import/DlrNavteq.md)
-    - [from Robocup Simulation League](Networks/Import/RoboCup.md)
-  - [Importing SUMO networks and Patching](Networks/Import/SUMO_Road_Networks.md)
-  - [Building networks for motorway simulation](Simulation/Motorways.md#building_a_network_for_motorway_simulation)
-  - [Building networks for pedestrian simulation](Simulation/Pedestrians.md#building_a_network_for_pedestrian_simulation)
-  - [Further netconvert options](Networks/Further_Options.md)
-  - [Exporting non-SUMO networks](Networks/Export.md)
-  - [Additional output](Networks/Further_Outputs.md)
-- [Creating and modifying networks with netedit](Netedit/index.md)
-- [Including elevation data](Networks/Elevation.md)
-- [Geo-Coordinates](Geo-Coordinates.md)
+- [SUMO Road Networks概要](Networks/SUMO_Road_Networks.md)
+- [抽象ネットワーク生成](Networks/Abstract_Network_Generation.md)
+- [netconvert](netconvert.md) によるネットワークインポート
+- [XMLを使用した独自ネットワーク定義](Networks/PlainXML.md)
+- [SUMO以外のネットワークのインポート](Networks/Import.md)
+- [OpenStreetMapからのインポート](Networks/Import/OpenStreetMap.md)
+- [3クリックシナリオ生成](Networks/Import/OpenStreetMap.md#3-click_scenario_generation)
+- [VISUMからのインポート](Networks/Import/VISUM.md)
+- [Vissimからのインポート](Networks/Import/Vissim.md)
+- [OpenDRIVEからのインポート](Networks/Import/OpenDRIVE.md)
+- [MATsimからのインポート](Networks/Import/MATsim.md)
+- [ArcView (shapefiles)からのインポート](Networks/Import/ArcView.md)
+- [DlrNavTeqからのインポート](Networks/Import/DlrNavteq.md)
+- [Robocup Simulation Leagueからのインポート](Networks/Import/RoboCup.md)
+- [SUMOネットワークのインポートとパッチ適用](Networks/Import/SUMO_Road_Networks.md)
+- [高速道路シミュレーション用ネットワーク構築](Simulation/Motorways.md#building_a_network_for_motorway_simulation)
+- [歩行者シミュレーション用ネットワーク構築](Simulation/Pedestrians.md#building_a_network_for_pedestrian_simulation)
+- [追加のnetconvertオプション](Networks/Further_Options.md)
+- [SUMO以外のネットワークのエクスポート](Networks/Export.md)
+- [追加出力](Networks/Further_Outputs.md)
+- [neteditによるネットワークの作成と修正](Netedit/index.md)
+- [標高データの組み込み](Networks/Elevation.md)
+- [地理座標](Geo-Coordinates.md)
 
-# Demand Modelling
+## 交通需要モデリング
 
-- [Introduction to SUMO Demand Modelling](Demand/Introduction_to_demand_modelling_in_SUMO.md)
-- [Definition of Vehicles, Vehicle Types, and Routes](Definition_of_Vehicles,_Vehicle_Types,_and_Routes.md)
-- [Defining Traffic Demand with netedit](Netedit/elementsDemand.md)
-- [Simulation of public transport](Simulation/Public_Transport.md)
-- [Simulation of individual persons and trip chains](Specification/Persons.md)
-- [Simulation of logistics](Specification/Logistics.md)
-- [Shortest or Optimal Path Routing](Demand/Shortest_or_Optimal_Path_Routing.md)
-- [Intermodal Routing](IntermodalRouting.md)
-- [Routing in the Simulation](Demand/Automatic_Routing.md)
-- [Computing Dynamic User Assignment](Demand/Dynamic_User_Assignment.md)
-- [Generating pedestrian traffic demand](Simulation/Pedestrians.md#generating_pedestrian_demand)
-- [Generate a vehicle type distribution to model the fleet](Tools/Misc.md#createvehtypedistributionpy)
+- [SUMO需要モデリング入門](Demand/Introduction_to_demand_modelling_in_SUMO.md)
+- [車両、車両タイプ、ルートの定義](Definition_of_Vehicles,_Vehicle_Types,_and_Routes.md)
+- [neteditによる交通需要の定義](Netedit/elementsDemand.md)
+- [公共交通機関のシミュレーション](Simulation/Public_Transport.md)
+- [個人および移動連鎖のシミュレーション](Specification/Persons.md)
+- [物流のシミュレーション](Specification/Logistics.md)
+- [最短または最適経路ルーティング](Demand/Shortest_or_Optimal_Path_Routing.md)
+- [インターモーダルルーティング](IntermodalRouting.md)
+- [シミュレーション内でのルーティング](Demand/Automatic_Routing.md)
+- [動的利用者割り当ての計算](Demand/Dynamic_User_Assignment.md)
+- [歩行者交通需要の生成](Simulation/Pedestrians.md#generating_pedestrian_demand)
+- [車両タイプ分布を生成して車両群をモデル化](Tools/Misc.md#createvehtypedistributionpy)
 
-### Data sources for demand generation
+### 需要生成のためのデータソース
 
-- [Importing O/D Matrices](Demand/Importing_O/D_Matrices.md)
-  - [Other VISUM Demand Importers](Demand/Further_Ways_to_import_VISUM_Demand_Definitions.md)
-  - [Other Vissim Demand Importers](Demand/Further_Ways_to_import_Vissim_Demand_Definitions.md)
-- [Routes from Counting Data (road counts, turn counts)](Demand/Routes_from_Observation_Points.md)
-- [Routing by Turn Probabilities](Demand/Routing_by_Turn_Probabilities.md)
-- [Activity-based Demand Generation](Demand/Activity-based_Demand_Generation.md)
-- [Random Trips](Tools/Trip.md#randomtripspy)
-- [Multi-modal random traffic](Tools/Import/OSM.md#osmwebwizardpy)
-- [GTFS data](Tools/Import/GTFS.md)
+- [O/Dマトリックスのインポート](Demand/Importing_O/D_Matrices.md)
+- [その他のVISUM需要インポーター](Demand/Further_Ways_to_import_VISUM_Demand_Definitions.md)
+- [その他のVissim需要インポーター](Demand/Further_Ways_to_import_Vissim_Demand_Definitions.md)
+- [計測データからの経路生成（道路計測、方向転換計測）](Demand/Routes_from_Observation_Points.md)
+- [方向転換確率による経路生成](Demand/Routing_by_Turn_Probabilities.md)
+- [活動ベースの需要生成](Demand/Activity-based_Demand_Generation.md)
+- [ランダムな旅行](Tools/Trip.md#randomtripspy)
+- [マルチモーダルなランダム交通](Tools/Import/OSM.md#osmwebwizardpy)
+- [GTFSデータ](Tools/Import/GTFS.md)
 
-# Simulation
+## シミュレーション
 
-- [Basic Definition](Simulation/Basic_Definition.md)
-- [Saving and Loading Simulation State](Simulation/SaveAndLoad.md)
-- [The SUMO-JuPedSim coupling](jupedsim.md)
+- [基本定義](Simulation/Basic_Definition.md)
+- [シミュレーション状態の保存と読み込み](Simulation/SaveAndLoad.md)
+- [SUMO-JuPedSim連携](jupedsim.md)
 
-## Output
-- [Simulation output overview](Simulation/Output/index.md)
+### 出力
+- [シミュレーション出力概要](Simulation/Output/index.md)
 
-## TraCI (On-line Interaction)
-- [TraCI overview](TraCI.md) - The **Tra**ffic **C**ontrol **I**nterface
-- [Libsumo](Libsumo.md) - Using sumo as a library
+### TraCI (オンラインインタラクション)
+- [TraCI概要](TraCI.md) - **Tra**ffic **C**ontrol **I**nterface
+- [Libsumo](Libsumo.md) - sumoをライブラリとして使用
 
-## Traffic Management and Other Structures
+### 交通管理およびその他の構造
 
-- [Traffic Lights](Simulation/Traffic_Lights.md)
-- [Public Transport](Simulation/Public_Transport.md)
-- [Variable Speed Signs](Simulation/Variable_Speed_Signs.md)
-- [Rerouter / Alternative Route Signage](Simulation/Rerouter.md)
-- [Vaporizer](Simulation/Vaporizer.md) (deprecated, use [Calibrator](Simulation/Calibrator.md) instead)
-- [Dynamic calibration of flow and speed and type](Simulation/Calibrator.md)
-- [Parking areas](Simulation/ParkingArea.md)
-- [Turnarounds](Simulation/Turnarounds.md)
+- [信号機](Simulation/Traffic_Lights.md)
+- [公共交通](Simulation/Public_Transport.md)
+- [可変速度標識](Simulation/Variable_Speed_Signs.md)
+- [迂回路標識](Simulation/Rerouter.md)
+- [蒸発器](Simulation/Vaporizer.md) (非推奨、代わりに[キャリブレーター](Simulation/Calibrator.md)を使用)
+- [流量・速度・車種動的キャリブレーション](Simulation/Calibrator.md)
+- [駐車エリア](Simulation/ParkingArea.md)
+- [折り返し地点](Simulation/Turnarounds.md)
 
-## Traffic Modes
+### 交通モード
 
-- [Pedestrian simulation](Simulation/Pedestrians.md)
-- [Bicycle simulation](Simulation/Bicycles.md)
-- [Railway simulation](Simulation/Railways.md)
-- [Waterway simulation](Simulation/Waterways.md)
+- [歩行者シミュレーション](Simulation/Pedestrians.md)
+- [自転車シミュレーション](Simulation/Bicycles.md)
+- [鉄道シミュレーション](Simulation/Railways.md)
+- [水路シミュレーション](Simulation/Waterways.md)
 
-## Additional Features
+### 追加機能
 
-- [Emissions](Models/Emissions.md)
-- [Electric Vehicles](Models/Electric.md)
-- [Electric Hybrid Vehicles, overhead lines, power substations](Models/ElectricHybrid.md)
-- [Logistics](Specification/Logistics.md)
-- [Generic Parameters](Simulation/GenericParameters.md)
-- [Shape Visualization](Simulation/Shapes.md)
-- [Wireless Device Detection](Simulation/Bluetooth.md)
-- [Emergency Vehicles](Simulation/Emergency.md)
-- [Simple Platooning (Simpla)](Simpla.md)
-- [Demand Responsive Transport (DRT) / Taxis](Simulation/Taxi.md)
-- [Green Light Optimal Speed Advisory (GLOSA)](Simulation/GLOSA.md)
-- [Stationfinder (autonomous charging)](Simulation/Stationfinder.md)
+- [排気ガス](Models/Emissions.md)
+- [電気自動車](Models/Electric.md)
+- [ハイブリッド電気自動車、架線、変電所](Models/ElectricHybrid.md)
+- [物流](Specification/Logistics.md)
+- [汎用パラメータ](Simulation/GenericParameters.md)
+- [形状可視化](Simulation/Shapes.md)
+- [無線機器検出](Simulation/Bluetooth.md)
+- [緊急車両](Simulation/Emergency.md)
+- [簡易プラトーニング (Simpla)](Simpla.md)
+- [デマンド型交通 (DRT) / タクシー](Simulation/Taxi.md)
+- [信号最適速度案内 (GLOSA)](Simulation/GLOSA.md)
+- [ステーションファインダー（自律充電）](Simulation/Stationfinder.md)
 
-## Model details
+### モデル詳細
 
-- [Vehicle speed](Simulation/VehicleSpeed.md)
-- [Vehicle insertion](Simulation/VehicleInsertion.md)
-- [Vehicle permissions (access restrictions)](Simulation/VehiclePermissions.md)
-- [Road capacity](Simulation/RoadCapacity.md)
-- [Intersection dynamics](Simulation/Intersections.md)
-- [Randomness](Simulation/Randomness.md)
-- [Routing and Re-routing](Simulation/Routing.md)
-- [Sublane Model](Simulation/SublaneModel.md)
-- [Opposite Direction Driving](Simulation/OppositeDirectionDriving.md)
-- [Safety](Simulation/Safety.md)
-- [Mesoscopic model](Simulation/Meso.md)
-- [Lengths and Distances](Simulation/Distances.md)
-- [Friction](Simulation/Friction.md)
+- [車両速度](Simulation/VehicleSpeed.md)
+- [車両挿入](Simulation/VehicleInsertion.md)
+- [車両許可（アクセス制限）](Simulation/VehiclePermissions.md)
+- [道路容量](Simulation/RoadCapacity.md)
+- [交差点ダイナミクス](Simulation/Intersections.md)
+- [ランダム性](Simulation/Randomness.md)
+- [経路設定と経路変更](Simulation/Routing.md)
+- [サブレーンモデル](Simulation/SublaneModel.md)
+- [逆走](Simulation/OppositeDirectionDriving.md)
+- [安全性](Simulation/Safety.md)
+- [メゾスコピックモデル](Simulation/Meso.md)
+- [長さおよび距離](Simulation/Distances.md)
+- [摩擦](Simulation/Friction.md)
 
-## Common Problems
+### よくある問題
 
-- [Why Vehicles are teleporting](Simulation/Why_Vehicles_are_teleporting.md)
-- [Unexpected jamming](FAQ.md#the_simulation_has_lots_of_jamsdeadlocks_what_can_i_do)
-- [Too many turn-arounds](Simulation/Turnarounds.md)
-- [Unexpected lane-changing maneuvers?](FAQ.md#why_do_the_vehicles_perform_unexpected_lane-changing_maneuvers)
-- [How to get high flows?](FAQ.md#how_do_i_get_high_flowsvehicle_densities)
+- [車両がテレポートする理由](Simulation/Why_Vehicles_are_teleporting.md)
+- [予期せぬ渋滞](FAQ.md#the_simulation_has_lots_of_jamsdeadlocks_what_can_i_do)
+- [方向転換が多すぎる](Simulation/Turnarounds.md)
+- [予期せぬ車線変更？](FAQ.md#why_do_the_vehicles_perform_unexpected_lane-changing_maneuvers)
+- [高い流量を得るには？](FAQ.md#how_do_i_get_high_flowsvehicle_densities)
 
-# Additional Tools
+## 追加ツール
 
-In addition to the [main applications (sumo, sumo-gui, netedit, netconvert, etc.)](SUMO_at_a_Glance.md#included_applications), there are
-over 250 additional tools. They cover topics from traffic network
-analysis, demand generation, demand modification to output analysis.
-Most of them are written in [python](https://www.python.org/). All tools
-can be found in the SUMO-distribution under {{SUMO}}/tools.
+[主要アプリケーション（sumo、sumo-gui、netedit、netconvertなど）](SUMO_at_a_Glance.md#included_applications)に加え、250以上の追加ツールが用意されています。
+これらは交通ネットワーク分析、交通需要の創出と修正から出力分析までをカバーしています。
+ほとんどは[python](https://www.python.org/)で記述されています。
+全てのツールはSUMOディストリビューションの{{SUMO}}/toolsディレクトリ内にあります。
 
-For an index of all tools see:
+全ツールのインデックスはこちら:
 
-- [Tool index](Tools/index.md)
+- [ツールインデックス](Tools/index.md)
 
-Below are links to some of the most important/used tools:
+以下は特に重要／使用頻度の高いツールへのリンクです：
 
-- [osmWebWizard](Tools/Import/OSM.md#osmwebwizardpy) - create a simple scenario, in just a few clicks and using your web browser
-- [Interfacing TraCI from Python](TraCI/Interfacing_TraCI_from_Python.md) - access a running SUMO simulation using Python
-- [sumolib](Tools/Sumolib.md) - Python modules for working with SUMO networks and sumo xml files in general
-- [Xml Tools](Tools/Xml.md) - tools for converting SUMO outputs to CSV/Spreadsheet, and vice versa
-- [traceExporter.py](Tools/TraceExporter.md) - export mobility traces (FCD output) into different "trace file" formats
-- [netdiff.py](Tools/Net.md#netdiffpy) - determine the differences between two networks
-- [Visualization Tools](Tools/Visualization.md) - visualize a wide range of simulation outputs in a graphical and friendly way
+- [osmWebWizard](Tools/Import/OSM.md#osmwebwizardpy) - ウェブブラウザで数クリックするだけで簡易シナリオを作成
+- [PythonからのTraCI連携](TraCI/Interfacing_TraCI_from_Python.md) - Pythonで実行中のSUMOシミュレーションにアクセス
+- [sumolib](Tools/Sumolib.md) - SUMOネットワークおよび一般的なsumo xmlファイルを扱うPythonモジュール
+- [Xml Tools](Tools/Xml.md) - SUMO出力をCSV/スプレッドシートに変換、またはその逆変換を行うツール
+- [traceExporter.py](Tools/TraceExporter.md) - モビリティトレース（FCD出力）を様々な「トレースファイル」形式にエクスポート
+- [netdiff.py](Tools/Net.md#netdiffpy) - 二つのネットワーク間の差異を判定
+- [可視化ツール](Tools/Visualization.md) - 幅広いシミュレーション出力をグラフィカルかつ分かりやすく可視化
 
-# Theory
+## 理論
 
-- [Traffic simulations in general](Theory/Traffic_Simulations.md)
+- [交通シミュレーション全般](Theory/Traffic_Simulations.md)
 
-# Application Manuals
+## アプリケーションマニュアル
 
 - [sumo](sumo.md)
 - [sumo-gui](sumo-gui.md)
@@ -196,16 +202,18 @@ Below are links to some of the most important/used tools:
 - [emissionsMap](Tools/Emissions.md#emissionsmap)
 - [emissionsDrivingCycle](Tools/Emissions.md#emissionsdrivingcycle)
 
-# Software Contributions
-Some people extended SUMO or built tools to make it more usable. Not all of these extensions are part of the "SUMO core".
+## ソフトウェアの貢献
+一部の人々はSUMOを拡張したり、より使いやすくするためのツールを構築しました。
+拡張機能のすべてがSUMOコアの一部であるわけではありません。
 
-- [Included in the distribution](Contributed/index.md#included_in_the_distribution)
-- [External](Contributed/index.md#external_extensions)
+- [配布物に含まれるもの](Contributed/index.md#included_in_the_distribution)
+- [外部](Contributed/index.md#external_extensions)
 
-# Appendices
+## 付録
 
-- [ChangeLog](ChangeLog.md)
-- [Glossary](Other/Glossary.md)
+- [変更履歴](ChangeLog.md)
+- [用語集](Other/Glossary.md)
 - [FAQ](FAQ.md)
-- [Known File Extensions](Other/File_Extensions.md)
-- [List of all XML-elements and attributes](Netedit/attribute_help.md) supported by [netedit](Netedit/index.md)
+- [既知のファイル拡張子](Other/File_Extensions.md)
+- [netedit](Netedit/index.md) がサポートする[すべての XML 要素と属性のリスト](Netedit/attribute_help.md)
+

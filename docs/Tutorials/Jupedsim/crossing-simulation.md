@@ -1,6 +1,5 @@
 ---
 title: Crossing Simulation
-template: jupedsim.html
 ---
 
 In this tutorial you will learn how to configure a basic simulation scenario with *netedit* from scratch.

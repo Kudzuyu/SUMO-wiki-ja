@@ -1,132 +1,123 @@
----
-title: SUMO at a Glance
----
+# SUMO概要
+
+[原文ページ](https://sumo.dlr.de/wiki/Sumo_at_a_Glance)
 
 ## About
 
-"**S**imulation of **U**rban **MO**bility", or "SUMO" for short, is an
-open source, microscopic, multi-modal traffic simulation. It allows to
-simulate how a given traffic demand which consists of single vehicles
-moves through a given road network. The simulation allows to address a
-large set of traffic management topics. It is purely microscopic: each
-vehicle is modelled explicitly, has an own route, and moves individually
-through the network. Simulations are deterministic by default but there
-are various options for [introducing randomness](Simulation/Randomness.md).
+"**S**imulation of **U**rban **MO**bility" (SUMO) は、オープンソースで微視的かつマルチモーダルな道路交通シミュレーションです。
+SUMOは与えられた道路ネットワークにおいて車一台ごとの動きから構成された交通流がどのようなものかシミュレーションすることができます。
+シミュレーションでは交通整理に関する広範なトピックを扱うことができます。
+SUMOは純粋に微視的です。
+自動車は一台ごとに陽にモデル化され、自身の経路を持ち個別にネットワーク内を移動していきます。
+シミュレーションは標準で決定的ですが、[ランダム性導入]()のための様々なオプションがあります。
 
-If you download the SUMO package, you will note that it contains further
-applications besides SUMO. These applications are used to import/prepare
-road networks and demand data for being used in SUMO, see [Included Applications](#included_applications) for a more verbose
-list.
+SUMOパッケージをダウンロードしたら、SUMOの他のアプリケーションも含まれていることに注意してください。
+これらのアプリケーションはSUMOで使う道路ネットワークや交通需要のデータをインポート/準備するのに使われます。
+詳細は[#含まれるアプリケーション](#含まれるアプリケーション)を参照してください。
 
-## Features
 
-- Includes all applications needed to prepare and perform a traffic
-simulation (network and routes import, DUA, simulation)
-- Simulation
-  - Space-continuous and time-discrete vehicle movement
-  - Different vehicle types
-  - Multi-lane streets with lane changing
-  - Different right-of-way rules, traffic lights
-  - A fast openGL graphical user interface
-  - Manages networks with several 10.000 edges (streets)
-  - Fast execution speed (up to 100.000 vehicle updates/s on a 1GHz
-    machine)
-  - Interoperability with other application at run-time
-  - Network-wide, edge-based, vehicle-based, and detector-based
-    outputs
-  - Supports person-based inter-modal trips
-- Network Import
-  - Imports VISUM, Vissim, Shapefiles, OSM, RoboCup, MATsim,
-    OpenDRIVE, and XML-Descriptions
-  - Missing values are determined via heuristics
-- Routing
-  - Microscopic routes - each vehicle has an own one
-  - Different Dynamic User Assignment algorithms
-- High portability
-  - Only standard C++ and portable libraries are used
-  - Packages for Windows main Linux distributions exist
-- High interoperability through usage of XML-data only
-- Open source ([EPL 2.0](https://www.eclipse.org/legal/epl-2.0/))
+「**S**imulation of **U**rban **MO**bility」（略称「SUMO」）は、オープンソースの微視的マルチモーダル交通シミュレーションです。
+車両一台ずつから成る交通需要が、与えられた道路ネットワーク上をどのように移動するかをシミュレートできます。
+このシミュレーションは、広範な交通管理課題の検討を可能にします。
+純粋に微視的アプローチを採用しており、各車両が明示的にモデル化され、独自の経路を持ち、ネットワーク内を個別に移動します。
+シミュレーションはデフォルトで決定論的ですが[ランダム性の導入](Simulation/Randomness.md)に関する様々なオプションが用意されています。
 
-## Usage Examples
+SUMOパッケージには、SUMO以外にも追加のアプリケーションが含まれています。
+これらのアプリケーションは、SUMOで使用するための道路ネットワークや需要データのインポート/準備に使用されます。
+より詳細なリストについては[付属アプリケーション](#included_applications)を参照してください。
 
-Since 2001, the SUMO package has been used in the context of several
-national and international research
-[projects](Other/Projects.md). The applications included:
+## 機能
 
-- traffic lights evaluation
-- route choice and re-routing
-- evaluation of traffic surveillance methods
-- [simulation of vehicular communications](Topics/V2X.md)
-- traffic forecast
+- 交通シミュレーションの準備と実行に必要な全アプリケーションを包含 （ネットワーク・経路インポート、DUA、シミュレーション）
+- シミュレーション
+  - 連続空間・離散時間の車両移動
+  - 多様な車両タイプ
+  - 車線変更可能な複数車線道路
+  - 様々な優先通行権ルール、信号機
+  - 高速なOpenGL GUI
+  - 数万のエッジ（道路）からなるネットワークを管理
+  - 高速実行（1GHzマシンで最大100,000車両更新/秒）
+  - 実行時の他アプリケーションとの相互運用性
+  - 実行時における他アプリケーションとの相互運用性
+  - ネットワーク全体、エッジベース、車両ベース、検知器ベースの出力
+  - 人ベースのインターモーダル移動をサポート
+- ネットワークインポート
+  - VISUM、Vissim、シェープファイル、OSM、RoboCup、MATsim、 OpenDRIVE、XML記述のインポート
+  - 欠損値はヒューリスティックにより決定
+- ルート設定
+  - 微視的ルート - 各車両が独自のルートを持つ
+  - 様々な動的ユーザー割り当てアルゴリズム
+- 高い移植性
+  - 標準C++と移植性のあるライブラリのみを使用
+  - Windowsおよび主要Linuxディストリビューション向けパッケージが存在
+- XMLデータのみの使用による高い相互運用性
+- オープンソース（[EPL 2.0](https://www.eclipse.org/legal/epl-2.0/)）
 
-## Included Applications
+## 使用例
 
-The package includes:
+2001年以降、SUMOパッケージは複数の国内および国際的な[研究プロジェクト](Other/Projects.md)で利用されてきました。
+主な応用例は以下の通りです：
 
-| Application Name                                    | Short Description                                         |
-| --------------------------------------------------- | --------------------------------------------------------- |
-| [sumo](sumo.md)                             | The microscopic simulation with no visualization; command line application                                         |
-| [sumo-gui](sumo-gui.md)                     | The microscopic simulation with a graphical user interface                                                        |
-| [netconvert](netconvert.md)                 | Network importer and generator; reads road networks from different formats and converts them into the SUMO-format   |
-| [netedit](Netedit/index.md)                       | A graphical network editor.                                                                                  |
-| [netgenerate](netgenerate.md)               | Generates abstract networks for the SUMO-simulation                    |
-| [duarouter](duarouter.md)                   | Computes the fastest routes through the network, importing different types of demand description. Performs the DUA      |
-| [jtrrouter](jtrrouter.md)                   | Computes routes using junction turning percentages                                                               |
-| [dfrouter](dfrouter.md)                     | Computes routes from induction loop measurements                                                     |
-| [marouter](marouter.md)                     | Performs macroscopic assignment                                                            |
-| [od2trips](od2trips.md)                     | Decomposes O/D-matrices into single vehicle trips                                       |
-| [polyconvert](polyconvert.md)               | Imports points of interest and polygons from different formats and translates them into a description that may be visualized by [sumo-gui](sumo-gui.md) |
-| [activitygen](activitygen.md)               | Generates a demand based on mobility wishes of a modeled population                                |
-| [emissionsMap](Tools/Emissions.md#emissionsmap)          | Generates an emission map                                                                   |
-| [emissionsDrivingCycle](Tools/Emissions.md#emissionsdrivingcycle) | Calculates emission values based on a given driving cycle                           |
-| [Additional Tools](Tools/index.md)           | There are some tasks for which writing a large application is not necessary. Several solutions for different problems may be covered by these tools.            |
+- 交通信号機の評価
+- 経路選択と再設定
+- 交通監視手法の評価
+- [車載通信のシミュレーション](Topics/V2X.md)
+- 交通予測
 
-Several parties have extended the SUMO package during their work and
-submitted their code. These contributions are usually not tested and may be outdated. Find a list of all Contributions [here](Contributed/index.md).
+## 含まれるアプリケーション
 
-## History
+本パッケージには以下が含まれます：
 
-The development of SUMO started in the year 2000. The major reason for
-the development of an open source, microscopic road traffic simulation
-was to support the traffic research community with a tool with the
-ability to implement and evaluate own algorithms. The tool has no need
-for regarding all the needed things for obtaining a complete traffic
-simulation such as implementing and/or setting up methods for dealing
-with road networks, demand, and traffic controls. By supplying such a
-tool, the DLR wanted to i) make the implemented algorithms more
-comparable by using a common architecture and model base, and ii) gain
-additional help from other contributors.
+| アプリケーション名 | 概要 |
+| --------------------------------------------------- | ---------------------------------------------------- ----- |
+| [sumo](sumo.md) | 可視化なしの微視的シミュレーション；コマンドラインアプリケーション |
+| [sumo-gui](sumo-gui.md) | グラフィカルユーザーインターフェース付き微視的シミュレーション |
+| [netconvert](netconvert.md) | ネットワークインポーターおよびジェネレーター；様々な形式の道路ネットワークを読み込みSUMO形式に変換 |
+| [netedit](Netedit/index.md) | グラフィカルネットワークエディタ |
+| [netgenerate](netgenerate.md) | SUMOシミュレーション用の抽象ネットワークを生成 |
+| [duarouter](duarouter.md) | 様々な需要記述形式をインポートし、ネットワーク上の最速経路を計算。DUA（二項分布モデル）を実行 |
+| [jtrrouter](jtrrouter.md) | 交差点方向転換率を用いた経路計算 |
+| [dfrouter](dfrouter.md) | 誘導ループ計測値からの経路計算 |
+| [marouter](marouter.md) | マクロ的割当を実施 |
+| [od2trips](od2trips.md) | 出入地マトリクスを単一車両の移動に分解 |
+| [polyconvert](polyconvert.md) | 各種フォーマットの関心地点・ポリゴンをインポートし、[sumo-gui](sumo-gui.md) で可視化可能な記述に変換 |
+| [activitygen](activitygen.md) | モデル化された人口の移動意向に基づく需要を生成 |
+| [emissionsMap](Tools/Emissions.md#emissionsmap) | 排出量マップを生成 |
+| [emissionsDrivingCycle](Tools/Emissions.md#emissionsdrivingcycle) | 指定された走行サイクルに基づく排出量を計算 |
+| [追加ツール](Tools/index.md) | 大規模なアプリケーションを記述する必要がないタスクが存在します。これらのツールは様々な問題に対する複数の解決策をカバーしています。 |
 
-## Software design criteria
+複数の関係者が作業中にSUMOパッケージを拡張し
+コードを提出しています。これらの貢献は通常テストされておらず、古くなっている可能性があります。全ての貢献のリストは[こちら](Contributed/index.md)で確認できます。
 
-Two major design goals are approached: the software shall be fast and it
-shall be portable. Due to this, the very first versions were developed
-to be run from the command line only - no graphical interface was
-supplied at first and all parameter had to be inserted by hand. This
-should increase the execution speed by leaving off slow visualization.
-Also, due to these goals, the software was split into several parts.
-Each of them has a certain purpose and must be run individually. This is
-something that makes SUMO different to other simulation packages where,
-for instance, the dynamical user assignment is made within the
-simulation itself, not via an external application like here. This split
-allows an easier extension of each of the applications within the
-package because each is smaller than a monolithic application that does
-everything. Also, it allows the usage of faster data structures, each
-adjusted to the current purpose, instead of using complicated and
-ballast-loaded ones. Still, this makes the usage of SUMO a little bit
-uncomfortable in comparison to other simulation packages. As there are
-still other things to do, we are not thinking of a redesign towards an
-integrated approach by now.
+## 歴史
 
-## Contributors and Participants
+SUMOの開発は2000年に始まりました。
+オープンソースの微視的道路交通シミュレーションを開発した主な理由は、交通研究コミュニティに対し独自のアルゴリズムを実装・評価できるツールを提供するためでした。
+このツールは、完全な交通シミュレーションを実現するために必要な全ての要素、例えば道路ネットワーク、需要、交通制御を扱う手法の実装や設定などについては考慮する必要がありません。
+このようなツールを提供することでDLRはi)共通のアーキテクチャとモデル基盤を使用することで実装されたアルゴリズムの比較可能性を高め、ii)他の貢献者からの追加的な支援を得ることを目指しました。
+
+## ソフトウェア設計基準
+
+主要な設計目標は二つありました：高速であること、移植性を持つこと。
+このため、最初のバージョンはコマンドラインからのみ実行されるように開発されました——当初はグラフィカルインターフェースは提供されず、全てのパラメータを手動で入力する必要がありました．
+これにより遅延を招く可視化処理を省略し、実行速度を向上させることが目的でした。
+また、これらの目標に基づき、ソフトウェアは複数の部分に分割されあました。
+各コンポーネントは特定の目的を持ち、個別に実行する必要があります．
+この点がSUMOを他のシミュレーションパッケージと異なる点であり、 例えば動的なユーザー割り当てはシミュレーション本体内で実行され、 本ソフトのように外部アプリケーション経由ではない。
+この分割によりパッケージ内の各アプリケーションを拡張しやすくなる。
+なぜなら各コンポーネントは全てを処理する単一アプリケーションよりも規模が小さいためである。
+また、複雑で重荷となるデータ構造を使用する代わりに、現在の目的に合わせて調整された高速なデータ構造を各 で使用することが可能になります。
+それでも、このことは他のシミュレーションパッケージと比較して、SUMOの使用を少し不便なものにしています。
+まだやるべきことが残っているため、現時点では統合されたアプローチに向けた再設計は考えていません。
+
+## 貢献者と参加者
 
 <table>
 <thead>
 <tr class="header">
-<th><p>Org.</p></th>
-<th><p>Name</p></th>
-<th><p>Topics / Contribution</p></th>
+<th><p>所属機関</p></th>
+<th><p>氏名</p></th>
+<th><p>担当分野 / 貢献内容</p></th>
 </tr>
 </thead>
 <tbody>
@@ -135,38 +126,38 @@ integrated approach by now.
 <img src="images/Zaik_small.gif" alt="Zaik_small.gif" />
 </figure></td>
 <td><p>Christian Rössel</p></td>
-<td><p>Initial microsimulation core; initial detectors implementation</p></td>
+<td><p>初期微視的シミュレーションコア; 初期検出器実装</p></td>
 </tr>
 <tr class="even">
 <td rowspan="11"><figure>
 <img src="images/Dlr_small.gif" title="dlr_small.gif" alt="" />
 </figure></td>
 <td><p>Peter Wagner</p></td>
-<td><p>Models, organization, spiritual lead</p></td>
+<td><p>モデル、組織、精神的指導</p></td>
 </tr>
 <tr class="odd">
 <td><p>Daniel Krajzewicz</p></td>
-<td><p>Everything</p></td>
+<td><p>全般</p></td>
 </tr>
 <tr class="even">
 <td><p>Julia Ringel</p></td>
-<td><p>Traffic Light &amp; WAUT Algorithms</p></td>
+<td><p>信号機 &amp; WAUT アルゴリズム</p></td>
 </tr>
 <tr class="odd">
 <td><p>Eric Nicolay</p></td>
-<td><p>Everything</p></td>
+<td><p>全般</p></td>
 </tr>
 <tr class="even">
 <td><p>Michael Behrisch</p></td>
-<td><p>Everything</p></td>
+<td><p>全般</p></td>
 </tr>
 <tr class="odd">
 <td><p>Yun-Pang Wang</p></td>
-<td><p>User Assignment</p></td>
+<td><p>利用者割り当て</p></td>
 </tr>
 <tr class="even">
 <td><p>Danilot Teta Boyom</p></td>
-<td><p>Vehicular Communication Model (removed from the source)</p></td>
+<td><p>車両間通信モデル（ソースから削除済み）</p></td>
 </tr>
 <tr class="odd">
 <td><p>Sascha Krieg</p></td>
@@ -178,11 +169,11 @@ integrated approach by now.
 </tr>
 <tr class="odd">
 <td><p>Laura Bieker</p></td>
-<td><p>Tests, Python scripts</p></td>
+<td><p>テスト、Pythonスクリプト</p></td>
 </tr>
 <tr class="even">
 <td><p>Jakob Erdmann</p></td>
-<td><p>network import, <a href="netedit.md">netedit</a></p></td>
+<td><p>ネットワークインポート、<a href="netedit.md">netedit</a></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -194,9 +185,9 @@ integrated approach by now.
 <td></td>
 </tr>
 <tr class="odd">
-<td rowspan="3"><p>Uni Lübeck</p></td>
+<td rowspan="3"><p>リューベック大学 (Uni Lübeck)</p></td>
 <td><p>Axel Wegener</p></td>
-<td><p>TraCI initiator</p></td>
+<td><p>TraCI 発起人</p></td>
 </tr>
 <tr class="even">
 <td><p>Thimor Bohn</p></td>
@@ -225,11 +216,11 @@ integrated approach by now.
 <br />
 <img src="images/Logo_ucla.png" title="fig:logo_ucla.png" width="100" alt="logo_ucla.png" /></p></td>
 <td><p>Christoph Sommer</p></td>
-<td><p>TraCI merge with <a href="https://veins.car2x.org/">Veins</a>, Subscription Interface, Misc.</p></td>
+<td><p>TraCIと<a href="https://veins.car2x.org/">Veins</a>の統合、サブスクリプションインターフェース、その他</p></td>
 </tr>
 <tr class="odd">
 <td><p>David Eckhoff</p></td>
-<td><p>TraCI, deterministic simulation behavior</p></td>
+<td><p>TraCI、決定論的シミュレーション動作</p></td>
 </tr>
 <tr class="even">
 <td><p>Falko Dressler</p></td>
@@ -237,12 +228,12 @@ integrated approach by now.
 </tr>
 <tr class="odd">
 <td><p>Tobias Mayer</p></td>
-<td><p>Traffic model abstraction, IDM model port</p></td>
+<td><p>交通モデル抽象化、IDMモデルポート</p></td>
 </tr>
 <tr class="even">
-<td><p>HU Berlin</p></td>
+<td><p>ベルリン工科大学 (HU Berlin)</p></td>
 <td><p>Matthias Heppner</p></td>
-<td><p>Unittests</p></td>
+<td><p>ユニットテスト</p></td>
 </tr>
 <tr class="odd">
 <td rowspan="3"><figure>
@@ -253,16 +244,16 @@ integrated approach by now.
 </tr>
 <tr class="even">
 <td><p>Walter Bamberger</p></td>
-<td><p>Development of <a href="activitygen.md">activitygen</a> as a base for the evaluation of trust scenarios in VANETs. The work is part of the project <a href="https://www.ldv.ei.tum.de/fidens/">Fidens: Trust between Cooperative Systems</a> featuring trusted probabilistic knowledge processing in vehicular networks.</p></td>
+<td><p>VANET における信頼シナリオの評価基盤としての <a href="activitygen.md">activitygen</a> の開発。この作業は、自動車ネットワークにおける信頼性の高い確率的知識処理を特徴とするプロジェクト <a href="https://www.ldv.ei.tum.de/fidens/">Fidens: 協調システム間の信頼</a> の一部です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>Matthew Fullerton</p></td>
 <td></td>
 </tr>
 <tr class="even">
-<td><p>IIT Bombay, India</p></td>
+<td><p>インド工科大学ボンベイ校 (IIT Bombay, India)</p></td>
 <td><p>Ashutosh Bajpai</p></td>
-<td><p>randomDepart.py, a python script to generate the real traffic pattern by exponential Distribution.</p></td>
+<td><p>randomDepart.py、指数分布によって実際の交通パターンを生成する Python スクリプト。</p></td>
 </tr>
 <tr class="odd">
 <td><figure>
@@ -281,9 +272,9 @@ integrated approach by now.
 <img src="images/Wroclaw_university_small.jpg" title="Wroclaw_university_small.jpg" alt="" />
 </figure></td>
 <td><p>Karol Stosiek</p></td>
-<td><p>Documentation, network building</p></td>
+<td><p>ドキュメント作成、ネットワーク構築</p></td>
 </tr>
 </tbody>
 </table>
 
-and many [other contributors]({{Source}}AUTHORS).
+その他多くの[貢献者]({{Source}}AUTHORS)。

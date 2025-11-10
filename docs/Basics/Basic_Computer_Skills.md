@@ -1,183 +1,154 @@
----
-title: Computer Skills
----
+# コンピュータスキル
 
-# Introduction
+## はじめに
 
-To work with SUMO a few basic computer skills are needed (since
-Linux-users are probably familiar with these, all explanations refer to
-MS-Windows):
+SUMOを使うためにはいくつか基本的なコンピュータスキルが必要になります(Linuxユーザはおそらく親しみがあるでしょうから、以下の説明はMS-Windowsを示します)
 
-# Using a [Text Editor](https://en.wikipedia.org/wiki/Text_editor)
+## [テキストエディタ](https://ja.wikipedia.org/wiki/%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF)の使いかた
 
-SUMO requires configuration files and data files for proper execution.
-These files can be created and edited with a text editor.
+正確な動作のためにSUMOでは設定ファイルとデータファイルが必要です。
+こうしたファイルはテキストファイルを使って作成/編集します。
 
-On Windows you can open a basic text editor in the following way:
+Windowsでは次のようにして基本的なテキストエディタを開きます。
 
 ```
-Start->Windows Accessories->Notepad
-```
-Or by pressing the `Win` + `R` keys and entering `notepad`
+スタート->Windowsアクセサリ->メモ帳
 
-Notepad is a very basic text editor. You can increase your comfort and
-productivity by switching to an editor with more features. Consider
-[Notepad++](https://notepad-plus-plus.org/) or
-[vim](https://www.vim.org/download.php#pc) and also see this [comparison of text editors](https://en.wikipedia.org/wiki/Comparison_of_text_editors)
+もしくは`Win` + `R` キーを押し，`notepad`
+```
+
+
+メモ帳は極初歩的なテキストエディタです。
+より多くの機能を備えたエディタに移ることで、快適性と生産性を上げることができます。
+[Notepad++](https://notepad-plus-plus.org/) ([日本語での紹介](https://forest.watch.impress.co.jp/library/software/notepadplusp/))や[vim](https://vim-jp.org/)、あるいは「テキストエディタ 比較」などで検索してみるのがいいでしょう。
 
 !!! note
-    Files used by SUMO have by convention names ending with
-    `.xml` and variants of `.sumocfg` (those are called file extensions). Doing a double-click in Windows
-    Explorer will probably not open up your favorite text editor. Either
-    open the file from within your text editor or
-    [learn](https://www.google.com/#q=windows+file+associations) how to
-    change file associations.
+    SUMOが扱うファイルは慣習にしたがって、`.xml`で終わるものと、`.sumofg`に分かれます。
+    Windowsのエクスプローラでダブルクリックしても望んだテキストエディタで開くとは限りません。
+    テキストエディタの方からファイルを開くか、ファイルの関連付けを変更する方法を[学んで](https://www.google.com/search?client=firefox-b-d&q=windows+%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB+%E9%96%A2%E9%80%A3%E4%BB%98%E3%81%91)ください
 
-# Working with Files and Folders
+!!! note "訳注"
+    原文ページでは[comparison of text editors](http://en.wikipedia.org/wiki/Comparison_of_text_editors)が紹介されていますが、日本語ページがないため消しました。
 
-To work with the various files needed by SUMO you must be able to find
-them on your file system. For starters learn about using Windows
-Explorer [here](https://edu.gcfglobal.org/en/windowsbasics/working-with-files/1/) or
-[here](https://www.google.com/#q=windows+explorer+tutorial).
+## フォルダとファイルを使いこなす
 
-# Running Programs from the Command Line
+SUMOで必要な様々なファイルを扱うためには、そうしたファイルをシステム中から見つけださなければなりません。
+初心者はWindowsエクスプローラの使い方を[ここ](https://www.google.com/search?ei=JUn2XPv4D4WLr7wPkJqtMA&q=windows+%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9+%E4%BD%BF%E3%81%84%E6%96%B9&oq=windows+%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9+%E4%BD%BF%E3%81%84%E3%81%8B%E3%81%9F&gs_l=psy-ab.1.0.0i4i30.1528.5573..6864...1.0..1.179.1782.4j11......0....1..gws-wiz.......0i71j0i67j0j0i4j0i30j0i8i30j33i21j0i8i4i30.sP9udMlVohU)から調べてください。
 
-SUMO consists of many separate programs for different simulation-related
-tasks (a reference to all the separate programs can be found
-[here](../SUMO_at_a_Glance.md#included_applications) and a list of the additional Tools [here](../index.md#additional_tools)).
-Only [sumo-gui](../sumo-gui.md) (*sumo-gui.exe*) and [netedit](../Netedit/index.md) (*netedit.exe*) have a
-graphical user interface (GUI). All other programs must be called from
-the **command line**.
+## コマンドラインからのプログラム実行
 
-At first you have to open the command line. On Windows, you have to
-start "**cmd.exe**" (Start-\>Windows System-\>Command prompt). You can also press the `Win` + `R` keys and enter `cmd` or search for `cmd` in the Windows search box, on the Taskbar.
+SUMOは多くのプログラムから構成されています。
+sumo-gui.exeから起動する[SUMO-GUI]()のみがグラフィカルユーザーインターフェース(GUI)を持っています。
+その他の全てのプログラムは**コマンドライン**から起動する必要があります。
 
-A black window should
-appear. This is your command line. Since version 0.12.3 you can also
-double-click the file **start-command-line.bat** (see also
-[below](#sumo_0123_and_later)) to open a command line with
-useful environment variables set (it can be found in the same folder as
-all other sumo executables). When using Linux, you have to start a
-terminal (like **xterm**).
+はじめにコマンドラインを開く必要があります。
+Windowsでは"**cmd.exe**"(Win+rキーを押し、出てきた画面にcmd.exeと入力)を起動します。
+黒いウィンドウが開いたら、それがコマンドラインです。
+バージョン0.12.3からは**start-commmand-line.bat**(下の説明も参照)をダブルクリックすることで、使いやすく環境変数が設定されたコマンドラインを開くことができます(SUMOの実行ファイルのあるフォルダに一緒に入っています)。
+Linuxを使っているなら、ターミナルを開いてください(例: **xterm**)
 
-The command line lets you start programs by typing the program's name
-followed by program options. Since this can be automated it is
-potentially more comfortable for repetitive tasks than using a GUI.
-Commands look like this
+コマンドラインからはプログラムの名前とそのプログラムのオプションを書くことでプログラムを実行することができます。
+これは自動化しやすく、繰り返しのあるタスクにはGUIよりも便利です。
+コマンドは以下のようなものです。
 
 ```
-netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml
-```
-Here *netconvert* is the name of the program and the rest of the command
-sets options for this program.
-
-A command line execution (in this case a very basic *sumo* simulation) is shown in the following gif:
-
-![](../images/sumo_cmd.gif)
-
-The sections below should be sufficient to get you started using SUMO.
-For further information about the command line see [Basics/Using the
-Command Line
-Applications](../Basics/Using_the_Command_Line_Applications.md).
-Also look [here](https://ss64.com/nt/).
-
-## SUMO 0.12.3 and later
-
-In your SUMO release (all SUMO files and folders you downloaded) there
-is a `bin` directory. This directory contains a batch file named
-`start-command-line.bat`. This batch file starts a command-line and
-makes sure that you can execute SUMO-programs.
-
-1.  execute *start-command-line.bat* by double-clicking
-2.  navigate to the directory containing your configuration and network
-    files using the command [cd](https://ss64.com/nt/cd.html) (change
-    directory)
-3.  enter a command such as
-
-```
-netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml
+netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml 
 ```
 
-and press `enter`
+*netconvert*はプログラムの名前であり残りのコマンドはそのプログラムのオプションを設定しています。
+
+下の節を見ればSUMOを始めるのには十分でしょう。
+コマンドラインに関するより詳しい情報については[コマンドラインアプリケーションの使い方](./Using_the_Command_Line_Applications)を見てください。
+
+!!! note "訳注"
+    原文にはコマンドラインの詳しい使いかたとしていくつかリンクが載っていますが、リンク切れなものや日本語版がないとの理由から省略しました。
+
+### SUMO 0.12.3以降
+
+SUMOリリース(ダウンロードした全てのSUMOファイル/フォルダ)のなかに *bin*というディレクトリがあります。
+このディレクトリには*start-command-line.bat*というバッチファイルが含まれています。
+このバッチファイルはコマンドラインを起動し、SUMOプログラムを起動させることができるか確認してくれます。
+
+1. *start-command-line.bat*をダブルクリック
+1. [cdコマンド](https://eng-entrance.com/cmd-usage)を使って、設定ファイルやネットワークファイルのあるディレクトリに行く
+1。 以下のようなコマンドを入力しEnterキーを押す
+
+```
+netconvert --node-files=hello.nod.xml --edge-files=hello.edg.xml --output-file=hello.net.xml 
+```
+
+!!! note "訳注"
+    原文ページには0.12.2以前のバージョンでの方法が書かれていますが、リリースが5年以上前なこともあり、すでに使っている人がほとんどいないだろうと考え、今のところ翻訳していません。
 
 ## SUMO_HOME
 
-Many [tools](../Tools/index.md) require the environment variable
-`SUMO_HOME` to be set to the base directory of the sumo installation.
-This is the directory containing the folders *bin* and *tools*. Setting
-environment variables is explained below.
+多くの[ツール]()を使うために、`SUMO_HOME`という環境変数がSUMOがインストールされた基底のディレクトリに設定されている必要があります。
+基底のディレクトリとは*bin*と*tools*のあるフォルダのことです。
+環境変数の設定についての説明は下の方を参照してください。
 
-!!! note
-    This variable is also used to find [xsd schema files for input validation](../XMLValidation.md). If the variable is not set, schema files are downloaded from the internet and this may file if the server [sumo.dlr.de](https://sumo.dlr.de/) is not reachable.
+!!! node "注"
+    この値は[入力のバリデーション]()において[xsdスキーマファイル]()を見つけるのにも使われます。
+    値が設定されていない場合、スキーマファイルはインターネットからダウンロードされ、[sumo.dlr.de](http://sumo.dlr.de/)サーバーに接続できない場合、保管されます。
 
-## Configuring Path Settings
 
-To run programs from the command line comfortably you must configure
-your `PATH` variable and the `SUMO_HOME` variable.
+## パスの設定
+
+コマンドラインからプログラムを快適に動かすためには、`PATH`と`SUMO_HOME`を設定しなくてはいけません。
 
 ### Windows
 
 !!! note
-    If you have installed SUMO via the windows *.msi* installer file, this is done automatically.
+    SUMOを.msiインストーラによってWindowsにインストールした場合、この設定は自動的に行なわれます
 
-1.  On the Windows search box (on the Taskbar) search for *environment*. The best match result should be the "Edit the system environment variables" option. Open it.
-![](../images/win_environment_variables.png)
-2.  A small window should appear. Under *user variables* select **PATH** (or **Path** - Windows environment variables are case insensitive) and click *Edit*. If no such variable exists you must create it with the *New*-Button
-![](../images/win_user_variables.png)
-3.  Append `;C:\Program Files\sumo-{{Version}}\bin` to the end of the **PATH** value
-    (don't delete the existing values\!)
-4.  Under *user variables* now select **SUMO_HOME** and click *Edit*. If no such
-    variable exists you must create it with the *New*-Button
-5.  Set `C:\Program Files\sumo-{{Version}}` as the value of the **SUMO_HOME** variable
+1. マイコンピュータを右クリックし、プロパティをクリック
+1. 詳細設定タブをクリック
+1. 環境変数をクリック
+1. ユーザー環境変数の欄でPATH(またはPath)を選択し編集をクリック。見つからない場合は 「新規」ボタンから作成
+1. PATHの値に`;C:\Program Files\sumo-1.2.0\bin`を追加(元からある値は残す)
+1. ユーザー環境変数の欄でSUMO_HOMEを選択し編集をクリック。見つからない場合は 「新規」ボタンから作成
+1. `C:\Program Files\sumo-1.2.0`をSUMO_HOMEの値に設定
 
 !!! note
-    Replace `C:\Program Files\sumo-{{Version}}\` with your sumo directory.
+    `C:\Program Files\sumo-1.2.0`は自身のsumoディレクトリにおきかえてください
 
 !!! caution
-    You must close and reopen any existing command-line window for the new variable setting to become effective.
-
+    新しいパスの設定を適用するには、全ての開かれているコマンドラインウィンドウを開きなおす必要があります。
 
 ### Linux
 
-#### Temporary Solution
+#### 一時的な解決策
 
-To set an environment variable temporarily, you can use the following
-command in your terminal:
+環境変数を一時的に設定するには、次のコマンドをターミナルに打ちこんでください。
 
 ```
 export SUMO_HOME="/your/path/to/sumo/"
 ```
 
-This sets the environment variable to be used by any program or script
-you start in your current shell session. This does not affect any other
-shell session and only works until you end the session.
+これは現在のシェルにおいて実行される全てのプログラム、スクリプトで使われる環境変数を設定します。
+これは他のシェルセッションや現在のシェルの終了後には影響を与えません。
 
 !!! note
-    Replace `/your/path/to/sumo/` with your sumo directory.
+    `/your/path/to/sumo/`は自身のsumoディレクトリに置きかえてください
 
-#### Permanent Solution
+#### 永続的な解決策
 
-To set an environment variable permanently, follow these steps:
+環境変数を永続的に設定するには以下のステップを踏んでください。
 
-1.  Open a file explorer of your choice and go to `/home/YOUR_NAME/`.
-2.  Open the file named `.bashrc` with a text editor of your choice.
-    (You may have to enable showing hidden files in your file explorer)
-3.  Place this code `export SUMO_HOME="/your/path/to/sumo/"` somewhere
-    in the file and save. (Don't delete any existing content\!)
-4.  Reboot your computer. (Alternatively, log out of your account and
-    log in again.)
+1. ファイラーを開き `/home/YOUR_NAME/`フォルダに行く
+1. .bashrcファイルをテキストエディタで開く(ファイラーで隠しファイルを見えるようにする必要があるかもしれません)
+1. `export SUMO_HOME="/your/path/to/sumo/"`をファイルの適当な場所に書きこみ、保存する(元から書きこまれている内容は消さない)
+1. コンピュータを再起動する(または、一度ログアウトしてから再ログインする)。
 
-The environment variable will now be used by any program you start from
-the command line with your current user account.
+こうすることで、現在のユーザーアカウントのもとで開かれるどのコマンドラインプログラムでも環境変数が使えるようになります。
 
 !!! note
-    Replace `YOUR_NAME` with your username; Replace `/your/path/to/sumo/` with your sumo directory.
+    `YOUR_NAME`は自身のユーザーネームに、`/your/path/to/sumo/`は自身のsumoディレクトリに置きかえてください
 
-#### Using a pre-packaged version of SUMO
 
-When using the sumo version that comes with your package manager (i.e.
-apt) the SUMO_HOME variable must be set to the base path of the tools
-folder. On Ubuntu this is
+#### パッケージ版SUMO
+
+パッケージマネージャ(例: apt)からSUMOをインストールした場合、SUMO_HOMEの値はtoolsフォルダの含まれているフォルダになります。
+Ubuntuでは以下の場所です。
 
 ```
 /usr/share/sumo
@@ -185,64 +156,60 @@ folder. On Ubuntu this is
 
 ### macOS
 
-First you need to determine which shell (**bash** or **zsh**) you are currently working with. In a terminal, type `ps -p $$`  (this should let you see under CMD which shell you are using). The default shell in macOS Catalina is **zsh**.
+まず、現在使用しているシェル（**bash** または **zsh**）を確認する必要があります。ターミナルで `ps -p $$` と入力してください（これにより、CMD の下に使用中のシェルが表示されるはずです）。macOS Catalina のデフォルトシェルは **zsh** です。
+#### ZSH用
 
-#### for ZSH
-
-In a Terminal, execute the following steps:
+ターミナルで以下の手順を実行してください:
 ```
 open ~/.zshrc
 ```
-This will open the *.zshrc* file in TextEdit. Add the following line to that document:
+これにより*.zshrc*ファイルがTextEditで開きます。その文書に次の行を追加してください:
 ```
 export SUMO_HOME="/your/path/to/sumo"
 ```
-Make sure to replace `/your/path/to/sumo` with your ***actual*** path to sumo.
-Save that document in TextEdit. Now you need to apply the changes by entering:
+`/your/path/to/sumo` を、sumo の ***実際の*** パスに置き換えてください。
+TextEdit でその文書を保存します。次に、変更を適用するためにターミナルで以下を入力します:
 ```
 source ~/.zshrc
 ```
-in the terminal. You are done! To test if the environment variable was set correctly, you can print it into the terminal:
+をターミナルに入力します。これで完了です！環境変数が正しく設定されたかテストするには、ターミナルに以下を出力してください：
 ```
 echo $SUMO_HOME
+/usr/share/sumo
 ```
-and you should be able to get the recently added path there.
+すると、最近追加されたパスが表示されるはずです。
 
 #### for Bash
 
-In a Terminal, execute the following steps:
+ターミナルで以下の手順を実行してください:
 ```
 open ~/.bash_profile
 ```
-This will open the *.bash_profile* file in TextEdit. Add the following line to that document:
+これにより*.bash_profile*ファイルがテキストエディタで開きます。その文書に次の行を追加してください:
 ```
 export SUMO_HOME="/your/path/to/sumo"
 ```
-Make sure to replace `/your/path/to/sumo` with your ***actual*** path to sumo.
-Save that document in TextEdit. Now you need to apply the changes by entering:
+`/your/path/to/sumo` を、sumo の ***実際の*** パスに置き換えてください。
+TextEditでその文書を保存します。次に、変更を適用するためにターミナルで以下を入力します：
 ```
 source ~/.bash_profile
 ```
-in the terminal. You are done! To test if the environment variable was set correctly, you can print it into the terminal:
+これで完了です！環境変数が正しく設定されたか確認するには、ターミナルで以下を実行して出力します：
 ```
 echo $SUMO_HOME
 ```
-and you should be able to get the recently added path there.
+これにより、追加したパスが表示されるはずです。
+## コマンドラインの小技
 
-# Tips for using the Command-Line
+### コピー/ペースト
 
-## Copy and Paste
+コマンドラインでは標準的なコピー/ペーストに関するショートカットが効きません。
+コピー/ペーストのためにはコマンドラインウィンドウを右クリックする必要があります。
+利便性向上のためには、コマンドラインウィンドウのタイトルバーをクリックして、「プロパティ」を選択し、「オプション」タブで「簡易編集モード」にチェックを入れます。
+こうすることで、マウスの左ボタンでテキストを選択し右クリックでコピーすることができるようになります。
+もう一度右クリックすることで、コピーしたテキストをペーストすることができます。
 
-The standard hotkeys for copy and paste do not work in the command-line.
-You can access an edit menu for copy/paste by right-clicking the
-command-line window. For increased convenience you can also right-click
-the title-bar of the command-line window and select properties. Then
-check the box **quick-edit** under the options-tab. You can now select
-text with the left mouse button and copy it using right-click. Another
-right-click is used to paste the copied text.
+### 過去のコマンドの繰り返し
 
-## Repeating previous commands
-
-Hitting the *up*- and *down*-arrow buttons allows you to move through
-the history of previously entered commands. You can edit these commands
-or simply hit *enter* to execute them again.
+上下矢印キーを使うことで、以前入力されたコマンドの履歴をたどることができます。
+表示されたコマンドを書きなおしたり、単にenterキーを押すことでもう一度そのコマンドを実行できます。

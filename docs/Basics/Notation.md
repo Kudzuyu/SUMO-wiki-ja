@@ -1,108 +1,76 @@
----
-title: Notation
----
+# ドキュメント上の記法
 
-This documentation uses coloring to differ between
-different type of information. Below, these annotations and colors are
-described.
+このWikiでのドキュメントでは色ごとに異なる情報を表現しています。
+こうした記法を以下に示します。
 
-## Command Line
-
-If you encounter something like this:
+## コマンドライン
 
 ```
 netconvert --visum=MyVisumNet.inp --output-file=MySUMONet.net.xml
 ```
 
-you should know that this is a call on the command line. There may be
-also a '\\' at the end of a line. This indicates that you have to
-continue typing without pressing return (ignoring both the '\\' and the
-following newline). The following example means exactly the same as the
-one above:
+こうした表現は、コマンドラインでの命令になります。
+行の終りに'\\'がつく場合もあります。
+この場合その行が継続していることを示しており、改行せずに下の行を書く必要があります ('\\'と改行を両方無視してください)。
+下の例は上の例と全く同じものです。
 
 ```
 netconvert --visum=MyVisumNet.inp \
   --output-file=MySUMONet.net.xml
 ```
 
-## Application Options
+## アプリケーションオプション
 
-Command line option names are normally colored **this way**. Their values ** *<LIKE THIS\>* **.
+コマンドラインオプションは基本的に**このように**表現されます。
+値は**`<こんな感じ>`**です。
 
-## XML Examples
+## XMLの例
 
-XML-elements and attributes are shown `like this`. Their values, if variable,
-*`<LIKE THIS>`*.
-
-Complete examples of XML-Files are shown like the following:
+XMLの要素と属性は`このように表示されます`．
+もし値が変数の場合は*`<このように表示されます>`*．
 
 ```xml
 <myType>
   <myElem myAttr1="0" myAttr2="0.0"/>
   <myElem myAttr1="1" myAttr2="-500.0"/>
 </myType>
+
 ```
+## データタイプ
 
-## Referenced Data Types
+- `<BOOL>`: 真偽値です。エンコードには"t"か"true"と"f"か"false"を使います
+- `<INT>`: 整数値、負の数の事もあります
+- `<UINT>`: 符号なし整数値、常に >`= 0です
+- `<FLOAT>`: 浮動小数点数
+- `<TIME>`: 秒で与えられる時間を表します。小数も可能です(例: "12.1")
+- `<STRING>`: ASCII文字のみを使った文字列です
+- `<ID>`: 次の文字を含まない文字列です: '#'
 
-- *<BOOL\>*: a boolean value, use "t" or "true" and "f" or "false" for
-  encoding
-- *<INT\>*: an integer value, may be negative
-- *<UINT\>*: an unsigned integer value, must be \>=0
-- *<FLOAT\>*: a floating point number
-- *<TIME\>*: time, given in seconds; fractions are allowed, e.g. "12.1"
-- *<STRING\>*: any string, but use ASCII-characters only
-- *<STRING[ ]\>*: a comma separated list of strings
-- *<ID\>*: a string which must not contain the following characters:
-  '\#'
+!!! caution
+    許可されていない文字のリストは不完全です
 
-  !!! caution
-      The list of not allowed characters is incomplete
+- `<FILE>`または`<FILENAME>`
+- `<PATH>`: 通常フォルダへの(相対または絶対)パス
+- `<COLOR>`: ','で区切られた4つの浮動小数点数(`<FLOAT>`,`<FLOAT>`,`<FLOAT>`,`<FLOAT>`)。0.0～1.0か0-255の範囲で赤、緑、青、透明度(アルファ)を示します(アルファ値はオプションです)
+セパレータはコンマだけで、スペースを挟んではいけないことに注意してください
+色は[HTMLカラーコード](http://ja.wikipedia.org/wiki/ウェブカラー#16進トリプレット表記)を用いるか基本的な色の場合には一つの文字列として定義することもできます(基本の色: "red", "green", "blue", "yellow", "cyan", "magenta", "black", "white", "grey")
+- `<2D-POSITION>`: ','で区切られた2つの浮動小数点数 (`<FLOAT>`,`<FLOAT>`)で、それぞれX軸とY軸を表します。Zは暗黙に0です
+- `<3D-POSITION>`: ','で区切られた3つの浮動小数点数 (`<FLOAT>`,`<FLOAT>`,`<FLOAT>`)で、それぞれX軸、Y軸、Z軸を表します
+- `<POSITION-VECTOR>`: ' '(半角スペース)で区切られた2次元または3次元座標のリストです
+- `<2D-BOUNDING_BOX>`: ','で区切られた4つの浮動小数点数(`<FLOAT>`,`<FLOAT>`,`<FLOAT>`,`<FLOAT>`)で、Xの最小値、 Yの最小値、Xの最大値、Yの最大値を表します
+- `<PROJ_DEFINITION>`: proj.4で使用されるプロジェクト定義が入っている文字列です。定義文字列はクォートに囲まれている必要があることに注意してください
 
+### ファイルタイプ
 
-- *<FILE\>* or *<FILENAME\>*: the (relative or absolute) path to a file;
-  see also [\#Referenced File Types](#referenced_file_types)
-- *<PATH\>*: a (a relative or absolute) path (usually to a folder)
-- *<COLOR\>*: a quadruple of floats separated by ','
-  (*<FLOAT\>*,*<FLOAT\>*,*<FLOAT\>*,*<FLOAT\>*), which describe the red,
-  green, blue, and alpha component ranging from 0.0 to 1.0 (the alpha
-  component is optional), alternatively the list may contain integers
-  in the 0-255 range. Please note that the separator must be a comma
-  and there are no spaces allowed. The color may also be defined using
-  a single string with a [HTML color code](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet) or one of
-  the basic colors ("red", "green", "blue", "yellow", "cyan",
-  "magenta", "black", "white", "grey"). The value of "random" will assign a random color.
-- *<2D-POSITION\>*: two floats separated by ','
-  (*<FLOAT\>*,*<FLOAT\>*), which describe the x- and the y-offset,
-  respectively. z is 0 implicitly
-- *<3D-POSITION\>*: three floats separated by ','
-  (*<FLOAT\>*,*<FLOAT\>*,*<FLOAT\>*), which describe the x- , y- and the
-  z-offset, respectively
-- *<POSITION-VECTOR\>*: A list of 2D- or 3D-Positions separate by ' '.
-  I.e. (*<2D-POSITION\>* *<2D-POSITION\>*,*<3D-POSITION\>*)
-- *<2D-BOUNDING_BOX\>*: four floats separated by ','
-  (*<FLOAT\>*,*<FLOAT\>*,*<FLOAT\>*,*<FLOAT\>*), which describe x-minimum,
-  y-minimum, x-maximum, and y-maximum
-- *<PROJ_DEFINITION\>*: a string containing the projection definition
-  as used by proj.4; please note that you have to embed the definition
-  string in quotes
+- `<NETWORK_FILE>`: [netgenerate](../netgenerate.md)または[netconvert](../netconvert.md)によって作られた[SUMOネットワークファイル](../Networks/SUMO_Road_Networks.md)
+- `<ROUTES_FILE>`: [DUAROUTER]()または[JTRROUTER]()あるいは手作業で作られた[SUMOルートファイル]()
+- `<TYPE_FILE>`: ダウンロードされたかあるいは手作業で作られた[SUMOエッジタイプファイル](../SUMO_edge_type_file.md)
+- `<OSM_FILE>`: [OpenStreetMap](http://www.openstreetmap.org/)からエクスポートされた[OpenStreetMapファイル](../OpenStreetMap_file.md)
 
-### Referenced File Types
+## さらに進んだ枠組み
 
-- *<NETWORK_FILE\>*: a [SUMO network file](../Networks/SUMO_Road_Networks.md) as built by
-  [netgenerate](../netgenerate.md) or
-  [netconvert](../netconvert.md)
-- *<ROUTES_FILE\>*: a [SUMO routes file](../Definition_of_Vehicles,_Vehicle_Types,_and_Routes.md)
-  as built by [duarouter](../duarouter.md) or
-  [jtrrouter](../jtrrouter.md) or by hand
-- *<TYPE_FILE\>*: a [SUMO edge type file](../SUMO_edge_type_file.md), built by hand or downloaded
-- *<OSM_FILE\>*: a [OpenStreetMap file](../OpenStreetMap_file.md)
-  as exported from [OpenStreetMap](https://www.openstreetmap.org/)
+大括弧(角括弧) '['と ']'で囲われた情報は任意(オプショナル)です。
+山括弧 '<'と '>'は変数を示します。
+好きな値を入れてください。
 
-## Further Schemes
-
-Brackets '\[' and '\]' indicate that the enclosed information is
-optional. Brackets '<' and '\>' indicate a variable - insert your own
-value in here.
-
-{{SUMO}} is the path you have saved your SUMO-package into.
+**`<SUMO_HOME>`** はSUMOパッケージが保存されているパスです。 
