@@ -1,0 +1,770 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Calibrator/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Calibrator - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#calibrators" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Calibrator
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decision-to-insert-new-vehicles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decision to insert new vehicles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes-of-generated-vehicles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routes of generated Vehicles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibrating-only-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibrating only Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibrating-only-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibrating only Speed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibrating-vehicle-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibrating vehicle types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calibrating vehicle types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-dependent-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type-dependent mapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-between-vtypedistributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping between vTypeDistributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibrating-on-junctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibrating on junctions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="calibrators">Calibrators<a class="headerlink" href="#calibrators" title="Permanent link">&para;</a></h1>
+<p>These trigger-type objects may be specified within an <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a> and allow the
+dynamic adaption of traffic flows, speeds and vehicle parameters (vTypes). The syntax for such an
+object is: <code>&lt;calibrator id="&lt;ID&gt;" lane="&lt;LANE_ID&gt;" output="&lt;OUTPUT_FILE&gt;"/&gt;</code>. They can be used to modify simulation
+scenario based on induction loop measurements. They can also be used to model location-base changes in driving behavior.</p>
+<p>A calibrator will remove vehicles in excess of the specified flow and it will insert new vehicles (of the specified type)
+if the normal traffic demand of the simulation does not meet the
+specified number of <code>vehsPerHour</code>. Furthermore, the speed on the edge will be
+adjusted to the specified <code>speed</code> similar to the workings of a <a href="../Variable_Speed_Signs/">variable speed
+sign</a>.</p>
+<p>Calibrators will also remove vehicles if the traffic on their lane is jammed beyond what
+would be expected given the specified flow and speed. This ensures that
+invalid jams do not grow upstream past a calibrator. This behavior can be controlled with attribute 'jamThreshold' (see below).</p>
+<p>If no target flow is given, the provided type information will instead be used to modify the type of vehicles that are passing the calibrator.</p>
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;vType id=&quot;t0&quot; speedDev=&quot;0.1&quot; speedFactor=&quot;1.2&quot; sigma=&quot;0&quot;/&gt;
+  &lt;route id=&quot;c1&quot; edges=&quot;beg middle end rend&quot;/&gt;
+
+  &lt;calibrator id=&quot;calibtest_edge&quot; edge=&quot;beg&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot;&gt;
+    &lt;flow begin=&quot;0&quot;    end=&quot;1800&quot; route=&quot;c1&quot; vehsPerHour=&quot;2500&quot; speed=&quot;27.8&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+    &lt;flow begin=&quot;1800&quot; end=&quot;3600&quot; route=&quot;c1&quot; vehsPerHour=&quot;2500&quot; speed=&quot;15.0&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+  &lt;/calibrator&gt;
+
+  &lt;calibrator id=&quot;calibtest_lane&quot; edge=&quot;middle_1&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot;&gt;
+    &lt;flow begin=&quot;0&quot;    end=&quot;1800&quot; route=&quot;c1&quot; vehsPerHour=&quot;600&quot; speed=&quot;27.8&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+    &lt;flow begin=&quot;1800&quot; end=&quot;3600&quot; route=&quot;c1&quot; vehsPerHour=&quot;800&quot; speed=&quot;15.0&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+  &lt;/calibrator&gt;
+
+&lt;/additional&gt;
+</code></pre>
+<p>The following attributes/elements are used within the calibrator
+element:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the calibrator</td>
+</tr>
+<tr>
+<td>edge</td>
+<td>id (string)</td>
+<td>The id of an edge for measuring and calibrating flow. (Either <em>edge</em> or <em>lane</em> must be specified)</td>
+</tr>
+<tr>
+<td>lane</td>
+<td>id (string)</td>
+<td>The id of a lane for measuring and calibrating flow (Either <em>edge</em> or <em>lane</em> must be specified)</td>
+</tr>
+<tr>
+<td><strong>pos</strong></td>
+<td>float</td>
+<td>The position of the calibrator on the specified lane (currently ignored, see <a href="https://github.com/eclipse-sumo/sumo/issues/1331">[1]</a>)</td>
+</tr>
+<tr>
+<td>period (alias freq)</td>
+<td>float</td>
+<td>The time interval between calibration attempts. default is step-length. Setting a high value limits the maximum achievable flow</td>
+</tr>
+<tr>
+<td>routeProbe</td>
+<td>id (string)</td>
+<td>The id of the <a href="../Output/RouteProbe/">routeProbe</a> element from which to determine the route distribution for generated vehicles.</td>
+</tr>
+<tr>
+<td>jamThreshold</td>
+<td>float</td>
+<td>A threshold value to detect and clear unexpected jamming if the mean edge speed drops below FLOAT * speedLimit. Range [0, 1]. Default: 0.5 (0.8 in meso)</td>
+</tr>
+<tr>
+<td>output</td>
+<td>file (string)</td>
+<td>The output file for writing calibrator information or <em>NULL</em></td>
+</tr>
+<tr>
+<td>vTypes</td>
+<td>string</td>
+<td>space separated list of vehicle type ids to consider (for counting/removal/type-modification), "" means all; default "".</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>flow</code> elements which are defined as children of the calibrator definition
+follow the general <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#repeated_vehicles_flows">format of flow
+definitions</a>.
+As the only difference, either the attribute <code>vehsPerHour</code> or <code>speed</code> or <code>type</code> (or any combination of these) must be
+given.</p>
+<p>By default edge calibrators will use <code>departLane="free"</code> whereas lane calibrators will use <code>departLane="x"</code>
+where <em>x</em> is the lane index of the calibrator lane. All calibrators
+default to <code>departSpeed="max"</code>.</p>
+<h2 id="decision-to-insert-new-vehicles">Decision to insert new vehicles<a class="headerlink" href="#decision-to-insert-new-vehicles" title="Permanent link">&para;</a></h2>
+<p>The interval (<em>begin</em>, <em>end</em>) defines the time in which calibration
+takes place. The length of the interval also defines the aggregation
+period for comparing observed and desired flows. The goal of the
+calibration is to ensure that the correct number of vehicles are
+inserted by the end of the interval. At the same time, the space-time
+structure of existing traffic should be preserved as much as possible.</p>
+<p>There is a trade-off between using shorter or longer calibration
+intervals.</p>
+<ul>
+<li>With shorter consecutive intervals it may happen that vehicles will
+  be removed first and later inserted because they did not arrive with
+  uniform density</li>
+<li>With longer intervals it may happen that vehicles are inserted very
+  lated because the calibrator tries to wait for existing vehicles
+  that might still appear</li>
+</ul>
+<p>The <em>period</em> attribute defines how often a check for inserting vehicles
+takes place. This value defaults to the simulation step-length. Larger
+values conserve computation time but may also lead to a tighter
+clustering of inserted vehicles.</p>
+<p>The algorithm for deciding when exactly to insert (and remove) vehicles
+is described in <a href="https://elib.dlr.de/79428/">Erdmann, Jakob (2012) Online-Kalibrierung einer
+Mikroskopischen Verkehrssimulation. ViMOS 2012, 29.11.2012, Dresden,
+Deutschland.</a></p>
+<h2 id="routes-of-generated-vehicles">Routes of generated Vehicles<a class="headerlink" href="#routes-of-generated-vehicles" title="Permanent link">&para;</a></h2>
+<p>Whenever the measured flow in a given interval is lower than the
+specified flow, new vehicles are inserted. If the <code>routeProbe</code> attribute is
+specified, a route is sampled from the distribution of the named <a href="../Output/RouteProbe/">route
+probe detector</a>. Otherwise the <code>route</code>
+attribute of the flow is used. Note, that this value may also specify
+the name of a route distribution.</p>
+<h2 id="calibrating-only-flow">Calibrating only Flow<a class="headerlink" href="#calibrating-only-flow" title="Permanent link">&para;</a></h2>
+<p>If attribute 'speed' is omitted from the <code>&lt;flow&gt;</code> definition, the calibrator will only affect flow by removing or insertion vehicles:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;vType id=&quot;t0&quot; speedDev=&quot;0.1&quot; speedFactor=&quot;1.2&quot; sigma=&quot;0&quot;/&gt;
+  &lt;route id=&quot;c1&quot; edges=&quot;beg middle end rend&quot;/&gt;
+
+  &lt;calibrator id=&quot;calibtest_edge&quot; edge=&quot;beg&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot;&gt;
+    &lt;flow begin=&quot;0&quot;    end=&quot;1800&quot; route=&quot;c1&quot; vehsPerHour=&quot;2500&quot; type=&quot;t0&quot;/&gt;
+    &lt;flow begin=&quot;1800&quot; end=&quot;3600&quot; route=&quot;c1&quot; vehsPerHour=&quot;2500&quot; type=&quot;t0&quot;/&gt;
+  &lt;/calibrator&gt;
+&lt;/additional&gt;
+</code></pre>
+<h2 id="calibrating-only-speed">Calibrating only Speed<a class="headerlink" href="#calibrating-only-speed" title="Permanent link">&para;</a></h2>
+<p>If only attribute 'speed' is given in the <code>&lt;flow&gt;</code> definition, the calibrator acts similar to a <a href="../Variable_Speed_Signs/">variableSpeedSign</a>:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;calibrator id=&quot;calibtest_edge&quot; edge=&quot;beg&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot;&gt;
+    &lt;flow begin=&quot;0&quot;    end=&quot;1800&quot; speed=&quot;10&quot;/&gt;
+    &lt;flow begin=&quot;1800&quot; end=&quot;3600&quot; speed=&quot;20&quot;/&gt;
+  &lt;/calibrator&gt;
+&lt;/additional&gt;
+</code></pre>
+<h2 id="calibrating-vehicle-types">Calibrating vehicle types<a class="headerlink" href="#calibrating-vehicle-types" title="Permanent link">&para;</a></h2>
+<p>When a calibrator flow is defined without attribute <code>vehsPerHour</code> but with attribute <code>type</code>, this defines a type-calibrator.
+This type of calibrator will modify the types of all passing vehicles (or all vehicles that match the <code>vTypes</code> attribute of the calibrator).
+The normal behavior is to replace the type of the passing vehicles with the type set in the flow element.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When calibrating types, the 'route' attribute can be omitted from the flow definition.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The type modification happens when the vehicle enters the calibrator edge regardless of the configured calibrator position.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Type calibration does currently not work with the mesoscopic model.</p>
+</div>
+<h3 id="type-dependent-mapping">Type-dependent mapping<a class="headerlink" href="#type-dependent-mapping" title="Permanent link">&para;</a></h3>
+<p>If the traffic consists of multiple vehicle types (i.e. passenger cars and trucks) it may be desirable to either</p>
+<ul>
+<li>modify only some of the observed types</li>
+<li>perform a dependent mapping: carType -&gt; carType2, truckType -&gt; truckType2</li>
+</ul>
+<p>Both can be accomplished by using the <code>vTypes</code> attribute of the calibrator to make it apply to a subset of types only.
+For a dependent mapping, multiple calibrators (each with a different <code>vTypes</code> attribute) may be defined as in the following example:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+  ...
+  &lt;calibrator id=&quot;forCars&quot; edge=&quot;E1&quot; pos=&quot;0&quot; vTypes=&quot;myCarType&quot;&gt;
+    &lt;flow begin=&quot;0&quot; end=&quot;1800&quot; type=&quot;myCarType2&quot;/&gt;
+  &lt;/calibrator&gt;
+  &lt;calibrator id=&quot;forTrucks&quot; edge=&quot;E1&quot; pos=&quot;0&quot; vTypes=&quot;myTruckType&quot;&gt;
+    &lt;flow begin=&quot;0&quot; end=&quot;1800&quot; type=&quot;myTruckType2&quot;/&gt;
+  &lt;/calibrator&gt;
+&lt;/additional&gt;
+</code></pre>
+<p>If there are many different vehicle types in the simulation, creating one calibrator per vType may be cumbersome to define.
+In this case it may be better to define a mapping between type distributions as described below.</p>
+<h3 id="mapping-between-vtypedistributions">Mapping between vTypeDistributions<a class="headerlink" href="#mapping-between-vtypedistributions" title="Permanent link">&para;</a></h3>
+<p>A special behavior is activated if the following conditions are met:
+- the <code>type</code> in the flow element references a <code>vTypeDistribution</code>
+- the passing vehicle was defined with a type drawn from a <code>vTypeDistribution</code>
+- both vTypeDistributions have the same number of member types
+In this case, the new type of the passing vehicle will be mapped to a specific type in the vType distribution:
+- the index of the actual vehicle type in the original vTypeDistribution will be computed
+- the type with that index in the new vTypeDistribution will be used as the new vehicle type</p>
+<p>Example route-file input:</p>
+<pre><code class="language-xml">&lt;vTypeDistribution id=&quot;dist1&quot;&gt;
+  &lt;vType id=&quot;car&quot; probability=&quot;70&quot;/&gt;
+  &lt;vType id=&quot;truck&quot; maxSpeed=&quot;10&quot; probability=&quot;30&quot; vClass=&quot;truck&quot;/&gt;
+&lt;/vTypeDistribution&gt;
+</code></pre>
+<p>Example additional-file input:</p>
+<pre><code class="language-xml">&lt;vTypeDistribution id=&quot;bad_weather&quot;&gt;
+  &lt;vType id=&quot;car2&quot; speedFactor=&quot;0.8&quot; decel=&quot;3&quot;/&gt;
+  &lt;vType id=&quot;truck2&quot; decel=&quot;2&quot; tau=&quot;1.5&quot; vClass=&quot;truck&quot;/&gt;
+&lt;/vTypeDistribution&gt;
+
+&lt;calibrator id=&quot;c1&quot; lane=&quot;middle_0&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot;&gt;
+  &lt;flow begin=&quot;900&quot;    end=&quot;1800&quot; route=&quot;r1&quot; type=&quot;bad_weather&quot;/&gt;
+&lt;/calibrator&gt;
+</code></pre>
+<p>In this example, all cars will be mapped to slower cars (type 'car' to 'car2') and all trucks will be mapped to trucks that keep larger distances.</p>
+<h3 id="calibrating-on-junctions">Calibrating on junctions<a class="headerlink" href="#calibrating-on-junctions" title="Permanent link">&para;</a></h3>
+<p>You can define a type calibration for a whole junction in the following way:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;calibrator id=&quot;cars&quot; node=&quot;J1&quot; pos=&quot;0&quot;&gt;
+    &lt;flow begin=&quot;0&quot; end=&quot;1800&quot; type=&quot;myNewCarType&quot;/&gt;
+  &lt;/calibrator&gt;
+  &lt;calibrator id=&quot;carsUndone&quot; node=&quot;J2&quot; pos=&quot;0&quot; local=&quot;true&quot;&gt;
+    &lt;flow begin=&quot;0&quot; end=&quot;1800&quot; type=&quot;myNewCarType2&quot;/&gt;
+  &lt;/calibrator&gt;
+&lt;/additional&gt;
+</code></pre>
+<p>This will change the vehicle type once the vehicle enters one of the edges which approach the junction.
+The second variant above with the <code>local</code> attribute will also undo the changes (revert to the original type)
+once the vehicle has left any edge outgoing from the junction.
+As with the general type calibration the <code>pos</code> attribute is being ignored.</p>
+<h1 id="building-a-scenario-without-knowledge-of-routes-based-on-flow-measurements">Building a scenario without knowledge of routes, based on flow measurements<a class="headerlink" href="#building-a-scenario-without-knowledge-of-routes-based-on-flow-measurements" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A simpler and more robust approach is provided by the <a href="../../Tools/Turns/#routesamplerpy">routeSampler</a> tool.</p>
+</div>
+<p>Due to their ability of adapting higher as as well as lower flows to a
+specified value, calibrators may be used to adapt (almost) arbitrary
+traffic demand to a given set of measurements. One strategy for building
+a scenario from measurements is therefore, to <a href="../../Tools/Trip/#randomtripspy">generated random
+traffic</a> and use Calibrators in
+conjunction with <a href="../Output/RouteProbe/">route probe
+detectors</a>.</p>
+<p>Each edge where measurements are given should receive a calibrator and a
+route probe detector. As soon as the first vehicle has passed the route
+probe detector, the calibrator will be able to use that vehicles route.
+For the calibrator to be able to function before the first vehicle, it
+needs a <em>fall back</em> route which just needs to consist of a single edge
+(i.e. the edge on which the calibrator is placed).</p>
+<p>Example <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+   &lt;vType id=&quot;t0&quot; speedDev=&quot;0.1&quot;/&gt;
+   &lt;routeProbe id=&quot;cali_edge1_probe&quot; edge=&quot;edge1&quot; period=&quot;60&quot; file=&quot;output.xml&quot;/&gt;
+   &lt;route id=&quot;cali1_fallback&quot; edges=&quot;edge1&quot;/&gt;
+   &lt;calibrator id=&quot;cali_edge1&quot; lane=&quot;edge1_0&quot; pos=&quot;0&quot; output=&quot;detector.xml&quot; period=&quot;60&quot; routeProbe=&quot;cali_edge1_probe&quot;&gt;
+      &lt;flow begin=&quot;0&quot;    end=&quot;1800&quot; route=&quot;cal1_fallback&quot; vehsPerHour=&quot;2500&quot; speed=&quot;27.8&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+      &lt;flow begin=&quot;1800&quot; end=&quot;3600&quot; route=&quot;cal1_fallback&quot; vehsPerHour=&quot;2500&quot; speed=&quot;15.0&quot; type=&quot;t0&quot; departPos=&quot;free&quot; departSpeed=&quot;max&quot;/&gt;
+   &lt;/calibrator&gt;
+&lt;/additional&gt;
+</code></pre>
+<p>Running the simulation with the random demand as well as these <code>&lt;calibrator&gt;</code> and <code>&lt;routeProbe&gt;</code>
+definitions will achieve a simulation in which traffic matches the
+specified flows at each calibrator edge. However, the realism of traffic
+flow behind (or between) calibrators depends on the fit between random
+routes and real-world routes. The importance of this fit increases with
+the size and complexity of the network between calibrator edges.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

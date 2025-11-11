@@ -10,26 +10,29 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TraCI/GUI_Value_Retrieval/">
       
+      
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>TraCI/GUI 変数の取得 - SUMO wiki ja</title>
+        <title>GUI Value Retrieval - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tracigui-変数の取得" class="md-skip">
+        <a href="#command-0xac-get-gui-variable" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -103,47 +107,57 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TraCI/GUI 変数の取得
+              GUI Value Retrieval
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -289,8 +346,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -299,15 +354,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#コマンド-0xac-gui-変数の取得" class="md-nav__link">
-    コマンド 0xac: GUI 変数の取得
+  <a href="#command-0xac-get-gui-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0xac: Get GUI Variable
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#レスポンス-0xbc-gui-の値" class="md-nav__link">
-    レスポンス 0xbc: GUI の値
+  <a href="#response-0xbc-gui-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response 0xbc: GUI Variable
+    </span>
   </a>
   
 </li>
@@ -320,101 +379,124 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="tracigui-変数の取得">TraCI/GUI 変数の取得<a class="headerlink" href="#tracigui-変数の取得" title="Permanent link">&para;</a></h1>
-<p><a href="https://sumo.dlr.de/docs/TraCI/GUI_Value_Retrieval.html">原文</a></p>
-<h2 id="コマンド-0xac-gui-変数の取得">コマンド 0xac: GUI 変数の取得<a class="headerlink" href="#コマンド-0xac-gui-変数の取得" title="Permanent link">&para;</a></h2>
+
+  <h1>GUI Value Retrieval</h1>
+
+<h2 id="command-0xac-get-gui-variable">Command 0xac: Get GUI Variable<a class="headerlink" href="#command-0xac-get-gui-variable" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>ubyte</th>
-<th>string</th>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">string</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>変数</td>
-<td>View ID</td>
+<td style="text-align: center;">Variable</td>
+<td style="text-align: center;">View ID</td>
 </tr>
 </tbody>
 </table>
-<p>GUI の変数の値を取得します。
-View ID は"View #0"のような形をとり、最後の桁が GUI シミュレーションとして開かれている(サブ)ウィンドウの数をカウントします。
-id はビューのサブウィンドウが非最大化されたときにビューのタイトルバーに表示されます(これは<a href="">新規ビューを開く</a>ときにも自動的に行なわれます)。</p>
-<div style="text-align: center; font-weight: bold">
-GUI 変数取得の概要
-</div>
+<p>Asks for the value of a certain GUI variable. The view id is usually
+something like "View #0", where the last digit counts the open
+(sub-)windows in the simulation GUI. The id is shown in the view
+title-bar when un-maximizing the view subwindow (this happens
+automatically when <a href="../../sumo-gui/#multiple_views">opening a new
+view</a>).</p>
+<p>The following variable values can be retrieved, the type of the return
+value is also shown in the table.</p>
+<center>**Overview Retrievable GUI Variables**</center>
+
 <table>
 <thead>
 <tr>
-<th>変数</th>
-<th>型</th>
-<th>説明</th>
-<th>[Python メソッド]</th>
+<th>Variable</th>
+<th>ValueType</th>
+<th>Description</th>
+<th><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>zoom (0xa0)</td>
 <td>double</td>
-<td>現在のズームレベル(%)</td>
+<td>the current zoom level (in %)</td>
 <td><a href="https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-getZoom">getZoom</a></td>
 </tr>
 <tr>
 <td>offset (id 0xa1)</td>
 <td>2D-position</td>
-<td>現在見える範囲の中心座標のネットワーク中の位置</td>
+<td>the center of the currently visible part of the net</td>
 <td><a href="https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-getOffset">getOffset</a></td>
 </tr>
 <tr>
 <td>schema (id 0xa2)</td>
 <td>string</td>
-<td>使用中の可視化方法(例: "standard"や"real world")</td>
+<td>the visualization scheme used (e.g. "standard" or "real world")</td>
 <td><a href="https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-getSchema">getSchema</a></td>
 </tr>
 <tr>
 <td>boundary (id 0xa3)</td>
 <td>2D-polygon</td>
-<td>見えているネットワークの左下および右上</td>
+<td>the lower left and the upper right corner of the visible network</td>
 <td><a href="https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-getBoundary">getBoundary</a></td>
 </tr>
 <tr>
 <td>has view (id 0xa7)</td>
 <td>bool</td>
-<td>与えられた ID が見えるか</td>
-<td>[hasView](https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-hasView**</td>
+<td>Whether a view with the given ID exists</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._gui.html#GuiDomain-hasView">hasView</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="レスポンス-0xbc-gui-の値">レスポンス 0xbc: GUI の値<a class="headerlink" href="#レスポンス-0xbc-gui-の値" title="Permanent link">&para;</a></h2>
+<h2 id="response-0xbc-gui-variable">Response 0xbc: GUI Variable<a class="headerlink" href="#response-0xbc-gui-variable" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>ubyte</th>
-<th>string</th>
-<th>ubyte</th>
-<th><return_type></th>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">&lt;return_type&gt;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>変数</td>
-<td>ビューの ID</td>
-<td>変数の型</td>
-<td><VARIABLE_VALUE></td>
+<td style="text-align: center;">Variable</td>
+<td style="text-align: center;">View ID</td>
+<td style="text-align: center;">Return type of the variable</td>
+<td style="text-align: center;">&lt;VARIABLE_VALUE&gt;</td>
 </tr>
 </tbody>
 </table>
-<p><strong>"GUI 変数取得コマンド"</strong>への対応になります。</p>
+<p>The respond to a <strong>"Command Get GUI Variable"</strong>.</p>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -441,10 +523,14 @@ GUI 変数取得の概要
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

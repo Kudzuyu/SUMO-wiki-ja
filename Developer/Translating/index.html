@@ -1,0 +1,498 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Developer/Translating/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Translating - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Translating
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div class="d-flex justify-content-evenly"><div class="align-self-center"><a class="no-arrow-link" href="https://hosted.weblate.org/engage/eclipse-sumo/"> <img src="https://hosted.weblate.org/widgets/eclipse-sumo/-/287x66-grey.png" alt="Translation status"/> </a></div><div class="align-self-center"> <a class="no-arrow-link" href="https://hosted.weblate.org/engage/eclipse-sumo/"> <img src="https://hosted.weblate.org/widgets/eclipse-sumo/-/multi-auto.svg" alt="Translation status"/> </a></div></div>
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>SUMO uses the <a href="https://www.gnu.org/software/gettext/">gettext tooling</a> to maintain
+a list of translated strings. The main work of translation is done by the community using
+<a href="https://hosted.weblate.org/projects/eclipse-sumo/">Weblate</a>.
+Every change at Weblate creates a commit into their clone of the SUMO repository which will
+be merged (currently manually, see below) into the main line after review. The Weblate repository gets
+updated automatically by a webhook installed by Eclipse at the main repo.</p>
+<p>So if you want to add translation strings open an account at
+<a href="https://hosted.weblate.org/projects/eclipse-sumo/">Weblate</a> and start.</p>
+<h1 id="marking-translatable-strings">Marking translatable strings<a class="headerlink" href="#marking-translatable-strings" title="Permanent link">&para;</a></h1>
+<p>In the code every string which needs translation should be marked with the <code>TL</code> macro like
+this: <code>TL("String to be translated")</code>. We decided against the often used <code>_</code> macro for readability.</p>
+<p>The macro is defined in <code>src/utils/common/MsgHandler.h</code> which needs to be included (but often
+already is). If you have strings which are concatenated using <code>+</code> you should replace them using the
+<code>TLF</code> macro like <code>TLF("The vehicle '%' has a message.", id)</code> or one of
+the formatting versions of our <code>WRITE_MESSAGE</code> macros.
+So instead of <code>WRITE_MESSAGE("The vehicle '" + id "' has a problem.");</code>
+use <code>WRITE_MESSAGEF(TL("The vehicle '%' has a problem."), id);</code> (this works for
+<code>WRITE_WARNING</code> and <code>WRITE_ERROR</code> as well).</p>
+<p>Please be aware that changing a translatable string in the code (even if you just fix a typo)
+will invalidate (i.e. remove) all translations. This does not mean you should not do it, you
+should just review the changes to the translation files as well. In case you want to keep the translations 
+but fix a typo in the translatable string, please consider using <a href="#change_original_strings">our helper scripts</a> for that task.</p>
+<p>The translations should not be applied to debug and developer messages. This includes everything
+in src/foreign, src/libsumo, src/libtraci, src/traci_testclient and unittest.</p>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
+<p>The same string may have different meanings in different contexts or may need a shorter version
+due to limited space in the GUI. For this reason the <code>TLC</code> macro can be used, where the context can be
+mentioned: It contains first the context and then the string as parameters like in <code>TLC("Simulation", "Stop")</code>.
+Below is the list of context identifiers currently in use:</p>
+<ul>
+<li>Simulation</li>
+<li>Labels</li>
+</ul>
+<h1 id="using-translations">Using translations<a class="headerlink" href="#using-translations" title="Permanent link">&para;</a></h1>
+<p>Translations are enabled by default. The needed gettext tools and
+internationalization library are probably already installed on Linux.
+If not use the equivalent of <code>sudo apt install gettext</code> on your system.
+It is also a good idea to do <code>sudo apt install locales-all</code> to make sure all the needed locales are on your system.
+For Windows we have everything in the SUMOLibraries.</p>
+<p>The translation strings are split into three files for each language residing in <code>$SUMO_HOME/data/po</code>,
+one for GUI stuff, one for the command line applications and one for the python tools.
+While it is possible to edit these files directly, it is discouraged to avoid merge conflicts with the
+Weblate translations. These files still need to be compiled to be usable. Currently this is done manually
+by calling <code>tools/build_config/i18n.py</code>. This script also does a full scan of the <code>src</code> dir and checks for new
+translatable strings. If it finds some, all existing po files will be updated accordingly.</p>
+<h1 id="testing-translations">Testing translations<a class="headerlink" href="#testing-translations" title="Permanent link">&para;</a></h1>
+<p>All SUMO binaries understand the <code>--language</code> option which behaves exactly like the environment variable <code>LANGUAGE</code>
+as described in the <a href="https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html">gettext documentation</a>.
+So for testing turkish, you set <code>--language tr</code>. Please be aware that by default the <code>C</code> locale is activated which
+suppresses all translations. If you want the binaries to respect the environment variable <code>LANGUAGE</code> you can do so by using
+<code>--language=</code> (setting <code>--language</code> to an empty string).</p>
+<h1 id="new-language">New language<a class="headerlink" href="#new-language" title="Permanent link">&para;</a></h1>
+<p>If you want to add a new language either <a href="https://github.com/eclipse-sumo/sumo/issues">open an issue</a> with your request
+or run <code>tools/build_config/i18n.py -l &lt;lang&gt;</code> and make a pull request with the resulting po files.</p>
+<h1 id="for-developers">For developers<a class="headerlink" href="#for-developers" title="Permanent link">&para;</a></h1>
+<p>The translated strings from Weblate are not pushed automatically to our github repo because automatic pushing
+is generally a bad idea and weblate does not have the rights. If you want to merge the commits in weblate into
+the main github you have to do the following in your local git clone of SUMO:</p>
+<pre><code>git pull  # make sure you are up to date and on the target branch (usually main)
+git remote add weblate https://hosted.weblate.org/git/eclipse-sumo/sumo-gui-netedit/  # add Weblate repo (only necessary once)
+git fetch weblate  # get new commits
+git merge weblate/main
+</code></pre>
+<p>Then you should review the changes and <code>git push</code> afterwards.</p>
+<h2 id="change-original-strings">Change original strings<a class="headerlink" href="#change-original-strings" title="Permanent link">&para;</a></h2>
+<p>Changing the translatable string directly in the source code will invalidate the translation because the original string is used
+as a key in the <code>.po</code> translation files. By default, the obsolete translations will remain in the <code>.po</code> file but won't appear in
+the <a href="https://hosted.weblate.org/projects/eclipse-sumo/">Weblate</a> anymore. If the original string does not change its meaning, it
+is preferable to use the python script <code>tools/build_config/updateMessageIDs.py</code> instead (see <a href="../../Tools/Build/#updatemessageidspy">updateMessageIDs.py help</a>).
+The script <code>tools/build_config/obsoleteTranslations.py</code> (see <a href="../../Tools/Build/#obsoletetranslationspy">obsoleteTranslations.py help</a>) can be used to
+print the obsolete translations and optionally remove them completely from the <code>.po</code> files.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

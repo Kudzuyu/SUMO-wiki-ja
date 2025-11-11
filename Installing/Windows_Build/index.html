@@ -1,0 +1,838 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Installing/Windows_Build/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Windows Build - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prerequisites" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Windows Build
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-windows-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Windows setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Windows setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-but-still-recommended-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional but still recommended steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Further notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adapting-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adapting settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vcpkg-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      vcpkg support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-python-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install python packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-cmake-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual CMake configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual CMake configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-via-cmake-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Via CMake GUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-via-cmake-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Via CMake command line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clang" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLang
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linker-reports-something-similar-to-link--fatal-error-lnk1104-cannot-open-file-cprogramobj" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linker reports something similar to "LINK : fatal error LNK1104: cannot open file 'C:\Program.obj'"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failure-on-pre-build-event-missing-versionh-or-typemaph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failure on pre-build event (missing version.h or *typemap.h)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-cannot-proceed-because-msvcr120dllmsvcr140dll-was-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution cannot proceed because MSVCR120.dll/MSVCR140.dll was not found
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-debug-mode-execution-cannot-proceed-because-msvcr120ddllmsvcr140ddll-was-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      In debug mode, execution cannot proceed because MSVCR120D.dll/MSVCR140D.dll was not found
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-build-jupedsim-and-then-build-sumo-with-jupedsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to build JuPedSim and then build SUMO with JuPedSim
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Windows Build</h1>
+
+<p>This document describes how to build SUMO under Windows using only
+freely available (this does <strong>not</strong> mean "open source") tools.
+Instructions on how to build SUMO on Windows using an Open Source
+toolchain are included in our <a href="../Linux_Build/">building on
+Linux</a> page. Please note that you
+may also <a href="../../Downloads/">download pre-built Windows binaries</a>.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A <a href="https://www.visualstudio.com">Visual Studio Community, Professional or Enterprise 2017 or later</a> installation</li>
+<li><a href="https://cmake.org/download">CMake for Windows</a></li>
+<li>Python 3.X</li>
+<li>SUMO sources (either an unpacked src zip or a git clone, see
+  <a href="../Linux_Build/#getting_the_source_code">Getting the source code</a>)</li>
+<li>Installed Libraries (Xerces-C, Proj, Fox) preferably by cloning <a href="https://github.com/DLR-TS/SUMOLibraries/">https://github.com/DLR-TS/SUMOLibraries/</a></li>
+<li>Make sure that the <code>SUMO_LIBRARIES</code> environment variable points to your cloned directory in case you didn't put the libraries in the same directory as the SUMO repository</li>
+<li>Note that in case you don't have admin rights, you can still configure environment variables for you only</li>
+</ul>
+<h2 id="recommended-windows-setup">Recommended Windows setup<a class="headerlink" href="#recommended-windows-setup" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Download <a href="https://www.visualstudio.com/vs/community/">Visual Studio Community Edition</a></li>
+<li>Start the installer and select:<ul>
+<li>Python development (including native tools)</li>
+<li>Desktop development with C++</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../images/VSInstall.png" /></p>
+<ul>
+<li>Clone https://github.com/eclipse-sumo/sumo or open your existing local SUMO folder</li>
+<li>Go to team explorer</li>
+<li>Choose Manage Connections, then "Local Git"-&gt;Clone https://github.com/DLR-TS/SUMOLibraries</li>
+<li>Now be patient until CMake starts configuring</li>
+<li>If it does not or you want to reconfigure choose <em>Project-&gt;Generate Cache</em> (if this option is not there you may need to wait a little longer until Visual Studio has picked up everything)</li>
+<li>Select <em>Build-&gt;Build All</em> (<em>CMake-&gt;Build All</em> in earlier versions)</li>
+<li>Set the <a href="../../Basics/Basic_Computer_Skills/#sumo_home">SUMO_HOME</a> environment variable</li>
+<li>Install Texttest https://sourceforge.net/projects/texttest/files/latest/download</li>
+</ul>
+<p>CMake settings can easily be modified, loaded and saved using <em>Project -&gt; CMake Settings</em> in Visual Studio.</p>
+<p><img alt="" src="../../images/vs_cmake_settings.png" /></p>
+<p>Editing the CMake settings using Visual Studio</p>
+<h3 id="optional-but-still-recommended-steps">Optional but still recommended steps<a class="headerlink" href="#optional-but-still-recommended-steps" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Install <a href="https://notepad-plus-plus.org/">Notepad++</a></li>
+<li>Install <a href="https://tortoisegit.org/">TortoiseGit</a></li>
+<li>
+<p>Install <a href="https://git-scm.com/download/win">Git command line tools</a> (this is mandatory if you install TortoiseGit)</p>
+</li>
+<li>
+<p>If you decide to use the Python which comes with Visual Studio</p>
+</li>
+<li>Test start a python script and add association</li>
+<li>Add Python to the path (also the Scripts dir), find it at <code>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64</code></li>
+<li>Install pyautogui, scipy, rtree, pyproj, lxml following the instructions https://docs.microsoft.com/en-us/visualstudio/python/tutorial-working-with-python-in-visual-studio-step-05-installing-packages?view=vs-2019</li>
+<li>
+<p>If not, use <code>pip install -r tools\requirements.txt -r tools\req_dev.txt</code>, possibly with the <code>--user</code> option if you don't have admin rights</p>
+</li>
+<li>
+<p>(after 30 days) Setup a Microsoft account (if you do not already have one) and register your Visual Studio</p>
+</li>
+</ul>
+<h2 id="further-notes">Further notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h2>
+<p>If you need a different python version or want to test with multiple Pythons you can either install them directly from Visual Studio or <a href="https://www.python.org/download/">Download Python for Windows</a> and install it. Most SUMO tools should work with Python 2 and 3. Please make sure that you install the recommended python modules as explained above and that the <code>PATH</code> environment variable contains the directory where the desired Python interpreter is.</p>
+<p>If you want to build SUMO in Debug mode, then you will need the <em>Python Debug binaries</em>. The Python interpreter that comes with Visual Studio doesn't install these libraries by default (at least in the case of Visual Studio Community 2022); you need to install the <em>Data Science stack</em> in addition to the <em>Python and C++ development stacks</em> mentioned above. More precisely, the component you need is called <em>Python native development tools</em>, make sure you check the correct box.</p>
+<p>If you want to clone / checkout a special SUMO version, you can of course do it from the command line (if you have installed the command line tools)
+using <code>git clone --recursive https://github.com/eclipse-sumo/sumo</code> or download and extract a source package, see <a href="../../Downloads/">Downloads</a>.</p>
+<p>The command for the <a href="#libraries">Libraries</a> is: <code>git clone --recursive https://github.com/DLR-TS/SUMOLibraries</code>. If you do not place the libraries in the same folder as SUMO, you will need to set the <strong>SUMO_LIBRARIES</strong> environment variable to the directory.</p>
+<p>If Visual Studio fails at first try, it is probably because the SUMOLibraries are not cloned yet or are in an unusual location. The errors are due to Xerces not being found. Try:</p>
+<ul>
+<li>Select <em>Project-&gt;"Generate Cache"</em> to try again (it is <em>CMake-&gt;Generate</em> in earlier Visual Studio versions) or see <a href="#troubleshooting">below</a>.</li>
+</ul>
+<h3 id="adapting-settings">Adapting settings<a class="headerlink" href="#adapting-settings" title="Permanent link">&para;</a></h3>
+<p>If you need to modify settings, you can edit the <code>CMakeCache.txt</code> by opening it in your favorite text editor or via the <em>Project-&gt;CMake-Cache</em> menu. The following things might be useful:</p>
+<ul>
+<li>If the libraries are not found, set <code>SUMO_LIBRARIES:PATH</code> to something like <code>C:/Users/tests/source/repos/SUMOLibraries</code> and retry</li>
+<li>If a wrong Python interpreter or library is found, edit the PYTHON_* variables</li>
+<li>If you want to disable building the GUI (Fox) or usage of Proj, set the according library entries to an empty string</li>
+<li>To enable console output for the <em>Release</em> build of graphical applications sumo-gui and netedit, set CONSOLE_RELEASE=1</li>
+</ul>
+<p>To make a debug build, you should <strong><em>not</em></strong> change CMAKE_BUILD_TYPE in the cache file. You should choose a different configuration in the GUI instead.</p>
+<h2 id="libraries">Libraries<a class="headerlink" href="#libraries" title="Permanent link">&para;</a></h2>
+<p>We provide a central location for getting all dependent libraries at
+<a href="https://github.com/DLR-TS/SUMOLibraries">https://github.com/DLR-TS/SUMOLibraries</a>. The easiest way is to clone
+this repository and define an environment variable <code>SUMO_LIBRARIES</code>
+pointing to the resulting directory. They are build using Visual Studio
+2019, but may be used with earlier and later versions as well. You may
+need to install the Visual C++ 2019 Runtime Distributable for running
+SUMO (tested with Visual Studio 2019).</p>
+<p>For details on building your
+own and also on how to use different versions and additional libraries
+see <a href="../Windows_Libraries/">Installing/Windows_Libraries</a>.
+You might not to edit your <code>CMakeCache.txt</code> to use the selfmade libraries.</p>
+<h2 id="vcpkg-support">vcpkg support<a class="headerlink" href="#vcpkg-support" title="Permanent link">&para;</a></h2>
+<p>If you cannot use SUMOLibraries or want to build from source (maybe for different platforms
+or because you want to anble or disable certain features in the libraries),
+you can also try to build against vcpkg.
+The setup follows those basic steps.</p>
+<pre><code>git clone https://github.com/Microsoft/vcpkg.git
+cd vcpkg
+./bootstrap-vcpkg.sh
+./vcpkg install arrow gdal xerces-c gettext fmt eigen3
+</code></pre>
+<p>Unless you are determined that all your builds will use vcpkg libraries,
+you should not call <code>./vcpkg integrate install</code> because it might mess up
+your environment if you decide to build against SUMOLibraries at a later point.
+Instead you should add
+<code>-DCMAKE_TOOLCHAIN_FILE=&lt;vcpkg-root&gt;/scripts/buildsystems/vcpkg.cmake</code> to your cmake options.</p>
+<p>Unfortunately the FOX toolkit is still missing from vcpkg so you
+cannot build any GUI applications by using only vcpkg.</p>
+<h2 id="install-python-packages">Install python packages<a class="headerlink" href="#install-python-packages" title="Permanent link">&para;</a></h2>
+<p>For using the SUMO Python tools from the command line or in netedit it is recommended to install a list of python packages.
+From your SUMO directory you can install them using pip:</p>
+<pre><code>pip install -r tools\requirements.txt
+</code></pre>
+<h2 id="manual-cmake-configuration">Manual CMake configuration<a class="headerlink" href="#manual-cmake-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="method-1-via-cmake-gui">Method 1: Via CMake GUI<a class="headerlink" href="#method-1-via-cmake-gui" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Start the CMake gui</li>
+<li>Select the source path (e.g. D:\projects\sumo)</li>
+<li>Select the build path (e.g. D:\projects\sumo\cmake-build)</li>
+<li>It can be identical to the source path, but we recommend to separate them</li>
+<li>Build directory will be created if necessary</li>
+<li>Start configuration by pressing the "Configure" button</li>
+<li>Select the compiler (the default should do)</li>
+<li>Select the platform <code>x64</code></li>
+<li>Create the Visual Studio solution by clicking on "Generate"</li>
+<li>Open the generated solution (.sln file) (e.g. <em>D:\projects\sumo\cmake-build\SUMO.sln</em>) using the File Explorer or by clicking on "Open Project"</li>
+<li>Build the configurations you want</li>
+<li>Binaries will appear in D:\projects\sumo\bin</li>
+</ul>
+<p>Visual guide:</p>
+<p><img alt="" src="../../images/CMakeConfiguration1.png" />
+Selecting Solution (Visual Studio, Eclipse, etc.) in the CMake gui</p>
+<p><img alt="" src="../../images/CMakeConfiguration4.png" />
+Libraries successfully configured</p>
+<p><img alt="" src="../../images/CMakeConfiguration5.png" />
+Generated solution</p>
+<h3 id="method-2-via-cmake-command-line">Method 2: Via CMake command line<a class="headerlink" href="#method-2-via-cmake-command-line" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Go to the source path (e.g. <code>cd D:\projects\sumo</code>)</li>
+<li>Create a build directory (e.g. <code>mkdir cmake-build &amp;&amp; cd cmake-build</code>)</li>
+<li>Run CMake with the correct Visual Studio version (e.g. <code>cmake .. -G "Visual Studio 16 2019 Win64"</code>)</li>
+<li>For a list of all possible generators run <code>cmake --help</code></li>
+<li>Open the solution <em>D:\projects\sumo\cmake-build\SUMO.sln</em></li>
+<li>Or build from the command line using <code>cmake --build . --config Release</code></li>
+</ul>
+<h2 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">&para;</a></h2>
+<p>If you plan to extend SUMO yourself, or just want to know whether
+everything compiled OK, it is strongly recommended to have a look at
+<a href="../../Developer/Tests/">Developer/Tests</a>. This tool makes it
+easier to check whether some existing functionality was broken by
+the extensions.</p>
+<h2 id="clang">CLang<a class="headerlink" href="#clang" title="Permanent link">&para;</a></h2>
+<p>If you want to compile using CLang in Windows, just add "ClangCL" in CMake's "Optional Toolset" (-T).</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Note on installation paths: MSVC seems to have difficulties with
+  include and library paths containing spaces (for instance
+  <code>C:\Program Files</code>). Thus try to avoid installing SUMO or any of the
+  libraries in such paths.</li>
+<li>Python cannot be found</li>
+<li>Make sure that there are not two different Python versions
+    installed</li>
+<li>Python libraries can be specified manually (e.g.
+    &lt;PythonFolder&gt;\libs\python&lt;version&gt;.lib)</li>
+</ul>
+<p><img alt="" src="../../images/CMakeConfiguration6.png" />
+Python library fields in the CMake Cache</p>
+<p><img alt="" src="../../images/CMakePython1.png" />
+Two different Python versions at the same time</p>
+<h3 id="linker-reports-something-similar-to-link--fatal-error-lnk1104-cannot-open-file-cprogramobj">Linker reports something similar to "LINK : fatal error LNK1104: cannot open file 'C:\Program.obj'"<a class="headerlink" href="#linker-reports-something-similar-to-link--fatal-error-lnk1104-cannot-open-file-cprogramobj" title="Permanent link">&para;</a></h3>
+<p>You probably have installed a library to a path containing white spaces
+in its name. In such a case, the according environment variable should
+be embedded in quotes (").</p>
+<p>Example: set FOX="D:\my libs\fox-1.6.36"</p>
+<h3 id="failure-on-pre-build-event-missing-versionh-or-typemaph">Failure on pre-build event (missing version.h or *typemap.h)<a class="headerlink" href="#failure-on-pre-build-event-missing-versionh-or-typemaph" title="Permanent link">&para;</a></h3>
+<p>If Visual Studio reports a failed pre-build event you can safely ignore
+this, unless you are building from the <a href="../../FAQ/#how_do_i_access_the_code_repository">source code
+repository</a>. In
+this case you should probably install Python. Even if Python is
+installed the file associations may be broken which causes the
+generation of <code>src/version.h</code> via the <code>tools/build_config/version.py</code> script to fail. Either
+repair your file associations or undefine <strong>HAVE_VERSION_H</strong> in
+<code>src/config.h.cmake</code>.</p>
+<p>If you did install Python correctly, double check that it passes
+<a href="https://stackoverflow.com/questions/2640971/windows-is-not-passing-command-line-arguments-to-python-programs-executed-from-t">command line
+arguments</a>.
+For a quick fix, you can also execute the following commands manually:</p>
+<pre><code>tools\build\version.py
+tools\build\typemap.py
+</code></pre>
+<h3 id="execution-cannot-proceed-because-msvcr120dllmsvcr140dll-was-not-found">Execution cannot proceed because MSVCR120.dll/MSVCR140.dll was not found<a class="headerlink" href="#execution-cannot-proceed-because-msvcr120dllmsvcr140dll-was-not-found" title="Permanent link">&para;</a></h3>
+<p>Install Microsoft <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist">Visual C++ Redistributable Packages for Visual
+Studio</a>
+(use Visual Studio 2013 version for MSVCR120.dll).
+You can check if all dependencies are correct using
+<a href="https://lucasg.github.io/Dependencies/">Dependencies</a>.</p>
+<p><img alt="" src="../../images/Dependencies.png" /></p>
+<h3 id="in-debug-mode-execution-cannot-proceed-because-msvcr120ddllmsvcr140ddll-was-not-found">In debug mode, execution cannot proceed because MSVCR120D.dll/MSVCR140D.dll was not found<a class="headerlink" href="#in-debug-mode-execution-cannot-proceed-because-msvcr120ddllmsvcr140ddll-was-not-found" title="Permanent link">&para;</a></h3>
+<p>Your version of Visual Studio doesn't support Debugging, you can only compile in release mode.</p>
+<h2 id="how-to-build-jupedsim-and-then-build-sumo-with-jupedsim">How to build JuPedSim and then build SUMO with JuPedSim<a class="headerlink" href="#how-to-build-jupedsim-and-then-build-sumo-with-jupedsim" title="Permanent link">&para;</a></h2>
+<p>In this section, you will learn how to build the latest version of the pedestrian simulator JuPedSim and how to compile SUMO with this latest version of JuPedSim, in case the release version of JuPedSim that comes with SUMO isn't sufficient for your needs. You can consult the JuPedSim build procedure <a href="https://github.com/PedestrianDynamics/jupedsim#readme">here</a>; hereafter proposes a similar procedure. First of all, clone the JuPedSim repository:</p>
+<pre><code class="language-bash">git clone https://github.com/PedestrianDynamics/jupedsim.git
+</code></pre>
+<p>Outside the repository directory, but at the same level, create two directories <code>jupedsim-build</code> and <code>jupedsim-install</code> (for instance), then type:</p>
+<pre><code class="language-bash">cd jupedsim-build
+cmake -DCMAKE_INSTALL_PREFIX=../jupedsim-install ..
+cmake --build . --config Release
+cmake --install . --config Release
+</code></pre>
+<p>You can also change the configuration to Debug and also enable multithreading as usual which CMake. Now to integrate the latest version of JuPedSim into SUMO, please follow the standard build procedure for Windows: since the JuPedSim install folder is at the same level of SUMO, it will be found automatically. Alternatively, you can notify CMake where is JuPedSim installed by setting <code>JUPEDSIM_CUSTOMDIR</code> when calling CMake.</p>
+<p>For further remarks on the use of JuPedSim inside SUMO, please consult <a href="../../Simulation/Pedestrians/#model_jupedsim">this page</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

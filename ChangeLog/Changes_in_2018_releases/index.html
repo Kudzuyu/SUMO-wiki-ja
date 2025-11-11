@@ -1,0 +1,1484 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/ChangeLog/Changes_in_2018_releases/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Changes in the 2018 releases (versions 1.0.0, 1.0.1 and 1.1.0) - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#version-110-18122018" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changes in the 2018 releases (versions 1.0.0, 1.0.1 and 1.1.0)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-110-18122018" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 1.1.0 (18.12.2018)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.1.0 (18.12.2018)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugfixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bugfixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-101-18092018" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 1.0.1 (18.09.2018)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.0.1 (18.09.2018)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugfixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bugfixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-100-04092018" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 1.0.0 (04.09.2018)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.0.0 (04.09.2018)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugfixes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bugfixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Changes in the 2018 releases (versions 1.0.0, 1.0.1 and 1.1.0)</h1>
+
+<h2 id="version-110-18122018">Version 1.1.0 (18.12.2018)<a class="headerlink" href="#version-110-18122018" title="Permanent link">&para;</a></h2>
+<h3 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simulation</li>
+<li>Fixed Bug where vehicles would stop moving after changing to the opposite direction lane. Issue #4610</li>
+<li>Fixed <a href="../../Simulation/Rerouter/#rerouting_to_an_alternative_parking_area">parkingAreaReroute</a> to a destination which is too close for stopping. Issue #4612</li>
+<li>Fixed crash when using multiple vehicles with device.bluelight. Issue #4629</li>
+<li>Fixed crash when using carFollowModel ACC on multi-lane roads. (regression in 1.0.1)</li>
+<li>Fixed crash when loading signal plan with invalid characters. Issue #4673</li>
+<li>Fixed invalid halting count in E3 detector output Issue #4756</li>
+<li>Fixed crashes related to vehicles that lane-change multiple times on the E3-detector entry edge. Issue #4803, Issue #4845</li>
+<li>Fixed bugs that were causing unnecessarily strong deceleration. Issue #2310, Issue #4806, Issue #4809, Issue #4851, Issue #4855, Issue #4462, Issue #4900, Issue #4928, Issue #4930</li>
+<li>Fixed deadlock caused by long vehicles being unable to re-enter traffic after parking in a short parkingArea. Issue #4832</li>
+<li>Fixed invalid error when defining a stop on an edge and its consecutive internal edge. Issue #4837</li>
+<li>Fixed bug where vehicles from minor roads would drive onto the intersection to aggressively. Issue #4854</li>
+<li>Fixed bug where pedestrians would ignore prioritized vehicles when walking onto a crossing. Issue #4865</li>
+<li>Fixed invalid upper bound on density in <a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/#generated_output">edgeData-output</a> for multi-lane edges. Issue #4904</li>
+<li>
+<p>Fixed bug where trains would fail to reverse on bidirectional rail edges. Issue #4921</p>
+</li>
+<li>
+<p>sumo-gui</p>
+</li>
+<li>Closing and re-opening an edge or lane no longer causes invalid lane choice. Issue #4514</li>
+<li>Errors due to invalid <code>&lt;param&gt;</code> values are now shown in the message window. Issue #4753</li>
+<li>
+<p>Fixed invalid vehicle shapes when drawing trains as <em>simple shapes</em> in mesoscopic mode. Issue #4773</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>Fixed bug that was causing invalid road geometry when using high-resolution input data at dense junction clusters. Issue #4648</li>
+<li>Fixed bug when building networks for opposite-direction overtaking that was causing collisions in the simulation. Issue #4628</li>
+<li>Fixed invalid right-of-way rules in left-hand networks. Issue #4256</li>
+<li>Duplicate edge ids in shapefile import are no longer silently ignored. Instead, a warning is issued and ids are made unique with a numerical suffix.</li>
+<li>Fixed crash when loading height data from multiple geotif files. Issue #4786</li>
+<li>Option <strong>--tls.guess</strong> no longer builds traffic lights at almost every intersection. The default lane-speed-sum threshold (Option <strong>--tls.guess.threshold</strong>) was changed from 150km/h to 250km/h. Issue #1688</li>
+<li>Options <strong>--check-lane-foes.all</strong>, <strong>--check-lane-foes.roundabout</strong> are no longer lost when re-importing a .net.xml file. Issue #4813</li>
+<li>Fixed unnecessary right-of-way restrictions in some cases where incoming edges target distinct lanes on the target edge. Issue #4815</li>
+<li>Fixed bug where custom walkingarea shapes where sometimes ignored. Issue #4847</li>
+<li>Fixed bugs that could cause loss of elevation information. Issue #4877, Issue #4878</li>
+<li>
+<p>Fixed permissions on internal lanes after internal junctions. Issue #4912</p>
+</li>
+<li>
+<p>netedit</p>
+</li>
+<li>Loading joined traffic light programs via menu is now working. Issue #4622</li>
+<li>Menu option <em>Load Foreign</em> can now be used to import OSM files directly. Issue #4634</li>
+<li>Fixed bug where <em>right-of-way</em> mode would show invalid properties. Issue #4637</li>
+<li>TLS locator now lists traffic lights even if their id differs from the junction id. Issue #4661</li>
+<li>Fixed crash when clicking buttons that should be disabled. Issue #4662</li>
+<li>Fixed creation of unyielding connections via shift-click. Issue #4785 (regression in 1.0.1)</li>
+<li>
+<p>Fixed modifying elevation in Move-mode (regression in 1.0.0). Issue #4841</p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li>Fixed bug that was causing exaggerated output for <em>traci.vehicle.getDrivingDistance</em> when vehicles were driving on a looped route. Issue #4642</li>
+<li><em>traci.vehicle.getLaneChangeState</em> now returns correct information while controlling the vehicle with <em>moveToXY</em>. Issue #4545</li>
+<li>Fixed retrieval of shape data with more than 255 points (<em>polygon.getShape, lane.getShape, junction.getShape</em> Issue #4707</li>
+<li>Fixed bug when setting polygon shape with the C++ client.</li>
+<li>Vehicle.isStopped is now working in TraaS. Issue #4883</li>
+<li>Fixed adding vehicles after a simulation time of 24.8 days (python client). Issue #4920</li>
+<li>Fixed bug where lateral collisions from unsafe calls to vehicle.changeSublane are prevented despite disabling safeguards via setLaneChangeMode. Issue #4864</li>
+</ul>
+<h3 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simulation</li>
+<li>The eagerness for opposite-direction overtaking can now be
+    configured with the new vType attribute <em>lcOpposite</em> (range
+    [0,inf[). Issue #4608</li>
+<li><code>&lt;personinfo&gt;</code> elements now include attribute <em>type</em>. Issue #4695</li>
+<li>The <a href="../../ToC_Device/">ToC Device</a> now provides an option
+    for generating output. Issue #4750</li>
+<li>Added warning messages for vehicles that perform emergency
+    braking. The warning threshold can be configured with the new
+    option <strong>--emergencydecel.warning-threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>. The given threshold is compared against the severity of
+    the event (braking with emergencyDecel corresponds to 1 and
+    braking with decel corresponds to 0). By default the threshold
+    is set to 1. Issue #4792</li>
+<li>Trains can now <a href="../../Simulation/Railways/#reversing_direction">reverse
+    direction</a>
+    anywhere on a bidirectional track.</li>
+<li>TAZ can now be used as <em>via</em> destinations by using
+    <em>&lt;TAZID&gt;-sink</em> as edge id. Issue #4882</li>
+<li>
+<p>ParkingAreas now support the attribute <em>onRoad</em>. If set to
+    <em>true</em>, vehicles will park on the road lane, thereby reducing
+    road capacity. Issue #4895</p>
+</li>
+<li>
+<p>sumo-gui</p>
+</li>
+<li>Added <code>&lt;poly&gt;</code> attribute <em>lineWidth</em> to determine the drawing width of
+    unfilled polygons. Issue #4715</li>
+<li>TAZ now support attribute <em>color</em> for rendering the associated
+    shape. This color can also be used in the new edge coloring mode
+    <em>color by TAZ</em>. Issue #3979</li>
+<li>Can now color streets according to custom lane or edge
+    <a href="../../Simulation/GenericParameters/">parameters</a>. Issue #4276</li>
+<li>The numerical value for coloring edges/lanes, vehicles and
+    persons (e.g. speed limit, acceleration, waitingTime) can now
+    optionally be shown. When this option is set, the value will
+    also be printed in the object tool tip. Likewise, the numerical
+    value for coloring vehicles (e.g. acceleration) can optionally
+    be shown. Issue #4840</li>
+<li>Breakpoints can now be set via option <strong>--breakpoints</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a><strong>,</strong><a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a><strong>...</strong>. Issue #1957</li>
+<li>Added visualization option to apply size exaggeration only to
+    selected objects. Issue #3422</li>
+<li>
+<p>The text background color for IDs and object descriptions can
+    now be configured. Issue #4894</p>
+</li>
+<li>
+<p>netedit</p>
+</li>
+<li>New editing mode for TAZ (Traffic Analysis Zones). Issue #3425</li>
+<li>Overlapping objects can now be inspected via consecutive clicks
+    on the same location. Issue #2385</li>
+<li>Shift-click can now be used to inspect, select and delete lanes.</li>
+<li>LaneAreaDetectors (E2) that span multiple consecutive lanes can
+    now be created within netedit. Issue #2909</li>
+<li>POIs can now be created from geo-coordinates in the clipboard
+    (e.g. from online map sites) with a single click. Issue #4496</li>
+<li>Selection colors can now be customized. Issue #4736</li>
+<li>
+<p>Can now color streets according to custom lane or edge
+    <a href="../../Simulation/GenericParameters/">parameters</a>. Issue #4276</p>
+</li>
+<li>
+<p>netgenerate</p>
+</li>
+<li>
+<p>Added options <strong>--perturb-x, --perturb-y, --perturb-z</strong> to add random perturbations to all node
+    coordinates. Perturbations can be specified as <em>mean</em> or capped
+    normal distribution <em>normc(a,b,c,d)</em>. Issue #4776</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>Added option <strong>--tls.layout</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> for selecting between layouts that group opposite
+    directions ('opposites') and layouts that have one phase per
+    incoming edge ('incoming'). Issue #4033</li>
+<li>Added option <strong>--tls.guess.threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> to control the heuristic for guessing traffic
+    lights. A traffic light is guessed if the sum of speeds of all
+    incoming lanes exceeds the threshold value. Issue #4681</li>
+<li>Added new node attribute <code>rightOfWay</code> to configure the algorithm for
+    computing right-of-way rules (allowed values are <em>default</em>,
+    <em>edgePriority</em>). Also added new option <strong>--default.right-of-way</strong> to set this value for
+    all nodes in a network. Issue #4843</li>
+<li>
+<p>Importing internal lane shapes from OpenDRIVE is now supported
+    using option <strong>--opendrive.internal-shapes</strong>. Issue #4331</p>
+</li>
+<li>
+<p>Tools</p>
+</li>
+<li><a href="../../Tools/Net/#netcheckpy">netcheck.py</a> checks
+    lane-based reachability and handles pedestrian infrastructure. Issue #4619</li>
+<li><a href="../../Tools/Visualization/#intersection_flow_diagram">route2poly.py</a>
+    can now be used to generate intersection flow diagrams. Issue #4657</li>
+<li>
+<p><a href="../../Tools/Output/#tripinfodiffpy">tripinfoDiff.py</a> now
+    supports comparing <code>&lt;personinfo&gt;</code>s by setting option <strong>--persons</strong>.</p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li><a href="../../TraCI/Interfacing_TraCI_from_Python/#context_subscription_filters">Context Subscriptions can now be equipped with
+    filters</a>
+    acting on the server side. Issue #4343</li>
+<li>TraCI now offers the method
+    <a href="../../TraCI/Change_Vehicle_State/#open_gap_0x16">openGap()</a>
+    for temporary changes of the vehicle's desired headway. Issue #4172</li>
+<li>Added functions <em>person.getPosition3D, person.getAngle,
+    person.getLanePosition, person.getColor, person.getLength</em> to
+    the C++ client.</li>
+</ul>
+<h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simulation</li>
+<li>Simulation now runs about 17% faster compared to the previous
+    release due to improvements in data structures and less
+    (redundant) collision checking Issue #4917.</li>
+<li>The default speedDeviation of vehicle classes
+    <em>private,vip,hov,custom1</em> and <em>custom2</em> was changed from 0 to
+    0.1. The default speed deviation for vehicle class <em>taxi</em> was
+    changed from 0 to 0.05.</li>
+<li>Documentation</li>
+<li>Updated <a href="../../Simulation/Railways/">documentation for railway
+    simulation</a></li>
+<li>Updated <a href="../../marouter/#usage_description">marouter</a>
+    documentation</li>
+<li>Miscellaneous</li>
+<li>Network version is now 1.1</li>
+<li>
+<p>TraCI Version is now 19</p>
+</li>
+<li>
+<p><a href="../../Tools/Sumolib/">sumolib</a> now uses an object with members
+  <em>state, duration, minDur, maxDur, next</em> instead of tuple <em>(state,
+  duration)</em> to represent traffic light phases.</p>
+</li>
+</ul>
+<h2 id="version-101-18092018">Version 1.0.1 (18.09.2018)<a class="headerlink" href="#version-101-18092018" title="Permanent link">&para;</a></h2>
+<h3 id="bugfixes_1">Bugfixes<a class="headerlink" href="#bugfixes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simulation</li>
+<li>Fixed deadlock on parallel routing (regression in 1.0.0). Issue #4518</li>
+<li>default emergency deceleration did not depend on the vClass but
+    was always 9</li>
+<li>Fixed bugs related to opposite-direction overtaking that were
+    causing collisions and other invalid behavior. Issue #4550, Issue #3718, Issue #4564, Issue #4570, Issue #4588, Issue #4589, Issue #4591, Issue #4592</li>
+<li>Fixed crash when using sublane model with varying lane widths. Issue #4547</li>
+<li>Fixed hard braking after lane-changing when using carFollowModel
+    <em>IDM</em> Issue #4517</li>
+<li>Fixed exaggerated gap between standing vehicles when using
+    carFollowModel <em>IDM</em>. Issue #4527</li>
+<li>Fixed crash when using <em>device.ssm</em>. Issue #4556</li>
+<li>Fixed invalid cooperative lane-changing attempts. Issue #4566</li>
+<li>Fixed invalid speed adaptation for lane changing. Issue #4563</li>
+<li>
+<p>Public transport routing now properly uses stops that are
+    defined as child elements of a vehicle. Issue #4575</p>
+</li>
+<li>
+<p>sumo-gui</p>
+</li>
+<li>
+<p>Fixed freeze when activating 'Show lane direction' for lanes
+    with width=0. Issue #4533</p>
+</li>
+<li>
+<p>netedit</p>
+</li>
+<li>Fixed freeze when activating 'Show lane direction' for lanes
+    with width=0. Issue #4533</li>
+<li>
+<p>Custom endpoints are now honored when reversing an edge or
+    adding a reverse direction edge via context menu. Issue #4501</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>
+<p>Networks for opposite direction driving now allow overtaking
+    past junctions on straight connections that are slightly curved. Issue #4585</p>
+</li>
+<li>
+<p>od2trips</p>
+</li>
+<li>
+<p>Flows with non-positive probability are no longer written. Issue #4600</p>
+</li>
+<li>
+<p>MESO</p>
+</li>
+<li>
+<p>Fixed deadlock in public transport simulation. Issue #4560</p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li>Fixed bug when calling TraaS method
+    <em>Simulation.getDistanceRoad</em>. Issue #4603</li>
+<li>Closing and re-opening a lane no longer causes invalid lane
+    choice. Issue #4514</li>
+</ul>
+<h3 id="enhancements_1">Enhancements<a class="headerlink" href="#enhancements_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simulation</li>
+<li>The collision-detection threshold configured via option <strong>--collision.mingap-factor</strong> can now
+    be customized separately for each vType using attribute
+    <em>collisionMinGapFactor</em>. Issue #4529</li>
+<li>
+<p>Increased running speed of simulations with <em>device.rerouting</em>
+    using few vehicles in a large network. Issue #4598</p>
+</li>
+<li>
+<p>netedit</p>
+</li>
+<li>Added option <em>reset custom shape</em> to the right-click menu of
+    junction- and lane-selections Issue #4481, Issue #4490</li>
+<li>
+<p>When editing junction shapes, vertices can now be removed by
+    shift-click. Issue #4494</p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li>added method <em>traci.edge.getStreetName</em> Issue #4557</li>
+<li>
+<p>method <em>simulation.getParameter</em> can now be used to <a href="../../TraCI/Simulation_Value_Retrieval/#generic_parameter_retrieval_0x7e">retrieve
+    stopping place
+    names</a>. Issue #4558</p>
+</li>
+<li>
+<p>Tools</p>
+</li>
+<li><a href="../../Tools/Routes/#cutroutespy">cutRoutes.py</a> now
+    supports route references and stop access. Issue #4554, Issue #4595</li>
+</ul>
+<h3 id="other_1">Other<a class="headerlink" href="#other_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simulation</li>
+<li>Collision for vehicles controlled by carFollowModel <em>IDM</em> are
+    only registered when less then half of the minGap distance
+    remains between vehicles. This is done to compensate for the
+    fact that the model does not guarantee the minGap distance (most
+    of the time at least \~90% of the minGap are kept). The
+    threshold can be customized via global option and vType
+    attributes.</li>
+</ul>
+<h2 id="version-100-04092018">Version 1.0.0 (04.09.2018)<a class="headerlink" href="#version-100-04092018" title="Permanent link">&para;</a></h2>
+<h3 id="bugfixes_2">Bugfixes<a class="headerlink" href="#bugfixes_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simulation</li>
+<li>All car-following models now respect the vType-attribute
+    <em>emergencyDecel</em> as an absolute bound on deceleration. Issue #3556</li>
+<li>Fixed some issues when using <a href="../../Simulation/SublaneModel/#simple_continuous_lane-change_model">continous lane
+    change</a>. Issue #3767, Issue #3769, Issue #3770, Issue #3771, Issue #4364</li>
+<li>Fixed back-and-forth changing when using <a href="../../Simulation/SublaneModel/#simple_continuous_lane-change_model">continous lane
+    change</a>. Issue #4010</li>
+<li>Fixed loading of teleporting vehicles from simulation state in
+    <em>.sbx</em> format. Issue #3787</li>
+<li>Fixed invalid vehicle counts by E2-detector related to
+    lane-changing. Issue #3791</li>
+<li>Fixed invalid vehicle counts by E3-detector related to re-using
+    vehicle pointers Issue #3108, Issue #4079</li>
+<li>Fixed bug that was causing invalid slowdown while passing an
+    intersection. Issue #3861</li>
+<li>Fixed bug that was causing pedestrians on looped routes to block
+    themselves. Issue #3888</li>
+<li>Vehicle speedFactor is now included in saved state. Issue #3881</li>
+<li>Fixed invalid collision events when lanes are too narrow for the
+    vehicles. Issue #3056</li>
+<li>Fixed collision between pedestrians and vehicles. Issue #3964</li>
+<li>Fixed bug where option <strong>--random-depart-offset</strong> would trigger invalid warnings regarding
+    unsorted route file. Issue #4076</li>
+<li>Fixed invalid stopping position after collision when using
+    option <strong>--collision.stoptime</strong> Issue #4106</li>
+<li>Fixed right-of-way rules for vehicles standing next to each
+    other on the same lane and driving towards different edges. Issue #4071</li>
+<li>Fixed crash within intersection between vehicles coming from the
+    same lane. Issue #4100</li>
+<li>Fixed invalid <em>departDelay</em> for triggered vehicles. Issue #4199</li>
+<li>Fixed hang-up when scheduling a stop on internal edges after
+    internal junctions Issue #4254</li>
+<li>ParkingAreaReroute no longer triggers if the destination is not
+    among the set of alternatives. Issue #4243</li>
+<li>Fixed (near) infinite loop when specifying invalid speed
+    distribution. Issue #4282</li>
+<li>Fixed invalid car-following behavior at changing lane widths
+    when using the sublane model. Issue #4223</li>
+<li>Fixed crash when simulating invalid pedestrian routes with
+    option <strong>--ignore-route-errors</strong>. Issue #4306</li>
+<li>Option <strong>--carfollow.model</strong> is now working.</li>
+<li>Car-follow models <em>IDM</em> and <em>IDMM</em> no longer fail to reach an
+    exact stop position. Issue #658</li>
+<li>Strategic look-ahead is now working as expected in networks with
+    many short edges. Issue #4349</li>
+<li>Switching a traffic light to the "off" definition now sets the
+    correct right-of-way rules. Issue #1484</li>
+<li>
+<p>Fixed invalid deceleration at yellow traffic light. Issue #4450</p>
+</li>
+<li>
+<p>sumo-gui</p>
+</li>
+<li>width of railway edges is now taken into account when drawing
+    (interpreted as gauge). Issue #3748</li>
+<li>window-size and position now remain unchanged when reloading the
+    simulation. Issue #3641</li>
+<li>Random vehicle and person coloring is now more random on
+    windows. Issue #3740</li>
+<li>Vehicles that were not inserted (i.e. due to option <strong>--scale</strong> or <strong>--max-depart-delay</strong>) no
+    longer count as <em>arrived</em> in the simulation parameter dialog.
+    Instead the are counted under the new item <em>discarded vehicles</em>. Issue #3724</li>
+<li>Fixed crashing due to concurrent access to vehicle numbers. Issue #3804</li>
+<li>Fixed issues related to drawing smooth corners at curving roads. Issue #3840</li>
+<li>Fixed vehicle positions when using the sublane model in lefthand
+    networks. Issue #3923</li>
+<li>Fixed crashing and visualization problems when using the
+    3D-view. Issue #4037, Issue #4039</li>
+<li>Fixed glitch where persons would appear to jump around while
+    riding in a vehicle across an intersection. Issue #3673</li>
+<li>Tracking of riding persons now centers on the person rather than
+    the front its vehicle. Issue #4209</li>
+<li>ChargingStation are visible again (regression in 0.32.0) Issue #4183</li>
+<li>Fixed invalid vehicle blinkers in lefthand simulation. Issue #4258</li>
+<li>Traffic lights now remain accessible (right-click, tooltip)
+    after calling <em>traci.trafficlight.setRedYellowGreenStaate</em>. Issue #4426</li>
+<li>
+<p>Fixed invalid vehicle angle on lane with zero-length geometry.</p>
+</li>
+<li>
+<p>MESO</p>
+</li>
+<li>
+<p>Fixed deadlock at roundabouts when running with option <strong>--meso-junction-control.limited</strong> or <strong>--meso-junction-control false</strong>. Issue #4074</p>
+</li>
+<li>
+<p>netedit</p>
+</li>
+<li>Splitting edges, deleting individual edges and lanes or adding
+    lanes via the <em>duplicate</em> menu option no longer resets
+    connections and traffic light plans. Issue #3742</li>
+<li>The viewing area and zoom loaded via option <strong>--gui-settings-file</strong> is no longer
+    ignored</li>
+<li>Fixed bug where connections on large junctions did not register
+    clicks or were not drawn. Issue #3726</li>
+<li>Fixed crash when removing inspected object via <em>undo</em>. Issue #3781</li>
+<li>Fixed various bugs that led to re-computation of signal plans
+    when modifying connections or tls indices. Issue #3742, Issue #3832</li>
+<li>Fixed bug that could lead to the creation of invalid networks
+    when adding and removing connections. Issue #3824, Issue #3813</li>
+<li>Custom connection shape is now longer lost after
+    <em>delete</em>+<em>undo</em>. Issue #3822</li>
+<li>Moving geometry no longer removes z-data. Issue #3723</li>
+<li>Splitting edges no longer introduces unnecessary custom
+    endpoints. Issue #3895</li>
+<li>Fixed inverted interpretation of <em>lanePosLat</em> for POIs compared
+    to sumo-gui. Issue #4002</li>
+<li>Fixed crash when deleting one of multiple signal programs for
+    the same junction. Issue #4132</li>
+<li>Added support for BusStops Access. Issue #4018</li>
+<li>
+<p>Crossings no longer become invalid when splitting an edge. Issue #4295</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>Option <strong>--ramp.guess</strong> no longer builds ramps at traffic light controlled
+    nodes. Issue #3848</li>
+<li>Fixed bug that was causing invalid link states at intermodal
+    junctions. Issue #2944 Issue #3851</li>
+<li>Fixed bugs that were causing invalid link directions. Issue #3852 Issue #3853</li>
+<li>Fixed invalid junction logic in lefthand networks. Issue #3854</li>
+<li>Generated signal plans will no longer have a protected left-turn
+    phase if there is no dedicated left-turn lane. Issue #4087</li>
+<li>Various fixes in regard to classifying nodes as type
+    <em>rail_crossing</em> and joining clusters of rail crossing nodes.</li>
+<li>Option <strong>--dismiss-vclasses</strong> is now working when loading a <em>.net.xml</em> file. Issue #4230</li>
+<li>Fixed invalid junction shapes when using option <strong>--junction.corner-detail</strong>. Issue #4292</li>
+<li>
+<p>Fixed invalid intermodal junction logic that could cause
+    collisions and deadlocks. Issue #4198, Issue #4252</p>
+</li>
+<li>
+<p>duarouter</p>
+</li>
+<li>
+<p>Fixed crash on intermodal routing. Issue #3883</p>
+</li>
+<li>
+<p>polyconvert</p>
+</li>
+<li>
+<p>Fixed bug when importing OSM data with objects that are marked
+    as <em>deleted</em>. Issue #3786</p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li>Fixed bug where persons would "jump" when replacing the current
+    walking stage with a new one. Issue #3744</li>
+<li>Fixed crash when trying to access empty subscription result list
+    using the C++ client.</li>
+<li>Vehicle <em>emergencyDecel</em> is now at least as high as <em>decel</em>
+    after calling <em>traci.vehicle.setDecel</em>. Issue #3755</li>
+<li>Fixed python client bug in <em>traci.polygon.setShape</em>. Issue #3762</li>
+<li>Adding a route with an empty list of edges now results in an
+    error. Issue #3845</li>
+<li>Vehicles that drive outside the road network under the control
+    of <em>moveToXY</em> now properly updated their speed and brake lights. Issue #3837</li>
+<li>Function <em>vehicle.getLaneChangeMode</em> now returns correct values
+    for the original lane change state when the state is affected by
+    <em>vehicle.setLaneChangeMode</em>. Issue #3810</li>
+<li>Car-following related vehicle type parameters (e.g. <em>accel</em>)
+    that are changed via traci are now correctly saved when saving
+    simulation state. Issue #3522</li>
+<li>Functions <em>simulation.findRoute</em> and
+    <em>simulation.findIntermodalRoute</em> no longer crash sumo when
+    trying to route from a forbidden edge. Issue #4121</li>
+<li>Fixed invalid results when calling
+    <em>simulation.findIntermodalRoute</em> Issue #4145, Issue #4147, Issue #4148</li>
+<li>Multi-Lane E2-Detectors now return the correct length. Issue #4356</li>
+<li>Fixed bug where <em>vehicle.couldChangeLane</em> returned <em>True</em>
+    immediately after a lane change even though the requested target
+    lane did not exist. Issue #4381</li>
+<li>Fixed collisions when combining <em>vehicle.slowDown</em> with
+    ballistic update. Issue #4418</li>
+<li>Fixed python client bug in <em>traci.lane.getLinks</em> which returned
+    always true for isOpen, hasFoe and hasPrio.</li>
+<li>
+<p>traci.person.setColor was fixed (was a noop before)</p>
+</li>
+<li>
+<p>Tools</p>
+</li>
+<li><a href="../../Tools/Trip/#randomtripspy">randomTrips.py</a> now uses
+    vType attributes from option <strong>--trip-attributes</strong> when generating persons.</li>
+<li>Removed singularities at the distribution boundaries generated
+    by
+    <a href="../../Tools/Misc/#createvehtypedistributionpy">createVehTypeDistribution.py</a> Issue #4193</li>
+</ul>
+<h3 id="enhancements_2">Enhancements<a class="headerlink" href="#enhancements_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All applications</li>
+<li>
+<p>All time values in options and xml inputs can now be specified
+    in the format <em>h:m:s</em> and <em>d:h:m:s</em> (where the values for days,
+    hours and minutes are all positive integers and seconds may also
+    be a positive floating point number).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This does not apply to the python tools.</p>
+</div>
+</li>
+<li>
+<p>Added option <strong>--human-readable-time</strong> (short <strong>-H</strong>) that causes all time values to be written
+    in h:m:s (or d:h:m:s) format.</p>
+</li>
+<li>
+<p>Simulation</p>
+</li>
+<li>Tripinfo-output now includes the attribute <em>stopTime</em> which
+    records the time spent with intentional stopping. Issue #3693</li>
+<li>A pedestrian crossing can now have different signal states for
+    both directions. Issue #3820</li>
+<li>FCD-output can now be switched on selectively for a subset of
+    vehicles and the reporting period can be configured. Issue #1910</li>
+<li>FCD-output can now be restricted to a subset of network edges
+    loaded from a file with option <strong>--fcd-output.filter-edges.input-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>. The file format is that of an
+    edge selection as saved by <a href="../../Netedit/">netedit</a>.</li>
+<li>Intended departure times (attribute <em>depart</em>) and intended
+    vehicle id (attribute <em>intended</em>) are now added to
+    vehroute-output of public transport rides. Issue #3948</li>
+<li>Stopping place names are now added as XML-comments in
+    vehroute-output of public transport rides. Issue #3952</li>
+<li>Lane-Change-Model parameter <em>lcTurnAlignmentDistance</em> added for
+    the control of dynamic alignment in simulations using the
+    sublane model, see <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#lane-changing_models">Lane-Changing
+    Models</a>, Issue #4025</li>
+<li>Implemented <a href="../../Simulation/Output/SSM_Device/">SSM
+    Device</a>, which allows
+    output of safety related quantities. Issue #2669, Issue #4119</li>
+<li>'Smoothed' emergency braking Issue #4116</li>
+<li>Added an initial version of a <a href="../../Driver_State/">driver state
+    device</a> for modelling imperfect
+    driving.</li>
+<li>Added an initial version of a <a href="../../ToC_Device/">transition of control
+    model</a>.</li>
+<li>Option <strong>--ignore-route-errors</strong> now also allows insertion of vehicles with unsafe
+    headways. Issue #4118</li>
+<li>Added a new car-following model "ACC" based on [Milanés et al.
+    "Cooperative Adaptive Cruise Control in Real Traffic
+    Situations." IEEE Trans. Intelligent Transportation Systems 15.1
+    (2014): 296-305.]</li>
+<li><a href="../../Simulation/Output/#aggregated_traffic_measures">Statistic
+    output</a>
+    now also includes total delay by vehicles which could not be
+    inserted by the end of the simulation if options <strong>--duration-log.statistics</strong> and <strong>--tripinfo-output.write-unfinished</strong> are set. Issue #4174</li>
+<li>The default lane-changing model <em>LC2013</em> now supports <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#lane-changing_models">parameter
+    <em>lcAssertive</em></a>. Issue #4194</li>
+<li><a href="../../Simulation/Output/VehRoutes/">Vehroute-output</a> now
+    includes the reason for rerouting. Issue #4204</li>
+<li>Added optional attribute <em>visible</em> to <code>&lt;parkingAreaReroute</code> (default <em>false</em>). This
+    controls whether occupancy is known before reaching the
+    parkingArea edge and can be used to model incomplete knowledge
+    in parking reroute choice. Issue #4244</li>
+<li>Rerouters now support the attribute <em>vTypes</em> which restricts
+    their effect to vehicles from the given list of vehicle type
+    IDs. Issue #4031</li>
+<li>Vehicles are forming a coridor for emergency vehicles Issue #1967</li>
+<li>Added option <strong>--default.speeddev</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> to control the default speed deviation of all
+    vehicle types that do not define it. Issue #4421</li>
+<li>
+<p>Added lane/edge-attribute stopOffset for defining vClass
+    specific stopping positions in front of traffic lights. Issue #3754</p>
+</li>
+<li>
+<p>sumo-gui</p>
+</li>
+<li>Added control for scaling traffic demand dynamically. Issue #1951</li>
+<li>Added option to disable drawing of bicycle lane markings on
+    intersections.</li>
+<li>All laneChangeModel-related vType-parameters and all
+    junction-model related vType-parameters are now shown in the
+    vType-Parameter dialog.</li>
+<li>The simulation view can now be rotated via the new gui-settings
+    attribute <em>angle</em> in the <code>&lt;viewport&gt;</code> or via the viewport dialog. Issue #3841</li>
+<li>When drawing junction shapes with exaggerated size and setting
+    option <em>show lane-to-lane connections</em>, the connecting lines are
+    now scaled up at traffic light junctions. Issue #3796</li>
+<li>The simulation state can now be saved via the <em>Simulation</em> Menu. Issue #2513</li>
+<li>Object tracking can now be aborted via double-click.</li>
+<li>Person plans can now be inspected via the right-click menu. Issue #3886</li>
+<li>Object name rendering size can now be toggled between constant
+    pixel size (all visible when zoomed out) and constant network
+    size (invisible when zoomed out). Issue #3931</li>
+<li>The <em>Delay</em> value is now invariant with regard to the simulation
+    step length and always denotes delay per simulated second. Issue #4176</li>
+<li>
+<p>Added GUI Shape for different types of emergency vehicles
+    (ambulance, police and firebrigade) Issue #1967</p>
+</li>
+<li>
+<p>MESO</p>
+</li>
+<li>
+<p>Simulation of persons and public transport is now supported. Issue #3816</p>
+</li>
+<li>
+<p>netedit</p>
+</li>
+<li>Added <em>Prohibition</em>-mode for checking right-of-way at junctions
+    (hotkey 'w'). Thanks to Mirko Barthauer for the contribution. Issue #3850</li>
+<li>Added virtual attribute to identify <a href="../../Simulation/Railways/#bidirectional_track_usage">bidirectional rail edge
+    pairs</a>. Issue #3720</li>
+<li>Added option to modify the visualisation of <a href="../../Simulation/Railways/#bidirectional_track_usage">bidirectional rail
+    edge
+    pairs</a>
+    (<em>spread superposed</em>) Issue #3720</li>
+<li>Added button <em>add states</em> to <em>traffic light</em>-mode to complement
+    the functionality of <em>cleanup states</em>. Issue #3846</li>
+<li>netedit now flags connection targets with incompatible
+    permissions as <em>conflict</em> and only creates them with
+    <kbd>Ctrl</kbd> + <kbd>click</kbd>. Issue #3823</li>
+<li>Traffic light indices are now drawn for pedestrian crossings
+    when enabled via gui settings. Issue #3814</li>
+<li>Now ParkingAreas and ParkingSpaces can be created in netedit. Issue #3104</li>
+<li>When adding a new phase to a traffic light, the new phase will
+    now have a plausible successor state depending on the selected
+    previous phase (rather the being a copy). Issue #4041</li>
+<li>Added function 'split' to junction context menu. This can be
+    used to disaggregated joined junctions. Issue #4046</li>
+<li>
+<p>When joining traffic lights (by editing junction attribute
+    'tl'), link indices of the target traffic light are now
+    preserved if signal groups are used (multiple connections with
+    the same <em>linkIndex</em> value). Issue #4094</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The signal states for the edited junction must be checked by the user</p>
+</div>
+</li>
+<li>
+<p>Width, height and diagonal size of a rectangle selection are now
+    shown in the status bar. This can be used to measure distances.</p>
+</li>
+<li>Now Generic Parameters can be loaded, saved and edited. Issue #3485</li>
+<li>Re-organized options in the options-dialog (F10). Issue #4420</li>
+<li>Option help is now shown in the status bar of the options
+    dialog. Issue #2900</li>
+<li>
+<p>Custom edge geometry endpoints can now be manipulated in <em>Move
+    mode</em>. Issue #3716</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>Geo-referenced networks (i.e. from OSM) can now be merged by loading them together (<strong>-s net1.net.xml,net2.net.xml</strong>). Issue #4085</li>
+<li>Element <code>&lt;crossing&gt;</code> now supports attribute <em>linkIndex2</em> to specify a custom signal index for the reverse direction. Issue #3820</li>
+<li>When defining <a href="../../Networks/PlainXML/#multiple_connections_from_the_same_edge_to_the_same_target_lane">double connections</a>, the right-of-way rules now take the road topology into account to differentiate between on-ramp and off-ramp situations. Issue #3834</li>
+<li>Importing VISUM networks up to format version 10 is now support. Issue #3898</li>
+<li>Improved heuristics for options <strong>--junctions.join</strong>. Issue #876</li>
+<li>Improved computation of intermodal junctions imported from OSM. Issue #4003</li>
+<li>Improved computation of junction shapes.</li>
+<li>Added option <strong>--proj.rotate</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> for rotating the network.</li>
+<li>Added option <strong>--prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> which can be used to add a prefix to the written junction and edge IDs.</li>
+<li>Added options <strong>--tls.scramble.time --tls.crossing-clearance.time --tls.crossing-min.time</strong> to control the timing of pedestrian crossing phases. Issue #4078</li>
+<li>Added option <strong>--tls.minor-left.max-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> to ensure that left turns through oncoming traffic are not build for high-speed roads. Issue #4091</li>
+<li>Sidewalk information is now imported from OSM for road types that have a positive sidewalkWidth attribute (e.g. by using typemap <a href="../../Networks/Import/OpenStreetMap/#recommended_typemaps">osmNetconvertPedestrians.typ.xml</a>). Issue #4096</li>
+<li>Added option <strong>--osm.stop-output.footway-access-factor</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> for increasing the length of stop access edges above the airline distance. Issue #4143.</li>
+<li>Added option <strong>--junctions.limit-turn-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> which sets an upper bound on speed while passing an intersection based on the turning radius. To account for imperfect road geometry, the option <strong>--junctions.limit-turn-speed.min-angle</strong> can be used to avoid speed limits for small turns. Warnings are issued when the difference between road speed and connection speed rises above a configurable threshold (<strong>--junctions.limit-turn-speed.warn.straight, --junctions.limit-turn-speed.warn.turn</strong>). These warnings often indicate exaggerated road speeds on urban roads as well as faulty geometry. Issue #1141</li>
+<li>
+<p>Geo-reference information is now imported from OpenDRIVE input. Issue #4414</p>
+</li>
+<li>
+<p>netgenerate</p>
+</li>
+<li>Simplified node and edge names<ul>
+<li>The alphanumerical junction naming scheme now supports
+  arbitrary grid sizes (using ids like <em>XY23</em>)</li>
+<li>The alphanumerical junction naming scheme also extends to
+  spider networks</li>
+<li>The alphanumerical junction naming scheme is active by
+  default (the option for enabling the old scheme was renamed
+  from <strong>grid.alphanumerical-ids</strong> to <strong>--alphanumerical-ids</strong>).</li>
+<li>When using alphanumerical junction ids, the intermediate
+  string <em>to</em> is omitted from edge names because the edge ID
+  already allows unambiguous determination of its junctions
+  without it</li>
+</ul>
+</li>
+<li>Added option <strong>--rand.random-lanenumber</strong> to randomize lane numbers in random networks
+    between 1 and <em>default.lanenumber</em></li>
+<li>Added option <strong>--rand.random-priority</strong> to edge priorities in random networks between 1
+    and <em>default.priority</em></li>
+<li>Added option <strong>--rand.grid</strong> to place generated junctions on a regular grid</li>
+<li>Added option <strong>--prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> which can be used to add a prefix to the generated
+    junction and edge IDs.</li>
+<li>Corridor networks can now be generated by using options such as <strong>-g --grid.x-number 3 --grid.y-number 1 --grid.attach-length 100</strong></li>
+<li>
+<p>Added options <strong>--turn-lanes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> and <strong>--turn-lanes.length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> to add left-turn lanes to generated
+    networks. Issue #3892</p>
+</li>
+<li>
+<p>duarouter</p>
+</li>
+<li>Intended departure times (attribute <em>depart</em>) and intended
+    vehicle id (attribute <em>intended</em>) are now added to
+    vehroute-output of public transport rides. Issue #3948</li>
+<li>
+<p>Stopping place names are now added as XML-comments in
+    route-output of public transport rides. Issue #3952</p>
+</li>
+<li>
+<p>polyconvert</p>
+</li>
+<li>
+<p>Option <strong>--osm.use-name</strong> now also applies to POIs. Issue #4246</p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li><a href="../../Libsumo/">Libsumo</a> can now be used in place of the
+    TraCI client libraries to increase execution speed of
+    TraCI-Simulations by directly linking against
+    <a href="../../sumo/">sumo</a> for all
+    <a href="https://en.wikipedia.org/wiki/SWIG">SWIG</a>-supported languages.
+    Graphical simulation with libsumo is not yet supported.</li>
+<li>function <em>vehicle.add</em> now supports using the empty string ("")
+    as a route id to insert the vehicle on an arbitrary valid edge.
+    This makes it easier to remote-control vehicles using moveToXY
+    without defining an initial route. Issue #3722</li>
+<li>added functions <em>simulation.getCollidingVehiclesNumber</em> and
+    <em>simulation.getCollidingVehiclesIDList</em> to track collisions. Issue #3099</li>
+<li>added functions <em>simulation.getEmergencyStoppingVehiclesNumber</em>
+    and <em>simulation.getEmergencyStoppingVehiclesIDList</em> to track
+    emergency stops. Issue #4312</li>
+<li>added function <em>edge.getLaneNumber</em> to retrieve the number of
+    lanes of an edge. Issue #3630</li>
+<li>added function <em>vehicle.getAcceleration</em> to retrieve the
+    acceleration in the previous step. Issue #4112</li>
+<li>TraCI now allows to update a vehicle's best lanes
+    (vehicle.updateBestLanes). Issue #4146</li>
+<li>added function <em>gui.hasView</em> to determine whether graphical
+    capabilities exist. Issue #4014</li>
+<li>added function <em>lane.getFoes</em> to <a href="../../TraCI/Lane_Value_Retrieval/#extended_retrieval_messages">to determine right-of-way and
+    conflict relationships between incoming
+    lanes</a>.</li>
+<li>function <em>simulation.getMinExpectedNumber()</em> now includes
+    persons that are still active in the simulation. Issue #3707</li>
+<li>added function <em>traci.getLabel</em> to the python client to help
+    working with multiple connections.</li>
+<li>When adding a vehicle with a disconnected 2-edge route, it will
+    be treated like a <code>&lt;trip&gt;</code> and rerouted automatically. Issue #4307</li>
+<li>
+<p>added functions <em>vehicle.getRoutingMode</em> and
+    <em>vehicle.setRoutingMode</em>. When setting routing mode to
+    <em>traci.constants.ROUTING_MODE_AGGREGATED</em>, <a href="../../Demand/Automatic_Routing/#edge_weights">smoothed travel
+    times</a> are
+    used instead of current travel times. Issue #3383</p>
+</li>
+<li>
+<p>Tools</p>
+</li>
+<li>added script
+    <a href="../../Tools/Visualization/#plot_trajectoriespy">plot_trajectories.py</a>
+    which allows plotting various combinations of time, distance,
+    speed and acceleration for all trajectories in a given <strong>--fcd-output</strong> file.</li>
+<li>added script
+    <a href="../../Tools/Misc/#averagetripstatisticspy">averageRuns.py</a> for
+    running a scenario multiple times with different random seeds
+    and computing trip statistics</li>
+<li>webWizard now correctly builds regions with left-hand traffic Issue #3928</li>
+<li>Additional options for
+    <a href="../../Tools/Output/#generatetlse3detectorspy">generateTLSE3Detectors.py</a>
+    that make it suitable for generating various kind of junction
+    related output. Issue #1622</li>
+<li><a href="../../Tools/Misc/#createvehtypedistributionpy">createVehTypeDistribution.py</a>
+    now also allows to generate vehicle parameter distributions. Issue #4171</li>
+<li>Added function simpla.createGap() Issue #4172</li>
+<li>sumolib now supports lane.getWidth(). Issue #3842</li>
+</ul>
+<h3 id="other_2">Other<a class="headerlink" href="#other_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Miscellaneous</li>
+<li>
+<p>The space character ' ' is no longer allowed in xml option
+    values when separating file names. Instead the comma ',' must be
+    used. Files with space in their path are now supported. Issue #3817</p>
+</li>
+<li>
+<p>Documentation</p>
+</li>
+<li>Added <a href="../../Simulation/Traffic_Lights/">documentation on joined traffic lights and defining
+    signal groups</a>.</li>
+<li>Added <a href="../../Simulation/SublaneModel/#simple_continuous_lane-change_model">documentation on the simple continuous lane-change
+    model</a>.</li>
+<li>
+<p>Documented all supported <a href="../../Simulation/Routing/#routing_algorithms">routing
+    algorithms</a>.</p>
+</li>
+<li>
+<p>Simulation</p>
+</li>
+<li><code>&lt;vTypeProbe&gt;</code> is now deprecated in favour of FCD-output filtering</li>
+<li><code>&lt;vaporizer&gt;</code> is now deprecated in favour of calibrators.</li>
+<li>The default arrival position for person walks is now the middle
+    of the destination edge. This reduces the asymmetry from
+    arriving in forward or backward direction. Issue #3843</li>
+<li>tripinfo-output attribute <em>waitSteps</em> which counts the number of
+    simulation steps in which the vehicle was below a threshold
+    speed of 0.1m/s was replaced by attribute <em>waitingTime</em> which
+    measures the same time in seconds. This gives results which are
+    independent of the <strong>--step-length</strong> simulation parameter. Issue #3749</li>
+<li>The default value for option <strong>--device.rerouting.pre-period</strong> was changed from <em>1</em> to <em>60</em> to
+    speed up simulation. Issue #3865</li>
+<li>The default speed deviation has been changed to <em>0.1</em>. When
+    defining a new <code>&lt;vType&gt;</code> with attribute <em>vClass</em>, this also influences
+    the default speed deviation:<ul>
+<li><em>truck</em>, <em>trailer</em>, <em>coach</em>, <em>delivery</em>: 0.05</li>
+<li><em>tram</em>, <em>rail</em>, <em>rail_electric</em>, <em>rail_urban</em>,
+  <em>emergency</em>: 0</li>
+<li>everything else 0.1</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The previous behavior can be restored by setting option <strong>--default.speeddev 0</strong></p>
+</div>
+<ul>
+<li>sumo-gui</li>
+<li>
+<p>Default color for persons is now 'blue' to better distinguish
+    them from vehicles.</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>There is no longer an offset of 0.1m between lanes. This means
+    the total visual width of an edge is now the sum of all lane
+    widths. This also fixes an inconsistency between visualization
+    and simulation as the vehicles always ignored this offset
+    anyway. Road markings are now drawn on top of the lanes rather
+    than between them. This causes small visual gaps in old networks
+    (fixable by calling <em>netconvert -s old.net.xml -o new.net.xml</em>). Issue #3972</li>
+<li>The default value for option <strong>--default.junctions.radius</strong> was increased from 1.5 to 4 in
+    order to improve realism of turning angles.</li>
+<li>The default value for option <strong>--default.junctions.corner-detail</strong> was increased from 0 to 5 to
+    improve the visual realism of larger intersections.</li>
+<li>Option <strong>--ramps.guess</strong> is now enabled by default</li>
+<li>
+<p>Vehicle speed while turning at intersections is now limited via
+    the new option default <strong>--limit-turn-speed 5.5</strong>. To obtain the old behavior, this value
+    can be set to -1.</p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li>TraCI Version is now 18</li>
+<li>Embedded python is now deprecated in favour of
+    <a href="../../Libsumo/">Libsumo</a>.</li>
+<li>TraCI now consistently represents time in seconds as a double
+    precision floating point. This affects all client
+    implementations. For convenience the affected python calls are
+    listed below. Modifying your scripts should be necessary only
+    for the methods printed in <strong>bold</strong>:<ul>
+<li><strong>traci.simulationStep</strong></li>
+<li>traci.edge.getTravelTime</li>
+<li>traci.edge.getEffort</li>
+<li>traci.edge.adaptTravelTime</li>
+<li>traci.edge.setEffort</li>
+<li>traci.person.add</li>
+<li>traci.vehicle.getAdaptedTravelTime</li>
+<li>traci.vehicle.getEffort</li>
+<li>traci.vehicle.adaptTravelTime</li>
+<li>traci.vehicle.setEffort</li>
+<li><strong>traci.vehicle.slowDown</strong></li>
+<li><strong>traci.vehicle.changeLane</strong></li>
+<li><strong>traci.vehicle.setStop</strong></li>
+<li>traci.simulation.getCurrentTime still returns ms as int but
+  has been deprecated in favor of traci.simulation.getTime</li>
+<li>traci.simulation.findRoute</li>
+<li>traci.simulation.findIntermodalRoute</li>
+<li><strong>traci.simulation.getDeltaT</strong></li>
+<li><strong>traci.trafficlight.getNextSwitch</strong></li>
+<li><strong>traci.trafficlight.getPhaseDuration</strong></li>
+<li>traci.trafficlight.getCompleteRedYellowGreenDefinition</li>
+<li><strong>traci.trafficlight.setPhaseDuration</strong></li>
+<li>traci.trafficlight.setCompleteRedYellowGreenDefinition</li>
+</ul>
+</li>
+<li>The TraCI boundary type has been replaced by a position list of
+    2 positions</li>
+<li>The TraCI float type has been removed</li>
+<li>All protocol functions returning single bytes now return
+    integers (lane.getLinkNumber, polygon.getFilled,
+    vehicle.isRouteValid, vehicle.getStopState)</li>
+<li>In the C++ client the function vehicle.getEdges was renamed to
+    getRoute to be consistent with other clients</li>
+<li>The order of error checks in the TraCI server changed so that
+    unknown object errors show up before unknown variable / command
+    errors</li>
+<li>The python client<ul>
+<li>the function vehicle.add was replaced by the function
+  addFull. The old "add" is still present and can be
+  reactivated by monkey patching the module
+  (traci.vehicle.add=traci.vehicle.addLegacy)</li>
+<li>constants which were previously available in the single
+  domains have moved to traci.constants</li>
+<li>now returns tuples instead of lists for all getIDList and
+  several other calls</li>
+<li>the function <em>getSubscriptionResults</em> now requires the ID of
+  the subscribed object as argument. To retrieve all results
+  in a map, the function <em>getAllSubscriptionResults</em> can be
+  used</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,989 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/Output/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Output - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#attributestatspy" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Output
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attributestatspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      attributeStats.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributediffpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      attributeDiff.py
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="attributeDiff.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grouping-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      grouping attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributecomparepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      attributeCompare.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generateitetrisintersectionmetricspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      generateITetrisIntersectionMetrics.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generateitetrisnetworkmetricspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      generateITetrisNetworkMetrics.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generatemeandatadefinitionspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      generateMeanDataDefinitions.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generatedetectorspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      generateDetectors.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generatetlse1detectorspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      generateTLSE1Detectors.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generatetlse2detectorspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      generateTLSE2Detectors.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generatetlse3detectorspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      generateTLSE3Detectors.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netdumpdiffpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      netdumpdiff.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netdumpmeanpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      netdumpmean.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timingstatspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      timingStats.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accelerationspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      accelerations.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vehlanespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      vehLanes.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edgedatadiffpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      edgeDataDiff.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vehroutediffpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      vehrouteDiff.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vehroutecountvalidationpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      vehrouteCountValidation.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tripinfodiffpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      tripinfoDiff.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tripinfobytazpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      tripinfoByTAZ.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tripinfobytypepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      tripinfoByType.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computecoordinationpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      computeCoordination.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tripstatisticspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      tripStatistics.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computestoppingplaceusagepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      computeStoppingPlaceUsage.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computepassengercountspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      computePassengerCounts.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parkingsearchtrafficpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      parkingSearchTraffic.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregatebatteryoutputpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      aggregateBatteryOutput.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fcddiffpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      fcdDiff.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edgedepartdelaypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      edgeDepartDelay.py
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Output</h1>
+
+<p>All of the tools described below exist in <em>tools/output</em> directory.</p>
+<h2 id="attributestatspy">attributeStats.py<a class="headerlink" href="#attributestatspy" title="Permanent link">&para;</a></h2>
+<p>Computes statistics on arbitrary numerical attributes in one or more xml
+documents. (eg. attribute <em>timeLoss</em> for element <em>tripinfo</em> in
+<a href="../../Simulation/Output/TripInfo/">tripinfo-output</a>) and writes the
+results to standard output. When the attribute contains time data in HH:MM:SS format, the values will automatically be converted to seconds.</p>
+<pre><code>python tools/output/attributeStats --element tripinfo --attribute timeLoss input.xml
+</code></pre>
+<ul>
+<li>If option <strong>--element</strong> (<strong>-e</strong>) is set to a comma-separated list of elements, only these elements will be read. Otherwise all elements will be parsed</li>
+<li>If option <strong>--attribute</strong> (<strong>-a</strong>) is set to a comma-separated list of attributes, only these attributes will be read. Otherwise all attributes will be parsed</li>
+<li>It is also possible to give multiple files as input as a space separated list or via shell expansion (i.e. <code>*.input.xml</code>)</li>
+<li>If option <strong>--id-attribute</strong> (<strong>-i</strong>) is set, the minimum and maximum values of each attribute will be annotated with the corresponding id value</li>
+<li>With option <strong>--hist-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>, a histogram data file (e.g. for plotting with gnuplot) is generated.</li>
+<li>option <strong>--binwidth INT</strong> (<strong>-b</strong>) defines the binning width for the histogram</li>
+<li>With option <strong>--abs</strong> the output will include statistics on absolute values</li>
+<li>With option <strong>--xml-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>, A file with statistical measures for all processed attributes is written</li>
+<li>With option <strong>--full-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>, A collected attribute values are recorded with their corresponding ids</li>
+<li>Output precision can be set with option <strong>--precision</strong> (<strong>-p</strong>)</li>
+</ul>
+<h2 id="attributediffpy">attributeDiff.py<a class="headerlink" href="#attributediffpy" title="Permanent link">&para;</a></h2>
+<p>Computes difference between numerical attributes in two xml files with the same structure (eg. attribute <em>timeLoss</em> for element <em>vehicleTripStatistics</em> in <a href="../../Simulation/Output/StatisticOutput/">statistic-output</a>) and writes the
+results to standard output. When the attribute contains time data in HH:MM:SS format, the values will automatically be converted to seconds.</p>
+<pre><code>python tools/output/attributeDiff file1.xml file2.xml --xml-output differences.xml
+</code></pre>
+<ul>
+<li>If option <strong>--element</strong> (<strong>-e</strong>) is set to a comma-separated list of elements, only these elements will be read. Otherwise all elements will be parsed</li>
+<li>If option <strong>--attribute</strong> (<strong>-a</strong>) is set to a comma-separated list of attributes, only these attributes will be read. Otherwise all attributes will be parsed</li>
+<li>With option <strong>--xml-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>, A file with statistical measures for all processed attributes is written. If this option is not set or combined with option <strong>--verbose</strong>, the results are written as plain text to the console.</li>
+<li><strong>--only-first-output</strong> (<strong>-m</strong>): Write all element and attributes that occur only in the first input to FILE</li>
+<li><strong>--only-second-output</strong> (<strong>-M</strong>): Write all element and attributes that occur only in the second input to FILE</li>
+</ul>
+<h3 id="grouping-attributes">grouping attributes<a class="headerlink" href="#grouping-attributes" title="Permanent link">&para;</a></h3>
+<p>If is often useful to compare files where the same elements occur multiple times but are distinguishable by some further attribute (i.e. vehicle id in <a href="../../Simulation/Output/TripInfo/">tripinfo-output</a>). To compare elements with similar ids, the option <strong>--id-attribute</strong> can be used to set a list of attributes. The following example calls computes the differences of all tripinfo attributes for each individual vehicle that occurred in both files (i.e. from two simulation runs with different seeds):</p>
+<pre><code>python tools/output/attributeDiff tripinfos1.xml tripinfos2.xml --xml-output differences.xml -i id
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The tool <a href="#tripinfodiffpy">tripinfoDiff.py</a> serves the same special use case.</p>
+</div>
+<p>If a list of id attributes is set, those attributes may occur at different levels of the xml element hierarchy and parent values will be applied for the child element comparison. The following example makes use of this to compare edges with the same id and in the same time interval for <a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgedata-output</a>:</p>
+<pre><code>python tools/output/attributeDiff edgedata1.xml edgedata2.xml --xml-output differences.xml -i begin,id
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The last example is very similar to <a href="#netdumpdiffpy">netdumpdiff.py</a> and <a href="#edgedatadiffpy">edgeDataDiff.py</a></p>
+</div>
+<h2 id="attributecomparepy">attributeCompare.py<a class="headerlink" href="#attributecomparepy" title="Permanent link">&para;</a></h2>
+<p>Computes statistics on numerical attributes in multiple xml files with the same structure (eg. attribute <em>timeLoss</em> for element <em>vehicleTripStatistics</em> in <a href="../../Simulation/Output/StatisticOutput/">statistic-output</a>) and writes the
+results to standard output. The tool works very similar to <a href="#attributediffpy">attributeDiff.py</a> but uses multiple files and computes a wide range of statistics instead of the difference between values.</p>
+<pre><code>python tools/output/attributeCompare.py file1.xml file2.xml file3.xml --xml-output compared.xml
+</code></pre>
+<ul>
+<li>If option <strong>--element</strong> (<strong>-e</strong>) is set to a comma-separated list of elements, only these elements will be read. Otherwise all elements will be parsed</li>
+<li>If option <strong>--attribute</strong> (<strong>-a</strong>) is set to a comma-separated list of attributes, only these attributes will be read. Otherwise all attributes will be parsed</li>
+<li>If option <strong>--id-attribute</strong> (<strong>-i</strong>) is set, elements are <a href="#grouping_attributes">grouped as explained for attributeDiff.py</a></li>
+<li>With option <strong>--xml-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>, A file with statistical measures for all processed attributes is written. If this option is not set or combined with option <strong>--verbose</strong>, the results are written as plain text to the console.</li>
+</ul>
+<h2 id="generateitetrisintersectionmetricspy">generateITetrisIntersectionMetrics.py<a class="headerlink" href="#generateitetrisintersectionmetricspy" title="Permanent link">&para;</a></h2>
+<p>Tool used for generating the intersection metrics, including (but not
+limited to):</p>
+<ul>
+<li>CO emission</li>
+<li>CO2 emission</li>
+<li>HC emission</li>
+<li>PMx emission</li>
+<li>NOx emission</li>
+<li>fuel consumption</li>
+</ul>
+<p>Execute the <em>generateITetrisIntersectionMetrics.py</em> script with <em>--help</em>
+option to get details about usage and available options.</p>
+<h2 id="generateitetrisnetworkmetricspy">generateITetrisNetworkMetrics.py<a class="headerlink" href="#generateitetrisnetworkmetricspy" title="Permanent link">&para;</a></h2>
+<p>Tool used for generating the network metrics, including (but not limited
+to):</p>
+<ul>
+<li>CO emission</li>
+<li>CO2 emission</li>
+<li>HC emission</li>
+<li>PMx emission</li>
+<li>NOx emission</li>
+<li>fuel consumption</li>
+</ul>
+<p>Execute the <em>generateITetrisINetworkMetrics.py</em> script with <em>--help</em>
+option to get details about usage and available options.</p>
+<h2 id="generatemeandatadefinitionspy">generateMeanDataDefinitions.py<a class="headerlink" href="#generatemeandatadefinitionspy" title="Permanent link">&para;</a></h2>
+<p>Script for generating mean data definitions from detector definitions.</p>
+<p>Execute the <em>generateITetrisINetworkMetrics.py</em> script with <em>--help</em>
+option to get details about usage and available options.</p>
+<h2 id="generatedetectorspy">generateDetectors.py<a class="headerlink" href="#generatedetectorspy" title="Permanent link">&para;</a></h2>
+<p>Script for generating <a href="../../Simulation/Output/#simulated_detectors">different detectors</a>
+for some or all lanes in the supplied network file.</p>
+<p>Example usage:</p>
+<pre><code>python tools\output\generateDetectors.py -n .net.net.xml -o detectors.add.xml --detector-type instantInductionLoop
+</code></pre>
+<p>Execute the <em>generateDetectors.py</em> script with <em>--help</em> option to get details about additional options.</p>
+<h2 id="generatetlse1detectorspy">generateTLSE1Detectors.py<a class="headerlink" href="#generatetlse1detectorspy" title="Permanent link">&para;</a></h2>
+<p>Script for generating <a href="../../Simulation/Output/Induction_Loops_Detectors_%28E1%29/">E1 detectors (induction loops)</a>
+for each junction in the supplied network file.</p>
+<p>Example usage:</p>
+<pre><code>python tools\output\generateTLSE1Detectors.py -n .net.net.xml -o detectors.add.xml
+</code></pre>
+<p>Execute the <em>generateTLSE1Detectors.py</em>script with <em>--help</em> option to
+get details about additional options.</p>
+<h2 id="generatetlse2detectorspy">generateTLSE2Detectors.py<a class="headerlink" href="#generatetlse2detectorspy" title="Permanent link">&para;</a></h2>
+<p>Script for generating <a href="../../Simulation/Output/Lanearea_Detectors_%28E2%29/">E2 detectors (lanearea detectors)</a> for
+each junction in the supplied network file.</p>
+<p>Example usage:</p>
+<pre><code>python tools\output\generateTLSE2Detectors.py -n .net.net.xml -o detectors.add.xml
+</code></pre>
+<p>Execute the <em>generateTLSE2Detectors.py</em> script with <em>--help</em> option to
+get details about additional options.</p>
+<h2 id="generatetlse3detectorspy">generateTLSE3Detectors.py<a class="headerlink" href="#generatetlse3detectorspy" title="Permanent link">&para;</a></h2>
+<p>Script for generating <a href="../../Simulation/Output/Multi-Entry-Exit_Detectors_%28E3%29/">E3 detectors (multi-entry/multi-exit detectors)</a>
+around all TLS-controlled intersections (default) or for an arbitrary
+list of intersections (<strong>--junction-ids</strong>). By default each entry edge gets its own
+detector. When setting option <strong>--joined</strong> there will be one detector per junction
+instead. When setting option <strong>--interior</strong>, delays within the intersection will be
+included as well.</p>
+<p>Example usage:</p>
+<pre><code>python tools\output\generateTLSE3Detectors.py -n .net.net.xml -o detectors.add.xml
+</code></pre>
+<p>Execute the <em>generateTLSE3Detectors.py</em> script with <em>--help</em> option to
+get details about additional options.</p>
+<h2 id="netdumpdiffpy">netdumpdiff.py<a class="headerlink" href="#netdumpdiffpy" title="Permanent link">&para;</a></h2>
+<p>Script creating a diff of two netdump files.</p>
+<p>Execute the <em>netdumpdiff.py</em> script with <em>--help</em> option to get details
+about usage and available options.</p>
+<h2 id="netdumpmeanpy">netdumpmean.py<a class="headerlink" href="#netdumpmeanpy" title="Permanent link">&para;</a></h2>
+<p>Script calculating the mean values from two netdump files.</p>
+<p>Execute the <em>netdumpmean.py</em> script with <em>--help</em> option to get details
+about usage and available options.</p>
+<h2 id="timingstatspy">timingStats.py<a class="headerlink" href="#timingstatspy" title="Permanent link">&para;</a></h2>
+<p>Script for gathering statistics from several SUMO runs.</p>
+<p>Execute the <em>timingStats.py</em> script with <em>--help</em> option to get details
+about usage and available options.</p>
+<h2 id="accelerationspy">accelerations.py<a class="headerlink" href="#accelerationspy" title="Permanent link">&para;</a></h2>
+<p>Script for computing aggregate statistics about vehicle accelerations
+based on <a href="../../Simulation/Output/RawDump/">--netstate-dump</a> output.</p>
+<h2 id="vehlanespy">vehLanes.py<a class="headerlink" href="#vehlanespy" title="Permanent link">&para;</a></h2>
+<p>Script for computing
+<a href="../../Simulation/Output/VehRoutes/">vehroute</a>-like output for lanes
+based on <a href="../../Simulation/Output/RawDump/">--netstate-dump</a> output.
+Output data also includes information about the number of lane changes
+for each vehicle.</p>
+<p>usage:</p>
+<pre><code>python vehLanes.py &lt;netstate_dump.xml&gt; &lt;output_file&gt;
+</code></pre>
+<h2 id="edgedatadiffpy">edgeDataDiff.py<a class="headerlink" href="#edgedatadiffpy" title="Permanent link">&para;</a></h2>
+<p>Computes the numerical difference of
+<a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgeData</a>
+values for each edge and interval. The resulting file can be used to
+<a href="../../sumo-gui/#visualizing_edge-related_data">visualize changes between two traffic scenarios</a>. Both
+input files must contain the same edges and intervals.</p>
+<p>usage:</p>
+<pre><code>python edgeDataDiff.py &lt;edgeData1.xml&gt; &lt;edgeData2.xml&gt; &lt;diffFile.xml&gt;
+</code></pre>
+<h2 id="vehroutediffpy">vehrouteDiff.py<a class="headerlink" href="#vehroutediffpy" title="Permanent link">&para;</a></h2>
+<p>Computes the difference in travel times between two sets of <strong>--vehroute-output</strong> files. The
+files must contain the same vehicles and the same routes and may only
+differ in travel times. The must have been generated with the option <strong>--vehroute-output.exit-times</strong>
+for the script to work.</p>
+<p>usage:</p>
+<pre><code>python vehrouteDiff.py routes1.rou.xml routes2.rou.xml result.xml
+</code></pre>
+<h2 id="vehroutecountvalidationpy">vehrouteCountValidation.py<a class="headerlink" href="#vehroutecountvalidationpy" title="Permanent link">&para;</a></h2>
+<p>Computes the mismatch between counting data (in the same format as used by <a href="../Turns/#routesamplerpy">routeSampler.py</a>)
+and <strong>--vehroute-output</strong> files. If the vehroute-output was generated with option <strong>--vehroute-output.exit-times</strong>, then time of passing the respective edges is used for the validation of counting data time lines (counting data with multiple time intervals).
+Since typically, the total count of vehicles provided in the simulation <strong>--route-files</strong> passes the desired edges, the main value of this tools lies in evaluating the impact of delays (or delayed insertion) on replicating time-dependent counting data.</p>
+<p>usage (with turn counts):</p>
+<pre><code>python vehrouteCountValidation.py -r routes.rou.xml -t input_turns.xml
+</code></pre>
+<h2 id="tripinfodiffpy">tripinfoDiff.py<a class="headerlink" href="#tripinfodiffpy" title="Permanent link">&para;</a></h2>
+<p>Computes the difference in travel times, route length, time loss,
+departure- and arrival times between two sets of <strong>--tripinfo-output</strong> files. The files
+should contain the same vehicles.</p>
+<p>usage:</p>
+<pre><code>python tripinfoDiff.py tripinfos1.xml tripinfos2.xml result.xml
+</code></pre>
+<p>By default only <code>&lt;tripinfo&gt;</code> elements are considered. By setting option <strong>--persons</strong>, the
+difference for <code>&lt;personinfo&gt;</code> elements is computed instead.</p>
+<h2 id="tripinfobytazpy">tripinfoByTAZ.py<a class="headerlink" href="#tripinfobytazpy" title="Permanent link">&para;</a></h2>
+<p>Aggregates tripinfo data by origin/destination TAZ. The TAZ data can
+either by taken from the original input file (if it contains 'fromTaz'
+and 'toTaz' attributes) or from a TAZ file.</p>
+<pre><code>python tripinfoByTAZ.py -t tripinfos.xml -r trips.xml
+python tripinfoByTAZ.py -t tripinfos.xml -z taz.axml
+</code></pre>
+<p>By default traveltime (tripinfo attribute 'duration') is aggregated.
+Other attributes can be selected using option <strong>--attribute</strong> (e.g. 'routeLength').
+Output is given as plain text on the command line or in xml format if
+option <strong>--output</strong> is set.</p>
+<h2 id="tripinfobytypepy">tripinfoByType.py<a class="headerlink" href="#tripinfobytypepy" title="Permanent link">&para;</a></h2>
+<p>Aggregates tripinfo data by vType and person stage type for the given attribute</p>
+<pre><code>python tripinfoByType.py -t tripinfos.xml -a timeLoss
+
+</code></pre>
+<p>Output is given as plain text on the command line or in xml format if option <strong>--output</strong> is set.</p>
+<h2 id="computecoordinationpy">computeCoordination.py<a class="headerlink" href="#computecoordinationpy" title="Permanent link">&para;</a></h2>
+<p>This tool reads fcd-output and a corridor definition. It computes the fraction of vehicles that passed the corridor without significant slow-down.</p>
+<p>Example:</p>
+<pre><code>python tools/output/computeCoordination.py --fcd-file fcd.xml --filter-route B,C,D,E --entry C --min-speed 5
+</code></pre>
+<p>This computes the fraction of vehicles that passed the edges <em>B,C,D,E</em> in order (possibly with gaps) and were delayed after passing edge <em>C</em> to less then 5m/s.</p>
+<p>With option <strong>--full-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> Each vehicle that passed the corridor is recorded with entry time and the time at which it was delayed (-1 it it was not delayed).</p>
+<h2 id="tripstatisticspy">tripStatistics.py<a class="headerlink" href="#tripstatisticspy" title="Permanent link">&para;</a></h2>
+<p>This script is to calculate the global performance indices according to
+<strong>SUMO-based</strong> simulation results. The calculation functions are
+directly defined in this script. Basic statistics are delivered, such
+as:</p>
+<ul>
+<li>average travel time (s)</li>
+<li>average travel length (m)</li>
+<li>average travel speed (m/s)</li>
+<li>average departure delay (s)</li>
+<li>average waiting time (s)</li>
+</ul>
+<p>Besides, this script is also to execute a significance test for
+evaluating the results from different assignment methods. The t test and
+the Kruskal-Wallis test are available in this script. If not specified,
+the Kruskal-Wallis test will be applied with the assumption that data
+are not normally distributed.</p>
+<p>In order to execute this script, the other two scripts, i.e.
+statisticsElements.py and tables.py, are required. They all should be in
+the same directory.</p>
+<p>In the statisticsElements.py, classes regarding vehicles, their
+performance measures, t values, H values as well as functions for
+outputs are defined. The chi-square table and the t table are defined in
+the tables.py.</p>
+<p>An exemplary command is shown below.</p>
+<pre><code>python tools/output/tripStatistics.py -t &lt;tripinfo files&gt; -o &lt;output file&gt; -e
+
+where -t: name of output files containing vehicle information, generated by SUMO
+      -o: define the output file name
+      -e: set true for applying the t test (default: false)
+      -k: set true for applying the Kruskal-Wallis test (default: false)
+</code></pre>
+<h2 id="computestoppingplaceusagepy">computeStoppingPlaceUsage.py<a class="headerlink" href="#computestoppingplaceusagepy" title="Permanent link">&para;</a></h2>
+<p>This tool reads stop-output and tracks the number of stopped vehicles over time at stopping places (i.e. parkingArea).
+A distinct output file will be created for each stopping place.
+If option <strong>--only-changes</strong> is set, only time steps in which the number of stopped vehicles changes, are recorded.</p>
+<p>Example:</p>
+<pre><code>python tools/output/computeStoppingPlaceUsage.py -s stopinfos.xml
+</code></pre>
+<h2 id="computepassengercountspy">computePassengerCounts.py<a class="headerlink" href="#computepassengercountspy" title="Permanent link">&para;</a></h2>
+<p>This tool reads stop-output and generates occupancy-over-time for vehicles
+A distinct output file will be created for each vehicle.</p>
+<p>Example:</p>
+<pre><code>python tools/output/computePassengerCounts.py -s stopinfos.xml
+</code></pre>
+<h2 id="parkingsearchtrafficpy">parkingSearchTraffic.py<a class="headerlink" href="#parkingsearchtrafficpy" title="Permanent link">&para;</a></h2>
+<p>This tool reads <a href="../../Simulation/Output/VehRoutes/">vehroute-output</a> with <a href="../../Simulation/Output/VehRoutes/#further_options">exit-times</a> and generates statistics for the time and the distance vehicles
+spent on searching parking locations as well as the length of the walking way back.
+It evaluates the time and distance between the first reroute and the arrival at the final stop.
+It currently outputs only basic statistics (mean, avg, quartiles etc.).</p>
+<p>Example:</p>
+<pre><code>python tools/output/parkingSearchTraffic.py net.net.xml vehroutes.xml
+</code></pre>
+<h2 id="aggregatebatteryoutputpy">aggregateBatteryOutput.py<a class="headerlink" href="#aggregatebatteryoutputpy" title="Permanent link">&para;</a></h2>
+<p>Script for aggregate battery outputs in intervals.</p>
+<p>Example usage:</p>
+<pre><code>python tools\output\aggregateBatteryOutput.py -i battery.xml -o batteryAggregatedx.xml -t 60 -v veh0
+</code></pre>
+<h2 id="fcddiffpy">fcdDiff.py<a class="headerlink" href="#fcddiffpy" title="Permanent link">&para;</a></h2>
+<p>Computes difference between two <a href="../../Simulation/Output/FCDOutput/">fcd-output files</a> with regard to their distance in space.
+Data points in the files are matched by time and by id (no time shifting is done).</p>
+<p>Statistical outputs are printed on the console. It is also possible to write all error values to an xml file.</p>
+<pre><code>python tools/output/fcdDiff fcd.xml fcd2.xml
+</code></pre>
+<ul>
+<li>If option <strong>--grouped</strong> is set, separate statistics for each vehicle will be printed</li>
+<li>If option <strong>--tripId</strong> is set, vehicles will be matched by attribute <code>tripId</code> instead of <code>id</code> (requires <strong>--fcd-output.params tripId</strong> to be when generating the fcd-output)</li>
+<li>With option <strong>--xml-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>, An annotated fcd file with error values is written</li>
+</ul>
+<h2 id="edgedepartdelaypy">edgeDepartDelay.py<a class="headerlink" href="#edgedepartdelaypy" title="Permanent link">&para;</a></h2>
+<p>Compute departDelay per edge from tripinfo-output</p>
+<pre><code>python tools/output/edgeDepartDelay -t tripinfos.xml -o edgedata.xml
+</code></pre>
+<p>Attributes for each edge will be statistical measures:</p>
+<pre><code>&lt;edge id="4/1to3/1" count="4" min="0.00" minLabel="0" max="3.00" maxLabel="1" mean="0.75" Q1="0.00" median="0.00" Q3="3.00" meanAbs="0.75" medianAbs="0.00"/&gt;
+</code></pre>
+<p>The <em>maxLabel</em> attribute will hold the id of the vehicle with the maximum departDelay on a given edge.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

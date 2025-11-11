@@ -1,0 +1,546 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tutorials/GTFS/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>GTFS - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GTFS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>This tutorial shows you how to refine your existing public transit (PT) simulation
+scenario with data in the <a href="https://developers.google.com/transit/gtfs">General Transit Specification Format</a> (GTFS)
+which is available for many regions. It is advisable to do the
+<a href="../PT_from_OpenStreetMap/">Public Transport Tutorial</a> first.</p>
+<p>The creation of PT simulation consists of three steps:</p>
+<ol>
+<li>Initial network requirements</li>
+<li>Finding a data source for GTFS</li>
+<li>Mapping GTFS data to the network</li>
+</ol>
+<h1 id="initial-network-requirements">Initial network requirements<a class="headerlink" href="#initial-network-requirements" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using the <a href="../OSMWebWizard/">osmWebWizard tool</a>, may be the easiest way to get a network but the process works with every (geo referenced) SUMO network.</p>
+</div>
+<p>The process works best with a network which comes from OpenStreetMap and also
+has public transport lines data (see <a href="../../Networks/Further_Outputs/#public_transport_lines">ptLines output</a>).
+The network should contain edges for all traffic types (modes) you want
+to model and the relevant edge types. The script currently supports
+the following mapping:</p>
+<ul>
+<li><code>tram</code> -&gt; all edges allowing SUMO's vehicle class tram</li>
+<li><code>subway</code> -&gt; OSM type railway.subway</li>
+<li><code>light_rail</code> -&gt; OSM type railway.light_rail</li>
+<li><code>train</code> -&gt; OSM type railway.rail</li>
+<li><code>bus</code> -&gt; all edges allowing SUMO's vehicle class bus</li>
+<li><code>ship</code> -&gt; OSM type ship</li>
+</ul>
+<p>If the network does not contain edge types, only bus and tram mappings are possible which will use the edges
+allowing the relevant vehicle classes.</p>
+<p>For this tutorial we imported the network of Eichwalde with the osmWebWizard tool:</p>
+<p><img src="../images/Eichwalde_net.png" alt="Eichwalde_net" width="600"></p>
+<h1 id="finding-a-data-source-for-gtfs">Finding a data source for GTFS<a class="headerlink" href="#finding-a-data-source-for-gtfs" title="Permanent link">&para;</a></h1>
+<p>There are <a href="https://transitfeeds.com/">several sources</a> for GTFS data usually on the website of your local
+transit agency. <a href="https://gist.github.com/highsource/67d0846029a43ea28dfd90540bacb1ee">Some examples from Germany</a>:</p>
+<ul>
+<li><a href="https://gtfs.de/en/">Aggregated data for a lot of German regions</a></li>
+<li><a href="https://www.vbb.de/vbb-services/api-open-data/datensaetze/">Berlin and Brandenburg (VBB)</a></li>
+<li><a href="https://www.vbn.de/service/entwicklerinfos/">Lower Saxony and Bremen</a></li>
+<li><a href="https://suche.transparenz.hamburg.de/?q=gtfs&amp;sort=score+desc%2Ctitle_sort+asc&amp;esq_not_all_versions=true">Hamburg</a></li>
+</ul>
+<p>This tutorial uses the <a href="https://sumo.dlr.de/daily/GTFS_VBB_Juni-Dezember-2019.zip">June 2019 dataset by VBB</a>.
+You can either download the data or give the URL of the file directly to the script.</p>
+<h1 id="mapping-gtfs-data-to-the-network">Mapping GTFS data to the network<a class="headerlink" href="#mapping-gtfs-data-to-the-network" title="Permanent link">&para;</a></h1>
+<p>If you have all the data available you need to decide on the date you want to model. The script cannot find a representative date
+by itself, you need to find one yourself. It is usually advisable to check the calendar for school (and other) holidays in advance.</p>
+<p>For this tutorial we choose 04.09.2019 (a Wednesday).</p>
+<p>Additionally, you can choose which public transport modes should be imported
+(bus, tram, train, subway and/or ferry). By default, all modes will be imported. For
+this tutorial we will only import buses.</p>
+<p>Depending on the input files available, you can choose between different ways
+of generating the routes. If you have the line and stop information extracted from OpenStreetMap
+(using the appropriate netconvert options as described in <a href="../../Networks/Further_Outputs/#public_transport_lines">ptLines output</a>)
+the script can merge this information with the GTFS data.</p>
+<p>In general there are three types of data
+we can extract from GTFS: schedules (in minute precision for every vehicle), stop locations (geo coordinates),
+and routes (geo coordinates of the traveled streets), where the latter is optional. The GTFS file should be in
+zip format and contain at least <code>routes.txt</code>, <code>stops.txt</code>, <code>stop_times.txt</code>, <code>trips.txt</code>, <code>calendar.txt</code> and <code>calendar_dates.txt</code>.
+If your GTFS data has a (non-empty) <code>shapes.txt</code> file it also has route information.
+For the rest of the tutorial, we will assume that you always want to import at least the schedules from GTFS.</p>
+<p>From OSM you can (sometimes) get abstract schedules ("line runs every 10 minutes on weekdays") and also stop locations and routes.
+While it may be desirable to choose for every of the three data types individually whether it should be imported from OSM
+or from GTFS, currently, only the following scenarios are possible:</p>
+<ul>
+<li>Ignore the OSM and route data completely, see <a href="./#routes_from_shortest_path">Routes from shortest path</a>.</li>
+<li>This approach works with every network (not only OSM) and is the default if you do not have ptline output or your GTFS does not contain a shapes.txt file</li>
+<li>Import <a href="./#routes_from_osm">Routes from OSM</a>.</li>
+<li>This will try to find for every GTFS route the corresponding OSM route by using geometrical distance (stop information from OSM is not used)</li>
+</ul>
+<h2 id="routes-from-shortest-path">Routes from shortest path<a class="headerlink" href="#routes-from-shortest-path" title="Permanent link">&para;</a></h2>
+<p>In this case, the route for each public transport vehicle will be defined by
+finding the fastest path between stops.</p>
+<p>If you have downloaded the network and the GTFS data (or have the URL) it is as easy as</p>
+<pre><code>python tools/import/gtfs/gtfs2pt.py -n osm.net.xml.gz --gtfs GTFS_VBB_Juni-Dezember-2019.zip --date 20190904 --modes bus
+</code></pre>
+<p>The script runs for about five minutes and generates several subdirectories but in the end it provides three output files:</p>
+<ul>
+<li><code>pt_vtypes.xml</code></li>
+<li><code>gtfs_publictransport.add.xml</code> (defining the static routes and stops)</li>
+<li><code>gtfs_publictransport.rou.xml</code> (defining the single public transport vehicles)</li>
+</ul>
+<p>The vtypes output generates very simple vehicle type definitions for the different public transport modes in use. You are encouraged to modify this file and adapt
+it to the real situation especially concerning capacity (number of seats) for the different modes. You may of course also use vehicle types from another source and skip this output.</p>
+<p>In order to use them in a simulation you should pass them as additional files (not route files!) in the order given above.</p>
+<pre><code>sumo-gui -n osm.net.xml.gz --additional vtypes.xml,gtfs_pt_stops.add.xml,gtfs_pt_vehicles.add.xml
+</code></pre>
+<h2 id="routes-from-osm">Routes from OSM<a class="headerlink" href="#routes-from-osm" title="Permanent link">&para;</a></h2>
+<p>In this case, the route for each vehicle is taken from OSM. When we imported the
+net with the osmWebWizard tool, we enable the option of "import public transport",
+which automatically generate the "osm_ptlines.xml" file with the public transport lines.</p>
+<p>The call is:</p>
+<pre><code>python tools/import/gtfs/gtfs2pt.py -n osm.net.xml.gz --gtfs GTFS_VBB_Juni-Dezember-2019.zip --date 20190904 --modes bus --osm-routes osm_ptlines.xml --repair
+</code></pre>
+<p>The option <strong>--repair</strong> is not mandatory, but helpful. It takes the given ptLines
+and tries to repair them using duarouter before the mapping. If some routes of the
+ptLines are not valid, they won't be used for the mapping.</p>
+<p>The script generates the following output files:</p>
+<ul>
+<li><code>pt_vtypes.xml</code></li>
+<li><code>gtfs_publictransport.add.xml</code> (defining the stops)</li>
+<li><code>gtfs_publictransport.rou.xml</code> (defining the single public transport vehicles)</li>
+<li><code>gtfs_missing.xml</code> contains the elements (stops and ptLines) of the GTFS data that could not be imported</li>
+<li><code>invalid_osm_routes.txt</code> contains the warnings and errors from the repair of the ptLines</li>
+</ul>
+<p>To run the simulation call:</p>
+<pre><code>sumo-gui -n osm.net.xml.gz --additional vtypes.xml,gtfs_pt_stops.add.xml,gtfs_pt_vehicles.add.xml
+</code></pre>
+<h2 id="stops-from-osm">Stops from OSM<a class="headerlink" href="#stops-from-osm" title="Permanent link">&para;</a></h2>
+<p>In this case, the mapping of stops from (imprecise) GTFS coordinates to candidate network edges is guided buy using public transport stop locations from OSM. 
+This is useful when GTFS data has no shape information and provides two advantages:</p>
+<ul>
+<li>mapping is greatly sped up because fever candidate edges are considered</li>
+<li>mapping of public rail transport is greatly improved because OSM stops encode information about the typical usage direction of rail tracks (and thus stop track assignment at stations)</li>
+</ul>
+<p>The call is:</p>
+<pre><code>python tools/import/gtfs/gtfs2pt.py -n osm.net.xml.gz --gtfs GTFS_VBB_Juni-Dezember-2019.zip --date 20190904 --modes bus --stops osm_stops.add.xml
+</code></pre>
+<p>The generated simulation inputs are the same as <a href="#routes_from_osm">above</a> and thus the same call to sumo/sumo-gui can be used.</p>
+<h1 id="using-the-outputs-in-a-simulation">Using the outputs in a simulation<a class="headerlink" href="#using-the-outputs-in-a-simulation" title="Permanent link">&para;</a></h1>
+<p>Below an example of using the mapped stops and buses in a simulation by calling sumo-gui:</p>
+<p><img src="../images/tutorialGTFS.gif" alt="tutorialGTFS" width="600"></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,753 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Taxi/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Taxi - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Taxi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>Since version 1.5.0 SUMO supports simulation of demand responsive transport (DRT)
+via the taxi device. This allows a fleet of taxis to service customer requests
+based on a configurable dispatch algorithm.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While the taxi capabilities are under development, their status can be checked via Issue #6418.</p>
+</div>
+<h1 id="equipping-vehicles">Equipping Vehicles<a class="headerlink" href="#equipping-vehicles" title="Permanent link">&para;</a></h1>
+<p>A vehicle can be equipped with an Taxi device to make it part of the taxi fleet.
+To attach a Taxi device to a vehicle, the <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#devices">standard device-equipment
+procedures</a> can be applied using <code>&lt;device name&gt;=taxi</code>.</p>
+<p>For instance, a single vehicle can configured as taxi as in the following minimal example:</p>
+<pre><code class="language-xml">    &lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot; line=&quot;taxi&quot;&gt;
+        &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+    &lt;/vehicle&gt;
+</code></pre>
+<p>The following table gives the full list of possible parameters for the taxi device (all parameter names have to be prepended with "device.taxi"):</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Range</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dispatch-algorithm</td>
+<td>enum</td>
+<td>{greedy; greedyClosest; greedyShared; routeExtension; traci}</td>
+<td>greedy</td>
+<td>The dispatch algorithm</td>
+</tr>
+<tr>
+<td>dispatch-algorithm.output</td>
+<td>string</td>
+<td></td>
+<td>-</td>
+<td>Write information from the dispatch algorithm to a file</td>
+</tr>
+<tr>
+<td>dispatch-algorithm.params</td>
+<td>string</td>
+<td></td>
+<td>-</td>
+<td>Provide absLossThreshold and relLossThreshold thresholds for greedyShared dispatch algorithm as KEY1:VALUE1[,KEY2:VALUE]</td>
+</tr>
+<tr>
+<td>dispatch-period</td>
+<td>float (s)</td>
+<td></td>
+<td>60</td>
+<td>The period between successive calls to the dispatcher</td>
+</tr>
+<tr>
+<td>idle-algorithm</td>
+<td>enum</td>
+<td>{stop; randomCircling; taxistand}</td>
+<td>stop</td>
+<td>The behavior of idle taxis</td>
+</tr>
+<tr>
+<td>idle-algorithm.output</td>
+<td>string</td>
+<td></td>
+<td>-</td>
+<td>Write information from the idling algorithm to file</td>
+</tr>
+</tbody>
+</table>
+<h1 id="taxi-requests">Taxi Requests<a class="headerlink" href="#taxi-requests" title="Permanent link">&para;</a></h1>
+<h2 id="direct-ride-hailing">Direct Ride Hailing<a class="headerlink" href="#direct-ride-hailing" title="Permanent link">&para;</a></h2>
+<p>A person can be defined as taxi customer with the following definition:</p>
+<pre><code class="language-xml">    &lt;person id=&quot;p0&quot; depart=&quot;0.00&quot;&gt;
+        &lt;ride from=&quot;B2C2&quot; to=&quot;A0B0&quot; lines=&quot;taxi&quot;/&gt;
+    &lt;/person&gt;
+</code></pre>
+<h2 id="intermodal-routing">Intermodal Routing<a class="headerlink" href="#intermodal-routing" title="Permanent link">&para;</a></h2>
+<p>A person can also use a taxi by including it as a <a href="../../Specification/Persons/#persontrips">personTrip</a> mode:</p>
+<pre><code class="language-xml">    &lt;person id=&quot;p0&quot; depart=&quot;0.00&quot;&gt;
+        &lt;personTrip from=&quot;B2C2&quot; to=&quot;A0B0&quot; modes=&quot;taxi&quot;/&gt;
+    &lt;/person&gt;
+</code></pre>
+<p>Whenever a person enters a taxi during the intermodal route search, a time penalty is applied to account for the expected time loss from waiting for the taxi and embarking. The default value is set 300s and can be configure with option <strong>--persontrip.taxi.waiting-time</strong>. This prevents rapid switching between travel modes.</p>
+<h2 id="groups-of-persons">Groups of Persons<a class="headerlink" href="#groups-of-persons" title="Permanent link">&para;</a></h2>
+<p>Multiple persons can travel together as a group using attribute <code>group</code> (if the taxi has sufficient capacity):</p>
+<pre><code class="language-xml">    &lt;person id=&quot;p0&quot; depart=&quot;0.00&quot;&gt;
+        &lt;ride from=&quot;B2C2&quot; to=&quot;A0B0&quot; lines=&quot;taxi&quot; group=&quot;g0&quot;/&gt;
+    &lt;/person&gt;
+    &lt;person id=&quot;p1&quot; depart=&quot;0.00&quot;&gt;
+        &lt;ride from=&quot;B2C2&quot; to=&quot;A0B0&quot; lines=&quot;taxi&quot; group=&quot;g0&quot;/&gt;
+    &lt;/person&gt;
+</code></pre>
+<h2 id="prebooking">Prebooking<a class="headerlink" href="#prebooking" title="Permanent link">&para;</a></h2>
+<p>Direct ride hailing can be regarded as a spontaneous booking. If the taxi is to be requested before the person is at the pick-up location, prebooking is necessary. This is used by specifying an <code>earliestPickupTime</code> and a <code>reservationTime</code> in the <code>ride</code>. The <code>reservationTime</code> specifies the time at which the reservation is created and made available to the dispatch. It may also be less than the person's depart. The <code>earliestPickupTime</code> specifies the time at which the person is ready to be picked up. Depending on the algorithm used, this may allow a better dispatch to be made. Especially in combination with a custom dispatch algorithm via <a href="#traci">TraCi</a>, the requirements of different use cases can be addressed.</p>
+<h3 id="application">Application:<a class="headerlink" href="#application" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The file with the persons must be loaded as an additional file.</li>
+<li>At least the <code>earliestPickupTime</code> must be specified. The <code>reservationTime</code> has the start time of the simulation as the default value.</li>
+<li>It is necessary to define the attribute <code>from</code> in the <code>ride</code>.</li>
+<li>If there was previously a <code>walk</code> in which the <code>arrivalPos</code> attribute was defined, then the <code>fromPos</code> attribute must also be defined in the <code>ride</code> with the same value.</li>
+</ul>
+<h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<pre><code class="language-xml">    &lt;person id=&quot;p0&quot; depart=&quot;100.00&quot;&gt;
+        &lt;ride from=&quot;B2C2&quot; to=&quot;A0B0&quot; lines=&quot;taxi&quot;&gt;
+            &lt;param key=&quot;earliestPickupTime&quot; value=&quot;100.00&quot;/&gt;
+            &lt;param key=&quot;reservationTime&quot; value=&quot;50.00&quot;/&gt;
+        &lt;/ride&gt;
+    &lt;/person&gt;
+    &lt;person id=&quot;p1&quot; depart=&quot;0.00&quot;&gt;
+        &lt;walk from=&quot;B2C2&quot; to=&quot;B1C1&quot;/&gt;
+        &lt;ride from=&quot;B1C1&quot; to=&quot;A1B1&quot; lines=&quot;taxi&quot;&gt;
+            &lt;param key=&quot;earliestPickupTime&quot; value=&quot;30.00&quot;/&gt;
+        &lt;/ride&gt;
+    &lt;/person&gt;
+</code></pre>
+<h3 id="behavior">Behavior:<a class="headerlink" href="#behavior" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If a person arrives at the departure point earlier than the <code>earliestPickupTime</code>, the person boards as soon as the taxi arrives.</li>
+<li>If the taxi is on time and the person does not arrive at the departure point within 3 minutes of the <code>earliestPickupTime</code>, the reservation is canceled and the taxi serves the next reservation.</li>
+<li>If the taxi arrives later and the person does not arrive at the departure point within 3 minutes of the taxi's arrival time, the reservation is canceled.</li>
+<li>If the greedy or greedyShared scheduling algorithms are used, the reservations are processed in the order of the <code>earliestPickupTime</code>. A combination of spontaneous bookings and prebookings can lead to side effects. It is recommended to use a custom dispo algorithm via TraCi.</li>
+</ul>
+<h3 id="notes">Notes:<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Prebookings for merged reservations and group reservations are not yet supported.</li>
+<li>The current status can be tracked in <a href="https://github.com/eclipse-sumo/sumo/issues/11429">Ticket 11429</a></li>
+</ul>
+<h1 id="multiple-taxi-fleets">Multiple Taxi Fleets<a class="headerlink" href="#multiple-taxi-fleets" title="Permanent link">&para;</a></h1>
+<p>By default, there is only a single taxi fleet using line attribute 'taxi' and taxi customers use attribute <code>lines="taxi"</code> for their rides.
+It is permitted to define the line attribute for taxi with the prefix 'taxi:' and an arbitrary suffix (i.e. "taxi:fleetA").
+Likewise, it is permitted to define the lines attribute for rides with the prefix 'taxi:' and a suffix.
+When this is done, the following rules are applied when assigning taxis to customers:</p>
+<ul>
+<li>a taxi with line 'taxi:X' may only pick up customers with matching ride attribute lines="taxi:X" (for any value of X)</li>
+<li>a customer with lines="taxi" may use any taxi regardless of taxi fleet suffix</li>
+<li>a taxi with line 'taxi' may be pick up any customer regardless of the ride fleet suffix</li>
+</ul>
+<h1 id="dispatch-algorithms">Dispatch Algorithms<a class="headerlink" href="#dispatch-algorithms" title="Permanent link">&para;</a></h1>
+<p>The dispatch algorithm assigns taxis to waiting customers. The algorithm is
+selected using option <strong>--device.taxi.dispatch-algorithm ALGONAME</strong>. The following
+algorithms are available</p>
+<ul>
+<li>
+<p>greedy: Assigns taxis to customers in the order of their reservations. The
+  closest taxi (in terms of travel time) is assigned. If the reservation date is
+  too far in the future, the customer is postponed.</p>
+</li>
+<li>
+<p>greedyClosest: For each available taxi, the closest customer (in terms of
+  travel time) is assigned. If the reservation date is too far in the future,
+  the customer is postponed.</p>
+</li>
+<li>
+<p>greedyShared: like 'greedy' but tries to pick up another passenger while delivering the first passenger to its destination. Parameters <strong>absLossThreshold</strong> and <strong>relLossThreshold</strong> to configure acceptable detours can be supplied using <strong>--device.taxi.dispatch-algorithm.params KEY1:VALUE1[,KEY2:VALUE]</strong>.</p>
+</li>
+<li>
+<p>routeExtension: like greedy but can pick up any passenger along the route and also extend the original route (within personCapacity limit).</p>
+</li>
+<li>
+<p>traci: Dispatch is deferred to <a href="#traci">traci control</a>. The algorithm only keeps track of pending reservations</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>User-contributed dispatch algorithms are welcome.</p>
+</div>
+<p>The period in which the dispatch algorithm runs can be controlled with option <strong>--device.taxi.dispatch-period</strong>. The default is 60s.</p>
+<h2 id="algorithm-output">Algorithm-Output<a class="headerlink" href="#algorithm-output" title="Permanent link">&para;</a></h2>
+<p>Option <strong>--device.taxi.dispatch-algorithm.output FILE</strong> is can be set to receive extra outputs from algorithms (i.e. for ride sharing metrics).</p>
+<h1 id="taxi-behavior">Taxi Behavior<a class="headerlink" href="#taxi-behavior" title="Permanent link">&para;</a></h1>
+<p>By default, taxis will remain in the simulation until all persons have left. To make them leave the simulation at an earlier time, the end time can be defined using a generic parameter in their <code>vType</code> or <code>vehicle</code>-definition:</p>
+<pre><code class="language-xml">    &lt;vType id=&quot;taxi&quot; vClass=&quot;taxi&quot;&gt;
+        &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;device.taxi.end&quot; value=&quot;3600&quot;/&gt;
+    &lt;/vType&gt;
+</code></pre>
+<h2 id="idle-behavior">Idle Behavior<a class="headerlink" href="#idle-behavior" title="Permanent link">&para;</a></h2>
+<p>By default, vehicles will leave the simulation after reaching the end of their final edge. To avoid this, taxis have an idling behavior configurable with option <strong>--device.taxi.idle-algorithm</strong>:</p>
+<ul>
+<li>"stop" (default): stop at the current location (off-road) after delivering the last customer of the current service request.</li>
+<li>"randomCircling": continue driving to random edges until the next request is received. (caution: taxi might get stuck in a cul-de-sac if the network has those)</li>
+<li>"taxistand": drive to a taxi stand and wait there for the next customer / dispatch. Defining the set of taxi stands and the strategy of choosing among them is described below</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using "randomCircling", the default value for parameter "device.taxi.end" is 8 hours after vehicle departure.</p>
+</div>
+<h3 id="defining-taxi-stands">Defining taxi stands<a class="headerlink" href="#defining-taxi-stands" title="Permanent link">&para;</a></h3>
+<p>When using idle-algorithm <strong>taxistand</strong>, the following inputs must be provided:</p>
+<ul>
+<li>each taxi stand must be defined as a <a href="../ParkingArea/">parkingArea</a></li>
+<li>the list of parkingAreas that may be used for a particular taxi or taxi fleet must be defined as a <code>&lt;rerouter&gt;</code>-element according to the <a href="../Rerouter/#rerouting_to_an_alternative_parking_area">description for parking search simulation</a>.</li>
+<li>the taxi must define the parameter <code>device.taxi.stands-rerouter</code> either as a child element of the <code>&lt;vehicle&gt;</code> or its <code>&lt;vType&gt;</code> and declare the rerouter id.</li>
+</ul>
+<p>By default, an idle taxi will pick the first parkingarea in the list of alternatives (<code>&lt;parkingAreaReroute</code> entries in the <code>&lt;rerouter&gt;</code>).
+If the <a href="../GenericParameters/">generic parameter</a> <code>&lt;param key="parking.ignoreDest" value="1"/&gt;</code> is set in the vehicle or vType, then the "best" according to the rerouting strategy is used (i.e. the stand closest to the current vehicle location).</p>
+<p>The strategy for choosing among the alternative taxi stands follows the description for <a href="../Rerouter/#determining_the_alternative_parking_area">parking search simulation</a> (i.e. with respect to prior knowledge of remaining capacity).</p>
+<p>Example declarations for the rerouter and the taxi vType that references it:</p>
+<pre><code>&lt;rerouter id=&quot;rr0&quot; edges=&quot;B0C0 E2D2&quot; vTypes=&quot;taxi&quot;&gt;
+        &lt;interval begin=&quot;0&quot; end=&quot;1:0:0:0&quot;&gt;
+            &lt;parkingAreaReroute id=&quot;pa_0&quot;/&gt;
+            &lt;parkingAreaReroute id=&quot;pa_1&quot;/&gt;
+        &lt;/interval&gt;
+&lt;/rerouter&gt;
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To avoid warnings, the <code>edges</code> attribute of the rerouter should match the edges which contain taxi stands.</p>
+</div>
+<pre><code>&lt;vType id=&quot;taxi&quot; vClass=&quot;taxi&quot;&gt;
+        &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;device.taxi.stands-rerouter&quot; value=&quot;rr0&quot;/&gt;
+&lt;/vType&gt;
+</code></pre>
+<h2 id="customer-stops">Customer Stops<a class="headerlink" href="#customer-stops" title="Permanent link">&para;</a></h2>
+<p>Taxis will stop to pick-up and drop-off customers. The 'actType' attribute of a stop indicates the purpose ('pickup' / 'dropOff') as well as the ids of the customers and their reservation id. Stop attributes can be configured using <a href="">generic parameters</a> <code>&lt;vType&gt;</code> or <code>&lt;vehicle&gt;</code> definition of the taxi:</p>
+<pre><code class="language-xml">    &lt;vType id=&quot;taxi&quot; vClass=&quot;taxi&quot;&gt;
+        &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;device.taxi.pickUpDuration&quot; value=&quot;0&quot;/&gt;
+        &lt;param key=&quot;device.taxi.dropOffDuration&quot; value=&quot;60&quot;/&gt;
+        &lt;param key=&quot;device.taxi.parking&quot; value=&quot;false&quot;/&gt;
+    &lt;/vType&gt;
+</code></pre>
+<ul>
+<li>duration for pick-up stop can be configured with vType/vehicle param "device.taxi.pickupDuration" (default "0")</li>
+<li>duration for drop-off stop can be configured with vType/vehicle param "device.taxi.dropOffDuration" (default "60")</li>
+</ul>
+<p>By default, vehicle stops will have attribute <code>parking="true"</code> which means that the taxi will not block a driving lane. This can be changed by setting
+param "device.taxi.parking" to "false".</p>
+<h1 id="traci">TraCI<a class="headerlink" href="#traci" title="Permanent link">&para;</a></h1>
+<p>To couple an external dispatch algorithm to SUMO, the following <a href="../../TraCI/">TraCI</a> functions are provided:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To make use of these functions, the option <strong>--device.taxi.dispatch-algorithm traci</strong> must be set</p>
+</div>
+<ul>
+<li>traci.person.getTaxiReservations(reservationState)</li>
+<li>traci.vehicle.getTaxiFleet(taxiState)</li>
+<li>traci.vehicle.dispatchTaxi(vehID, reservations)</li>
+</ul>
+<p>This set of API calls can be used to simplify writing custom dispatch algorithms by letting sumo:</p>
+<ul>
+<li>manage existing reservations</li>
+<li>manage the taxi fleet</li>
+<li>dispatch a taxi to service one or more reservations by giving a list of reservation ids (vehicle routing and stopping is then automatic).</li>
+</ul>
+<h2 id="gettaxireservations">getTaxiReservations<a class="headerlink" href="#gettaxireservations" title="Permanent link">&para;</a></h2>
+<p>Returns a list of of Reservation objects that have the following attributes</p>
+<ul>
+<li>id</li>
+<li>persons</li>
+<li>group</li>
+<li>state</li>
+<li>fromEdge</li>
+<li>toEdge</li>
+<li>arrivalPos</li>
+<li>departPos</li>
+<li>depart</li>
+<li>reservationTime</li>
+<li>state (positive value, see below)</li>
+</ul>
+<p>When calling <code>traci.person.getTaxiReservations(reservationState)</code> the following arguments for reservationState are supported:</p>
+<ul>
+<li>0: return all reservations regardless of state</li>
+<li>1: return only new reservations</li>
+<li>2: return reservations already retrieved</li>
+<li>4: return reservations that have been assigned to a taxi</li>
+<li>8: return reservations that have been picked up</li>
+</ul>
+<p>Combinations of these values are also supported. For example sending a value of 3 (= 1 + 2) will return all reservations of both states 1 and 2.</p>
+<h2 id="gettaxifleet">getTaxiFleet<a class="headerlink" href="#gettaxifleet" title="Permanent link">&para;</a></h2>
+<p>A taxi can be in any of the following states:</p>
+<ul>
+<li>0 (empty) : taxi is idle</li>
+<li>1 (pickup):  taxi is en-route to pick up a customer</li>
+<li>2 (occupied): taxi has customer on board and is driving to drop-off</li>
+<li>3 (pickup + occupied): taxi has customer on board but will pick up more customers</li>
+</ul>
+<p>when calling <code>traci.vehicle.getTaxiFleet(taxiState)</code> the following arguments for taxiState are supported:</p>
+<ul>
+<li>-1: (return all taxis regardless of state)</li>
+<li>0: return only empty taxis</li>
+<li>1: return taxis in state 1 and 3</li>
+<li>2: return taxis in state 2 and 3</li>
+<li>3: return taxis in state 3</li>
+</ul>
+<h2 id="dispatchtaxi">dispatchTaxi<a class="headerlink" href="#dispatchtaxi" title="Permanent link">&para;</a></h2>
+<p>If a taxi is empty, the following dispatch calls are supported</p>
+<ul>
+<li>dispatchTaxi(vehID, [reservationID]): pickup and drop-off persons belonging to the given reservation ID</li>
+<li>If more than one reservation ID is given, each individual reservation ID must occur exactly twice in the list for complete pickup and drop-off. The first occurrence of an ID denotes pick-up and the second occurrence denotes drop-off.</li>
+</ul>
+<p>Example 1:  dispatchTaxi(vehID, [a]) means: pick up and drop off a.</p>
+<p>Example 2:  dispatchTaxi(vehID, [a, a, b, c, b, c]) means: pick up and drop off a, then pick up b and c and then drop off b and c.</p>
+<p>If a taxi is not in state empty the following re-dispatch calls are supported</p>
+<ul>
+<li>new reservations have no overlap with previous reservation: append new reservations to the previous reservations</li>
+<li>new reservations include all previous unique reservation ids exactly twice: reset current route and stops and treat as complete new dispatch. If one of the persons of the earlier reservation is already picked up, ignore the first occurrence of the reservation in the reservation list</li>
+<li>new reservations mentions include all previous unique reservation ids once or twice, all customers that are mentioned once are already picked up: reset current route and stops, use the single-occurrence ids as as drop-of</li>
+</ul>
+<h2 id="controlling-idle-taxis">Controlling Idle Taxis<a class="headerlink" href="#controlling-idle-taxis" title="Permanent link">&para;</a></h2>
+<p>The default idle algorithm ("stop") aims to ensure that the taxi doesn't exit the simulation (which were to happen if it ever drives past the final edge of it's route). To this end, it makes the taxi stop where it is or uses an existing stop on the route of the taxi and sets it to <code>triggered="person"</code> (which effectively makes the taxi wait indefinitely until the next dispatch).</p>
+<p>In oder to send an idle taxi to another destination, the following things need to happend in order:</p>
+<ol>
+<li>The taxi needs to extend it's route (i.e. with <code>vehicle.changeTarget</code> or <code>vehicle.setRoute</code>)</li>
+<li>The current stop must be aborted with <code>vehicle.resume</code></li>
+<li>A new stop must be added (i.e. with <code>vehicle.setStop</code>.</li>
+</ol>
+<h1 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h1>
+<p>The Taxi device generates output within a tripinfo-output file in the following
+form:</p>
+<pre><code class="language-xml">    &lt;tripinfo id=&quot;trip_0&quot; ... &gt;
+        &lt;taxi customers=&quot;5&quot; occupiedDistance=&quot;6748.77&quot; occupiedTime=&quot;595.00&quot;/&gt;
+    &lt;/tripinfo&gt;
+</code></pre>
+<h2 id="parameter-retrieval">Parameter Retrieval<a class="headerlink" href="#parameter-retrieval" title="Permanent link">&para;</a></h2>
+<p>The following parameters can be retrieved via <code>traci.vehicle.getParameter</code> and written via <strong>--fcd-output.params</strong>.
+It is also possible to color vehicles in <a href="../../sumo-gui/#vehicle_visualisation_settings">SUMO-GUI 'by param (numerical)'</a> by setting these keys.</p>
+<ul>
+<li>device.taxi.state: returns integer value (see #gettaxifleet)</li>
+<li>device.taxi.customers: total number of customers served</li>
+<li>device.taxi.occupiedDistance: total distance driven in m with customer on board</li>
+<li>device.taxi.occupiedTime: total time driven in s with customers on board</li>
+<li>device.taxi.currentCustomers: space-separated list of persons that are to be picked up or already on board</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

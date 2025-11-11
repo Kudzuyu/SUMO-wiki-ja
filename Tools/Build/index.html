@@ -1,0 +1,547 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/Build/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Build - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#build-tools" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Build
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dailybuildmsvcpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      dailyBuildMSVC.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dailyupdatemakegccsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      dailyUpdateMakeGCC.sh
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="build-tools">Build Tools<a class="headerlink" href="#build-tools" title="Permanent link">&para;</a></h1>
+<h2 id="dailybuildmsvcpy">dailyBuildMSVC.py<a class="headerlink" href="#dailybuildmsvcpy" title="Permanent link">&para;</a></h2>
+<p>The build script for the nightly windows build. Calls cmake and triggers
+release and debug build as well as the tests and installer / zip
+creation. Depends on a successful Linux build to pick up the docs.</p>
+<h2 id="dailyupdatemakegccsh">dailyUpdateMakeGCC.sh<a class="headerlink" href="#dailyupdatemakegccsh" title="Permanent link">&para;</a></h2>
+<p>The build script for the nightly Linux and macOS build. Calls cmake and
+triggers release and debug build as well as the tests and the zips.</p>
+<h1 id="code-cleaning-tools">Code Cleaning Tools<a class="headerlink" href="#code-cleaning-tools" title="Permanent link">&para;</a></h1>
+<h2 id="checkstylepy">checkStyle.py<a class="headerlink" href="#checkstylepy" title="Permanent link">&para;</a></h2>
+<p>Checks .java, .cpp, .h and .py files for the correct license header and
+applies <a href="https://github.com/hhatto/autopep8">autopep8</a> and
+<a href="https://github.com/PyCQA/flake8">flake8</a> for PEP 8 compatibility. Also
+applies <a href="https://astyle.sourceforge.net/">astyle</a> to all .java, .cpp, and
+.h files. The position of the source tree(s) to check is given as
+optional arguments or determined relative to the position of the script.
+This call is part of our nightly tests. The script is able to fix some
+minor whitespace / naming issues when called with the "--fix" flag. The
+PEP 8 checks are quite slow, so if only a header check is wished, run
+with the option "--skip-pep".</p>
+<p>Call:</p>
+<pre><code>checkStyle.py
+checkStyle.py --fix &lt;SUMO_HOME&gt;/tools
+</code></pre>
+<h1 id="documentation-tools">Documentation Tools<a class="headerlink" href="#documentation-tools" title="Permanent link">&para;</a></h1>
+<h2 id="buildhtmldocspy">buildHTMLDocs.py<a class="headerlink" href="#buildhtmldocspy" title="Permanent link">&para;</a></h2>
+<p>Converts wiki-documentation into static HTML pages. It removes the wiki
+navigation and adds user doc navigation while keeping the contents
+intact. This script is called by the main Makefile if "make docs" is
+called. If the script is called with an argument, it tries to fetch the
+wiki site with the given name, if not it retrieves all sites listed in
+the <a href="../../">table of contents</a>. Call
+"buildHTMLDocs.py --help" for a complete list of options.</p>
+<p>Call:</p>
+<pre><code>buildHTMLDocs.py SUMO
+</code></pre>
+<h2 id="checkauthorspy">checkAuthors.py<a class="headerlink" href="#checkauthorspy" title="Permanent link">&para;</a></h2>
+<p>Checks the log for all source files for authors and "thanks" and checks
+whether they appear in the file header. It can optionally try to fix the
+file header and also update the global AUTHORS file if needed.</p>
+<p>Call:</p>
+<pre><code>checkAuthors.py
+</code></pre>
+<h1 id="translation-tools">Translation Tools<a class="headerlink" href="#translation-tools" title="Permanent link">&para;</a></h1>
+<h2 id="updatemessageidspy">updateMessageIDs.py<a class="headerlink" href="#updatemessageidspy" title="Permanent link">&para;</a></h2>
+<p>SUMO uses the original string from the source code as message ID in gettext.
+All translations are bound to a message ID. The script offers help in changing
+the message ID / the original string in cases where it is profitable to keep
+existing translations. As recurrent uses of the same original string are
+grouped in gettext into the same message ID (except for different context),
+strings shall not be edited directly in the source code. The work flow of the
+script is the following:</p>
+<ul>
+<li>The script <code>i18n.py</code> is called to ensure the <code>.po</code> files correspond to the current source code.</li>
+<li>For every available <code>.pot</code> file an English to English <code>.po</code> file with identical <strong>msgid</strong> and <strong>msgstr</strong> values  is created.</li>
+<li>The user can choose to edit the <strong>msgstr</strong> values in this file manually to reflect the wanted changes or use one of the predefined actions of the script (e.g. simple search/replace).</li>
+<li>The script reads the changes and the occurrences to patch the corresponding lines in the source code.</li>
+<li>The <code>.po</code> translation files are patched as well. In case the changed <strong>msgid</strong> already existed before, both entries are merged.</li>
+</ul>
+<p>Below there are the options the script provides and how to use them.</p>
+<ul>
+<li><strong>--lang</strong>: Update only the <code>.po</code> files corresponding to the given sequence of language codes</li>
+<li><strong>--start</strong>: Will create/overwrite the English to English <code>.po</code> file in the <code>**SUMO_HOME**/data/po</code> directory</li>
+<li><strong>--strict</strong>: Change the <strong>msgid</strong> value only if it corresponds completely to a given search string</li>
+<li><strong>--replace</strong>: Followed by an even number of arguments where the odd strings are the search pattern and the following ones the corresponding replacement string</li>
+<li><strong>--search-prefix <characters></strong>, <strong>--search-suffix <characters></strong>: Adds any of these characters as a prefix/suffix to any of the given search patterns (not with <strong>--strict</strong>)</li>
+<li><strong>--apply</strong>: Patch source code and <code>.po</code> translation files</li>
+<li><strong>--remove-obsolete</strong>: Directly remove entries which have become obsolete (otherwise only the occurrence comments in gettext are moved to the replacement <strong>msgid</strong>)</li>
+<li><strong>--process-languages</strong>: Apply the search/replace logic on the translated <strong>msgstr</strong> values as well</li>
+<li><strong>--sumo-home <home></strong>: The SUMO home directory to use</li>
+<li><strong>--placeholder <placeholder></strong>: The placeholder string used in <strong>msgid</strong></li>
+<li><strong>--numbered-placeholders</strong>: Add an order number to every placeholder given by <strong>--placeholder</strong> inside every <strong>msgid</strong>, starting with 0</li>
+</ul>
+<p>An example call to replace all minor case uses of the abbreviation "id" with the upper case version "ID" for all languages:</p>
+<pre><code>updateMessageIDs.py --start --replace &quot;id&quot; &quot;ID&quot; --apply
+</code></pre>
+<p>If the changes are done manually inside the English to English <code>.po</code> file, it is necessary to call the script twice. The first call is merely for creating the file to edit:</p>
+<pre><code>python updateMessageIDs.py --start
+</code></pre>
+<p>Then the changes are processed in the second call:</p>
+<pre><code>python updateMessageIDs.py --apply
+</code></pre>
+<h2 id="obsoletetranslationspy">obsoleteTranslations.py<a class="headerlink" href="#obsoletetranslationspy" title="Permanent link">&para;</a></h2>
+<p>The script processes translations which have been lost due to changes of the original string in
+the source code but are still present in the <code>.po</code> translation files. It can be restricted to languages given by their language codes
+using the option <strong>--lang <langCode1> [<langCode2>]</strong>. If the said option is not given, all existing language files will be processed.</p>
+<p>In order to write a protocol of the obsolete translations (those which are not referenced in the source code),
+the script has to be called with a file path to write the protocol to as follows:</p>
+<pre><code>python obsoleteTranslations.py --output obsolete.txt
+</code></pre>
+<p>Adding the option <strong>--clear</strong> will remove the obsolete translations permanently from the <code>.po</code> files.</p>
+<p>There is an option called <strong>--patch</strong> to link obsolete translations again if the updated message ID / the current source string is known .
+The script is provided with a sequence of arguments which form pairs of first the outdated message ID and then new updated one.</p>
+<pre><code>python obsoleteTranslations.py --patch &quot;Add Sidewalk&quot; &quot;Add sidewalk&quot; &quot;Overrids default shape of pedestrian sidewalk&quot; &quot;Overrides default shape of pedestrian sidewalk&quot;
+</code></pre>
+<p>The script looks into the translation files and moves the actual translations from the obsolete to the current entry (only if the current one is still empty). The obsolete entry
+is removed in case its content has been transferred to the current entry.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -10,26 +10,29 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Networks/Abstract_Network_Generation/">
       
+      
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>抽象的ネットワーク生成 - SUMO wiki ja</title>
+        <title>Abstract Network Generation - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#抽象的ネットワーク生成" class="md-skip">
+        <a href="#grid-like-networks" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -103,47 +107,57 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              抽象的ネットワーク生成
+              Abstract Network Generation
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -292,136 +349,139 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#格子型ネットワーク" class="md-nav__link">
-    格子型ネットワーク
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#クモ型ネットワーク" class="md-nav__link">
-    クモ型ネットワーク
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ランダムネットワーク" class="md-nav__link">
-    ランダムネットワーク
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#さらなるオプション" class="md-nav__link">
-    さらなるオプション
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="抽象的ネットワーク生成">抽象的ネットワーク生成<a class="headerlink" href="#抽象的ネットワーク生成" title="Permanent link">&para;</a></h1>
-<p><a href="https://sumo.dlr.de/wiki/Networks/Abstract_Network_Generation">原文ページ</a></p>
-<p><a href="">NETGENERATE</a> は格子型、クモの巣型、ランダムの三種類の抽象的ネットワークを生成することができます。</p>
-<p>作りたいネットワークのタイプは<strong>--grid</strong>,<strong>--spider</strong>,<strong>--rand</strong>のどれかで指定する必要があります。
-生成するネットワークの名前は<strong>--output <code>&lt;ファイル名&gt;</code></strong>か<strong>-o <code>&lt;ファイル名&gt;</code></strong>で指定できます。
-デフォルトでは"net.net.xml"になります。</p>
-<div class="admonition note">
-<p class="admonition-title">訳注</p>
-<p>クモの巣型ネットワークは原文では"Spider"となっており直訳すると「クモ」ですが、見た目との対応を考えこの訳にしました。</p>
-</div>
-<h2 id="格子型ネットワーク">格子型ネットワーク<a class="headerlink" href="#格子型ネットワーク" title="Permanent link">&para;</a></h2>
-<p>X方向とY方向にどれだけの交差点を作るかと、各交差点間の距離を決めることができます。
-交差点の数に関するパラメータは<strong>--grid.x-number</strong>と<strong>--grid.y-number</strong>であり、交差点同士の距離は<strong>--grid.x-length</strong>と<strong>--grid.y-length</strong>です。
-どちらの軸にも同じ値を持つネットワークを作る場合は<strong>--grid.number</strong>と<strong>--grid.length</strong>を使ってください。
-長さの単位はメートルです。
-グリッドの端に道路を追加して全ての交差点が四つの道路を持つようにする<strong>--grid.attach-length</strong>というオプションもあります(X方向とY方向で別の長さの道路を添付するのは現在ではまだ不可能です)。</p>
-<p>使い方の例は:</p>
+
+<p><a href="../../netgenerate/">netgenerate</a> allows the generation of three
+types of abstract networks: grid, spider and random.</p>
+<p>The type of network you want to create must be stated with one of the
+following switches: <strong>--grid</strong>, <strong>--spider</strong> or <strong>--rand</strong>. You can supply the name of the network to
+generate using <strong>--output</strong> <em>&lt;FILENAME&gt;</em> or <strong>-o</strong> <em>&lt;FILENAME&gt;</em> for short, default "net.net.xml".</p>
+<h1 id="grid-like-networks">Grid-like Networks<a class="headerlink" href="#grid-like-networks" title="Permanent link">&para;</a></h1>
+<p>You are able to describe how many junctions in x- and in y-direction you
+want to be build and how far from each other they should be. The
+parameter for the number of junctions are <strong>--grid.x-number</strong> and <strong>--grid.y-number</strong>, while the distance
+between the junctions are <strong>--grid.x-length</strong> and <strong>--grid.y-length</strong>. If you want to build networks which
+have the same values for both axes, use <strong>--grid.number</strong> and <strong>--grid.length</strong>. The lengths are given in
+meters. It is possible to give another option <strong>--grid.attach-length</strong>, which adds streets of
+the given length at the boundary of the grid such that all crossings
+have four streets (It is not yet possible to have different attach
+lengths for x and y directions).</p>
+<p>An example usage for building could be:</p>
 <pre><code>netgenerate --grid --grid.number=10 --grid.length=400 --output-file=MySUMOFile.net.xml
 </code></pre>
-<p>または:</p>
+<p>or:</p>
 <pre><code>netgenerate --grid --grid.x-number=20 --grid.y-number=5 \
  --grid.y-length=40 --grid.x-length=200 --output-file=MySUMOFile.net.xml
 </code></pre>
-<p>この呼びだしはそれぞれ以下のネットワークを生成します。</p>
+<p>These calls will generate the following networks, respectively:</p>
 <p><img alt="" src="../../images/Netgen_grid1.gif" />
-<img alt="" src="../../images/200px-Netgen_grid2.gif" /></p>
-<h2 id="クモ型ネットワーク">クモ型ネットワーク<a class="headerlink" href="#クモ型ネットワーク" title="Permanent link">&para;</a></h2>
-<p>クモ型ネットワークは分割軸の数(パラメータ <strong>--spider.arm-number</strong> または <strong>--arms</strong>、デフォルトは13)、同心円の数(<strong>--spider.circle-number</strong> または <strong>--circle</strong>、デフォルトは20)そして同心円同士の距離(<strong>--spider.space-radius</strong> または <strong>--radius</strong>、単位はメートルでデフォルトは100)です。</p>
-<div class="admonition cautions">
-<p class="admonition-title">警告</p>
-<p>クモの巣の中心のエッジ数(中心の点に接続されている枝の数)は膨大になることがあり、しばしば信号付き交差点を生成することが不可能になります。
-したがって、この交差点は常に統制のとれていない状態になります。</p>
+<img alt="" src="../../images/Netgen_grid2.gif" /></p>
+<h1 id="spider-like-networks">Spider-like Networks<a class="headerlink" href="#spider-like-networks" title="Permanent link">&para;</a></h1>
+<p>Spider networks are defined by the number of axes dividing them
+(parameter <strong>--spider.arm-number</strong> or <strong>--arms</strong>, default is 13), the number of the circles they are made
+of (<strong>--spider.circle-number</strong> or <strong>--circles</strong>, default is 20) and the distance between the circles (<strong>--spider.space-radius</strong> or <strong>--radius</strong> in
+meters, default is 100).</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The number of edges within the middle of the spider net may be quite large, so it is often not possible to build a traffic light junction here. Therefore, this junction is always unregulated.</p>
 </div>
-<p>オプションとして<strong>--spider.omit-center</strong> または <strong>--nocenter</strong>を使うことで中心の交差点を削除することができます。
-このオプションは円周のネットワークを構築する簡単な方法にもなります。</p>
-<p>例えば</p>
-<pre><code>netgenerate --spider --spider.omit-center --output-file=MySUMOFile.net.xml
+<p>Optionally, you can omit the central junction of the network by
+specifying <strong>--spider.omit-center</strong> or <strong>--nocenter</strong>. This also gives an easy way of generating a circle
+network. Using for instance</p>
+<pre><code>netgenerate --spider --spider-omit-center --output-file=MySUMOFile.net.xml
 </code></pre>
-<p>は13個の要素からなる半径100mの円を生成します。</p>
-<p>使用例として:</p>
+<p>will create a circle consisting of 13 elements with a radius of 100m.</p>
+<p>Two examples of usage:</p>
 <pre><code>netgenerate --spider --spider.arm-number=10 --spider.circle-number=10 \
  --spider.space-radius=100 --output-file=MySUMOFile.net.xml
 </code></pre>
-<p>と:</p>
+<p>and:</p>
 <pre><code>netgenerate --spider --spider.arm-number=4 --spider.circle-number=3 \
  --spider.space-radius=100 --output-file=MySUMOFile.net.xml
 </code></pre>
-<p>はそれぞれ以下のネットワークを生成します。</p>
+<p>These calls will generate the following networks, respectively:</p>
 <p><img alt="" src="../../images/Netgen_spider1.gif" />
 <img alt="" src="../../images/Netgen_spider2.gif" /></p>
-<h2 id="ランダムネットワーク">ランダムネットワーク<a class="headerlink" href="#ランダムネットワーク" title="Permanent link">&para;</a></h2>
-<p>ランダムネットワーク生成器はその名のとおり、ランダムなネットワークを生成します。
-いくつかの設定があります。</p>
+<h1 id="random-networks">Random Networks<a class="headerlink" href="#random-networks" title="Permanent link">&para;</a></h1>
+<p>The random network generator does just what its name says, it builds
+random networks. Several settings may be changed:</p>
 <ul>
-<li><strong>--rand.iterations</strong> <code>&lt;INT&gt;</code></li>
-<li><strong>--rand.bidi-probability</strong> <code>&lt;FLOAT&gt;</code>: 逆方向の枝が生成される確率</li>
-<li><strong>--rand.max-distance</strong> <code>&lt;FLOAT&gt;</code>: 枝の最大長さ</li>
-<li><strong>--rand.min-distance</strong> <code>&lt;FLOAT&gt;</code>: 枝の最小長さ</li>
-<li><strong>--rand.min-angle</strong> <code>&lt;FLOAT&gt;</code>: 二つの枝の最小角度</li>
-<li><strong>--rand.num-tries</strong> <code>&lt;INT&gt;</code></li>
-<li><strong>--rand.num-connectivity</strong> <code>&lt;FLOAT&gt;</code>:</li>
-<li><strong>--rand.neighbor-dist1</strong> <code>&lt;FLOAT&gt;</code>:</li>
-<li><strong>--rand.neighbor-dist2</strong> <code>&lt;FLOAT&gt;</code>:</li>
-<li><strong>--rand.neighbor-dist3</strong> <code>&lt;FLOAT&gt;</code>:</li>
-<li><strong>--rand.neighbor-dist4</strong> <code>&lt;FLOAT&gt;</code>:</li>
-<li><strong>--rand.neighbor-dist5</strong> <code>&lt;FLOAT&gt;</code>:</li>
-<li><strong>--rand.neighbor-dist6</strong> <code>&lt;FLOAT&gt;</code>:</li>
+<li><strong>--rand.iterations</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>:</li>
+<li><strong>--rand.bidi-probability</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>: the probability to build a reverse edge</li>
+<li><strong>--rand.max-distance</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>: the maximum edge length</li>
+<li><strong>--rand.min-distance</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>: the minimum edge length</li>
+<li><strong>--rand.min-angle</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>: the minimum angle between two edges</li>
+<li><strong>--rand.num-tries</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>:</li>
+<li><strong>--rand.connectivity</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>:</li>
+<li><strong>--rand.neighbor-dist1</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>:</li>
+<li><strong>--rand.neighbor-dist2</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>:</li>
+<li><strong>--rand.neighbor-dist3</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>:</li>
+<li><strong>--rand.neighbor-dist4</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>:</li>
+<li><strong>--rand.neighbor-dist5</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>:</li>
+<li><strong>--rand.neighbor-dist6</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>:</li>
 </ul>
-<p>例として:</p>
+<p>An example:</p>
 <pre><code>netgenerate --rand -o MySUMOFile.net.xml --rand.iterations=200
 </code></pre>
-<p>は以下のネットワークを生成します。</p>
+<p>This call will generate the following network:</p>
 <p><img alt="" src="../../images/Netgen_random1.gif" /></p>
-<h2 id="さらなるオプション">さらなるオプション<a class="headerlink" href="#さらなるオプション" title="Permanent link">&para;</a></h2>
-<p>抽象的ネットワークはいくつかコマンドラインオプションを共有しています。
-全てのネットワークは接点(交差点)を持つため、接点のタイプを<strong>--default-junction-type-option</strong>(または<strong>-j</strong>)を使って指定することができます。 
-次の交差点タイプがシミュレーションによって許可されています: priority, traffic_light</p>
-<p>さらには、<a href="">NETCONVERT</a>アプリケーションで同じオプションを使うことで、道路の標準形を設定することができます。</p>
+<h2 id="random-grids">Random Grids<a class="headerlink" href="#random-grids" title="Permanent link">&para;</a></h2>
+<p>By setting the option <strong>--rand.grid</strong>, additional grid structure is enforce during random network generation.
+Newly generated grid nodes, will branch of in cardinal directions from existing nodes at multiples of <strong>--rand.min-distance</strong> up to a distance of <strong>--rand.max-distance</strong>. Since new nodes are connected to multiple existing nodes, there will still be edges at arbitrary angles but the basic structure of the network is grid-like.</p>
+<p><img alt="" src="../../images/Netgen_random_grid1.png" />{: style="height:380px"}
+<img alt="" src="../../images/Netgen_random_grid2.png" />{: style="height:380px"}</p>
+<h1 id="further-options">Further Options<a class="headerlink" href="#further-options" title="Permanent link">&para;</a></h1>
+<p>All abstract network types share some command line options.</p>
+<ul>
+<li><strong>--default-junction-type-option</strong> (or <strong>-j</strong> for short): set the default <a href="../PlainXML/#node_types">type of junctions</a>. (i.e. 'priority', 'traffic_light' ,,,)</li>
+<li><strong>--turn-lanes</strong>: set number of turn lanes to generate at each junction</li>
+<li><strong>--turn-lanes.length</strong>: set length of generated turn lanes. More specifically:</li>
+<li>0: No separate turning only lanes;</li>
+<li>1: Add a left-turn &amp; turn-around-only lane as the new left-most lane;</li>
+<li>2: Add a left-turn &amp; turn-around-only lane as the new left-most lane, and a right-turn-only lane as the new right-most lane;</li>
+<li>3: Add a turn-around-only lane as the new left-most lane, a left-turn-only lane as the new left-most-but-one lane, and a right-turn-only lane as the new right-most lane;</li>
+<li>4: Add a turn-around-only lane as the new left-most lane, a left-turn-only lane as the new left-most-but-one lane, a left-turn-only lane as the new left-most-but-two lane, and a right-turn-only lane as the new right-most lane;</li>
+<li>5: Add a turn-around-only lane as the new left-most lane, a left-turn-only lane as the new left-most-but-one lane, a left-turn-only lane as the new left-most-but-two lane, a left-turn only lane as the new left-most-but-three lane, and a right-turn-only lane as the new right-most lane.</li>
+<li><strong>--perturb.x</strong>: disturb node positions in x direction by a random amount between 0 and FLOAT</li>
+<li><strong>--perturb.y</strong>: disturb node positions in y direction by a random amount between 0 and FLOAT</li>
+<li><strong>--perturb.z</strong>: disturb node positions in z direction by a random amount between 0 and FLOAT</li>
+</ul>
+<p>Further, you can set default values for <a href="../../netconvert/#building_defaults">streets</a> and <a href="../../netconvert/#tls_building">traffic lights</a> by using the same
+options as in the <a href="../../netconvert/">netconvert</a>-application.
+Many other netconvert options such as <strong>--lefthand</strong> are also supported by netgenerate.</p>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -448,10 +508,14 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

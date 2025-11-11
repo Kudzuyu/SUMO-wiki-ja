@@ -10,8 +10,11 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Demand/Automatic_Routing/">
       
+      
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
@@ -19,17 +22,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#自動ルーティング" class="md-skip">
+        <a href="#introduction" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -110,40 +114,50 @@
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -292,134 +349,42 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#導入" class="md-nav__link">
-    導入
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#オプション" class="md-nav__link">
-    オプション
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#edgeの重み" class="md-nav__link">
-    Edgeの重み
-  </a>
-  
-    <nav class="md-nav" aria-label="Edgeの重み">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#指数平均による更新" class="md-nav__link">
-    指数平均による更新
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#移動平均による更新" class="md-nav__link">
-    移動平均による更新
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#edgeの重みを調べる" class="md-nav__link">
-    edgeの重みを調べる
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#不完全なtripとflow" class="md-nav__link">
-    不完全なtripとflow
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#パラメーターを使った別の宣言方法" class="md-nav__link">
-    パラメーターを使った別の宣言方法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#traci" class="md-nav__link">
-    TraCI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ランダム性" class="md-nav__link">
-    ランダム性
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#並列化" class="md-nav__link">
-    並列化
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<!-- 
-dynamic user equilibrium : 動的利用者均衡
-period : 間隔
-interval : 間隔
-district : 地区
-Adapting by X : Xによる更新
-apadt : 適用，更新
-insertion : 挿入時, 挿入
-the multiple of X and Y : XとYの倍数
-route : （固有名と思われる個所以外は）経路
- -->
 
-<h1 id="自動ルーティング">自動ルーティング<a class="headerlink" href="#自動ルーティング" title="Permanent link">&para;</a></h1>
-<p>参考原文バージョン: 2021/2/11, 6f16726b811a2e7785fa7181cefc8de802c4d96c</p>
-<h2 id="導入">導入<a class="headerlink" href="#導入" title="Permanent link">&para;</a></h2>
-<p>次の場面では、シミュレーション実行中の動的ルーティングが適切な場合があります。
-- 動的利用者均衡を得るための時間や計算量が不十分な場合
-- シミュレーション実行中にネットワークの変更が生じる場合
-- 実行中にvehicleの経路を更新する必要がある場合</p>
-<p>この場合、routeファイルかtripファイル、もしくはその組合せを入力として、<a href="../../sumo/">sumo</a>をルーティングに直接用いることができます。</p>
-<p>このルーティング方法を機能させるには、ルートを周期的に再計算する能力を、一部、もしくは全てのvehicleに与えます。
-このルーティングは、ネットワーク内の現在と直近の交通状況を考慮しているため、ネットワーク内の混雑やその他の変化に適応できます。
-下記オプションによって、どのvehicleに装備させるか、どの頻度で再ルーティングをするか、どうやって現状や直近の知識から推定旅行時間を計算するかを設定できます。</p>
-<h2 id="オプション">オプション<a class="headerlink" href="#オプション" title="Permanent link">&para;</a></h2>
-<p>ルーティングに関連するオプションは次の通りです。</p>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>Routing dynamically in the running simulation may be adequate in the
+following situations:</p>
+<ul>
+<li>there is not enough time / computing power to wait for the <a href="../Dynamic_User_Assignment/#iterative_assignment_dynamic_user_equilibrium">dynamic
+  user equilibrium</a></li>
+<li>changes to the net occur while the simulation is running</li>
+<li>vehicles need to adapt their route while running</li>
+</ul>
+<p>In this case <a href="../../sumo/">sumo</a> may be used directly for routing
+with either routes or trip files (or a mix) as input.</p>
+<p>This routing approach works by giving some or all vehicles the
+capability to re-compute their route periodically. This routing takes
+into account the current and recent state of traffic in the network and
+thus adapts to jams and other changes in the network.</p>
+<p>The options listed below allow configuring which of the vehicles shall
+be equipped, how often rerouting decisions shall be made and how the
+estimation of travel times is computed from current and recent
+knowledge. </p>
+<p>Further information on <a href="../../Simulation/Routing/">routing is available</a>.</p>
+<h1 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h1>
+<p>The options related to this routing are:</p>
 <table>
 <thead>
 <tr>
@@ -432,12 +397,12 @@ route : （固有名と思われる個所以外は）経路
 <tr>
 <td><strong>--device.rerouting.probability</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
 <td>-1</td>
-<td>ルーティングデバイスを持つvehicleの確率（-1は0と等価）</td>
+<td>The probability for a vehicle to have a routing device (-1 is equivalent to 0 here)</td>
 </tr>
 <tr>
 <td><strong>--device.rerouting.explicit</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
 <td></td>
-<td>指定されたvehicleにデバイスを割り当てる</td>
+<td>Assign a device to named vehicles</td>
 </tr>
 <tr>
 <td><strong>--device.rerouting.deterministic</strong></td>
@@ -447,107 +412,182 @@ route : （固有名と思われる個所以外は）経路
 <tr>
 <td><strong>--device.rerouting.period</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
 <td>0</td>
-<td>vehicleのルートが変更される間隔</td>
+<td>The period with which the vehicle shall be rerouted</td>
 </tr>
 <tr>
 <td><strong>--device.rerouting.pre-period</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
 <td>60</td>
-<td>挿入や出発の前のルート変更間隔</td>
+<td>The rerouting period before insertion/depart</td>
 </tr>
 <tr>
 <td><strong>--device.rerouting.adaptation-interval</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
 <td>1</td>
-<td>edgeの重みを更新する間隔</td>
+<td>The interval for updating the edge weights.</td>
 </tr>
 <tr>
 <td><strong>--device.rerouting.adaptation-weight</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
 <td>0.0 (disabled)</td>
-<td>指数平均のための初期のedge重み。[0,1]</td>
+<td>The weight of prior edge weights for exponential averaging from [0, 1].</td>
 </tr>
 <tr>
 <td><strong>--device.rerouting.adaptation-steps</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
 <td>180</td>
-<td>平均化のためのadaptation stepの数（&gt;0）</td>
+<td>The number of adaptation steps for averaging (enable for values &gt; 0).</td>
 </tr>
 <tr>
 <td><strong>--device.rerouting.with-taz</strong></td>
 <td>false</td>
-<td><a href="../Demand/Importing_O/D_Matrices.md#describing_the_taz">traffic assignment zones (TAZ/districts)</a>をルーティングのエンドポイントとして使う</td>
+<td>Use <a href="../Importing_O/D_Matrices/#describing_the_taz">traffic assignment zones (TAZ/districts)</a> as routing end points</td>
 </tr>
 <tr>
 <td><strong>--device.rerouting.init-with-loaded-weights</strong></td>
 <td>false</td>
-<td>オプション<strong>--weight-files</strong>をシミュレーション開始時のedge重みの初期値に使用するか</td>
+<td>Use option <strong>--weight-files</strong> for initializing the edge weights at simulation start</td>
+</tr>
+<tr>
+<td><strong>--device.rerouting.mode</strong></td>
+<td>0</td>
+<td>configure handling of <a href="../../Simulation/Routing/#handling_of_temporary_obstructions">temporary obstructions</a></td>
 </tr>
 </tbody>
 </table>
-<p>vehicleがルーティングデバイスを持つとき、<em>挿入前</em>のみ、再ルーティングはデフォルトで有効になります。
-周期的な再ルーティングを有効にするには<strong>--device.rerouting.period</strong>を設定します。</p>
-<h2 id="edgeの重み">Edgeの重み<a class="headerlink" href="#edgeの重み" title="Permanent link">&para;</a></h2>
-<p>いずれかのvehicleでルーティングが有効になっている場合、すべてのedgeについてネットワークにおける平均旅行時間を収集します。
-もし、".period"オプションによる定期的な経路選択時か挿入時のいずれかでvehicleを経路を決める場合、現在のedgeの重み（旅行速度、つまり旅行時間）に従いvehicleは目的のedge（もしくは地区）への最短経路を選択します。
-edge重みの更新は、単に過去の値を書き換えるのではなく、次の重み付き平均化で計算されます。
-各シミュレーションステップにおける全edgeの重み更新は、シミュレーションの実行速度低下の主な原因であり、この間隔は".adaptation-interval"オプションで変更可能です。</p>
+<p>Please note that if a vehicle gets a routing device only rerouting <em>before insertion</em> is active by default.
+In order to activate periodic rerouting en route set <strong>--device.rerouting.period</strong>.</p>
+<h1 id="edge-weights">Edge weights<a class="headerlink" href="#edge-weights" title="Permanent link">&para;</a></h1>
+<p>If the routing is enabled for any vehicle, the average travel times in
+the net are collected for all edges. If a vehicle needs to be routed
+(either because it gets inserted or because a repeated route choice was
+enabled via the ".period" option) it chooses the fastest route to its
+destination edge (or district) according to the present edge weights
+(travel speeds and hence travel times). The update of the edge weights
+does not simply overwrite the old value but is computed as a weighted
+average as described below. Since updating the weights of all edges in
+each simulation step means a major slowdown for the simulation this
+interval may be altered using the ".adaptation-interval" option.</p>
 <div class="admonition note">
-<p class="admonition-title">訳注</p>
-<p>これらの重みは、<em>vehicle.setRoutingMode</em>を使ってルーティングモードが<em>ROUTING_MODE_AGGREGATED</em>に設定されている場合に、<a href="../../TraCI/">TraCI</a>の関数<em>vehicle.rerouteTraveltime</em>と<em>vehicle.changeTarget</em>を使ったときに参照されます。
-同様に、<em>simulation.findRoute</em>関数は、引数（routingMode=<em>ROUTING_MODE_AGGREGATED</em>）を設定することで、これらの重みを使うように切り替えられます。</p>
+<p class="admonition-title">Note</p>
+<p>these weights are also used when using <a href="../../TraCI/">TraCI</a> functions <em>vehicle.rerouteTraveltime</em> and <em>vehicle.changeTarget</em> if the routing mode was set to <em>ROUTING_MODE_AGGREGATED</em> using <em>vehicle.setRoutingMode</em>. Likewise, the function <em>simulation.findRoute</em> can be switched to using these weights by setting the argument routingMode=<em>ROUTING_MODE_AGGREGATED</em>.</p>
 </div>
-<h3 id="指数平均による更新">指数平均による更新<a class="headerlink" href="#指数平均による更新" title="Permanent link">&para;</a></h3>
-<p><strong>--device.rerouting.adaptation-weight</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> オプションを設定することで、各edgeの旅行速度は次のように計算されます。</p>
+<h2 id="adapting-by-exponential-average">Adapting by exponential average<a class="headerlink" href="#adapting-by-exponential-average" title="Permanent link">&para;</a></h2>
+<p>By setting the option <strong>--device.rerouting.adaptation-weight</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> the travel speed of each edge is computed as</p>
 <pre><code>FLOAT * priorValue + (1 - FLOAT) * currentMeanSpeed
 </code></pre>
-<p>この平均化は<strong>--device.rerouting.adaptation-interval</strong>で設定された間隔に従って実行されます。</p>
-<h3 id="移動平均による更新">移動平均による更新<a class="headerlink" href="#移動平均による更新" title="Permanent link">&para;</a></h3>
-<p><strong>--device.rerouting.adaptation-steps</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>オプションを設定することで、各edgeの旅行速度は、INTの最新のmeanSpeedの平均値で計算されます。
-この平均化は<strong>--device.rerouting.adaptation-interval</strong>で設定された間隔に従って実行されます。</p>
+<p>This averaging takes place with the period set by <strong>--device.rerouting.adaptation-interval</strong>.</p>
+<h2 id="adapting-by-moving-average">Adapting by moving average<a class="headerlink" href="#adapting-by-moving-average" title="Permanent link">&para;</a></h2>
+<p>By setting the option <strong>--device.rerouting.adaptation-steps</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> the travel speed of each edge is computed as the
+average of the INT latest meanSpeed values. This averaging takes place
+with the period set by <strong>--device.rerouting.adaptation-interval</strong>.</p>
 <div class="admonition note">
-<p class="admonition-title">訳注</p>
-<p>平均化には<strong>adaptation-interval</strong>と<strong>adaptation-steps</strong>の倍数にまで遡った速度の値が使われます。</p>
+<p class="admonition-title">Note</p>
+<p>speed values in a time interval going back as far as the multiple of <strong>adaptation-interval</strong> and <strong>adaptation-steps</strong> take part in the averaging.</p>
 </div>
-<h3 id="edgeの重みを調べる">edgeの重みを調べる<a class="headerlink" href="#edgeの重みを調べる" title="Permanent link">&para;</a></h3>
-<p>シミュレーション中のedgeの重みの変化を理解するのに、次の詳細値を確認することが役立ちます。</p>
+<h2 id="investigating-edge-weights">Investigating edge weights<a class="headerlink" href="#investigating-edge-weights" title="Permanent link">&para;</a></h2>
+<p>To understand the evolution of edge weights during the simulation it can
+be helpful to look at the values in detail:</p>
 <ul>
-<li><a href="../sumo-gui.md#changing_the_appearance.2Fvisualisation_of_the_simulation">sumo-gui</a>で道路を<em>by routing device assumed speed</em>で色付け</li>
-<li><strong>--device.rerouting.output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>オプションを使ってrawな値を出力</li>
-<li><a href="../TraCI/Vehicle_Value_Retrieval.md#supported_device_parameters">TraCI function''vehicle.getParameter("device.rerouting.edge:EDGEID")</a>を使って、各edgeの平均旅行時間を取得</li>
+<li>used road coloring <em>by routing device assumed speed</em> in
+  <a href="../../sumo-gui/#changing_the_appearancevisualisation_of_the_simulation">sumo-gui</a></li>
+<li>use option <strong>--device.rerouting.output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> to get the raw numbers</li>
+<li>use <a href="../../TraCI/Vehicle_Value_Retrieval/#supported_device_parameters">TraCI function
+  ''vehicle.getParameter("device.rerouting.edge:EDGEID")</a>
+  to retrieve the averaged traveltime value for individual edges</li>
 </ul>
-<h2 id="不完全なtripとflow">不完全なtripとflow<a class="headerlink" href="#不完全なtripとflow" title="Permanent link">&para;</a></h2>
-<p>明示的にデバイスを設定していなくても、tripか"from"と"to"属性のあるflowを使って生成された全てのvehicleは、挿入時に自動的にルーティングされます。
-ルーティングでエラーが生じる、つまり、全ての必須のedge（"from"、"to"、stopのedge）と接続性（走行可能なvehicle classも考慮される）を満たす経路が見つからないときはいつでも、致命的エラーとしてシミュレーションが止まります。
-これは、 <strong>--ignore-route-errors</strong>を使い、エラーが起きた場合にrouteを変更しないようにすることで無効化できます。
-（tripを使って定義されていることで）vehicleがrouteを持たず、経路が見つからないうえ、<strong>--ignore-route-errors</strong>が使われている場合は、そのvehicleは挿入されません。
-もし、<a href="../Demand/Importing_O/D_Matrices.md#describing_the_taz">地区ファイル</a>が読み込まれている場合、"from"と"to"属性の代わりに"fromTaz"と"toTaz"を使うことができます。</p>
-<h2 id="パラメーターを使った別の宣言方法">パラメーターを使った別の宣言方法<a class="headerlink" href="#パラメーターを使った別の宣言方法" title="Permanent link">&para;</a></h2>
-<p>再ルーティングデバイスのあるvehicle集合を定義する別の方法として、<a href="../Definition_of_Vehicles,_Vehicle_Types,_and_Routes.md#devices">generic parameters</a>を使う方法があります。</p>
-<h2 id="traci">TraCI<a class="headerlink" href="#traci" title="Permanent link">&para;</a></h2>
-<p>TraCI関数の<em>vehicle.getParameter</em>と<em>vehicle.setParameter</em>を使うことで、ルーティングデバイスにアクセスできます。</p>
+<h1 id="incomplete-trips-and-flows">Incomplete trips and flows<a class="headerlink" href="#incomplete-trips-and-flows" title="Permanent link">&para;</a></h1>
+<p>All vehicles which are created using a trip as input (or a flow with
+"from" and "to" attributes) get automatically routed at insertion
+without the need to instantiate the device for them explicitly. Whenever
+an error occurs on routing because no route can be found which includes
+all mandatory edges ("from", "to", and all stop edges in the correct
+order) and is connected (also respecting the vehicle class permissions)
+this is a fatal error and stops the simulation. This can be switched off
+by using <strong>--ignore-route-errors</strong> which will leave the route untouched in the error case. If the
+vehicle did not have a route yet (because it was defined using a trip)
+and cannot find one and <strong>--ignore-route-errors</strong> is used, it will not be inserted.</p>
+<p>Alternatively to using attributes "from" and "to" it is also possible to
+use "fromTaz" and "toTaz", if a <a href="../Importing_O/D_Matrices/#describing_the_taz">district file is
+loaded</a>.</p>
+<h1 id="alternative-declaration-via-parameters">Alternative Declaration via Parameters<a class="headerlink" href="#alternative-declaration-via-parameters" title="Permanent link">&para;</a></h1>
+<p>Another way for defining the set of vehicles that are equipped with a
+rerouting device is via <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#devices">generic
+parameters</a>.</p>
+<p>The following parameters are supported as child elements of a <code>&lt;vType&gt;</code>, <code>&lt;vehicle&gt;</code>, <code>&lt;trip&gt;</code> or <code>&lt;flow&gt;</code>:</p>
+<ul>
+<li>device.rerouting.period</li>
+<li>device.rerouting.pre-period</li>
+<li>device.rerouting.probability</li>
+<li>device.rerouting.deterministic</li>
+<li>device.rerouting.mode</li>
+<li>has.rerouting.device</li>
+</ul>
+<h1 id="traci">TraCI<a class="headerlink" href="#traci" title="Permanent link">&para;</a></h1>
+<p>The device can be accessed using the TraCI function
+<em>vehicle.getParameter</em> and <em>vehicle.setParameter</em>:</p>
 <p><strong>getParameter</strong></p>
 <ul>
-<li>device.rerouting.period（秒単位の個々の再ルーティング間隔を返します。）</li>
-<li>device.rerouting.edge:EDGE_ID（再ルーティングのためのEDGE_ID（ネットワークedgeのid）の推定旅行時間を返します。）</li>
-<li>has.rerouting.device（デバイスの有無を"true"か"false"で返します。）</li>
+<li>device.rerouting.period (returns individual rerouting period in
+  seconds)</li>
+<li>device.rerouting.edge:EDGE_ID (returns assumed travel time for
+  rerouting where EDGE_ID is the id of a network edge)</li>
+<li>has.rerouting.device (returns "true" or "false" depending on whether
+  the device is equipped)</li>
 </ul>
 <p><strong>setParameter</strong></p>
 <ul>
-<li>device.rerouting.period（doubleリテラル。秒単位の再ルーティングの間隔を設定します。）</li>
-<li>device.rerouting.edge:EDGE_ID（doubleリテラル。全車両の再ルーティングのための推定旅行時間を設定します。EDGE_IDはネットワークのedgeのid。この値は次の更新インターバル（--device.rerouting.adaptation-interval）で上書きされます。）</li>
-<li>has.rerouting.device（"true": 自動的・動的な再ルーティングを有効化します。）</li>
+<li>device.rerouting.period (double literal, set rerouting period in
+  seconds)</li>
+<li>device.rerouting.edge:EDGE_ID (double literal, set assumed travel
+  time for rerouting for all vehicles (where EDGE_ID is the id if a
+  network edge). This value is overwritten at the next update interval
+  (--device.rerouting.adaptation-interval).</li>
+<li>has.rerouting.device ("true"): can be used to dynamically enable
+  automatic rerouting</li>
 </ul>
-<h2 id="ランダム性">ランダム性<a class="headerlink" href="#ランダム性" title="Permanent link">&para;</a></h2>
-<p><strong>--weights.random-factor</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>オプションを設定したとき、ルーティングのためのedgeの重みは、ランダムな係数（1から<a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>の一様分布から選ばれた値）によって動的に歪められます。
-このランダム化はedgeの重みが使われるたび実行されるため、同一のvehicleが、異なるタイムステップで、異なる経路を選びます。
-この方法で生成される経路は、指定された係数により、最悪時には、最短経路より長くなる可能性があります。
-このランダム性は、グリッド型のネットワークなど、複数の似通った経路が利用できる状況において、合理的な経路分布を達成するのによい方法です。</p>
-<h2 id="並列化">並列化<a class="headerlink" href="#並列化" title="Permanent link">&para;</a></h2>
-<p>シミュレーションにおけるルーティングは並列化可能です。
-この機能は、周期的な再ルーティングが有効で、多くの処理時間を要する状況で有効です。
-ルーティングを並列実行するには、<strong>--device.rerouting.threads</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>オプションで並列化するスレッド数を設定します。
-<strong>--device.rerouting.synchronize</strong>オプションを設定すると、全てのvehicleが同時に再ルーティングされることを保証します。（デフォルトでは、vehicleの挿入時間に沿って再ルーティングされます。）</p>
+<h1 id="improvement-thresholds">Improvement Thresholds<a class="headerlink" href="#improvement-thresholds" title="Permanent link">&para;</a></h1>
+<p>By default, periodic rerouting will change a vehicles route if the new route is percieved to reduce the travelTime compared to the old route by any amount.
+Let <code>oldTime</code> be the estimated travelTime of the currentRoute and <code>newTime</code> the estimated time for the fastest route:</p>
+<ul>
+<li>When setting option <strong>--device.rerouting.threshold.factor FLOAT</strong>, the route will be changed only if <code>oldTime / newTime &gt; FLOAT</code>.</li>
+<li>When setting option <strong>--device.rerouting.threshold.constant FLOAT</strong>, the route will be changed only if <code>oldTime - newTime &gt; FLOAT</code>.</li>
+</ul>
+<p>When both options are set, both conditions must be met.</p>
+<h1 id="randomness">Randomness<a class="headerlink" href="#randomness" title="Permanent link">&para;</a></h1>
+<p>When setting the option <strong>--weights.random-factor</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>, edge weights for routing are dynamically
+distorted by a random factor drawn uniformly from [1,<a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>]. This
+randomization is performed every time an edge weight is used so the same
+vehicle could select a different route when rerouted on different time
+steps. The route generated this way may be longer than the fastest route
+by the given factor (in the worst case). This randomness is a good way
+to achieve a reasonable route distribution in grid networks an in other
+cases where many similar route alternatives are available.</p>
+<h1 id="parallelization">Parallelization<a class="headerlink" href="#parallelization" title="Permanent link">&para;</a></h1>
+<p>Routing in the simulation can be parallelized. This is particular
+helpful when periodic rerouting is active as it may consume large
+amounts of processing time. To perform routing in parallel, set the
+option <strong>--device.rerouting.threads</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> to the number of parallel threads desired.</p>
+<p>It may also help to set the option <strong>--device.rerouting.synchronize</strong> which ensures that all vehicles are
+rerouted at the same time (by default the rerouting period is aligned
+with vehicle insertion time).</p>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -574,10 +614,14 @@ edge重みの更新は、単に過去の値を書き換えるのではなく、�
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

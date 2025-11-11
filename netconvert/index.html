@@ -1,0 +1,2269 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/netconvert/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>netconvert - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#from-30000-feet" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              netconvert
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="from-30000-feet">From 30.000 feet<a class="headerlink" href="#from-30000-feet" title="Permanent link">&para;</a></h1>
+<p><strong>netconvert</strong> imports digital road networks from different sources and
+generates road networks that can be used by other tools from the
+package.</p>
+<ul>
+<li><strong>Purpose:</strong> Road networks import and conversion</li>
+<li><strong>System:</strong> portable (Linux/Windows is tested); runs on command line</li>
+<li><strong>Input (mandatory):</strong> Definition of a road network</li>
+<li><strong>Output:</strong> A generated SUMO-road network; optionally also other
+outputs</li>
+<li><strong>Programming Language:</strong> C++</li>
+</ul>
+<h1 id="usage-description">Usage Description<a class="headerlink" href="#usage-description" title="Permanent link">&para;</a></h1>
+<p>netconvert is a command line application. It
+assumes at least one parameter - the combination of the name of the file
+type to import as parameter name and the name of the file to import as
+parameter value. So, for importing a network from OpenStreetMap one
+could simply write:</p>
+<pre><code>netconvert --osm my_osm_net.xml
+</code></pre>
+<p>and for importing a VISUM-network:</p>
+<pre><code>netconvert --visum my_visum_net.net
+</code></pre>
+<p>In both cases, as no output name is given, the SUMO network generated
+from the imported data is written into the file "net.net.xml". To write
+the network into a different file, use the option <strong>-o</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>. If you want to save
+the imported VISUM-network into a file named "my_sumo_net.net.xml",
+write:</p>
+<pre><code>netconvert --visum my_visum_net.net -o my_sumo_net.net.xml
+</code></pre>
+<p>Many further parameter steer how the network is imported and how the
+resulting SUMO-network is generated.</p>
+<h1 id="supported-network-formats">Supported Network Formats<a class="headerlink" href="#supported-network-formats" title="Permanent link">&para;</a></h1>
+<h2 id="import">Import<a class="headerlink" href="#import" title="Permanent link">&para;</a></h2>
+<p>netconvert is able to import road networks from
+the following formats:</p>
+<ul>
+<li><a href="../Networks/PlainXML/">"SUMO plain" XML
+  descriptions</a>
+  (*.edg.xml, *.nod.xml, *.con.xml, *.tll.xml)</li>
+<li><a href="../OpenStreetMap_file/">OpenStreetMap</a> (*.osm.xml),
+  including shapes (see <a href="../Networks/Import/OpenStreetMap/">OpenStreetMap
+  import</a>)</li>
+<li><a href="../Networks/Import/VISUM/">VISUM</a>, including shapes and
+  demands</li>
+<li><a href="../Networks/Import/Vissim/">Vissim</a>, including demands</li>
+<li><a href="../Networks/Import/OpenDRIVE/">OpenDRIVE</a></li>
+<li><a href="../Networks/Import/MATsim/">MATsim</a></li>
+<li><a href="../Networks/Import/SUMO_Road_Networks/">SUMO</a> (*.net.xml)</li>
+<li><a href="../Networks/Import/ArcView/">Shapefiles</a> (.shp, .shx, .dbf),
+  e.g. ArcView and newer Tiger networks</li>
+<li><a href="../Networks/Import/RoboCup/">Robocup Rescue League</a>,
+  including shapes</li>
+<li><a href="../Networks/Import/DlrNavteq/">a DLR internal variant of Navteq's
+  GDF</a> (Elmar format)</li>
+</ul>
+<h3 id="merging-networks">Merging networks<a class="headerlink" href="#merging-networks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>any input files may be combined</li>
+<li>"plain XML" files will be applied last and can be used to patch/update previously loaded elements</li>
+<li>multiple sumo networks (.net.xml) may be merged by giving a list of files: <strong>--sumo-net-file FILE1,FILE2</strong>. The offsets will be handled automatically for geo-referenced network data</li>
+<li>To merge nodes and edges which occupy the same location but have different ids, the options <strong>--junctions.join-same FLOAT --edges.join</strong> can be set. It may be useful to combine this with option <strong>--geometry.split</strong> to create additional attachment points (or see below for an alternative). When using <strong>--geometry.split</strong> it is recommended to call netconvert a second time with <strong>--geometry.remove</strong> afterwards.</li>
+<li>If a network was processed with option <strong>--geometry.remove</strong>, this may have removed intermediate junctions that would be needed when merging networks (i.e. when later adding roads with a lower road class). If the network provides edge param <code>removedNodeIds</code> (which is accomplished by combining <strong>--geometry.remove</strong> with <strong>--output.removed-nodes</strong>), then option <strong>--junctions.attach-removed FLOAT</strong> can be used to split edges as need and re-attach the merged roads.</li>
+</ul>
+<h2 id="export">Export<a class="headerlink" href="#export" title="Permanent link">&para;</a></h2>
+<p>netconvert is able to export road networks in
+the following formats:</p>
+<ul>
+<li><a href="../Networks/Export/#sumo">SUMO</a> (*.net.xml)</li>
+<li><a href="../Networks/Export/#plain">"SUMO native" XML descriptions</a>
+  (*.edg.xml, *.nod.xml, *.con.xml, *.tll.xml)</li>
+<li><a href="../Networks/Export/#opendrive">OpenDRIVE</a></li>
+<li><a href="../Networks/Export/#matsim">MATsim</a></li>
+<li><a href="../Networks/Export/#dlrnavteq">a DLR internal variant of Navteq's
+  GDF</a> (Elmar format)</li>
+<li><a href="../Networks/Export/#amitran">a basic network view developed in the Amitran
+  project</a></li>
+</ul>
+<p>Using python tools, conversion of .net.xml files into further formats is supported:</p>
+<ul>
+<li><a href="../Tools/Net/#net2kmlpy">KML</a></li>
+<li><a href="../Tools/Net/#net2geojsonpy">GeoJSON</a></li>
+</ul>
+<h1 id="further-supported-data-formats">Further supported Data Formats<a class="headerlink" href="#further-supported-data-formats" title="Permanent link">&para;</a></h1>
+<h2 id="import_1">Import<a class="headerlink" href="#import_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../Simulation/Public_Transport/#bus_stops">Public transport
+  stops</a>. The main
+  use of importing stop data is to update/add
+  <a href="../Simulation/Public_Transport/#access_lanes">access</a>
+  information or filter stops when reducing the network size.</li>
+<li><a href="../Tutorials/PT_from_OpenStreetMap/#initial_network_and_public_transit_information_extraction">Public transport
+  lines</a>: Automatically updated when reducing network extent.</li>
+<li><a href="../Simulation/Shapes/">Shape definitions</a> to be embedded in network output that supports this (<a href="../Networks/Further_Outputs/#opendrive_road_objects">OpenDRIVE</a>)</li>
+<li><a href="../Networks/Elevation/#including_elevation_data_in_a_network">Elevation Data files</a></li>
+</ul>
+<h2 id="export_1">Export<a class="headerlink" href="#export_1" title="Permanent link">&para;</a></h2>
+<p>The following list ouf output is explained in more detail at
+<a href="../Networks/Further_Outputs/">Networks/Further_Outputs</a></p>
+<ul>
+<li><a href="../Simulation/Public_Transport/#bus_stops">Public transport
+  stops</a>. Currently,
+  this can only be imported from
+  <a href="../Tutorials/PT_from_OpenStreetMap/#initial_network_and_public_transit_information_extraction">OSM</a></li>
+<li><a href="../Tutorials/PT_from_OpenStreetMap/#initial_network_and_public_transit_information_extraction">Public transport
+  lines</a></li>
+<li>Information on joined junctions</li>
+<li>Street Signs (as POIs)</li>
+<li>Street Names (embedded within the <em>.net.xml</em> output</li>
+<li><a href="../Simulation/ParkingArea/">Parking Areas</a> (currently, only
+  road-side parking can be imported from OSM)</li>
+<li>Railway topology output: A file for analyzing the topology of
+  railway networks in regard to bi-directional track usage</li>
+<li><a href="../Networks/Further_Outputs/#opendrive_road_objects">OpenDrive road objects</a></li>
+<li><a href="../Networks/Further_Outputs/#visum_districts">VISUM districts</a></li>
+</ul>
+<h1 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h1>
+<p>You may use a XML schema definition file for setting up a netconvert
+configuration:
+<a href="https://sumo.dlr.de/xsd/netconvertConfiguration.xsd">netconvertConfiguration.xsd</a>.</p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<p>All applications of the <strong>SUMO</strong>-suite handle configuration options the
+same way. These options are discussed at <a href="../Basics/Using_the_Command_Line_Applications/#configuration_files">Basics/Using the Command Line
+Applications#Configuration
+Files</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-c</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--configuration-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Loads the named config on startup</td>
+</tr>
+<tr>
+<td><strong>-C</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--save-configuration</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Saves current configuration into FILE</td>
+</tr>
+<tr>
+<td><strong>--save-configuration.relative</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Enforce relative paths when saving the configuration; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--save-template</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Saves a configuration template (empty) into FILE</td>
+</tr>
+<tr>
+<td><strong>--save-schema</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Saves the configuration schema into FILE</td>
+</tr>
+<tr>
+<td><strong>--save-commented</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Adds comments to saved template, configuration, or schema; <em>default:</em> <strong>false</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-s</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--sumo-net-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read SUMO-net from FILE</td>
+</tr>
+<tr>
+<td><strong>-n</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--node-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read XML-node defs from FILE</td>
+</tr>
+<tr>
+<td><strong>-e</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--edge-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read XML-edge defs from FILE</td>
+</tr>
+<tr>
+<td><strong>-x</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--connection-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read XML-connection defs from FILE</td>
+</tr>
+<tr>
+<td><strong>-i</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--tllogic-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read XML-traffic light defs from FILE</td>
+</tr>
+<tr>
+<td><strong>-t</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--type-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read XML-type defs from FILE</td>
+</tr>
+<tr>
+<td><strong>--ptstop-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Reads public transport stops from FILE</td>
+</tr>
+<tr>
+<td><strong>--ptline-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Reads public transport lines from FILE</td>
+</tr>
+<tr>
+<td><strong>--polygon-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Reads polygons from FILE for embedding in network where applicable</td>
+</tr>
+<tr>
+<td><strong>--shapefile-prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read shapefiles (ArcView, Tiger, ...) from files starting with 'FILE'</td>
+</tr>
+<tr>
+<td><strong>--dlr-navteq-prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read converted Navteq GDF data (unsplitted Elmar-network) from path 'FILE'</td>
+</tr>
+<tr>
+<td><strong>--osm-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read OSM-network from path 'FILE(s)'</td>
+</tr>
+<tr>
+<td><strong>--opendrive-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read OpenDRIVE-network from FILE</td>
+</tr>
+<tr>
+<td><strong>--visum-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read VISUM-net from FILE</td>
+</tr>
+<tr>
+<td><strong>--vissim-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read VISSIM-net from FILE</td>
+</tr>
+<tr>
+<td><strong>--robocup-dir</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read RoboCup-net from DIR</td>
+</tr>
+<tr>
+<td><strong>--matsim-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read MATSim-net from FILE</td>
+</tr>
+<tr>
+<td><strong>--itsumo-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read ITSUMO-net from FILE</td>
+</tr>
+<tr>
+<td><strong>--heightmap.shapefiles</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read heightmap from ArcGIS shapefile</td>
+</tr>
+<tr>
+<td><strong>--heightmap.geotiff</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read heightmap from GeoTIFF</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--write-license</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Include license info into every output file; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--output-prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Prefix which is applied to all output files. The special string 'TIME' is replaced by the current time.</td>
+</tr>
+<tr>
+<td><strong>--precision</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Defines the number of digits after the comma for floating point output; <em>default:</em> <strong>2</strong></td>
+</tr>
+<tr>
+<td><strong>--precision.geo</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Defines the number of digits after the comma for lon,lat output; <em>default:</em> <strong>6</strong></td>
+</tr>
+<tr>
+<td><strong>--output.compression</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines the standard compression algorithm (currently only for parquet output)</td>
+</tr>
+<tr>
+<td><strong>--output.format</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines the standard output format if not derivable from the file name ('xml', 'csv', 'parquet'); <em>default:</em> <strong>xml</strong></td>
+</tr>
+<tr>
+<td><strong>--output.column-header</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>How to derive column headers from attribute names ('none', 'tag', 'auto', 'plain'); <em>default:</em> <strong>tag</strong></td>
+</tr>
+<tr>
+<td><strong>--output.column-separator</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Separator in CSV output; <em>default:</em> <strong>;</strong></td>
+</tr>
+<tr>
+<td><strong>-H</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a><br> <strong>--human-readable-time</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Write time values as hour:minute:second or day:hour:minute:second rather than seconds; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>-o</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--output-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>The generated net will be written to FILE</td>
+</tr>
+<tr>
+<td><strong>-p</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--plain-output-prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Prefix of files to write plain xml nodes, edges and connections to</td>
+</tr>
+<tr>
+<td><strong>--plain-output.lanes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Write all lanes and their attributes even when they are not customized; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.join-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes information about joined junctions to FILE (can be loaded as additional node-file to reproduce joins</td>
+</tr>
+<tr>
+<td><strong>--prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines a prefix for edge and junction IDs</td>
+</tr>
+<tr>
+<td><strong>--prefix.junction</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines a prefix for junction IDs</td>
+</tr>
+<tr>
+<td><strong>--prefix.edge</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines a prefix for edge IDs</td>
+</tr>
+<tr>
+<td><strong>--amitran-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>The generated net will be written to FILE using Amitran format</td>
+</tr>
+<tr>
+<td><strong>--matsim-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>The generated net will be written to FILE using MATSim format</td>
+</tr>
+<tr>
+<td><strong>--opendrive-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>The generated net will be written to FILE using OpenDRIVE format</td>
+</tr>
+<tr>
+<td><strong>--dlr-navteq-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>The generated net will be written to dlr-navteq files with the given PREFIX</td>
+</tr>
+<tr>
+<td><strong>--dlr-navteq.version</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>The dlr-navteq output format version to write; <em>default:</em> <strong>6.5</strong></td>
+</tr>
+<tr>
+<td><strong>--dlr-navteq.precision</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>The network coordinates are written with the specified level of output precision; <em>default:</em> <strong>2</strong></td>
+</tr>
+<tr>
+<td><strong>--output.street-names</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Street names will be included in the output (if available); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--output.original-names</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Writes original names, if given, as parameter; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--output.removed-nodes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Writes IDs of nodes remove with --geometry.remove into edge param; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--street-sign-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes street signs as POIs to FILE</td>
+</tr>
+<tr>
+<td><strong>--ptstop-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes public transport stops to FILE</td>
+</tr>
+<tr>
+<td><strong>--ptline-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes public transport lines to FILE</td>
+</tr>
+<tr>
+<td><strong>--ptline-clean-up</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Clean-up pt stops that are not served by any line; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--parking-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes parking areas to FILE</td>
+</tr>
+<tr>
+<td><strong>--railway.topology.output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Analyze topology of the railway network</td>
+</tr>
+<tr>
+<td><strong>--polygon-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Write shapes that are embedded in the network input and that are not supported by polyconvert (OpenDRIVE)</td>
+</tr>
+<tr>
+<td><strong>--opendrive-output.straight-threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Builds parameterized curves whenever the angular change between straight segments exceeds FLOAT degrees; <em>default:</em> <strong>1e-08</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive-output.lefthand-left</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Write lanes in lefthand networks on the left side (positive indices); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive-output.shape-match-dist</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Match loaded shapes to the closest edge within FLOAT and export as road objects; <em>default:</em> <strong>-1</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="projection">Projection<a class="headerlink" href="#projection" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--simple-projection</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Uses a simple method for projection; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--proj.scale</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Scaling factor for input coordinates; <em>default:</em> <strong>1</strong></td>
+</tr>
+<tr>
+<td><strong>--proj.rotate</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Rotation (clockwise degrees) for input coordinates; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--proj.utm</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Determine the UTM zone (for a universal transversal mercator projection based on the WGS84 ellipsoid); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--proj.dhdn</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Determine the DHDN zone (for a transversal mercator projection based on the bessel ellipsoid, "Gauss-Krueger"); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--proj</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Uses STR as proj.4 definition for projection; <em>default:</em> <strong>!</strong></td>
+</tr>
+<tr>
+<td><strong>--proj.inverse</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Inverses projection; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--proj.dhdnutm</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Convert from Gauss-Krueger to UTM; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--proj.plain-geo</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Write geo coordinates in plain-xml; <em>default:</em> <strong>false</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="processing">Processing<a class="headerlink" href="#processing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--speed-in-kmh</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>vmax is parsed as given in km/h; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--construction-date</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Use YYYY-MM-DD date to determine the readiness of features under construction</td>
+</tr>
+<tr>
+<td><strong>--flatten</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Remove all z-data; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--plain.extend-edge-shape</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>If edge shapes do not end at the node positions, extend them; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--numerical-ids</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Remaps alphanumerical IDs of nodes and edges to ensure that all IDs are integers; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--numerical-ids.node-start</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Remaps IDs of nodes to integers starting at INT; <em>default:</em> <strong>2147483647</strong></td>
+</tr>
+<tr>
+<td><strong>--numerical-ids.edge-start</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Remaps IDs of edges to integers starting at INT; <em>default:</em> <strong>2147483647</strong></td>
+</tr>
+<tr>
+<td><strong>--reserved-ids</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Ensures that generated ids do not included any of the typed IDs from FILE (sumo-gui selection file format)</td>
+</tr>
+<tr>
+<td><strong>--kept-ids</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Ensures that objects with typed IDs from FILE (sumo-gui selection file format) are not renamed</td>
+</tr>
+<tr>
+<td><strong>--dismiss-vclasses</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Removes vehicle class restrictions from imported edges; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.split</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Splits edges across geometry nodes; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>-R</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a><br> <strong>--geometry.remove</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Replace nodes which only define edge geometry by geometry points (joins edges); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.remove.keep-edges.explicit</strong> {{ DT_STR_LIST }}</td>
+<td>Ensure that the given list of edges is not modified</td>
+</tr>
+<tr>
+<td><strong>--geometry.remove.keep-edges.input-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Ensure that the edges in FILE are not modified (Each id on a single line. Selection files from sumo-gui are also supported)</td>
+</tr>
+<tr>
+<td><strong>--geometry.remove.keep-ptstops</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Ensure that edges with public transport stops are not modified; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.remove.min-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Allow merging edges with differing attributes when their length is below min-length; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.remove.width-tolerance</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Allow merging edges with differing lane widths if the difference is below FLOAT; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.remove.max-junction-size</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Prevent removal of junctions with a size above FLOAT as defined by custom edge endpoints; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.max-segment-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>splits geometry to restrict segment length; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.min-dist</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>reduces too similar geometry points; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.max-angle</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Warn about edge geometries with an angle above DEGREES in successive segments; <em>default:</em> <strong>99</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.max-angle.fix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Straighten edge geometries with an angle above max-angle successive segments; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.min-radius</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Warn about edge geometries with a turning radius less than METERS at the start or end; <em>default:</em> <strong>9</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.min-radius.fix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Straighten edge geometries to avoid turning radii less than geometry.min-radius; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.min-radius.fix.railways</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Straighten edge geometries to avoid turning radii less than geometry.min-radius (only railways); <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.junction-mismatch-threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Warn if the junction shape is to far away from the original node position; <em>default:</em> <strong>20</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.check-overlap</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Warn if edges overlap by more than the given threshold value; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.check-overlap.vertical-threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Ignore overlapping edges if they are separated vertically by the given threshold.; <em>default:</em> <strong>4</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.avoid-overlap</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Modify edge geometries to avoid overlap at junctions; <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--join-lanes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>join adjacent lanes that have the same permissions and which do not admit lane-changing (sidewalks and disallowed lanes); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--ptline.match-dist</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Matches stops outside the road network to the referencing pt line when below the given distance; <em>default:</em> <strong>100</strong></td>
+</tr>
+<tr>
+<td><strong>--ptstop-output.no-bidi</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Skips automatic generation of stops on the bidi-edge of a loaded stop; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.max-grade</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Warn about edge geometries with a grade in % above FLOAT.; <em>default:</em> <strong>10</strong></td>
+</tr>
+<tr>
+<td><strong>--geometry.max-grade.fix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Smooth edge geometries with a grade above the warning threshold.; <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--offset.disable-normalization</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Turn off normalizing node positions; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--offset.x</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Adds FLOAT to net x-positions; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--offset.y</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Adds FLOAT to net y-positions; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--offset.z</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Adds FLOAT to net z-positions; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--flip-y-axis</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Flips the y-coordinate along zero; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--roundabouts.guess</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Enable roundabout-guessing; <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--roundabouts.guess.max-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Structures with a circumference above FLOAT threshold are not classified as roundabout; <em>default:</em> <strong>3500</strong></td>
+</tr>
+<tr>
+<td><strong>--roundabouts.visibility-distance</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Default visibility when approaching a roundabout; <em>default:</em> <strong>9</strong></td>
+</tr>
+<tr>
+<td><strong>--opposites.guess</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Enable guessing of opposite direction lanes usable for overtaking; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--opposites.guess.fix-lengths</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Ensure that opposite edges have the same length; <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--fringe.guess</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Enable guessing of network fringe nodes; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--fringe.guess.speed-threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Guess disconnected edges above the given speed as outer fringe; <em>default:</em> <strong>13.8889</strong></td>
+</tr>
+<tr>
+<td><strong>--lefthand</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Assumes left-hand traffic on the network; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--edges.join</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Merges edges which connect the same nodes and are close to each other (recommended for VISSIM import); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--speed.offset</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Modifies all edge speeds by adding FLOAT; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--speed.factor</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Modifies all edge speeds by multiplying by FLOAT; <em>default:</em> <strong>1</strong></td>
+</tr>
+<tr>
+<td><strong>--speed.minimum</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Modifies all edge speeds to at least FLOAT; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--edges.join-tram-dist</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Joins tram edges into road lanes with similar geometry (within FLOAT distance); <em>default:</em> <strong>-1</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="building-defaults">Building Defaults<a class="headerlink" href="#building-defaults" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-L</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a><br> <strong>--default.lanenumber</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>The default number of lanes in an edge; <em>default:</em> <strong>1</strong></td>
+</tr>
+<tr>
+<td><strong>--default.lanewidth</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default width of lanes; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--default.spreadtype</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>The default method for computing lane shapes from edge shapes; <em>default:</em> <strong>right</strong></td>
+</tr>
+<tr>
+<td><strong>-S</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a><br> <strong>--default.speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default speed on an edge (in m/s); <em>default:</em> <strong>13.89</strong></td>
+</tr>
+<tr>
+<td><strong>--default.friction</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default friction on an edge; <em>default:</em> <strong>1</strong></td>
+</tr>
+<tr>
+<td><strong>-P</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a><br> <strong>--default.priority</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>The default priority of an edge; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--default.type</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>The default edge type</td>
+</tr>
+<tr>
+<td><strong>--default.sidewalk-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default width of added sidewalks; <em>default:</em> <strong>2</strong></td>
+</tr>
+<tr>
+<td><strong>--default.bikelane-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default width of added bike lanes; <em>default:</em> <strong>1</strong></td>
+</tr>
+<tr>
+<td><strong>--default.crossing-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default width of a pedestrian crossing; <em>default:</em> <strong>4</strong></td>
+</tr>
+<tr>
+<td><strong>--default.crossing-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default speed 'limit' on a pedestrian crossing (in m/s); <em>default:</em> <strong>2.78</strong></td>
+</tr>
+<tr>
+<td><strong>--default.walkingarea-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default speed 'limit' on a pedestrian walkingarea (in m/s); <em>default:</em> <strong>2.78</strong></td>
+</tr>
+<tr>
+<td><strong>--default.allow</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>The default for allowed vehicle classes</td>
+</tr>
+<tr>
+<td><strong>--default.disallow</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>The default for disallowed vehicle classes</td>
+</tr>
+<tr>
+<td><strong>--default.junctions.keep-clear</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Whether junctions should be kept clear by default; <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--default.junctions.radius</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default turning radius of intersections; <em>default:</em> <strong>4</strong></td>
+</tr>
+<tr>
+<td><strong>--default.connection-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default length when overriding connection lengths; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--default.connection.cont-pos</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Whether/where connections should have an internal junction; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--default.right-of-way</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>The default algorithm for computing right of way rules ('default', 'edgePriority'); <em>default:</em> <strong>default</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tls-building">Tls Building<a class="headerlink" href="#tls-building" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--tls.discard-loaded</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Does not instantiate traffic lights loaded from other formats than plain-XML; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.discard-simple</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Does not instantiate traffic lights at geometry-like nodes loaded from other formats than plain-XML; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.set</strong> {{ DT_STR_LIST }}</td>
+<td>Interprets STR[] as list of junctions to be controlled by TLS</td>
+</tr>
+<tr>
+<td><strong>--tls.unset</strong> {{ DT_STR_LIST }}</td>
+<td>Interprets STR[] as list of junctions to be not controlled by TLS</td>
+</tr>
+<tr>
+<td><strong>--tls.guess</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Turns on TLS guessing; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.guess.threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Sets minimum value for the sum of all incoming lane speeds when guessing TLS; <em>default:</em> <strong>69.4444</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.taz-nodes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Sets district nodes as tls-controlled; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.guess.joining</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Includes node clusters into guess; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.join</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Tries to cluster tls-controlled nodes; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.join-dist</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Determines the maximal distance for joining traffic lights (defaults to 20); <em>default:</em> <strong>20</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.join-exclude</strong> {{ DT_STR_LIST }}</td>
+<td>Interprets STR[] as list of tls ids to exclude from joining</td>
+</tr>
+<tr>
+<td><strong>--tls.uncontrolled-within</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Do not control edges that lie fully within a joined traffic light. This may cause collisions but allows old traffic light plans to be used; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.ignore-internal-junction-jam</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Do not build mutually conflicting response matrix, potentially ignoring vehicles that are stuck at an internal junction when their phase has ended; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.guess-signals</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Interprets tls nodes surrounding an intersection as signal positions for a larger TLS. This is typical pattern for OSM-derived networks; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.guess-signals.dist</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Distance for interpreting nodes as signal locations; <em>default:</em> <strong>25</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.guess-signals.slack</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Number of uncontrolled entry edges to accept and still consider the central node as a traffic light; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.cycle.time</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Use INT as cycle duration; <em>default:</em> <strong>90</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.green.time</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Use INT as green phase duration; <em>default:</em> <strong>31</strong></td>
+</tr>
+<tr>
+<td><strong>-D</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a><br> <strong>--tls.yellow.min-decel</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines smallest vehicle deceleration; <em>default:</em> <strong>3</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.yellow.patch-small</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Given yellow times are patched even if being too short; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.yellow.time</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Set INT as fixed time for yellow phase durations; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.red.time</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Set INT as fixed time for red phase duration at traffic lights that do not have a conflicting flow; <em>default:</em> <strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.allred.time</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Set INT as fixed time for intermediate red phase after every switch; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.minor-left.max-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Use FLOAT as threshold for allowing left-turning vehicles to move in the same phase as oncoming straight-going vehicles; <em>default:</em> <strong>19.44</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.left-green.time</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Use INT as green phase duration for left turns (s). Setting this value to 0 disables additional left-turning phases; <em>default:</em> <strong>6</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.nema.vehExt</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Set INT as fixed time for intermediate vehext phase after every switch; <em>default:</em> <strong>2</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.nema.yellow</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Set INT as fixed time for intermediate NEMA yellow phase after every switch; <em>default:</em> <strong>3</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.nema.red</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Set INT as fixed time for intermediate NEMA red phase after every switch; <em>default:</em> <strong>2</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.crossing-min.time</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Use INT as minimum green duration for pedestrian crossings (s).; <em>default:</em> <strong>4</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.crossing-clearance.time</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Use INT as clearance time for pedestrian crossings (s).; <em>default:</em> <strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.scramble.time</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Use INT as green phase duration for pedestrian scramble phase (s).; <em>default:</em> <strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.half-offset</strong> {{ DT_STR_LIST }}</td>
+<td>TLSs in STR[] will be shifted by half-phase</td>
+</tr>
+<tr>
+<td><strong>--tls.quarter-offset</strong> {{ DT_STR_LIST }}</td>
+<td>TLSs in STR[] will be shifted by quarter-phase</td>
+</tr>
+<tr>
+<td><strong>--tls.default-type</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>TLSs with unspecified type will use STR as their algorithm; <em>default:</em> <strong>static</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.layout</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Set phase layout four grouping opposite directions or grouping all movements for one incoming edge ['opposites', 'incoming']; <em>default:</em> <strong>opposites</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.no-mixed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Avoid phases with green and red signals for different connections from the same lane; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.min-dur</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Default minimum phase duration for traffic lights with variable phase length; <em>default:</em> <strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.max-dur</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Default maximum phase duration for traffic lights with variable phase length; <em>default:</em> <strong>50</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.group-signals</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Assign the same tls link index to connections that share the same states; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.ungroup-signals</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Assign a distinct tls link index to every connection; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--tls.rebuild</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>rebuild all traffic light plans in the network; <em>default:</em> <strong>false</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ramp-guessing">Ramp Guessing<a class="headerlink" href="#ramp-guessing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--ramps.guess</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Enable ramp-guessing; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--ramps.guess-acceleration-lanes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Guess on-ramps and mark acceleration lanes if they exist but do not add new lanes; <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--ramps.max-ramp-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Treat edges with speed &gt; FLOAT as no ramps; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--ramps.min-highway-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Treat edges with speed &lt; FLOAT as no highways; <em>default:</em> <strong>21.9444</strong></td>
+</tr>
+<tr>
+<td><strong>--ramps.ramp-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Use FLOAT as ramp-length; <em>default:</em> <strong>100</strong></td>
+</tr>
+<tr>
+<td><strong>--ramps.min-weave-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Use FLOAT as minimum ramp-length; <em>default:</em> <strong>50</strong></td>
+</tr>
+<tr>
+<td><strong>--ramps.set</strong> {{ DT_STR_LIST }}</td>
+<td>Tries to handle the given edges as ramps</td>
+</tr>
+<tr>
+<td><strong>--ramps.unset</strong> {{ DT_STR_LIST }}</td>
+<td>Do not consider the given edges as ramps</td>
+</tr>
+<tr>
+<td><strong>--ramps.no-split</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Avoids edge splitting; <em>default:</em> <strong>false</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="edge-removal">Edge Removal<a class="headerlink" href="#edge-removal" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--keep-edges.min-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Only keep edges with speed in meters/second &gt; FLOAT; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--remove-edges.explicit</strong> {{ DT_STR_LIST }}</td>
+<td>Remove edges in STR[]</td>
+</tr>
+<tr>
+<td><strong>--keep-edges.explicit</strong> {{ DT_STR_LIST }}</td>
+<td>Only keep edges in STR[] or those which are kept due to other keep-edges or remove-edges options</td>
+</tr>
+<tr>
+<td><strong>--keep-edges.input-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Only keep edges in FILE (Each id on a single line. Selection files from sumo-gui are also supported) or those which are kept due to other keep-edges or remove-edges options</td>
+</tr>
+<tr>
+<td><strong>--remove-edges.input-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Remove edges in FILE. (Each id on a single line. Selection files from sumo-gui are also supported)</td>
+</tr>
+<tr>
+<td><strong>--keep-edges.postload</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Remove edges after loading, patching and joining; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--keep-edges.in-boundary</strong> {{ DT_STR_LIST }}</td>
+<td>Only keep edges which are located within the given boundary (given either as CARTESIAN corner coordinates <xmin,ymin,xmax,ymax> or as polygon <x0,y0,x1,y1,...>)</td>
+</tr>
+<tr>
+<td><strong>--keep-edges.in-geo-boundary</strong> {{ DT_STR_LIST }}</td>
+<td>Only keep edges which are located within the given boundary (given either as GEODETIC corner coordinates <lon-min,lat-min,lon-max,lat-max> or as polygon <lon0,lat0,lon1,lat1,...>)</td>
+</tr>
+<tr>
+<td><strong>--keep-edges.by-vclass</strong> {{ DT_STR_LIST }}</td>
+<td>Only keep edges which allow one of the vclasses in STR[]</td>
+</tr>
+<tr>
+<td><strong>--remove-edges.by-vclass</strong> {{ DT_STR_LIST }}</td>
+<td>Remove edges which allow only vclasses from STR[]</td>
+</tr>
+<tr>
+<td><strong>--keep-edges.by-type</strong> {{ DT_STR_LIST }}</td>
+<td>Only keep edges where type is in STR[]</td>
+</tr>
+<tr>
+<td><strong>--keep-edges.components</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Only keep the INT largest weakly connected components; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--remove-edges.by-type</strong> {{ DT_STR_LIST }}</td>
+<td>Remove edges where type is in STR[]</td>
+</tr>
+<tr>
+<td><strong>--remove-edges.isolated</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Removes isolated edges; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--keep-lanes.min-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Only keep lanes with width in meters &gt; FLOAT; <em>default:</em> <strong>0.01</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="unregulated-nodes">Unregulated Nodes<a class="headerlink" href="#unregulated-nodes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--keep-nodes-unregulated</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>All nodes will be unregulated; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--keep-nodes-unregulated.explicit</strong> {{ DT_STR_LIST }}</td>
+<td>Do not regulate nodes in STR[]</td>
+</tr>
+<tr>
+<td><strong>--keep-nodes-unregulated.district-nodes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Do not regulate district nodes; <em>default:</em> <strong>false</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="junctions">Junctions<a class="headerlink" href="#junctions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--junctions.right-before-left.speed-threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Allow building right-before-left junctions when the incoming edge speeds are below FLOAT (m/s); <em>default:</em> <strong>13.6111</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.left-before-right</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Build left-before-right junctions instead of right-before-left junctions; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--no-internal-links</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Omits internal links; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--no-turnarounds</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Disables building turnarounds; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--no-turnarounds.tls</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Disables building turnarounds at tls-controlled junctions; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--no-turnarounds.geometry</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Disables building turnarounds at geometry-like junctions; <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--no-turnarounds.except-deadend</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Disables building turnarounds except at dead end junctions; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--no-turnarounds.except-turnlane</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Disables building turnarounds except at at junctions with a dedicated turning lane; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--no-turnarounds.fringe</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Disables building turnarounds at fringe junctions; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--no-left-connections</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Disables building connections to left; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.join</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Joins junctions that are close to each other (recommended for OSM import); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.join-dist</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Determines the maximal distance for joining junctions (defaults to 10); <em>default:</em> <strong>10</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.join.parallel-threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The angular threshold in degress for rejection of parallel edges when joining junctions; <em>default:</em> <strong>30</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.join-exclude</strong> {{ DT_STR_LIST }}</td>
+<td>Interprets STR[] as list of junctions to exclude from joining</td>
+</tr>
+<tr>
+<td><strong>--junctions.join-same</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Joins junctions that have similar coordinates even if not connected; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.attach-removed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Attach junction to the closest edge within FLOAT distance that has it's id in param removedNodeIDs (for joining networks); <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>--max-join-ids</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Abbreviate junction or TLS id if it joins more than INT junctions; <em>default:</em> <strong>4</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.corner-detail</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Generate INT intermediate points to smooth out intersection corners; <em>default:</em> <strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.internal-link-detail</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Generate INT intermediate points to smooth out lanes within the intersection; <em>default:</em> <strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.scurve-stretch</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Generate longer intersections to allow for smooth s-curves when the number of lanes changes; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.join-turns</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Builds common edges for turning connections with common from- and to-edge. This causes discrepancies between geometrical length and assigned length due to averaging but enables lane-changing while turning; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.limit-turn-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Limits speed on junctions to an average lateral acceleration of at most FLOAT (m/s^2); <em>default:</em> <strong>5.5</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.limit-turn-speed.min-angle</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Do not limit turn speed for angular changes below FLOAT (degrees). The value is subtracted from the geometric angle before computing the turning radius.; <em>default:</em> <strong>15</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.limit-turn-speed.min-angle.railway</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Do not limit turn speed for angular changes below FLOAT (degrees) on railway edges. The value is subtracted from the geometric angle before computing the turning radius.; <em>default:</em> <strong>35</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.limit-turn-speed.warn.straight</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Warn about turn speed limits that reduce the speed of straight connections by more than FLOAT; <em>default:</em> <strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.limit-turn-speed.warn.turn</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Warn about turn speed limits that reduce the speed of turning connections (no u-turns) by more than FLOAT; <em>default:</em> <strong>22</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.small-radius</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Default radius for junctions that do not require wide vehicle turns; <em>default:</em> <strong>1.5</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.higher-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Use maximum value of incoming and outgoing edge speed on junction instead of average; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.minimal-shape</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Build junctions with minimal shapes (ignoring edge overlap); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--junctions.endpoint-shape</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Build junction shapes based on edge endpoints (ignoring edge overlap); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--internal-junctions.vehicle-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Assumed vehicle width for computing internal junction positions; <em>default:</em> <strong>1.8</strong></td>
+</tr>
+<tr>
+<td><strong>--rectangular-lane-cut</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Forces rectangular cuts between lanes and intersections; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--check-lane-foes.roundabout</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Allow driving onto a multi-lane road if there are foes on other lanes (at roundabouts); <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--check-lane-foes.all</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Allow driving onto a multi-lane road if there are foes on other lanes (everywhere); <em>default:</em> <strong>false</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pedestrian">Pedestrian<a class="headerlink" href="#pedestrian" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--sidewalks.guess</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Guess pedestrian sidewalks based on edge speed; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--sidewalks.guess.max-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Add sidewalks for edges with a speed equal or below the given limit; <em>default:</em> <strong>13.89</strong></td>
+</tr>
+<tr>
+<td><strong>--sidewalks.guess.min-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Add sidewalks for edges with a speed above the given limit; <em>default:</em> <strong>5.8</strong></td>
+</tr>
+<tr>
+<td><strong>--sidewalks.guess.from-permissions</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Add sidewalks for edges that allow pedestrians on any of their lanes regardless of speed; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--sidewalks.guess.exclude</strong> {{ DT_STR_LIST }}</td>
+<td>Do not guess sidewalks for the given list of edges</td>
+</tr>
+<tr>
+<td><strong>--crossings.guess</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Guess pedestrian crossings based on the presence of sidewalks; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--crossings.guess.speed-threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>At uncontrolled nodes, do not build crossings across edges with a speed above the threshold; <em>default:</em> <strong>13.89</strong></td>
+</tr>
+<tr>
+<td><strong>--crossings.guess.roundabout-priority</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Give priority to guessed crossings at roundabouts; <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--walkingareas</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Always build walking areas even if there are no crossings; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--walkingareas.join-dist</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Do not create a walkingarea between sidewalks that are connected by a pedestrian junction within FLOAT; <em>default:</em> <strong>15</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="bicycle">Bicycle<a class="headerlink" href="#bicycle" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--bikelanes.guess</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Guess bike lanes based on edge speed; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--bikelanes.guess.max-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Add bike lanes for edges with a speed equal or below the given limit; <em>default:</em> <strong>22.22</strong></td>
+</tr>
+<tr>
+<td><strong>--bikelanes.guess.min-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Add bike lanes for edges with a speed above the given limit; <em>default:</em> <strong>5.8</strong></td>
+</tr>
+<tr>
+<td><strong>--bikelanes.guess.from-permissions</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Add bike lanes for edges that allow bicycles on any of their lanes regardless of speed; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--bikelanes.guess.exclude</strong> {{ DT_STR_LIST }}</td>
+<td>Do not guess bikelanes for the given list of edges</td>
+</tr>
+</tbody>
+</table>
+<h3 id="railway">Railway<a class="headerlink" href="#railway" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--railway.signals.discard</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Discard all railway signal information loaded from other formats than plain-xml; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.topology.repair</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Repair topology of the railway network; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.topology.repair.minimal</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Repair topology of the railway network just enough to let loaded public transport lines to work; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.topology.repair.connect-straight</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Allow bidirectional rail use wherever rails with opposite directions meet at a straight angle; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.topology.repair.stop-turn</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Add turn-around connections at all loaded stops.; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.topology.repair.bidi-penalty</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Penalty factor for adding new bidi edges to connect public transport stops; <em>default:</em> <strong>1.2</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.topology.all-bidi</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Make all rails usable in both direction; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.topology.all-bidi.input-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Make all rails edge ids from FILE usable in both direction</td>
+</tr>
+<tr>
+<td><strong>--railway.topology.direction-priority</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Set edge priority values based on estimated main direction; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.topology.extend-priority</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Extend loaded edge priority values based on estimated main direction; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.geometry.straighten</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Move junctions to straighten a sequence of rail edges; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.signal.guess.by-stops</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Guess signals that guard public transport stops; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.signal.permit-unsignalized</strong> {{ DT_STR_LIST }}</td>
+<td>List rail classes that may run without rail signals; <em>default:</em> <strong>tram,cable_car</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.access-distance</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The search radius for finding suitable road accesses for rail stops; <em>default:</em> <strong>150</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.max-accesses</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>The maximum road accesses registered per rail stops; <em>default:</em> <strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>--railway.access-factor</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The walking length of the access is computed as air-line distance multiplied by FLOAT; <em>default:</em> <strong>1.5</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="formats">Formats<a class="headerlink" href="#formats" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--discard-params</strong> {{ DT_STR_LIST }}</td>
+<td>Remove the list of keys from all params</td>
+</tr>
+<tr>
+<td><strong>--ignore-change-restrictions</strong> {{ DT_STR_LIST }}</td>
+<td>List vehicle classes that may ignore lane changing restrictions ('all' discards all restrictions); <em>default:</em> <strong>authority</strong></td>
+</tr>
+<tr>
+<td><strong>--ignore-widths</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Whether lane widths shall be ignored.; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.skip-duplicates-check</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Skips the check for duplicate nodes and edges; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.elevation</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Imports elevation data; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.layer-elevation</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Reconstruct (relative) elevation based on layer data. Each layer is raised by FLOAT m; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.layer-elevation.max-grade</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Maximum grade threshold in % at 50km/h when reconstructing elevation based on layer data. The value is scaled according to road speed.; <em>default:</em> <strong>10</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.oneway-spread-right</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Whether one-way roads should be spread to the side instead of centered; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.lane-access</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Import lane-specific access restrictions; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.bike-access</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Import bike lanes and fix directions and permissions on bike paths; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.sidewalks</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Import sidewalks; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.oneway-reverse-sidewalk</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Default to building two sidewalks on oneway streets (may affect divided roads); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.crossings</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Import crossings; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.turn-lanes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Import turning arrows from OSM to help with connection building; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.stop-output.length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default length of a public transport stop in FLOAT m; <em>default:</em> <strong>25</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.stop-output.length.bus</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default length of a bus stop in FLOAT m; <em>default:</em> <strong>15</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.stop-output.length.tram</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default length of a tram stop in FLOAT m; <em>default:</em> <strong>25</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.stop-output.length.train</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The default length of a train stop in FLOAT m; <em>default:</em> <strong>200</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.railsignals</strong> {{ DT_STR_LIST }}</td>
+<td>Specify custom rules for importing railway signals; <em>default:</em> <strong>DEFAULT</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.all-attributes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Whether additional attributes shall be imported; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.extra-attributes</strong> {{ DT_STR_LIST }}</td>
+<td>List of additional attributes that shall be imported from OSM via osm.all-attributes (set 'all' to import all); <em>default:</em> <strong>all</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.speedlimit-none</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The speed limit to be set when there is no actual speed limit in reality; <em>default:</em> <strong>39.4444</strong></td>
+</tr>
+<tr>
+<td><strong>--osm.annotate-defaults</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Whether edges shoulds carry information on the usage of typemap defaults; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--matsim.keep-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>The edge lengths given in the MATSim-file will be kept; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--matsim.lanes-from-capacity</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>The lane number will be computed from the capacity; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--shapefile.street-id</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read edge ids from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.from-id</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read from-node ids from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.to-id</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read to-node ids from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.type-id</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read type ids from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.laneNumber</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read lane number from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read speed from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read custom edge length from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read total edge width from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.name</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read (non-unique) name from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.node-join-dist</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Distance threshold for determining whether distinct shapes are connected (used when from-id and to-id are not available); <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--shapefile.add-params</strong> {{ DT_STR_LIST }}</td>
+<td>Add the list of field names as edge params</td>
+</tr>
+<tr>
+<td><strong>--shapefile.use-defaults-on-failure</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Uses edge type defaults on problems; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--shapefile.all-bidirectional</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Insert edges in both directions; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--shapefile.guess-projection</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Guess the proper projection; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--shapefile.traditional-axis-mapping</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Use traditional axis order (lon, lat); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--dlr-navteq.tolerant-permissions</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Allow more vehicle classes by default; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--dlr-navteq.keep-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>The edge lengths given in the DLR Navteq-file will be kept; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--vissim.join-distance</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Structure join offset; <em>default:</em> <strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>--vissim.default-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Use FLOAT as default speed; <em>default:</em> <strong>50</strong></td>
+</tr>
+<tr>
+<td><strong>--vissim.speed-norm</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Factor for edge velocity; <em>default:</em> <strong>1</strong></td>
+</tr>
+<tr>
+<td><strong>--vissim.report-unset-speeds</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Writes lanes without an explicit speed set; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--visum.language-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Load language mappings from FILE</td>
+</tr>
+<tr>
+<td><strong>--visum.use-type-priority</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Uses priorities from types; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--visum.use-type-laneno</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Uses lane numbers from types; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--visum.use-type-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Uses speeds from types; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--visum.connector-speeds</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Sets connector speed; <em>default:</em> <strong>100</strong></td>
+</tr>
+<tr>
+<td><strong>--visum.connectors-lane-number</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Sets connector lane number; <em>default:</em> <strong>3</strong></td>
+</tr>
+<tr>
+<td><strong>--visum.no-connectors</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Excludes connectors; <em>default:</em> <strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>--visum.recompute-lane-number</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Computes the number of lanes from the edges' capacities; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--visum.verbose-warnings</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Prints all warnings, some of which are due to VISUM misbehaviour; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--visum.lanes-from-capacity.norm</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The factor for flow to no. lanes conversion; <em>default:</em> <strong>1800</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive.import-all-lanes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Imports all lane types; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive.curve-resolution</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The geometry resolution in m when importing curved geometries as line segments.; <em>default:</em> <strong>2</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive.advance-stopline</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Allow stop lines to be built beyond the start of the junction if the geometries allow so; <em>default:</em> <strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive.min-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The minimum lane width for determining start or end of variable-width lanes; <em>default:</em> <strong>1.8</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive.internal-shapes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Import internal lane shapes; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive.position-ids</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Sets edge-id based on road-id and offset in m (legacy); <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive.lane-shapes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Use custom lane shapes to compensate discarded lane types; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive.signal-groups</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Use the OpenDRIVE controller information for the generated signal program; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--opendrive.ignore-misplaced-signals</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Ignore traffic signals which do not control any driving lane; <em>default:</em> <strong>false</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="report">Report<a class="headerlink" href="#report" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-v</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a><br> <strong>--verbose</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Switches to verbose output; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--print-options</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Prints option values before processing; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>-?</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a><br> <strong>--help</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Prints this screen or selected topics; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>-V</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a><br> <strong>--version</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Prints the current version; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>-X</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a><br> <strong>--xml-validation</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Set schema validation scheme of XML inputs ("never", "local", "auto" or "always"); <em>default:</em> <strong>local</strong></td>
+</tr>
+<tr>
+<td><strong>--xml-validation.net</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Set schema validation scheme of SUMO network inputs ("never", "local", "auto" or "always"); <em>default:</em> <strong>never</strong></td>
+</tr>
+<tr>
+<td><strong>-W</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a><br> <strong>--no-warnings</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Disables output of warnings; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--aggregate-warnings</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Aggregate warnings of the same type whenever more than INT occur; <em>default:</em> <strong>-1</strong></td>
+</tr>
+<tr>
+<td><strong>-l</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--log</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes all messages to FILE (implies verbose)</td>
+</tr>
+<tr>
+<td><strong>--message-log</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes all non-error messages to FILE (implies verbose)</td>
+</tr>
+<tr>
+<td><strong>--error-log</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes all warnings and errors to FILE</td>
+</tr>
+<tr>
+<td><strong>--log.timestamps</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Writes timestamps in front of all messages; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--log.processid</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Writes process ID in front of all messages; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--language</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Language to use in messages; <em>default:</em> <strong>C</strong></td>
+</tr>
+<tr>
+<td><strong>--ignore-errors</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Continue on broken input; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--ignore-errors.connections</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Continue on invalid connections; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--show-errors.connections-first-try</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Show errors in connections at parsing; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--ignore-errors.edge-type</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Continue on unknown edge types; <em>default:</em> <strong>false</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-number">Random Number<a class="headerlink" href="#random-number" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--random</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Initialises the random number generator with the current system time; <em>default:</em> <strong>false</strong></td>
+</tr>
+<tr>
+<td><strong>--seed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Initialises the random number generator with the given value; <em>default:</em> <strong>23423</strong></td>
+</tr>
+</tbody>
+</table>
+<h1 id="lefthand-networks">Lefthand Networks<a class="headerlink" href="#lefthand-networks" title="Permanent link">&para;</a></h1>
+<p>By default, netconvert assumes networks to follow right-hand traffic
+rules. When importing importing/building a network for a jurisdiction
+with left-hand traffic, the option <strong>--lefthand</strong> must be set.</p>
+<p>Note, that this also influences geometries if the edges which make up a
+two-directional road are defined using the road-center-line as geometry.
+In right-hand networks the lane shapes will be placed to the right of
+the center line whereas in left-hand networks they will be placed to the
+left. This means that for some edges, the same input geometries can be
+used to build right-hand as well as left-hand networks. However, if the
+edge geometries are defined using the center-line of the directional
+edge (attribute {{XML|1=spreadType="center"/&gt;) then the geometries are
+only usable for a specific type of jurisdiction (networks with the
+wrong setting for <strong>--lefthand</strong> will look strange).</p>
+<h1 id="warnings-during-import">Warnings during Import<a class="headerlink" href="#warnings-during-import" title="Permanent link">&para;</a></h1>
+<p>Several types of warnings and errors with different levels of severity
+may be issued during network building.</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Explanation</th>
+<th>Recommended Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Error: Could not set connection ...</td>
+<td>A connection definition could not be applied because the lanes do not exist or do not share a common junction</td>
+<td>Check your input files</td>
+</tr>
+<tr>
+<td>Warning: Removed a road without junctions ...</td>
+<td>Isolated road is removed from the network</td>
+<td></td>
+</tr>
+<tr>
+<td>Warning: Not joining junctions ... because the cluster is too complex</td>
+<td>The heuristic for option <strong>--junctions.join</strong> cannot handle a complex junction</td>
+<td>Inspect the mentioned nodes and provide a <a href="../Networks/PlainXML/#joining_nodes">join-description</a> manually.</td>
+</tr>
+<tr>
+<td>Warning: Found angle of ... degrees</td>
+<td>An edge has an unusually sharp turn somewhere in the middle</td>
+<td>Inspect the mentioned edge for correctness. Warning may be suppressed using option <strong>--geometry.max-angle</strong>.</td>
+</tr>
+<tr>
+<td>Warning: Warning: Found sharp turn with radius ...</td>
+<td>An edge has an unusually sharp turn where entering or leaving an intersection</td>
+<td>Inspect the mentioned edge for correctness. Problems may be corrected automatically by setting option <strong>--geometry.min-radius.fix</strong>. Warning may be suppressed by setting option <strong>--geometry.min-radius</strong>.</td>
+</tr>
+<tr>
+<td>Warning: Intersecting left turns at junction ...</td>
+<td>The junction is very small so that left-turning vehicles from opposite directions obstruct each other</td>
+<td>Inspect the mentioned junction shape for correctness. Warning is not critical because the right-of-way model will be adapted to the conflict.</td>
+</tr>
+<tr>
+<td>Warning: Lane '...' is not connected from any incoming edge at junction '...'.</td>
+<td>The connection layout at the junction is suspicious</td>
+<td>Inspect the mentioned junction's connections for correctness.</td>
+</tr>
+<tr>
+<td>Warning: Lane '...' is not connected to outgoing edges at junction '...'.</td>
+<td>The connection layout at the junction is suspicious</td>
+<td>Inspect the mentioned junction's connections for correctness.</td>
+</tr>
+<tr>
+<td>Warning: Edge / Connection '...' has a grade of ...%.</td>
+<td>There is a sharp jump in elevation in the edge or connection geometry</td>
+<td><a href="../Networks/Elevation/#visualizing_elevation_data">Inspect the z values for correctness</a></td>
+</tr>
+<tr>
+<td>Warning: Speed of ... connection '...' reduced by ... due to turning radius of ... (length=... angle=...)</td>
+<td>There is an unusually sharp turn relative to the road speed</td>
+<td>Check edge speed limit and junction geometry for correctness. Warning may be suppressed by setting higher threshold via option <strong>--junctions.limit-turn-speed.warn.turn <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>, --junctions.limit-turn-speed.warn.straight <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></strong>.</td>
+</tr>
+<tr>
+<td>Warning: For node '...': could not compute shape.</td>
+<td>The shape of the junction area could not be computed</td>
+<td>Inspect the mentioned node and maybe <a href="../Networks/PlainXML/#node_descriptions">provide a custom node shape</a>.</td>
+</tr>
+<tr>
+<td>Warning: Junction shape for '...' has distance ... to its given position.</td>
+<td>The shape and location of the junction area is suspicious.</td>
+<td>Inspect the mentioned node and maybe <a href="../Networks/PlainXML/#node_descriptions">provide a custom node shape</a>. Warning may be suppressed by setting option <strong>--geometry.junction-mismatch-threshold</strong>.</td>
+</tr>
+<tr>
+<td>Warning: The traffic light '...' does not control any links; it will not be build.</td>
+<td>The traffic light at the given node sits at a junction without connections or the node was removed altogether.</td>
+<td>Inspect the mentioned node if it still exists. Can usually be ignored.</td>
+</tr>
+<tr>
+<td>Warning: Splitting vector close to end ...</td>
+<td>A geometry computation somewhere deep in the code is suspicious. Often related to computation of internal lanes at intersections with bad shape.</td>
+<td>Ignore for lack of sufficient information (or try to narrow down the problem by building smaller sections of the network).</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

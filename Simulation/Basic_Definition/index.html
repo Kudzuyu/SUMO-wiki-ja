@@ -10,26 +10,29 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Basic_Definition/">
       
+      
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>基本的な定義 - SUMO wiki ja</title>
+        <title>Basic Definition - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#基本的な定義" class="md-skip">
+        <a href="#input-files" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -103,47 +107,57 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              基本的な定義
+              Basic Definition
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -299,63 +356,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#入力ファイル" class="md-nav__link">
-    入力ファイル
-  </a>
-  
-    <nav class="md-nav" aria-label="入力ファイル">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#道路ネットワーク" class="md-nav__link">
-    道路ネットワーク
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#交通需要経路" class="md-nav__link">
-    交通需要(経路)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#追加のファイル" class="md-nav__link">
-    追加のファイル
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#読みとり順序" class="md-nav__link">
-    読みとり順序
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#シミュレーション期間の定義" class="md-nav__link">
-    シミュレーション期間の定義
+  <a href="#road-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Road Network
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ステップ長の定義" class="md-nav__link">
-    ステップ長の定義
+  <a href="#traffic-demand-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traffic Demand (Routes)
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#統一メソッドの定義" class="md-nav__link">
-    統一メソッドの定義
+  <a href="#additional-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parsing-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parsing Order
+    </span>
   </a>
   
 </li>
@@ -368,101 +399,186 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="基本的な定義">基本的な定義<a class="headerlink" href="#基本的な定義" title="Permanent link">&para;</a></h1>
-<p><a href="https://sumo.dlr.de/docs/Simulation/Basic_Definition.html">原文ページ</a></p>
-<p>ここではシミュレーションのモジュールである<a href="">SUMO</a>と<a href="">SUMO-GUI</a>に必要な入力が示されています。</p>
-<h2 id="入力ファイル">入力ファイル<a class="headerlink" href="#入力ファイル" title="Permanent link">&para;</a></h2>
-<h3 id="道路ネットワーク">道路ネットワーク<a class="headerlink" href="#道路ネットワーク" title="Permanent link">&para;</a></h3>
-<p>シミュレーションのためには、オプション <strong>--net-file <code>&lt;NETWORK_FILE&gt;</code></strong> (または <strong>-n <code>&lt;NETWORK_FILE&gt;</code></strong>)を使ってSUMO道路ネットワークを与える必要があります。
-ネットワークは通常<a href="">NETCONVERT</a>か<a href="">NETGENERATE</a>によって生成されます。</p>
-<h3 id="交通需要経路">交通需要(経路)<a class="headerlink" href="#交通需要経路" title="Permanent link">&para;</a></h3>
-<p>シミュレーションには車が必要です。
-車には一般的に<a href="">車両タイプ</a>、<a href="">車両群</a>、<a href="">車両の経路</a>が含まれています。
-経路は一般にオプション <strong>--route-files <code>&lt;ROUTE_FILE&gt;</code>[, <code>&lt;ROUTE_FILE&gt;</code>]* </strong> (または <strong>-r <code>&lt;ROUTE_FILE&gt;</code>[, <code>&lt;ROUTE_FILE&gt;</code>]* </strong>)を使って与えられます。
-見ての通り、一つのシミュレーションに対して複数の経路を使うことが可能です。</p>
-<p>経路はソートされていなければなりません。
-巨大なネットワークで百万もの経路を使う必要があるからです。
-普通のPCでこれを可能にするには、全部の経路をメモリに載せないことしかありません。
-パラメータ <strong> --route-files <code>&lt;ROUTES_FILE&gt;</code>[, <code>&lt;ROUTES_FILE&gt;</code>]* </strong> によって与えられる全てのファイルは一つずつ読みこまれます。
-開始時間ステップから新しい経路がnステップごとに読みこまれます。
-n は <strong>--route-steps <code>&lt;INT&gt;</code></strong>を使うことで操作でき、0以下の場合はSUMO/SUMO-GUIは全てのファイルを読み込ませることを強制します。</p>
-<p>車両の定義を含んだ経路ファイルを<a href="">追加ファイル</a>として<a href="">SUMO</a>/<a href="">SUMO-GUI</a>に与えることもできます。</p>
-<h3 id="追加のファイル">追加のファイル<a class="headerlink" href="#追加のファイル" title="Permanent link">&para;</a></h3>
-<p>一つ以上の<a href="">追加ファイル</a> が、情報の追加に使われます。</p>
-<ul>
-<li>インフラ関係: <a href="">交通信号プログラム</a>、と<a href="">バス停</a></li>
-<li>追加の視覚化: <a href="">POIs</a>と<a href="">polygons</a>(例: 河川や家屋)</li>
-<li>動的シミュレーション操作構造: <a href="">各種の速度標識</a>や<a href="">リルーター</a> </li>
-<li>需要関係: <a href="">車両タイプ</a>と<a href="">経路</a></li>
-</ul>
-<h3 id="読みとり順序">読みとり順序<a class="headerlink" href="#読みとり順序" title="Permanent link">&para;</a></h3>
-<p>ロード順序は次のようになっています:</p>
-<ol>
-<li>ネットワーク読み込み</li>
-<li>オプションに表われた順に、追加ファイルを上から順に読み込み</li>
-<li>ルートファイルが開かれ、最初のnステップを読み込み</li>
-<li>nステップ毎に、次のnステップ分のルートを読み込み</li>
-</ol>
-<h2 id="シミュレーション期間の定義">シミュレーション期間の定義<a class="headerlink" href="#シミュレーション期間の定義" title="Permanent link">&para;</a></h2>
-<p>シミュレーションにはシミュレートされる期間が必要です。
-<a href="">SUMO</a>および<a href="">SUMO-GUI</a>においては、<strong>--begin <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a></strong> (または <strong>-b <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a></strong>) と<strong>--end <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a></strong>(<strong>-e <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a>)</strong>を使って与えます。
-オプション<strong>--end</strong>が与えられているかどうかがシミュレーションに影響を及ぼすことに注意してください。
-詳細を以下に示します。</p>
-<p>シミュレーションは<strong>--begin</strong>で与えられた時間から始まり、デフォルトでは0です。
-開始時間より早い出発時間(<code>depart</code>)を持つ全ての車両は捨てられます。</p>
-<p>シミュレーションはステップごとに実行されます。</p>
-<p>シミュレーションは以下のどれかの状況で終了します:</p>
-<ul>
-<li>終了ステップが<strong>--end</strong>で与えらており、そのステップに到達したとき()</li>
-<li><strong>--end</strong>が与えられず、全ての車がシミュレートされた後。最後の車がシミュレーション範囲の外に出たときがこれにあたります。<a href="">TraCI</a>による接続がある場合は、最後の車が消えてもシミュレーションは続きます(場合によっては「永遠に」)</li>
-<li><a href="">TraCI</a>からのcloseコマンドを受けとったとき</li>
-</ul>
-<h2 id="ステップ長の定義">ステップ長の定義<a class="headerlink" href="#ステップ長の定義" title="Permanent link">&para;</a></h2>
-<p>SUMO/SUMO-GUIはデフォルトで一秒一ステップでシミュレーションを行ないます。
-<strong>--step-length</strong>を使うことでこの設定を上書きできます。<code>&lt;TIME&gt;</code>は秒で与えられますが、実数を入力することができます。
-結果として、<strong>--step-length 0.01</strong>はシミュレーションを10ミリ秒単位で動かします。</p>
-<p><strong>--default.action-step-length<a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a></strong>オプションを指定すると、車は指定されたステップごとにしか、車線変更や加速などの順応動作を行なわなくなります(標準では各ステップごとに行なう)。
-行動間隔(action-step-length)をシミュレーションのステップ長と異なった長さにすると<a href="#統一メソッドの定義">統一メソッド</a>は自動的に「弾道型」に変更されます。</p>
-<p>行動間隔をシミュレーションステップ長よりも長くするとシミュレーションは早くなりますが、仮定されている反応時間タウより長い値は、車の衝突を起こすかもしれません。
-詳細は<a href="">車両タイプ</a>と<a href="">車の追従</a>に関する説明を参照してください。</p>
-<div class="admonition note">
-<p class="admonition-title">注</p>
-<p>いくつかの使用可能な追従モデルはステップ長1秒のシミュレーション用に開発されていることに注意してください。
-その他のステップ長ではうまく動かないかもしれません。</p>
+
+<p>In the following, the inputs needed by the simulation modules
+<a href="../../sumo/">sumo</a> and <a href="../../sumo-gui/">sumo-gui</a> are
+described.</p>
+<h1 id="input-files">Input Files<a class="headerlink" href="#input-files" title="Permanent link">&para;</a></h1>
+<h2 id="road-network">Road Network<a class="headerlink" href="#road-network" title="Permanent link">&para;</a></h2>
+<p>For a simulation, a <a href="../../Networks/SUMO_Road_Networks/">SUMO Road
+Network</a> must be given using the
+option <strong>--net-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;NETWORK_FILE&gt;</em></a> (or <strong>-n</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;NETWORK_FILE&gt;</em></a>). The network is normally built using
+<a href="../../netconvert/">netconvert</a> or
+<a href="../../netgenerate/">netgenerate</a>.</p>
+<h2 id="traffic-demand-routes">Traffic Demand (Routes)<a class="headerlink" href="#traffic-demand-routes" title="Permanent link">&para;</a></h2>
+<p>The vehicles to simulate must be given. Their description normally
+includes <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/">vehicle types, vehicles, and vehicle
+routes</a>.
+Routes are normally given to the simulation modules using the option <strong>--route-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;ROUTES_FILE&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;ROUTES_FILE&gt;</em></a>]*
+(or <strong>-r</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;ROUTES_FILE&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;ROUTES_FILE&gt;</em></a>]*). As you can see, you can use more than one route file within a
+single simulation run.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The vehicular elements (trips, vehicles, flows) must be sorted by depart / begin time.</p>
 </div>
-<h2 id="統一メソッドの定義">統一メソッドの定義<a class="headerlink" href="#統一メソッドの定義" title="Permanent link">&para;</a></h2>
-<p>シミュレーションにおけるダイナミクスを管理する数学的な統一手法が二つあります。
-現在標準はオイラー更新(Euler-update)で、ステップ中で車が等速運動をすると仮定します。
-これにかわるものとしてSUMOはステップ中で等加速度運動を仮定する弾道型更新(Ballistic-update)が提案されています。
-弾道型更新は<strong>--step-method.ballistic</strong>オプションを指定するか、次の文を設定ファイルにいれることで有効化できます。</p>
-<pre><code>&lt;processing&gt;
-    &lt;step-method.ballistic value=&quot;true&quot;/&gt;
+<p>The reason is that route files are read incrementally to conserve memory and enable large simulations.
+All files given as parameter to <strong>--route-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;ROUTES_FILE&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;ROUTES_FILE&gt;</em></a>]* are read step-wise.
+Starting at the begin time step, new routes are loaded every n time steps for the next n time steps. n
+may be controlled using the <strong>--route-steps</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> where &lt;=0 forces
+<a href="../../sumo/">sumo</a>/<a href="../../sumo-gui/">sumo-gui</a> to load the file
+completely. Fetching routes for the next steps only implies that the
+vehicle types - or maybe "global" routes - must be given in prior to the
+routes that use them.</p>
+<p>You may also give routes including vehicle definitions as <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a> to
+<a href="../../sumo/">sumo</a>/<a href="../../sumo-gui/">sumo-gui</a>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>vTypes and named routes must precede vehicle definitions which reference those types and routes.</p>
+</div>
+<h2 id="additional-files">Additional Files<a class="headerlink" href="#additional-files" title="Permanent link">&para;</a></h2>
+<p>One or more <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>(s) are used to load additional entities:</p>
+<ul>
+<li>infrastructure related things: <a href="../Traffic_Lights/">traffic light
+  programs</a>, <a href="../Output/Induction_Loops_Detectors_%28E1%29/">induction
+  loops</a>
+  and <a href="../Public_Transport/">bus stops</a></li>
+<li>additional visualization:
+  <a href="../Shapes/#poi_point_of_interest_definitions">POIs</a>
+  and <a href="../Shapes/#polygon_definitions">polygons</a>
+  (i.e. rivers and houses)</li>
+<li>dynamic simulation control structures: <a href="../Variable_Speed_Signs/">variable speed
+  signs</a> and
+  <a href="../Rerouter/">rerouters</a></li>
+<li>demand related entities: <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicle_types">vehicle
+  types</a>
+  and
+  <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicles_and_routes">routes</a></li>
+</ul>
+<p>All these additional structures / definitions are given to the
+simulation using the <strong>--additional-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>]*.
+Each file is read completely into memory and the list of files is processed from left to right.</p>
+<h2 id="parsing-order">Parsing Order<a class="headerlink" href="#parsing-order" title="Permanent link">&para;</a></h2>
+<p>To ensure the correct resolution of references, it is important to know
+what is loaded when. The order is as follows:</p>
+<ol>
+<li>the network is read</li>
+<li>the additional files are read (completely from top to bottom) in the
+    order in which they are given in the option</li>
+<li>the route files are opened and the first n steps are read</li>
+<li>each n time steps, the routes for the next n time steps are read</li>
+</ol>
+<h1 id="defining-the-time-period-to-simulate">Defining the Time Period to Simulate<a class="headerlink" href="#defining-the-time-period-to-simulate" title="Permanent link">&para;</a></h1>
+<p>Each simulation requires the definition about the time period to be
+simulated. This is given to <a href="../../sumo/">sumo</a> or
+<a href="../../sumo-gui/">sumo-gui</a> using the options <strong>--begin</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> (or <strong>-b</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> for short) and <strong>--end</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a>
+(<strong>-e</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a>). Please note that whether the option <strong>--end</strong> was given influences the
+simulation's behavior. The details are described below.</p>
+<p>The simulation starts at the time given in <strong>--begin</strong>, which defaults to 0. All
+vehicles with a departure time (<code>depart</code>)
+lower than the begin time are discarded.</p>
+<p>The simulation performs each time step one-by-one.</p>
+<p>The simulation ends in the following cases:</p>
+<ul>
+<li>The final time step was given using <strong>--end</strong> and this time step was reached
+  (time after a step is &gt;= end).</li>
+<li>No value for <strong>--end</strong> has been given and all vehicles have been simulated.
+  The state of the simulation is the one in which the last vehicle has
+  left the simulated area. If a <a href="../../TraCI/">TraCI</a> connection
+  is active, the simulation will continue even after the last vehicle
+  (potentially "forever").</li>
+<li>A close command has been received via <a href="../../TraCI/">TraCI</a></li>
+</ul>
+<h1 id="defining-the-time-step-length">Defining the Time Step Length<a class="headerlink" href="#defining-the-time-step-length" title="Permanent link">&para;</a></h1>
+<p><a href="../../sumo/">sumo</a>/<a href="../../sumo-gui/">sumo-gui</a> use a time step
+of one second per default. You may override this using the <strong>--step-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> option. <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> is
+by giving a value in seconds between [0.001 and 1.0].</p>
+<p>Example: <strong>--step-length 0.01</strong> will run the simulation using time steps of 10ms.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Technically, larger values can be used but many car-following models are not tested with values above 1 and may fail to work as expected.The step-length also sets a lower bound on driver reaction times which increases the likelihood of collisions when using values above 1 without adapting other model parameters (tau).</p>
+</div>
+<p>Setting a lower step-length has many consequences:</p>
+<ul>
+<li>the simulation takes longer to simulate a given amount of time (because it needs more steps to do so)</li>
+<li>the generated movements are generally smoother</li>
+<li>vehicle insertion and lane changing succeed more often in a given amount of time since the conditions are checked more often</li>
+<li>the frequency of vehicle speed adaptation increases unless prevented by setting action-step-length (see below)</li>
+</ul>
+<h1 id="defining-the-action-step-length">Defining the Action Step Length<a class="headerlink" href="#defining-the-action-step-length" title="Permanent link">&para;</a></h1>
+<p>Specifying the option <strong>--default.action-step-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> implies that vehicles perform calculations for
+the adaption of accelerations or lane-change maneuvers only at intervals
+of the given length and not within every simulations step (which is the
+default). Using an action-step-length different from the simulation step
+length automatically switches the <a href="#defining_the_integration_method">integration
+method</a> to 'ballistic'.</p>
+<p>Choosing the action step length larger than the simulation step length
+may speed up the simulation, but note that a value larger than the
+assumed reaction time tau may induce collisions. See the description of
+<a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicle_types">vehicle
+type</a>
+and
+<a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#car-following_models">car-following</a>
+parameters for details.</p>
+<h1 id="defining-the-integration-method">Defining the Integration Method<a class="headerlink" href="#defining-the-integration-method" title="Permanent link">&para;</a></h1>
+<p>There are two numerical integration methods available, which control the
+dynamical update of the simulation. Currently, the default is an Euler
+update, which considers the vehicle's speed constant during one time
+step. As an alternative, SUMO offers the ballistic update, which
+considers the acceleration constant during one time step. It can be
+activated by giving the option <strong>--step-method.ballistic</strong> or including the following into the
+configuration file:</p>
+<pre><code class="language-xml">&lt;processing&gt;
+   &lt;step-method.ballistic value=&quot;true&quot;/&gt;
 &lt;/processing&gt;
 </code></pre>
-<p>特に、大きな時間ステップ(例: 1秒)において連続的ダイナミクスを用いた車の追従モデルでは弾道型更新はより現実的なダイナミクスを生みだします。
-<a href="http://arxiv.org/abs/1403.4881">Martin Treiber, Venkatesan Kanagaraj, Comparing Numerical Integration Schemes for Time-Continuous Car-Following Models</a> も参照してください。</p>
-<p>弾道型更新は車の位置を、現在の速度ではなくタイムステップ間の平均速度を使ってアップデートします。
-ステップ長1秒において次の例を考えてみましょう:</p>
-<p>車が時刻tにおいて、位置xにあり4.5m/sで動いている時に、時刻t+1で速度が0になるようにブレーキを踏んだ。</p>
+<p>Especially for larger time-steps (e.g. 1sec.) ballistic update yields
+more realistic dynamics for car-following models based on continuous
+dynamics. See also <a href="https://arxiv.org/abs/1403.4881"><em>Martin Treiber, Venkatesan Kanagaraj</em>, Comparing
+Numerical Integration Schemes for Time-Continuous Car-Following
+Models</a>.</p>
+<p>Ballistic update causes positions to be updated with the average speed
+between time steps instead of the speed of the current time step.
+Consider this example with step-length 1s:</p>
+<p>Vehicle at position x drives with speed 4.5m/s in step t and brakes to
+speed 0 in step t+1.</p>
 <ul>
-<li>オイラー更新: 車はt+1ステップで、位置xに停止します(即時減速)。</li>
-<li>弾道型更新: 車はt+1ステップで、位置x+2.25に停止します(連続減速)。</li>
+<li>Euler-update: Vehicle is stopped at position x in step t+1 (instant
+  deceleration)</li>
+<li>Ballistic-update: Vehicle is stopped at position x + 2.25 in step
+  t+1 (continuous deceleration)</li>
 </ul>
 <div class="admonition caution">
-<p class="admonition-title">警告</p>
-<p>現在弾道型更新はサブレーンモデルとの組みあわせではうまく動きません。
-詳しくは[issue #2581]を参照してください。</p>
+<p class="admonition-title">Caution</p>
+<p>The ballistic update is currently not working well in combination with the sublane-model. See #2581</p>
 </div>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -489,10 +605,14 @@ n は <strong>--route-steps <code>&lt;INT&gt;</code></strong>を使うことで�
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

@@ -1,0 +1,978 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/Turns/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Turns - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#routesamplerpy" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Turns
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#edge-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      edge counts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-counting-data-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining counting data files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turn-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      turn counts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turn-ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      turn ratios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-initial-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining initial routes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generalized-route-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generalized route restrictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#origin-destination-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Origin-Destination restrictions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Origin-Destination restrictions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Based
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taz-district-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      TAZ (district) Based
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depart--arrival-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Depart / Arrival restrictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#total-count-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Total count restrictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Styles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vehicle-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vehicle attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-vehicle-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple vehicle types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Sampling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weighted-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weighted Sampling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Calibration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem areas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textual-quality-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textual quality metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spatial-quality-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial quality data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="routesamplerpy">routeSampler.py<a class="headerlink" href="#routesamplerpy" title="Permanent link">&para;</a></h1>
+<p>The script generates traffic (routed vehicles or flows) from <em>any combination</em> of turn-count data, edge-count and even origin-destination-count data. It requires a route file as input that defines possible routes. Routes are sampled (heuristically) from the input so that
+the resulting traffic fulfills the counting data.</p>
+<h2 id="edge-counts">edge counts<a class="headerlink" href="#edge-counts" title="Permanent link">&para;</a></h2>
+<p>The data, most frequently available takes the form of traffic counts on roads (edges). This data can be passed to routeSampler.py in an <a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgeData
+file</a> using option <strong>--edgedata-files</strong>.</p>
+<pre><code>python tools/routeSampler.py -r &lt;input-route-file&gt; --edgedata-files &lt;edgedata-files&gt; -o &lt;output-file&gt;
+</code></pre>
+<p>Only the edge attribute 'id' and another attribute for the traffic count are needed:</p>
+<pre><code class="language-xml">&lt;data&gt;
+    &lt;interval id=&quot;arbitrary&quot; begin=&quot;0.0&quot; end=&quot;300&quot;&gt;
+        &lt;edge id=&quot;-58&quot; entered=&quot;4&quot;/&gt;
+        &lt;edge id=&quot;45&quot; entered=&quot;3&quot;/&gt;
+        &lt;edge id=&quot;-31&quot; entered=&quot;15&quot;/&gt;
+        ...
+     &lt;/interval&gt;
+     ...
+&lt;/data&gt;
+</code></pre>
+<p>The attributes for reading the counts from edge-data file can be set with option <strong>--edgedata-attribute</strong> (default 'entered')
+You can put any number of counting attributes in the same <code>&lt;edge&gt;</code> element if you intend to call <strong>routeSamper.py</strong> <a href="#multiple_vehicle_types">multiple times for different vehicle types</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default attribute is 'entered' because this attribute corresponds best to the through-traffic count in sumo-generated edgeData files.</p>
+</div>
+<h2 id="obtaining-counting-data-files">Obtaining counting data files<a class="headerlink" href="#obtaining-counting-data-files" title="Permanent link">&para;</a></h2>
+<p>When using routeSampler as a replacement for <a href="../../dfrouter/">dfrouter</a> or <a href="../Detector/#flowrouterpy">flowrouter.py</a>, the flow input files can be converted to edgeData files with the tool <a href="../Detector/#edgedatafromflowpy">edgeDataFromFlow.py</a></p>
+<p>For smaller scenarios it is often feasible to define edgeData files with <a href="../../Netedit/editModesData/">netedit edgeData mode (in the 'Data' supermode)</a>. Turn files can also be created with netedit using the edgeRelation mode (also part of the 'Data' supermode).</p>
+<p>In other cases it is necessary to write custom code for converting counting data into the required format.</p>
+<p>Further source for edgeData files are listed at the <a href="../../sumo-gui/#visualizing_edge-related_data">visualizing edge related data</a> page.</p>
+<h2 id="turn-counts">turn counts<a class="headerlink" href="#turn-counts" title="Permanent link">&para;</a></h2>
+<p>Traffic counts related to turning traffic can be provided in the following format:</p>
+<p>The turn-count data must be provided in the format:</p>
+<pre><code class="language-xml">&lt;data&gt;
+  &lt;interval id=&quot;generated&quot; begin=&quot;0.0&quot; end=&quot;99.0&quot;&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;64&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;-31&quot; count=&quot;3&quot;/&gt;
+    &lt;edgeRelation from=&quot;45&quot; to=&quot;-68&quot; count=&quot;3&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;31&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;37&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;-23&quot; count=&quot;13&quot;/&gt;
+    &lt;edgeRelation from=&quot;-92.180.00&quot; to=&quot;-60&quot; count=&quot;1&quot;/&gt;
+  &lt;/interval&gt;
+&lt;/data&gt;
+</code></pre>
+<p>Example call:</p>
+<pre><code>python tools/routeSampler.py -r &lt;input-route-file&gt; --turn-files &lt;turn-files&gt; -o &lt;output-file&gt;
+</code></pre>
+<p>The attributes for reading the counts from the turn-data file can be set with option <strong>--turn-attribute</strong> (default 'count')
+You can put any number of counting attributes in the same <code>&lt;edgeRelation&gt;</code> element if you intend to call <strong>routeSamper.py</strong> <a href="#multiple_vehicle_types">multiple times for different vehicle types</a>.</p>
+<p>In case an existing scenario should be modified (i.e. in combination with different kinds of counting data) it is also possible to <a href="#generateturnratiospy">convert an existing file with vehicles into a turn-count file</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When working with turning counts at a roundabout, the incoming and outgoing edges are not directly connected (since vehicles must pass a number of edges within the roundabout first). In this case, the option <a href="#generalized_route_restrictions">--turn-max-gap</a> must be used and should be set to the number of edges within the largest roundabout.</p>
+</div>
+<h2 id="turn-ratios">turn ratios<a class="headerlink" href="#turn-ratios" title="Permanent link">&para;</a></h2>
+<p>Traffic data related to turning traffic can also be provided as ratios in the following format:</p>
+<pre><code class="language-xml">&lt;data&gt;
+  &lt;interval id=&quot;generated&quot; begin=&quot;0.0&quot; end=&quot;99.0&quot;&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;64&quot; probability=&quot;0.3&quot;/&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;-31&quot; probability=&quot;0.7&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;31&quot; probability=&quot;0.1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;37&quot; probability=&quot;0.1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;-23&quot; probability=&quot;0.8&quot;/&gt;
+  &lt;/interval&gt;
+&lt;/data&gt;
+</code></pre>
+<p>Example call:</p>
+<pre><code>python tools/routeSampler.py -r &lt;input-route-file&gt; --turn-ratio-files &lt;turn-ratio-files&gt; -o &lt;output-file&gt;
+</code></pre>
+<p>The attributes for reading the ratios from the turn-data file can be set with option <strong>--turn-ratio-attribute</strong> (default <em>probability</em>).
+You can put any number of counting attributes in the same <code>&lt;edgeRelation&gt;</code> element if you intend to call <strong>routeSamper.py</strong> <a href="#multiple_vehicle_types">multiple times for different vehicle types</a>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Turning ratios must be combined with some other counting data to define the absolute level of traffic. This can be any of the other counting data formats or by setting option <strong>--total-count</strong>.</p>
+</div>
+<h2 id="obtaining-initial-routes">Obtaining initial routes<a class="headerlink" href="#obtaining-initial-routes" title="Permanent link">&para;</a></h2>
+<p>Routes generated by randomTrips.py (<strong>--route-output</strong>) can be a good input source. The following randomTrips.py options may be helpful:</p>
+<ul>
+<li><strong>--fringe-factor</strong>: setting a high value will generated lots of through-traffic which is plausible for small networks</li>
+<li><strong>--min-distance</strong>: restricting short routes increases the chance that routes passing multiple counting locations are generated</li>
+<li><strong>--speed-exponent</strong>, <strong>--lanes</strong>: both options can be used to increase routes starting and ending on "important" roads. This combines well with the <strong>--fringe-factor</strong>-option to generate many routes that enter and leave the network on major roads.</li>
+<li><strong>--random-routing-factor</strong>: randomly disturb the route choice so that trips with the same origin and destination may use different routes. Values must be larger than 1. A value of 2 may change the apparent travel time on an edge by up to to between 100% and 200% of its empty-network-travel-time. This ensures that the resulting routes take at most twice as long as the "fastest" route. The value is randomized anew for each vehicle so there are no systematic biases.</li>
+<li><strong>--edge-type-file</strong>: Load edge-type specific probabilities for generating origins and destinations</li>
+<li><strong>--marouter</strong>: compute routes with macroscopic assignment. These routes consider traffic conditions and therefore give more variety computed to default duarouter outputs (fastes-routes-in-empty-network).</li>
+</ul>
+<p>The most realistic routes are those that result from <a href="../../Demand/Dynamic_User_Assignment/">dynamic user assignment</a>. Even when starting with random traffic demand, such routes will cover a better variaty of plausible routes through the network.</p>
+<p>Example:</p>
+<pre><code>python tools/randomTrips.py -n &lt;input-net-file&gt; -r sampleRoutes.rou.xml
+python tools/routeSampler.py -r sampleRoutes.rou.xml --edgedata-files &lt;edgedata-files&gt; -o &lt;output-file&gt;
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>departure times in route files are ignored and only the <code>&lt;route&gt;</code>-elements are used. Route with named routes but without vehicles may also be used.</p>
+</div>
+<h2 id="generalized-route-restrictions">Generalized route restrictions<a class="headerlink" href="#generalized-route-restrictions" title="Permanent link">&para;</a></h2>
+<p>By default, the input options --edgedata-files and --turn-files allow restricting counts for single edges and pairs of consecutive edges.</p>
+<p>To define count restrictions for longer consecutive edge sequences the optional 'via' attribute can be used for <code>&lt;edgeRelation&gt;</code> elements:</p>
+<pre><code class="language-xml">&lt;edgeRelation from=&quot;A&quot; to=&quot;D&quot; via=&quot;B C&quot; count=&quot;42&quot;/&gt;
+</code></pre>
+<p>To define count restrictions on non-consecutive edges the option <strong>--turn-max-gap <INT></strong> can be used. Example:
+When setting option <strong>--turn-max-gap 2</strong>, the edgeRelation <code>&lt;edgeRelation from="A" to="D" .../&gt;</code> would apply to routes containing "A B", "A X D" or "A X Y D" but not "A X Y Z D".</p>
+<h2 id="origin-destination-restrictions">Origin-Destination restrictions<a class="headerlink" href="#origin-destination-restrictions" title="Permanent link">&para;</a></h2>
+<p>The following section describes counts that refer to the origin and destination of a route rather than to some intermediate route edges.
+Using such counts with routeSampler.py permits to combine them with other forms of counts or ratios. (Unlike <a href="../../od2trips/">od2trips</a> which only imports OD-counts and nothing else).</p>
+<p>If origin destination counts are loaded, it is assumed that they give complete coverage of the scenario. This means, if no count is given for a particular Origin-Destination-pair, it is assumed that the count is 0 and no traffic is generated between the respective edges or TAZ.  To change this, the option <strong>--extra-od</strong> may be set. In this case, traffic between any relations can be generated as long as it does not exceed the loaded counts.</p>
+<h3 id="edge-based">Edge Based<a class="headerlink" href="#edge-based" title="Permanent link">&para;</a></h3>
+<p>When loading an edgeRelation file with the option <strong>--od-files</strong>, origin-destination counts will be added.
+This can be used to combine (edge-based) OD-relations with other counting data.</p>
+<pre><code class="language-xml">&lt;edgeRelation from=&quot;A&quot; to=&quot;D&quot; count=&quot;42&quot;/&gt;
+</code></pre>
+<p>The above counting data example will match routes which start on edge <code>A</code> and end on edge <code>D</code>.</p>
+<p>The tool <a href="../Routes/#route2odpy">route2OD.py</a> supports option <strong>--edge-relations</strong> to transform any kind of route file into a suitable file of edge-based origin-destination edgeRelations.</p>
+<h3 id="taz-district-based">TAZ (district) Based<a class="headerlink" href="#taz-district-based" title="Permanent link">&para;</a></h3>
+<p>When loading an <a href="../../Demand/Importing_O/D_Matrices/#describing_the_taz">TAZ-file</a> with option <strong>--taz-files</strong>, it is possible to define counts between Traffic Assignment Zones (TAZ, also called districts).
+The counting data itself must be given in the following from and loaded with option <strong>--od-files</strong>:</p>
+<pre><code>&lt;data&gt;
+    &lt;interval id=&quot;generated&quot; begin=&quot;0.0&quot; end=&quot;99.0&quot;&gt;
+        &lt;tazRelation from=&quot;1_2&quot; to=&quot;2_0&quot; count=&quot;5&quot;/&gt;
+    &lt;/interval&gt;
+&lt;/data&gt;
+</code></pre>
+<p>The TAZ ids which are referenced by the <code>tazRelation</code> attributes <code>from</code> and <code>to</code> must be defined within the loaded <strong>--taz-files</strong>.
+The above counting data example will match routes which start on any edge of TAZ <code>1_2</code> and end on any edge of taz <code>2_0</code>.</p>
+<h2 id="depart--arrival-restrictions">Depart / Arrival restrictions<a class="headerlink" href="#depart--arrival-restrictions" title="Permanent link">&para;</a></h2>
+<p>Additional attributes can be read from edgeData files to set the total number of departures or arrivals for each edge. This can be used to create traffic where there would be no traffic otherwise but also to restrict the sampled routes by action as additional constraints together with other counting data (i.e. turn-counts). The following options are available:</p>
+<ul>
+<li><strong>--arrival-attribute</strong>: set the attribute to read the number of arrivals on an edge</li>
+<li><strong>--depart-attribute</strong>: set the attribute to read the number of departures on an edge</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When loading an edgedata-file that only contains the arrival or depart-attributes, the value of <strong>--edgedata-attribute</strong> may be set to 'None' to suppress the warning about missing attributes that would otherwise be issued.</p>
+</div>
+<h2 id="total-count-restrictions">Total count restrictions<a class="headerlink" href="#total-count-restrictions" title="Permanent link">&para;</a></h2>
+<p>The option <strong>--total-count INT[,INT,..]</strong> can be used to specify the total number of generated vehicles. The following two cases are generally possible:</p>
+<ul>
+<li>total-count is <strong>higher</strong> than the traffic that would be generated by matching counts with all other given locations: In this case any routes that do not pass a counting location are used to generated additional traffic (thus avoiding to exceed the count at any specific location). The user must ensure that such routes are available.</li>
+<li>total-count is <strong>lower</strong> than the traffic that would be generated by matching counts with all other given locations: In this case sampling is aborted upon reaching the total count. Option <a href="#optimization"><strong>--optimize</strong></a> may be used to improve matching all counting locations subject to the total count constraint.</li>
+</ul>
+<p>The following rules apply depending on the argument value of <strong>--total-count</strong>:</p>
+<ul>
+<li>if total-count is a list of integer values that matches the number of data intervals, each data interval will use the respective count value from the input list</li>
+<li>if total-count is a single integer value and there are multiple data intervals, the given count is split in proportion to the sum of all counting locations per interval</li>
+<li>if total-count is set to the special value <code>input</code> (<strong>--total-count input</strong>) then the number of vehicles passed in the input route files is used as total-count. If there are multiple data intervals, the input vehicles are assigned to each interval based on their departure time.  If option <strong>--pedestrians</strong> is set, the departures of persons will be counted instead (regardless of whether their plan includes walks or rides).</li>
+</ul>
+<h2 id="output-styles">Output Styles<a class="headerlink" href="#output-styles" title="Permanent link">&para;</a></h2>
+<p>By default, routeSampler will generate individual vehicles with embedded routes. This can be changed with the following options (which can also be combined):</p>
+<ul>
+<li><strong>--write-route-ids</strong> (shortcut <strong>-I</strong>): write named routes and let vehicles reference the route via its id</li>
+<li><strong>--write-route-distribution STR</strong> (shortcut <strong>-u</strong>): put all routes into a route distribution (with appropriate route probabilities) and let a all vehicles reference this distribution (Simulation counts will then vary due to sampling from the distribution)</li>
+<li><strong>--write-flows number</strong> (shortcut <strong>-f</strong>): write <code>&lt;flow&gt;</code>-definitions instead of vehicles. The exact number of flow vehicles will be spaced evenly between the earliest and latest vehicle departures that would have been generated by default</li>
+<li><strong>--write-flows probability</strong>: write <code>&lt;flow&gt;</code>-definitions instead of vehicles. Flows will be defined with attribute 'probability' so that the expected number of vehicles is equal to the number of vehicles that would have been generated by default but the specific number will vary due to sampling effects</li>
+<li><strong>--pedestrians</strong>: write persons and personFlows with walks instead of vehicles and flows</li>
+<li><strong>--prefix</strong>: prefix vehicle- and route-IDs with the given string. This is needed to combine output of multiple routeSampler runs (i.e. for different modes of traffic) into a single simulation. Otherwise there would be errors regarding duplicate IDs.</li>
+</ul>
+<h2 id="vehicle-attributes">Vehicle attributes<a class="headerlink" href="#vehicle-attributes" title="Permanent link">&para;</a></h2>
+<p>With the option <strong>--attributes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a>, additional parameters can be given to the generated
+vehicles (note, usage of the quoting characters).</p>
+<pre><code>python tools/routeSampler.py -n input_net.net.xml -r candidate.rou.xml -o out.rou.xml -d data.xml
+  --attributes=&quot;departLane=\&quot;best\&quot; departSpeed=\&quot;max\&quot; departPos=\&quot;random\&quot;&quot;
+</code></pre>
+<p>The above attributes would make the vehicles be distributed randomly on their
+starting edges and inserted with high speed on a reasonable lane.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Quoting of trip attributes on Linux may also use the style <strong>--attributes 'departLane="best" departSpeed="max" departPos="random"'</strong></p>
+</div>
+<h2 id="multiple-vehicle-types">Multiple vehicle types<a class="headerlink" href="#multiple-vehicle-types" title="Permanent link">&para;</a></h2>
+<p>To distinguish vehicles of different types, routeSampler may be run multiple times with different attributes. Note, that it is also necessary to set the option <strong>--prefix</strong> to prevent duplicate ids. The example below creates traffic consisting of cars and trucks using two edgedata files with distinct count values (stored in the default attribute 'entered').</p>
+<pre><code>python tools/routeSampler.py --attributes=&quot;type=\&quot;car\&quot;&quot; --edgedata-files carcounts.xml --prefix c -o cars.rou.xml -r candidate.rou.xml
+python tools/routeSampler.py --attributes=&quot;type=\&quot;heavy\&quot;&quot; --edgedata-files truckcounts.xml --prefix t -o trucks.rou.xml -r candidate.rou.xml
+</code></pre>
+<p>Alternatively, the count values might also be stored in different attributes of the same file (i.e. 'count1', 'count2'):</p>
+<pre><code>python tools/routeSampler.py --attributes=&quot;type=\&quot;car\&quot;&quot; --edgedata-files counts.xml --edgedata-attribute count1 --prefix c -o cars.rou.xml -r candidate.rou.xml
+python tools/routeSampler.py --attributes=&quot;type=\&quot;heavy\&quot;&quot; --edgedata-files counts.xml --edgedata-attribute count2 --prefix t -o trucks.rou.xml  -r  candidate.rou.xml
+</code></pre>
+<p>When running the simulation, the types 'car' and 'heavy' (previously set as vehicle attributes), must be defined in an additional file which could look like the following example (types.add.xml):</p>
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;vType id=&quot;car&quot;/&gt;
+  &lt;vType id=&quot;heavy&quot; vClass=&quot;truck&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
+<p>The simulation could then be called like this:</p>
+<pre><code>  sumo -n net.net.xml -a types.add.xml -r cars.rou.xml,trucks.rou.xml
+</code></pre>
+<h2 id="sampling">Sampling<a class="headerlink" href="#sampling" title="Permanent link">&para;</a></h2>
+<p>In this stage, routes are selected randomly within the limits imposed by the input counts.
+Only routes that pass a minimum number of counting locations (option <strong>--min-count</strong>, default <em>1</em>) are eligible for sampling.</p>
+<h3 id="default-sampling">Default Sampling<a class="headerlink" href="#default-sampling" title="Permanent link">&para;</a></h3>
+<p>By default, sampling will be performed iteratively by:</p>
+<ol>
+<li>selecting a random counting location that has not yet reached its count (and which still has viable routes)</li>
+<li>selecting a random route that passes this counting location</li>
+</ol>
+<p>until all counting locations have reached their measured count or there are no viable routes (routes which have all their passed counting locations below the input count)</p>
+<h3 id="weighted-sampling">Weighted Sampling<a class="headerlink" href="#weighted-sampling" title="Permanent link">&para;</a></h3>
+<p>By setting the option <strong>--weighted</strong>. The sampling algorithm is changed. For each route a probability value is loaded from the input. The probability can either be specified explicitly using route attribute 'probability' or implicitly if a route with the same sequence of edges appears multiple times in the route input. Sampling will be performed iteratively by:</p>
+<ol>
+<li>selecting a random viable route sampled by probability</li>
+</ol>
+<p>until all counting locations have reached their measured count or there are no viable routes (routes which have all their passed counting locations below the input count)</p>
+<h2 id="optimization">Optimization<a class="headerlink" href="#optimization" title="Permanent link">&para;</a></h2>
+<p>By default, routes will be sampled from the input route set until no further routes can be added without exceeding one of the counts. This may still leave some counts below their target values.</p>
+<p>The problem of selecting a multi-set of route so that all count values are matched can be formulated as an <a href="https://en.wikipedia.org/wiki/Integer_programming">Integer linear programming problem (ILP)</a>.</p>
+<p>RouteSampler computes an approximate solution to this ILP by relaxing it to a linear programming problem (LP) and passing it to an LP-solver library (scipy).
+  The resulting non-integral solution is then rounded to an integer solution.
+It is often desirable to find an optimized solution that is close to the initial sampling-solution. This way, route probabilities that were part of the input can be maintained to some degree.</p>
+<p>By setting option <strong>--optimize <code>&lt;INT&gt;</code></strong>. The number of times that a route is used can be changed by up to <strong><code>&lt;INT&gt;</code></strong> times. This defines a trade-off between using routes in the same distribution as found in the input and optimizing the counts.
+When setting option <strong>--optimize full</strong>. No constraints on the route distribution are set and any route can be used as often as needed to reach the counts.</p>
+<p>The option <strong>--minimize-vehicles <FLOAT></strong> can be used to configure a weighting term for simultaneously minimizing the total number of used routes (vehicles).
+  A higher value, favours solutions with few vehicles that pass multiple counting locations rather than more vehicles that pass fewer locations. Hard constraints on the minimum number of counting locations passed by each route can also be set with option <strong>-min-count</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Optimization requires <a href="https://www.scipy.org/">scipy</a>.</p>
+</div>
+<h2 id="further-calibration">Further Calibration<a class="headerlink" href="#further-calibration" title="Permanent link">&para;</a></h2>
+<p>It is possible to load the resulting output into routeSampler.py for another round of optimization. By setting the option <strong>--optimize-input</strong> the sampling step is skipped and the optimizer is run directly on the input route set.</p>
+<p>By removing specific routes or adding new ones, the user can thus tailor the generating traffic in an iterative manner.</p>
+<h2 id="quality-control">Quality Control<a class="headerlink" href="#quality-control" title="Permanent link">&para;</a></h2>
+<p>There is a range of reasons that could lead to a deviation between the routeSampler results and the user expectation. This section lists common reasons and documents which outputs can be used to judge the quality of the results.</p>
+<h3 id="problem-areas">Problem areas<a class="headerlink" href="#problem-areas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Selecting a set of routes to match a given set of counts is generally an underdetermined problem which means there is of not a unique solution. If there are insufficient constraints on the solution space (not enough counts), the chosen solution may appear implausible</li>
+<li>Input routes are not representative of the real routes<ul>
+<li>not covering the counting locations</li>
+<li>containing unlikely routes</li>
+</ul>
+</li>
+<li>Temporal patterns are not captured by the given interval data (i.e. by only having counts for the whole day)</li>
+<li>Traffic counts are not stationary within an interval (i.e. a single vehicle passing a long a list of widely spaced counting locations and each interval registers a different location). In this case the route that covers all counting locations will not be sampled. (Longer intervals must be chosen in this case).</li>
+<li>Inconsistency in the counting data</li>
+<li>Many short routes (can be prevented by setting option <strong>--min-count</strong>)</li>
+</ul>
+<h3 id="textual-quality-metrics">Textual quality metrics<a class="headerlink" href="#textual-quality-metrics" title="Permanent link">&para;</a></h3>
+<ul>
+<li>underflow locations: Statistics on all counting locations with less traffic than defined in the input</li>
+<li>overflow locations: Statistics on all counting locations with more traffic than defined in the input (only happens due to rounding of fractional counts after optimization)</li>
+<li><a href="https://en.wikipedia.org/wiki/GEH_statistic">GEH</a> statistics: Statistics on locations that reach a defined GEH threshold (configurable with option <strong>--geh-ok</strong>, default <em>5</em>)</li>
+<li>total number and percentage of matched counts (note that this is distinct from the number of vehicles since each vehicle may be counted multiple times)</li>
+</ul>
+<h3 id="spatial-quality-data">Spatial quality data<a class="headerlink" href="#spatial-quality-data" title="Permanent link">&para;</a></h3>
+<p>By setting option <strong>--mismatch-output FILE</strong> an [edgeData] file will be created that holds the mismatch between input and output count (<code>deficit</code>) as well as the input count (<code>measuredCount</code>) for each time interval:</p>
+<p>Example:</p>
+<pre><code>&lt;data&gt;
+    &lt;interval id=&quot;deficit&quot; begin=&quot;0.0&quot; end=&quot;99.0&quot;&gt;
+        &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;64&quot; measuredCount=&quot;1&quot; deficit=&quot;0&quot;/&gt;
+        &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;-31&quot; measuredCount=&quot;3&quot; deficit=&quot;0&quot;/&gt;
+        &lt;edgeRelation from=&quot;45&quot; to=&quot;-68&quot; measuredCount=&quot;3&quot; deficit=&quot;1&quot;/&gt;
+        ...
+    &lt;/interval&gt;
+&lt;/data&gt;
+</code></pre>
+<p>Such a data file can be visualized in <a href="../../sumo-gui/#visualizing_edge-related_data">sumo-gui</a> and also plotted with <a href="../Visualization/#plot_net_dumppy">plot_net_dump.py</a>.</p>
+<h1 id="generateturnratiospy">generateTurnRatios.py<a class="headerlink" href="#generateturnratiospy" title="Permanent link">&para;</a></h1>
+<p>This script is used to calculate the turn ratios from a
+an edge to its downstream edge with a given route file. The output file
+can be directly used as input with <a href="#routesamplerpy">routeSampler.py</a> and <a href="../../jtrrouter/">jtrrouter</a>. The time interval will span the minimum and maximum departure times of the route file but it can also be configured with options <strong>--begin</strong>, <strong>--end</strong> and  <strong>--interval</strong>.</p>
+<pre><code>python tools/turn-defs/generateTurnRatios.py -r &lt;route-file&gt;
+</code></pre>
+<p>The standard output is the traffic volumes (which jtrrouter normalizes automatically). With the option <strong>-p</strong>,  turning ratios will be written as values from [0,1].</p>
+<h1 id="generateturndefspy">generateTurnDefs.py<a class="headerlink" href="#generateturndefspy" title="Permanent link">&para;</a></h1>
+<p>This script allows generation of the turn definitions based on the
+number of lanes allowing particular turns. The basic functionality
+distributes the traffic uniformly, that is:</p>
+<ol>
+<li>distribute the incoming traffic uniformly across the lanes forming
+    the road</li>
+<li>distribute the amount of traffic assigned to each lane uniformly
+    among the destinations that the lane allows turns to.</li>
+<li>sum up the values for each of the destinations that the road being
+    processed allows turning to.</li>
+</ol>
+<p>Example use</p>
+<pre><code>python tools/turn-defs/generateTurnDefs.py --connections-file connections.con.xml --turn-definitions-file output.turndefs.xml
+</code></pre>
+<p>The script allows to be extended with new traffic distribution policies
+(for example, based on Gaussian distribution) easily. See the
+<em>DestinationWeightCalculator</em> class for details.</p>
+<p>The script processes the connections given in the provided <em>*.con.xml</em>
+file. For usage details, execute the <em>generateTurnDefs.py</em> script with
+<em>--help</em> option.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can generate a connections file with all the connections in the network using <a href="../../netconvert/">netconvert</a> - see the <em>--plain-output-prefix</em> option.</p>
+</div>
+<h1 id="turncount2edgecountpy">turnCount2EdgeCount.py<a class="headerlink" href="#turncount2edgecountpy" title="Permanent link">&para;</a></h1>
+<p>This script converts turn-count data into <a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgeData</a>.</p>
+<pre><code>python tools/turn-defs/turnCount2EdgeCount.py -t &lt;turn-file&gt; -o &lt;output-file&gt;
+</code></pre>
+<h1 id="turnfile2edgerelationspy">turnFile2EdgeRelations.py<a class="headerlink" href="#turnfile2edgerelationspy" title="Permanent link">&para;</a></h1>
+<p>This script converts the deprecated turn-file format into edgeRelation format</p>
+<pre><code>python tools/turn-defs/turnFile2EdgeRelations.py -t &lt;turn-file&gt; -o &lt;output-file&gt;
+</code></pre>
+<h1 id="jtcrouterpy">jtcrouter.py<a class="headerlink" href="#jtcrouterpy" title="Permanent link">&para;</a></h1>
+<p>The <strong>J</strong>unction<strong>T</strong>urn<strong>C</strong>ountRouter generates vehicle routes from turn-count data.
+It does so by converting the turn counts into into flows and turn-ratio files that are suitable as <a href="../../jtrrouter/">jtrrouter</a> input.
+Then it calls jtrrouter in the background.</p>
+<p>Example call:</p>
+<pre><code>python tools/jtcrouter.py -n &lt;net-file&gt; -t &lt;turn-file&gt; -o &lt;output-file&gt;
+</code></pre>
+<p>There are three basic styles of converting turn-counts to routes:</p>
+<ul>
+<li>Flows start at all turn-count locations in the network but end when reaching the next count location</li>
+<li>Flows start at all turn-count locations in the network and are discounted when reaching the next count location (<strong>--discount-sources</strong>)</li>
+<li>Flows only start on the fringe of the network (<strong>--fringe-flows</strong>)</li>
+</ul>
+<h2 id="turn-count-data-format">Turn count data format<a class="headerlink" href="#turn-count-data-format" title="Permanent link">&para;</a></h2>
+<p>The turn-count data must be provided in the format which is the same as for <a href="#routesamplerpy">routeSampler</a>:</p>
+<pre><code class="language-xml">&lt;data&gt;
+  &lt;interval id=&quot;generated&quot; begin=&quot;0.0&quot; end=&quot;99.0&quot;&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;64&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-58.121.42&quot; to=&quot;-31&quot; count=&quot;3&quot;/&gt;
+    &lt;edgeRelation from=&quot;45&quot; to=&quot;-68&quot; count=&quot;3&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;31&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;37&quot; count=&quot;1&quot;/&gt;
+    &lt;edgeRelation from=&quot;-31.80.00&quot; to=&quot;-23&quot; count=&quot;13&quot;/&gt;
+    &lt;edgeRelation from=&quot;-92.180.00&quot; to=&quot;-60&quot; count=&quot;1&quot;/&gt;
+  &lt;/interval&gt;
+&lt;/data&gt;
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

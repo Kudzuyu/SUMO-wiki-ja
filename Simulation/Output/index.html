@@ -1,0 +1,743 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Output/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Output - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Output
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#converting-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Converting Outputs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separating-outputs-of-repeated-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Separating outputs of repeated runs
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p><a href="../../sumo/">sumo</a> allows to generate a large number of different
+measures. All write the values they collect into files or a socket
+connection following the common rules for <a href="../../Basics/Using_the_Command_Line_Applications/#writing_files">writing files</a>.
+Per default, all are disabled, and have to be triggered individually.
+Some of the available outputs (<a href="RawDump/">raw vehicle positions
+dump</a>, <a href="TripInfo/">trip
+information</a>, <a href="VehRoutes/">vehicle routes
+information</a>, and <a href="Summary/">simulation
+state statistics</a>) are triggered
+using command line options, the others have to be defined within <a href="/SUMO.html#format_of_additional_files"><em>additional-files</em></a>.</p>
+<h2 id="converting-outputs">Converting Outputs<a class="headerlink" href="#converting-outputs" title="Permanent link">&para;</a></h2>
+<p>All output files written by SUMO are in XML-format by default. However,
+with the python tool <a href="../../Tools/Xml/#xml2csvpy">xml2csv.py</a> you
+can convert any of them to a flat-file (CSV) format which can be opened
+with most spread-sheet software. If you need a more compressed but still
+"standardized" binary version, you can use
+<a href="../../Tools/Xml/#xml2protobufpy">xml2protobuf.py</a>. Furthermore all
+files can be written and read in compressed form (gzip) which is triggered by the
+file extension .gz.</p>
+<h2 id="separating-outputs-of-repeated-runs">Separating outputs of repeated runs<a class="headerlink" href="#separating-outputs-of-repeated-runs" title="Permanent link">&para;</a></h2>
+<p>To keep the outputs of multiple simulation runs separate, the option <strong>--output-prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a>
+can be used to prefix <strong>all</strong> output file names. When setting <strong>--output-prefix TIME</strong> all
+outputs will be prefixed using the time at which the simulation was
+started which keeps them separated automatically.</p>
+<h1 id="available-output-files">Available Output Files<a class="headerlink" href="#available-output-files" title="Permanent link">&para;</a></h1>
+<p>Below, the available outputs are listed, joined into groups of
+topic/aggregation type. Further information about each output can be
+found by following its link.</p>
+<h2 id="vehicle-based-information-disaggregated">vehicle-based information, disaggregated<a class="headerlink" href="#vehicle-based-information-disaggregated" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="RawDump/">raw vehicle positions dump</a>:
+  all vehicle positions over time
+  <em>contains</em>: positions and speeds for all vehicles for all simulated
+  time steps
+  <em>used for</em>: obtaining movements of nodes (V2V, for ns-2)</li>
+<li><a href="EmissionOutput/">emission output</a>:
+  emission values of all vehicles for every simulation step</li>
+<li><a href="FullOutput/">full output</a>: various
+  information for all edges, lanes and vehicles (good for
+  visualization purposes)</li>
+<li><a href="VTKOutput/">vtk output</a>: generates
+  Files in the well known <a href="https://www.vtk.org/">VTK</a> (Visualization
+  Toolkit) format, to show the positions the speed value for every
+  vehicle</li>
+<li><a href="FCDOutput/">fcd output</a>: Floating Car
+  Data includes name, position, angle and type for every vehicle</li>
+<li><a href="AmitranOutput/">trajectories output</a>:
+  Trajectory Data following includes name, position, speed and
+  acceleration for every vehicle following the Amitran standard</li>
+<li><a href="Lanechange/">lanechange output</a>: Lane
+  changing events with the associated motivation for changing for
+  every vehicle</li>
+<li><a href="SSM_Device/">surrogate safety measures
+  (SSM)</a>: Output of safety
+  related measures, headway, brake rates, etc</li>
+<li><a href="VTypeProbe/">vehicle type probe</a>:
+  positions of vehicles over time for a certain vehicle type
+  (deprecated, use vType filters with FCD-output instead)</li>
+</ul>
+<h2 id="simulated-detectors">simulated detectors<a class="headerlink" href="#simulated-detectors" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="Induction_Loops_Detectors_%28E1%29/">Inductive loop detectors (E1)</a>:
+  simulated induction loops</li>
+<li><a href="Instantaneous_Induction_Loops_Detectors/">Instant induction loops</a>:
+  simulated unaggregated induction loops</li>
+<li><a href="Lanearea_Detectors_%28E2%29/">Lane area detectors (E2)</a>:
+  detectors that capture a lane segment (i.e. simulated vehicle
+  tracking cameras)</li>
+<li><a href="Multi-Entry-Exit_Detectors_%28E3%29/">Multi-Entry-Exit detectors (E3)</a>:
+  simulators that track traffic in an area by detecting entry and exit
+  events at defined locations</li>
+<li><a href="RouteProbe/">Route Detectors</a>: detector
+  for sampling route distributions</li>
+</ul>
+<h2 id="values-for-edges-or-lanes">values for edges or lanes<a class="headerlink" href="#values-for-edges-or-lanes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="Lane-_or_Edge-based_Traffic_Measures/">edgelane traffic</a>:
+  edge/lane-based network performance measures</li>
+<li><a href="Amitran_Traffic_Measures/">aggregated Amitran measures</a>:
+  edge/lane-based network performance measures following the Amitran
+  standard</li>
+<li><a href="Lane-_or_Edge-based_Emissions_Measures/">edgelane emissions</a>:
+  edge/lane-based vehicular pollutant emission</li>
+<li><a href="Lane-_or_Edge-based_Noise_Measures/">edgelane noise</a>:
+  edge/lane-based vehicular noise emission; based on Harmonoise</li>
+<li><a href="QueueOutput/">queue output</a>: lane-based
+  calculation of the actual tailback in front of a junction</li>
+</ul>
+<h2 id="values-for-junctions">values for junctions<a class="headerlink" href="#values-for-junctions" title="Permanent link">&para;</a></h2>
+<p>There is no dedicated output format for traffic at junctions. Instead junction related traffic can be measured by placing detectors that measure traffic at the intersection.</p>
+<ul>
+<li><a href="../../Tools/Output/#generatetlse1detectorspy">Tools/Output#generateTLSE1Detectors.py</a>
+  script for generating induction loop detectors around all
+  TLS-controlled intersections (point-based detected on individual lanes)</li>
+<li><a href="../../Tools/Output/#generatetlse2detectorspy">Tools/Output#generateTLSE2Detectors.py</a>
+  script for generating lane-area detectors around all TLS-controlled
+  intersections (area-based detection on individual lanes)</li>
+<li><a href="../../Tools/Output/#generatetlse3detectorspy">Tools/Output#generateTLSE3Detectors.py</a>
+  script for generating multi-entry-exit detectors around all
+  TLS-controlled intersections or for an arbitrary list of
+  intersections. The detectors can be configured to either aggregate
+  or separate the approaching edges and to include or exclude the
+  junction interior. (area-based detection on edges)</li>
+</ul>
+<p>Alternatively, the <a href="#values_for_edges_or_lanes">values for edges or lanes</a> can be aggregated to obtain the flow at at a junction by using edgeData attribute <code>edges</code> and <code>aggregate="true"</code>.</p>
+<h2 id="vehicle-based-information">vehicle-based information<a class="headerlink" href="#vehicle-based-information" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="TripInfo/">trip information</a>:
+  aggregated information about each vehicle's journey (optionally with
+  emission data)</li>
+<li><a href="VehRoutes/">vehicle routes
+  information</a>: information
+  about each vehicle's routes over simulation run</li>
+<li><a href="StopOutput/">stop output</a>: information
+  about vehicle
+  <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#stops_and_waypoints">stops</a>
+  and loading/unloading of persons and containers</li>
+<li><a href="../../Models/Electric/#battery-output">battery usage</a>:
+  information about battery state for electric vehicles</li>
+<li><a href="Collisions/">collision output</a>:
+  information about collisions among vehicles and between vehicles and pedestrians</li>
+</ul>
+<h2 id="simulationnetwork-based-information">simulation(network)-based information<a class="headerlink" href="#simulationnetwork-based-information" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="Summary/">simulation state summary statistics</a>:
+  information about the current state of the simulation (vehicle count etc.)</li>
+<li><a href="PersonSummary/">simulation state person summary statistics</a>:
+  information about the current state of persons the simulation (person count etc.)</li>
+<li><a href="StatisticOutput/">statistic output</a>:
+  overall statistics of the simulation (vehicles, teleports, safety, persons, vehicleTripStatistics, rideStatistics, etc.)</li>
+</ul>
+<h2 id="traffic-lights-based-information"><a href="Traffic_Lights/">traffic lights-based information</a><a class="headerlink" href="#traffic-lights-based-information" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="Traffic_Lights/#tls_states">traffic light states</a>:
+  information about the state (lights) of a traffic light</li>
+<li><a href="Traffic_Lights/#tls_switches">stream-based traffic light switches</a>:
+  information about the switches of a traffic light signal responsible
+  for a certain link</li>
+<li><a href="Traffic_Lights/#tls_switch_states">traffic light states, by switch</a>:
+  information about the states (lights) of a traffic light signal,
+  written only when changed</li>
+<li><a href="Traffic_Lights/#coupled_lane_area_detectors">lane area detectors coupled to tls</a>:
+  simulated vehicle tracking cameras triggered by tls</li>
+</ul>
+<h2 id="additional-debugging-outputs">Additional Debugging Outputs<a class="headerlink" href="#additional-debugging-outputs" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The option <strong>--link-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> saves debugging data for the intersection model. This
+data reveals how long each vehicle intends to occupy an upcoming
+intersection.</li>
+<li>The option <strong>--movereminder-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> saves debugging data for the interaction between vehicle
+devices, lanes and output facilities. It is only available when
+compiling <a href="../../sumo/">sumo</a> with debug flags.</li>
+<li>The option <strong>--railsignal-block-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> saves information about rail signal blocks. For each
+controlled railSignal link the following information is generated:</li>
+<li><strong>forwardBlock</strong>: all lanes that are reached from the signalized
+    link in forward direction up to the next rail signal</li>
+<li><strong>bidiBlock</strong>: all lanes that make up the reverse-direction
+    track encountered within the forward block and followed up to
+    the next railSignal beyond a railway switch which allows passing</li>
+<li><strong>backwardBlock</strong>: all lanes that enter the forwardBlock or
+    bidiBlock from outside followed upstream to the entry rail
+    signal</li>
+<li><strong>conflictLinks</strong>: all controlled links that enter the conflict
+    area (forwardBlock, bidiBlock, backwardBlock) from outside,
+    encoded as <em>&lt;SIGNALID&gt;_&lt;LINKINDEX&gt;</em></li>
+</ul>
+<h1 id="commandline-output-step-log">Commandline Output (step-log)<a class="headerlink" href="#commandline-output-step-log" title="Permanent link">&para;</a></h1>
+<p>By default, sumo will print some "heartbeat" information to indicate that it is still running. The following information will be printed every 100 simulation steps:</p>
+<ul>
+<li>Step #: current simulation time</li>
+<li>duration of the latest step in (<strong>ms</strong>)</li>
+<li>real-time factor (step-length / duration). (<strong>RT</strong>)</li>
+<li>number of vehicles updated per second (<strong>UPS</strong>)</li>
+<li><strong>TraCI:</strong> time spent with TraCI processing in the current step (including external script)</li>
+<li><strong>vehicles TOT</strong>: number of vehicles that departed so far</li>
+<li><strong>ACT</strong>: number of currently running vehicles</li>
+<li><strong>BUF</strong>: number of vehicles with delayed insertion</li>
+</ul>
+<p>This output can be disabled with the option <strong>--no-step-log</strong>. Its period can be configured with the option <strong>--step-log.period TIME</strong>.</p>
+<h1 id="commandline-output-verbose">Commandline Output (verbose)<a class="headerlink" href="#commandline-output-verbose" title="Permanent link">&para;</a></h1>
+<p>When running the simulation with option <strong>--verbose</strong> (short <strong>-v</strong>) the following data
+will be printed (unless explicitly disabled with option <strong>--duration-log false</strong>):</p>
+<h2 id="vehicle-counts">Vehicle Counts<a class="headerlink" href="#vehicle-counts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Inserted: number vehicles that entered the simulation network</li>
+<li>Loaded: number of vehicles that were loaded from route files. This
+may differ from emitted for two reason:</li>
+<li>Running with option <strong>--scale</strong> with a value less than 1.0</li>
+<li>Having a congested network where not all vehicles could be
+    inserted before the simulation time ended</li>
+<li>Running: number of vehicles currently active in the network at
+simulation end</li>
+<li>Waiting: number of vehicles which could not yet be inserted into the
+network due to congestion</li>
+<li>Teleports: number of of times that vehicles were teleported for any
+of the following reasons (These reasons are given whenever a
+teleport warning is issued)</li>
+<li><a href="../Why_Vehicles_are_teleporting/#collisions">Collision</a>:
+    a vehicle violated its minGap requirement in relation to its
+    leader vehicle</li>
+<li><a href="../Why_Vehicles_are_teleporting/#waiting_too_long_aka_grid-locks">Timeout</a>:
+    a vehicle was unable to move for --time-to-teleport seconds
+    (default 300)<ul>
+<li>wrong lane: a vehicle was unable to move because it could
+  not continue its route on the current lane and was unable to
+  change to the correct lane</li>
+<li>yield: a vehicle was unable to cross an intersection where
+  it did not have priority</li>
+<li>jam: a vehicle could not continue because there was no space
+  on the next lane</li>
+</ul>
+</li>
+</ul>
+<p>If the simulation contained persons the following output will be added:</p>
+<ul>
+<li>Inserted: number of persons that were loaded from route files</li>
+<li>Running: number of persons active in the network at simulation end</li>
+<li>Jammed: number of times a person was jammed</li>
+</ul>
+<h2 id="timing-data">Timing Data<a class="headerlink" href="#timing-data" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Duration: The amount of elapsed time (as measure by a clock hanging
+  on the wall) while computing the simulation.</li>
+<li>TraCI-Duration: The amount of elapsed time (as measure by a clock hanging
+  on the wall) spent for processing TraCI-commands. This includes the time spent in the traci client script.</li>
+<li>"Real time factor": The quotient of <em>simulated time</em> / <em>computation
+  time</em>. If one hour is simulated in 360 seconds the real time factor
+  is 10.</li>
+<li>UPS: (updates per second). The number of vehicle updates that were
+  performed on average per second of computation time. If a single
+  vehicle update takes on average one millisecond, this will be 1000.</li>
+</ul>
+<p>If routing took place in the simulation, Each routing algorithm instance
+will report</p>
+<ul>
+<li>The number of routing queries</li>
+<li>The number of edges that were checked in order to find the best
+  route</li>
+<li>The total time spend routing and the average time per routing call</li>
+</ul>
+<h2 id="aggregated-traffic-measures">Aggregated Traffic Measures<a class="headerlink" href="#aggregated-traffic-measures" title="Permanent link">&para;</a></h2>
+<p>When setting the option <strong>--duration-log.statistics</strong>, (shortcut <strong>-t</strong>) verbose output is automatically enabled
+(unless explicitly set to <em>false</em>) and the following averages for all
+vehicle trips will be printed:</p>
+<ul>
+<li>RouteLength: average route length</li>
+<li>Speed: average trip speed</li>
+<li>Duration: average trip duration</li>
+<li>WaitingTime: average time spent standing (involuntarily)</li>
+<li>TimeLoss: average time lost due to driving slower than desired
+  (includes WaitingTime). The desired speed takes the vehicles
+  <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#speed_distributions">speedFactor</a>
+  into account.</li>
+<li>DepartDelay: average time vehicle departures were <a href="../VehicleInsertion/">delayed due to
+  lack of road space</a></li>
+</ul>
+<p>!!! note
+      By default, only vehicles that have arrived are included in these statistics. If the option <strong>--tripinfo-output.write-unfinished</strong> is set, running vehicles will be included as well.</p>
+<ul>
+<li>DepartDelayWaiting: average waiting time of vehicles which could not
+  be inserted due to lack of road space by the end of the simulation.
+  (only present if the option <strong>--tripinfo-output.write-unfinished</strong> is set)</li>
+</ul>
+<p>If the simulation contained pedestrians (walking persons) the following
+output will be added:</p>
+<ul>
+<li>walks: the number of distinct <code>&lt;walk&gt;</code>-elements in the input</li>
+<li>RouteLength: average walk length</li>
+<li>Duration: average walk duration</li>
+<li>TimeLoss: average time lost due to walking below maximum speed or stopping</li>
+</ul>
+<p>If the simulation contained passengers (persons riding in vehicles) the
+following output will be added:</p>
+<ul>
+<li>Rides: the number of distinct <code>&lt;ride&gt;</code>-elements in the input</li>
+<li>WaitingTime: average time spent waiting for ride</li>
+<li>RouteLength: average ride length</li>
+<li>Duration: average ride duration</li>
+<li>Bus rides: number of rides with a public transport vehicle driving
+  on roads (public transport is identified by having the
+  <em>line</em>-attribute set).</li>
+<li>Train rides number of rides with a public transport vehicle driving
+  on rails</li>
+<li>Bike rides: number of rides with vehicle class <em>bicycle</em></li>
+<li>Aborted rides: rides that could not be completed because no suitable
+  vehicle was available</li>
+</ul>
+<p>You can also take a look at <a href="StatisticOutput/">statistic output</a> for a more overall statistics of the entire simulation, including those mentioned above and additional ones safety-, ride- and transport-related.</p>
+<p>When setting this option and using <a href="../../sumo-gui/">sumo-gui</a>, the
+network parameter dialog will also show a running average for these
+traffic measures (The dialog is accessible by right-clicking on the
+network background).</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

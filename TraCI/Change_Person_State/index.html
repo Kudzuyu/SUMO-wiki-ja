@@ -1,0 +1,995 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TraCI/Change_Person_State/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Change Person State - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-0xce-change-person-state" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Change Person State
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-0xce-change-person-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0xce: Change Person State
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compound-message-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      compound message details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="compound message details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-0x80" class="md-nav__link">
+    <span class="md-ellipsis">
+      add (0x80)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#append-stage-0xc4" class="md-nav__link">
+    <span class="md-ellipsis">
+      append stage (0xc4)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#append-waiting-stage-0xc4" class="md-nav__link">
+    <span class="md-ellipsis">
+      append waiting stage (0xc4)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#append-walking-stage-0xc4" class="md-nav__link">
+    <span class="md-ellipsis">
+      append walking stage (0xc4)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#append-driving-stage-0xc4" class="md-nav__link">
+    <span class="md-ellipsis">
+      append driving stage (0xc4)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace-stage-0xcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      replace stage (0xcd)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-to-xy-0xb4" class="md-nav__link">
+    <span class="md-ellipsis">
+      move to XY (0xb4)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h2 id="command-0xce-change-person-state">Command 0xce: Change Person State<a class="headerlink" href="#command-0xce-change-person-state" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable</td>
+<td style="text-align: center;">Person ID</td>
+</tr>
+</tbody>
+</table>
+<p>Changes the state of a Person...</p>
+<center>
+**Overview Changeable Person Variables**
+</center>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>ValueType</th>
+<th>Description</th>
+<th><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>add (0x80)</td>
+<td>complex see below</td>
+<td>Inserts a new person to the simulation at the given edge, position and time (in s). This function should be followed by appending Stages or the person will immediately vanish on departure.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-add">add</a></td>
+</tr>
+<tr>
+<td>append stage (0xc4)</td>
+<td>complex see below</td>
+<td>Appends a stage (stageObject, waiting, walking or driving) to the plan of the given person.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-appendStage">appendStage</a><br><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-appendDrivingStage">appendDrivingStage</a><br><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-appendWaitingStage">appendWaitingStage</a><br><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-appendWalkingStage">appendWalkingStage</a></td>
+</tr>
+<tr>
+<td>replace stage (0xcd)</td>
+<td>complex see below</td>
+<td>Replaces the nth next stage with the given stage object</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-replaceStage">replaceStage</a></td>
+</tr>
+<tr>
+<td>remove stage (0xc5)</td>
+<td>int</td>
+<td>Removes the nth next stage. nextStageIndex must be lower then value of getRemainingStages(personID). nextStageIndex 0 immediately aborts the current stage and proceeds to the next stage. When removing all stages, stage 0 should be removed last (the python function removeStages does this automatically).</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-removeStage">removeStage</a><br><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-removeStages">removeStages</a></td>
+</tr>
+<tr>
+<td>remove (0x81)</td>
+<td>int</td>
+<td>Removes the person from the simulation instantly.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-remove">remove</a></td>
+</tr>
+<tr>
+<td>reroute (compute new route) by travel time (0x90)</td>
+<td>compound (&lt;empty&gt;)</td>
+<td>Computes a new route to the current destination that minimizes travel time. The assumed values for each edge in the network can be customized in various ways. See <a href="../../Simulation/Routing/#travel-time_values_for_routing">Simulation/Routing#Travel-time_values_for_routing</a>. Replaces the current route by the found route.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-rerouteTraveltime">rerouteTraveltime</a></td>
+</tr>
+<tr>
+<td>move to XY (0xb4)</td>
+<td>compound (edgeID, x, y, angle, keepRoute) (see below)</td>
+<td>Moves the person to a new position after normal movements have taken place. Also forces the angle of the person to the given value (navigational angle in degree). <a href="./#move_to_xy_0xb4">See below for additional details</a></td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-moveToXY">moveToXY</a></td>
+</tr>
+<tr>
+<td>color (0x45)</td>
+<td>ubyte,ubyte,ubyte,ubyte (RGBA)</td>
+<td>sets color for person with the given ID. i.e. (255,0,0,255) for the color red.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setColor">setColor</a></td>
+</tr>
+<tr>
+<td>height (0xbc)</td>
+<td>double</td>
+<td>Sets the height in m for this person.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setHeight">setHeight</a></td>
+</tr>
+<tr>
+<td>length (0x44)</td>
+<td>double</td>
+<td>Sets the length in m for the given person.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setLength">setLength</a></td>
+</tr>
+<tr>
+<td>min gap (0x4c)</td>
+<td>double</td>
+<td>Sets the offset (gap to front person if halting) for this vehicle.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setMinGap">setMinGap</a></td>
+</tr>
+<tr>
+<td>speed (0x5e)</td>
+<td>double</td>
+<td>Sets the maximum speed in m/s for the named person for subsequent step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setSpeed">setSpeed</a></td>
+</tr>
+<tr>
+<td>type (0x4f)</td>
+<td>string (id)</td>
+<td>Sets the id of the type for the named person.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setType">setType</a></td>
+</tr>
+<tr>
+<td>width (0x4d)</td>
+<td>double</td>
+<td>Sets the width in m for this person.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-setWidth">setWidth</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="compound-message-details">compound message details<a class="headerlink" href="#compound-message-details" title="Permanent link">&para;</a></h1>
+<p>The message contents are as following:</p>
+<h3 id="add-0x80">add (0x80)<a class="headerlink" href="#add-0x80" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">value type <em>compound</em></td>
+<td style="text-align: center;">item number (4)</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">type ID</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">Initial Edge ID</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">depart time in seconds</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">depart position</td>
+</tr>
+</tbody>
+</table>
+<p>A depart time value of -3 is interpreted as immediate departure</p>
+<h3 id="append-stage-0xc4">append stage (0xc4)<a class="headerlink" href="#append-stage-0xc4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>byte</th>
+<th>int</th>
+<th>byte</th>
+<th>int</th>
+<th>byte</th>
+<th>string</th>
+<th>byte</th>
+<th>string</th>
+<th>byte</th>
+<th>string</th>
+<th>byte</th>
+<th>stringList</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>string</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value type compound</td>
+<td>item number (13)</td>
+<td>value type int</td>
+<td>stage type</td>
+<td>value type string</td>
+<td>vType (may be empty)</td>
+<td>value type string</td>
+<td>line (may be empty)</td>
+<td>value type string</td>
+<td>destStop (may be empty)</td>
+<td>value type stringList</td>
+<td>edges</td>
+<td>value type double</td>
+<td>travelTime</td>
+<td>value type double</td>
+<td>cost</td>
+<td>value type double</td>
+<td>length</td>
+<td>value type string</td>
+<td>intended (may be empty)</td>
+<td>value type double</td>
+<td>depart</td>
+<td>value type double</td>
+<td>departPos</td>
+<td>value type double</td>
+<td>arrivalPos</td>
+<td>value type string</td>
+<td>description (may be empty)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="append-waiting-stage-0xc4">append waiting stage (0xc4)<a class="headerlink" href="#append-waiting-stage-0xc4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">int</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">int</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">int</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">value type <em>compound</em></td>
+<td style="text-align: center;">item number (4)</td>
+<td style="text-align: center;">value type <em>int</em></td>
+<td style="text-align: center;">stage type (1)</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">duration in s</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">description (may be empty)</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">stopID (may be empty)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="append-walking-stage-0xc4">append walking stage (0xc4)<a class="headerlink" href="#append-walking-stage-0xc4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">int</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">int</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">stringList</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">int</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">value type <em>compound</em></td>
+<td style="text-align: center;">item number (6)</td>
+<td style="text-align: center;">value type <em>int</em></td>
+<td style="text-align: center;">stage type (2)</td>
+<td style="text-align: center;">value type <em>stringlist</em></td>
+<td style="text-align: center;">edges</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">arrival position</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">duration in s (when a positive value is given, speed is computed from duration and length, otherwise speed is used)</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">speed (when a positive value is given this speed is used, otherwise the default speed of the person is used)</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">stopID (may be empty)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="append-driving-stage-0xc4">append driving stage (0xc4)<a class="headerlink" href="#append-driving-stage-0xc4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">int</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">int</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">value type <em>compound</em></td>
+<td style="text-align: center;">item number (4)</td>
+<td style="text-align: center;">value type <em>int</em></td>
+<td style="text-align: center;">stage type (3)</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">destination edge ID</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">lines</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">stopID (may be empty)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="replace-stage-0xcd">replace stage (0xcd)<a class="headerlink" href="#replace-stage-0xcd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>byte</th>
+<th>int</th>
+<th>byte</th>
+<th>int</th>
+<th>byte</th>
+<th>int</th>
+<th>byte</th>
+<th>int</th>
+<th>byte</th>
+<th>string</th>
+<th>byte</th>
+<th>string</th>
+<th>byte</th>
+<th>string</th>
+<th>byte</th>
+<th>stringList</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>string</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>double</th>
+<th>byte</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value type compound</td>
+<td>item number (2)</td>
+<td>value type int</td>
+<td>replacement index</td>
+<td>value type compound</td>
+<td>item number (13)</td>
+<td>value type int</td>
+<td>stage type</td>
+<td>value type string</td>
+<td>vType (may be empty)</td>
+<td>value type string</td>
+<td>line (may be empty)</td>
+<td>value type string</td>
+<td>destStop (may be empty)</td>
+<td>value type stringList</td>
+<td>edges</td>
+<td>value type double</td>
+<td>travelTime</td>
+<td>value type double</td>
+<td>cost</td>
+<td>value type double</td>
+<td>length</td>
+<td>value type string</td>
+<td>intended (may be empty)</td>
+<td>value type double</td>
+<td>depart</td>
+<td>value type double</td>
+<td>departPos</td>
+<td>value type double</td>
+<td>arrivalPos</td>
+<td>value type string</td>
+<td>description (may be empty)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="move-to-xy-0xb4">move to XY (0xb4)<a class="headerlink" href="#move-to-xy-0xb4" title="Permanent link">&para;</a></h3>
+<p>The Person is moved to the network
+position that best matches the given x,y network coordinates.</p>
+<p>The argument edgeID is optional and can be set to "" if not known.
+Its use is to resolve ambiguities when there are multiple roads on top of each other (i.e. at bridges) or to provide additional guidance on intersections (where internal edges overlap).</p>
+<p>The optional keepRoute flag is a bitset that influences
+mapping as follows:</p>
+<ul>
+<li><strong>bit0</strong> (keepRoute = 1 when only this bit is set)</li>
+<li><strong>1</strong>: The person is mapped to the closest edge within its existing route.
+           If no suitable position is found within 100m   mapping fails with an error.</li>
+<li><strong>0</strong>: The person is mapped to the closest edge within the network.
+           If that edge does not belong to the original route, the current route is replaced by a new
+           route which consists of that edge only.
+           In the special case where the new edge is connected to the junction that the person was already walking towards
+           (i.e. when crossing to the other side of the road),
+           the current route edge is replaced with the new edge and the rest of the route remains unchanged.
+           If no suitable position is found within 100m mapping fails with an error.</li>
+<li><strong>bit1</strong> (keepRoute = 2 when only this bit is set)</li>
+<li><strong>1</strong>: The person is mapped to the exact position in
+  the network If that position lies outside the road network, the person stops moving on its own
+  accord until it is placed back into the network with another TraCI
+  command. (if keeproute = 3, the position must still be within 100m of the vehicle route)</li>
+<li><strong>0</strong>: The person is always on a road</li>
+<li><strong>bit2</strong> (keepRoute = 4 when only this bit is set)</li>
+<li><strong>1</strong>: lane permissions are ignored when mapping. This is needed for jaywalking.</li>
+<li><strong>0</strong>: The person is mapped only to lanes that allow pedestrians</li>
+</ul>
+<p>The angle value is assumed to be in navigational degrees (between 0 and
+360 with 0 at the top, going clockwise). The angle is used when scoring
+candidate mapping lanes to resolve ambiguities. Upon mapping the person
+is angle set to the given value for purposes of drawing and all outputs.
+If the angle is set to the special TraCI constant
+INVALID_DOUBLE_VALUE, the angle will not be used for scoring and the
+person will assume the angle of the best found lane and guess the walking direction accordingly.
+When mapping the person outside the road network, the angle will be computed from the
+previous and the new position instead.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function can also be used to force a person into the network that <a href="../../Simulation/VehicleInsertion/#loading">has been loaded</a> but did not yet depart (i.e. immediately after calling person.add).</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>In between calls of moveToXY, the person may still perform regular movement. The person position is reset afterwards but this can affect other pedestrians. To avoid this, person.setSpeed(personID, 0) can be used.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When mapping a person to an edge that is not currently on its route, the new route may consist of that edge only. Once the person reaches the arrivalPos on that edge it disappears unless receiving another moveToXY command in that simulation step. This means, persons may disappear when calling <em>traci.simulationStep</em> with arguments that cause SUMO to perform multiple steps.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">value type <em>compound</em></td>
+<td style="text-align: center;">item number 5</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">edge ID (to resolve ambiguities, may be arbitrary)</td>
+<td style="text-align: center;">value type double</td>
+<td style="text-align: center;">x Position (network coordinates)</td>
+<td style="text-align: center;">value type double</td>
+<td style="text-align: center;">y Position (network coordinates)</td>
+<td style="text-align: center;">value type double</td>
+<td style="text-align: center;">angle</td>
+<td style="text-align: center;">value type byte</td>
+<td style="text-align: center;">keepRoute (0 - 7)</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

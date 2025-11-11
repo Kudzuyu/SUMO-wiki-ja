@@ -1,0 +1,794 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/TraceExporter/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>TraceExporter - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#from-30000-feet" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TraceExporter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="from-30000-feet">From 30.000 feet<a class="headerlink" href="#from-30000-feet" title="Permanent link">&para;</a></h1>
+<p><em>traceExporter.py</em> converts and filters SUMO <a href="../../Simulation/Output/FCDOutput/">fcd
+output</a> to different "trace
+file" formats: OMNET, Shawn, ns2/ns3, PHEM.</p>
+<ul>
+<li><strong>Purpose:</strong> trace file conversion/generation</li>
+<li><strong>System:</strong> portable (Linux/Windows is tested); runs on command line</li>
+<li><strong>Input (mandatory):</strong> SUMO fcd-output</li>
+<li><strong>Output:</strong> One or more "trace file(s)" and other complementary files</li>
+<li><strong>Programming Language:</strong> Python</li>
+</ul>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>Different applications read "vehicular traces", files containing mainly
+positions of vehicles over time.
+<strong>traceExporter.py</strong> generates such files
+by converting SUMO's <a href="../../Simulation/Output/FCDOutput/">fcd
+output</a> into several supported
+formats. Following files can be generated, sorted by application:</p>
+<ul>
+<li>OMNET: mobility-traces (.xml)</li>
+<li>Shawn: snapshot-files (.xml)</li>
+<li>ns2/ns3: trace-files, activity-files, and mobility-files (all
+  *.tcl)</li>
+<li>PHEM: .dri-files, .str-files, .fzp-files, .flt-files</li>
+<li>GPSDAT csv traces (id,date,x,y,status,speedKMH)</li>
+<li><a href="https://en.wikipedia.org/wiki/GPS_eXchange_Format">GPX</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Keyhole_Markup_Language">KML</a></li>
+<li><a href="https://kepler.gl/">Kepler-JSON</a></li>
+<li>IPG Traces (experimental)</li>
+<li><a href="https://github.com/OSADP/SSAM">SSAM trajectories</a></li>
+<li><a href="../../Simulation/Shapes/#poi_point_of_interest_definitions">POIs</a>
+  (can visualize GPS distortions and sampling in
+  <a href="../../sumo-gui/">sumo-gui</a>)</li>
+<li><a href="../../Simulation/Output/FCDOutput/">fcd output</a> to restrict the
+  file to certain regions or time intervals</li>
+</ul>
+<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
+<p><strong>traceExporter.py</strong> comes with SUMO and
+is located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/. Python must be installed.</p>
+<h1 id="usage-description">Usage Description<a class="headerlink" href="#usage-description" title="Permanent link">&para;</a></h1>
+<p>You convert a given <a href="../../Simulation/Output/FCDOutput/">fcd output</a>
+into a format using a command like this:</p>
+<pre><code>traceExporter.py --fcd-input myFCDoutput.xml --omnet-output myOMNETfile.xml
+</code></pre>
+<p>In the case given above, a file for <a href="https://www.omnetpp.org/">OMNET</a>
+will be built.</p>
+<p>In the following, the command line options are described.</p>
+<h2 id="input-options">Input Options<a class="headerlink" href="#input-options" title="Permanent link">&para;</a></h2>
+<p><strong>traceExporter.py</strong> often needs only the
+<a href="../../Simulation/Output/FCDOutput/">fcd output</a> as input. In some
+cases, the network used while obtaining the <a href="../../Simulation/Output/FCDOutput/">fcd
+output</a> must be given.
+<strong>traceExporter.py</strong> gives an error
+message if the wanted output needs additional files, such as the
+network, but no such file is specified. The options for defining the
+input files are:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--fcd-input</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>-i</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>The fcd-output - file to convert (numeric value is interpreted as port to listen on)</td>
+</tr>
+<tr>
+<td><strong>--net-input</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>-n</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>The network file used; Mainly used for exporting the network</td>
+</tr>
+</tbody>
+</table>
+<p>All outputs which need to read the input only once support reading from
+a socket. To do so just give a number as file name and the script will
+open a port to listen on. Afterwards you can start sumo with the
+corresponding port as output, e.g. traceExporter.py --fcd-input 43214
+... needs to be followed by sumo --fcd-output localhost:43214. This
+should work at least with OMNET, Shawn, GPSDAT, GPX, POIs and fcd
+filtering.</p>
+<h2 id="output-options">Output Options<a class="headerlink" href="#output-options" title="Permanent link">&para;</a></h2>
+<p>In the following, the output options of
+<strong>traceExporter.py</strong> are given, divided by
+the application,</p>
+<h3 id="phem">PHEM<a class="headerlink" href="#phem" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--dri-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a PHEM .dri-file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+<tr>
+<td><strong>--str-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a PHEM .str-file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>; note that the SUMO network used during the simulation must be given using the <strong>--net-input</strong> option</td>
+</tr>
+<tr>
+<td><strong>--fzp-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a PHEM .fzp-file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+<tr>
+<td><strong>--flt-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a PHEM .flt-file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="omnet">OMNET<a class="headerlink" href="#omnet" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--omnet-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a OMNET mobility trace named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="shawn">Shawn<a class="headerlink" href="#shawn" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--shawn-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a Shawn snapshot file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ns2ns3">ns2/ns3<a class="headerlink" href="#ns2ns3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--ns2config-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a ns2 configuration file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+<tr>
+<td><strong>--ns2activity-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a ns2 activity file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+<tr>
+<td><strong>--ns2mobility-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a ns2 mobility file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gpsdat">GPSDAT<a class="headerlink" href="#gpsdat" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--gpsdat-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a GPSDAT file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gpx">GPX<a class="headerlink" href="#gpx" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--gpx-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a GPX file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="poi">PoI<a class="headerlink" href="#poi" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--poi-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a SUMO PoI file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="kml">KML<a class="headerlink" href="#kml" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--kml-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a KML file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ipg">IPG<a class="headerlink" href="#ipg" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--ipg-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates a IPG file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ssam">SSAM<a class="headerlink" href="#ssam" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--trj-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Generates the SSAM trajectory file named <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+<tr>
+<td><strong>--trj-veh-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>vehicle width for trajectory generation</td>
+</tr>
+<tr>
+<td><strong>--trj-veh-length</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>vehicle length for trajectory generation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fcd">fcd<a class="headerlink" href="#fcd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--fcd-filter</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Reads filter settings from <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+</tr>
+<tr>
+<td><strong>--fcd-filter-comment</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Extra comments to include in fcd file</td>
+</tr>
+<tr>
+<td><strong>--fcd-filter-type</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Modify the vehicle type of all written vehicles to <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+</tr>
+</tbody>
+</table>
+<p>The filter file is a simple csv format giving
+begin;end;bounding_box;outfile where the bounding box is x1,y1,x2,y2
+defining the lower left and the upper right corner of the area to
+extract. The coordinate format needs to fit the input format (so if the
+input has geo coordinates the bounding box needs to have geo coordinates
+as well). It is currently not possible to give the same output file for
+different filter lines.</p>
+<p>Example filter file:</p>
+<pre><code>0;50;500,400,600,500;out.xml
+50;100;550,450,600,500;out2.xml
+</code></pre>
+<h2 id="processing-options">Processing Options<a class="headerlink" href="#processing-options" title="Permanent link">&para;</a></h2>
+<p>Several options allow to fine-tune the processing.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--persons</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Whether persons should be included in the trace; <em>default: False</em></td>
+</tr>
+<tr>
+<td><strong>--penetration</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>A float between 0 and 1, defining the probability of a vehicle to be included in the output; <em>default: 1</em></td>
+</tr>
+<tr>
+<td><strong>--gps-blur</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>A float defining a random offset applied on the vehicle positions before exporting them; <em>default: 0</em></td>
+</tr>
+<tr>
+<td><strong>--boundary</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the bounding box as 'xmin,ymin,xmax,ymax'</td>
+</tr>
+<tr>
+<td><strong>--delta-t</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a><br><strong>-d</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a></td>
+<td>Defines the time sampling, if given; only every <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> time step will be exported.</td>
+</tr>
+<tr>
+<td><strong>--begin</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a><br><strong>-b</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a></td>
+<td>Time steps before <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> are not exported.</td>
+</tr>
+<tr>
+<td><strong>--end</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a><br><strong>-e</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a></td>
+<td>Time steps after <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> are not exported. Please note that some issues are known, here.</td>
+</tr>
+<tr>
+<td><strong>--seed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a><br><strong>-s</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>The randomizer seed to use.</td>
+</tr>
+<tr>
+<td><strong>--base-date</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a><br><strong>-s</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>The base date in seconds since the epoch (1970-01-01 00:00:00), the default is the current local time.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-options">Additional Options<a class="headerlink" href="#additional-options" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--help</strong><br><strong>-h</strong></td>
+<td>Shows a help screen.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h1>
+<ul>
+<li>This <a href="../../Tutorials/Trace_File_Generation/">tutorial on using
+  TraceExporter</a></li>
+</ul>
+<div style="border:1px solid #909090; min-height: 35px;" align="right">
+<span style="float: right; margin-top: -5px;"><a href="https://web.archive.org/web/20191005024529/https:/ec.europa.eu/research/fp7/index_en.cfm"><img src="../images/FP7-small.gif" alt="Seventh Framework Programme"></a>
+<a href="http://web.archive.org/web/20240722054138/https://verkehrsforschung.dlr.de/en/projects/colombo"><img src="../images/COLOMBO-small.png" alt="COLOMBO project"></a></span>
+<span style="">This part of SUMO was developed, reworked, or extended within the project
+<a href="http://web.archive.org/web/20240722054138/https://verkehrsforschung.dlr.de/en/projects/colombo">"COLOMBO"</a>, co-funded by the European Commission within the <a href="https://web.archive.org/web/20191005024529/https:/ec.europa.eu/research/fp7/index_en.cfm">Seventh Framework Programme</a>.</span></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

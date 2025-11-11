@@ -1,0 +1,972 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Output/FCDOutput/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>FCDOutput - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instantiating-within-the-simulation" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FCDOutput
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instantiating-within-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instantiating within the Simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generated Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#person-and-container-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Person and Container Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtering--restricting-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering / Restricting Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtering / Restricting Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restricting-the-set-of-vehicles-that-generate-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restricting the set of vehicles that generate output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricting-the-set-of-persons-and-containers-that-generate-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restricting the set of persons and containers that generate output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricting-the-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restricting the locations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricting-the-locations-by-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restricting the locations by shape
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricting-output-by-sensor-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restricting output by sensor range
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-the-written-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the written attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      NOTES
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualization example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accelerations-versus-distances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accelerations versus distances
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-trajectories-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      All trajectories over time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-trajectories-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selected trajectories over time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fcd-based-speeds-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      FCD based speeds over time
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>FCDOutput</h1>
+
+<p>The FCD (floating car data) export contains location and speed along
+with other information for every vehicle in the network at every time
+step. The output behaves somewhat like a super-accurate high-frequency
+GPS device for each vehicle. The outputs can be processed further using
+the <a href="../../../Tools/TraceExporter/">TraceExporter tool</a> for adapting
+frequency, equipment rates, accuracy and data format.</p>
+<h2 id="instantiating-within-the-simulation">Instantiating within the Simulation<a class="headerlink" href="#instantiating-within-the-simulation" title="Permanent link">&para;</a></h2>
+<p>The simulation generates this output when setting the option <strong>--fcd-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>. <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> is the
+name of the file the output will be written to. Any other file with this
+name will be overwritten, the destination folder must exist.</p>
+<p>By default, fcd-output is enabled for all vehicles and persons in the
+simulation with output in each simulation step. Using <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#devices">device assignment
+options or
+parameters</a>
+(i.e. <strong>--device.fcd.probability 0.25</strong>) the set of vehicles which generate fcd output can be reduced.
+The output period can be set by using option <strong>--device.fcd.period</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a>.
+To delay output (i.e. until some warm-up time has passed), the option <strong>--device.fcd.begin</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> may be used.</p>
+<h2 id="generated-output">Generated Output<a class="headerlink" href="#generated-output" title="Permanent link">&para;</a></h2>
+<p>The generated XML file looks like this:</p>
+<pre><code class="language-xml">&lt;fcd-export&gt;
+
+  &lt;timestep time=&quot;&lt;TIME_STEP&gt;&quot;&gt;
+      &lt;vehicle id=&quot;&lt;VEHICLE_ID&gt;&quot; x=&quot;&lt;VEHICLE_POS_X&gt;&quot; y=&quot;&lt;VEHICLE_POS_Y&gt;&quot; angle=&quot;&lt;VEHICLE_ANGLE&gt;&quot; type=&quot;&lt;VEHICLE_TYPE&gt;&quot;
+      speed=&quot;&lt;VEHICLE_SPEED&gt;&quot;/&gt;
+
+      ... more vehicles ...
+
+  &lt;/timestep&gt;
+
+  ... next timestep ...
+
+&lt;/fcd-export&gt;
+</code></pre>
+<p>The values without a tick in the "On" column need to be <a href="#further_options">enabled explicitly</a> and the ones without a tick at "Meso" are not available for the <a href="../../Meso/">mesoscopic simulation</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>On</th>
+<th>Meso</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timestep</td>
+<td>(simulation) seconds</td>
+<td>x</td>
+<td>x</td>
+<td>The time step described by the values within this timestep-element</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id</td>
+<td>x</td>
+<td>x</td>
+<td>The id of the vehicle</td>
+</tr>
+<tr>
+<td>x</td>
+<td>m or longitude</td>
+<td>x</td>
+<td>x</td>
+<td>The absolute X coordinate of the vehicle (center of front bumper). The value depends on the given geographic projection</td>
+</tr>
+<tr>
+<td>y</td>
+<td>m or latitude</td>
+<td>x</td>
+<td>x</td>
+<td>The absolute Y coordinate of the vehicle (center of front bumper). The value depends on the given geographic projection</td>
+</tr>
+<tr>
+<td>z</td>
+<td>m</td>
+<td>(x)</td>
+<td>x</td>
+<td>The z value of the vehicle (center of front bumper).<br><br><strong>Note:</strong> This value is only present if the network contains elevation data</td>
+</tr>
+<tr>
+<td>angle</td>
+<td>degree</td>
+<td>x</td>
+<td>x</td>
+<td>The angle of the vehicle in navigational standard (0-360 degrees, going clockwise with 0 at the 12'o clock position)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>id</td>
+<td>x</td>
+<td>x</td>
+<td>The name of the vehicle type</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>m/s</td>
+<td>x</td>
+<td>x</td>
+<td>The speed of the vehicle</td>
+</tr>
+<tr>
+<td>pos</td>
+<td>m</td>
+<td>x</td>
+<td>x</td>
+<td>The running position of the vehicle measured from the start of the current lane.</td>
+</tr>
+<tr>
+<td>lane</td>
+<td>id</td>
+<td>(x)</td>
+<td></td>
+<td>The id of the current lane (only available in microsimulation).</td>
+</tr>
+<tr>
+<td>edge</td>
+<td>id</td>
+<td>(x)</td>
+<td>x</td>
+<td>The id of the current edge (only available in meso).</td>
+</tr>
+<tr>
+<td>slope</td>
+<td>degree</td>
+<td>x</td>
+<td>x</td>
+<td>The slope of the vehicle in degrees (equals the slope of the road at the current position)</td>
+</tr>
+<tr>
+<td>signals</td>
+<td>bitset</td>
+<td></td>
+<td></td>
+<td>The <a href="../../../TraCI/Vehicle_Signalling/">signal state information</a> (blinkers, etc)</td>
+</tr>
+<tr>
+<td>acceleration</td>
+<td>m/s<sup>2&lt;/sup</td>
+<td></td>
+<td></td>
+<td>The longitudinal acceleration</td>
+</tr>
+<tr>
+<td>accelerationLat</td>
+<td>m/s<sup>2&lt;/sup</td>
+<td></td>
+<td></td>
+<td>The lateral acceleration (only with enabled sublane model)</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>m</td>
+<td></td>
+<td>x</td>
+<td>The <a href="../../Railways/#kilometrage_mileage_chainage">kilometrage / mileage position</a> of the vehicle.</td>
+</tr>
+<tr>
+<td>odometer</td>
+<td>m</td>
+<td></td>
+<td>x</td>
+<td>The odometer value (distance driven since departure).</td>
+</tr>
+<tr>
+<td>vehicle</td>
+<td>id</td>
+<td></td>
+<td>x</td>
+<td>The id of the vehicle the person is currently riding (only available for persons)</td>
+</tr>
+<tr>
+<td>posLat</td>
+<td>m</td>
+<td></td>
+<td></td>
+<td>The <a href="../../SublaneModel/#lateral_resolution_and_vehicle_position">lateral position</a> on the lane</td>
+</tr>
+<tr>
+<td>speedLat</td>
+<td>m/s</td>
+<td></td>
+<td></td>
+<td>The lateral speed (negative if the vehicle moves to the right)</td>
+</tr>
+<tr>
+<td>leaderID</td>
+<td>id</td>
+<td></td>
+<td></td>
+<td>The id of the leading vehicle</td>
+</tr>
+<tr>
+<td>leaderSpeed</td>
+<td>m/s</td>
+<td></td>
+<td></td>
+<td>The speed of the leader</td>
+</tr>
+<tr>
+<td>leaderGap</td>
+<td>m</td>
+<td></td>
+<td></td>
+<td>The gap to the leader</td>
+</tr>
+<tr>
+<td>segment</td>
+<td>m</td>
+<td></td>
+<td>x</td>
+<td>The <a href="../../Meso/#longitudinal_model">segment index within the current edge</a></td>
+</tr>
+<tr>
+<td>queue</td>
+<td>m</td>
+<td></td>
+<td>x</td>
+<td>The <a href="../../Meso/#longitudinal_model">queue index within the current edge</a></td>
+</tr>
+<tr>
+<td>entryTime</td>
+<td>m</td>
+<td></td>
+<td>x</td>
+<td>The time at which the vehicle entered the current segment</td>
+</tr>
+<tr>
+<td>eventTime</td>
+<td>m</td>
+<td></td>
+<td>x</td>
+<td>The earliest time at which the vehicle can leave the current segment</td>
+</tr>
+<tr>
+<td>blockTime</td>
+<td>m</td>
+<td></td>
+<td>x</td>
+<td>The time at which the vehicle was blocked from leaving the current segment (or -1 if not blocked)</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Whether a vehicle, container or person is being written (mainly useful for tabular output)</td>
+</tr>
+</tbody>
+</table>
+<p>All attributes from the <a href="../EmissionOutput/">emission output</a> can be added to the FCD output as well.
+They need to be enabled by using the option <strong>--fcd-output.attributes</strong>, see below.</p>
+<p>When the option <strong>--fcd-output.geo</strong> is set, the written (x,y)-coordinates will be the
+lon/lat geo-coordinates.</p>
+<h3 id="precision">Precision<a class="headerlink" href="#precision" title="Permanent link">&para;</a></h3>
+<p>By default fcd-output returns location values in meter with a precision
+of 1cm. (changeable by setting option <strong>--precision</strong>). If you set option
+--fcd-output.geo the values are lon,lat as decimal values with a
+precision of 6 decimal places (changeable by setting option <strong>--precision.geo</strong>)</p>
+<h2 id="person-and-container-output">Person and Container Output<a class="headerlink" href="#person-and-container-output" title="Permanent link">&para;</a></h2>
+<p>Any persons or container in the simulation will cause output of he
+following form:</p>
+<pre><code class="language-xml">&lt;fcd-export&gt;
+
+  &lt;timestep time=&quot;&lt;TIME_STEP&gt;&quot;&gt;
+      &lt;vehicle .../&gt;
+      ...
+      &lt;person id=&quot;...&quot; x=&quot;...&quot; y=&quot;...&quot; angle=&quot;...&quot; type=&quot;...&quot; speed=&quot;...&quot; edge=&quot;...&quot; slope=&quot;...&quot;/&gt;
+      ...
+      &lt;container id=&quot;...&quot; x=&quot;...&quot; y=&quot;...&quot; angle=&quot;...&quot; type=&quot;...&quot; speed=&quot;...&quot; edge=&quot;...&quot; slope=&quot;...&quot;/&gt;
+      ...
+  &lt;/timestep&gt;
+
+  ... next timestep ...
+
+&lt;/fcd-export&gt;
+</code></pre>
+<p>If persons or containers are transported within a vehicle, their
+respective <code>&lt;person&gt;</code> and <code>&lt;container&gt;</code> elements will be written as child elements of that
+vehicle.</p>
+<h2 id="filtering--restricting-output">Filtering / Restricting Output<a class="headerlink" href="#filtering--restricting-output" title="Permanent link">&para;</a></h2>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The generated output files can become quite large. To write <a href="https://en.wikipedia.org/wiki/Gzip">gzipped</a> output files, simply name the output file with an <code>.gz</code> extension. You can also write <a href="../../../TabularOutputs/">CSV or Parquet output</a>.</p>
+</div>
+<h3 id="restricting-the-set-of-vehicles-that-generate-output">Restricting the set of vehicles that generate output<a class="headerlink" href="#restricting-the-set-of-vehicles-that-generate-output" title="Permanent link">&para;</a></h3>
+<p>Output can be restricted to specific vehicle types or vehicle ids by <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#devices">controlling the set of vehicles that are equipped</a>   with the <strong>fcd</strong>-device. The following example restricts output to a
+  single vehicle called <em>ego</em>:</p>
+<pre><code>--device.fcd.explicit ego
+</code></pre>
+<p>The following example restricts fcd-output to a single flow out of the whole simulation</p>
+<pre><code>--device.fcd.probability 0 ...
+</code></pre>
+<pre><code class="language-xml">&lt;flow ...&gt;
+   &lt;param key=&quot;has.fcd.device&quot; value=&quot;true&quot;/&gt;
+&lt;/flow&gt;
+</code></pre>
+<h3 id="restricting-the-set-of-persons-and-containers-that-generate-output">Restricting the set of persons and containers that generate output<a class="headerlink" href="#restricting-the-set-of-persons-and-containers-that-generate-output" title="Permanent link">&para;</a></h3>
+<p>Output can be restricted to specific person or container types or person/container ids by <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#devices">controlling the set of persons that are equipped</a>   with the <strong>fcd</strong>-(person)-device. The following example restricts output to a
+  single person called <em>ego</em>:</p>
+<pre><code>--person-device.fcd.explicit ego
+</code></pre>
+<p>The following example restricts fcd-output to a single personFlow out of the whole simulation</p>
+<pre><code>--person-device.fcd.probability 0 ...
+</code></pre>
+<pre><code class="language-xml">&lt;personFlow ...&gt;
+   &lt;param key=&quot;has.fcd.device&quot; value=&quot;true&quot;/&gt;
+&lt;/personFlow&gt;
+</code></pre>
+<h3 id="restricting-the-locations">Restricting the locations<a class="headerlink" href="#restricting-the-locations" title="Permanent link">&para;</a></h3>
+<p>Output can be restricted to a specific set of edges by loading a list of edges from a file with option <strong>--fcd-output.filter-edges.input-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>. The file format for
+this is the same as the one when saving selections in  <a href="../../../Netedit/">netedit</a>:</p>
+<pre><code>edge:id1
+edge:id2
+...
+</code></pre>
+<h3 id="restricting-the-locations-by-shape">Restricting the locations by shape<a class="headerlink" href="#restricting-the-locations-by-shape" title="Permanent link">&para;</a></h3>
+<p>Output can be restricted to vehicles within a specified area by setting a list of <code>&lt;poly&gt;</code> ids with option <strong>--fcd-output.filter-shapes</strong>.
+The <a href="../../Shapes/">polygon shapes</a> must have been loaded from an additional file.</p>
+<h3 id="restricting-output-by-sensor-range">Restricting output by sensor range<a class="headerlink" href="#restricting-output-by-sensor-range" title="Permanent link">&para;</a></h3>
+<p>When not all vehicles are equipped with an <strong>fcd</strong>-device, other vehicles and persons in a radius around the equipped vehicles can be included in the output by setting option <strong>--device.fcd.radius</strong> to the desired range in m.</p>
+<h2 id="changing-the-written-attributes">Changing the written attributes<a class="headerlink" href="#changing-the-written-attributes" title="Permanent link">&para;</a></h2>
+<p>The option <strong>--fcd-output.attributes ATTR1,ATTR2,...</strong> restricts / extends the written attributes to the given list to customize output (can be any combination of the attributes above). By default all the values with a marker in the "on" column are written.
+The value <strong>all</strong> enables all attributes (including emission output). There are also some predefined attribute sets:
+- <strong>location</strong> refers to all location attributes enabled by default
+- <strong>emissions</strong> all direct emission values (CO, CO2 etc.)
+- <strong>misc</strong> all values in the table above which are not selected by default (and not in the emission output)</p>
+<h2 id="further-options">Further Options<a class="headerlink" href="#further-options" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>--fcd-output.geo</strong> will toggle output coordinates to WGS84 (for
+  geo-referenced networks)</li>
+<li><strong>--fcd-output.signals</strong> will add <a href="../../../TraCI/Vehicle_Signalling/">signal state
+  information</a> to the output</li>
+<li><strong>--fcd-output.distance</strong> will add <a href="../../Railways/#kilometrage_mileage_chainage">kilometrage</a> information to the output</li>
+<li><strong>--fcd-output.acceleration</strong> will add acceleration data to the output (also lateral acceleration when using the <a href="../../SublaneModel/">sublane model</a>)</li>
+<li><strong>--fcd-output.max-leader-distance FLOAT</strong> will add attributes leaderGap, leaderSpeed, leaderID whenever a vehicle has a leader within the given distance. Otherwise, leaderID will be "" and leaderGap, leaderSpeed will be -1.</li>
+<li><strong>--fcd-output.params KEY1,KEY2,...</strong> adds <a href="../../GenericParameters/">generic parameters</a> to the output (supports device and car-following model parameters as well as arbitrary user-define values)</li>
+</ul>
+<h2 id="notes">NOTES<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<p>In combination with the given geometry of the vehicles (shapes) you can
+build some nice animations, e.g <a href="https://worldwind.arc.nasa.gov/java/">NASA
+WorldWind</a> or <a href="https://earth.google.com">Google
+Earth</a>.</p>
+<h2 id="visualization-example">Visualization example<a class="headerlink" href="#visualization-example" title="Permanent link">&para;</a></h2>
+<h3 id="accelerations-versus-distances">Accelerations versus distances<a class="headerlink" href="#accelerations-versus-distances" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/Plot_trajectories.png" width="500px"/></p>
+<p>Generated with <a href="../../../Tools/Visualization/#accelerations_versus_distances">plot_trajectories.py</a>.</p>
+<h3 id="all-trajectories-over-time">All trajectories over time<a class="headerlink" href="#all-trajectories-over-time" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/allXY_output.png" width="500px"/></p>
+<p>Generated with <a href="../../../Tools/Visualization/#all_trajectories_over_time_1">plotXMLAttributes.py</a>.</p>
+<p><img src="../../images/allLocations_output.png" width="500px"/></p>
+<p>Generated with <a href="../../../Tools/Visualization/#all_trajectories_over_time_2">plot_trajectories.py</a>.</p>
+<h3 id="selected-trajectories-over-time">Selected trajectories over time<a class="headerlink" href="#selected-trajectories-over-time" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/vehLocations_output.png" width="500px"/></p>
+<p>Generated with <a href="../../../Tools/Visualization/#selected_trajectories_over_time_1">plotXMLAttributes.py</a>.</p>
+<p><img src="../../images/selectXY_output.png" width="500px"/></p>
+<p>Generated with <a href="../../../Tools/Visualization/#selected_trajectories_over_time_2">plot_trajectories.py</a>.</p>
+<h3 id="fcd-based-speeds-over-time">FCD based speeds over time<a class="headerlink" href="#fcd-based-speeds-over-time" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/timeSpeed_output.png" width="500px"/></p>
+<p>Generated with <a href="../../../Tools/Visualization/#fcd_based_speeds_over_time">plot_trajectories.py</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

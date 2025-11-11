@@ -1,0 +1,528 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tutorials/FundamentalDiagram/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>FundamentalDiagram - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FundamentalDiagram
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>The <a href="https://en.wikipedia.org/wiki/Fundamental_diagram_of_traffic_flow">Fundamental diagram of traffic
+flow</a>
+describes the relationship between flow (vehicles per hour) and density
+(vehicles per km).</p>
+<p>Both measures can be obtained from
+<a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgeData-output</a>.
+The <em>density</em> value measures vehicles per km and the flow can be
+computed from <em>entered</em> * 3600 / <em>period</em> where <em>period</em> is the specified
+aggregation interval of the output.</p>
+<p>Generally, this can be computed for any kind of scenario as long as this
+scenario covers the desired range of traffic densities.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>How to achieve high densities at vehicle insertion is explained at <a href="../../Simulation/RoadCapacity/">Road Capacity</a></p>
+</div>
+<p>Plots may be created with <a href="../../Tools/Visualization/#fundamental_diagram_from_edgedata">plotXMLAttributes</a>.
+<img src="../images/plotAttrs_fundamental.png" width="800px"/></p>
+<h1 id="fundamental-diagram-of-a-closed-circular-route">Fundamental diagram of a closed circular route<a class="headerlink" href="#fundamental-diagram-of-a-closed-circular-route" title="Permanent link">&para;</a></h1>
+<p>A common scenario that is used to generate the fundamental diagram is a
+circular route where the density is increased over time. Such a scenario
+can be found at <a href="https://github.com/eclipse/sumo/blob/master/tests/sumo/cf_model/drive_in_circles"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/tests/sumo/cf_model/drive_in_circles</a>.</p>
+<p>There are different ways for increasing the density. The key problem
+that must be solved is that density can only be increased when there is
+sufficient space to insert additional vehicles. In a closed system, all
+the space is eventually taken up by the existing vehicles and the safety
+gaps between them. Additional space can only be obtained by lowering the
+speed in some parts of the circle to reduce these gaps.
+A special case are scenarios that feature spontaneous break down of speed and a traveling jam wave which permits different local densities over time.</p>
+<h2 id="reducing-the-speed-evenly">Reducing the speed evenly<a class="headerlink" href="#reducing-the-speed-evenly" title="Permanent link">&para;</a></h2>
+<p>An elegant way to reduce the speed is to initialize the network with
+evenly spaced vehicles at a predefined density. For the circle scenario
+this can be accomplished by the following demand definition:</p>
+<pre><code class="language-xml">&lt;route id=&quot;circle&quot; edges=&quot;6/1to7/1 7/1to8/1 8/1to9/1 9/1to10/1 10/1to1/1 1/1to2/1 2/1to3/1 3/1to4/1 4/1to5/1 5/1to6/1&quot;/&gt;
+&lt;flow id=&quot;0&quot; type=&quot;default&quot; route=&quot;circle&quot; departEdge=&quot;random&quot; begin=&quot;0&quot; end=&quot;1&quot; number=&quot;1000&quot; departPos=&quot;last&quot; departSpeed=&quot;15&quot; departLane=&quot;free&quot;/&gt;
+</code></pre>
+<p>The disadvantage of this approach is the need to run the simulation multiple times with different values of
+<strong>departSpeed</strong> to achieve different densities.</p>
+<h2 id="reducing-the-speed-locally">Reducing the speed locally<a class="headerlink" href="#reducing-the-speed-locally" title="Permanent link">&para;</a></h2>
+<p>An alternative approach is to reduce the speed at some part of the
+circle repeatedly and insert vehicles downstream of the speed reduction
+where the local density is reduced for a time. This can be accomplished
+with the following definition (to be placed in an <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>)</p>
+<pre><code class="language-xml">&lt;variableSpeedSign id=&quot;disturbance&quot; lanes=&quot;10/1to1/1_0&quot;&gt;
+    &lt;step time=&quot;2000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;2100&quot;/&gt;
+    &lt;step time=&quot;3000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;3100&quot;/&gt;
+    &lt;step time=&quot;4000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;4100&quot;/&gt;
+    &lt;step time=&quot;5000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;5200&quot;/&gt;
+    &lt;step time=&quot;6000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;6200&quot;/&gt;
+    &lt;step time=&quot;7000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;7200&quot;/&gt;
+    &lt;step time=&quot;8000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;8300&quot;/&gt;
+    &lt;step time=&quot;9000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;9300&quot;/&gt;
+    &lt;step time=&quot;10000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;10300&quot;/&gt;
+    &lt;step time=&quot;11000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;11400&quot;/&gt;
+    &lt;step time=&quot;12000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;12400&quot;/&gt;
+    &lt;step time=&quot;13000&quot; speed=&quot;1&quot;/&gt;
+    &lt;step time=&quot;13400&quot;/&gt;
+&lt;/variableSpeedSign&gt;
+</code></pre>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This speed reduction will introduce some small artifacts into the resulting fundamental diagram.</p>
+</div>
+<p>And a flow that continuously tries to add vehicles:</p>
+<pre><code class="language-xml">&lt;flow id=&quot;0&quot; type=&quot;default&quot; begin=&quot;0&quot; end=&quot;60000&quot; period=&quot;3&quot; departPos=&quot;last&quot; departSpeed=&quot;max&quot; departLane=&quot;free&quot;&gt;
+  &lt;route edges=&quot;1/1to2/1 2/1to3/1 3/1to4/1 4/1to5/1 5/1to6/1&quot;/&gt;
+&lt;/flow&gt;
+</code></pre>
+<h2 id="reducing-the-speed-spontaneously">Reducing the speed spontaneously<a class="headerlink" href="#reducing-the-speed-spontaneously" title="Permanent link">&para;</a></h2>
+<p>Some car-following models permit spontaneous break-down of flow given the right configuration parameters, density or lane changing situation.
+For the default Krauss carFollowModel, it is sufficient to set sigma ~ 0.8 to observe stochastic break-down at densities of ~ 50 veh/km and given sigma = 1 the break-down may also occur at 30 veh/km.</p>
+<p>Some tests cases can be obtained at</p>
+<ul>
+<li><a href="https://sumo.dlr.de/extractTest.php?path=sumo/cf_model/fundamental/circle_krauss_d50_t0.8">circle_krauss_d50_t0.8</a></li>
+<li><a href="https://sumo.dlr.de/extractTest.php?path=sumo/cf_model/fundamental/circle_krauss_d30_t1">circle_krauss_d30_t1</a></li>
+<li><a href="https://sumo.dlr.de/extractTest.php?path=sumo/cf_model/fundamental/circle_krauss_bikes_sublane">circle_krauss_bikes_sublane</a></li>
+</ul>
+<h1 id="fundamental-diagram-on-a-straight-piece-of-road">Fundamental diagram on a straight piece of road<a class="headerlink" href="#fundamental-diagram-on-a-straight-piece-of-road" title="Permanent link">&para;</a></h1>
+<h2 id="reducing-the-speed-spontaneously_1">Reducing the speed spontaneously<a class="headerlink" href="#reducing-the-speed-spontaneously_1" title="Permanent link">&para;</a></h2>
+<p>It's possible to observe spontaneous breakdown given the sufficient length of road, and the right configuration of  parameters, density and lane changing situations.</p>
+<p>Some tests cases can be obtained at</p>
+<ul>
+<li><a href="https://sumo.dlr.de/extractTest.php?path=sumo/cf_model/fundamental/krauss_t0.9_s1">krauss_t0.9_s1</a></li>
+<li><a href="https://sumo.dlr.de/extractTest.php?path=sumo/cf_model/fundamental/krauss_t0.9_s0.8">krauss_t0.9_s0.8</a></li>
+<li><a href="https://sumo.dlr.de/extractTest.php?path=sumo/cf_model/fundamental/krauss_bikes_t1_s1">krauss_bikes_t1_s1</a></li>
+<li><a href="https://sumo.dlr.de/extractTest.php?path=sumo/cf_model/fundamental/krauss_bikes_sublane">krauss_bikes_sublane</a></li>
+<li><a href="https://sumo.dlr.de/extractTest.php?path=sumo/cf_model/fundamental/2lane_krauss_t0.8_s0.5">2lane_krauss_t0.8_s0.5</a></li>
+<li><a href="https://sumo.dlr.de/extractTest.php?path=sumo/cf_model/fundamental/2lane_IDM">2lane_IDM</a></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These tests set a low value of <strong>--end</strong> to save time. To get a fuller fundamental diagram, increase the end time.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

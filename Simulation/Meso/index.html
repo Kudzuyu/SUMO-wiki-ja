@@ -1,0 +1,659 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Meso/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Meso - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#from-30000-feet" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Meso
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="from-30000-feet">From 30.000 feet<a class="headerlink" href="#from-30000-feet" title="Permanent link">&para;</a></h1>
+<p>Starting with version 0.26.0 the mesoscopic model is available in the
+<a href="../../sumo/">sumo</a> distribution (<a href="./">MESO</a> has been
+developed alongside SUMO since 2002 but was not publicly available).
+<a href="./">MESO</a> refers to a mesoscopic simulation model which
+uses the same input data as the main <a href="../../sumo/">sumo</a> model. It
+computes vehicle movements with queues and runs up to 100 times faster
+than the microscopic model of <a href="../../sumo/">sumo</a>. Additionally, due
+to using a coarser model for intersections and lane-changing it is more
+tolerant of network modelling errors than <a href="../../sumo/">sumo</a>.</p>
+<ul>
+<li><strong>Purpose:</strong> Simulates a defined scenario</li>
+<li><strong>System:</strong> portable (Linux/Windows is tested); runs on command line</li>
+<li><strong>Input (mandatory):</strong></li>
+<li>A) a road network as generated via <a href="../../netconvert/">netconvert</a> or <a href="../../netgenerate/">netgenerate</a>, see <a href="../../#network_building">Building Networks</a></li>
+<li>
+<p>B) a set of routes (as generated by <a href="../../duarouter/">duarouter</a>, <a href="../../jtrrouter/">jtrrouter</a>, <a href="../../dfrouter/">dfrouter</a>, or <a href="../../activitygen/">activitygen</a>, see also <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/">Definition of Vehicles, Vehicle Types, and Routes</a>)</p>
+</li>
+<li>
+<p><strong>Input (optional):</strong> Additional definitions of traffic lights, variable speed signs, output detectors etc.</p>
+</li>
+<li><strong>Output:</strong> SUMO allows to generate a wide set of outputs; visualization is done using <a href="../../sumo-gui/">sumo-gui</a></li>
+<li><strong>Programming Language:</strong> C++</li>
+</ul>
+<h1 id="usage-description">Usage Description<a class="headerlink" href="#usage-description" title="Permanent link">&para;</a></h1>
+<p>The mesoscopic model uses the same input files and generates (almost)
+the same outputs as <a href="../../sumo/">sumo</a>. To use
+<a href="./">MESO</a> the option <strong>--mesosim</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a> must be set. Additional options are
+described at <a href="../../sumo/#mesoscopic">sumo#mesoscopic</a></p>
+<h1 id="model-description">Model Description<a class="headerlink" href="#model-description" title="Permanent link">&para;</a></h1>
+<p>The simulation model is based on the work of <a href="https://kups.ub.uni-koeln.de/1274/">Eissfeldt, Vehicle-based modelling of traffic</a>. The original
+model was focused on motorway traffic. The current implementation
+contains significant extensions to support the simulation of
+heterogeneous urban traffic as well.</p>
+<h2 id="used-vtype-parameters">Used vType parameters<a class="headerlink" href="#used-vtype-parameters" title="Permanent link">&para;</a></h2>
+<p>Only a few vType parameters affect the mesoscopic simulation. They are listed below</p>
+<ul>
+<li>vClass</li>
+<li>length</li>
+<li>minGap</li>
+<li>maxSpeed</li>
+<li>speedFactor, speedDev (see <a href="#further_congestion_effects">Further Congestion Effects</a>)</li>
+<li><a href="#impatience">impatience</a></li>
+<li>accel,decel (only for computing junction passing time when the <a href="#junction_model">microscopic junction model</a> is active)</li>
+<li>tau</li>
+</ul>
+<h2 id="longitudinal-model">Longitudinal Model<a class="headerlink" href="#longitudinal-model" title="Permanent link">&para;</a></h2>
+<p>Vehicles are placed in traffic queues with a maximum length specified by
+option <strong>--meso-edgelength</strong>. To accomplish this each edge is split into 1 or more queues of
+equal length. Generally a queue represents all lanes of an edge but at
+intersections with dedicated turning lanes, multiple queues are used.
+Vehicles generally leave the queues in the order in which they entered
+it. The core idea of the model is to compute the time at which a vehicle
+exits the queue according to the following criteria:</p>
+<ol>
+<li>the traffic state in the current and subsequent queue.</li>
+<li>the minimum travel time based on vehicle speed, and speed limit</li>
+<li>the state of the intersection for the last queue of an edge
+    according to the configuration of the
+    <a href="#junction_model">#Junction_Model</a></li>
+</ol>
+<p>The first point is accomplished by classifying each queue as either
+<em>jammed</em> or <em>free</em> according to a traffic density threshold (configured
+with option <strong>--meso-jam-threshold</strong>). The minimum headway between vehicles is then computed
+differently for each of the four distinct possible cases. The behavior
+for each case is configured using the options</p>
+<ul>
+<li><strong>meso-tauff</strong>: minimum headway when traveling from free segment to
+  free segment (default <em>1.13</em>)</li>
+<li><strong>meso-taufj</strong>: minimum headway when traveling from free segment to
+  jammed segment (default <em>1.13</em>)</li>
+<li><strong>meso-taujf</strong>: minimum headway when traveling from jammed segment
+  to free segment (default <em>1.73</em>)</li>
+<li><strong>meso-taujj</strong>: headway for 'spaces' to travel backwards through the
+  jam. When a segment is completely occupied the actual headway is
+  VEHICLE_NUMBER * taujj. (default <em>1.4</em>)</li>
+</ul>
+<p>The headways are scaled according to the inverse of the lane number
+(with three lanes, the headways are divided by 3).</p>
+<p>Each of these values is multiplied with the 'tau' configure in the vehicle type (<code>vType</code>) of the considered vehicle (default 'tau' is <em>1</em>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The values tauff, taufj and taujf denote net-time gaps (vehicle front bumper to leader back-bumper). The actual gross time gap is computed from this by taking into account the vehicle length.</p>
+</div>
+<p>The value taujj configures the speed with which the jam front moves
+upstream when a multi-segment jam clears.</p>
+<p>Backward-moving jams are possible due to the headway effects when
+meso-tauff is lower than meso-taujf.</p>
+<h3 id="meso-jam-threshold">meso-jam-threshold<a class="headerlink" href="#meso-jam-threshold" title="Permanent link">&para;</a></h3>
+<p>For each queue (also called segment in the GUI) an occupancy threshold
+value determines whether that queue is <em>jammed</em> or <em>free</em>. The following
+numerical values are supported for option <strong>--meso-jam-threshold</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>:</p>
+<ul>
+<li>value = -1: Threshold is computed so that vehicles driving at the
+  speed limit do not jam. This is the default behavior which is
+  recommend for networks with varying speed limits since the free-flow
+  occupancy depends on speed.</li>
+<li>value &lt; 0: Threshold is computed as above but the free-flow
+  occupancy is computed for (speedLimit * -value). As this value
+  approaches 0 (from below) jamming is reduced. Values below -1 cause
+  increased jamming</li>
+<li>value &gt; 0: The value is used directly as the threshold fraction for
+  all queues (i.e. 0.4 means that above 40% occupancy the queue is
+  jammed)</li>
+<li>value = 1: Jamming is disabled</li>
+</ul>
+<h3 id="speeds">Speeds<a class="headerlink" href="#speeds" title="Permanent link">&para;</a></h3>
+<p>Meso vehicles do not model their current speed. Therefore vehicle attributes concerning acceleration, departSpeed or arrivalSpeed take no effect.
+The only relevant attributes are those that concern the <a href="../VehicleSpeed/#edgelane_speed_and_speedfactor">maximum possible speed</a>: <code>maxSpeed</code>, <code>desiredMaxSpeed</code>,<code>speedFactor</code>, <code>speedDev</code>.
+The maximum speed is used to computed a lower bound on travel time along an edge. When the meso model computes a vehicle speed, it gives an estimated average speed along the current segment based on the earliest computed time for leaving the segment (which may include jam effects). If a vehicle is known to be blocked from leaving a segment it's speed is defined as 0.</p>
+<h3 id="further-congestion-effects">Further Congestion Effects<a class="headerlink" href="#further-congestion-effects" title="Permanent link">&para;</a></h3>
+<p>Another mechanism which creates a negative correlation between density
+and speed comes through vehicle (preferred)-speed distributions. At
+higher traffic densities the probability of being slowed down because a
+slow vehicle is ahead in the queue rises. This effect size can be
+controlled by <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#speed_distributions">changing the spread of the speed distribution.</a>
+On multi-lane edges, <a href="#lateral_model">overtaking can be enabled</a> to reduce this slow-down effect.</p>
+<h3 id="jam-resolution">Jam-Resolution<a class="headerlink" href="#jam-resolution" title="Permanent link">&para;</a></h3>
+<p>The option <strong>--meso-recheck</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> can be used to delay traffic flow into a fully occupied segment. Whenever a vehicle cannot move into the next segment because it is full, the given value acts as a time delay before checking again whether the segment has capacity to receive another vehicle. By default this delay is set to 0.</p>
+<h2 id="lateral-model">Lateral Model<a class="headerlink" href="#lateral-model" title="Permanent link">&para;</a></h2>
+<p>Lateral movement is not modelled explicitly. Vehicles may overtake each
+other (swap their position) if the option <strong>--meso-overtaking</strong> is enabled. This is a
+randomized process depending on vehicle speeds and density.</p>
+<h2 id="junction-model">Junction Model<a class="headerlink" href="#junction-model" title="Permanent link">&para;</a></h2>
+<p>There are 3 basic options for modelling junction control</p>
+<ol>
+<li>
+<p><strong>--meso-junction-control false</strong> (the default): No junction control takes place. This should only be
+    used for motorway scenarios or in combination with the penalty options below</p>
+</li>
+<li>
+<p><strong>--meso-junction-control true</strong>: junctions are modeled as in the <a href="../Intersections/#internal_links">simplified microsim model</a> (<strong>--no-internal-links true</strong>).</p>
+</li>
+<li>
+<p><strong>--meso-junction-control.limited true</strong>: No junction control takes place as long as the target queue is in
+    the unjammed state (<em>free</em>). When trying to enter a jammed queue,
+    junction control as in case 2 is used.</p>
+</li>
+</ol>
+<p>Additional options can be used to control intersection delays:</p>
+<h3 id="tls-penalty">TLS-Penalty<a class="headerlink" href="#tls-penalty" title="Permanent link">&para;</a></h3>
+<p>When setting <strong>--meso-tls-penalty</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>: to a value &gt; 0 (default is 0), a travel time penalty is applied
+according to the average delay time (based on red phase duration).
+This takes precedence over any of the above <strong>--meso-junction-control</strong> settings for tls controlled
+intersections. FLOAT is used as a scaling factor that roughly
+corresponds to coordination (1.0 corresponds to uncoordinated traffic
+lights, whereas values approaching 0 model near-perfect coordination).
+(The limit case of no-penalty can be achieved by setting <strong>--meso-junction-control false</strong>)</p>
+<p>For an option value of <em>p</em>, The time penalty is computed by scaling the
+expected waiting time for random arrival within the cycle</p>
+<pre><code>travelTimePenalty = p * (redTime * redTime + redTime) / (2 * cycleTime)
+</code></pre>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When edges ahead of a traffic light are shorter than 15m an <a href="https://github.com/eclipse-sumo/sumo/issues/16014">unrealistic reduction in traffic flow</a> will result from the use of this option and a warning will be given.
+To identify affected edges in netedit, the tool <code>net/netcheck.py net.net.xml --short-tls-edges --selection-output selection.txt</code> can be used.</p>
+</div>
+<h3 id="tls-flow-penalty">TLS-Flow-Penalty<a class="headerlink" href="#tls-flow-penalty" title="Permanent link">&para;</a></h3>
+<p>When setting <strong>--meso-tls-flow-penalty</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>: to a value &gt; 0 (default is 0), a headway penalty is applied
+ which serves to reduce the maximum flow across a tls-controlled intersection (In contrast to actual junction control, they flow is spread evenly across the phase cycle rather than being concentrated during the green phases).
+When the flow penalty is set to a value of 1 the minimum headway time is increased to model the maximum capacity
+according to the proportion of green time to cycle time.
+Higher penalty values can be used to reduce the flow even further while lower values increase the maximum flow.
+The latter is useful if the green split is not known exactly (because the traffic light program is guessed heuristically).</p>
+<pre><code>greenFraction = MIN2(1.0, (cycleTime - redDuration) / cycleTime) / penalty))
+headway = defaultHeadway / greenFraction
+</code></pre>
+<p>Note, that the maximum flow cannot exceed the value at permanent green light regardless of penalty value.</p>
+<h3 id="partial-tls-penalties">Partial TLS Penalties<a class="headerlink" href="#partial-tls-penalties" title="Permanent link">&para;</a></h3>
+<p>The above two options apply to all traffic lights in the network by default.
+By adding the <a href="../GenericParameters/">generic parameter</a> key <code>&lt;param key="meso.tls.control" value="true"/&gt;</code> to a <code>&lt;tlLogic&gt;</code> definition, individual traffic lights can be made exempt from the penalties and instead by treated in full detail (when option <strong>--meso-junction-control</strong> is also set).</p>
+<p>It is also possible to load an additional file where only this option is set:</p>
+<pre><code>    &lt;tlLogic id=&quot;C&quot; programID=&quot;0&quot;&gt;
+        &lt;param key=&quot;meso.tls.control&quot; value=&quot;true&quot;/&gt;
+    &lt;/tlLogic&gt;
+</code></pre>
+<h3 id="penalty-at-uncontrolled-intersections">Penalty at uncontrolled intersections<a class="headerlink" href="#penalty-at-uncontrolled-intersections" title="Permanent link">&para;</a></h3>
+<p><strong>--meso-minor-penalty</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> can be used to apply a fixed time penalty when passing an unprioritzed
+link (this is disabled when --meso-junction-control.limited is set and
+junction control is active for that link)</p>
+<h3 id="impatience">Impatience<a class="headerlink" href="#impatience" title="Permanent link">&para;</a></h3>
+<p>Vehicles that reach an <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#impatience">impatience</a> value of 1 (maximum) can pass an intersection regardless of foe traffic with higher priority. The time to reach maximum impatience can be configured with option <strong>--time-to-impatience</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a>.</p>
+<h2 id="configuration-by-edge-type">Configuration by edge type<a class="headerlink" href="#configuration-by-edge-type" title="Permanent link">&para;</a></h2>
+<p>The model parameters described above can be customized for each edge type id by loading the following configuration from an additional file:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+    &lt;type id=&quot;highway.motorway&quot; ...&gt;
+        &lt;meso tauff=&quot;1.13&quot; taufj=&quot;1.13&quot; taujf=&quot;1.73&quot; taujj=&quot;1.4&quot; jamThreshold=&quot;-1&quot;
+             multiQueue=&quot;true&quot; junctionControl=&quot;false&quot; tlsPenalty=&quot;0&quot; tlsFlowPenalty=&quot;0&quot;
+             minorPenalty=&quot;0&quot; overtaking=&quot;false&quot;/&gt;
+    &lt;/type&gt;
+&lt;/additional&gt;
+</code></pre>
+<p>All attributes are optional and default to the value of the option with the corresponding option name. (i.e. tauff ~ <strong>meso-tauff</strong>, tlsPenalty ~ <strong>meso-tls-penalty</strong>, ...).</p>
+<h2 id="multimodal-simulation">Multimodal simulation<a class="headerlink" href="#multimodal-simulation" title="Permanent link">&para;</a></h2>
+<p>By default, meso is meant to be used for road vehicles (i.e. cars and trucks). To make use of bicycles and edges that do not permit passenger cars, option <strong>--meso-lane-queue</strong> must be set.
+This will turn every lane into a distinct queue instead of treating parallel lanes as a single queue.</p>
+<h2 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h2>
+<p>Many of the output options of SUMO are supported but the resulting files
+differ somewhat:</p>
+<ul>
+<li>No lane specific output is possible.</li>
+<li><a href="../Output/Lane-_or_Edge-based_Traffic_Measures/#lane-based_network_states">&lt;laneData&gt;-output</a>
+    will be treated like <code>&lt;edgeData&gt;</code>-output.</li>
+<li><a href="../Output/RawDump/">netstate-dump</a> will
+    report vehicles as child elements of <code>&lt;edge&gt;</code> instead of <code>&lt;lane&gt;</code>.</li>
+<li>Induction loops write attributes that are similar to <a href="../Output/Lane-_or_Edge-based_Traffic_Measures/"><code>&lt;edgeData&gt;</code>-output</a> output</li>
+</ul>
+<p>The following outputs are not supported:</p>
+<ul>
+<li><a href="../Output/Lanearea_Detectors_%28E2%29/">Lane area detectors (E2)</a></li>
+<li><a href="../Output/Multi-Entry-Exit_Detectors_%28E3%29/">Multi-Entry-Exit detectors (E3)</a></li>
+</ul>
+<h2 id="limitations-compared-to-sumo">Limitations compared to SUMO<a class="headerlink" href="#limitations-compared-to-sumo" title="Permanent link">&para;</a></h2>
+<p>The following SUMO features are not supported:</p>
+<ul>
+<li><a href="../Traffic_Lights/#type_actuated">Actuated traffic lights</a></li>
+<li>Electric model</li>
+<li>Wireless model</li>
+<li>Opposite-direction driving</li>
+<li>Sublane-model</li>
+<li>Boarding durations for passengers</li>
+</ul>
+<h1 id="meso-gui">MESO-GUI<a class="headerlink" href="#meso-gui" title="Permanent link">&para;</a></h1>
+<p>The mesoscopic simulation can be observed with
+<a href="../../sumo-gui/">sumo-gui</a> when running with option <strong>--mesosim</strong>. The
+difference between micro- and meso-simulation is not visible from
+isolated vehicles. Once there are multiple vehicles waiting in a queue
+it becomes more apparent due to differences in spacing between the
+vehicles. And from the fact that vehicles appear to <em>jump</em> in 100m
+increments (which is the default segment length). When right-clicking on
+vehicles or edges and selecting 'Show parameters' the set of values is
+different between the microscopic and mesoscopic model. For larger
+simulations the speed difference will also be noticeable. Due to being
+based on edges rather than lanes, some of the visualization options are
+different when running the mesoscopic model as well.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

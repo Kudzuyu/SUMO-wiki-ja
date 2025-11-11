@@ -10,8 +10,11 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TraCI/">
       
+      
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
@@ -19,17 +22,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#traci" class="md-skip">
+        <a href="#introduction-to-traci" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -110,40 +114,50 @@
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href=".." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -289,8 +346,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -299,51 +354,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#traci-の紹介" class="md-nav__link">
-    TraCI の紹介
+  <a href="#introduction-to-traci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to TraCI
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#使いかた" class="md-nav__link">
-    使いかた
+  <a href="#using-traci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using TraCI
+    </span>
   </a>
   
-    <nav class="md-nav" aria-label="使いかた">
+    <nav class="md-nav" aria-label="Using TraCI">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sumo-スタートアップ" class="md-nav__link">
-    SUMO スタートアップ
+  <a href="#sumo-startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      SUMO startup
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#複数クライアント" class="md-nav__link">
-    複数クライアント
+  <a href="#multiple-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple clients
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#プロトコル仕様" class="md-nav__link">
-    プロトコル仕様
+  <a href="#protocol-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocol specification
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#traci-コマンド" class="md-nav__link">
-    TraCI コマンド
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#シャットダウン" class="md-nav__link">
-    シャットダウン
+  <a href="#shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shutdown
+    </span>
   </a>
   
 </li>
@@ -354,44 +414,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sumo-をライブラリとして使う" class="md-nav__link">
-    SUMO をライブラリとして使う
+  <a href="#traci-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      TraCI Commands
+    </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#使用例" class="md-nav__link">
-    使用例
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#リソース" class="md-nav__link">
-    リソース
-  </a>
-  
-    <nav class="md-nav" aria-label="リソース">
+    <nav class="md-nav" aria-label="TraCI Commands">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#プログラミング言語ごとのインターフェース" class="md-nav__link">
-    プログラミング言語ごとのインターフェース
+  <a href="#value-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Retrieval
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#v2x-シミュレーション" class="md-nav__link">
-    V2X シミュレーション
+  <a href="#state-changing" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Changing
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#その他" class="md-nav__link">
-    その他
+  <a href="#subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscriptions
+    </span>
   </a>
   
 </li>
@@ -402,23 +456,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#リファレンス" class="md-nav__link">
-    リファレンス
+  <a href="#using-sumo-as-a-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using SUMO as a library
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#パフォーマンス" class="md-nav__link">
-    パフォーマンス
+  <a href="#example-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example use
+    </span>
   </a>
   
-    <nav class="md-nav" aria-label="パフォーマンス">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#例" class="md-nav__link">
-    例
+  <a href="#interfaces-by-programming-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interfaces by Programming Language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v2x-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      V2X simulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Resources
+    </span>
   </a>
   
 </li>
@@ -429,30 +516,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#現在および今後の開発" class="md-nav__link">
-    現在および今後の開発
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#トラブルシューティング" class="md-nav__link">
-    トラブルシューティング
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance
+    </span>
   </a>
   
-    <nav class="md-nav" aria-label="トラブルシューティング">
+    <nav class="md-nav" aria-label="Performance">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#出力ファイルが閉じられていない" class="md-nav__link">
-    出力ファイルが閉じられていない
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-and-future-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current and Future Development
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-files-are-not-closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output files are not closed.
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#古い-api" class="md-nav__link">
-    古い API
+  <a href="#obsolete-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obsolete APIs
+    </span>
   </a>
   
 </li>
@@ -470,185 +598,361 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="traci">TraCI<a class="headerlink" href="#traci" title="Permanent link">&para;</a></h1>
-<h2 id="traci-の紹介">TraCI の紹介<a class="headerlink" href="#traci-の紹介" title="Permanent link">&para;</a></h2>
-<p>TraCI は "<strong>Tra</strong>ffic <strong>C</strong>ontrol <strong>I</strong>nterface"の略です。
-実行中の道路シミュレーションへのアクセスのために、オブジェクトからの値の取得と振るまいの操作を「オンラインで」行なうことができます。</p>
-<h2 id="使いかた">使いかた<a class="headerlink" href="#使いかた" title="Permanent link">&para;</a></h2>
-<h3 id="sumo-スタートアップ">SUMO スタートアップ<a class="headerlink" href="#sumo-スタートアップ" title="Permanent link">&para;</a></h3>
-<p>TraCI は<a href="../sumo/">SUMO</a>[SUMO-link]へのアクセスのために、TCP ベースのクライアント/サーバー構造を使用します。
-これによって<a href="../sumo/">SUMO</a>[SUMO-link]はサーバーとして振舞い、コマンドラインオプション <strong><code>--repote-port</code><a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>(datatype-link)</strong>をうけとってリスニングポートの番号とします。</p>
-<p><strong>--remote-port <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></strong>オプションとともに開始すると、<a href="../sumo/">SUMO</a>[SUMO-link]はシミュレーションのみを用意し、外部アプリケーションが接続してコントロールを引き受けるまで待機します。
-<strong>--end [<code>&lt;TIME&gt;</code>]</strong>*オプションは<a href="../sumo/">SUMO</a>[SUMO-link]が TraCI サーバーとして動いている場合無視され、クライアントがシミュレーション終了を通知するまで動きつづけることに注意してください。</p>
-<p>[SUMO-GUI]をサーバーとして使う場合、シミュレーションは[開始ボタン<strong>を押して始めるか、</strong>--start**オプションで TraCI コマンド実行前に開始しておく必要があります。</p>
-<h3 id="複数クライアント">複数クライアント<a class="headerlink" href="#複数クライアント" title="Permanent link">&para;</a></h3>
-<p>シミュレーションに接続できるクライアントの数はオプション<strong>--num-clients</strong><a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>(datatype-link)**で設定できます(デフォルト: 1)。
-複数のクライアントを用いる場合には、クライアントの起動順序を[SetOrder コマンド]で明示する必要があることに注意してください。</p>
-<p>個々のクライアントにはユニークな(もしそうでなければ任意の)整数値が指定され、クライアントのコマンド各シミュレーションステップごと、指定された整数値の昇順に実行されます。</p>
-<p>クライアントは各シミュレーションステップ後に自動で同期されます。
-このことは、全てのクライアントから<code>simulationStep</code>コマンドが呼ばれない限り、シミュレーションが進まないことを示します。
-また、<code>simulationStep</code>コマンドはシミュレーションが進んだ後にクライアントに制御を返します。</p>
+
+  <h1>TraCI</h1>
+
+<h2 id="introduction-to-traci">Introduction to TraCI<a class="headerlink" href="#introduction-to-traci" title="Permanent link">&para;</a></h2>
+<p>TraCI is the short term for "<strong>Tra</strong>ffic <strong>C</strong>ontrol <strong>I</strong>nterface".
+Giving access to a running road traffic simulation, it allows to
+retrieve values of simulated objects and to manipulate their behavior
+"on-line". If performance is an issue you should consider using
+<a href="../Libsumo/">libsumo</a> instead. You can also start with TraCI and switch
+to libsumo later, since the function signatures are the same.</p>
+<h2 id="using-traci">Using TraCI<a class="headerlink" href="#using-traci" title="Permanent link">&para;</a></h2>
+<h3 id="sumo-startup">SUMO startup<a class="headerlink" href="#sumo-startup" title="Permanent link">&para;</a></h3>
+<p>TraCI uses a TCP based client/server architecture to provide access to
+<a href="../sumo/">sumo</a>. Thereby, <a href="../sumo/">sumo</a> acts as server
+that is started with additional command-line options: <strong>--remote-port</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> where <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> is the
+port <a href="../sumo/">sumo</a> will listen on for incoming connections.</p>
+<p>When started with the <strong>--remote-port</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> option, <a href="../sumo/">sumo</a> only prepares the
+simulation and waits for all external applications to connect and take
+over the control. Please note, that the <strong>--end</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> option is ignored when
+<a href="../sumo/">sumo</a> runs as a TraCI server, <a href="../sumo/">sumo</a>
+runs until the client demands a simulation end.</p>
+<p>When using <a href="../sumo-gui/">sumo-gui</a> as a server, the simulation
+must either be started by using the <a href="../sumo-gui/#usage_description"><em>play</em>
+button</a> or by setting the option <strong>--start</strong>
+before TraCI commands will be processed.</p>
+<h3 id="multiple-clients">Multiple clients<a class="headerlink" href="#multiple-clients" title="Permanent link">&para;</a></h3>
+<p>The number of clients which can connect can be given as an additional
+option <strong>--num-clients</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>, where 1 is the default. Please note that in multi client
+scenarios you must explicitly specify the execution order of the clients
+using the
+<a href="Control-related_commands/#command_0x03_setorder"><em>SetOrder</em>-command</a>.</p>
+<p>Each client must specify a unique (but otherwise arbitrary) integer value
+and the client commands will be handled in the order from the lowest to
+the highest value within each simulation step.</p>
+<p>The clients are automatically synchronized after every simulation step. This means, the simulation does not advance to the next step until all clients have called the 'simulationStep'' command. Also, the simulationStep command only returns control to the client after the simulation has advanced.</p>
 <div class="admonition caution">
-<p class="admonition-title">警告</p>
-<p>シミュレーションは全てのクライアントと接続された時に一度だけ開始されます。</p>
+<p class="admonition-title">Caution</p>
+<p>The simulation will only start once all clients have connected.</p>
 </div>
-<h3 id="プロトコル仕様">プロトコル仕様<a class="headerlink" href="#プロトコル仕様" title="Permanent link">&para;</a></h3>
-<p>[TraCI プロトコル仕様]を参照してください([Basic Flow]、[Messages]、[データタイプ]を含む)。</p>
-<h3 id="traci-コマンド">TraCI コマンド<a class="headerlink" href="#traci-コマンド" title="Permanent link">&para;</a></h3>
+<h3 id="protocol-specification">Protocol specification<a class="headerlink" href="#protocol-specification" title="Permanent link">&para;</a></h3>
+<p>Please see the <a href="Protocol/">TraCI Protocol Specification</a>
+(including <a href="Protocol/#basic_flow">Basic Flow</a>,
+<a href="Protocol/#messages">Messages</a>, <a href="Protocol/#data_types">Data
+Types</a>).</p>
+<h3 id="shutdown">Shutdown<a class="headerlink" href="#shutdown" title="Permanent link">&para;</a></h3>
+<p>When using TraCI, the <strong>--end</strong> option of <a href="../sumo/">sumo</a> is ignored.
+Instead the simulation is closed by issuing the <a href="Control-related_commands/#command_0x7f_close"><em>close</em>
+command</a>.
+To detect whether all route files have been exhausted and all vehicles
+have left the simulation, one can check whether the command
+<a href="Simulation_Value_Retrieval/">getMinExpectedNumber</a>
+returns 0. The simulation will end as soon as all clients have sent the
+<em>close</em> command.</p>
+<p>It is also possible to reload the simulation with a new list of
+arguments by using the
+<a href="Control-related_commands/#command_0x01_load"><em>load</em>-command</a>.</p>
+<h2 id="traci-commands">TraCI Commands<a class="headerlink" href="#traci-commands" title="Permanent link">&para;</a></h2>
 <ul>
-<li></li>
+<li><a href="Control-related_commands/">Control-related commands</a>: perform a
+  simulation step, close the connection, reload the simulation.</li>
+<li><a href="GenericParameters/">Generic Parameters</a></li>
 </ul>
-<p>以下の API において、ID は<a href="../sumo/">SUMO</a>の入力ファイルにおいて定義された ID と同じものです。
-詳細は[general structure]で確認できます。</p>
+<p>For the following APIs, the ID is equal to the ID defined in
+<a href="../sumo/">sumo</a>'s input files. Here, you find their <a href="SUMO_ID_Commands_Structure/">general
+structure</a>.</p>
+<h3 id="value-retrieval">Value Retrieval<a class="headerlink" href="#value-retrieval" title="Permanent link">&para;</a></h3>
 <ul>
-<li>値の取得<ul>
-<li>[検知器]</li>
-<li>[車線検知器]</li>
-<li>[複数車線検知器]</li>
-<li>[交差点]</li>
-<li><a href="TraCI/Lane_Value_Retrieval.md">車線</a></li>
-<li>[車両]</li>
-<li>[歩行者]</li>
-<li>[車両タイプ]</li>
-<li>[経路]</li>
-<li>[PoI]</li>
-<li>[ポリゴン]</li>
-<li><a href="BusStop/">バス停</a></li>
-<li>[交差点]</li>
-<li>[節点]</li>
-<li>[シミュレーション一般]</li>
-<li><a href="GUI_Value_Retrieval/">GUI</a></li>
+<li>Traffic Objects</li>
+<li><a href="Vehicle_Value_Retrieval/">Vehicle Value Retrieval</a> retrieve
+    information about vehicles</li>
+<li><a href="Person_Value_Retrieval/">Person Value Retrieval</a> retrieve
+    information about persons</li>
+<li><a href="VehicleType_Value_Retrieval/">Vehicle Type Value Retrieval</a>
+    retrieve information about vehicle types</li>
+<li><a href="Route_Value_Retrieval/">Route Value Retrieval</a>
+    retrieve information about routes</li>
+<li>Detectors and Outputs</li>
+<li><a href="Induction_Loop_Value_Retrieval/">Induction Loop Value Retrieval</a>
+    retrieve information about induction loops</li>
+<li><a href="Lane_Area_Detector_Value_Retrieval/">Lane Area Detector Value Retrieval</a>
+    retrieve information about lane area detectors</li>
+<li><a href="Multi-Entry-Exit_Detectors_Value_Retrieval/">Multi-Entry-Exit Detectors Value Retrieval</a>
+    retrieve information about multi-entry/multi-exit detectors</li>
+<li><a href="Calibrator/">Calibrator Value Retrieval</a>
+    retrieve information about calibrators</li>
+<li><a href="RouteProbe/">RouteProbe</a>
+    retrieve information about the RouteProbe</li>
+<li>Network</li>
+<li><a href="Junction_Value_Retrieval/">Junction Value Retrieval</a> retrieve
+    information about junctions</li>
+<li><a href="Edge_Value_Retrieval/">Edge Value Retrieval</a>
+    retrieve information about edges</li>
+<li><a href="Lane_Value_Retrieval/">Lane Value Retrieval</a>
+    retrieve information about lanes</li>
+<li>Infrastructure</li>
+<li><a href="Traffic_Lights_Value_Retrieval/">Traffic Lights Value Retrieval</a>
+    retrieve information about traffic lights</li>
+<li><a href="BusStop/">BusStop Value Retrieval</a>
+    retrieve information about BusStops</li>
+<li><a href="ChargingStation/">Charging Station Value Retrieval</a>
+    retrieve information about charging stations</li>
+<li><a href="ParkingArea/">Parking Area Value Retrieval</a>
+    retrieve information about parking areas</li>
+<li><a href="OverheadWire/">Overhead Wire Value Retrieval</a>
+    retrieve information about overhead wires</li>
+<li><a href="Rerouter/">Rerouter</a>
+    retrieve information about the rerouter</li>
+<li>Misc</li>
+<li><a href="Simulation_Value_Retrieval/">Simulation Value Retrieval</a> retrieve
+    information about the simulation</li>
+<li><a href="GUI_Value_Retrieval/">GUI Value Retrieval</a>
+    retrieve information about the simulation visualization</li>
+<li><a href="POI_Value_Retrieval/">PoI Value Retrieval</a>
+    retrieve information about points-of-interest</li>
+<li><a href="Polygon_Value_Retrieval/">Polygon Value Retrieval</a>
+    retrieve information about polygons</li>
 </ul>
-</li>
-<li>状態の変化<ul>
-<li>[車線]</li>
-<li>[交通信号]</li>
-<li>[車両]</li>
-<li>[歩行者]</li>
-<li>[車両タイプ]</li>
-<li>[経路]</li>
-<li>[PoI]</li>
-<li>[ポリゴン]</li>
-<li>[節点]</li>
-<li>[シミュレーション一般]</li>
-</ul>
-</li>
-<li>
-<p>サブスクリプション</p>
+<h3 id="state-changing">State Changing<a class="headerlink" href="#state-changing" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[オブジェクトの値]</li>
-<li>[オブジェクトのコンテキスト]</li>
+<li>Traffic Objects</li>
+<li><a href="Change_Vehicle_State/">Change Vehicle State</a>
+    change a vehicle's state</li>
+<li><a href="Change_Person_State/">Change Person State</a>
+    change a persons state</li>
+<li><a href="Change_VehicleType_State/">Change Vehicle Type
+    State</a> change a
+    vehicle type's state</li>
+<li><a href="Change_Route_State/">Change Route State</a> change
+    a route's state</li>
+<li>Detectors and Outputs</li>
+<li><a href="Change_Calibrator_State/">Change Calibrator State</a> change a
+    calibrator state</li>
+<li><a href="Change_Inductionloop_State/">Change Inductionloop State</a> change a
+    inductionloop state</li>
+<li><a href="Change_Lane_Area_Detector_State/">Change Lane Area Detector State</a> change a
+    lane area detector state</li>
+<li>Network</li>
+<li><a href="Change_Edge_State/">Change Edge State</a> change
+    an edge's state</li>
+<li><a href="Change_Lane_State/">Change Lane State</a> change a
+    lane's state</li>
+<li>Infrastructure</li>
+<li><a href="Change_Traffic_Lights_State/">Change Traffic Lights
+    State</a> change a
+    traffic lights' state</li>
+<li><a href="Change_ChargingStation_State/">Change Charging Station State</a> change a charging stations's attributes</li>
+<li><a href="Change_ParkingArea_State/">Change Parking Area State</a> change parking area attributes</li>
+<li>Misc</li>
+<li><a href="Change_Simulation_State/">Change Simulation
+    State</a> change the
+    simulation</li>
+<li><a href="Change_GUI_State/">Change GUI State</a> change the
+    simulation visualization</li>
+<li><a href="Change_PoI_State/">Change PoI State</a> change a
+    point-of-interest's state (or add/remove one)</li>
+<li><a href="Change_Polygon_State/">Change Polygon State</a>
+    change a polygon's state (or add/remove one)</li>
 </ul>
-</li>
-<li>
-<p>[ジェネリックパラメータ]へのアクセス</p>
-</li>
-</ul>
-<h3 id="シャットダウン">シャットダウン<a class="headerlink" href="#シャットダウン" title="Permanent link">&para;</a></h3>
-<p>TraCI を使うと、<a href="../sumo/">SUMO</a>の<strong>--end</strong>オプションは無視されます。
-代わりに、[close コマンド]で終了します。
-全経路ファイルおよび全車両がシミュレートされたかどうかを確認するには、[getMinExpectedNumber]が 0 を返すかどうかを確認してください。
-シミュレーションは全てのクライアントから<code>close</code>コマンドを受けとると直ちに終了します。</p>
-<h2 id="sumo-をライブラリとして使う">SUMO をライブラリとして使う<a class="headerlink" href="#sumo-をライブラリとして使う" title="Permanent link">&para;</a></h2>
-<p>一般に TraCI は複数のプロセスを組合せて使われます。
-SUMO サーバーのプロセスと一つ以上の TraCI クライアントプロセスです。
-代替案として、[Libsumo]は SUMO をクライアント処理に埋め込んで使うことができます。
-これによって同じメソッドを用いながら、ソケット通信のオーバーヘッドを避けることができます。
-Libsumo は[SWIG]を用いたクライアント生成をサポートしており、これによって多くのプログラミング言語から使用することができます。
-ビルド済み SUMO には C++、Java、Python のバインディングが含まれています。</p>
-<h2 id="使用例">使用例<a class="headerlink" href="#使用例" title="Permanent link">&para;</a></h2>
+<h3 id="subscriptions">Subscriptions<a class="headerlink" href="#subscriptions" title="Permanent link">&para;</a></h3>
+<p>Subscriptions are a way to get notified repeatedly about changes in variables.
+They are applicable to all variables mentioned in the respective value retrieval section
+of the domain in question unless noted otherwise.
+For details see the separate page on <a href="Object_Variable_Subscription/">object variable subscription</a>.</p>
+<p>It is also possible to subscribe to values of objects
+surrounding another object (e.g. all vehicles around a certain junction).
+This is called <a href="Object_Context_Subscription/">context subscription</a>.</p>
+<p>Subscriptions may be faster than repeated value retrieval, see the section on <a href="#performance">Performance</a>.</p>
+<h2 id="using-sumo-as-a-library">Using SUMO as a library<a class="headerlink" href="#using-sumo-as-a-library" title="Permanent link">&para;</a></h2>
+<p>Normally, TraCI is used to couple multiple processes: A SUMO server
+process and one or more TraCI client processes. Alternatively,
+<a href="../Libsumo/">Libsumo</a> can be used to embed SUMO as a library
+into the client process. This allows using the same method signatures as
+in the client libraries but avoids the overhead of socket communication.
+Libsumo supports generating client libraries using
+<a href="https://en.wikipedia.org/wiki/SWIG">SWIG</a> and can therefore be used
+with a large number of programming languages. C++, Java and Python
+bindings are included when downloading a sumo-build.</p>
+<h2 id="example-use">Example use<a class="headerlink" href="#example-use" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[TraCI を用いた適応的交通信号のチュートリアル] (Python)。</li>
-<li>[チュートリアル/CityMobil] : TraCI を車両への経路設定に使用 (Python)。</li>
-<li>[チュートリアル/TraCIPedCrossing] : TraCI を押しボタン式信号の構築に利用。</li>
+<li>There is a <a href="../Tutorials/TraCI4Traffic_Lights/">tutorial on using TraCI for adaptive traffic
+  lights</a> (using Python).</li>
+<li>The <a href="../Tutorials/CityMobil/">Tutorials/CityMobil</a> tutorial
+  uses TraCI for assigning new routes to vehicles (using Python).</li>
+<li>The
+  <a href="../Tutorials/TraCIPedCrossing/">Tutorials/TraCIPedCrossing</a>
+  tutorial uses TraCI for building a crossing with a pedestrian
+  triggered traffic light.</li>
 </ul>
-<h2 id="リソース">リソース<a class="headerlink" href="#リソース" title="Permanent link">&para;</a></h2>
-<h3 id="プログラミング言語ごとのインターフェース">プログラミング言語ごとのインターフェース<a class="headerlink" href="#プログラミング言語ごとのインターフェース" title="Permanent link">&para;</a></h3>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<h3 id="interfaces-by-programming-language">Interfaces by Programming Language<a class="headerlink" href="#interfaces-by-programming-language" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Python: [tools/traci パッケージ] によって、Python と SUMO を連携させることができます(このライブラリは全ての TraCI コマンドをサポートし、日々テストされています)。</li>
-<li>C++: [C++ TraCIAPI] はクライアントライブラリであり、<a href="../sumo/">SUMO</a>のソースツリーの一部になっています(ほぼ全ての API をカバーしています)。</li>
-<li>C++: <a href="http://veins.car2x.org/">Veins project</a> は<a href="../sumo/">SUMO</a>と<a href="https://omnetpp.org/">OMNET++</a>のミドルウェアを提供します。インフラの一部として TraCI API 用の C++クライアントライブラリが提供されています(API の完全性は Python クライアントに比べてわずかに劣ります)。</li>
-<li>.NET: <a href="https://github.com/CodingConnected/CodingConnected.Traci">TraCI.NET</a> はほとんどの API をカバーするクライアントライブラリです。</li>
-<li>Matlab: [TraCI4Matlab](http://www.mathworks.com/matlabcentral/fileexchange/44805-traci4matlab<strong> クライアントは SUMO のリリース内 </strong><em><SUMO_HOME></em>**/tools/contributed/traci4matlab に入っています。全てのコマンドが実装されてはいません。</li>
-<li>Java: [Traas] は <a href="../sumo/">SUMO</a>のソースツリーの一部としてクライアントライブラリを提供します(ほぼ全ての API をカバーしています)。</li>
-<li>その他: [SOAP]を使って Web サービスにアクセスできる言語であれば、[Traas Web サービス]を使って SUMO にアクセスできます。[Java web サービスクライアント] も TraaS に含まれます。API は Python クライアントに比べて遅延があります。</li>
+<li>Python: <a href="Interfacing_TraCI_from_Python/">the python module traci</a> allows
+  to interact with <a href="../sumo/">sumo</a> using Python (This library
+  is part of the sumo source code and all releases, is tested daily and supports all TraCI commands).
+  It is also <a href="https://pypi.org/project/traci/">available on PyPI</a> and can thus be installed
+  using <code>pip install traci</code>.</li>
+<li>C++: <a href="../Libtraci/">libtraci</a> is a client library that is part of the <a href="../sumo/">sumo</a>-source tree. It is fully API-compatible with <a href="../Libsumo/">libsumo</a>.</li>
+<li>C++: <a href="C%2B%2BTraCIAPI/">The C++ TraCIAPI</a> is a client
+  library that is part of the <a href="../sumo/">sumo</a>-source tree. (API
+  coverage is good but this client is no longer updated. Please use libtraci instead.)</li>
+<li>C++: <a href="https://veins.car2x.org">The Veins project</a> provides a
+  middle-ware for coupling <a href="../sumo/">sumo</a> with
+  <a href="https://omnetpp.org/">OMNET++</a>. As part of the infrastructure it
+  provides a C++ client library for the TraCI API (API completeness is
+  a bit behind the python client).</li>
+<li>.NET:
+  <a href="https://github.com/CodingConnected/CodingConnected.Traci">TraCI.NET</a>
+  is a client library with good API coverage.</li>
+<li>.NET: libtracics is an experimental SWIG generated binding to the original libtraci.
+  It has full API coverage but is untested and needs to be generated by the user from the source.</li>
+<li>Matlab
+  <a href="https://mathworks.com/matlabcentral/fileexchange/44805-traci4matlab">TraCI4Matlab</a>.
+  The client is included as part of each SUMO release in
+  <strong><em>&lt;SUMO_HOME&gt;</em></strong><em>/tools/contributed/traci4matlab</em>
+  Not all TraCI commands have been implemented. It is recommended to
+  <a href="https://mathworks.com/help/matlab/call-python-libraries.html">use the python client</a> from inside Matlab instead.</li>
+<li>Java: <a href="../Libtraci/">libtraci</a> is a client library that is part of the <a href="../sumo/">sumo</a>-source tree.
+  It is fully API-compatible with <a href="../Libsumo/">libsumo</a> and a SUMO release provides pro-compiled Java bindings (via SWIG).</li>
+<li>Java: <a href="TraaS/#java_client">TraaS</a> provides a client
+  library that is part of the <a href="../sumo/">sumo</a>-source tree (API
+  coverage is large but this client is no longer updated. Use libtraci instead)</li>
+<li>Others: Any language that is supported by <a href="https://swig.org/">SWIG</a> can in principle use the bindings provided by libsumo or libtraci.</li>
 </ul>
-<h3 id="v2x-シミュレーション">V2X シミュレーション<a class="headerlink" href="#v2x-シミュレーション" title="Permanent link">&para;</a></h3>
-<p>TraCI を用いることで、<a href="../sumo/">SUMO</a> を通信ネットワークシミュレーションと組みあわせ、[車車間通信] のシミュレーションを実現できます。
-詳細は [トピック/V2X] で確認できます。</p>
-<h3 id="その他">その他<a class="headerlink" href="#その他" title="Permanent link">&para;</a></h3>
+<h3 id="v2x-simulation">V2X simulation<a class="headerlink" href="#v2x-simulation" title="Permanent link">&para;</a></h3>
+<p>TraCI allows to use <a href="../sumo/">sumo</a> in combination with
+communication network simulators for simulating <a href="../Topics/V2X/">vehicular
+communication</a>. See
+<a href="../Topics/V2X/">Topics/V2X</a> for a list of available solutions.</p>
+<h3 id="other-resources">Other Resources<a class="headerlink" href="#other-resources" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../sumo/">SUMO</a> の TraCI サーバーは基本ディストリビューションの一部です。ソースコードは<code>src/traci-server</code>フォルダにあります。</li>
+<li><a href="../sumo/">sumo</a>'s TraCI Server is a part of the plain
+  distribution. The source code is located in the folder
+  <code>src/traci-server</code>.</li>
 </ul>
-<h2 id="リファレンス">リファレンス<a class="headerlink" href="#リファレンス" title="Permanent link">&para;</a></h2>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Axel Wegener, Michal Piorkowski, Maxim Raya, Horst Hellbrück, Stefan Fischer and Jean-Pierre Hubaux. TraCI: An Interface for Coupling Road Traffic and Network Simulators. Proceedings of the 11th Communications and Networking Simulation Symposium, April 2008. <a href="https://dl.acm.org/citation.cfm?doid=1400713.1400740">ACM デジタルライブラリ</a></li>
-<li>Axel Wegener, Horst Hellbrück, Christian Wewetzer and Andreas Lübke: VANET Simulation Environment with Feedback Loop and its Application to Traffic Light Assistance. Proceedings of the 3rd IEEE Workshop on Automotive Networking and Applications, New Orleans, LA, USA, 2008. <a href="https://doi.org/10.1109/GLOCOMW.2008.ECP.67">IEEEXplore</a></li>
+<li>Axel Wegener, Michal Piorkowski, Maxim Raya, Horst Hellbrück, Stefan
+  Fischer and Jean-Pierre Hubaux. TraCI: An Interface for Coupling Road
+  Traffic and Network Simulators. Proceedings of the 11th
+  Communications and Networking Simulation Symposium, April 2008.
+  <a href="https://dl.acm.org/citation.cfm?doid=1400713.1400740">Available at ACM Digital Library</a></li>
+<li>Axel Wegener, Horst Hellbrück, Christian Wewetzer and Andreas Lübke:
+  VANET Simulation Environment with Feedback Loop and its Application
+  to Traffic Light Assistance. Proceedings of the 3rd IEEE Workshop
+  on Automotive Networking and Applications, New Orleans, LA, USA, 2008.
+  <a href="https://doi.org/10.1109/GLOCOMW.2008.ECP.67">Available at IEEEXplore</a></li>
 </ul>
-<h2 id="パフォーマンス">パフォーマンス<a class="headerlink" href="#パフォーマンス" title="Permanent link">&para;</a></h2>
-<p>TraCI の使用はシミュレーション速度を低下させます。
-速度の低下は様々な因子に依存します。</p>
+<h2 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h2>
+<p>Using TraCI slows down the simulation speed. The amount of slow-down
+depends on many factors:</p>
 <ul>
-<li>各ステップごとの TraCI 関数呼びだし数</li>
-<li>呼ばれる TraCI 関数の種類(いくつかの関数は他のものより高価)</li>
-<li>TraCI スクリプト中の計算</li>
-<li>クライアントの言語</li>
+<li>number of TraCI function calls per simulation step</li>
+<li>types of TraCI functions being called (some being more expensive
+  than others)</li>
+<li>computation within the TraCI script</li>
+<li>client language</li>
 </ul>
-<h3 id="例">例<a class="headerlink" href="#例" title="Permanent link">&para;</a></h3>
-<p>使用例として車両ごとの x,y 座標をシミュレーション中のステップごとに取得してみます(python クライアントを使用します)。</p>
-<pre><code class="language-python">    while traci.simulation.getMinExpectedNumber() &gt; 0: 
-        for veh_id in traci.vehicle.getIDList():
-             position = traci.vehicle.getSpeed(veh_id)
-        traci.simulationStep()
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please always consider using <a href="../Libsumo/">libsumo</a> if performance is important.
+While it is much faster in general, not all optimizations mentioned below are applicable to libsumo as well.
+Especially subscriptions might even turn out to be slower.</p>
+</div>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<p>As an example use-case consider retrieving the x,y position of each
+vehicle during every simulation step (using the python client):</p>
+<pre><code class="language-py">while traci.simulation.getMinExpectedNumber() &gt; 0:
+    for veh_id in traci.vehicle.getIDList():
+         position = traci.vehicle.getPosition(veh_id)
+    traci.simulationStep()
 </code></pre>
 <ul>
-<li>このスクリプトは毎秒 25000 台の車両を処理することができます。</li>
-<li>[組みこみ python]を使用すると 50000 台まで速度が上昇します。</li>
-<li>[サブスクリプション]を使用することで同じプログラムを 50000 台まで高速化できます。</li>
+<li>This script is able to process about 25000 vehicles per second.</li>
+<li>The same value retrieval can also be sped up to 50000 vehicles per
+  second by using
+  <a href="Object_Variable_Subscription/">subscriptions</a>:</li>
 </ul>
-<pre><code class="language-python">    while traci.simulation.getMinExpectedNumber() &gt; 0: 
-        for veh_id in traci.simulation.getDepartedIDList():
-            traci.vehicle.subscribe(veh_id, [traci.constants.VAR_POSITION])
-        positions = traci.vehicle.getAllSubscriptionResults()
-        traci.simulationStep()
+<pre><code class="language-py">while traci.simulation.getMinExpectedNumber() &gt; 0:
+    for veh_id in traci.simulation.getDepartedIDList():
+        traci.vehicle.subscribe(veh_id, [traci.constants.VAR_POSITION])
+    positions = traci.vehicle.getAllSubscriptionResults()
+    traci.simulationStep()
 </code></pre>
-<p>このスクリプトを[Bolongna シナリオ] (車両数 9000、5000 ステップ**のもとで動かして、以下の記録が得られました。</p>
+<p>When using this script on the <a href="../Data/Scenarios/#bologna">Bologna
+scenario</a> (9000 vehicles, 5000
+simulation steps) the following running times were recorded:</p>
 <ul>
-<li>TraCI なしで 8 秒</li>
-<li>平易な位置取得で 90 秒</li>
-<li>サブスクリプションを使用した取得: 42 秒</li>
-<li>組みこみ python 使用の取得: 46 秒</li>
-<li>サブスクリプションと組みこみ python の併用: 34 秒</li>
+<li>without TraCI 8s</li>
+<li>plain position retrieval 90s</li>
+<li>retrieval using subscriptions 42s</li>
 </ul>
-<p>C++クライアントはより高速です。</p>
+<p>The C++ client performance is higher:</p>
 <ul>
-<li>平易な位置取得: 80 秒</li>
-<li>サブスクリプション使用: 28 秒</li>
+<li>plain position retrieval 80s</li>
+<li>retrieval using subscriptions 28s</li>
 </ul>
-<h2 id="現在および今後の開発">現在および今後の開発<a class="headerlink" href="#現在および今後の開発" title="Permanent link">&para;</a></h2>
-<p><strong>執筆中</strong></p>
-<h2 id="トラブルシューティング">トラブルシューティング<a class="headerlink" href="#トラブルシューティング" title="Permanent link">&para;</a></h2>
-<h3 id="出力ファイルが閉じられていない">出力ファイルが閉じられていない<a class="headerlink" href="#出力ファイルが閉じられていない" title="Permanent link">&para;</a></h3>
-<p>この問題は、シミュレーションが終了していないのにクライアントが出力にアクセスしようとした時に生じます。
-シミュレーションが終了するまでクライアントを待機させることで解決できます。
-バグレポートは<a href="http://sourceforge.net/apps/trac/sumo/ticket/524">ticket524 (削除済み) </a>にあります。</p>
-<h3 id="古い-api">古い API<a class="headerlink" href="#古い-api" title="Permanent link">&para;</a></h3>
-<p><strong>TraCI</strong>コマンドには二つの「世代」が存在します。
-第一世代は主に<a href="../sumo/">SUMO</a>で使われている string ベースの ID と外部への表現として使われる int ベースの表現をマッピングします。
-このマッピングは内部的に行なわれます(<strong>TraCI</strong>内で)。</p>
-<p>現在の第二世代は<a href="../sumo/">SUMO</a>が読みこむものと同じ文字列 ID を使用します。
-もし第一世代の API を使うことを余儀なくされる場合 (例えば TraNS を使いたい場合)、バージョン 0.12.23 までの<a href="../sumo/">SUMO</a>だけが使えます。
-古いバージョンを手に入れることについては[FAQ]を参照してください。</p>
+<h2 id="current-and-future-development">Current and Future Development<a class="headerlink" href="#current-and-future-development" title="Permanent link">&para;</a></h2>
+<p>Historically TraCI used a different (single byte) command ID for every
+domain (induction loops, vehicle etc.) where the more significant half
+of the byte denotes the command (get, set, subscribe, ...) and the
+lesser significant the domain itself. To allow more than the 16 domains
+resulting from this split, the most significant bit (which was unused
+until version 1.7.0 because there were only 7 commands) is now used for the domain
+as well (and only three for the command). This allows for 28 domains
+because four general commands (like SIMSTEP) block some available combinations.
+Currently there are only four possible domains left.</p>
+<p>Furthermore after the invention of libsumo
+some parts of the TraCI interface are so generic that it may be not so
+hard to invent a wrapper with Apache Kafka or Google protocol buffers
+which could in the long run replace the need for all the byte fiddling
+and the different hand crafted clients.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="output-files-are-not-closed">Output files are not closed.<a class="headerlink" href="#output-files-are-not-closed" title="Permanent link">&para;</a></h3>
+<p>This problem occurs if the client tries to access the output while
+the simulation is still closing down. This can be solved by letting
+the client wait for the simulation to shut down. The bug report was #524</p>
+<h3 id="obsolete-apis">Obsolete APIs<a class="headerlink" href="#obsolete-apis" title="Permanent link">&para;</a></h3>
+<p>There used to be two "generations" of <a href="./">TraCI</a>
+commands. The first one mainly uses an internal mapping between the
+string-typed IDs used in <a href="../sumo/">sumo</a> and an external
+representation of these which is int-based. The mapping was done
+internally (within <a href="./">TraCI</a>).
+The second "generation", the current one uses string-IDs equal to
+those <a href="../sumo/">sumo</a> reads. If you are bound to the first
+generation API (for instance if you want to use TraNS) you can only
+use <a href="../sumo/">sumo</a> up to version 0.12.3. See
+<a href="../FAQ/">FAQ</a> about obtaining an old version.</p>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -675,10 +979,14 @@ Libsumo は[SWIG]を用いたクライアント生成をサポートしており
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

@@ -1,0 +1,850 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Demand/Shortest_or_Optimal_Path_Routing/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Shortest or Optimal Path Routing - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Shortest or Optimal Path Routing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p><a href="../../duarouter/">duarouter</a> can be used to import demand data
+given by source and destination edges (so called <em>trips</em> and ''flows
+''). Furthermore, it can be used to repair an existing <em>route</em>-file i.e.
+if a given route has an unconnected edge list. To achieve dynamic user
+assignment, <a href="../../duarouter/">duarouter</a> and
+<a href="../../sumo/">sumo</a> must be called iteratively. This is described in
+<a href="../Dynamic_User_Assignment/">Demand/Dynamic User
+Assignment</a>. Beginning with
+version 0.29.0, <a href="../../duarouter/">duarouter</a> also supports
+<a href="../../IntermodalRouting/">IntermodalRouting</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>trip</em> and <em>flow</em> elements described below may also be <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#incomplete_routes_trips_and_flows">loaded directly</a> into <a href="../../sumo/">sumo</a>. This takes up-to date traffic states within the network into account when computing routes but slows down the simulation.</p>
+</div>
+<h1 id="trip-definitions">Trip Definitions<a class="headerlink" href="#trip-definitions" title="Permanent link">&para;</a></h1>
+<p>Trip definitions that can be laid into the network may be supplied to
+the router using an XML-file. The syntax of a single trip definition is:
+<code>&lt;trip id="&lt;ID&gt;" depart="" from="&lt;ORIGIN_EDGE_ID&gt;" to="&lt;DESTINATION_EDGE_ID&gt;" [type="&lt;VEHICLE_TYPE&gt;"] [color="&lt;COLOR&gt;"]/&gt;</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>id (string)</td>
+<td>The name of vehicles that will be generated using this trip definition (a running number if not given)</td>
+</tr>
+<tr>
+<td><strong>depart</strong></td>
+<td>int</td>
+<td>The departure time of the (first) vehicle which is generated using this trip definition</td>
+</tr>
+<tr>
+<td>from</td>
+<td>edge id</td>
+<td>The name of the edge the route starts at; the edge must be a part of the used network. Optional, if one of the via-attributes is used or if the trip includes stops.</td>
+</tr>
+<tr>
+<td>to</td>
+<td>edge id</td>
+<td>The name of the edge the route ends at; the edge must be a part of the used network. Optional, if one of the via-attributes is used or if the trip includes stops.</td>
+</tr>
+<tr>
+<td>via</td>
+<td>edge ids</td>
+<td>List of intermediate edge ids which shall be part of the route; the edges must be a part of the used network</td>
+</tr>
+<tr>
+<td>fromTaz</td>
+<td>district id</td>
+<td>The name of the <a href="../Importing_O/D_Matrices/#describing_the_taz">district</a> the route starts at. <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#traffic_assignment_zones_taz">TAZ edges are selected so that travel time is minimized.</a></td>
+</tr>
+<tr>
+<td>toTaz</td>
+<td>district id</td>
+<td>The name of the <a href="../Importing_O/D_Matrices/#describing_the_taz">district</a> the route ends at. <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#traffic_assignment_zones_taz">TAZ edges are selected so that travel time is minimized.</a></td>
+</tr>
+<tr>
+<td>type</td>
+<td>type id</td>
+<td>The type id of the vehicle to generate</td>
+</tr>
+<tr>
+<td>color</td>
+<td>color</td>
+<td>This generated vehicle's color</td>
+</tr>
+<tr>
+<td>departLane</td>
+<td>int/string (≥0,"random","free","departlane")</td>
+<td>The lane on which the vehicle shall be inserted</td>
+</tr>
+<tr>
+<td>departPos</td>
+<td>float(m)/string ("random","free","random_free","base")</td>
+<td>The position at which the vehicle shall enter the net; "free" means the point closest to the start of the departlane where it is possible to insert the vehicle. "random_free" tries forcefully to find a free random position and if that fails, places the vehicle at the next "free" position. "base" sets the vehicle's depart position to the vehicle's length + eps (eps=.1m), this means the vehicle is completely at the begin of the depart lane.</td>
+</tr>
+<tr>
+<td>departSpeed</td>
+<td>float(m/s)/string (≥0,"random","max")</td>
+<td>The speed with which the vehicle shall enter the network.</td>
+</tr>
+<tr>
+<td>arrivalLane</td>
+<td>int/string (≥0,"current")</td>
+<td>The lane at which the vehicle shall leave the network<br><br><strong>Note:</strong> see <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicles_and_routes">Definition of Vehicles, Vehicle Types, and Routes#Vehicles and Routes</a></td>
+</tr>
+<tr>
+<td>arrivalPos</td>
+<td>float(m)/string (≥0<sup>(1)</sup>,"random","max")</td>
+<td>The position at which the vehicle shall leave the network<br><br><strong>Note:</strong> see <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicles_and_routes">Definition of Vehicles, Vehicle Types, and Routes#Vehicles and Routes</a></td>
+</tr>
+<tr>
+<td>arrivalSpeed</td>
+<td>float(m/s)/string (≥0,"current")</td>
+<td>The speed with which the vehicle shall leave the network<br><br><strong>Note:</strong> see <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicles_and_routes">Definition of Vehicles, Vehicle Types, and Routes#Vehicles and Routes</a></td>
+</tr>
+<tr>
+<td>fromJunction</td>
+<td>junction id</td>
+<td>The junction from which to depart <a href="#routing_between_junctions">note</a></td>
+</tr>
+<tr>
+<td>toJunction</td>
+<td>junction id</td>
+<td>The junction at which to arrive <a href="#routing_between_junctions">note</a></td>
+</tr>
+<tr>
+<td>viaJunctions</td>
+<td>junction ids</td>
+<td>The junctions to pass along the way <a href="#routing_between_junctions">note</a></td>
+</tr>
+<tr>
+<td>fromXY</td>
+<td>float, float</td>
+<td>The network position from which to depart <a href="#mapmatching">note</a></td>
+</tr>
+<tr>
+<td>toXY</td>
+<td>float, float</td>
+<td>The network position from which to depart <a href="#mapmatching">note</a></td>
+</tr>
+<tr>
+<td>viaXY</td>
+<td>float, float [float,float]</td>
+<td>The network positions to pass along the way <a href="#mapmatching">note</a></td>
+</tr>
+<tr>
+<td>fromLonLat</td>
+<td>float, float</td>
+<td>The network position from which to depart in geo-coordinates <a href="#mapmatching">note</a></td>
+</tr>
+<tr>
+<td>toLonLat</td>
+<td>float, float</td>
+<td>The network position from which to depart in geo-coordinates <a href="#mapmatching">note</a></td>
+</tr>
+<tr>
+<td>viaLonLat</td>
+<td>float, float [float,float]</td>
+<td>The network positions to pass along the way in geo-coordinates  <a href="#mapmatching">note</a></td>
+</tr>
+<tr>
+<td>speedFactor</td>
+<td>float &gt; 0</td>
+<td>Sets custom speedFactor (factor on road speed limit) and overrides the <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#speed_distributions">speedFactor distribution</a> of the vehicle type</td>
+</tr>
+<tr>
+<td>insertionChecks</td>
+<td>string list</td>
+<td>Sets the list of safety checks to perform during vehicle insertion. Possible values are: <code>all</code>, <code>none</code>, <code>collision</code>, <code>leaderGap</code>, <code>followerGap</code>, <code>junction</code>, <code>stop</code>, <code>arrivalSpeed</code>, <code>oncomingTrain</code>, <code>speedLimit</code>, <code>pedestrians</code>. default <em>all</em></td>
+</tr>
+<tr>
+<td>parkingBadges</td>
+<td>string list</td>
+<td>list of keywords to access restricted parking areas (the default empty list will still allow access to unrestricted parking areas)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="routing-between-junctions">Routing between Junctions<a class="headerlink" href="#routing-between-junctions" title="Permanent link">&para;</a></h2>
+<p>Trips and flows may use the attributes <code>fromJunction</code>, <code>toJunction</code>, and <code>viaJunctions</code> to describe origin, destination and intermediate locations. This is a special form of TAZ-routing and it must be enabled by either setting the duarouter option <strong>--junction-taz</strong> or by loading TAZ-definitions that use the respective junction IDs. When using option <strong>--junction-taz</strong>, all edges outgoing from a junction may be used at the origin and all edges incoming to a junction may be used to reach the intermediate and final junctions.</p>
+<h2 id="routing-between-stops">Routing between Stops<a class="headerlink" href="#routing-between-stops" title="Permanent link">&para;</a></h2>
+<ul>
+<li>When defining a <code>&lt;trip&gt;</code> with <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#stops_and_waypoints">stop</a>-elements, routing will performed for each stop (starting a the trip origin or the prior stop) and ending at the destination.</li>
+<li>If at least one stop is provided, either one of the <code>from</code> or <code>to</code> attributes (or <code>fromJunction</code>, <code>fromTaz</code>, ...) may be omitted.</li>
+<li>If at least two stops are provided both of the <code>from</code> and <code>to</code> attributes may be omitted (the first stop serves as the origin while the last stop serves as the destination)</li>
+<li>If a a stop with a <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#jumps"><code>jump</code></a>-attribute is given, the subsequent part of the route (to the next stop or the destination) will be disconnected</li>
+</ul>
+<h2 id="mapmatching">Mapmatching<a class="headerlink" href="#mapmatching" title="Permanent link">&para;</a></h2>
+<p>Since version 1.2 duarouter supports mapping positions to roads using attributes that end with 'XY' or 'LonLat'. The latter only works in networks that are geo-referenced. The maximum distance for map-matching can be configured using option <strong>--mapmatch.distance</strong> (since version 1.5)</p>
+<p>By setting the option <strong>--mapmatch.junctions</strong>, positions are mapped to junctions instead of edges. The routes are then <a href="#routing_between_junctions">computed between junctions</a>.
+While it is possible to match detailed routes by using attribute <code>viaXY</code> or <code>viaLonLat</code>, this requires rather precise coordinates to work. To handle ambiguity/noise in the data it is better to use a <a href="../../Tools/Routes/#tracemapperpy">matching algorithm that considers the whole route when matching individual positions</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>map-matching works best with coordinates that lie on the centerline of an edge rather than on the median line of the road.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Option <strong>--map-match-junctions</strong> may will shorten the route if the from-coordinate lies past the half-way point of the origin edge and also if the to-coordinate lies before the half-way point of the destination edge.</p>
+</div>
+<h2 id="vehicle-types">Vehicle Types<a class="headerlink" href="#vehicle-types" title="Permanent link">&para;</a></h2>
+<p>If any trips use the <code>type</code> attribute, the
+referenced <code>vType</code> element must be put into
+the input file containing the trips / flow  or into an additionally loaded <em>rou.xml</em>-file or
+into an <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, <a href="../../duarouter/">duarouter</a> will write <code>vType</code> definitions into the output route file ahead of the first vehicle using that type. By using the option <strong>--vtype-output</strong> these definitions can be put into another file.</p>
+</div>
+<h1 id="flow-definitions">Flow Definitions<a class="headerlink" href="#flow-definitions" title="Permanent link">&para;</a></h1>
+<p>Flow amounts share most of the parameter with trip definitions. The
+syntax is: <code>&lt;flow id="&lt;ID&gt;" from="&lt;ORIGIN_EDGE_ID&gt;" to="&lt;DESTINATION_EDGE_ID&gt;" begin="&lt;INTERVAL_BEGIN&gt;" end="&lt;INTERVAL_END&gt;" number="&lt;VEHICLES_TO_INSERT&gt;" [type="&lt;VEHICLE_TYPE&gt;"] [color="&lt;COLOR&gt;"]/&gt;</code>. Notice the following differences: the
+vehicle does not take a certain departure time as not only one vehicle
+is described by this parameter, but a set of, given within the attribute
+"number". The departure times are spread uniformly within the time
+interval described by &lt;INTERVAL_BEGIN&gt; and &lt;INTERVAL_END&gt;. All these
+three attributes must be integer values. Flow definitions can also be
+embedded into an interval tag. In this case one can (but does not have
+to) leave the tags <code>begin</code> and
+<code>end</code> out. So the following two snippets mean
+the same:</p>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;flow id=&quot;0&quot; from=&quot;edge0&quot; to=&quot;edge1&quot; begin=&quot;0&quot; end=&quot;3600&quot; number=&quot;100&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
+<p>and</p>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;interval begin=&quot;0&quot; end=&quot;3600&quot;&gt;
+        &lt;flow id=&quot;0&quot; from=&quot;edge0&quot; to=&quot;edge1&quot; number=&quot;100&quot;/&gt;
+    &lt;/interval&gt;
+&lt;/routes&gt;
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The input file always needs a root level element to enclose the trip/flow elements and this should be named <code>&lt;routes&gt;</code>.</p>
+</div>
+<p>Let's review flow parameter:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The name of vehicles that will be generated using this trip definition; vehicles and routes will be named "&lt;id&gt;_&lt;RUNNING&gt;" where &lt;RUNNING&gt; is a number starting at 0 and increased for each vehicle.</td>
+</tr>
+<tr>
+<td>from</td>
+<td>edge id</td>
+<td>The name of the edge the routes start at; the edge must be a part of the used network</td>
+</tr>
+<tr>
+<td>to<sup>(1)</sup></td>
+<td>edge id</td>
+<td>The name of an the edge the routes end at; the edge must be a part of the used network</td>
+</tr>
+<tr>
+<td>via</td>
+<td>edge ids</td>
+<td>List of intermediate edge ids which shall be part of the route; the edges must be a part of the used network</td>
+</tr>
+<tr>
+<td>type</td>
+<td>type id</td>
+<td>The type id of the vehicles to generate</td>
+</tr>
+<tr>
+<td><strong>begin</strong></td>
+<td>int</td>
+<td>The begin time for the described interval</td>
+</tr>
+<tr>
+<td>end</td>
+<td>int</td>
+<td>The end time for the interval; must be greater than &lt;begin&gt;; vehicles will be inserted between &lt;begin&gt; and &lt;end&gt;-1</td>
+</tr>
+<tr>
+<td>vehsPerHour</td>
+<td>float(#/h)</td>
+<td>number of vehicles per hour, equally spaced (not together with period or probability)</td>
+</tr>
+<tr>
+<td>period</td>
+<td>float(s)</td>
+<td>insert equally spaced vehicles at that period (not together with vehsPerHour or probability)</td>
+</tr>
+<tr>
+<td>probability</td>
+<td>float([0,1])</td>
+<td>probability for emitting a vehicle each second (not together with vehsPerHour or period), see also <a href="../../Simulation/Randomness/#flows_with_a_random_number_of_vehicles">Simulation/Randomness</a></td>
+</tr>
+<tr>
+<td>number</td>
+<td>int</td>
+<td>The number of vehicles that shall be inserted during this interval</td>
+</tr>
+<tr>
+<td>color</td>
+<td>color</td>
+<td>Defines the color of the vehicles and their routes</td>
+</tr>
+<tr>
+<td>departLane</td>
+<td>int/string (≥0,"random","free","departlane")</td>
+<td>The lane on which the vehicle shall be inserted</td>
+</tr>
+<tr>
+<td>departPos</td>
+<td>float(m)/string ("random","free","random_free","base")</td>
+<td>The position at which the vehicle shall enter the net; "free" means the point closest to the start of the departlane where it is possible to insert the vehicle. "random_free" tries forcefully to find a free random position and if that fails, places the vehicle at the next "free" position. "base" sets the vehicle's depart position to the vehicle's length + eps (eps=.1m), this means the vehicle is completely at the begin of the depart lane.</td>
+</tr>
+<tr>
+<td>departSpeed</td>
+<td>float(m/s)/string (≥0,"random","max")</td>
+<td>The speed with which the vehicle shall enter the network.</td>
+</tr>
+<tr>
+<td>arrivalLane</td>
+<td>int/string (≥0,"current")</td>
+<td>The lane at which the vehicle shall leave the network<br><br><strong>Note:</strong> see <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicles_and_routes">Definition of Vehicles, Vehicle Types, and Routes#Vehicles and Routes</a></td>
+</tr>
+<tr>
+<td>arrivalPos</td>
+<td>float(m)/string (≥0<sup>(1)</sup>,"random","max")</td>
+<td>The position at which the vehicle shall leave the network<br><br><strong>Note:</strong> see <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicles_and_routes">Definition of Vehicles, Vehicle Types, and Routes#Vehicles and Routes</a></td>
+</tr>
+<tr>
+<td>arrivalSpeed</td>
+<td>float(m/s)/string (≥0,"current")</td>
+<td>The speed with which the vehicle shall leave the network<br><br><strong>Note:</strong> see <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicles_and_routes">Definition of Vehicles, Vehicle Types, and Routes#Vehicles and Routes</a></td>
+</tr>
+</tbody>
+</table>
+<p><sup>(1)</sup> <a href="../../jtrrouter/">jtrrouter</a> does not need this
+parameter, <a href="../../duarouter/">duarouter</a> requires it</p>
+<h1 id="custom-edge-weights">Custom edge weights<a class="headerlink" href="#custom-edge-weights" title="Permanent link">&para;</a></h1>
+<p>The option <strong>--weight-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> can be used to affect the weights used during routing. The
+input format conforms to the output format of the <a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edge based traffic
+measures</a>.
+By default this uses the <strong>traveltime</strong> attribute of edges. The option <strong>--weight-attribute</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a>
+can be used to use other attributes for routing. Weight files that only
+contain some of the network edges are permitted. If undefined, the
+traveltime of an edge defaults to the free-flow traveltime. Also, only
+the <em>weight-attribute</em> must be defined:</p>
+<pre><code class="language-xml">&lt;meandata&gt;
+    &lt;interval begin=&quot;0&quot; end=&quot;3600&quot; id=&quot;whatever&quot;&gt;
+        &lt;edge id=&quot;edgeID1&quot; traveltime=&quot;23&quot;/&gt;
+        &lt;edge id=&quot;edgeID2&quot; traveltime=&quot;1000&quot;/&gt;
+    &lt;/interval&gt;
+&lt;/meandata&gt;
+</code></pre>
+<h1 id="access-restrictions">Access restrictions<a class="headerlink" href="#access-restrictions" title="Permanent link">&para;</a></h1>
+<p>Access to a network edge is typiclly restricte by the <a href="../../Simulation/VehiclePermissions/">vehicle class</a> defined in a <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicle_types">vehicle type</a> but can also be customized with <a href="../../Simulation/VehiclePermissions/#custom_access_restrictions">numerical restrictions</a>.</p>
+<h1 id="repair-routes">Repair routes<a class="headerlink" href="#repair-routes" title="Permanent link">&para;</a></h1>
+<p>The <strong>--repair</strong> option intends to repair routes with connectivity problems.
+Depending on how the route is define, duarouter will try to fix it differently:</p>
+<ul>
+<li>If the route is defined with the "edges" attribute, duarouter will first try
+to fix the route by repairing the connectivity between the edges. If this is not
+possible, then duarouter will search for another valid route between the edges
+with connectivity problems. This may result in some edges from the original
+route no longer being on the new route. In other words, edges defined with the
+"edges" attribute are not taken as mandatory during route repair.</li>
+<li>If the route is defined with the "edges" attribute but also has "stops",
+duarouter will treat the edges of the stops as mandatory. First it will try to
+repair the route as in the previous example, but if duarouter cannot find a valid
+route that goes through the given stop edges, then the route is not possible to fix.</li>
+<li>If the route is defined with the attribute "via" edges, all edges will be
+treated as mandatory. If duarouter cannot fix the connectivity problems between
+the specified edges, a warning appears and the route is not repairable.</li>
+</ul>
+<p>Duarouter also has the <strong>--repair.from</strong> and <strong>--repair.to</strong> options, which allow
+to fix an invalid starting or ending edge using the first or last usable edge
+of the route.</p>
+<h1 id="converting-input-styles">Converting Input Styles<a class="headerlink" href="#converting-input-styles" title="Permanent link">&para;</a></h1>
+<p>SUMO supports various styles of traffic demand definitions (vehicles, trips, flows) and <a href="../../duarouter/">duarouter</a> can be used to convert between them.</p>
+<ul>
+<li>By default, duarouter will convert all inputs to vehicles with embedded routes (route as child element of the vehicle).</li>
+<li>With option <strong>--write-trips</strong> all input will be converted to trips</li>
+<li>combined with option <strong>--write-trips.geo</strong> trips will be written with geo-coordinates (fromLonLat, toLonLat) instead of edges (from, to)</li>
+<li>combined with option <strong>--write-trips.junctions</strong> trips will be written between junctions (fromJunction, toJunction)</li>
+</ul>
+<h1 id="usage-examples">Usage Examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h1>
+<pre><code>duarouter --trip-files trips.xml --net-file road.net.xml --output-file result.rou.xml
+</code></pre>
+<p>the file ''trips.xml '' given below must contain edges contained in the
+network file ''road.net.xml ''.</p>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;trip id=&quot;1625993_25&quot; depart=&quot;25&quot; from=&quot;-15229224#3&quot; to=&quot;4474184&quot;/&gt;
+    &lt;trip id=&quot;1542480_35&quot; depart=&quot;35&quot; from=&quot;-46771582&quot;   to=&quot;-24038909#1&quot;/&gt;
+    &lt;trip id=&quot;1544282_35&quot; depart=&quot;35&quot; from=&quot;20554351#2&quot;  to=&quot;-4876083#5&quot;/&gt;
+    &lt;trip id=&quot;1565407_35&quot; depart=&quot;35&quot; from=&quot;-25771472#1&quot; to=&quot;-25160470#0&quot;/&gt;
+    &lt;trip id=&quot;1620115_45&quot; depart=&quot;45&quot; from=&quot;11279351#3&quot;  to=&quot;5198584#1&quot;/&gt;
+    &lt;trip id=&quot;1647560_45&quot; depart=&quot;45&quot; from=&quot;54048879#0&quot;  to=&quot;-52105434#0&quot;/&gt;
+    &lt;trip id=&quot;3761248_45&quot; depart=&quot;45&quot; from=&quot;-31928311&quot;   to=&quot;23792451#7&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
+<p>Trips may contain <a href="../Importing_O/D_Matrices/#describing_the_taz">source and destination
+districts</a>
+as well as edges. If the districts shall be used for routing this has to
+be specified using the option "--with-taz". Furthermore (if the net does
+not contain the districts) a districts file needs to be provided:</p>
+<pre><code>duarouter --trip-files=&lt;TRIP_DEFS&gt; --net-file=&lt;SUMO_NET&gt; \
+  --output-file=MySUMORoutes.rou.xml --taz-files=&lt;DISTRICTS&gt; --with-taz
+</code></pre>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The edge weights are ignored when using TAZ this way. Instead TAZ edges are selected so that the travel time is minimized.</p>
+</div>
+<p>As we have to read in the flow definitions completely into the memory -
+something we do not have to do necessarily with trips, an extra
+parameter (-f or --flows) is used to make them known by the router:</p>
+<pre><code>duarouter --flows=&lt;FLOW_DEFS&gt; --net=&lt;SUMO_NET&gt; \
+  --output-file=MySUMORoutes.rou.xml -b &lt;UINT&gt; -e &lt;UINT&gt;
+</code></pre>
+<p>Remind that one can not insert flow descriptions into a trip definitions
+file. The opposite (some trip definitions within a flow descriptions
+file) is possible. You also can give both files at the input file, for
+example:</p>
+<pre><code>duarouter --flows=&lt;FLOW_DEFS&gt; --trip-files=&lt;TRIP_DEFS&gt; --net=&lt;SUMO_NET&gt; \
+  --output-file=MySUMORoutes.rou.xml -b &lt;UINT&gt; -e &lt;UINT&gt;
+</code></pre>
+<h1 id="dealing-with-errors-during-routing">Dealing with Errors During Routing<a class="headerlink" href="#dealing-with-errors-during-routing" title="Permanent link">&para;</a></h1>
+<p>When running <a href="../../duarouter/">duarouter</a> you may encounter errors
+of the type</p>
+<pre><code>Error: No connection between 'edge1' and 'edge2' found
+</code></pre>
+<p>This is caused by an unconnected network. If your network has vehicle
+class restrictions it may be that the connectivity is only lacking for
+particular vehicle classes which is less obvious from the GUI. You can
+ignore these routes using the option <strong>--ignore-errors</strong>. However, if a large proportion of
+your routes cause this error you should definitely investigate your
+network file for problems. The tool
+<a href="../../Tools/Net/#netcheckpy">Tools/Net#netcheckpy</a> can be used
+to pin down the connectivity gaps in your network.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

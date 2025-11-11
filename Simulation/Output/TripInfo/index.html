@@ -1,0 +1,933 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Output/TripInfo/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>TripInfo - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instantiating-within-the-simulation" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TripInfo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instantiating-within-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instantiating within the Simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generated Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Devices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#battery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Battery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-for-vehicles-that-have-not-arrived-at-simulation-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output for vehicles that have not arrived at simulation end
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-only-for-selected-vehicles-or-vehicle-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output only for selected vehicles or vehicle types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#person-and-container-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Person and Container Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregated-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregated Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualization Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#depart-delays-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Depart delays over time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#histogram-of-the-number-of-stops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histogram of the number of stops
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>TripInfo</h1>
+
+<h2 id="instantiating-within-the-simulation">Instantiating within the Simulation<a class="headerlink" href="#instantiating-within-the-simulation" title="Permanent link">&para;</a></h2>
+<p>The simulation is forced to generate this output using the option <strong>--tripinfo-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> on
+the command line/within a configuration. This output contains the
+information about each vehicle's departure time, the time the vehicle
+wanted to start at (which may be lower than the real departure time) and
+the time the vehicle has arrived. The information is generated for each
+vehicle as soon as the vehicle arrived at its destination and is removed
+from the network.</p>
+<h2 id="generated-output">Generated Output<a class="headerlink" href="#generated-output" title="Permanent link">&para;</a></h2>
+<p>The format is as following:</p>
+<pre><code class="language-xml">&lt;tripinfos&gt;
+    &lt;tripinfo id=&quot;&lt;VEHICLE_ID&gt;&quot; \
+            depart=&quot;&lt;DEPARTURE_TIME&gt;&quot; departLane=&quot;&lt;DEPARTURE_LANE_ID&gt;&quot; \
+            departPos=&quot;&lt;DEPARTURE_POSITION&gt;&quot; departSpeed=&quot;&lt;DEPARTURE_SPEED&gt;&quot; \
+            departDelay=&quot;&lt;DEPARTURE_DELAY&gt;&quot; \
+            arrival=&quot;&lt;ARRIVAL_TIME&gt;&quot; arrivalLane=&quot;&lt;DEPARTURE_LANE_ID&gt;&quot; \
+            arrivalPos=&quot;&lt;ARRIVAL_POSITION&gt;&quot; arrivalSpeed=&quot;&lt;ARRIVAL_SPEED&gt;&quot; \
+            duration=&quot;&lt;TRAVEL_TIME&gt;&quot; routeLength=&quot;&lt;ROUTE_LENGTH&gt;&quot; \
+            waitingTime=&quot;&lt;SECONDS_WAITING_FOR_TRAFFIC&gt;&quot;
+            waitingCount=&quot;&lt;NUMBER_OF_WAITING_EPISODES&gt;&quot; \
+            rerouteNo=&quot;&lt;REROUTE_NUMBER&gt;&quot; \
+            devices=&quot;&lt;DEVICE_LIST&gt;&quot; vtype=&quot;&lt;VEHICLE_TYPE_ID&gt;&quot;/&gt;
+
+    ... information about further vehicles ...
+
+&lt;/tripinfos&gt;
+</code></pre>
+<p>Please note that, in contrary to the example above, for each time step,
+all those values are reported in one line. An entry is written each time
+a vehicle has arrived at his destination. In prior to this, the written
+values would not be known.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>(vehicle) id</td>
+<td>The name of the vehicle that is described by this entry</td>
+</tr>
+<tr>
+<td><code>depart</code></td>
+<td>(simulation) seconds</td>
+<td>The real departure time (the time the vehicle was inserted into the network)</td>
+</tr>
+<tr>
+<td><code>departLane</code></td>
+<td>(lane) id</td>
+<td>The id of the lane the vehicle started its journey</td>
+</tr>
+<tr>
+<td><code>departPos</code></td>
+<td>m</td>
+<td>The position on the lane the vehicle started its journey</td>
+</tr>
+<tr>
+<td><code>departSpeed</code></td>
+<td>m/s</td>
+<td>The speed with which the vehicle started its journey</td>
+</tr>
+<tr>
+<td><code>departDelay</code></td>
+<td>(simulation) seconds</td>
+<td>The time the vehicle had to wait before it could start his journey</td>
+</tr>
+<tr>
+<td><code>arrival</code></td>
+<td>(simulation) seconds</td>
+<td>The time the vehicle reached his destination at</td>
+</tr>
+<tr>
+<td><code>arrivalLane</code></td>
+<td>(lane) id</td>
+<td>The id of the lane the vehicle was on when reaching his destination</td>
+</tr>
+<tr>
+<td><code>arrivalPos</code></td>
+<td>m</td>
+<td>The position on the lane the vehicle was when reaching the destination</td>
+</tr>
+<tr>
+<td><code>arrivalSpeed</code></td>
+<td>m/s</td>
+<td>The speed the vehicle had when reaching the destination</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>(simulation) seconds</td>
+<td>The time the vehicle needed to accomplish the route</td>
+</tr>
+<tr>
+<td><code>routeLength</code></td>
+<td>m</td>
+<td>The length of the vehicle's route</td>
+</tr>
+<tr>
+<td><code>waitingTime</code></td>
+<td>s</td>
+<td>The time in which the vehicle speed was below or equal 0.1 m/s (scheduled <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#stops_and_waypoints">stops</a> do not count)</td>
+</tr>
+<tr>
+<td><code>waitingCount</code></td>
+<td>#</td>
+<td>The number of times the vehicle speed went below or equal 0.1 m/s</td>
+</tr>
+<tr>
+<td><code>stopTime</code></td>
+<td>s</td>
+<td>The time in which the vehicle was taking a planned <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#stops_and_waypoints">stop</a></td>
+</tr>
+<tr>
+<td><code>timeLoss</code></td>
+<td>seconds</td>
+<td>The time lost due to driving below the ideal speed. (ideal speed includes <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#speed_distributions">the individual speedFactor</a>; slowdowns due to intersections etc. will incur timeLoss, scheduled <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#stops_and_waypoints">stops</a> do not count)</td>
+</tr>
+<tr>
+<td><code>rerouteNo</code></td>
+<td>#</td>
+<td>The number the vehicle has been rerouted</td>
+</tr>
+<tr>
+<td><code>devices</code></td>
+<td>[ID]*</td>
+<td>List of devices the vehicle had. Each device is separated from the others by a ';'.</td>
+</tr>
+<tr>
+<td><code>vtype</code></td>
+<td>ID</td>
+<td>The type of the vehicle</td>
+</tr>
+<tr>
+<td><code>speedFactor</code></td>
+<td>float</td>
+<td>The individual speed factor of the vehicle (possibly drawn from a speed distribution at the start of the simulation)</td>
+</tr>
+<tr>
+<td><code>vaporized</code></td>
+<td>bool</td>
+<td>Whether the vehicle was removed from the simulation before reaching its destination</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devices">Devices<a class="headerlink" href="#devices" title="Permanent link">&para;</a></h3>
+<p>Single devices may choose to add further output to the tripinfo file.</p>
+<h4 id="emissions">Emissions<a class="headerlink" href="#emissions" title="Permanent link">&para;</a></h4>
+<p>The "emissions" device instantiated using one of the options <strong>--device.emissions.probability</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> or <strong>--device.emissions.explicit</strong> <a href="../../../Basics/Notation/#referenced_data_types"><strong><em>&lt;ID&gt;[,&lt;ID&gt;]*</em></strong></a>. The written emissions depend
+on the chosen emission class of the vehicle (see <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/">Definition of Vehicles,
+Vehicle Types, and
+Routes</a>
+and <a href="../../../Models/Emissions/">Models/Emissions</a>) contributes to the tripinfo output. It provides the sum of all emissions/consumption generated/consumed by the
+vehicle during its journey.</p>
+<p>This adds the following line:</p>
+<pre><code class="language-xml">&lt;tripinfos&gt;
+    &lt;tripinfo id=&quot;&lt;VEHICLE_ID&gt;&quot; ... vtype=&quot;&lt;VEHICLE_TYPE_ID&gt;&quot;&gt;
+        &lt;emissions CO_abs=&quot;...&quot; CO2_abs=&quot;...&quot; HC_abs=&quot;...&quot; PMx_abs=&quot;...&quot; NOx_abs=&quot;...&quot; fuel_abs=&quot;...&quot;/&gt;
+    &lt;/tripinfo&gt;
+    ... information about further vehicles ...
+
+&lt;/tripinfos&gt;
+</code></pre>
+<p>with units as following</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CO_abs</code></td>
+<td>mg</td>
+<td>The complete amount of CO emitted by the vehicle during the trip</td>
+</tr>
+<tr>
+<td><code>CO2_abs</code></td>
+<td>mg</td>
+<td>The complete amount of CO<sub>2</sub> emitted by the vehicle during the trip</td>
+</tr>
+<tr>
+<td><code>HC_abs</code></td>
+<td>mg</td>
+<td>The complete amount of HC emitted by the vehicle during the trip</td>
+</tr>
+<tr>
+<td><code>PMx_abs</code></td>
+<td>mg</td>
+<td>The complete amount of PM<sub>x</sub> emitted by the vehicle during the trip</td>
+</tr>
+<tr>
+<td><code>NOx_abs</code></td>
+<td>mg</td>
+<td>The complete amount of NO<sub>x</sub> emitted by the vehicle during the trip</td>
+</tr>
+<tr>
+<td><code>fuel_abs</code></td>
+<td>mg</td>
+<td>The complete amount of fuel the vehicle used during the trip</td>
+</tr>
+<tr>
+<td><code>electricity_abs</code></td>
+<td>Wh</td>
+<td>The complete amount of electricity the vehicle used during the trip</td>
+</tr>
+</tbody>
+</table>
+<h4 id="battery">Battery<a class="headerlink" href="#battery" title="Permanent link">&para;</a></h4>
+<p>The <a href="../../../Models/Electric/">"battery" device</a> contributes to the tripinfo output how many times the vehicle encountered its battery depleted during its journey.
+Vehicles can be forced to stop due to lack of energy using the <a href="../../Stationfinder/">"stationfinder" device</a> or may recuperate energy while braking and then deplete the battery again.</p>
+<p>This adds the following line:</p>
+<pre><code class="language-xml">&lt;tripinfos&gt;
+    &lt;tripinfo id=&quot;&lt;VEHICLE_ID&gt;&quot; ... vtype=&quot;&lt;VEHICLE_TYPE_ID&gt;&quot;&gt;
+        &lt;battery depleted=&quot;...&quot; actualBatteryCapacity=&quot;...&quot; totalEnergyConsumed=&quot;...&quot; totalEnergyRegenerated=&quot;...&quot;/&gt;
+    &lt;/tripinfo&gt;
+    ... information about further vehicles ...
+
+&lt;/tripinfos&gt;
+</code></pre>
+<p>with the attributes as following</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>depleted</code></td>
+<td>-</td>
+<td>The times the vehicle wanted to consume more energy than the battery could provide</td>
+</tr>
+<tr>
+<td><code>actualBatteryCapacity</code></td>
+<td>Wh</td>
+<td>Battery capacity of the vehicle after completing its route</td>
+</tr>
+<tr>
+<td><code>totalEnergyConsumed</code></td>
+<td>Wh</td>
+<td>Cumulative sum of energy consumption after completing the route</td>
+</tr>
+<tr>
+<td><code>totalEnergyRegenerated</code></td>
+<td>Wh</td>
+<td>Cumulative sum of regenerated energy after completing the route</td>
+</tr>
+</tbody>
+</table>
+<h2 id="output-for-vehicles-that-have-not-arrived-at-simulation-end">Output for vehicles that have not arrived at simulation end<a class="headerlink" href="#output-for-vehicles-that-have-not-arrived-at-simulation-end" title="Permanent link">&para;</a></h2>
+<p>By default, tripinfo-output is only written on vehicle arrival. This means vehicles that have not arrived at simulation end (i.e. due to option <strong>--end</strong>) generate no output.
+To change this, the option <strong>--tripinfo-output.write-unfinished</strong> can be used.</p>
+<h2 id="output-only-for-selected-vehicles-or-vehicle-types">Output only for selected vehicles or vehicle types<a class="headerlink" href="#output-only-for-selected-vehicles-or-vehicle-types" title="Permanent link">&para;</a></h2>
+<p>By default all vehicles will generated tripinfo-output. By <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#devices">assigning a tripinfo device</a> to selected vehicles or types, this can be changed.</p>
+<p>Example:
+Setting SUMO-option <strong>--device.tripinfo.probability 0</strong> will disable the device for all vehicles by default.
+The following definition overrides this default end enables the device for busses:</p>
+<pre><code class="language-xml">&lt;vType id=&quot;bus&quot;&gt;
+  &lt;param key=&quot;has.tripinfo.device&quot; value=&quot;true&quot;/&gt;
+&lt;/vType&gt;
+</code></pre>
+<h2 id="person-and-container-output">Person and Container Output<a class="headerlink" href="#person-and-container-output" title="Permanent link">&para;</a></h2>
+<p>If the simulation contains persons or containers, the following elements
+will be added to the output:</p>
+<pre><code class="language-xml">&lt;personinfo id=&quot;person0&quot; depart=&quot;0.00&quot;&gt;
+ &lt;walk depart=&quot;0.00&quot; arrival=&quot;47.00&quot; arrivalPos=&quot;55.00&quot;/&gt;
+ &lt;ride waitingTime=&quot;74.00&quot; vehicle=&quot;train0&quot; depart=&quot;121.00&quot; arrival=&quot;140.00&quot; arrivalPos=&quot;92.00&quot;/&gt;
+ &lt;stop duration=&quot;20.00&quot; arrival=&quot;160.00&quot; arrivalPos=&quot;45.00&quot; actType=&quot;singing&quot;/&gt;
+&lt;/personinfo&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;containerinfo id=&quot;container0&quot; depart=&quot;0.00&quot;&gt;
+  &lt;tranship depart=&quot;0.00&quot; arrival=&quot;54.00&quot; arrivalPos=&quot;55.00&quot;/&gt;
+  &lt;transport waitingTime=&quot;103.00&quot; vehicle=&quot;train0&quot; depart=&quot;157.00&quot; arrival=&quot;176.00&quot; arrivalPos=&quot;92.00&quot;/&gt;
+  &lt;stop duration=&quot;20.00&quot; arrival=&quot;196.00&quot; arrivalPos=&quot;40.00&quot; actType=&quot;waiting&quot;/&gt;
+&lt;/containerinfo&gt;
+</code></pre>
+<p>When setting option <strong>--personinfo-output FILE</strong>, the above elements will be written to the given filename instead of written together with the vehicle <code>&lt;tripinfo&gt;</code> elements.</p>
+<p>The <code>&lt;personinfo&gt;</code> / <code>&lt;containerinfo&gt;</code> attributes have the following meaning:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>(vehicle) id</td>
+<td>The name of the person / container described by this entry</td>
+</tr>
+<tr>
+<td><code>depart</code></td>
+<td>(simulation) seconds</td>
+<td>The departure time</td>
+</tr>
+</tbody>
+</table>
+<p>The attributes within the stages have the following meaning:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>depart</code></td>
+<td>(simulation) seconds</td>
+<td>The departure time for this stage. For <code>&lt;ride&gt;,&lt;transport&gt;</code>, this is the time where the vehicle is entered.                    (-1 if the vehicle wasn't entered)</td>
+</tr>
+<tr>
+<td><code>arrival</code></td>
+<td>(simulation) seconds</td>
+<td>The arrival time for this stage N.B. In stop stages this is the time at which the stage ends i.e. after the duration time period (-1 if the stage did not start)</td>
+</tr>
+<tr>
+<td><code>arrivalPos</code></td>
+<td>m</td>
+<td>The arrival position on the destination edge for this stage</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>(simulation) seconds</td>
+<td>For walking and stopping, this is time spent in that stage. For a riding stage, this <strong>only</strong> is the time spent inside the vehicle.  (-1 if the stage did not start or the person did not enter the vehicle)</td>
+</tr>
+<tr>
+<td><code>actType</code></td>
+<td>string</td>
+<td>The activity description of a stop</td>
+</tr>
+<tr>
+<td><code>waitingTime</code></td>
+<td>(simulation) seconds</td>
+<td>The time spent waiting for a vehicle</td>
+</tr>
+<tr>
+<td><code>routeLength</code></td>
+<td>m</td>
+<td>the distance traveled in that stage</td>
+</tr>
+<tr>
+<td><code>timeLoss</code></td>
+<td>s</td>
+<td>the time lost due to traveling at speed below the maximum speed in that stage. For a <code>&lt;ride&gt;</code> this is the timeLoss of the vehicle during the ride</td>
+</tr>
+<tr>
+<td><code>maxSpeed</code></td>
+<td>s</td>
+<td>the maximum speed permitted in that stage</td>
+</tr>
+</tbody>
+</table>
+<h2 id="aggregated-output">Aggregated Output<a class="headerlink" href="#aggregated-output" title="Permanent link">&para;</a></h2>
+<p>Aggregated output for key tripinfo-output attributes can be obtained by setting
+the option <a href="../StatisticOutput/"><strong>--statistic-output</strong></a>.</p>
+<p>For further aggregation see <a href="../../../Tools/Output/#attributestatspy">attributeStats.py</a> and <a href="../../../Tools/Xml/#xml2csvpy">Tools/Xml#xml2csv.py</a>.</p>
+<h2 id="visualization-examples">Visualization Examples<a class="headerlink" href="#visualization-examples" title="Permanent link">&para;</a></h2>
+<p>The TripInfo output can be used as input for several visualization tools shipped with SUMO. Some example plots are shown below.</p>
+<h3 id="depart-delays-over-time">Depart delays over time<a class="headerlink" href="#depart-delays-over-time" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/departDelayScatter.png" title="departDelayScatter.png" width="500"/></p>
+<p>Generated with <a href="../../../Tools/Visualization/#depart_delay_over_time_from_tripinfo_data">plotXMLAttributes.py</a>.</p>
+<h3 id="histogram-of-the-number-of-stops">Histogram of the number of stops<a class="headerlink" href="#histogram-of-the-number-of-stops" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/stopCountDist.png" title="stopCountDist.png" width="500"/></p>
+<p>Generated with <a href="../../../Tools/Visualization/#plot_tripinfo_distributionspy">plot_tripinfo_distributions.py</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

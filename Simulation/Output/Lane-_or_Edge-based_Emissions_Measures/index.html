@@ -1,0 +1,884 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Output/Lane-_or_Edge-based_Emissions_Measures/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Lane- or Edge-based Emissions Measures - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instantiating-within-the-simulation" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lane- or Edge-based Emissions Measures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instantiating-within-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instantiating within the Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instantiating within the Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge-based-emission-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge-Based Emission Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lane-based-emission-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lane-Based Emission Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributes-for-both-edge--and-lane-based-emission-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes, for both Edge- and Lane-Based Emission Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generated Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge-based-network-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge-Based Network States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lane-based-network-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lane-Based Network States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Descriptions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#omitting-empty-edgeslanes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Omitting empty Edges/Lanes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Range
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Lane- or Edge-based Emissions Measures</h1>
+
+<p>The edge/lane based vehicular emission output writes absolute and normed
+values of vehicular pollutant emissions collected on edges or lanes. The
+absolute values hold the sum of each of the pollutants emitted on each
+edge/lane, the normed values give the values normed by the interval
+duration and the edge's/lane's length.</p>
+<p>Please note, that each vehicle type in SUMO may belong to a certain
+emission class (see <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/">Definition of Vehicles, Vehicle Types, and
+Routes</a>
+and <a href="../../../Models/Emissions/">Models/Emissions</a>). When using the
+emissions output, you should assure your vehicles reflect a realistic
+population in the means of vehicle emission class distribution.</p>
+<h2 id="instantiating-within-the-simulation">Instantiating within the Simulation<a class="headerlink" href="#instantiating-within-the-simulation" title="Permanent link">&para;</a></h2>
+<h3 id="edge-based-emission-output">Edge-Based Emission Output<a class="headerlink" href="#edge-based-emission-output" title="Permanent link">&para;</a></h3>
+<p>An edge-based emissions output is defined way within an <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a> as following:</p>
+<pre><code class="language-xml">&lt;edgeData id=&quot;&lt;DETECTOR_ID&gt;&quot; type=&quot;emissions&quot; period=&quot;&lt;PERIOD&gt;&quot; file=&quot;&lt;OUTPUT_FILE&gt;&quot; [excludeEmpty=&quot;true&quot;]/&gt;
+</code></pre>
+<h3 id="lane-based-emission-output">Lane-Based Emission Output<a class="headerlink" href="#lane-based-emission-output" title="Permanent link">&para;</a></h3>
+<p>A lane-based emissions output is defined way within an <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a> as following:</p>
+<pre><code class="language-xml">&lt;laneData id=&quot;&lt;DETECTOR_ID&gt;&quot; type=&quot;emissions&quot; period=&quot;&lt;PERIOD&gt;&quot; file=&quot;&lt;OUTPUT_FILE&gt;&quot; [excludeEmpty=&quot;true&quot;]/&gt;
+</code></pre>
+<h3 id="attributes-for-both-edge--and-lane-based-emission-output">Attributes, for both Edge- and Lane-Based Emission Output<a class="headerlink" href="#attributes-for-both-edge--and-lane-based-emission-output" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the detector</td>
+</tr>
+<tr>
+<td><strong>file</strong></td>
+<td>filename</td>
+<td>The path to the output file. The path may be relative.</td>
+</tr>
+<tr>
+<td>period (alias freq)</td>
+<td>int (time)</td>
+<td>The aggregation period the values the detector collects shall be summed up. If not given, the whole time range between begin and end is aggregated</td>
+</tr>
+<tr>
+<td>begin</td>
+<td>int (time)</td>
+<td>The time to start writing (intervals starting before this time are discarded). If not given, the simulation's begin is used.</td>
+</tr>
+<tr>
+<td>end</td>
+<td>int (time)</td>
+<td>The time to end writing (intervals starting at or after this time are discarded). If not given the simulation's end is used.</td>
+</tr>
+<tr>
+<td>withInternal</td>
+<td>bool</td>
+<td>If set, junction internal edges/lanes will be written as well; <em>default: false</em>.</td>
+</tr>
+<tr>
+<td>maxTraveltime</td>
+<td>float (time)</td>
+<td>The maximum traveltime in seconds to write if only very small movements occur; <em>default 100000</em>.</td>
+</tr>
+<tr>
+<td>minSamples</td>
+<td>float (time)</td>
+<td>The minimum total number of seconds vehicles have to be on the edge / lane to consider it non-empty; <em>default: &gt;0</em>.</td>
+</tr>
+<tr>
+<td>excludeEmpty</td>
+<td>string (true, false, defaults)</td>
+<td>If set to true, edges/lanes which were not used by a vehicle during this period will not be written; <em>default: false</em>. If set to "defaults" default values for travel time and emissions depending on edge length and maximum speed get printed.</td>
+</tr>
+<tr>
+<td>vTypes</td>
+<td>string</td>
+<td>space separated list of vehicle type ids to consider. If not given, all vTypes will be considered.</td>
+</tr>
+<tr>
+<td>writeAttributes</td>
+<td>string list</td>
+<td>list of attribute names that shall be written (defaults to all attribute)</td>
+</tr>
+<tr>
+<td>edges</td>
+<td>string list</td>
+<td>restrict output to the given list of edge ids</td>
+</tr>
+<tr>
+<td>edgesFile</td>
+<td>filename</td>
+<td>restrict output to the given the list of edges given in file (either one edgeID per line or an id prefixed with 'edge:' as in a <a href="../../../Netedit/editModesCommon/#selection_operations">selection file</a>)</td>
+</tr>
+<tr>
+<td>aggregate</td>
+<td>bool</td>
+<td>Whether the traffic statistic of all edges shall be aggregated into a single value (edge id will be <code>AGGREGATED</code>).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="generated-output">Generated Output<a class="headerlink" href="#generated-output" title="Permanent link">&para;</a></h2>
+<h3 id="edge-based-network-states">Edge-Based Network States<a class="headerlink" href="#edge-based-network-states" title="Permanent link">&para;</a></h3>
+<h3 id="lane-based-network-states">Lane-Based Network States<a class="headerlink" href="#lane-based-network-states" title="Permanent link">&para;</a></h3>
+<h3 id="value-descriptions">Value Descriptions<a class="headerlink" href="#value-descriptions" title="Permanent link">&para;</a></h3>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Please note that the unit of fuel-related outputs changed with SUMO 1.14.0 from liters to milligram.
+For the old behavior use the option <strong>--emissions.volumetric-fuel</strong>.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin</td>
+<td>(simulation) seconds</td>
+<td>The first time step the values were collected in</td>
+</tr>
+<tr>
+<td>end</td>
+<td>(simulation) seconds</td>
+<td>The last time step + DELTA_T in which the reported values were collected</td>
+</tr>
+<tr>
+<td>edge\@id</td>
+<td>(edge) id</td>
+<td>The name of the reported edge</td>
+</tr>
+<tr>
+<td>lane\@id</td>
+<td>(lane) id</td>
+<td>The name of the reported lane</td>
+</tr>
+<tr>
+<td>sampledSeconds</td>
+<td>s</td>
+<td>Number seconds vehicles were measured on the edge/lane (may be subseconds if a vehicle enters/leaves the edge/lane). This value is the sum of the measured times of all vehicles.</td>
+</tr>
+<tr>
+<td>traveltime</td>
+<td>s</td>
+<td>Time needed to pass the edge/lane, note that this is just an estimation based on the mean speed, not the exact time the vehicles needed.</td>
+</tr>
+<tr>
+<td>CO_abs</td>
+<td>mg</td>
+<td>The complete amount of CO emitted by the vehicles on this lane/edge during the aggregation period</td>
+</tr>
+<tr>
+<td>CO2_abs</td>
+<td>mg</td>
+<td>The complete amount of CO<sub>2</sub> emitted by the vehicles on this lane/edge during the aggregation period</td>
+</tr>
+<tr>
+<td>HC_abs</td>
+<td>mg</td>
+<td>The complete amount of HC emitted by the vehicles on this lane/edge during the aggregation period</td>
+</tr>
+<tr>
+<td>PMx_abs</td>
+<td>mg</td>
+<td>The complete amount of PM<sub>x</sub> emitted by the vehicles on this lane/edge during the aggregation period</td>
+</tr>
+<tr>
+<td>NOx_abs</td>
+<td>mg</td>
+<td>The complete amount of NO<sub>x</sub> emitted by the vehicles on this lane/edge during the aggregation period</td>
+</tr>
+<tr>
+<td>fuel_abs</td>
+<td>mg</td>
+<td>The complete amount of fuel the vehicles on this lane/edge during the aggregation period have consumed</td>
+</tr>
+<tr>
+<td>electricity_abs</td>
+<td>Wh</td>
+<td>The complete amount of electricity the vehicles on this lane/edge during the aggregation period have consumed</td>
+</tr>
+<tr>
+<td>CO_normed</td>
+<td>g/km/h</td>
+<td>CO emissions during this interval normed by time and edge/lane length</td>
+</tr>
+<tr>
+<td>CO2_normed</td>
+<td>g/km/h</td>
+<td>CO<sub>2</sub> emissions during this interval normed by time and edge/lane length</td>
+</tr>
+<tr>
+<td>HC_normed</td>
+<td>g/km/h</td>
+<td>HC emissions during this interval normed by time and edge/lane length</td>
+</tr>
+<tr>
+<td>PMx_normed</td>
+<td>g/km/h</td>
+<td>PM<sub>x</sub> emissions during this interval normed by time and edge/lane length</td>
+</tr>
+<tr>
+<td>NOx_normed</td>
+<td>g/km/h</td>
+<td>NO<sub>x</sub> emissions during this interval normed by time and edge/lane length</td>
+</tr>
+<tr>
+<td>fuel_normed</td>
+<td>g/km/h</td>
+<td>fuel consumption during this interval normed by time and edge/lane length</td>
+</tr>
+<tr>
+<td>electricity_normed</td>
+<td>W/km</td>
+<td>electricity consumption during this interval normed by time and edge/lane length</td>
+</tr>
+<tr>
+<td>CO_perVeh</td>
+<td>mg</td>
+<td>Assumed CO emissions a vehicle would produce when passing the edge</td>
+</tr>
+<tr>
+<td>CO2_perVeh</td>
+<td>mg</td>
+<td>Assumed CO<sub>2</sub> emissions a vehicle would produce when passing the edge</td>
+</tr>
+<tr>
+<td>HC_perVeh</td>
+<td>mg</td>
+<td>Assumed HC emissions a vehicle would produce when passing the edge</td>
+</tr>
+<tr>
+<td>PMx_perVeh</td>
+<td>mg</td>
+<td>Assumed PM<sub>x</sub> emissions a vehicle would produce when passing the edge</td>
+</tr>
+<tr>
+<td>NOx_perVeh</td>
+<td>mg</td>
+<td>Assumed NO<sub>x</sub> emissions a vehicle would produce when passing the edge</td>
+</tr>
+<tr>
+<td>fuel_perVeh</td>
+<td>mg</td>
+<td>Assumed fuel consumption a vehicle would need when passing the edge</td>
+</tr>
+<tr>
+<td>electricity_perVeh</td>
+<td>Wh</td>
+<td>Assumed electricity consumption a vehicle would need when passing the edge</td>
+</tr>
+</tbody>
+</table>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<p>Notes:</p>
+<ul>
+<li>Per default, all edges are written, even those on which no vehicle
+  drove. It can be disabled setting the
+  <code>excludeEmpty</code> attribute to true.</li>
+<li>The interval end is the interval begin + aggregation time, meaning
+  that values were collected within these steps excluding the end time
+  itself. If the simulation ends before the last interval is over, the
+  interval will be pruned.</li>
+<li>The output file will be generated, does not have to exist earlier
+  and will be overwritten if existing without any warning. The folder
+  the output file shall be generated in must exist.</li>
+<li>If you need only information about the network states during certain
+  time periods, you may constraint generation of the dumps by giving
+  attributes "<code>begin="&lt;TIME&gt;\[,&lt;TIME&gt;\]+"</code>"
+  and "<code>end="&lt;TIME&gt;\[,&lt;TIME&gt;\]+"</code>". When at
+  least one combination is given, dumps will be written only if an
+  according begin/end-pair exists for the current time. This means,
+  only those intervals will be saved for which
+  begin[x]&lt;=INTERVAL_END and end[x]&gt;=INTERVAL_BEGIN. All dumps
+  will cover the complete simulation if no values for begin/end are
+  given.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>perVeh</strong> outputs are normalized to the mean value that vehicle would consume when driving the full length of the edge. This may leader to a higer value than would be expected from the <em>abs</em> output when multiplied by the number of vehicles, whenever vehicles depart or arrive on that edge and do not drive the full length.</p>
+</div>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../Lane-_or_Edge-based_Traffic_Measures/">edge/lane-based network performance measures
+  output</a>
+  and <a href="../Lane-_or_Edge-based_Noise_Measures/">edge/lane-based vehicular noise emission
+  output</a>
+  which have similar formats</li>
+<li>The
+  <a href="../../../Tools/Visualization/#mpl_dump_onnetpy">mpl_dump_onNet.py</a>
+  script can display values of this output as a colored net (and
+  further <a href="../../../Tools/Visualization/">visualization tools</a>
+  exist).</li>
+</ul>
+<h2 id="discussion">Discussion<a class="headerlink" href="#discussion" title="Permanent link">&para;</a></h2>
+<h3 id="omitting-empty-edgeslanes">Omitting empty Edges/Lanes<a class="headerlink" href="#omitting-empty-edgeslanes" title="Permanent link">&para;</a></h3>
+<p><strong>17.07.2009</strong>: I have excluded computation of mean per-vehicle emission
+to pass a lane/edge though almost the same functionality is already
+covered by the "excludeEmpty"-attribute. I am not sure whether this
+makes sense.</p>
+<p>Also, we maybe should then also decide whether or not this also should
+be done for travel time computation.</p>
+<h3 id="value-range">Value Range<a class="headerlink" href="#value-range" title="Permanent link">&para;</a></h3>
+<p><strong>17.07.2009</strong>: The values generated for absolute (..._abs) emission
+during the period and for the mean per-vehicle emission to pass a
+lane/edge are now given in mg for making lower values visible though
+only digits after the dot are used. I am not really happy with the
+results. If a vehicle passes a lane of 390m length at 10m/s, it is
+assumed it emits less CO than 0.005mg so it does not appear in the
+outputs; On the other hand, if one looks at a jammed situation, the
+emissions of CO2 may climb up to CO_perVeh="21246834688.00" (sure, they
+would get infinite if the vehicle would be really standing). I suppose we
+have to evaluate how the system behaves.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

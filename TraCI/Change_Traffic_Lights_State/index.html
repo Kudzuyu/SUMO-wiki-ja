@@ -1,0 +1,760 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TraCI/Change_Traffic_Lights_State/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Change Traffic Lights State - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-0xc2-change-traffic-light-state" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Change Traffic Lights State
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#state-lightpriority-tuple-0x20" class="md-nav__link">
+    <span class="md-ellipsis">
+      state (light/priority tuple) (0x20)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-phasebrakeyellow-0x21" class="md-nav__link">
+    <span class="md-ellipsis">
+      state (phase/brake/yellow) (0x21)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-index-0x22" class="md-nav__link">
+    <span class="md-ellipsis">
+      phase index (0x22)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#program-0x23" class="md-nav__link">
+    <span class="md-ellipsis">
+      program (0x23)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-duration-0x24" class="md-nav__link">
+    <span class="md-ellipsis">
+      phase duration (0x24)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-program-definition-0x2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      complete program definition (0x2c)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="command-0xc2-change-traffic-light-state">Command 0xc2: Change Traffic Light State<a class="headerlink" href="#command-0xc2-change-traffic-light-state" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">&lt;value_type&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable</td>
+<td style="text-align: center;">Traffic Lights ID</td>
+<td style="text-align: center;">Type of the value</td>
+<td style="text-align: center;">New Value</td>
+</tr>
+</tbody>
+</table>
+<p>Changes the state of a traffic light. Because it is possible to change
+different values of a traffic light, the given value may have different
+types. The following values can be changed, the type of the value to
+given is also shown in the table.</p>
+<center>**Overview Changeable Traffic Lights Variables**</center>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>ValueType</th>
+<th>Description</th>
+<th><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>state (light/priority tuple) (0x20)</td>
+<td>string</td>
+<td>Sets the phase definition to the given. Assumes the given string is a tuple of light definitions from rRgGyYoO, for red, green, yellow, off, where lower case letters mean that the stream has to decelerate. After this call the program-ID of the traffic light will be set to "online" and the state will be maintained until the next call of setRedYellowGreenState() or until setting another program with setProgram().</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setRedYellowGreenState">setRedYellowGreenState</a> <a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setLinkState">setLinkState</a></td>
+</tr>
+<tr>
+<td>phase index (0x22)</td>
+<td>integer</td>
+<td>Sets the phase of the traffic light to the given. The given index must be valid for the current program of the traffic light, this means it must be between 0 and the number of phases known to the current program of the tls - 1.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setPhase">setPhase</a></td>
+</tr>
+<tr>
+<td>program (0x23)</td>
+<td>string</td>
+<td>Switches the traffic light to the given program. No WAUT algorithm is used, the program is directly instantiated. The index of the traffic light stays the same as before.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setProgram">setProgram</a></td>
+</tr>
+<tr>
+<td>phase duration (0x24)</td>
+<td>double</td>
+<td>Sets the remaining duration of the current phase in seconds.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setPhaseDuration">setPhaseDuration</a></td>
+</tr>
+<tr>
+<td>complete program definition (0x2c)</td>
+<td>compound (see below)</td>
+<td>Inserts a completely new program.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-setProgramLogic">setProgramLogic</a></td>
+</tr>
+<tr>
+<td>add constraint (0x37)</td>
+<td>compound (tripId, foeSignal, foeId, type, limit)</td>
+<td>Add the given constraint</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-addConstraint">addConstraint</a></td>
+</tr>
+<tr>
+<td>remove constraint (0x35)</td>
+<td>compound (tripId, foeSignal, foeId)</td>
+<td>Remove the given constraint</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-removeConstraint">removeConstraint</a></td>
+</tr>
+<tr>
+<td>update constraints (0x36)</td>
+<td>compound (vehID, tripId)</td>
+<td>Removes all constraints that can no longer be met because the route of vehID does not pass the signal involved in the constraint with the given tripId. This includes constraints on tripId as well as constraints where tripId is the foeId</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._trafficlight.html#TrafficLightDomain-updateConstraints">updateConstraints</a></td>
+</tr>
+</tbody>
+</table>
+<p>The message contents are as following:</p>
+<h3 id="state-lightpriority-tuple-0x20">state (light/priority tuple) (0x20)<a class="headerlink" href="#state-lightpriority-tuple-0x20" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Phase Definition (light/priority tuple)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="state-phasebrakeyellow-0x21">state (phase/brake/yellow) (0x21)<a class="headerlink" href="#state-phasebrakeyellow-0x21" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Green bitset</td>
+<td style="text-align: center;">Brake bitset</td>
+<td style="text-align: center;">Yellow bitset</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-index-0x22">phase index (0x22)<a class="headerlink" href="#phase-index-0x22" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">integer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Phase Index</td>
+</tr>
+</tbody>
+</table>
+<h3 id="program-0x23">program (0x23)<a class="headerlink" href="#program-0x23" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Program ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-duration-0x24">phase duration (0x24)<a class="headerlink" href="#phase-duration-0x24" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">integer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Phase Duration [ms]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="complete-program-definition-0x2c">complete program definition (0x2c)<a class="headerlink" href="#complete-program-definition-0x2c" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">compound</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;">&lt;phases&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">value type <em>compound</em></td>
+<td style="text-align: center;">item number</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">program ID</td>
+<td style="text-align: center;">value type <em>integer</em></td>
+<td style="text-align: center;">Type (always 0)</td>
+<td style="text-align: center;">value type <em>compound</em></td>
+<td style="text-align: center;">Compound Length (always 0!)</td>
+<td style="text-align: center;">value type <em>integer</em></td>
+<td style="text-align: center;">Phase Index</td>
+<td style="text-align: center;">value type <em>integer</em></td>
+<td style="text-align: center;">Phase Number</td>
+<td style="text-align: center;">Phases</td>
+</tr>
+</tbody>
+</table>
+<p>with Phases:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">value type double</td>
+<td style="text-align: center;">Duration in seconds</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">unused</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">unused</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">State (light/priority-tuple)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about what value should be put in each of the fields mentioned above, see <a href="../../Tutorials/TraCI4Traffic_Lights/#appendix">Tutorials/TraCI4Traffic_Lights#Appendix</a>. Remember that you can check which integer value is associated with particular value type <a href="../Protocol/#data_types">here</a>.</p>
+</div>
+<h1 id="setting-traffic-light-parameters-0x7e">Setting Traffic light parameters (0x7e)<a class="headerlink" href="#setting-traffic-light-parameters-0x7e" title="Permanent link">&para;</a></h1>
+<p>Traffic lights support setting of additional parameters using the <a href="../GenericParameters/#set_parameter">generic
+parameter setting call</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">key</th>
+<th style="text-align: center;">value type (expressed as string)</th>
+<th style="text-align: center;">supported by tlType</th>
+<th style="text-align: center;">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">cycleTime</td>
+<td style="text-align: center;">double (s)</td>
+<td style="text-align: center;">static, actuated, delay_based</td>
+<td style="text-align: center;">default cycle duration (has no effect for static tls)</td>
+</tr>
+<tr>
+<td style="text-align: center;">offset</td>
+<td style="text-align: center;">double (s)</td>
+<td style="text-align: center;">static, actuated, delay_based</td>
+<td style="text-align: center;">offset for cycle start relative to simulation start</td>
+</tr>
+<tr>
+<td style="text-align: center;">coordinated</td>
+<td style="text-align: center;">bool</td>
+<td style="text-align: center;">static, actuated, delay_based</td>
+<td style="text-align: center;">whether time in cycle is computed relative to simulation time</td>
+</tr>
+<tr>
+<td style="text-align: center;">max-gap</td>
+<td style="text-align: center;">double (s)</td>
+<td style="text-align: center;">actuated</td>
+<td style="text-align: center;">detector time-out for abandoning phase</td>
+</tr>
+<tr>
+<td style="text-align: center;">show-detectors</td>
+<td style="text-align: center;">bool</td>
+<td style="text-align: center;">actuated</td>
+<td style="text-align: center;">show/hide detectors in view</td>
+</tr>
+<tr>
+<td style="text-align: center;">inactive-threshold</td>
+<td style="text-align: center;">double (s)</td>
+<td style="text-align: center;">actuated</td>
+<td style="text-align: center;">time-out for switching to an unserved phase when running with the default phase-skipping logic</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

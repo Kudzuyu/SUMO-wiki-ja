@@ -10,8 +10,11 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Basics/Basic_Computer_Skills/">
       
+      
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
@@ -19,17 +22,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -110,40 +114,50 @@
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -300,34 +357,36 @@
       
         <li class="md-nav__item">
   <a href="#はじめに" class="md-nav__link">
-    はじめに
-  </a>
-  
-    <nav class="md-nav" aria-label="はじめに">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#テキストエディタの使いかた" class="md-nav__link">
-    テキストエディタの使いかた
+    <span class="md-ellipsis">
+      はじめに
+    </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#テキストエディタの使いかた" class="md-nav__link">
+    <span class="md-ellipsis">
+      テキストエディタの使いかた
+    </span>
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#フォルダとファイルを使いこなす" class="md-nav__link">
-    フォルダとファイルを使いこなす
+    <span class="md-ellipsis">
+      フォルダとファイルを使いこなす
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#コマンドラインからのプログラム実行" class="md-nav__link">
-    コマンドラインからのプログラム実行
+    <span class="md-ellipsis">
+      コマンドラインからのプログラム実行
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="コマンドラインからのプログラム実行">
@@ -335,7 +394,9 @@
         
           <li class="md-nav__item">
   <a href="#sumo-0123以降" class="md-nav__link">
-    SUMO 0.12.3以降
+    <span class="md-ellipsis">
+      SUMO 0.12.3以降
+    </span>
   </a>
   
 </li>
@@ -347,14 +408,18 @@
       
         <li class="md-nav__item">
   <a href="#sumo_home" class="md-nav__link">
-    SUMO_HOME
+    <span class="md-ellipsis">
+      SUMO_HOME
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#パスの設定" class="md-nav__link">
-    パスの設定
+    <span class="md-ellipsis">
+      パスの設定
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="パスの設定">
@@ -362,14 +427,18 @@
         
           <li class="md-nav__item">
   <a href="#windows" class="md-nav__link">
-    Windows
+    <span class="md-ellipsis">
+      Windows
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#linux" class="md-nav__link">
-    Linux
+    <span class="md-ellipsis">
+      Linux
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Linux">
@@ -377,21 +446,60 @@
         
           <li class="md-nav__item">
   <a href="#一時的な解決策" class="md-nav__link">
-    一時的な解決策
+    <span class="md-ellipsis">
+      一時的な解決策
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#永続的な解決策" class="md-nav__link">
-    永続的な解決策
+    <span class="md-ellipsis">
+      永続的な解決策
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#パッケージ版sumo" class="md-nav__link">
-    パッケージ版SUMO
+    <span class="md-ellipsis">
+      パッケージ版SUMO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      macOS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zsh用" class="md-nav__link">
+    <span class="md-ellipsis">
+      ZSH用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      for Bash
+    </span>
   </a>
   
 </li>
@@ -408,7 +516,9 @@
       
         <li class="md-nav__item">
   <a href="#コマンドラインの小技" class="md-nav__link">
-    コマンドラインの小技
+    <span class="md-ellipsis">
+      コマンドラインの小技
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="コマンドラインの小技">
@@ -416,14 +526,18 @@
         
           <li class="md-nav__item">
   <a href="#コピーペースト" class="md-nav__link">
-    コピー/ペースト
+    <span class="md-ellipsis">
+      コピー/ペースト
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#過去のコマンドの繰り返し" class="md-nav__link">
-    過去のコマンドの繰り返し
+    <span class="md-ellipsis">
+      過去のコマンドの繰り返し
+    </span>
   </a>
   
 </li>
@@ -441,28 +555,30 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
+
 
 
 <h1 id="コンピュータスキル">コンピュータスキル<a class="headerlink" href="#コンピュータスキル" title="Permanent link">&para;</a></h1>
-<p><a href="https://sumo.dlr.de/docs/Basics/Basic_Computer_Skills.html">原文ページ</a></p>
 <h2 id="はじめに">はじめに<a class="headerlink" href="#はじめに" title="Permanent link">&para;</a></h2>
 <p>SUMOを使うためにはいくつか基本的なコンピュータスキルが必要になります(Linuxユーザはおそらく親しみがあるでしょうから、以下の説明はMS-Windowsを示します)</p>
-<h3 id="テキストエディタの使いかた"><a href="https://ja.wikipedia.org/wiki/%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF">テキストエディタ</a>の使いかた<a class="headerlink" href="#テキストエディタの使いかた" title="Permanent link">&para;</a></h3>
+<h2 id="テキストエディタの使いかた"><a href="https://ja.wikipedia.org/wiki/%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF">テキストエディタ</a>の使いかた<a class="headerlink" href="#テキストエディタの使いかた" title="Permanent link">&para;</a></h2>
 <p>正確な動作のためにSUMOでは設定ファイルとデータファイルが必要です。
 こうしたファイルはテキストファイルを使って作成/編集します。</p>
 <p>Windowsでは次のようにして基本的なテキストエディタを開きます。</p>
-<pre><code>Start-&gt;Windows Accessories-&gt;NotePad
+<pre><code>スタート-&gt;Windowsアクセサリ-&gt;メモ帳
+
+もしくは`Win` + `R` キーを押し，`notepad`
 </code></pre>
-<p>(Windows10 日本語の場合は、スタート-&gt;Windowsアクセサリ-&gt;メモ帳)</p>
 <p>メモ帳は極初歩的なテキストエディタです。
 より多くの機能を備えたエディタに移ることで、快適性と生産性を上げることができます。
 <a href="https://notepad-plus-plus.org/">Notepad++</a> (<a href="https://forest.watch.impress.co.jp/library/software/notepadplusp/">日本語での紹介</a>)や<a href="https://vim-jp.org/">vim</a>、あるいは「テキストエディタ 比較」などで検索してみるのがいいでしょう。</p>
 <div class="admonition note">
-<p class="admonition-title">注</p>
+<p class="admonition-title">Note</p>
 <p>SUMOが扱うファイルは慣習にしたがって、<code>.xml</code>で終わるものと、<code>.sumofg</code>に分かれます。
 Windowsのエクスプローラでダブルクリックしても望んだテキストエディタで開くとは限りません。
 テキストエディタの方からファイルを開くか、ファイルの関連付けを変更する方法を<a href="https://www.google.com/search?client=firefox-b-d&amp;q=windows+%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB+%E9%96%A2%E9%80%A3%E4%BB%98%E3%81%91">学んで</a>ください</p>
@@ -523,7 +639,7 @@ Linuxを使っているなら、ターミナルを開いてください(例: <st
 <p>コマンドラインからプログラムを快適に動かすためには、<code>PATH</code>と<code>SUMO_HOME</code>を設定しなくてはいけません。</p>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
-<p class="admonition-title">注</p>
+<p class="admonition-title">Note</p>
 <p>SUMOを.msiインストーラによってWindowsにインストールした場合、この設定は自動的に行なわれます</p>
 </div>
 <ol>
@@ -536,11 +652,11 @@ Linuxを使っているなら、ターミナルを開いてください(例: <st
 <li><code>C:\Program Files\sumo-1.2.0</code>をSUMO_HOMEの値に設定</li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">注</p>
+<p class="admonition-title">Note</p>
 <p><code>C:\Program Files\sumo-1.2.0</code>は自身のsumoディレクトリにおきかえてください</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
 <p>新しいパスの設定を適用するには、全ての開かれているコマンドラインウィンドウを開きなおす必要があります。</p>
 </div>
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
@@ -551,7 +667,7 @@ Linuxを使っているなら、ターミナルを開いてください(例: <st
 <p>これは現在のシェルにおいて実行される全てのプログラム、スクリプトで使われる環境変数を設定します。
 これは他のシェルセッションや現在のシェルの終了後には影響を与えません。</p>
 <div class="admonition note">
-<p class="admonition-title">注</p>
+<p class="admonition-title">Note</p>
 <p><code>/your/path/to/sumo/</code>は自身のsumoディレクトリに置きかえてください</p>
 </div>
 <h4 id="永続的な解決策">永続的な解決策<a class="headerlink" href="#永続的な解決策" title="Permanent link">&para;</a></h4>
@@ -564,7 +680,7 @@ Linuxを使っているなら、ターミナルを開いてください(例: <st
 </ol>
 <p>こうすることで、現在のユーザーアカウントのもとで開かれるどのコマンドラインプログラムでも環境変数が使えるようになります。</p>
 <div class="admonition note">
-<p class="admonition-title">注</p>
+<p class="admonition-title">Note</p>
 <p><code>YOUR_NAME</code>は自身のユーザーネームに、<code>/your/path/to/sumo/</code>は自身のsumoディレクトリに置きかえてください</p>
 </div>
 <h4 id="パッケージ版sumo">パッケージ版SUMO<a class="headerlink" href="#パッケージ版sumo" title="Permanent link">&para;</a></h4>
@@ -572,6 +688,39 @@ Linuxを使っているなら、ターミナルを開いてください(例: <st
 Ubuntuでは以下の場所です。</p>
 <pre><code>/usr/share/sumo
 </code></pre>
+<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
+<p>まず、現在使用しているシェル（<strong>bash</strong> または <strong>zsh</strong>）を確認する必要があります。ターミナルで <code>ps -p $$</code> と入力してください（これにより、CMD の下に使用中のシェルが表示されるはずです）。macOS Catalina のデフォルトシェルは <strong>zsh</strong> です。</p>
+<h4 id="zsh用">ZSH用<a class="headerlink" href="#zsh用" title="Permanent link">&para;</a></h4>
+<p>ターミナルで以下の手順を実行してください:</p>
+<pre><code>open ~/.zshrc
+</code></pre>
+<p>これにより<em>.zshrc</em>ファイルがTextEditで開きます。その文書に次の行を追加してください:</p>
+<pre><code>export SUMO_HOME=&quot;/your/path/to/sumo&quot;
+</code></pre>
+<p><code>/your/path/to/sumo</code> を、sumo の <strong><em>実際の</em></strong> パスに置き換えてください。
+TextEdit でその文書を保存します。次に、変更を適用するためにターミナルで以下を入力します:</p>
+<pre><code>source ~/.zshrc
+</code></pre>
+<p>をターミナルに入力します。これで完了です！環境変数が正しく設定されたかテストするには、ターミナルに以下を出力してください：</p>
+<pre><code>echo $SUMO_HOME
+/usr/share/sumo
+</code></pre>
+<p>すると、最近追加されたパスが表示されるはずです。</p>
+<h4 id="for-bash">for Bash<a class="headerlink" href="#for-bash" title="Permanent link">&para;</a></h4>
+<p>ターミナルで以下の手順を実行してください:</p>
+<pre><code>open ~/.bash_profile
+</code></pre>
+<p>これにより<em>.bash_profile</em>ファイルがテキストエディタで開きます。その文書に次の行を追加してください:</p>
+<pre><code>export SUMO_HOME=&quot;/your/path/to/sumo&quot;
+</code></pre>
+<p><code>/your/path/to/sumo</code> を、sumo の <strong><em>実際の</em></strong> パスに置き換えてください。
+TextEditでその文書を保存します。次に、変更を適用するためにターミナルで以下を入力します：</p>
+<pre><code>source ~/.bash_profile
+</code></pre>
+<p>これで完了です！環境変数が正しく設定されたか確認するには、ターミナルで以下を実行して出力します：</p>
+<pre><code>echo $SUMO_HOME
+</code></pre>
+<p>これにより、追加したパスが表示されるはずです。</p>
 <h2 id="コマンドラインの小技">コマンドラインの小技<a class="headerlink" href="#コマンドラインの小技" title="Permanent link">&para;</a></h2>
 <h3 id="コピーペースト">コピー/ペースト<a class="headerlink" href="#コピーペースト" title="Permanent link">&para;</a></h3>
 <p>コマンドラインでは標準的なコピー/ペーストに関するショートカットが効きません。
@@ -583,9 +732,23 @@ Ubuntuでは以下の場所です。</p>
 <p>上下矢印キーを使うことで、以前入力されたコマンドの履歴をたどることができます。
 表示されたコマンドを書きなおしたり、単にenterキーを押すことでもう一度そのコマンドを実行できます。</p>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -612,10 +775,14 @@ Ubuntuでは以下の場所です。</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

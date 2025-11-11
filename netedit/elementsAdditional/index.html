@@ -1,0 +1,786 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Netedit/elementsAdditional/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>elementsAdditional - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#additional-elements" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              elementsAdditional
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#loading-and-saving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading and Saving
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-and-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move and references
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-hierarchies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional hierarchies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#help-dialogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Help dialogs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stopping-places" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stopping Places
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stopping Places">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bus-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bus stop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-stops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container stops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charging-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charging station
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parking-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parking Areas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#induction-loops-detectors-e1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Induction Loops Detectors (E1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lane-area-detectors-e2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lane Area Detectors (E2)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-entry-multi-exit-detectors-e3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Entry Multi-Exit Detectors (E3)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detentrydetexit" class="md-nav__link">
+    <span class="md-ellipsis">
+      DetEntry/DetExit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instant-induction-loops-detectors-e1instant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instant Induction Loops Detectors (E1Instant)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#route-probe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Route Probe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibrator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rerouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rerouter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vaporizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vaporizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-speed-signs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable Speed Signs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="additional-elements">Additional elements<a class="headerlink" href="#additional-elements" title="Permanent link">&para;</a></h1>
+<p>Additionals* are elements which do not belong to the network, but may be used to influence the simulation or generate specific outputs. Additionals are defined in an <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>.</p>
+<h2 id="loading-and-saving">Loading and Saving<a class="headerlink" href="#loading-and-saving" title="Permanent link">&para;</a></h2>
+<p>Additionals can be loaded and saved via the File menu:</p>
+<p><img alt="" src="../../images/GNELoadAdditionals.png" />
+Menu for loading additionals</p>
+<h2 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h2>
+<p>Additionals are created in the <em>Additionals</em> editing mode (shortcut key: a). Once this mode is selected, the first step is to choose what kind of additional should be created in the comboBox "additional element". Once selected and if required, the parameters of the additional can be changed. Finally, with a click over a Lane/junction/edge (If the additional should be set over an element of the network), or over an empty area (if the item is independent of the network) the additional will be created.</p>
+<p><img alt="" src="../../images/GNEFrame.png" />
+Frame to insert additionals</p>
+<h2 id="move-and-references">Move and references<a class="headerlink" href="#move-and-references" title="Permanent link">&para;</a></h2>
+<p>Additionals can be moved, but the freedom of movement depends of their relation with the network. Additionals that must be located over a lane can only move along the lane, and additionals that are located on a map can be moved in any direction. The movement also depends if the item is locked or not (symbolized by a lock icon on the item). The movement can be blocked during the creation of the element. The corresponding parameter can be changed within the <em>inspector</em> mode. Certain additionals have a length contingent to the length of the lane. To create a bus stop by choosing a reference point, which marks the initial
+position of this additional element, three types of references for the length can be selected. E.g. for a bus stop with the length 20 in the point 50 of the lane it will be the following:</p>
+<ul>
+<li>Reference left will create a new bus stop with startPos = 30 and endPos = 50.</li>
+<li>Reference right will create a new bus stop with startPos = 50 and endPos = 70.</li>
+<li>Reference center will create a new bus stop with startPos = 40 and endPos = 60.</li>
+</ul>
+<p><img alt="" src="../../images/GNEMove.png" />
+Movement of different additionals</p>
+<p><img alt="" src="../../images/GNELock.png" />
+Additional locked and unlocked</p>
+<p>Some additional types cannot be moved, therefore show a different icon:</p>
+<p><img alt="" src="../../images/GNENotMove.png" />
+Example of additional that cannot be moved</p>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<p>There are two types of parameters for each additional: User-defined-parameters and <strong>netedit</strong>-parameters. The first mentioned parameters can be of type <em>int</em>, <em>float</em>, <em>bool</em>,<em>string</em>, or <em>list</em> and each has a default value. In the case of type <em>list</em> the user can add or remove values using the <em>add</em> or <em>remove</em> <em>row</em> buttons. In the case of the characteristic parameters of <strong>netedit</strong>, this is the option to block the movement of an element, and in the case of the elements have a length, the user is allowed to change the length and reference.</p>
+<p><img alt="" src="../../images/GNEParameterlist.png" />
+Adding a list of bus stop lines</p>
+<p><img alt="" src="../../images/GNEReferences.png" />
+Adding additional with different references</p>
+<h2 id="additional-hierarchies">Additional hierarchies<a class="headerlink" href="#additional-hierarchies" title="Permanent link">&para;</a></h2>
+<p>Certain additionals need another previous additionals already placed in the network to be created (For example, a <em>detEntry</em> or <em>detExit</em> needs a previous <em>detectorE3</em> placed in the network). These child additionals are inserted in the same way as an Additional, but the insertion of an additional child is
+different. Before the insertion of an <em>additional child</em> in the map, either the ID of the <em>additional parent</em> parent must be selected in the list of IDs placed on the left frame or additional parent must be clicked in the view. In the list the IDs of the additional parents only appear when they can be parents of the additional child (Referring to the given example: if the user wants to insert a <em>detEntry</em>, than only IDs of <em>detectorE3</em> will appear in the list on the left frame). Additional parents and their childs are graphically connected by a yellow line.</p>
+<p><img alt="" src="../../images/GNEAdditionalSet.png" />
+Insertion of an additional Set</p>
+<p>Additional parent can be changed during inspection of an additional child, either writing the Id of the new parent in section "Netedit attributes" or clicking over "Set new Parent" button, and then clicking over new parent.</p>
+<h2 id="help-dialogs">Help dialogs<a class="headerlink" href="#help-dialogs" title="Permanent link">&para;</a></h2>
+<p>With the help buttons placed in the left frame, users can obtain information about additional and editor parameters (Full name, type and description).</p>
+<p><img alt="" src="../../images/GNEHelpParameters.png" />
+Help window for parameters</p>
+<p><img alt="" src="../../images/GNEHelpReferences.png" />
+Help window for editor parameter</p>
+<h2 id="additional-types">Additional types<a class="headerlink" href="#additional-types" title="Permanent link">&para;</a></h2>
+<p>This section describes the different types of additional objects which are supported</p>
+<h3 id="stopping-places">Stopping Places<a class="headerlink" href="#stopping-places" title="Permanent link">&para;</a></h3>
+<p>Stopping places are sections of lanes, in which vehicles can stop during a certain time defined by the user.</p>
+<h4 id="bus-stop">Bus stop<a class="headerlink" href="#bus-stop" title="Permanent link">&para;</a></h4>
+<p><a href="../../Simulation/Public_Transport/#bus_stops">Bus stops</a> are positions of a
+lane in which vehicles ("busses") stop for a pre-given time. Every Bus stop has an unique ID assigned automatically by
+<strong>netedit</strong>, a length and a list of bus lines defined by the user.</p>
+<p><img alt="" src="../../images/GNEBusStop.png" />
+Bus stop</p>
+<h4 id="container-stops">Container stops<a class="headerlink" href="#container-stops" title="Permanent link">&para;</a></h4>
+<p><a href="../../Specification/Logistics/#container_stops">Container stops</a> are similar to BusStops, but they are oriented towards <a href="../../Specification/Logistics/">logistics simulation</a>.</p>
+<p><img alt="" src="../../images/GNEContainerStop.png" />
+Container stop</p>
+<h4 id="charging-station">Charging station<a class="headerlink" href="#charging-station" title="Permanent link">&para;</a></h4>
+<p><a href="../../Models/Electric/#charging_stations">Charging stations</a> define a surface over a lane in which the vehicles equipped with a battery are charged. Charging stations own an unique-ID generated by <strong>netedit</strong>, a length, a charging power defined in W, a charging efficiency, a switch for enable or disable charge in transit, and a charge delay.</p>
+<p><img alt="" src="../../images/GNEChargingStation.png" />
+Charging station</p>
+<h4 id="parking-areas">Parking Areas<a class="headerlink" href="#parking-areas" title="Permanent link">&para;</a></h4>
+<p>A <a href="../../Simulation/ParkingArea/">ParkingArea</a>-element describes an area for parking outside the road network (either road-side parking or car parks).</p>
+<p><img src="../images/GNEParkingArea.png" style="width:600px;">
+Parking Area</p>
+<h3 id="detectors">Detectors<a class="headerlink" href="#detectors" title="Permanent link">&para;</a></h3>
+<p>Detectors are additionals which save information about vehicles that passed over a certain position on the lane.</p>
+<h4 id="induction-loops-detectors-e1">Induction Loops Detectors (E1)<a class="headerlink" href="#induction-loops-detectors-e1" title="Permanent link">&para;</a></h4>
+<p>A <a href="../../Simulation/Output/Induction_Loops_Detectors_%28E1%29/">E1 detector</a> owns a ID parameter generated by <strong>netedit</strong>, a position at a certain lane, a <em>freq</em> attribute which describes the
+period over which collected values shall be aggregated, a list of <em>VTypes</em> that will be detected, and a <em>file</em> attribute which tells the
+simulation to which file the detector shall write his results to.</p>
+<p><img alt="" src="../../images/GNEE1.png" />
+Detector E1</p>
+<h4 id="lane-area-detectors-e2">Lane Area Detectors (E2)<a class="headerlink" href="#lane-area-detectors-e2" title="Permanent link">&para;</a></h4>
+<p>Most of the <a href="../../Simulation/Output/Lanearea_Detectors_%28E2%29/">E2 detectors</a>' attributes have the same meaning as for <a href="../../Simulation/Output/Induction_Loops_Detectors_%28E1%29/">E1 induction loops</a>, including automatic ID and position at a certain lane. As a real detector has a certain length, "length" must be supplied as a further parameter. When placed in netedit, the detector will be extended by the given length in the upstream direction. When selecting 'e2MultiLaneDetector', two or more sequential lanes must selected on which to place the detector.</p>
+<p><img alt="" src="../../images/GNEE2.png" />
+Detector E2</p>
+<h4 id="multi-entry-multi-exit-detectors-e3">Multi-Entry Multi-Exit Detectors (E3)<a class="headerlink" href="#multi-entry-multi-exit-detectors-e3" title="Permanent link">&para;</a></h4>
+<p>A <a href="../../Simulation/Output/Multi-Entry-Exit_Detectors_%28E3%29/">Detector E3</a> is an AdditionalSet with the same attributes as <a href="../../Simulation/Output/Induction_Loops_Detectors_%28E1%29/">Induction Loop Detector E1</a>. The difference is that detectors E3 have as childs the Entry/Exit detectors.</p>
+<p><img alt="" src="../../images/GNEE3.png" />
+Detector E3</p>
+<h4 id="detentrydetexit">DetEntry/DetExit<a class="headerlink" href="#detentrydetexit" title="Permanent link">&para;</a></h4>
+<p>Childs of an AdditionalSet <a href="../../Simulation/Output/Multi-Entry-Exit_Detectors_%28E3%29/">Multi-Entry Multi-Exit Detectors E3</a>. These additionals have only the attributes ID of a lane in which it is
+placed and positioned over a lane.</p>
+<p><img alt="" src="../../images/GNEEntry.png" />
+Detector entry</p>
+<p><img alt="" src="../../images/GNEExit.png" />
+Detector exit</p>
+<h4 id="instant-induction-loops-detectors-e1instant">Instant Induction Loops Detectors (E1Instant)<a class="headerlink" href="#instant-induction-loops-detectors-e1instant" title="Permanent link">&para;</a></h4>
+<p>A <a href="../../Simulation/Output/Induction_Loops_Detectors_%28E1%29/">E1 detector</a> owns a ID parameter generated by <strong>netedit</strong>, a position at a certain lane, a <em>freq</em> attribute which describes the period over which collected values shall be aggregated, a list of <em>VTypes</em> that will be detected and a <em>file</em> attribute which tells the simulation to which file the detector shall write his results to.</p>
+<p><img alt="" src="../../images/GNEE1Instant.png" />
+Detector E1 Instant</p>
+<h3 id="route-probe">Route Probe<a class="headerlink" href="#route-probe" title="Permanent link">&para;</a></h3>
+<p><a href="../../Simulation/Output/RouteProbe/">RouteProbe detectors</a> are meant to determine the route distribution for all vehicles that passed an edge in a given interval. Their real-world equivalent would be a police stop with questionnaire or a look into the database of navigation providers such as TomTom.</p>
+<p><img alt="" src="../../images/GNERouteProbe.png" />
+Route Probe</p>
+<h3 id="calibrator">Calibrator<a class="headerlink" href="#calibrator" title="Permanent link">&para;</a></h3>
+<p>A <a href="../../Simulation/Calibrator/">calibrator</a> generates a flow of vehicles during a certain time, and allows dynamic adaption of traffic flows and speeds. A calibrator can be used to modify a simulation scenario based on induction loop measurements. It will remove vehicles in excess of the specified flow and will insert new vehicles if the normal traffic demand of the simulation does not reach the specified number of vehsPerHour. Furthermore, the defined edge speed will be adjusted to the specified speed similar of the operation of a variable speed sign. Calibrators will also remove vehicles if the traffic on their lane is jammed beyond the specified flow and speed. This ensures that invalid jams do not grow upstream past a calibrator. A right-click over the calibrator icon allows opening the values editor with the menu option 'Open calibrator Dialog'.</p>
+<p><img alt="" src="../../images/GNECalibrator.png" />
+Calibrator</p>
+<p><img alt="" src="../../images/GNECalibratorDialog.png" />
+Editing calibrator's values</p>
+<h3 id="rerouter">Rerouter<a class="headerlink" href="#rerouter" title="Permanent link">&para;</a></h3>
+<p>A <a href="../../Simulation/Rerouter/">rerouter</a> changes the route of a vehicle as soon as the vehicle moves onto a specified edge.</p>
+<p><img alt="" src="../../images/GNERerouter.png" />
+Rerouter is placed off the net.</p>
+<p>A right-click over the rerouter icon allows opening the values editor with the menu option 'Open rerouter Dialog'. Rerouter's values are divided in intervals, and every interval contains a list of <a href="../../Simulation/Rerouter/#closing_a_street">closing streets</a>, <a href="../../Simulation/Rerouter/#closing_a_lane">closing lanes</a>, <a href="../../Simulation/Rerouter/#assigning_a_new_destination">assignations of new destinations</a> and <a href="../../Simulation/Rerouter/#assigning_a_new_route">assignations of new routes</a>:</p>
+<p><img alt="" src="../../images/GNERerouterDialog1.png" />
+open rerouter dialog. One click over '+' button open a dialog for adding a new interval.</p>
+<p><img alt="" src="../../images/GNERerouterDialog2.png" />
+In interval dialog can be specified the four types of actions, as well as the begin and end of interval.</p>
+<p><img alt="" src="../../images/GNERerouterDialog3.png" />
+If values of actions are invalid, a warning icon appears in every row. This can be applicable in begin and end of interval.</p>
+<p><img alt="" src="../../images/GNERerouterDialog4.png" />
+A click over begin or end of interval opens the Rerouter interval dialog. In the same way, a click over "x" button removes the interval.</p>
+<h3 id="vaporizer">Vaporizer<a class="headerlink" href="#vaporizer" title="Permanent link">&para;</a></h3>
+<p><a href="../../Simulation/Vaporizer/">vaporizers</a> remove all vehicles as soon as they move onto a specified edge.</p>
+<p><img alt="" src="../../images/GNEVaporizer.png" />
+Vaporizer placed over edge. Its placed always at the begins of edge.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Vaporizers are deprecated</p>
+</div>
+<h3 id="variable-speed-signs">Variable Speed Signs<a class="headerlink" href="#variable-speed-signs" title="Permanent link">&para;</a></h3>
+<p>A <a href="../../Simulation/Variable_Speed_Signs/">Variable Speed Signal</a> modifies the speed of a set of lanes during a certain time defined by user. A right-click over the Variable Speed Signal icon allows opening the values editor with the menu option 'Open variableSpeedSign Dialog'.</p>
+<p><img alt="" src="../../images/GNEVariableSpeedSignal.png" />
+Variable Speed Sign</p>
+<p><img alt="" src="../../images/GNEVariableSpeedSignalDialog.png" />
+Variable Speed Signal Sign</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

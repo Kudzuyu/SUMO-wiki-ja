@@ -10,26 +10,29 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/XMLValidation/">
       
+      
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>XMLのバリデーション - SUMO wiki ja</title>
+        <title>XMLValidation - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xmlのバリデーション" class="md-skip">
+        <a href="#validation-of-xml-inputs" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -103,47 +107,57 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              XMLのバリデーション
+              XMLValidation
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href=".." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -292,109 +349,84 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#xml入力のバリデーション" class="md-nav__link">
-    XML入力のバリデーション
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#スキーマ宣言の追加" class="md-nav__link">
-    スキーマ宣言の追加
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#スキーマファイル" class="md-nav__link">
-    スキーマファイル
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sumoファイルタイプ" class="md-nav__link">
-    SUMOファイルタイプ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#スキーマバリデーションの無効化" class="md-nav__link">
-    スキーマバリデーションの無効化
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="xmlのバリデーション">XMLのバリデーション<a class="headerlink" href="#xmlのバリデーション" title="Permanent link">&para;</a></h1>
-<p><a href="https://sumo.dlr.de/docs/XMLValidation.html">原文ページ</a></p>
-<h2 id="xml入力のバリデーション">XML入力のバリデーション<a class="headerlink" href="#xml入力のバリデーション" title="Permanent link">&para;</a></h2>
-<p><a href="">SUMOアプリケーション</a>は全て、入力に対するXMLバリデーションをサポートしています。
-有効化するには、以下のオプションを使います。</p>
+
+<h1 id="validation-of-xml-inputs">Validation of XML inputs<a class="headerlink" href="#validation-of-xml-inputs" title="Permanent link">&para;</a></h1>
+<p>All <a href="../SUMO_at_a_Glance/#included_applications">SUMO applications</a> support
+XML validation for their inputs. To enable this, the following options
+can be used:</p>
 <table>
 <thead>
 <tr>
-<th>オプション</th>
-<th>説明</th>
+<th>Option</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>-X {{ DT_STRING }}</strong> <br/> <strong>--xml-validation {{ DT_STRING }}</strong></td>
-<td>XML入力に対するschemaバリデーションを設定("never", "auto", "always") デフォルト値: <strong>auto</strong></td>
+<td><strong>-X</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a><br> <strong>--xml-validation</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Set schema validation scheme of XML inputs ("never", "local", "auto" or "always"); <em>default:</em> <strong>local</strong></td>
 </tr>
 <tr>
-<td><strong>-xmlm-validation.net {{ DT_STRING }}</strong></td>
-<td>SUMOネットワークの入力に対するスキーマバリデーションを設定("never", "auto", "always") デフォルト値: <strong>never</strong></td>
+<td><strong>--xml-validation.net</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Set schema validation scheme of SUMO network inputs ("never", "local", "auto" or "always"); <em>default:</em> <strong>never</strong></td>
+</tr>
+<tr>
+<td><strong>--xml-validation.routes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Set schema validation scheme of SUMO route inputs ("never", "local", "auto" or "always"); <em>default:</em> <strong>local</strong></td>
 </tr>
 </tbody>
 </table>
-<p>バリデーションはXMLパーサ中で<a href="https://xerces.apache.org/xerces-c/schema-3.html">XML scheme processing</a>を起動させることによって行なわれます。
-スペルミスや属性の誤挿入など多くの一般的な入力エラーを補足します。</p>
-<p>スキーマバリデーションのためのもう一つの必要条件はルート要素に以下のようなスキーマ宣言が含まれていることです。</p>
-<pre><code>&lt;routes xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;http://sumo.dlr.de/xsd/routes_file.xsd&quot;&gt;
+<p>Validation is performed by activating <a href="https://xerces.apache.org/xerces-c/schema-3.html">XML schema
+processing</a> in the XML
+parser. This catches many common input errors such as spelling mistakes
+and attributes which should have been placed within another element.</p>
+<p>Another prerequisite for validation is a schema declaration within the
+root element of the input file such as</p>
+<pre><code class="language-xml">&lt;routes xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/routes_file.xsd&quot;&gt;
 </code></pre>
-<p>バリデーション設定が<em>always</em>に設定されている時には、この宣言を削除するようにエラーがでます。
-スキーマバリデーションはXMLのパースを大幅に遅くさせることがあり、従ってネットワーク入力に対してはデフォルトで無効化されています(ネットワークは手作業で編集すべきではなく、有効であることが想定されるから)。</p>
+<p>When setting the validation options to <em>always</em> the schemata for networks, additional files and routes
+are pre-parsed from the local <a href="#schema_files">schema file</a>. For all other file types a missing declaration will lead to an error in this case.</p>
+<p>The validation option <em>auto</em> (which was the default before SUMO 1.15.0) in contrast only validates the file
+if the schema declaration is present. It tries to parse the schema first from the local path,
+see <a href="#schema_files">the section schema files</a> and falls back to the web version if <em>SUMO_HOME</em> is not set or
+the file could not be found.  The current default <em>local</em> has no fallback, so validation will fail
+if the local file is not accessible (or SUMO_HOME is not set). This is to prevent unintended network access and <a href="https://en.wikipedia.org/wiki/XML_external_entity_attack">XXE attacks</a>.</p>
+<p>Schema validation may slowdown XML parsing considerably and is therefore
+disabled for the network input by default (because networks should not
+be edited by hand and therefore be valid anyway).</p>
 <div class="admonition note">
-<p class="admonition-title">注</p>
-<p>自動生成された巨大な入力を扱う場合にはスキーマバリデーションを完全に無効化することを考慮すべきです。
-詳しくは<a href="">このFAQ</a>を参照してください。</p>
+<p class="admonition-title">Note</p>
+<p>If you have large auto-generated inputs you may consider disabling schema validation altogether. See also <a href="../FAQ/#whats_the_deal_with_schema_resolution_warnings_xsd_errors">this FAQ</a></p>
 </div>
-<h2 id="スキーマ宣言の追加">スキーマ宣言の追加<a class="headerlink" href="#スキーマ宣言の追加" title="Permanent link">&para;</a></h2>
-<p>SUMOアプリケーションのどれかによって作られたファイルには自動的にそのファイルにあったスキーマ宣言が付与されます。
-入力ファイルを一から書く場合、以下のようなスキーマ宣言をルート要素に追加する必要があります。</p>
-<pre><code>&lt;ROOT_ELEMENT xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-    xsi:noNamespaceSchemaLocation=&quot;http://sumo.dlr.de/xsd/SCHEMA_FILE&quot;&gt;
+<h1 id="adding-a-schema-declaration">Adding a schema declaration<a class="headerlink" href="#adding-a-schema-declaration" title="Permanent link">&para;</a></h1>
+<p>Files that are written by one of the SUMO applications automatically
+receive the appropriate schema declaration. When writing an input file
+from scratch the schema declaration must be added manually to the root
+element as follows:</p>
+<pre><code class="language-xml">    &lt;ROOT_ELEMENT xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/SCHEMA_FILE&quot;&gt;
 </code></pre>
-<p>ROOT_ELEMENTとSCHEME_FILEは以下の表を参考に設定してください。</p>
+<p>where <em>ROOT_ELEMENT</em> and <em>SCHEMA_FILE</em> should be set according to the
+following table:</p>
 <table>
 <thead>
 <tr>
-<th>アプリケーションオプション</th>
-<th>ルート要素</th>
-<th>スキーマファイル</th>
+<th>Application Option</th>
+<th>ROOT_ELEMENT</th>
+<th>SCHEMA_FILE</th>
 </tr>
 </thead>
 <tbody>
@@ -406,7 +438,7 @@
 <tr>
 <td><strong>--additional-files</strong></td>
 <td>add</td>
-<td>additional_files.xsd</td>
+<td>additional_file.xsd</td>
 </tr>
 <tr>
 <td><strong>--node-files</strong></td>
@@ -421,11 +453,11 @@
 <tr>
 <td><strong>--connection-files</strong></td>
 <td>connections</td>
-<td>connetions_file.xsd</td>
+<td>connections_file.xsd</td>
 </tr>
 <tr>
 <td><strong>--tllogic-files</strong></td>
-<td>flLogics</td>
+<td>tlLogics</td>
 <td>tllogic_file.xsd</td>
 </tr>
 <tr>
@@ -434,31 +466,56 @@
 <td>types_file.xsd</td>
 </tr>
 <tr>
-<td><strong>-weight-files</strong></td>
+<td><strong>--weight-files</strong></td>
 <td>meandata</td>
 <td>meandata_file.xsd</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">注</p>
-<p>ROOT_ELEMENTの値は慣習的に決まっているものであり、実際には任意の値を取ることができます。</p>
+<p class="admonition-title">Note</p>
+<p>The value of ROOT_ELEMENT is a matter of convention and may take an arbitrary value.</p>
 </div>
-<h2 id="スキーマファイル">スキーマファイル<a class="headerlink" href="#スキーマファイル" title="Permanent link">&para;</a></h2>
-<p>スキーマファイルはSUMOインストール中の<strong><code>&lt;SUMO_HOME&gt;</code></strong>/data/xsdディレクトリにあるでしょう。
-環境変数<a href="./Basics/Basic_Computer_Skills/#sumo_home">SUMO_HOME</a>が設定されていれば、これらのファイルはバリデーションが入力された時に使用されます。</p>
-<h2 id="sumoファイルタイプ">SUMOファイルタイプ<a class="headerlink" href="#sumoファイルタイプ" title="Permanent link">&para;</a></h2>
-<p><a href="">SUMOアプリケーション</a>が扱うファイル拡張子の完全なリストは<a href="">ファイル拡張子</a>にあります。</p>
-<h2 id="スキーマバリデーションの無効化">スキーマバリデーションの無効化<a class="headerlink" href="#スキーマバリデーションの無効化" title="Permanent link">&para;</a></h2>
-<p>スキーマバリデーションを無効化するには、次のどれかを実行してください。</p>
+<h1 id="schema-files">Schema Files<a class="headerlink" href="#schema-files" title="Permanent link">&para;</a></h1>
+<p>The schema files can be found in the <strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/xsd directory of your SUMO
+installation. If the <a href="../Basics/Basic_Computer_Skills/#sumo_home">environment variable <em>SUMO_HOME</em> is
+set</a>,
+these files will be used when validating inputs.</p>
+<p>Otherwise, the files are loaded from
+<em><a href="https://sumo.dlr.de/xsd/SCHEMA_FILE">https://sumo.dlr.de/xsd/SCHEMA_FILE</a></em> which may slow down the
+application (or fail if there is no internet connection).</p>
+<h1 id="sumo-file-types">SUMO File Types<a class="headerlink" href="#sumo-file-types" title="Permanent link">&para;</a></h1>
+<p>A complete listing of file extensions used by <a href="../SUMO_at_a_Glance/#included_applications">SUMO
+Applications</a> is
+given at <a href="../Other/File_Extensions/">File_Extensions</a>.</p>
+<h1 id="disabling-schema-validation">Disabling Schema Validation<a class="headerlink" href="#disabling-schema-validation" title="Permanent link">&para;</a></h1>
+<p>To disable schema validation any of the following actions is sufficient</p>
 <ul>
-<li>オプション <strong>--xml-validation never</strong>を設定する</li>
-<li>入力のXMLファイルの先頭から <code>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code> <code>xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/....xsd"</code>の属性を削除する</li>
+<li>set the option <strong>--xml-validation never</strong></li>
+<li>Remove the <code>xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"</code> <code>xsi:noNamespaceSchemaLocation="https://sumo.dlr.de/xsd/....xsd"</code>
+attribute from the top of the XML input file.</li>
 </ul>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -485,10 +542,14 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

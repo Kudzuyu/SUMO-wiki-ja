@@ -1,0 +1,735 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Output/Multi-Entry-Exit_Detectors_%28E3%29/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Multi-Entry-Exit Detectors (E3) - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instantiating-within-the-simulation" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Multi-Entry-Exit Detectors (E3)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instantiating-within-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instantiating within the Simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#further-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h2 id="instantiating-within-the-simulation">Instantiating within the Simulation<a class="headerlink" href="#instantiating-within-the-simulation" title="Permanent link">&para;</a></h2>
+<p>Multi-Entry-Exit Detectors are defined within an <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a> which has to be loaded
+by the simulation.</p>
+<p>The descriptions of Multi-Entry-Exit Detectors has to include the set of
+entry- and the set of exit-cross-sections. Due to this, it is not
+possible to use a single tag to specify a detector. Instead, the
+description consists of the following parts:</p>
+<ul>
+<li>A beginning tag that describes some global attributes of the
+  detector just as the descriptions of <a href="../Induction_Loops_Detectors_%28E1%29/">inductive loop
+  detectors</a>
+  and <a href="../Lanearea_Detectors_%28E2%29/">areal
+  detectors</a>
+  do.</li>
+<li>A set of tags that describe the detector's entry points.</li>
+<li>A set of tags that describe the detector's exit points.</li>
+<li>A closing tag that must match the opening tag.</li>
+</ul>
+<p>The definition:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+   &lt;entryExitDetector id=&quot;&lt;ID&gt;&quot; period=&quot;&lt;AGGREGATION_TIME&gt;&quot; file=&quot;&lt;OUTPUT_XMLFILE&gt;&quot;
+   timeThreshold=&quot;&lt;FLOAT&gt;&quot; speedThreshold=&quot;&lt;FLOAT&gt;&quot;&gt;
+      &lt;detEntry lane=&quot;&lt;LANE_ID1&gt;&quot; pos=&quot;&lt;POSITION_ON_LANE&gt;&quot; friendlyPos=&quot;&lt;BOOL&gt;&quot;/&gt;
+      &lt;detEntry lane=&quot;&lt;LANE_ID2&gt;&quot; pos=&quot;&lt;POSITION_ON_LANE&gt;&quot; friendlyPos=&quot;&lt;BOOL&gt;&quot;/&gt;
+      &lt;detExit lane=&quot;&lt;LANE_ID1&gt;&quot; pos=&quot;&lt;POSITION_ON_LANE&gt;&quot; friendlyPos=&quot;&lt;BOOL&gt;&quot;/&gt;
+      &lt;detExit lane=&quot;&lt;LANE_ID3&gt;&quot; pos=&quot;&lt;POSITION_ON_LANE&gt;&quot; friendlyPos=&quot;&lt;BOOL&gt;&quot;/&gt;
+
+      ... further entries ...
+
+   &lt;/entryExitDetector&gt;
+&lt;/additional&gt;
+</code></pre>
+<p>will build a Multi-Entry-Exit Detector starting at either lane
+"LANE_ID1" or "LANE_ID2" and end at the same lane of "LANE_ID1" or
+"LANE_ID3". All values will aggregated over a time of
+"AGGREGATION_TIME" seconds. They will be written into the file
+"OUTPUT_XMLFILE" lying in the sub folder of the folder the
+configuration was read in/the program has been started within.</p>
+<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
+<p>The complete list of attributes is:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>A string holding the id of the detector</td>
+</tr>
+<tr>
+<td><strong>file</strong></td>
+<td>filename</td>
+<td>The path to the output file. The path may be relative.</td>
+</tr>
+<tr>
+<td>period (alias freq)</td>
+<td>int</td>
+<td>The aggregation period the values the detector collects shall be summed up (<em>default: whole simulation time</em>).</td>
+</tr>
+<tr>
+<td>timeThreshold</td>
+<td>float</td>
+<td>The time-based threshold that describes how much time has to pass until a vehicle is recognized as halting; <em>in s, default: 1s</em>.</td>
+</tr>
+<tr>
+<td>speedThreshold</td>
+<td>float</td>
+<td>The speed-based threshold that describes how slow a vehicle has to be to be recognized as halting; <em>in m/s, default: 5/3.6m/s</em>.</td>
+</tr>
+<tr>
+<td>openEntry</td>
+<td>bool</td>
+<td>If set to <em>true</em>, no error will be reported if vehicles leave the detector without first entering it. This can be useful when tracking vehicles for a particular combination of entry and exit lane at an intersection and other vehicles may also use the exit lane. <em>default: false</em>.</td>
+</tr>
+<tr>
+<td>expectArrival</td>
+<td>bool</td>
+<td>Whether no warning should be issued when a vehicle arrives within the detector area. <em>default: false</em>.</td>
+</tr>
+<tr>
+<td>vTypes</td>
+<td>string</td>
+<td>space separated list of vehicle type ids to consider, "" means all; default "".</td>
+</tr>
+<tr>
+<td>nextEdges</td>
+<td>stringList</td>
+<td>list of edge ids that must all be part of the future route of the vehicle to qualify for detection (default <em>empty</em>)</td>
+</tr>
+<tr>
+<td>detectPersons</td>
+<td>string</td>
+<td><a href="../../Pedestrians/#detectors_for_pedestrians">detect persons instead of vehicles (pedestrians or passengers)</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="generated-output">Generated Output<a class="headerlink" href="#generated-output" title="Permanent link">&para;</a></h2>
+<p>A single data line within the output of a simulated Multi-Entry-Exit
+Detector looks as following:</p>
+<pre><code>&lt;interval begin=&quot;&lt;BEGIN_TIME&gt;&quot; end=&quot;&lt;END_TIME&gt;&quot; id=&quot;&lt;ID&gt;&quot; meanTravelTime=&quot;&lt;MEAN_TT&gt;&quot;
+meanOverlapTravelTime=&quot;&lt;MEAN_OVERLAP_TT&gt;&quot; meanSpeed=&quot;&lt;MEAN_SPEED&gt;&quot;
+meanHaltsPerVehicle=&quot;&lt;MEAN_HALT_NUMBER&gt;&quot; vehicleSum=&quot;&lt;#VEHICLES&gt;&quot; meanSpeedWithin=&quot;&lt;MEAN_SPEED&gt;&quot;
+meanHaltsPerVehicleWithin=&quot;&lt;MEAN_HALT_NUMBER&gt;&quot; meanDurationWithin=&quot;&lt;MEAN_HALT_DURATION&gt;&quot;
+vehicleSumWithin=&quot;&lt;#VEHICLES&gt;&quot; meanIntervalSpeedWithin=&quot;&lt;MEAN_SPEED&gt;&quot;
+meanIntervalHaltsPerVehicleWithin=&quot;&lt;MEAN_HALT_NUMBER&gt;&quot; meanIntervalDurationWithin=&quot;&lt;MEAN_HALT_DURATION&gt;&quot;/&gt;
+</code></pre>
+<p>As for lane area detectors, the measures generated by Multi-Entry-Exit
+Detector may be grouped by the way they are computed. The plain measures
+take only those vehicles into account that have left the detector area
+within the described interval. Additionally, measures of the vehicles
+that are still inside the area are generated (postfix "Within"),
+containing both measures valid for the whole ride through the area and
+measures made up of only those samples that were collected within the
+current interval ("...Interval..."). The value are described one by one
+in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin</td>
+<td>(simulation) seconds</td>
+<td>The first time step the values were collected in</td>
+</tr>
+<tr>
+<td>end</td>
+<td>(simulation) seconds</td>
+<td>The last time step + DELTA_T the values were collected in (may be equal to begin)</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id</td>
+<td>The id of the detector</td>
+</tr>
+<tr>
+<td>meanTravelTime</td>
+<td>s</td>
+<td>The time vehicles needed to pass the area (the crossing of the vehicle front counts). Averaged over all vehicles which left the detector completely during the interval duration.</td>
+</tr>
+<tr>
+<td>meanOverlapTravelTime</td>
+<td>s</td>
+<td>The time vehicles needed to pass the area (any time a part of the vehicle was in the detection range counts). Averaged over all vehicles that have left the detector completely during the interval duration.</td>
+</tr>
+<tr>
+<td>meanSpeed</td>
+<td>m/s</td>
+<td>The mean speed of vehicles that have passed the area. Averaged over the interval and vehicles (also known as time-mean speed)</td>
+</tr>
+<tr>
+<td>meanHaltsPerVehicle</td>
+<td>#</td>
+<td>The number of halts of vehicles that have passed the area. Averaged over all vehicles that have left the detector during the interval duration.</td>
+</tr>
+<tr>
+<td>meanTimeLoss</td>
+<td>s</td>
+<td>The average time loss for all vehicles that have passed the area.</td>
+</tr>
+<tr>
+<td>vehicleSum</td>
+<td>#</td>
+<td>The number of vehicles that have left the area during the interval.</td>
+</tr>
+<tr>
+<td>meanSpeedWithin</td>
+<td>m/s</td>
+<td>The mean speed of those vehicles that have entered, but not yet left the area. Averaged over the time each vehicle was in the area and vehicles.</td>
+</tr>
+<tr>
+<td>meanHaltsPerVehicleWithin</td>
+<td>m/s</td>
+<td>The mean number of haltings of those vehicles that have entered, but not yet left the area. Averaged over the time each vehicle was in the area and vehicles.</td>
+</tr>
+<tr>
+<td>meanDurationWithin</td>
+<td>s</td>
+<td>The mean duration within the area of those vehicles that have entered, but not yet left the area. Averaged over the time each vehicle was in the area and vehicles.</td>
+</tr>
+<tr>
+<td>vehicleSumWithin</td>
+<td>s</td>
+<td>The number of vehicles that have entered but not yet left the area.</td>
+</tr>
+<tr>
+<td>meanIntervalSpeedWithin</td>
+<td>m/s</td>
+<td>The mean speed of those vehicles that have entered, but not yet left the area, collected during the written interval. Averaged over the interval and vehicles.</td>
+</tr>
+<tr>
+<td>meanIntervalHaltsPerVehicleWithin</td>
+<td>#</td>
+<td>The number of halts per vehicles that have entered, but not yet left the area, collected during the written interval. Averaged over the vehicles.</td>
+</tr>
+<tr>
+<td>meanIntervalDurationWithin</td>
+<td>s</td>
+<td>The mean duration within the area of those vehicles that have entered, but not yet left the area, collected during the written interval. Averaged over the vehicles.</td>
+</tr>
+<tr>
+<td>meanTimeLossWithin</td>
+<td>s</td>
+<td>The average time loss collected by vehicles that have entered but not yet left the area during the written interval.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="visualization">Visualization<a class="headerlink" href="#visualization" title="Permanent link">&para;</a></h1>
+<p><img src="../../images/plot_meme_speed.png" align="right" width="200px"/></p>
+<p>Output can be represented using <a href="../../../Tools/Visualization/#multi-entry-exit_detectors_mean_speed_over_time">plotXMLAttributes</a>, see there for details.
+<br /><br /><br /><br /></p>
+<h2 id="further-notes">Further Notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All measurements concerning durations refer to the end of the
+  relevant interval</li>
+<li>Simulated multi-entry-exit detectors can be accessed using
+  <a href="../../../TraCI/Multi-Entry-Exit_Detectors_Value_Retrieval/">TraCI</a>. If no XML output is
+  needed, the attribute <code>file="NUL"</code> may be used.</li>
+<li>You can generate detector definitions automatically. See <a href="../../../Tools/Output/">output
+  tools</a> for more information.</li>
+<li>The simulation does not check whether the area defined by the
+  detector entries and exits is really closed, so if you keep getting
+  warnings about vehicles leaving the area which did not enter (or
+  vice versa) check whether your entries and exits really cover all
+  possible lanes.</li>
+<li>The same applies for vehicles starting or ending the route (or
+    teleporting) inside the area surrounded by the entries and
+    exits. They are not considered by the measurements and will
+    potentially generate warnings (when leaving without entering or
+    by ending their route)</li>
+<li>The detector interpolates entry and exit times, so if a vehicle has
+  at time 10 the position 95 and at time 11 the position 105 with a
+  detector entry being at position 100, 10.5 is recorded as entry time
+  (and used in the subsequent calculations also for the mean speeds).</li>
+<li>If you use small detector intervals (down to the time step length)
+  the interpolation behavior may result in discretization errors. In
+  the example above the vehicle will have not been recorded in the
+  interval [10,11) because it actually moves into the detector at
+  step 11 only, but will have a duration of 1.5 inside the detector
+  (meanDurationWithin, meanIntervalDurationWithin) for the next
+  interval [11,12).</li>
+<li>If a vehicle happens to be placed exactly on the entry position it
+  is not counted yet because for the calculation of a speed we need a
+  non zero movement inside the detector.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

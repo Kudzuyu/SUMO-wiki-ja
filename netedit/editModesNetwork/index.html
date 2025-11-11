@@ -1,0 +1,800 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Netedit/editModesNetwork/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>editModesNetwork - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-specific-modes" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              editModesNetwork
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Edges
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Edges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-chain-of-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a chain of edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-two-way-roads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating two-way roads
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspecting-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspecting connections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Changing connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conflict-reasons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict reasons
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prohibitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prohibitions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traffic-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traffic Lights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traffic Lights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joined-traffic-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joined Traffic Lights
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additionals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crossings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crossings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taz-traffic-analysis-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      TAZ (Traffic Analysis Zones)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TAZ (Traffic Analysis Zones)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creation-of-the-polygon-similar-to-a-polygon-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Creation of the polygon (similar to a polygon shape)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-definition-of-edges-and-its-inputs-sources-and-outputs-sinks" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Definition of Edges and its inputs (sources) and outputs (sinks)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shapes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="network-specific-modes">Network specific modes<a class="headerlink" href="#network-specific-modes" title="Permanent link">&para;</a></h1>
+<h2 id="create-edges">Create Edges<a class="headerlink" href="#create-edges" title="Permanent link">&para;</a></h2>
+<p>This mode creates edges (lanes) and implicitly junctions. The edge attributes will be taken from the current <a href="../editModesCommon/#edge_template">Edge template</a>. If no template is set, default options such as <strong>default.lanenumber</strong> will be used.</p>
+<p><img alt="" src="../../images/CreateEdge1.png" />
+In "Create Edge" mode, click over a empty area of the view to create the junction</p>
+<p><img alt="" src="../../images/CreateEdge2.png" />
+Then click in another empty area to create another junction. An edge with one lane between both junctions will be created.</p>
+<p><img alt="" src="../../images/CreateEdge3.png" />
+To connect two already created edges, click over the first junction.</p>
+<p><img alt="" src="../../images/CreateEdge4.png" />
+Click over the second junction to create an edge between both.</p>
+<h3 id="creating-a-chain-of-edges">Creating a chain of edges<a class="headerlink" href="#creating-a-chain-of-edges" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/CreateEdge5.png" />
+A list of connected junctions can be quickly created by enabling the option <em>chain</em>.</p>
+<h3 id="creating-two-way-roads">Creating two-way roads<a class="headerlink" href="#creating-two-way-roads" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/CreateEdge6.png" />
+When setting the option <em>two-way</em>, the reverse direction for an edge will be created automatically (otherwise further clicks are needed to create the reverse direction manually).</p>
+<h2 id="edit-connections">Edit connections<a class="headerlink" href="#edit-connections" title="Permanent link">&para;</a></h2>
+<p>Connections establish the possible directions that can be taken by a vehicle when it arrives at a junction.</p>
+<p><img alt="" src="../../images/GNEConnections1.png" />
+Connections in a Junction with six edges and eighteen lanes. Connection shapes depend of the Junction shapes. If a Junction shape is too small, the Junction takes a bubble as shape and the connections take a line as shape</p>
+<p><img alt="" src="../../images/GNEConnections2.png" />
+Connections in a Junction with a bubble as shape.</p>
+<p><img alt="" src="../../images/GNEConnections3.png" />
+Connections in a Junction without a bubble as shape.</p>
+<h3 id="inspecting-connections">Inspecting connections<a class="headerlink" href="#inspecting-connections" title="Permanent link">&para;</a></h3>
+<p>As the rest of elements of netedit, connections can be inspected and modified using inspected mode. Note that the option <em>show connections</em> must be enabled. All parameters can be modified excepting <em>From</em>, <em>To</em>, <em>fromLane</em> and <em>toLane</em>. The connection coloring is done as <a href="../../sumo-gui/#right_of_way">in sumo-gui</a> with the exception of traffic-light connections which are brown in inspect-mode.</p>
+<p><img alt="" src="../../images/GNEConnections4.png" />
+Inspecting a connection. Note that check box "Show connections" is enabled.</p>
+<p><img alt="" src="../../images/GNEConnections4b.png" />
+Connections can be inspected through inspection of their <strong>from</strong> lane or its corresponding edge.</p>
+<h3 id="changing-connections">Changing connections<a class="headerlink" href="#changing-connections" title="Permanent link">&para;</a></h3>
+<p>When a new junction is created, or their edges are modified, a set of new connections is automatically created. But netedit allows also to customize the connections of a lane using the connection mode. When a source lane is selected in connection mode all outgoing lanes at the junction are colored according to the categories below:</p>
+<table>
+<thead>
+<tr>
+<th>Legend</th>
+<th>Meaning</th>
+<th>Result of left-click</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="background:#00FFFF">Source</span></td>
+<td>The source lane for editing connections</td>
+<td>Nothing</td>
+</tr>
+<tr>
+<td><span style="background:#00FF00">Target</span></td>
+<td>The lane is already connected from the source lane.</td>
+<td>Remove connection</td>
+</tr>
+<tr>
+<td><span style="background:#008800">Possible Target</span></td>
+<td>The lane is not yet connected.</td>
+<td>Add connection (with shift-click, set <code>pass="true"</code>)</td>
+</tr>
+<tr>
+<td><span style="background:#FF00FF">Target (pass)</span></td>
+<td>The lane already connected and this connection is forcibly set to have priority (attribute <code>pass="true"</code>)</td>
+<td>Remove connection</td>
+</tr>
+<tr>
+<td><span style="background:#FFFF00">Conflict</span></td>
+<td>The lane is not yet connected. Adding a connection would be unusual for some reason (see below)</td>
+<td>Print reason for conflict in status bar. (with <kbd>Ctrl</kbd> + <kbd>click</kbd> add connection, with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>click</kbd> create connection with <code>pass="true"</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>To deselect the source edge or cancel the declared connections press <strong>&lt;ESC&gt;</strong> or click the <em>Cancel</em>-Button. To confirm the change press <strong>&lt;ENTER&gt;</strong> or click the <em>OK</em>-Button.</p>
+<h4 id="conflict-reasons">Conflict reasons<a class="headerlink" href="#conflict-reasons" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../../Networks/PlainXML/#multiple_connections_from_the_same_edge_to_the_same_target_lane">double connection</a>. Usually each lane only has one predecessor from the same edge. A counter-example would be a <a href="../../Networks/PlainXML/#node_types">zipper
+  node</a>. May also be useful to model bus bays.</li>
+<li>Incompatible permissions: The source and target lanes have no <a href="../../Simulation/VehiclePermissions/">allowed vehicle class</a> in common</li>
+<li>Connection from sidewalk: Lane-to-lane connections for pedestrians are usually not defined by the user. Instead, the connectivity is modeled with <a href="../../Simulation/Pedestrians/#generating_a_network_with_crossings_and_walkingareas">pedestrian crossings</a>.</li>
+</ul>
+<p><img alt="" src="../../images/GNEConnections5.png" />
+Colors of the possible objective lanes change. In this example, the objective lanes are divided into <strong>Target Connected</strong>, <strong>Possible Target</strong> and <strong>Target Conflicted</strong>.</p>
+<p><img alt="" src="../../images/GNEConnections6.png" />
+Creating two more connections.</p>
+<p><img alt="" src="../../images/GNEConnections7.png" />
+Removing all connections.</p>
+<h2 id="prohibitions">Prohibitions<a class="headerlink" href="#prohibitions" title="Permanent link">&para;</a></h2>
+<p>This mode shows right of way-rules for any selected connection using a color code. To select another connection, cancel the current one with &lt;ESC&gt;.</p>
+<h2 id="traffic-lights">Traffic Lights<a class="headerlink" href="#traffic-lights" title="Permanent link">&para;</a></h2>
+<p>Set junctions to be controlled or uncontrolled by a traffic light. Edit all aspects of static or actuated signal plans. Visualizes a signal
+phase by coloring the controlled lane-to-lane connections according to the signal state.  When entering this mode, each traffic light controlled junction is indicated with a traffic light icon.</p>
+<ul>
+<li>Click on an uncontrolled junction to add a traffic light</li>
+<li>Click on a controlled junction to make it uncontrolled, add a program (copy) or change a program.</li>
+</ul>
+<p>Editing signal states can be accomplished in either of the following ways:</p>
+<ul>
+<li>right-clicking on any controlled lane and picking a new state (color).</li>
+<li>right-clicking on any of the incoming lanes to change all controlled connections from that edge</li>
+<li>If the lane is currently selected, all connections from selected lanes incoming to the traffic light will be changed as well</li>
+<li>If the edge is currently selected, all connections from selected edges incoming to the traffic light will be changed as well</li>
+<li>If the check-box <em>apply change to all phases</em> is activated, all phases of the current plan will be affected</li>
+</ul>
+<p>You can also change the state by editing the phase table directly.</p>
+<h3 id="joined-traffic-lights">Joined Traffic Lights<a class="headerlink" href="#joined-traffic-lights" title="Permanent link">&para;</a></h3>
+<p>To edit the program of a joined traffic light, any of its junctions can be clicked in traffic light mode. This will cause connections from all controlled junctions to be highlighted. To create a joined traffic light you need to use inspect mode:</p>
+<ul>
+<li>make all junctions controlled by a traffic light</li>
+<li>set their 'tl' attribute (traffic light id) to the same value</li>
+</ul>
+<p><img alt="" src="../../images/GNETLS.png" />
+General view of the TLS frame</p>
+<h2 id="additionals">Additionals<a class="headerlink" href="#additionals" title="Permanent link">&para;</a></h2>
+<p>Add additional elements to the net. Additionals can be placed over a lane or in an empty place of the map. See <a href="../elementsAdditional/">Additional elements</a> for more information. They are saved to a separate file (<a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>) and are loaded separately when running the simulation</p>
+<h2 id="crossings">Crossings<a class="headerlink" href="#crossings" title="Permanent link">&para;</a></h2>
+<p>Add <a href="../../Networks/PlainXML/#pedestrian_crossings">pedestrian crossings</a> for use with <a href="../../Simulation/Pedestrians/">pedestrian simulation</a>. Crossings are define relative a junction and edges at this junction.
+Their width can be customized and they can either be configured as prioritized (zebra stripes) or unprioritized (vehicles have right of way). Crossings are added using the following steps:</p>
+<ol>
+<li>activate crossing mode (R)</li>
+<li>select a junction</li>
+<li>select edges that shall be crossed</li>
+<li>click <em>Create Crossing</em></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For crossings to be visible in <strong>netedit</strong>, the <em>Compute Junctions (F5)</em> functionality must be triggered at once.</p>
+</div>
+<p><img alt="" src="../../images/GNECrossingFrame1.png" />
+In crossing mode, first a junction must be selected.</p>
+<p><img alt="" src="../../images/GNECrossingFrame2.png" />
+Click over junction's edges to select the edges of crossing.</p>
+<p><img alt="" src="../../images/GNECrossingFrame3.png" />
+After click over "Create crossing" and recomputing (F5) the new crossing is visible.</p>
+<p><img alt="" src="../../images/GNECrossingFrame4.png" />
+Crossing can be inspected as other elements.</p>
+<p>Internally, crossing works as edges, and therefore they appear in the <em>net.xml</em> as edges with different functions (crossing or walkingarea)</p>
+<pre><code class="language-xml">... previous element of net.xml ...
+    &lt;edge id=&quot;:0_c0&quot; function=&quot;'''crossing'''&quot; crossingEdges=&quot;3 7&quot;&gt;
+        &lt;lane id=&quot;:0_c0_0&quot; index=&quot;0&quot; allow=&quot;pedestrian&quot; speed=&quot;1.00&quot; length=&quot;13.10&quot; width=&quot;3.00&quot;
+        shape=&quot;43.45,56.55 43.45,43.45&quot;/&gt;
+    &lt;/edge&gt;
+... ...
+    &lt;edge id=&quot;:0_w1&quot; function=&quot;walkingarea&quot;&gt;
+        &lt;lane id=&quot;:0_w1_0&quot; index=&quot;0&quot; allow=&quot;pedestrian&quot; speed=&quot;1.00&quot; length=&quot;13.10&quot; width=&quot;3.00&quot;
+        shape=&quot;44.95,43.45 41.95,43.45 41.95,56.55 44.95,56.55&quot;/&gt;
+    &lt;/edge&gt;
+... further elements of net.xml...
+</code></pre>
+<h2 id="taz-traffic-analysis-zones">TAZ (Traffic Analysis Zones)<a class="headerlink" href="#taz-traffic-analysis-zones" title="Permanent link">&para;</a></h2>
+<p>This mode allows creating and editing <a href="../../Demand/Importing_O/D_Matrices/#describing_the_taz">TAZ</a>. (Shortcut Z). TAZs are composed of a closed polygon and a list of edges associated with certain weights for the inputs (Sources) and outputs (Sinks) (Similar to a <a href="https://en.wikipedia.org/wiki/Flow_network">Flow Network</a>).</p>
+<p>The creation of TAZs require two steps:</p>
+<h3 id="1-creation-of-the-polygon-similar-to-a-polygon-shape">1. Creation of the polygon (similar to a polygon shape)<a class="headerlink" href="#1-creation-of-the-polygon-similar-to-a-polygon-shape" title="Permanent link">&para;</a></h3>
+<p>Press <em>Start drawing</em> button (or alternatively press ENTER key) and click over the view with the mouse left button to add vertices. Press Shift + mouse left button to remove the last created vertex. To finish creating polygon, press <em>Stop drawing</em> button (or alternatively press ENTER key again). To abort the creation of the polygon press <em>Abort drawing</em> button (or alternatively press ESC key)</p>
+<p><img alt="" src="../../images/TAZMode1.png" />
+Basic view of TAZ creation controls</p>
+<p><img alt="" src="../../images/TAZMode2.png" />
+Creating a TAZ</p>
+<h3 id="2-definition-of-edges-and-its-inputs-sources-and-outputs-sinks">2. Definition of Edges and its inputs (sources) and outputs (sinks)<a class="headerlink" href="#2-definition-of-edges-and-its-inputs-sources-and-outputs-sinks" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the checkbox 'Edges within' was checked during TAZ creation, all edges within the shape are automatically added as sources and sinks.</p>
+</div>
+<p>A single click over a TAZ open the editing fields for
+TAZEdges in side menu. If the checkbox <em>Membership</em> is enabled (Toggle) box, a click over an edge will add it to the list of edges linked to the TAZ, (Or will be removed from the list if it was previously selected). Edge will will be added to the list with the input/output values given in the <em>New source</em>/<em>New sink</em> text fields. (note: A TAZ Edge always has a Source and a Sink).</p>
+<p><img alt="" src="../../images/TAZMode3.png" />
+Controls after clicking over a TAZ</p>
+<p><img alt="" src="../../images/TAZMode4.png" />
+Creating two TAZEdges</p>
+<p><strong>Selecting and editing TAZ Edges:</strong> If checkbox <em>membership</em> is changed to "keep", then TAZ Edges can be selected individually and their values changed. A multiple selection using a rectangle is possible with shift + right. Statistics of selected TAZEdges can be observed in "Selection Statistics"</p>
+<p><img alt="" src="../../images/TAZMode5.png" />
+TAZ Edge selected (Pink)</p>
+<p><img alt="" src="../../images/TAZMode6.png" />
+Selecting using rectangle</p>
+<p><strong>Saving and discarding changes:</strong> All changes in TAZEdges has to be saved using button "Save Changes", or in the same way can be also discarded using "cancel changes" button.</p>
+<h2 id="shapes">Shapes<a class="headerlink" href="#shapes" title="Permanent link">&para;</a></h2>
+<p>This mode allows the creation of <a href="../../Simulation/Shapes/#polygon_definitions">Polygons</a> and <a href="../../Simulation/Shapes/#poi_point_of_interest_definitions">POIs (Points of Interest)</a> through Polygon mode (hotkey ‘P’). These objects are used for visualization and can also be accessed via TraCI. In the polygon frame you can select the type of shape to edit (Polygons or Point Of Interest), and the corresponding parameters for each one.</p>
+<p><img alt="" src="../../images/ModePolygon1GeneralView.png" />
+General view of the shape frame.</p>
+<p><img alt="" src="../../images/ModePolygon2SelectingColor.png" />
+Color can be edited clicking over button "color".</p>
+<p>One polygon is composed of mainly an exterior line called “shape”. In order to create a shape, you have to click on the button “start drawing” (or enter key), and click on the View above each of the points that will form the shape. To end the edition, you have to click on “stop drawing”. A right click on View will remove the last point created and the button “abort drawing” (or ESC key) will cancel the process of the creation of the shape. If you want to create a closed shape, you have to activate the option “closed shape” before starting to draw. The shape of the polygon can be opened or closed with the contextual menu or through the
+Inspector mode.</p>
+<p><img alt="" src="../../images/ModePolygon3CreatingPolygon.png" />
+Creation of polygon.</p>
+<p><img alt="" src="../../images/ModePolygon4ClosingShape.png" />
+Polygon with shape closed.</p>
+<p>The points of a shape can be edited in the Move mode by clicking on the outline to create a new point or above an already existing one in order to modify its position. If a point moves to the same position of an adjacent point, they fuse together, and if the final point moves to the position of the initial point, the polygon gets closed. If the polygon has the option “block shape” activated, it won't be editable, but only moved as a set.</p>
+<p><img alt="" src="../../images/ModePolygon5MovingVertex.png" />
+Moving Polygon's shape point.</p>
+<p><img alt="" src="../../images/ModePolygon6BlockedShape.png" />
+Polygons with shape blocked.</p>
+<p>Besides, the contextual menu offers several options, like the aforementioned open or close shape, simplify the shape, erase a vertex of the shape and establish a vertex of the shape as the initial one.</p>
+<p><img alt="" src="../../images/ModePolygon7SimplifingShape.png" />
+Contextual menu of polygon. Left click over to show more options.</p>
+<p>The Points Of Interest (POIs) are the locations in the map used to mark several elements relevant to the simulation, which don’t interact with the rest of elements (monuments, special buildings, etc.). As default, they are represented as a colored point, but can also be depicted using an image.</p>
+<p><img alt="" src="../../images/ModePolygon8POIs.png" />
+Example of POIs with and without imgFile</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,550 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/jupedsim/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>SUMO-JuPedSim coupling - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SUMO-JuPedSim coupling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-it-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is it for?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-possibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Possibilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Possibilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      NOTE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Perspective
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>When analyzing the movement of crowds in urban areas — such as at train stations or during the arrival and departure phases of major events — it is essential to consider traffic-related aspects.
+Factors like the frequency and capacity of trains, the positioning of train doors, and the interaction between cars and pedestrians at intersections significantly influence the dynamics of pedestrians.
+To investigate such scenarios holistically, including both traffic and pedestrian dynamics, basic functionalities of <em>JuPedSim</em> have been integrated into <em>Eclipse SUMO</em>.</p>
+<p>The Juelich Pedestrian Simulator (<a href="https://www.jupedsim.org/">JuPedSim</a>) is an open-source tool for simulating pedestrian dynamics offering different models for the interaction of pedestrians with their neighbors in a 2D environment. The simulations results provide valuable insights into crowd dynamics usually evaluated by the occurrence of jam, local densities and speed. </p>
+<p>For the interaction of pedestrians with their surroundings (neighbors, obstacles, walls, ...) several microscopic <a href="https://www.jupedsim.org/stable/pedestrian_models/">models</a> are available in JuPedSim. These microscopic models allow to reproduce phenomena in large crowds such as arching in front of bottlenecks and lane formation in bi-directional streams. </p>
+<p><img alt="" src="../images/JuPedSim_arching.gif" /></p>
+<p><em>Example of a simulation with JuPedSim for a bottleneck scenario. Arching occurs.</em></p>
+<p>The movement of the agents is restricted to 2D space which is referred to as <em>walkable area</em>. The <a href="https://www.jupedsim.org/stable/concepts/geometry.html">walkable area</a> is a closed polygon with holes respresenting obstacles such as trees, pillars or stalls. Agents can move in all directions within the area. This results in a high computational effort, which increases with the number of agents (and thus neighbors) and the size of the walkable area, as wayfinding becomes more complex. Due to its underlying model, JuPedSim operates with a higher temporal resolution than SUMO - typically 0.01 seconds — which makes it the runtime-limiting factor in coupled simulation scenarios.</p>
+<p>For <a href="https://www.jupedsim.org/stable/concepts/routing.html">route planning</a> a journey must be defined for each agent. The journey can be a composition of various stages, e.g. exits as a final goal, waypoints that must be passed or waiting positions that are organized as queues or sets. Journeys can be shared by several agents but also multiple journeys can be defined within one simulation scenario.</p>
+<p>JuPedSim is provided as a Python package with a C++ core behind and a C-API that is used by SUMO. The <em>SUMO-JuPedSim</em> simulation loop starts with <em>JuPedSim</em> independently updating pedestrian positions </p>
+<h2 id="what-is-it-for">What is it for?<a class="headerlink" href="#what-is-it-for" title="Permanent link">&para;</a></h2>
+<p>The integration is particularly useful in scenarios where crowd and traffic dynamics interact, such as:</p>
+<ul>
+<li>Scenarios involving congestion-prone pedestrian facilities that influence urban traffic flow or vice versa.</li>
+<li>Crowded public spaces with connections to vehicular transport systems, e.g., train stations.</li>
+<li>Modeling intermodal arrival and departure traffic during major public events.</li>
+</ul>
+<p>In summary: The <em>SUMO-JuPedSim</em> integration becomes especially relevant when crowd dynamics play a significant role in traffic simulation scenarios.</p>
+<p><img alt="" src="../images/Fig1_crossing.png" /></p>
+<p><em>Simulation snapshot for a crossing scenario with multidirectional pedestrian streams that interact with cars.</em></p>
+<p><img alt="" src="../images/Fig2_event.png" /></p>
+<p><em>Simulation snapshot for the arrival processes to a major event considering different modes of transport (train, car, bus, by foot).</em></p>
+<h2 id="configuration-possibilities">Configuration Possibilities<a class="headerlink" href="#configuration-possibilities" title="Permanent link">&para;</a></h2>
+<p>Following functionalities for configuring a <em>JuPedSim</em> simulation in <em>SUMO</em> are available:</p>
+<ul>
+<li>Precise definition of a 2D <strong>walkable area</strong> that is accessible for <em>JuPedSim</em> agents including obstacles (such as barriers, trees and signs) either via the DXF import tool or by drawing in netedit</li>
+<li>Conversion of pedestrian facilities included in a <em>SUMO</em> network to a 2D walkable area</li>
+<li>Configuration of <strong>model parameters</strong> for the <code>CollisionFreeSpeedModel</code></li>
+<li>Configuration or temporary adjustment of pedestrian speed in defined areas</li>
+</ul>
+<h4 id="note">NOTE<a class="headerlink" href="#note" title="Permanent link">&para;</a></h4>
+<p>Even though it is in theory possible to use other <em>JuPedSim</em> models, only the <code>CollisionFreeSpeedModel</code> has been tested extensively so far.</p>
+<ul>
+<li>Configuration of <strong>sources</strong> in which <em>JuPedSim</em> agents are spawned</li>
+<li>Configuration of coupled <strong>transfer</strong> points where agents switch from a vehicle (bus, cars or train) to walking or vice versa</li>
+<li>Configuration of flexible <strong>routing</strong> (journeys) for agents consisting of intermediate waypoints, distribution waypoints and exits</li>
+<li>Configuration of <strong>vanishing zones</strong> at exits to model ticket control at venues according to the capacity of an entrance system</li>
+<li><strong>Interaction of cars</strong> and pedestrians in an ordered manner (stopping by management measures)</li>
+</ul>
+<h2 id="technical-background">Technical Background<a class="headerlink" href="#technical-background" title="Permanent link">&para;</a></h2>
+<p>The <em>SUMO-JuPedSim</em> simulation loop starts with <em>JuPedSim</em> independently updating pedestrian positions over multiple time steps independent of <em>SUMO</em>’s simulation cycle, as the temporal resolution for the pedestrian model is significantly higher.
+Once positions are calculated, they are mapped to <em>SUMO</em>’s network in the following way: Pedestrians on regular <em>SUMO</em> lanes (part of the defined network) are assigned to their corresponding edges, while those outside <em>SUMO</em>’s standard network (e.g. inside additionally defined walkable areas) are assigned to the nearest edge for technical consistency.
+These edges primarily serve as reference points for waypoints (start, end, or intermediate goals).
+After mapping, additional adjustments are made, such as modifying pedestrian speeds or removing agents who reach their destinations or enter predefined <em>vanishing zones</em>.</p>
+<p><img alt="" src="../images/Fig4_network.png" /></p>
+<p><em>Crossing simulation with SUMO striping model.</em></p>
+<p><img alt="" src="../images/Fig5_network_walkable.png" />!</p>
+<p><em>Crossing simulation with SUMO-JuPedSim.</em></p>
+<p><img alt="" src="../images/Fig6_network_walkable_additional.png" /></p>
+<p><em>Crossing simulation with SUMO-JuPedSim and an additional walkable area.</em></p>
+<p>To define a journey for the <em>JuPedSim</em> agents in <em>SUMO</em>, a walk (or trip) must be configured by connecting the corresponding edges in the <em>SUMO</em> network (waypoints in <em>JuPedSim</em>).
+For dynamic rerouting, the system allows agents to adapt their routes during simulation.
+This is particularly useful for scenarios like crowd management, where pedestrians might need to choose between exits (e.g. different exits at platform).
+Rerouters — placed on <em>SUMO</em> edges — define probabilistic next-waypoint options, enabling flexible decision-making.
+While these rerouters must be edge-based, they don’t require integration into <em>SUMO</em>’s interconnected road network.</p>
+<p>Interactions between cars and pedestrians occur in two contexts.
+First, in shared spaces (e.g. roads or parking lots), cars treat pedestrians as slow-moving obstacles and adjust their behavior accordingly, though pedestrians currently do not react to vehicles (a feature planned for future implementation).
+Second, at crosswalks or traffic lights, <em>SUMO</em>’s “link” concept (which opens or closes paths based on signals) translates into active or inactive waiting positions in <em>JuPedSim</em>.
+Pedestrians approach these crossings but only halt if the link is closed.
+However, at the time of writing, these waiting positions are static and need to be refined together with better modeling of the waiting behavior.</p>
+<h2 id="future-perspective">Future Perspective<a class="headerlink" href="#future-perspective" title="Permanent link">&para;</a></h2>
+<p><em>SUMO-JuPedSim</em> is being continuously developed based on new use cases and emerging research questions.
+Our planned developments include the conversion of the striping model into the <em>JuPedSim</em> model within defined areas to enable efficient large-scale traffic simulation including small-scale <em>JuPedSim</em> simulations.
+Besides, we are actively working on improving the waiting behavior of pedestrians, which is particularly relevant in scenarios such as waiting at traffic lights or at train stations before boarding.
+To support this, an advanced <em>JuPedSim</em> model for waiting is being developed and is planned to be integrated into <em>SUMO</em>.</p>
+<p>With the coupled simulators, we have established an open-source framework for advanced modeling in shared spaces, where interactions between different traffic participants become especially complex.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,732 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Data/Scenarios/TAPASCologne/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>TAPASCologne - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tapas-cologne-scenario" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TAPASCologne
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    <span class="md-ellipsis">
+      About
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="About">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brief-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brief Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChangeLog
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tapas-cologne-scenario">"TAPAS Cologne" Scenario<a class="headerlink" href="#tapas-cologne-scenario" title="Permanent link">&para;</a></h1>
+<h2 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link">&para;</a></h2>
+<p><img alt="88x31.png" src="../../../images/88x31.png" title="88x31.png" /> The data is available under the
+<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons</a>
+license. You <strong>must tell where the data is from</strong>, it is <strong>not allowed
+to use it for commercial</strong> purposes, as soon as you use it <strong>we want to
+be informed</strong> about it (use the
+<a href="https://dev.eclipse.org/mailman/listinfo/sumo-user">sumo-user</a> mailing list).</p>
+<p>The data can be <a href="https://sourceforge.net/projects/sumo/files/traffic_data/scenarios/TAPASCologne">downloaded from our scenario
+repository</a>.
+There also vehicle traces available from the <a href="https://web.archive.org/web/20240519081107/https://kolntrace.project.citi-lab.fr/">KolnTrace project at CITI
+Lab</a>.</p>
+<h2 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h2>
+<h3 id="brief-description">Brief Description<a class="headerlink" href="#brief-description" title="Permanent link">&para;</a></h3>
+<p>The "TAPAS Cologne" simulation scenario describes the traffic within the
+city of Cologne (Germany) for a whole day. The original demand data
+stems from TAPAS, a system which computes mobility wishes for an area
+population generated based on information about travelling habits of
+Germans and on information about the infrastructure of the area they
+live in. More information about the system can be found within this
+<a href="https://elib.dlr.de/45058/02/SRL_81_-_Beitrag_Varschen.pdf">publication on
+TAPAS</a>. The
+original data was using a closed-source road network and was mapped onto
+one stemming from the <a href="https://www.openstreetmap.de/">OpenStreetMap
+project</a>.</p>
+<p>As is, TAPASCologne is only hardly usable. Work must be put into
+improving the network quality, as well as into verification of the
+process how routes were mapped on the OSM network and on the routes
+themselves. We hope to gain participants responsible for the works that
+must be done. A list of possible <a href="#next_steps">work packages on
+TAPASCologne</a> is available.</p>
+<h3 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h3>
+<p>The TAPASCologne scenario package includes:</p>
+<ul>
+<li>Road networks imported from OSM</li>
+<li>POIs and Polygons imported from OSM</li>
+<li>The mapped trips for time between 6:00 and 8:00 (am)</li>
+<li>The mapped trips for time between 00:00 and 24:00 (in a separate file)</li>
+<li>The SUMO-configuration file</li>
+</ul>
+<p>As OSM data contains information about streets, railways, ways for
+pedestrians only, etc. Release 0.0.3 only includes the network for road
+vehicles (road). Other network selections can be created with the script
+build.py in the release.</p>
+<ul>
+<li>"passenger_*" which contains only roads passenger vehicles are
+  allowed to use</li>
+<li>"roadvehicles_*" which contains roads for road vehicles (those
+  used by pedestrians, trains, and bicycles were removed)</li>
+<li>"all_*" which contains all roads</li>
+</ul>
+<p>The idea behind this is to have a fast road network ("passenger_*")
+for DUA computation and for scenarios which only consider passenger
+traffic retrieved by TAPAS. Then, in a second step, which is not yet
+started, additional traffic such as public transport or delivery
+vehicles may be added and used in combination with "roadvehicles_*"
+networks. "all_*" networks are meant to be used by people who want it
+all......</p>
+<p>Each of the road networks is again available in two versions - one with
+internal lanes (default since version 0.10.1) and one without. Again,
+choosing the proper network is a matter of personal interest.</p>
+<p>The supplied routes are given for the "passenger_*"-network. Though
+not tested, yet, we assume that they can not be used directly with other
+networks from the package. Still, computing correct routes should be
+possible by starting <a href="../../../duarouter/">duarouter</a> with the
+appropriate network and <strong>--repair</strong> option.</p>
+<p>The following images show the scenario area with polygons and points of
+interest. Because we assume that the networks differ in size, for each
+network type (passenger, roadvehicles, all), a shape file is included.</p>
+<p><img alt="" src="../../../images/Tapas_0_0_2_shapes1.gif" /> <img alt="" src="../../../images/Tapas_0_0_2_shapes2.gif" />
+<img alt="" src="../../../images/Tapas_0_0_2_shapes3.gif" /></p>
+<h3 id="changelog">ChangeLog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h3>
+<p><strong>Version 0.0.1 to version 0.0.2</strong></p>
+<ul>
+<li>Solved problems on importing OSM road networks, including
+  <a href="https://github.com/eclipse-sumo/sumo/issues/17">defect 17: OSM network importer creates large
+  junctions</a></li>
+<li>Includes joined tls (solves few synchronization problems)</li>
+<li>Patched import of shapes (POIs/Polygons) and included them</li>
+<li>Remapped the routes</li>
+</ul>
+<h2 id="quality">Quality<a class="headerlink" href="#quality" title="Permanent link">&para;</a></h2>
+<p>In the current version, we even have not tested the data, completely.
+The assumptions made on the quality are shown below. We decided not to
+use a numeric ranking, because we do not have real world numbers for
+most of the issues. The rank tries to distinguish between "good" (arrow
+upwards, green) and "bad" (arrow downwards, red) influences on the
+overall simulation quality.</p>
+<ul>
+<li><img alt="Image:level16px_00.gif" src="../../../images/Level16px_00.gif" title="Image:level16px_00.gif" /> Network Topology and Edge Parameter (from OSM)</li>
+<li><img alt="Image:level16px_+3.gif" src="../../../images/level16px_%2B3.gif" title="Image:level16px_+3.gif" /> Completeness<ul>
+<li>Seems to be quite complete (including even minor roads) when
+  compared to other (commercial or administral) road networks;
+  still, there is no information about "black spots";</li>
+<li><strong>todo:</strong> build density plot comparing commercial and this
+  network (legal?)</li>
+</ul>
+</li>
+<li><img alt="Image:level16px_-3.gif" src="../../../images/Level16px_-3.gif" title="Image:level16px_-3.gif" /> Junction topology<ul>
+<li>Lots of complex junctions which should be simplified
+  (automatic joining failed)</li>
+</ul>
+</li>
+<li><img alt="Image:level16px_-3.gif" src="../../../images/Level16px_-3.gif" title="Image:level16px_-3.gif" /> Lane Number Information<ul>
+<li>The information about lane numbers is stored via types,
+  mainly. For several roads, an explicit lane number is
+  given. It can be safely assumed that many turning-lanes are
+  missing.</li>
+<li><strong>todo:</strong> evaluate how much information is given explicitly</li>
+<li><strong>todo:</strong> compare to images, write down lane number per
+  street</li>
+</ul>
+</li>
+<li><img alt="Image:level16px_-2.gif" src="../../../images/Level16px_-2.gif" title="Image:level16px_-2.gif" /> Maximum Speed Information<ul>
+<li>Again, mostly available via types, as for lane numbers; is
+  assumed to be mismatching on some places</li>
+<li>Where can one get better information from?</li>
+</ul>
+</li>
+<li><img alt="Image:level16px_-2.gif" src="../../../images/Level16px_-2.gif" title="Image:level16px_-2.gif" /> Traffic Management Artifacts</li>
+<li><img alt="Image:level16px_-2.gif" src="../../../images/Level16px_-2.gif" title="Image:level16px_-2.gif" /> Traffic Light Positions<ul>
+<li>Given for some junctions (nodes); Still, there seem to be no
+  information whether a node not marked as controlled is
+  really uncontrolled</li>
+<li><strong>todo:</strong> Try to find further controlled junctions or
+  improve guessing</li>
+</ul>
+</li>
+<li><img alt="Image:level16px_-3.gif" src="../../../images/Level16px_-3.gif" title="Image:level16px_-3.gif" /> Traffic Light Programs<ul>
+<li>Ungiven</li>
+<li><strong>todo:</strong> Ask about the default cycle time (if there is one)
+  in Cologne; apply at least this one to the generated tls
+  logics</li>
+</ul>
+</li>
+<li><img alt="Image:level16px_-1.gif" src="../../../images/Level16px_-1.gif" title="Image:level16px_-1.gif" /> Other Traffic Management Artifacts<ul>
+<li>completely ungiven</li>
+</ul>
+</li>
+<li><img alt="Image:level16px_-1.gif" src="../../../images/Level16px_-1.gif" title="Image:level16px_-1.gif" /> Closures, Roads At Work<ul>
+<li>completely ungiven</li>
+</ul>
+</li>
+<li><img alt="Image:level16px_-2.gif" src="../../../images/Level16px_-2.gif" title="Image:level16px_-2.gif" /> Public Transport</li>
+<li>completely ungiven</li>
+<li><img alt="Image:level16px_-1.gif" src="../../../images/Level16px_-1.gif" title="Image:level16px_-1.gif" /> Demand Data</li>
+<li><img alt="Image:level16px_+5.gif" src="../../../images/level16px_%2B5.gif" title="Image:level16px_+5.gif" /> Activity-Based single Person Trips<ul>
+<li><img alt="Image:level16px_+5.gif" src="../../../images/level16px_%2B5.gif" title="Image:level16px_+5.gif" /> No Time Aggregation</li>
+<li><img alt="Image:level16px_+5.gif" src="../../../images/level16px_%2B5.gif" title="Image:level16px_+5.gif" /> No Start/End Position Aggregation</li>
+</ul>
+</li>
+<li><img alt="Image:level16px_-2.gif" src="../../../images/Level16px_-2.gif" title="Image:level16px_-2.gif" /> unverified</li>
+<li><img alt="Image:level16px_-1.gif" src="../../../images/Level16px_-1.gif" title="Image:level16px_-1.gif" /> starts partially at highways</li>
+<li><img alt="Image:level16px_-2.gif" src="../../../images/Level16px_-2.gif" title="Image:level16px_-2.gif" /> ad-hoc, erroneous mapping to OSM</li>
+<li><img alt="Image:level16px_-2.gif" src="../../../images/Level16px_-2.gif" title="Image:level16px_-2.gif" /> shortest path routing, no <a href="../../../duarouter/">DUE</a> as of release 0.0.3</li>
+</ul>
+<p>The below images show the structure of demand data over 24 hour period.
+This shows normal behavior of mobility. Peak hours like \~8-9am ,
+\~4-6pm during which the number of trips are usually high. More
+information of the city of cologne can be found in the link
+<a href="https://web.archive.org/web/20230321021848/https://www.stadt-koeln.de/mediaasset/content/pdf15/stadtkoeln_zahlenspiegel_e_bfrei.pdf">[1]</a>.
+The total number of trips (made by cars) over 24h is very close to the
+number of registered cars*3 (3 trips per registered car). There are
+around \~420415*3 (\~1.2 million) trips which matches the number in the
+plots.</p>
+<p><img alt="" src="../../../images/Average_24h.jpg" /> <img alt="" src="../../../images/Per_second_dep.jpg" /></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Due to the above problems with the simulation network, the configuration file included with the scenario uses the option <strong>--scale 0.3</strong>. This reduces the demand to 30% of the realistic value to avoid network-wide traffic jams.</p>
+</div>
+<p><strong>Summary:</strong> The TAPAS Cologne scenario is assumed to be one of the
+largest - if not THE largest - freely available traffic simulation data
+set. Regarding the scenario size, both the road network and the traffic
+demand are given in a good quality. Nonetheless, many important
+information is missing or wrong and much further effort is needed to
+make the scenario realistic and complete.</p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Description</th>
+<th>Priority</th>
+<th>Assigned To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Synchronize Traffic Lights</td>
+<td></td>
+<td>very high</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Check Right-of-way Rules</td>
+<td></td>
+<td>very high</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Check Lane Numbers, esp. within Junctions</td>
+<td></td>
+<td>high</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Check whether all traffic lights are given</td>
+<td></td>
+<td>high</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Compute Assignment</td>
+<td></td>
+<td>high</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Add Public Transport</td>
+<td></td>
+<td>low</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Help on Visualization of POIs/Polygons</td>
+<td></td>
+<td>low</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

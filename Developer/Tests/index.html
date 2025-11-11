@@ -1,0 +1,634 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Developer/Tests/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Tests - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tests
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>We use <a href="https://texttest.org/">TextTest</a> to test whether the software
+still behaves as expected. TextTest compares an application's file
+output, including the output to stdout and stderr with predefined
+outputs from files.</p>
+<p>There are some advantages and disadvantages of this approach. On the one
+hand, you can guarantee that the application is doing what is wanted by
+comparing all outputs with files you think are right. But this is also
+the problem with this approach: you do not have the assurance that the
+files you are comparing the current outputs to <em>are</em> right - you have to
+prepare them once and update/verify them again every time the expected
+results change.</p>
+<p>At the moment all our tests run <a href="../Nightly_Build/">each night</a>
+with the results on this <a href="https://sumo.dlr.de/daily/">summary webpage</a>.</p>
+<h1 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h1>
+<p>We use <a href="https://texttest.org/">TextTest</a> 4.x as our testing environment which
+is Python based and currently available for Python 3. To install
+it on Linux / MacOS, you can open a terminal and type:</p>
+<p><code>pip3 install texttest</code></p>
+<p>For a "naked" python installation, the following may be needed to allow TextTest to work:</p>
+<p><code>pip3 install gobject PyGObject psutil</code></p>
+<p>For Windows you should download and run the installer from the
+<a href="https://sourceforge.net/projects/texttest/">SourceForge project page</a>.</p>
+<p>It might not pull in all the dependencies, so in some cases you need
+to follow the <a href="https://texttest.sourceforge.net/index.php?page=documentation_trunk&amp;n=install_texttest">TextTest installation
+instructions</a>
+and the additional info there.</p>
+<p>For MacOS the following command should install all dependencies:</p>
+<p><code>brew install python py3cairo pygobject3 gtk+3 adwaita-icon-theme</code></p>
+<p>If the installation was successful, this window will appear after execution of <code>***&amp;lt;SUMO_HOME&amp;gt;***/tests/runAllTests.bat</code> (Windows) or
+<code>***&amp;lt;SUMO_HOME&amp;gt;***/tests/runTests.sh</code> (Linux, macOS)</p>
+<p><img alt="" src="../../images/TestInstall8.png" title="If the installation was successful, this window will appear after execution of runAllTests.bat" /></p>
+<h2 id="customize-configuration">Customize configuration<a class="headerlink" href="#customize-configuration" title="Permanent link">&para;</a></h2>
+<p>Common options added to the personal config file
+<code>$HOME/.texttest/config</code> are the used diff-viewer, editor, and the flag
+to collapse the static test suites on program start. E.g.:</p>
+<pre><code>   diff_program:meld
+   view_program:geany
+   static_collapse_suites:1
+</code></pre>
+<h2 id="recommended-python-packages">Recommended python packages<a class="headerlink" href="#recommended-python-packages" title="Permanent link">&para;</a></h2>
+<p>There are several packages being used by the tools under test. So if you want to run
+the "tools" and/or "complex" tests please do</p>
+<p><code>pip3 install -r $SUMO_HOME/tools/requirements.txt -r $SUMO_HOME/tools/req_dev.txt</code></p>
+<h1 id="running-the-tests">Running the Tests<a class="headerlink" href="#running-the-tests" title="Permanent link">&para;</a></h1>
+<p>Within the  <code>$SUMO_HOME/tests</code> folder you can find batch files for Windows and shell files for Linux &amp; macOS which start
+<a href="https://texttest.org/">TextTest</a> with our test suites. <code>runAllTests.bat</code> (Windows) or <code>runTests.sh</code> (Linux, macOS)
+starts TextTest for testing all applications located in the folder,
+<code>runNetconvertTests.bat</code> (Windows) will only show tests for netconvert,
+<code>runDuarouterTests.bat</code>(Windows) only those for duarouter etc. For Linux and macOS you can do this via the
+command line using e.g. <code>runTests.sh -a duarouter</code>.</p>
+<h1 id="adding-a-test-to-an-existing-application">Adding a Test to an existing Application<a class="headerlink" href="#adding-a-test-to-an-existing-application" title="Permanent link">&para;</a></h1>
+<p>The easiest method is probably to copy an existing test using the
+TextTest GUI context menu functions (copy/paste). Then you can modify
+the copied input files, run the test once and save the expected results.
+Note, that input files may be picked up along the folder hierarchy so
+you may have to copy additional files to your test folder manually if
+these inherited input files must be changed as well.</p>
+<h1 id="adding-an-application-test-suite">Adding an Application Test Suite<a class="headerlink" href="#adding-an-application-test-suite" title="Permanent link">&para;</a></h1>
+<p>To add a test suite for a new application, you have to perform the
+following steps. For the examples below we'll use "polyconvert" as the
+example application.</p>
+<ul>
+<li>go to <code>$SUMO_HOME/tests</code></li>
+<li>copy one of the <strong>run...Tests.bat</strong>-files and rename it properly
+  (<strong>runPolyconvertTests.bat</strong> in our case); change the name of the
+  application within it. In our case the resulting file will look as
+  this:</li>
+</ul>
+<pre><code>call %~dp0\testEnv.bat %1
+start %TEXTTESTPY% -a polyconvert
+</code></pre>
+<ul>
+<li>add the application to the list of applications that are tested each
+night by</li>
+<li>adding it to <strong>runTests.sh</strong>; in our case, the following line
+    was added:</li>
+</ul>
+<pre><code>export POLYCONVERT_BINARY=&quot;$SUMO_BINDIR/polyconvert&quot;
+</code></pre>
+<ul>
+<li>adding it to <strong>testEnv.bat</strong>; in our case, the following line was added:</li>
+</ul>
+<pre><code>set POLYCONVERT_BINARY=%~dp0\..\bin\polyconvert%1.exe
+</code></pre>
+<ul>
+<li>build a test folder for the application, named as the application
+  itself (without the ".exe" extension), in our case the folder is
+  named <strong>polyconvert</strong></li>
+<li>go the folder</li>
+<li>build a configuration file; its name is "config", the extension is
+  the application's to test name, so in our case it's
+  <strong>config.polyconvert</strong>. Please consult
+  <a href="https://texttest.org/">TextTest</a> documentation about the content,
+  nonetheless, here are some notes</li>
+<li>do not forget the import of the main config file (config_all)</li>
+<li>name the binary correct</li>
+<li>name the file name properly in output</li>
+<li>In all files that are collated, <em>Version</em> should be ignored -
+    the tests should be working along all versions</li>
+</ul>
+<p>The initial file looks as following:</p>
+<pre><code>import_config_file:../config_all
+binary:$POLYCONVERT_BINARY
+copy_test_path:input_net.net.xml
+[collate_file]
+config:config.cfg
+log:log.txt
+[run_dependent_text]
+output:polyconvert.exe{REPLACE polyconvert}
+net:Version
+</code></pre>
+<ul>
+<li>build a top-level testsuite file; its name is "testsuite", the
+extension is the application's to test name, so in our case it's
+<strong>testsuite.polyconvert</strong></li>
+<li>I suppose, it is a good idea to start with tests of meta-output;
+    Simply copy them from another application and patch the file
+    names...</li>
+</ul>
+<h1 id="example-of-use">Example of use<a class="headerlink" href="#example-of-use" title="Permanent link">&para;</a></h1>
+<p>The main function of existing test is to verify that a modification of a
+function does not affect the final output, comparing the output of our
+modification in SUMO with a with an previously tested <em>output control
+file</em>. Note that <strong>SUMO must be compiled in release mode for testing</strong>.
+To show an example of use, the <em>MSDevice_Battery.cpp</em> file will be
+modified to include an error in the output file <em>battery.xml</em>. Once
+modified the line, run executable <em>runSumoTests.bat</em> and find the test
+<em>sumo/extended/electric/braunschweig</em>, and then right click to run the
+test</p>
+<p><img alt="" src="../../images/TestError1.png" title="Manual error" />
+Manual error</p>
+<p><img alt="" src="../../images/TestError2.png" title="Running test" />
+Running test</p>
+<p>After execution can be observed that the <em>battery.sumo</em> file is marked
+in red. That means that the execution of our SUMO modification generated
+a different battery output than expected. If the file marked in red was
+<em>errors.sumo</em>, it means that our modification of SUMO has caused a
+<em>runtime error</em>, and finally if the file marked in red is <em>output.sumo</em>,
+it means that SUMO generated some warning during execution.
+Double-clicking on the red box <em>battery.sumo</em> opens ''TkDiffv
+automatically, and displays the differences of our battery output with
+respect to the original <em>battery output control file</em>.</p>
+<p><img alt="" src="../../images/TestError3.png" title="Error in battery.sumo" />
+Error in battery.sumo</p>
+<p><img alt="" src="../../images/TestError4.png" title="Detail of the error comparing both battery.sumo" />
+Detail of the error comparing both battery.sumo</p>
+<p>At this point, we undone the modification in <em>MSDevice_battery.cpp</em>
+which caused the error, and compile. Once compiled, we will again right
+click over the failed text and press <em>rerun</em>. A new dialog will be
+opened, and then click over <em>Accept</em>, and test will be repeated. After
+the new test run no error is displayed.</p>
+<p><img alt="" src="../../images/TestError5.png" title="Undo error" />
+Undo error</p>
+<p><img alt="" src="../../images/TestError6.png" title="Repeating test" />
+Repeating test</p>
+<p>After clicking on the check box next to the green message <em>Succeeded</em>
+can be observed that all output shown in green, and at the bottom appear
+a message indicating that the test has been succeeded.</p>
+<p><img alt="" src="../../images/TestError7.png" title="Test succeeded" />
+Test succeeded</p>
+<p><img alt="" src="../../images/TestError8.png" title="Details of the test succeeded" />
+Details of the test succeeded</p>
+<h1 id="organization-of-tests">Organization of Tests<a class="headerlink" href="#organization-of-tests" title="Permanent link">&para;</a></h1>
+<p>Our TextTest tests can be grouped into the categories described below</p>
+<h2 id="application-tests">Application Tests<a class="headerlink" href="#application-tests" title="Permanent link">&para;</a></h2>
+<p>These tests are for the executable files in the <em>bin</em> folder such as
+<a href="../../netconvert/">netconvert</a>, <a href="../../duarouter/">duarouter</a>
+and <a href="../../sumo/">sumo</a>. They work by running their application once
+with a predefined set of input files and compare against expected output
+files. The tests for sumo run once with the GUI version and once without
+GUI..</p>
+<h2 id="tool-tests">Tool Tests<a class="headerlink" href="#tool-tests" title="Permanent link">&para;</a></h2>
+<p>These tests are for the python tools in the <em>tools</em> folder such as
+<a href="../../Tools/Trip/#randomtripspy">randomTrips.py</a> and
+<a href="../../Tools/Detector/#flowrouterpy">flowRouter.py</a>. Instead of
+defining a new application for each tool (as is the standard for
+TextTest) they all call the <em>tests/toolrunner.py</em> script and select the
+actual python tool to test via options. Be aware that the script to use
+is always listed last in the options file (this is due to TextTest
+trying to reorder options cleverly).</p>
+<h2 id="complex-tests">Complex Tests<a class="headerlink" href="#complex-tests" title="Permanent link">&para;</a></h2>
+<p>These tests go beyond calling an application once. Each tests defines a
+<em>runner.py</em> script which performs arbitrary application calls. This is
+used to call netconvert multiple times to perform back-and-forth format
+conversions or to test tutorials where first the network is generated
+and afterwards simulation is performed. They are also used for testing
+the traci python client (runner.py is a traci script in this case).</p>
+<h2 id="interactive-gui-tests">Interactive GUI Tests<a class="headerlink" href="#interactive-gui-tests" title="Permanent link">&para;</a></h2>
+<p>These tests are currently only active for <a href="../../Netedit/">netedit</a>
+and are described in more detail on the page
+<a href="../GUI_Testing/">Developer/GUI_Testing</a>.</p>
+<h2 id="extra-tests">Extra Tests<a class="headerlink" href="#extra-tests" title="Permanent link">&para;</a></h2>
+<p>These tests run one or multiple of the test suites above with additional
+options or a different python interpreter and are usually not run using
+a batch file but the runExtraTests.py. To enable python3 tests you need
+to have an executable named python3 in your PATH (which is usually there
+on Linux). On Windows you will need to add it by copying the existing
+python.exe in your python3 installation to python3.exe (in the same
+directory) and adding that directory to the end of your PATH (if it is
+not already there).</p>
+<h1 id="running-tests-outside-texttest">Running tests outside TextTest<a class="headerlink" href="#running-tests-outside-texttest" title="Permanent link">&para;</a></h1>
+<p>Different methods to extract TextTest tests (offline and online) are explained <a href="../../Tutorials/#using_examples_from_the_test_suite">here</a>.</p>
+<h2 id="developing-for-python2-and-python3">Developing for Python2 and Python3<a class="headerlink" href="#developing-for-python2-and-python3" title="Permanent link">&para;</a></h2>
+<p>SUMO is downwards compatible, hence contributed code should be able to
+run with both Python 2.7 and Python 3.5 and above. On Windows you can either use python launcher
+to have access to both Python versions, or use free online tools
+like <a href="https://paiza.io/en/languages/python">paiza.io</a> to check for compatibility.
+If you cannot support both Python versions because for instance your library is not
+available you should of course prefer Python3.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

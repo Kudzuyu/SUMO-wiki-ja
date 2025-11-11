@@ -10,26 +10,29 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tutorials/">
       
+      
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>チュートリアル - SUMO wiki ja</title>
+        <title>Tutorials - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#チュートリアル" class="md-skip">
+        <a href="#beginner-tutorials" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -103,47 +107,57 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              チュートリアル
+              Tutorials
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href=".." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -292,213 +349,161 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#初心者向けチュートリアル" class="md-nav__link">
-    初心者向けチュートリアル
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#高度なチュートリアル" class="md-nav__link">
-    高度なチュートリアル
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#traciチュートリアル" class="md-nav__link">
-    TraCIチュートリアル
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#その他" class="md-nav__link">
-    その他
-  </a>
-  
-    <nav class="md-nav" aria-label="その他">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#curso-de-simulação-em-mobilidade" class="md-nav__link">
-    Curso de Simulação em Mobilidade
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sumoユーザーカンファレンス" class="md-nav__link">
-    SUMOユーザーカンファレンス
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#itsc-2015" class="md-nav__link">
-    ITSC 2015
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#インポートとエクスポート" class="md-nav__link">
-    インポートとエクスポート
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#照準補正" class="md-nav__link">
-    照準補正
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#もっと進んだ例" class="md-nav__link">
-    もっと進んだ例
-  </a>
-  
-    <nav class="md-nav" aria-label="もっと進んだ例">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#テストスイートから例題を使う" class="md-nav__link">
-    テストスイートから例題を使う
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#未完成のチュートリアル" class="md-nav__link">
-    未完成のチュートリアル
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#過去のチュートリアル" class="md-nav__link">
-    過去のチュートリアル
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="チュートリアル">チュートリアル<a class="headerlink" href="#チュートリアル" title="Permanent link">&para;</a></h1>
-<p><a href="https://sumo.dlr.de/wiki/Tutorials">原文ページ</a></p>
+
 <div class="admonition note">
-<p class="admonition-title">注</p>
-<p>チュートリアルでは一般的でないコンピュータスキルを持っていることを仮定しています。
-なにか疑問が生じた場合は、<a href=""></a>を参照してください。</p>
+<p class="admonition-title">Note</p>
+<p>These tutorials assume minor computer skills. If you run into any questions please read the page <a href="../Basics/Basic_Computer_Skills/">Basics/Basic Computer Skills</a>.</p>
 </div>
-<h2 id="初心者向けチュートリアル">初心者向けチュートリアル<a class="headerlink" href="#初心者向けチュートリアル" title="Permanent link">&para;</a></h2>
+<h1 id="beginner-tutorials">Beginner Tutorials<a class="headerlink" href="#beginner-tutorials" title="Permanent link">&para;</a></h1>
 <ul>
-<li><a href="">OSMWebWizard</a> - osmWebWizard.pyを用いて、ほんの数クリックで最初のシナリオを設定しましょう。</li>
-<li><a href="">クイックスタート</a> - NETEDITを用いたより複雑なチュートリアル。SUMOの最初のステップです。</li>
-<li><a href="">SUMOオリンピック</a> - neteditで特別な車線と単純な信号を作ります。</li>
-<li><a href="">アウトバーン</a> - 高速道路を構築し、混成高速道路交通流を作成、自動車の速度の可視化、可視化設定の保存</li>
-<li><a href="">マンハッタン</a> - <a href="">マンハッタン交通モデル</a>を構築します。</li>
-<li><a href="">シミュレーション出力の評価</a> - Pythonを使ってシミュレーション結果を評価します。</li>
+<li><a href="Hello_World/">Hello World</a> - Creating a simple network and demand scenario with <a href="../Netedit/">netedit</a> and visualizing it using <a href="../sumo-gui/">sumo-gui</a></li>
+<li><a href="OSMWebWizard/">OSMWebWizard</a> - Setting up a scenario with just a few clicks using osmWebWizard.py; getting a network from OpenStreetMap</li>
+<li><a href="quick_start/">Quick Start</a> - A more complex tutorial with <a href="../Netedit/">netedit</a>; first steps in SUMO</li>
+<li><a href="Driving_in_Circles/">Driving in Circles</a> - Work with <a href="../Netedit/">netedit</a>; define a flow; let vehicles drive in circles using rerouters</li>
+<li><a href="SUMOlympics/">SUMOlympics</a> - Create special lanes and simple traffic lights in netedit, more about flows and vehicle types, working with vehicle</li>
+<li><a href="Autobahn/">Autobahn</a> - Build a highway, create a mixed highway flow, visualize vehicle speed, save view settings</li>
+<li><a href="Manhattan/">Manhattan</a> - Build a <a href="https://en.wikipedia.org/wiki/Manhattan_mobility_model">Manhattan mobility model</a></li>
+<li><a href="PublicTransport/">Public Transport</a> - Build a public transport scenario from scratch</li>
+<li><a href="TaxiService/">TaxiService</a> - Build a taxi service from scratch</li>
 </ul>
-<h2 id="高度なチュートリアル">高度なチュートリアル<a class="headerlink" href="#高度なチュートリアル" title="Permanent link">&para;</a></h2>
+<h1 id="sumo-user-conference-tutorials">SUMO User Conference Tutorials<a class="headerlink" href="#sumo-user-conference-tutorials" title="Permanent link">&para;</a></h1>
+<p>The SUMO User Conference is an annual event organized by the German Aerospace Center (DLR) in Berlin. Since 2015, each conference begins with a SUMO tutorial session. Below you can find the tutorial material (slide deck and input files). Since 2019, the tutorials have also been recorded on video.</p>
+<h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="">こんにちは、SUMO</a> - 最も単純なネットワークと一台の車を「手作業で」セットアップします</li>
-<li><a href="">シナリオガイド</a> - シミュレーションのシナリオ構築のための段階ごとの高レベルなアウトラインです</li>
-<li><a href="">高速道路検知器</a> - インダクションループデータから高速道路のシナリオを作成します</li>
-<li><a href="">交通流ダイアグラム</a> - SUMOで交通流ダイアグラムを計算します</li>
-<li><a href="">OpenStreetMapのPT</a> - <a href="http://www.openstreetmap.org/">OpenStreetMap</a>から、実行可能な公共交通を構築します</li>
+<li><a href="https://sumo.dlr.de/daily/sumo2015_tutorial.zip">SUMO 2015</a>: Network editing with xml patch, persons</li>
+<li><a href="https://sumo.dlr.de/daily/sumo2016_tutorial.zip">SUMO 2016</a>: Network editing, meso, containers, <a href="https://sumo.dlr.de/daily/SUMO2016_new_features.pdf">New Features 2016 (Slides)</a></li>
+<li><a href="https://sumo.dlr.de/daily/sumo2017_tutorial.zip">SUMO 2017</a>: Network editing, randomTrips, calibrators (xml only), public transport (obsolete)</li>
+<li><a href="https://sumo.dlr.de/daily/sumo2018_tutorial.zip">SUMO 2018</a>: Fixing intermodal junctions, calibrators in netedit, junction model parameters, editing shapes</li>
+<li><a href="https://sumo.dlr.de/daily/sumo2019_tutorial.zip">SUMO 2019</a>: Network editing, visualizing traffic data, public transport from OSM, parking, netgenerate</li>
+<li><a href="https://sumo.dlr.de/daily/sumo2020_tutorial.zip">SUMO 2020</a>: Turn lanes, routeSampler.py, defining counting data in netedit, taxi/DRT</li>
+<li><a href="https://sumo.dlr.de/daily/sumo2021_tutorial.zip">SUMO 2021</a>: Traffic light layout, indirect left turn, TAZ, OD-traffic, GTFS</li>
+<li><a href="https://sumo.dlr.de/daily/sumo2022_tutorial.zip">SUMO 2022</a>: Network editing, flows, opposite driving, pedestrian crossings, parking search</li>
+<li><a href="https://sumo.dlr.de/daily/sumo2023_tutorial.zip">SUMO 2023</a>: Graphical diff, personFlow, plotting tools, analyzing repeated runs</li>
+<li><a href="https://sumo.dlr.de/daily/sumo2024_tutorial.zip">SUMO 2024</a>: Debugging simulation warnings, pedestrian models, flying taxis</li>
+<li><a href="https://sumo.dlr.de/daily/sumo2025_tutorial.zip">SUMO 2025</a>: Railway simulation, GTFS, detector count import, electric vehicles, automated charging</li>
 </ul>
-<h2 id="traciチュートリアル">TraCIチュートリアル<a class="headerlink" href="#traciチュートリアル" title="Permanent link">&para;</a></h2>
-<p>これらのチュートリアルは<a href="">Python-TraCIライブラリ</a>を使ってSUMOシミュレーションとpythonスクリプトを接続します。</p>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<p><a class="no-arrow-link" data-youtube href="https://www.youtube.com/watch?v=UeaeCdLt_1o">Watch the 2019 Tutorial</a>
+(a transcription is available <a href="2019/#transcription">here</a>)
+<br></p>
+<p><a class="no-arrow-link" data-youtube href="https://www.youtube.com/watch?v=aiOQbaB-pWo">Watch the 2020 Tutorial</a>
+(a transcription is available <a href="2020/#transcription">here</a>)
+<br></p>
+<p><a class="no-arrow-link" data-youtube href="https://www.youtube.com/watch?v=tlshWdzFWpY">Watch the 2021 Tutorial</a>
+(a transcription is available <a href="2021/#transcription">here</a>)
+<br></p>
+<p><a class="no-arrow-link" data-youtube href="https://www.youtube.com/watch?v=urKtJj87X5M">Watch the 2022 Tutorial</a>
+(a transcription is available <a href="2022/#transcription">here</a>)
+<br></p>
+<p><a class="no-arrow-link" data-youtube href="https://www.youtube.com/watch?v=3J5KqOPT2qI">Watch the 2023 Tutorial</a>
+(a transcription is available <a href="2023/#transcription">here</a>)
+<br></p>
+<p><a class="no-arrow-link" data-youtube href="https://www.youtube.com/watch?v=9WCGxJDdY9s">Watch the 2024 Tutorial</a>
+(a transcription is available <a href="2024/#transcription">here</a>)
+<br></p>
+<p><a class="no-arrow-link" data-youtube href="https://www.youtube.com/watch?v=ccc2mnGX_Mg">Watch the 2025 Tutorial</a>
+(a transcription is available <a href="2025/#transcription">here</a>)</p>
+<h1 id="jupedsim-tutorials">JuPedSim Tutorials<a class="headerlink" href="#jupedsim-tutorials" title="Permanent link">&para;</a></h1>
 <ul>
-<li><a href="">交通信号のためのTraci</a> SUMOと外部プログラムを接続する例としてTraciを使った交通信号制御を取り上げます。</li>
-<li><a href="">Traciによる歩行者の横断</a> - TraCIを使った歩行者によって交通信号を動かす例です。</li>
+<li><a href="Jupedsim/crossing-simulation/">Crossing Simulation</a></li>
 </ul>
-<h2 id="その他">その他<a class="headerlink" href="#その他" title="Permanent link">&para;</a></h2>
-<h3 id="curso-de-simulação-em-mobilidade">Curso de Simulação em Mobilidade<a class="headerlink" href="#curso-de-simulação-em-mobilidade" title="Permanent link">&para;</a></h3>
-<p>Ednardo Ferreiraによるポルトガル語の<a href="https://www.udemy.com/ferramenta-de-microssimulacao-de-trafego-sumo/learn/v4/overview">Udemyチュートリアル</a>です。</p>
-<h3 id="sumoユーザーカンファレンス">SUMOユーザーカンファレンス<a class="headerlink" href="#sumoユーザーカンファレンス" title="Permanent link">&para;</a></h3>
+<h1 id="advanced-tutorials">Advanced Tutorials<a class="headerlink" href="#advanced-tutorials" title="Permanent link">&para;</a></h1>
 <ul>
-<li><a href="http://sumo.dlr.de/daily/sumo2015_tutorial.zip">SUMO2015</a></li>
-<li><a href="http://sumo.dlr.de/daily/sumo2016_tutorial.zip">SUMO2016</a>, <a href="http://sumo.dlr.de/daily/SUMO2016_new_features.pdf">New Features 2016 (スライド)</a></li>
-<li><a href="http://sumo.dlr.de/daily/sumo2017_tutorial.zip">SUMO2017</a></li>
-<li><a href="http://sumo.dlr.de/daily/sumo2018_tutorial.zip">SUMO2018</a></li>
-<li><a href="http://sumo.dlr.de/daily/sumo2019_tutorial.zip">SUMO2019</a></li>
+<li><a href="Hello_SUMO/">Hello SUMO</a> - The simplest net and a single car set up "by hand"</li>
+<li><a href="ScenarioGuide/">ScenarioGuide</a> - High level outline of the steps needed to build a simulation scenario</li>
+<li><a href="HighwayDetector/">HighwayDetector</a> - How to create a highway scenario based on induction loop data</li>
+<li><a href="FundamentalDiagram/">FundamentalDiagram</a> - How to compute a fundamental diagram with SUMO</li>
+<li><a href="PT_from_OpenStreetMap/">PT from OpenStreetMap</a> - Creating a runnable public transit scenario entirely from <a href="https://www.openstreetmap.org/">OpenStreetMap</a></li>
+<li><a href="GTFS/">Importing GTFS</a> - Importing public transport schedules from public sources using the General Transit Feed Specification</li>
+<li><a href="port/">Port</a> - Creating a scenario that simulates the port logistics of an arbitrary port from <a href="https://www.openstreetmap.org/">OpenStreetMap</a></li>
+<li><a href="Containerized_SUMO/">Containerized SUMO</a> - Using SUMO to run a simulation inside a docker container</li>
+<li><a href="Containerized_SUMO_GUI/">Containerized SUMO with GUI</a> - Running the SUMO GUI from inside a container</li>
 </ul>
-<h3 id="itsc-2015">ITSC 2015<a class="headerlink" href="#itsc-2015" title="Permanent link">&para;</a></h3>
-<p>チュートリアルの準備:</p>
+<h1 id="traci-tutorials">TraCI Tutorials<a class="headerlink" href="#traci-tutorials" title="Permanent link">&para;</a></h1>
+<p>These tutorials use the <a href="../TraCI/Interfacing_TraCI_from_Python/">Python-TraCI Library</a> for interfacing a python script with a running <a href="../sumo/">sumo</a> simulation.</p>
 <ul>
-<li>python2.7をインストール <a href="https://www.python.org/ftp/python/2.7.7/python-2.7.7.msi">https://www.python.org/ftp/python/2.7.7/python-2.7.7.msi</a> </li>
-<li>シンタックスハイライト付きテキストエディタのインストール (例: [http://download.tuxfamily.org/notepadplus/archive/6.7.5/npp.6.7.5.Installer.exe])</li>
-<li><a href="http://sumo.dlr.de/daily/sumo-msvc10Win32-svn.zip">http://sumo.dlr.de/daily/sumo-msvc10Win32-svn.zip</a>をダウンロードし、<strong>半角空白(' ')を含まないディレクトリ</strong>に展開する。
-0.24.0は<a href="">NETEDIT</a>を含んでいないので、最新の開発版を使います。</li>
-<li><a href="http://sumo.dlr.de/daily/ITSC2015_tutorial.zip">http://sumo.dlr.de/daily/ITSC2015_tutorial.zip</a>からチュートリアルファイルをダウンロード</li>
+<li><a href="TraCI4Traffic_Lights/">TraCI4Traffic Lights</a> - An example for how to connect an external application to SUMO via TraCI for traffic lights control</li>
+<li><a href="TraCIPedCrossing/">TraCIPedCrossing</a> - An example for building a pedestrian-actuated traffic light via TraCI</li>
+<li><a href="https://medium.com/@fazekade/simulating-dynamic-vehicular-detours-based-on-edge-travel-time-in-sumo-e57a50457dba">Simulating dynamic vehicular detours based on edge travel time (<em>external</em>)</a></li>
 </ul>
-<h3 id="インポートとエクスポート">インポートとエクスポート<a class="headerlink" href="#インポートとエクスポート" title="Permanent link">&para;</a></h3>
+<h1 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h1>
+<h2 id="curso-de-simulação-em-mobilidade">Curso de Simulação em Mobilidade<a class="headerlink" href="#curso-de-simulação-em-mobilidade" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.udemy.com/course/ferramenta-de-microssimulacao-de-trafego-sumo/">Udemy tutorial</a> in Portuguese courtesy of Ednardo Ferreira.</p>
+<h2 id="itsc-2015">ITSC 2015<a class="headerlink" href="#itsc-2015" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="">ファイル生成のトレース</a> - 乗り物に関するトレースファイルを取得する方法を示します。
-乗り物同士のコミュニケーションに有用です。</li>
+<li>Download the Tutorial Files at <a href="https://sumo.dlr.de/daily/ITSC2015_tutorial.zip">https://sumo.dlr.de/daily/ITSC2015_tutorial.zip</a></li>
 </ul>
-<h3 id="照準補正">照準補正<a class="headerlink" href="#照準補正" title="Permanent link">&para;</a></h3>
-<p><a href="">サンパブロダム</a> - NEARCTISサマースクールで用いられた、観測地点を車が通過する時間を用いた自動車の追従パラメータの補正</p>
-<h2 id="もっと進んだ例">もっと進んだ例<a class="headerlink" href="#もっと進んだ例" title="Permanent link">&para;</a></h2>
-<h3 id="テストスイートから例題を使う">テストスイートから例題を使う<a class="headerlink" href="#テストスイートから例題を使う" title="Permanent link">&para;</a></h3>
-<p>SUMOは大量のテスト群を備えています。
-それらは環境のテストとして走らせるように設定されていますが、抽出して<a href="">SUMO</a>とパッケージの他のツールとともに使うことも可能です。</p>
-<p>テストをダウンロードして抽出している場合、そのフォルダにアクセスして、"extractTest.py"を起動してくださいまる 
-例えば、リルーターを使う例は以下のようにして動かせます。</p>
-<pre><code>&lt;SUMO&gt;/tools/extractTest.py -o d:\tmp\test \
- sumo\extended\rerouter\use_routing_device
+<h2 id="im--and-export">Im- and Export<a class="headerlink" href="#im--and-export" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="Trace_File_Generation/">Trace File Generation</a> - Shows how to obtain vehicular trace files, usable for simulating vehicular communication</li>
+</ul>
+<h2 id="calibrationvalidation">Calibration/Validation<a class="headerlink" href="#calibrationvalidation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="Calibration/San_Pablo_Dam/">Calibration/San Pablo Dam</a> - Calibration of car-following parameter using vehicle passing times on observation points as used during the NEARCTIS summer school</li>
+</ul>
+<!--* [[Calibration/Berlin]] - Validation of a small inner-urban scenario of Berlin-->
+
+<!-- ==Traffic Light Signal Control with MultiAgent Network== -->
+<!--* [[MultiAgentControl]] - MultiAgent Control of Traffic Light Signals with Python -->
+
+<h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://sumo.dlr.de/daily/workshop_rail_db2019.7z">Railway Tutorial</a></li>
+</ul>
+<h1 id="further-sources-for-examples">Further Sources for Examples<a class="headerlink" href="#further-sources-for-examples" title="Permanent link">&para;</a></h1>
+<h2 id="using-examples-from-the-test-suite">Using Examples from the Test Suite<a class="headerlink" href="#using-examples-from-the-test-suite" title="Permanent link">&para;</a></h2>
+<p>SUMO comes with a large set of tests, just browse them at <a href="https://github.com/eclipse-sumo/sumo/blob/main/tests"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/tests</a>. They are set up to be running by using a testing environment, but it is also possible to extract them and execute using <a href="../sumo/">sumo</a> and/or the other tools of the package. In order to do so you can either <a href="../Downloads/#sources">download the complete sumo package</a> or use the <a href="https://sumo.dlr.de/extractTest.php">online test extraction</a>. In the online tool you enter the path to the test you like (e.g. <a href="https://github.com/eclipse-sumo/sumo/blob/main/tests/sumo/extended/rerouter/use_routing_device"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/tests/sumo/extended/rerouter/use_routing_device</a>) into the form and get a zip containing all the files.</p>
+<p>If you have downloaded and unzipped the all inclusive package, you do not need the online form. Just go into the folder and execute the "extractTest.py" script. For example, you may get the same example of using rerouters as following:</p>
+<pre><code>cd &lt;SUMO_HOME&gt;/tests
+../tools/extractTest.py -o /tmp/test sumo/extended/rerouter/use_routing_device
 </code></pre>
-<p>を実行すると<a href="">自動車の経路再設定</a>の例を展開します。</p>
-<h2 id="未完成のチュートリアル">未完成のチュートリアル<a class="headerlink" href="#未完成のチュートリアル" title="Permanent link">&para;</a></h2>
-<p>以下のチュートリアルは完成していません。</p>
+<p>will extract you an example for <a href="../Simulation/Rerouter/">rerouting vehicles</a> into /tmp/test.</p>
+<h1 id="unfinished-tutorials">Unfinished Tutorials<a class="headerlink" href="#unfinished-tutorials" title="Permanent link">&para;</a></h1>
+<p>The following tutorials are not yet completed</p>
 <ul>
-<li><a href="">出力のパース</a> - リルーターを使った円環道路の運転とシミュレーション出力の解析を含む複雑なチュートリアルです。</li>
+<li><a href="Output_Parsing/">Output Parsing</a> - A complex tutorial using rerouters to drive in circles and analyzing simulation output</li>
 </ul>
-<h2 id="過去のチュートリアル">過去のチュートリアル<a class="headerlink" href="#過去のチュートリアル" title="Permanent link">&para;</a></h2>
-<p>ここに示したチュートリアルは完全性を保っていますが、他のチュートリアル/ドキュメントにとってかわりました。</p>
+<h1 id="outdated-tutorials">Outdated Tutorials<a class="headerlink" href="#outdated-tutorials" title="Permanent link">&para;</a></h1>
+<p>The following tutorials are kept for completeness but are superseded by other tutorials/documentation</p>
 <ul>
-<li><a href="">OpenStreetMapからのインポート</a> - 交通シミュレーションのために<a href="">OpenStreetMap</a>から地図を準備する方法を示しています。</li>
-<li><a href="">クイックスタート(旧式)</a> - <a href="">NETEDIT</a>のかわりにテキストエディタを用いてエッジ/ノードファイルを編集しシナリオを構築します。</li>
-<li><a href="">シティモービル(CityMobil)</a> - 自動生成されるバスを用いて停車場のシミュレーションをします。
-このチュートリアルは歩行者と駐車エリアの実装前に書かれました。</li>
+<li><a href="Import_from_OpenStreetMap/">Import from OpenStreetMap</a> - Shows how to prepare a map from <a href="https://www.openstreetmap.org/">OpenStreetMap</a> for traffic simulation</li>
+<li><a href="Quick_Start_old_style/">Quick_Start_old_style</a> - Build a scenario by editing the edge and node files in a text editor instead of <a href="../Netedit/">netedit</a></li>
+<li><a href="CityMobil/">CityMobil</a> - Simulation of a parking lot management using automated buses. This TraCI tutorial was written before the implementation of pedestrians and parkingAreas</li>
 </ul>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -525,10 +530,14 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

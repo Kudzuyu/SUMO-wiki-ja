@@ -10,8 +10,11 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/ParkingArea/">
       
+      
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
@@ -19,17 +22,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#parkingarea" class="md-skip">
+        <a href="#parking-areas" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -110,40 +114,50 @@
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -292,112 +349,38 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#駐車場" class="md-nav__link">
-    駐車場
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#定義" class="md-nav__link">
-    定義
-  </a>
-  
-    <nav class="md-nav" aria-label="定義">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#駐車場スペースのカスタム" class="md-nav__link">
-    駐車場スペースのカスタム
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#車両を駐車場に停止させる" class="md-nav__link">
-    車両を駐車場に停止させる
-  </a>
-  
-    <nav class="md-nav" aria-label="車両を駐車場に停止させる">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#駐車場へ出入りするときの操作時間のモデリング" class="md-nav__link">
-    駐車場へ出入りするときの操作時間のモデリング
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#満車時の再ルーティング" class="md-nav__link">
-    満車時の再ルーティング
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#traci" class="md-nav__link">
-    TraCI
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="parkingarea">ParkingArea<a class="headerlink" href="#parkingarea" title="Permanent link">&para;</a></h1>
-<p>参考原文バージョン: 2022/3/17, e478a225c9ccd81efa6c4edcf8eb5a109ef620c6</p>
-<!-- 
-訳語対応
-* parkingArea: 固有名のためそのまま
-* maneuvering times: 操縦時間
-* parking areas/area: 駐車場
-* road-side parking: 路上駐車場
-* car parks: 路外駐車場
--->
 
-<h2 id="駐車場">駐車場<a class="headerlink" href="#駐車場" title="Permanent link">&para;</a></h2>
-<p>道路ネットワーク外に駐車するためのエリア（路上駐車場もしくは路外駐車場）は、'<parkingArea>'要素を使って定義できます。
-この機能で次の目標が達成できます。</p>
+<h1 id="parking-areas">Parking Areas<a class="headerlink" href="#parking-areas" title="Permanent link">&para;</a></h1>
+<p>Areas for parking outside the road network (either road-side parking or
+car parks) can be defined using the <code>&lt;parkingArea&gt;</code> element. This accomplishes the
+following purposes:</p>
 <ul>
-<li>任意の駐車位置と角度を定義することで、fishbone型もしくはparallel型の駐車場を可視化できます。</li>
-<li>道路ネットワーク外の駐車スペースを設定した容量に限定できます。</li>
-<li>駐車場が満車になったとき<a href="Rerouter.md#rerouting_to_an_alternative_parking_area">代替可能な駐車エリアへの自動再ルーティング</a>をトリガーできます。</li>
+<li>arbitrary parking positions and angles can be defined to visualize
+  fishbone or parallel parking</li>
+<li>parking space outside the road network can be limited to a set
+  capacity</li>
+<li><a href="../Rerouter/#rerouting_to_an_alternative_parking_area">automatic rerouting to an alternative parking</a> area can be triggered
+  whenever a parking area becomes full</li>
 </ul>
-<h2 id="定義">定義<a class="headerlink" href="#定義" title="Permanent link">&para;</a></h2>
-<p>路上駐車場であるparkingAreaは次のように定義されます。</p>
-<pre><code>&lt;parkingArea id=&quot;ParkAreaA&quot; lane=&quot;a_0&quot; startPos=&quot;200&quot; endPos=&quot;250&quot; roadsideCapacity=&quot;5&quot; angle=&quot;45&quot; length=&quot;30&quot;/&gt;
+<h1 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h1>
+<p>A road-side parkingArea is defined as in the following:</p>
+<pre><code class="language-xml">&lt;parkingArea id=&quot;ParkAreaA&quot; lane=&quot;a_0&quot; startPos=&quot;200&quot; endPos=&quot;250&quot; roadsideCapacity=&quot;5&quot; angle=&quot;45&quot; length=&quot;30&quot;/&gt;
 </code></pre>
-<p>加えて、個々の駐車スペースを定義できます。</p>
-<pre><code>&lt;parkingArea id=&quot;ParkAreaB&quot; lane=&quot;b_0&quot; startPos=&quot;240&quot; endPos=&quot;260&quot; roadsideCapacity=&quot;0&quot; width=&quot;5&quot; length=&quot;10&quot; angle=&quot;30&quot;&gt;
+<p>Additionally, individual parking spaces can be defined:</p>
+<pre><code class="language-xml">&lt;parkingArea id=&quot;ParkAreaB&quot; lane=&quot;b_0&quot; startPos=&quot;240&quot; endPos=&quot;260&quot; roadsideCapacity=&quot;0&quot; width=&quot;5&quot; length=&quot;10&quot; angle=&quot;30&quot;&gt;
     &lt;space x=&quot;853&quot; y=&quot;623&quot;/&gt;
     &lt;space x=&quot;863&quot; y=&quot;618&quot;/&gt;
     &lt;space x=&quot;873&quot; y=&quot;613&quot;/&gt;
@@ -410,8 +393,9 @@
     &lt;space x=&quot;888&quot; y=&quot;591&quot; width=&quot;4&quot; length=&quot;8&quot; angle=&quot;120&quot;/&gt;
 &lt;/parkingArea&gt;
 </code></pre>
-<p>1つの駐車場の総容量は、<em>roadsideCapacity</em>と<code>&lt;space&gt;</code>要素の数の和で与えられます。</p>
-<p>parkingAreaは次の変数をサポートしています。</p>
+<p>The total capacity of a parking area is given by the sum of its
+<em>roadsideCapacity</em> and the number of its <code>&lt;space&gt;</code> elements.</p>
+<p>The parkingArea supports the following attributes:</p>
 <table>
 <thead>
 <tr>
@@ -428,82 +412,96 @@
 <td>string</td>
 <td>id</td>
 <td></td>
-<td>（重複しない）駐車場の名前</td>
+<td>The name of the parking area; must be unique</td>
 </tr>
 <tr>
 <td><strong>lane</strong></td>
 <td>string</td>
 <td>valid lane id</td>
 <td></td>
-<td>駐車場のあるlaneの名前</td>
+<td>The name of the lane the parking area shall be located at</td>
 </tr>
 <tr>
 <td><strong>startPos</strong></td>
 <td>float</td>
-<td>-lane.length &lt; x &lt; lane.length （負の値のとき、laneの終わりからカウントされます）</td>
+<td>-lane.length &lt; x &lt; lane.length (negative values count backwards from the end of the lane)</td>
 <td>0</td>
-<td>lane上での開始点（laneのlowerな位置、メートル単位）</td>
+<td>The begin position on the lane (the lower position on the lane) in meters</td>
 </tr>
 <tr>
 <td>endPos</td>
 <td>float</td>
-<td>-lane.length &lt; x &lt; lane.length （負の値のとき、laneの終わりからカウントされます）</td>
+<td>-lane.length &lt; x &lt; lane.length (negative values count backwards from the end of the lane)</td>
 <td>lane.length</td>
-<td>lane上での終了点（laneのhigherな位置、メートル単位、<em>startPos</em>より0.1メートル以上大きい値である必要があります）</td>
+<td>The end position on the lane (the higher position on the lane) in meters, must be larger than <em>startPos</em> by more than 0.1m</td>
 </tr>
 <tr>
 <td>friendlyPos</td>
 <td>bool</td>
 <td><em>true,false</em></td>
 <td><em>false</em></td>
-<td>無効な停止位置を自動的に修正するか（デフォルト値 <em>false</em>）</td>
+<td>whether invalid stop positions should be corrected automatically (default <em>false</em>)</td>
 </tr>
 <tr>
 <td>name</td>
 <td>string</td>
 <td>simple String</td>
 <td></td>
-<td>駐車場を説明する任意のテキスト。可視化にのみ使われます。</td>
+<td>Arbitrary text to describe the parking area. This is only used for visualization purposes.</td>
 </tr>
 <tr>
 <td>roadsideCapacity</td>
 <td>int</td>
 <td>non-negative</td>
-<td>0</td>
-<td>道路脇の駐車場の数</td>
+<td>1 (if no parking space is defined, else 0)</td>
+<td>The number of parking spaces for road-side parking</td>
 </tr>
 <tr>
 <td>onRoad</td>
 <td>bool</td>
 <td></td>
 <td>false</td>
-<td>駐車中、車両が道路に残っているか。<br><strong>note:</strong><br>もし<em>true</em>を設定した場合、roadsideCapacityのみが使用され、<code>&lt;space&gt;</code>は定義できません。</td>
+<td>Whether vehicles remain on the road while parking.<br><strong>Note:</strong><br>If set to <em>true</em>, only roadsideCapacity is used and no <code>&lt;space&gt;</code>-definitions are permitted.</td>
 </tr>
 <tr>
 <td>width</td>
 <td>float</td>
 <td>positive</td>
 <td>3.2</td>
-<td>道路脇の駐車スペース幅</td>
+<td>The width of the road-side parking spaces</td>
 </tr>
 <tr>
 <td>length</td>
 <td>float</td>
 <td>positive</td>
 <td>(endPos - startPos) / roadsideCapacity</td>
-<td>道路脇の駐車スペース長さ</td>
+<td>The length of the road-side parking spaces</td>
 </tr>
 <tr>
 <td>angle</td>
 <td>float (degree)</td>
 <td></td>
 <td>0</td>
-<td>laneに対する道路脇駐車場の角度。正は時計回り方向。</td>
+<td>The angle of the road-side parking spaces relative to the lane angle, positive means clockwise</td>
+</tr>
+<tr>
+<td>lefthand</td>
+<td>bool</td>
+<td></td>
+<td><em>false</em></td>
+<td>Whether road-side parking spaces should be drawn on the left side of the lane</td>
+</tr>
+<tr>
+<td>acceptedBadges</td>
+<td>string list</td>
+<td></td>
+<td></td>
+<td>The set of keywords which give access to the parking area (an empty value means free access to all)</td>
 </tr>
 </tbody>
 </table>
-<h3 id="駐車場スペースのカスタム">駐車場スペースのカスタム<a class="headerlink" href="#駐車場スペースのカスタム" title="Permanent link">&para;</a></h3>
-<p>space要素は次の変数をサポートしています。</p>
+<h2 id="custom-parking-spaces">Custom parking spaces<a class="headerlink" href="#custom-parking-spaces" title="Permanent link">&para;</a></h2>
+<p>The space element supports the following attributes:</p>
 <table>
 <thead>
 <tr>
@@ -520,92 +518,137 @@
 <td>float</td>
 <td></td>
 <td></td>
-<td>駐車する車両のx座標、メートル単位</td>
+<td>The x-position in meters of the parking vehicle</td>
 </tr>
 <tr>
 <td><strong>y</strong></td>
 <td>float</td>
 <td></td>
 <td></td>
-<td>駐車する車両のy座標、メートル単位</td>
+<td>The y-position in meters of the parking vehicle</td>
 </tr>
 <tr>
 <td>z</td>
 <td>float</td>
 <td></td>
 <td>0</td>
-<td>駐車する車両のz座標、メートル単位</td>
+<td>The z-position in meters of the parking vehicle</td>
 </tr>
 <tr>
 <td>width</td>
 <td>float</td>
 <td></td>
 <td>width value of the parent parking area</td>
-<td>駐車スペースの幅</td>
+<td>The width of the parking space</td>
 </tr>
 <tr>
 <td>length</td>
 <td>float</td>
 <td></td>
 <td>length value of the parent parking area</td>
-<td>駐車スペースの長さ</td>
+<td>The length of the parking space</td>
 </tr>
 <tr>
 <td>angle</td>
 <td>float (degree)</td>
 <td></td>
 <td>absolute angle of the parent parking area (lane angle + angle attribute)</td>
-<td>駐車スペースのAbsolute angle</td>
+<td>Absolute angle of the parking space</td>
 </tr>
 <tr>
 <td>slope</td>
 <td>float (degree)</td>
 <td></td>
 <td>0</td>
-<td>駐車スペースのSlope angle</td>
+<td>Slope angle of the parking space</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition caution">
-<p class="admonition-title">警告</p>
-<p>駐車場エリアは--additional-filesパラメータを介して設定に加える必要があります。（参考 <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>）</p>
+<p class="admonition-title">Caution</p>
+<p>Please note that parking areas must be added to a config via the <em>--additional-files</em> parameter (see <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>).</p>
 </div>
-<h2 id="車両を駐車場に停止させる">車両を駐車場に停止させる<a class="headerlink" href="#車両を駐車場に停止させる" title="Permanent link">&para;</a></h2>
-<p>parkingPlaceに停まるvehicleを宣言するには、<code>&lt;stop&gt;</code>定義をvehicleか、もしくはそのrouteに含めなければいけません。</p>
-<pre><code>&lt;vehicle id=&quot;0&quot; depart=&quot;0&quot;&gt;
+<h1 id="letting-vehicles-stop-at-a-parking-area">Letting Vehicles stop at a parking area<a class="headerlink" href="#letting-vehicles-stop-at-a-parking-area" title="Permanent link">&para;</a></h1>
+<p>To declare a vehicle that stops at a parkingPlace, a <code>&lt;stop&gt;</code>-definition must
+be part of the vehicle or its route:</p>
+<pre><code class="language-xml">&lt;vehicle id=&quot;0&quot; depart=&quot;0&quot;&gt;
     &lt;route edges=&quot;e1 e2 e3&quot;/&gt;
     &lt;stop parkingArea=&quot;pa0&quot; duration=&quot;20&quot;/&gt;
 &lt;/vehicle&gt;
 </code></pre>
-<p>この定義は"0"と名付けたvehicleがparkingArea"0"に停まることを表します。
-ただし、vehicleのrouteのedge"e1,e2,e3"のいずれか1つに、駐車場のあるlaneが含まれなければなりません。</p>
-<p>vehicleの"stop"要素の変数リストは下記を参照してください。
-<a href="../Definition_of_Vehicles,_Vehicle_Types,_and_Routes.md#stops">Definition_of_Vehicles,_Vehicle_Types,_and_Routes#Stops</a></p>
-<h3 id="駐車場へ出入りするときの操作時間のモデリング">駐車場へ出入りするときの操作時間のモデリング<a class="headerlink" href="#駐車場へ出入りするときの操作時間のモデリング" title="Permanent link">&para;</a></h3>
-<p>booleanオプションの<strong>--parking.maneuver</strong>をセットした場合、parkingAreaを出入りするとき、vehicleは道路上で追加の時間を使います。
-この時間は道路レーンに対する駐車ロットの角度に依存し、vTypeの変数<em>maneuverAngleTimes</em>で設定できます。
-この設定は、<em>ANGLE ENTERINGTIME LEAVINGTIME</em>で表される3値の組のリスト（コンマ区切り）で表します。</p>
-<pre><code>&lt;vType id=&quot;example&quot; maneuverAngleTimes=&quot;10 3.0 4.0,80 1.6 11.0,110 11.0 2.0,170 8.1 3.0,181 3.0 4.0&quot;/&gt;
+<p>What is defined here is a vehicle named "0" that stops as at parkingArea
+"pa0". Note, that the lane of that parking area must belong to one of
+the edges "e1, e2, e3" of the vehicles route.</p>
+<p>For a complete list of attributes for the "stop"-element of a vehicle
+see
+<a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#stops_and_waypoints">Definition_of_Vehicles,_Vehicle_Types,_and_Routes#Stops</a>.</p>
+<h1 id="modelling-maneuvering-times-when-entering-and-leaving-the-parking-space">Modelling Maneuvering Times when Entering and Leaving the Parking Space<a class="headerlink" href="#modelling-maneuvering-times-when-entering-and-leaving-the-parking-space" title="Permanent link">&para;</a></h1>
+<p>When setting the (boolean) option <strong>--parking.maneuver</strong>, vehicles will spend extra time on the road when leaving and entering a parkingArea. This time depends on the angle of the parking lot relative to the road lane and can be configured with the vType attribute <em>maneuverAngleTimes</em>. This is a comma-separated list of number-triplets of the form <em>ANGLE ENTERINGTIME LEAVINGTIME</em>:</p>
+<pre><code class="language-xml">&lt;vType id=&quot;example&quot; maneuverAngleTimes=&quot;10 3.0 4.0,80 1.6 11.0,110 11.0 2.0,170 8.1 3.0,181 3.0 4.0&quot;/&gt;
 </code></pre>
-<p>値はもっとも近い角度が使われます。
-<em>maneuverAngleTimes</em>の値はvClass固有の値で初期化され、その値は、</p>
+<p>The value corresponding to the closest angle is used. The value of maneuverAngleTimes is initialized to a vClass-specific value:</p>
 <ul>
-<li>デフォルト：<code>maneuverAngleTimes="10 3 4,80 1 11,110 11 2,170 8 3,181 3 4"</code></li>
-<li>truck, trailer, coach, delivery: いずれもデフォルトと比較して2倍の時間</li>
+<li>default: <code>maneuverAngleTimes="10 3 4,80 1 11,110 11 2,170 8 3,181 3 4"</code></li>
+<li>truck, trailer, coach, delivery: all times doubled compared to default</li>
 <li>bicycle, moped: <code>maneuverAngleTimes="181 1 1"</code></li>
 </ul>
-<h2 id="満車時の再ルーティング">満車時の再ルーティング<a class="headerlink" href="#満車時の再ルーティング" title="Permanent link">&para;</a></h2>
-<p>もし、満車のparkingAreaにvehicleが到達したとき、空車になるまで待つか、<a href="../Simulation/Rerouter.md#rerouting_to_an_alternative_parking_area">新しい駐車場へ再ルーティングされます</a>。</p>
-<h2 id="traci">TraCI<a class="headerlink" href="#traci" title="Permanent link">&para;</a></h2>
-<p>駐車場に関する情報は<a href="../TraCI/Simulation_Value_Retrieval.md#generic_parameter_retrieval_0x7e">traci.simulation.getParameter()のコール</a>で直接アクセスできます。</p>
+<h1 id="rerouting-when-the-current-parkingarea-is-full">Rerouting when the current parkingArea is full<a class="headerlink" href="#rerouting-when-the-current-parkingarea-is-full" title="Permanent link">&para;</a></h1>
+<p>If a vehicle reaches a parkingArea that is filled to capacity it must
+wait on the road until a space becomes available or <a href="../Rerouter/#rerouting_to_an_alternative_parking_area">reroute to a new
+parking
+area</a>.</p>
+<h1 id="restricting-the-access-to-the-parking-area">Restricting the access to the parking area<a class="headerlink" href="#restricting-the-access-to-the-parking-area" title="Permanent link">&para;</a></h1>
+<p>In the real world, the access to parkings may be restricted to different kinds of users, such as residents, customers or employees. As these access rights may vary a lot depending on the location,
+they are modeled using a separate permission system from the vehicle classes. The access to the parking area can be restricted in the following way:</p>
 <ul>
-<li><strong>parkingArea.capacity</strong>: 駐車スペースの総数（roadsideCapacity + <space>要素の数）</li>
-<li><strong>parkingArea.occupancy</strong>: その駐車場に駐車中のvehicle数</li>
+<li>The parking area defines a set of accepted badges (keywords) which model single access rights in the attribute <strong>acceptedBadges</strong>, e.g. <code>acceptedBadges="clients_supermarket employees_supermarket"</code></li>
+<li>The vehicles or vehicle types define the set of owned badges which give them access, e.g. <code>parkingBadges="employees_supermarket home_johndoe"</code></li>
+<li>Any parking area which is not restricted (empty <strong>acceptedBadges</strong> attribute) or where at least one of the accepted badges is present in the vehicle or vehicle type definition can be accessed</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Parking badges defined in the vehicle definition override vehicle type settings.</p>
+</div>
+<h1 id="importing--generating-parking-areas">Importing / Generating Parking Areas<a class="headerlink" href="#importing--generating-parking-areas" title="Permanent link">&para;</a></h1>
+<p>The following tools exist to obtain parking area definitions</p>
+<ul>
+<li><a href="../../Tools/Misc/#generateparkingareaspy">generateParkingAreas.py</a>: probabilistic generation for a whole network</li>
+<li><a href="../../Tools/Misc/#generateparkinglotspy">generateParkingLots.py</a>: generate space definitions to fill up a given shape</li>
+<li><a href="../../Netedit/elementsAdditional/#parking_areas">netedit</a>: define parking areas visually</li>
+<li><a href="../../netconvert/#export_1">netconvert --parking-output</a>: imports roadside parking areas from OSM</li>
+<li><a href="https://github.com/lcodeca/SUMOActivityGen">SAGA generateParkingAreasFromOSM.py</a>: imports all kinds of parking areas from OSM</li>
+</ul>
+<h1 id="traci">TraCI<a class="headerlink" href="#traci" title="Permanent link">&para;</a></h1>
+<p>Some information regarding parking areas can be accessed directly using
+<a href="../../TraCI/Simulation_Value_Retrieval/#generic_parameter_retrieval_0x7e">traci.simulation.getParameter()
+calls</a>.</p>
+<ul>
+<li><strong>parkingArea.capacity</strong>: total number of parking spaces
+  (roadsideCapacity + number of <code>&lt;space&gt;</code> elements)</li>
+<li><strong>parkingArea.occupancy</strong>: number of vehicles parking at this
+  parking area</li>
 </ul>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -632,10 +675,14 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

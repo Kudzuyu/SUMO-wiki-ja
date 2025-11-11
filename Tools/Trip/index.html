@@ -1,0 +1,823 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/Trip/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Trip - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#randomtripspy" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Trip
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#randomization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Randomization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Probabilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traffic-volume--arrival-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traffic Volume / Arrival rate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traffic Volume / Arrival rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insertion-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insertion Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validated-routes-and-trips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validated routes and trips
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-vehicles-with-additional-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating vehicles with additional parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating vehicles with additional parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-a-vehicle-type-from-an-external-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting a vehicle type from an external file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatically-generating-a-vehicle-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatically generating a vehicle type
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-different-modes-of-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating different modes of traffic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermediate-way-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intermediate Way Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customized-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customized Weights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customized Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forwarding-options-to-duarouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forwarding options to duarouter
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="randomtripspy">randomTrips.py<a class="headerlink" href="#randomtripspy" title="Permanent link">&para;</a></h1>
+<p>"randomTrips.py" generates a set of random trips for a given network
+(option <strong>-n</strong>). It does so by choosing source and destination edge either
+uniformly at random or with a modified distribution as described below.
+The resulting trips are stored in an XML file (option <strong>-o</strong>, default
+trips.trips.xml) suitable for <a href="../../duarouter/">duarouter</a> (which is
+called automatically if option <strong>--route-file</strong> is given).
+The trips are distributed evenly in an interval
+defined by begin (option <strong>-b</strong>, default 0) and end time (option <strong>-e</strong>, default
+3600) in seconds. The number of trips is defined by the repetition rate
+(option <strong>-p</strong>, default 1) in seconds. Every trip has an id consisting of a
+prefix (option <strong>--prefix</strong>, default "") and a running number. Example call:</p>
+<pre><code>python tools/randomTrips.py -n &lt;net-file&gt; -e 50
+</code></pre>
+<p>The script does not check whether the chosen destination may be reached
+from the source. This task is performed by the router. If the network is
+not fully connected some of the trips may be discarded.</p>
+<p>The option <strong>--min-distance</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> ensures a minimum straight-line distance (in meter) between
+start and end edges of a trip. The script will keep sampling from the
+edge distribution until enough trips with sufficient distance are found.</p>
+<h2 id="randomization">Randomization<a class="headerlink" href="#randomization" title="Permanent link">&para;</a></h2>
+<p>When running <em>randomTrips.py</em> twice with the same parameters, the same results will be created
+because the random number generator is initialized with the same value. To get "true" randomness
+(always a different output) use the option <strong>--random</strong>. The option <strong>--seed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> can be used
+to set an initial value and get different but still repeatable pseudo-randomness.</p>
+<h2 id="edge-probabilities">Edge Probabilities<a class="headerlink" href="#edge-probabilities" title="Permanent link">&para;</a></h2>
+<p>The option <strong>--fringe-factor</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> increases the probability that trips will start/end at the
+fringe of the network. If the value <em>10</em> is given, edges that have no
+successor or no predecessor will be 10 times more likely to be chosen as
+start- or endpoint of a trip. This is useful when modelling
+through-traffic which starts and ends at the outside of the simulated
+area.</p>
+<p>The probabilities for selecting an edge may also be weighted by</p>
+<ul>
+<li>edge length (option <strong>-l</strong>),</li>
+<li>by number of lanes (option <strong>-L</strong>)</li>
+<li>edge speed (exponentially, by option <strong>--speed-exponent</strong>)</li>
+<li><a href="../../Simulation/GenericParameters/">generic edge parameter</a> (option <strong>--edge-param</strong>)</li>
+<li>direction of travel (option <strong>--angle-factor</strong> and <strong>--angle</strong>)</li>
+<li>randomly (option <strong>--random-factor</strong>)</li>
+<li>by edge type (option <strong>--edge-type-file</strong>)</li>
+</ul>
+<p>For additional ways to influence edge probabilities call</p>
+<pre><code>python tools/randomTrips.py --help
+</code></pre>
+<h2 id="traffic-volume--arrival-rate">Traffic Volume / Arrival rate<a class="headerlink" href="#traffic-volume--arrival-rate" title="Permanent link">&para;</a></h2>
+<p>The arrival rate (also known as the departure rate or the insertion rate) is controlled by option <strong>--period</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> (<em>default 1</em>). By default this
+generates vehicles with a constant period and arrival rate of (1/period)
+per second. By using values below 1, multiple arrivals per second can be
+achieved. If several <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> numbers are passed, like in <strong>--period 1.0 0.5</strong> (or <strong>--period="1.0,0.5"</strong>) for example, the time interval will be divided equally into subintervals, and the arrival rate for each subinterval is controlled by the corresponding period (in the preceding example, a period of 1.0 will be used for the first subinterval and a period of 0.5 will be used for the second). There are two other ways to specify the insertion rate:</p>
+<ul>
+<li>Either by using the <strong>--insertion-rate</strong> argument (with one or several values as explained before): this is the number of vehicles per hour that the user expects.</li>
+<li>Or by using the <strong>--insertion-density</strong> argument (with one or several values): this is the number of vehicles per hour per kilometer of road that the user expects (the total length of the road is computed with respect to a certain vehicle class that can be changed with the option <strong>--edge-permission</strong>).</li>
+</ul>
+<p>When adding option <strong>--binomial</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> the arrivals will be randomized using a binomial
+distribution where <em>n</em> (the maximum number of simultaneous arrivals) is
+given by the argument to <strong>--binomial</strong> and the expected arrival rate is 1/period
+<em>(this option is not yet available in version 0.23.0)</em>.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>To let <em>n</em> vehicles depart between times <em>t0</em> and <em>t1</em> set the options</p>
+<pre><code class="language-sh">-b t0 -e t1 -p ((t1 - t0) / n)
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The actual number of departures may be lower if the road capacity is <a href="../../Simulation/VehicleInsertion/#delayed_departure">insufficient to accommodate that number of vehicles</a> or if the network is not fully connected (in this case some of the generated trips will be invalid).</p>
+</div>
+<h2 id="insertion-distribution">Insertion Distribution<a class="headerlink" href="#insertion-distribution" title="Permanent link">&para;</a></h2>
+<p>The number of inserted vehicles (if all trips are valid) is fixed for a given set of randomTrips option: <code>(end-begin)/period</code>.
+Randomness appears in the insertion pattern on any given edge.</p>
+<p>By default the departures of all vehicles are equally spaced in time. Since the inserted vehicle are spread randomly over the whole network, this comes out as a binomial distribution of inserted vehicles for each individual edge which gives a good approximation to the Poisson distribution if the network is large (and hence the insertion probability of each edge is small).</p>
+<p>By setting set option <strong>--random-depart</strong>, the (still fixed) number of departure times are drawn from a uniform distribution over <code>[begin, end]</code>.
+This leads to an exponential distribution of insertion time headways between vehicles on all edges (which is the headway pattern of the Poisson distribution). Hence, this is useful to have a more varied insertion time pattern for small networks.</p>
+<h2 id="validated-routes-and-trips">Validated routes and trips<a class="headerlink" href="#validated-routes-and-trips" title="Permanent link">&para;</a></h2>
+<p>When using the option <strong>--route-file</strong>, an output file with valid vehicle routes will be
+generated. This works by automatically calling
+<a href="../../duarouter/">duarouter</a> in the background to turn the random
+trips into routes and automatically discard disconnected trips. It may
+be necessary to increase the number of generated random trips to account
+for a fraction disconnected, discarded trips.</p>
+<p>Sometimes it is desirable to obtain validated trips rather than routes
+(i.e. to make use of <a href="../../Demand/Dynamic_User_Assignment/#oneshot-assignment">one-shot route
+assignment</a>).
+In this case the additional option <strong>--validate</strong> may be used to generate validated
+trips (by first generating valid routes and then converting them back
+into trips).</p>
+<h2 id="generating-vehicles-with-additional-parameters">Generating vehicles with additional parameters<a class="headerlink" href="#generating-vehicles-with-additional-parameters" title="Permanent link">&para;</a></h2>
+<p>With the option <strong>--trip-attributes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a>, additional parameters can be given to the generated
+vehicles (note, usage of the quoting characters).</p>
+<pre><code>python tools/randomTrips.py -n &lt;net-file&gt;
+  --trip-attributes=&quot;departLane=\&quot;best\&quot; departSpeed=\&quot;max\&quot; departPos=\&quot;random\&quot;&quot;
+</code></pre>
+<p>This would make the random vehicles be distributed randomly on their
+starting edges and inserted with high speed on a reasonable lane.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Quoting of trip attributes on Linux may also use the style <strong>--trip-attributes 'departLane="best" departSpeed="max" departPos="random"'</strong></p>
+</div>
+<h3 id="setting-a-vehicle-type-from-an-external-file">Setting a vehicle type from an external file<a class="headerlink" href="#setting-a-vehicle-type-from-an-external-file" title="Permanent link">&para;</a></h3>
+<p>If the generated vehicles should have a specific vehicle type, an <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a> needs
+to be prepared:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+  &lt;vType id=&quot;myType&quot; maxSpeed=&quot;27&quot; vClass=&quot;passenger&quot;/&gt;
+&lt;/additional&gt;
+</code></pre>
+<p>Then load this file (assume it was saved as <em>type.add.xml</em>) with the
+option --additional-file</p>
+<pre><code>python tools/randomTrips.py -n &lt;net-file&gt; --trip-attributes=&quot;type=\&quot;myType\&quot;&quot; --additional-file &lt;add-file&gt;
+   --edge-permission passenger
+</code></pre>
+<p>Note the use of the option <strong>--edge-permission</strong> (deprecated alias: <strong>--vclass</strong>) which ensures that
+random start- and arrival-edges allow a specific vehicle class.</p>
+<p>To generate random pedestrian traffic instead of vehicular traffic, the
+option <strong>--pedestrians</strong> may be used. It is recommended to combined this with the option <strong>--max-distance</strong>
+to avoid walks of excessive length. See
+<a href="../../Simulation/Pedestrians/">Simulation/Pedestrians</a> for addition
+information on the simulation of pedestrians.</p>
+<p>Note that the option <strong>--vehicle-class</strong> should only be used as a quick shorthand to
+generate trips for the standard type of the given vehicle class since it
+places a standard vType definition in the generated trips file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since SUMO 1.23.0 when using the option <strong>--vehicle-class</strong> the same value is used as a default for the option <strong>--edge-permission</strong>.
+Furthermore using <strong>--pedestrians</strong> or <strong>--persontrips</strong> imply <strong>--edge-permission pedestrian</strong>.
+Different permissions can still be requested by using <strong>--edge-permission</strong> explicitly.</p>
+</div>
+<h3 id="automatically-generating-a-vehicle-type">Automatically generating a vehicle type<a class="headerlink" href="#automatically-generating-a-vehicle-type" title="Permanent link">&para;</a></h3>
+<p>By setting the option <strong>--vehicle-class</strong> a vehicle type definition that specifies vehicle
+class will be added to the output files. I.e.</p>
+<pre><code>python tools/randomTrips.py --vehicle-class bus ...
+</code></pre>
+<p>will add</p>
+<pre><code class="language-xml">&lt;vType id=&quot;bus&quot; vClass=&quot;bus&quot;/&gt;
+</code></pre>
+<p>Any <strong>--trip-attributes</strong> that are applicable to a vehicle type rather than a vehicle will be
+placed in the generated <code>vType</code> definition automatically:</p>
+<pre><code>python tools/randomTrips.py --vehicle-class bus --trip-attributes=&quot;maxSpeed=\&quot;27.8\&quot;&quot;
+</code></pre>
+<p>will add</p>
+<pre><code class="language-xml">&lt;vType id=&quot;bus&quot; vClass=&quot;bus&quot; maxSpeed=&quot;random&quot;/&gt;
+</code></pre>
+<p>Alternatively, after <em>randomTrips.py</em> has finished, the created <code>&lt;vType&gt;</code>-element
+can be edited to specify additional parameters. The downside of manual
+editing is that it must be repeated when running <em>randomTrips.py</em> again.</p>
+<h2 id="generating-different-modes-of-traffic">Generating different modes of traffic<a class="headerlink" href="#generating-different-modes-of-traffic" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Using the option <strong>--pedestrians</strong> will generate pedestrians instead of vehicles.</li>
+<li>Using the option <strong>--persontrips</strong> will generate persons with <code>&lt;persontrip&gt;</code> definitions. This
+allows to specify the available traffic modes and thus use
+<a href="../../IntermodalRouting/">IntermodalRouting</a> to decided whether
+they use public transport, a personal car or walking.</li>
+<li>walking or public transport: <strong>--trip-attributes "modes=\"public\""</strong></li>
+<li>walking, public transport or car <strong>--trip-attributes "modes=\"public car\""</strong></li>
+<li>Using the option <strong>--personrides <LINE></strong> will generate persons with <code>&lt;ride line="LINE"&gt;</code> definitions.</li>
+<li>using option <strong>--from-stops busStop</strong> will make persons start with an initial <code>&lt;stop duration="0"&gt;</code> at a random busStop</li>
+<li>using option <strong>--to-stops busStop</strong> will make persons end their journey at a random busStop</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To combine trips from multiple calls to <strong>randomTrips.py</strong> in a single simulation, use option <strong>--prefix</strong> and set it to a different value for each call (to ensure distinct vehicle ids).</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Quoting of trip attributes on Linux must use the style <strong>--trip-attributes 'modes="public"'</strong></p>
+</div>
+<h2 id="intermediate-way-points">Intermediate Way Points<a class="headerlink" href="#intermediate-way-points" title="Permanent link">&para;</a></h2>
+<p>To generate longer trips within a network, intermediate way points may
+be generated using the option <strong>--intermediate</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>. This will add the given number of
+<a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#incomplete_routes_trips_and_flows">via-edges</a>
+to the trip definitions.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If the network contains disconnected components, the probability of generating invalid trips grows with the number of intermediate waypoints (since a trip is invalid if any intermediate part is invalid). To avoid this, <a href="../../netconvert/#edge_removal">make sure your network has only a single component</a>.</p>
+</div>
+<h2 id="customized-weights">Customized Weights<a class="headerlink" href="#customized-weights" title="Permanent link">&para;</a></h2>
+<h3 id="saving">Saving<a class="headerlink" href="#saving" title="Permanent link">&para;</a></h3>
+<p>Using option <strong>weights-output-prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> will cause three <em>weight-files</em> with the given prefix to
+be generated (<em>&lt;prefix&gt;.src.xml, &lt;prefix&gt;.dst.xml, &lt;prefix&gt;.via.xml</em>)
+which contain the used edge probabilities.</p>
+<ul>
+<li><em>.src.xml</em> contains the probabilities for an edge to be selected as <code>from</code>-edge</li>
+<li><em>.dst.xml</em> contains the probabilities for an edge to be selected as <code>to</code>-edge</li>
+<li><em>.via.xml</em> contains the probabilities for an edge to be selected as <code>via</code>-edge (only used when option <strong>--intermediate</strong> is set).</li>
+</ul>
+<h3 id="visualization">Visualization<a class="headerlink" href="#visualization" title="Permanent link">&para;</a></h3>
+<p>Any of these files can be loaded in <a href="../../sumo-gui/#visualizing_edge-related_data">sumo-gui for
+visualization</a></p>
+<h3 id="loading">Loading<a class="headerlink" href="#loading" title="Permanent link">&para;</a></h3>
+<p>Files in this format can be used to set customized weights for
+generating random trips by using the option <strong>--weights-prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> with the prefix value as
+argument. The randomTrips script will attempt to load weights for all
+edges and all three file extensions (<em>.src.xml, .dst.xml, .via.xml</em>) but
+will use the following defaults if same values are missing:</p>
+<ul>
+<li>If a loaded weight file does not contain all edges, probability 0
+  will be assumed for the missing edges</li>
+<li>If a file is missing, the probabilities according to the regular
+  options are used when sampling that type of edge (i.e. missing
+  <em>&lt;prefix&gt;.dst.xml</em> will result in probabilities as described in
+  section <a href="#edge_probabilities">#Edge_Probabilities</a> will
+  be used when sampling destination edges)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Probabilities loaded from the <em>weight-files</em> are automatically normalized. Therefore it does not matter whether probabilities are specified as fractions or percentage values.</p>
+</div>
+<h3 id="usage-example">Usage Example<a class="headerlink" href="#usage-example" title="Permanent link">&para;</a></h3>
+<p>To obtain trips from two specific locations (edges <em>a</em>, and <em>b</em>) to
+random destinations, use</p>
+<pre><code>python tools/randomTrips.py --weights-prefix example  ...&lt;other options&gt;...
+</code></pre>
+<p>and define only the file <em>example.src.xml</em> as follows:</p>
+<pre><code class="language-xml">&lt;edgedata&gt;
+  &lt;interval begin=&quot;0&quot; end=&quot;10&quot;/&gt;
+    &lt;edge id=&quot;a&quot; value=&quot;0.5&quot;/&gt;
+    &lt;edge id=&quot;b&quot; value=&quot;0.5&quot;/&gt;
+  &lt;/interval&gt;
+&lt;/edgedata&gt;
+</code></pre>
+<h2 id="forwarding-options-to-duarouter">Forwarding options to duarouter<a class="headerlink" href="#forwarding-options-to-duarouter" title="Permanent link">&para;</a></h2>
+<p>When generating the route <em>.rou.xml</em> file, duarouter is called. Some arguments are already passed to duarouter directly from arguments received by randomTrips. However, should you need so, you can directly pass an argument to duarouter with the syntax <code>--duarouter-option value</code>; for instance using <code>--duarouter-exit-times true</code> with randomTrips will forward the argument <code>--exit-times</code> to duarouter when it is called, and with the value <code>true</code>. Please note that it is compulsory to pass a value together with the option, for instance <code>--duarouter-exit-times</code> wouldn't be valid in this context.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

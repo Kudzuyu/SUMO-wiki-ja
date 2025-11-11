@@ -10,8 +10,11 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/SaveAndLoad/">
       
+      
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
@@ -19,17 +22,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#シミュレーション状態の保存読込" class="md-skip">
+        <a href="#saving" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -110,40 +114,50 @@
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -299,56 +356,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#保存" class="md-nav__link">
-    保存
-  </a>
-  
-    <nav class="md-nav" aria-label="保存">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#その他のオプション" class="md-nav__link">
-    その他のオプション
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#読込" class="md-nav__link">
-    読込
+  <a href="#saving-at-fixed-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving at fixed times
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#詳細情報" class="md-nav__link">
-    詳細情報
+  <a href="#saving-periodically" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving periodically
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#乱数生成器" class="md-nav__link">
-    乱数生成器
+  <a href="#saving-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving manually
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#既知の問題" class="md-nav__link">
-    既知の問題
+  <a href="#saving-via-traci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving via TraCI
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#旧バージョン" class="md-nav__link">
-    旧バージョン
+  <a href="#further-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further options
+    </span>
   </a>
   
 </li>
@@ -361,75 +408,119 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<!-- 
-simulation state : シミュレーション状態
-(simulation) time : シミュレーション時刻
-rail signal constraints : 鉄道信号機の制約
-midnight : （不明、そのまま）
- -->
 
-<h1 id="シミュレーション状態の保存読込">シミュレーション状態の保存・読込<a class="headerlink" href="#シミュレーション状態の保存読込" title="Permanent link">&para;</a></h1>
-<p>参考原文バージョン: 2021/12/8, 820de3c7e781e9ef7dd361d58fc31a9966a4f8aa</p>
-<p>SUMOはバージョン0.18.0からシミュレーション状態の保存・読込をサポートしています。</p>
-<h2 id="保存">保存<a class="headerlink" href="#保存" title="Permanent link">&para;</a></h2>
-<p>シミュレーション中に特定時刻の状態を保存するには、<strong>--save-state.times</strong>オプションを加えます。</p>
+<p>SUMO allows loading and saving simulation state since version 0.18.0.</p>
+<h1 id="saving">Saving<a class="headerlink" href="#saving" title="Permanent link">&para;</a></h1>
+<h2 id="saving-at-fixed-times">Saving at fixed times<a class="headerlink" href="#saving-at-fixed-times" title="Permanent link">&para;</a></h2>
+<p>To save the state at specified times during the simulation add the
+option <strong>--save-state.times</strong></p>
 <pre><code>sumo --save-state.times TIME1,TIME2,TIME3
 </code></pre>
-<p>または、状態を周期的に保存する<strong>--save-state.period</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a>オプションが使えます。<strong>--save-state.period.keep N</strong>オプションは、最後の<strong>N</strong>個の状態ファイルを除き、全てを削除できます。</p>
-<p>デフォルトでは<em>&lt;PREFIX>_&lt;TIME>&lt;SUFFIX></em>という名前のファイルに状態が書き出されます。<em>&lt;PREFIX></em>は<strong>--save-state.prefix</strong>オプションで設定できます（デフォルトは<em>state</em>）。<em>&lt;TIME></em>はシミュレーション時刻、<em>&lt;SUFFIX></em>は<em>.xml.gz</em>か<em>.xml</em>のいずれかで、<strong>--save-state.suffix</strong>オプションで指定できます（デフォルトは<em>.xml.gz</em>）。</p>
+<p>By default the state will be written to files named <em>&lt;PREFIX&gt;_&lt;TIME&gt;&lt;SUFFIX&gt;</em> where <em>&lt;PREFIX&gt;</em> can be set via option <strong>--save-state.prefix</strong> (default <em>state</em>), <em>&lt;TIME&gt;</em> is the simulation time and <em>&lt;SUFFIX&gt;</em> is either one of <em>.xml.gz</em> or <em>.xml</em> as controlled by the option <strong>--save-state.suffix</strong> (default <em>.xml.gz</em>).</p>
 <div class="admonition note">
-<p class="admonition-title">注<p>拡張子'.xml.gz'はgzip形式で圧縮されたxmlファイルであり、全てのSUMOアプリケーションで直接使用したり、標準的なファイル圧縮ツールで解凍することもできます。</p>
-</p>
+<p class="admonition-title">Note</p>
+<p>The file extension '.xml.gz' indicates gzip-compressed xml which can be used directly by all Sumo applications and can also be unzipped with standard file compression tools</p>
 </div>
-<p><strong>--save-state.times</strong>オプションを使用するとき、次のように<strong>--save-state.files</strong>オプションを使うことで、出力するファイル名を陽に設定することもできます。</p>
+<p>When using the option <strong>--save-state.times</strong>, output files can also be specified by using the
+option <strong>--save-state.files</strong></p>
 <pre><code>sumo --save-state.files FILE1,FILE2,FILE3
 </code></pre>
-<p>特に、圧縮形式の.xml.gzの代わりに標準テキストのxmlファイルを出力したい場合は、拡張子.xmlをつけてファイル名を指定してください。</p>
-<h3 id="その他のオプション">その他のオプション<a class="headerlink" href="#その他のオプション" title="Permanent link">&para;</a></h3>
+<p>to set the file names explicitly. In particular if a plain text xml-file
+is desired as output (instead of the compressed format .xml.gz) the file names
+should be given (with suffix .xml).</p>
+<h2 id="saving-periodically">Saving periodically<a class="headerlink" href="#saving-periodically" title="Permanent link">&para;</a></h2>
+<p>Alternatively, the option <strong>--save-state.period</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;TIME&gt;</em></a> can be used to save states periodically.
+The options <strong>-save-state.prefix</strong> and <strong>--save-state.suffix</strong> apply as described above.</p>
+<p>The option <strong>--save-state.period.keep N</strong> can be used to remove all but the last <strong>N</strong> state files.</p>
+<h2 id="saving-manually">Saving manually<a class="headerlink" href="#saving-manually" title="Permanent link">&para;</a></h2>
+<p><a href="../../sumo-gui/">sumo-gui</a> allows to save state files using the menu option <em>Simulation</em> -&gt; <em>Save</em></p>
+<h2 id="saving-via-traci">Saving via TraCI<a class="headerlink" href="#saving-via-traci" title="Permanent link">&para;</a></h2>
+<p>The function <code>traci.simulation.saveState(FILENAME</code>) can be used to trigger saving from a script.</p>
+<h2 id="further-options">Further options<a class="headerlink" href="#further-options" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>--save-state.rng</strong>: 乱数生成器の状態を保存します</li>
-<li><strong>--save-state.transportables</strong>: personとcontainerの状態を保存します</li>
-<li><strong>--save-state.constraints</strong>: 鉄道信号機の制約（rail signal constraints）を保存します</li>
-<li><strong>--save-state.precision</strong>: 状態を保存するときの精度（decimal precision）を設定します</li>
+<li><strong>--save-state.rng</strong>: Save random number generator states</li>
+<li><strong>--save-state.transportables</strong>: Save person and container states</li>
+<li><strong>--save-state.constraints</strong>: Save rail signal constraints</li>
+<li><strong>--save-state.precision</strong>: Set decimal precision when saving states</li>
 </ul>
-<h2 id="読込">読込<a class="headerlink" href="#読込" title="Permanent link">&para;</a></h2>
-<p><strong>--load-state</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>オプションを使うことで、与えた状態ファイルでシミュレーションを初期化します。
-状態ファイル保存時に使用していた同じ入力ファイルを使ってシミュレーションを開始し、状態が保存された時刻を<strong>--begin</strong>オプションで指定することを推奨します。
-追加の車両など、追加ファイルを加えることも可能です。
-<strong>--load-state.offset</strong>オプションが設定されたとき、シミュレーション状態から読み込まれた全ての時刻が指定された量だけシフトされます。
-この機能は、midnight以降にシミュレーション秒数を0にリセットし、読み込まれたvehicleを正常に動き続けるのに使用できます。</p>
-<p><strong>--load-state.remove-vehicles ID1,ID2,...</strong>オプションは、読み込まれた状態からvehicleを削除します。
-これにより、選ばれたvehicleを<em>.rou.xml</em>ファイルで再度挿入することで、再配置できる可能性があります。</p>
-<h2 id="詳細情報">詳細情報<a class="headerlink" href="#詳細情報" title="Permanent link">&para;</a></h2>
-<p>出発前のvehicleはシミュレーション状態に含まれないため、入力ファイルからロードする必要があります。
-シミュレーション状態に存在するvehicleを入力ファイルから読み込んだ場合、これらのvehicleは自動的に無視され、エラーなしで読込処理が行われます。</p>
-<h2 id="乱数生成器">乱数生成器<a class="headerlink" href="#乱数生成器" title="Permanent link">&para;</a></h2>
-<p>デフォルトでは、<a href="../Randomness/">乱数生成器（Random number generators : RNG）</a>の状態は保存されません。
-そのため、読み込まれた状態以降はシミュレーションが元と異なる動作を示します。</p>
-<p><strong>--save-state.rng</strong>オプションを設定した場合は、全ての乱数生成器の状態がシミュレーション状態に含まれ、読込時には復元されます。
-この追加状態を保存するコストは約500kBです。
-もし、このオーバーヘッドが高コストな場合は、<strong>--thread-rngs</strong>に小さな値を設定することで削減できます（デフォルトは64）。
-この値は、ルーティングやシミュレーションに使われるスレッド数（<strong>--threads、</strong>--device.rerouting.threads**）より小さな値にしてはいけません。</p>
-<h2 id="既知の問題">既知の問題<a class="headerlink" href="#既知の問題" title="Permanent link">&para;</a></h2>
+<h1 id="loading">Loading<a class="headerlink" href="#loading" title="Permanent link">&para;</a></h1>
+<p>The option <strong>--load-state</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> is used to initialize the simulation with the given state
+file. It is recommended to start the simulation with the same input
+files that were used when saving the state file and set option <strong>--begin</strong> to the
+time when the state was saved. Additional files (i.e. more vehicles) can
+be added without problems.</p>
+<p>When the option <strong>--load-state.offset</strong> is set, all times loaded from the simulation state will
+be shifted by the given amount. This can be used to reset the simulation
+second to 0 after midnight and still have the loaded vehicles function
+properly.</p>
+<p>The option <strong>--load-state.remove-vehicles ID1,ID2,...</strong> allows removing vehicles from a loaded state. This opens up
+the possibility for re-positioning selected vehicles by inserting them
+again with a <em>.rou.xml</em> file.</p>
+<h2 id="loading-via-traci">Loading via TraCI<a class="headerlink" href="#loading-via-traci" title="Permanent link">&para;</a></h2>
+<p>There are two ways for loading state via TraCI:</p>
 <ul>
-<li>flowsを状態ファイルのみから読み込むことはできません（オリジナルのrouteファイルを必ず読み込む必要があります）</li>
-<li>laneChangeModelの内部状態は保存されません</li>
-<li>carFollowModelの内部状態は保存されません（全てのモデルにあてはまるわけではありません）</li>
+<li><code>traci.load(['-n', 'net.net.xml', '--load-state', FILENAME])</code>: reloads the whole simulation (which includes reloading the network)</li>
+<li><code>traci.simulation.loadState(FILENAME)</code> : clears out all vehicles and persons from the network and then loads the state. (reloading the network is avoided)</li>
 </ul>
-<h2 id="旧バージョン">旧バージョン<a class="headerlink" href="#旧バージョン" title="Permanent link">&para;</a></h2>
-<p>バージョン0.18.0以前のSUMOでは、回避策として、仮想マシン（VM）上でSUMOを実行することで、任意の時刻でVMの状態として保存できる可能性があります。</p>
-<p>Linux上でVirtualBoxを使ったテストでは、VMに十分はハードウェアリソースを割り当てていない場合、SUMOの実行がホストでの直接実行より極端に遅くなります。
-例えば、TraCI経由でSUMOと通信する他のプログラムを同時に実行する場合、VMに十分なCPUコアを割り当てるべきです。</p>
+<p>The second function faster (or much faster) than the first, depending on the size of the network.</p>
+<h1 id="details">Details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h1>
+<p>Vehicles that have not yet departed are not included in the simulation
+state and must be loaded from input files. When loading vehicles from an
+input file that are already present in the simulation state, these
+vehicles are automatically ignored and loading proceeds without errors.</p>
+<h1 id="random-number-generators-rng">Random number generators (RNG)<a class="headerlink" href="#random-number-generators-rng" title="Permanent link">&para;</a></h1>
+<p>By default, the state of the <a href="../Randomness/">random number generators</a> is not saved. Thus,
+simulations will behave differently from the original after being reloaded from a state.</p>
+<p>When setting option <strong>--save-state.rng</strong>, the state of all random number generators will be included in the state and restored upon loading.
+Saving this extra state costs about 500Kb. If this overhead is too high it can be reduced by setting a lower value of <strong>--thread-rngs</strong> (default 64).
+The value should be no lower than the number of threads used for routing or simulation (<strong>--threads</strong>, <strong>--device.rerouting.threads</strong>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>States which contain the state of the RNG are platform dependent. This means you cannot load a Windows rng state on Linux and vice versa.</p>
+</div>
+<h1 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h1>
+<ul>
+<li>flows cannot be loaded from a state file alone (the original route file must be loaded as well)</li>
+<li>the internal state of the laneChangeModel is not saved</li>
+<li>the internal state of the carFollowModel is not saved (not all models have this).</li>
+<li>the exact position within a parkingArea is <a href="https://github.com/eclipse-sumo/sumo/issues/16144">not saved</a></li>
+</ul>
+<h1 id="older-versions-of-sumo">Older Versions of SUMO<a class="headerlink" href="#older-versions-of-sumo" title="Permanent link">&para;</a></h1>
+<p>On versions before 0.18.0 a possible workaround is to run SUMO within a
+virtual machine (VM) as the state of a VM can be saved at any time.
+Tests with VirtualBox on Linux have shown that SUMO does not run
+significantly slower in a VM as directly on the host if enough hardware
+resources are assigned to the VM (for example if you run another program
+simultaneously to communicate to SUMO via TraCI you should assign enough
+CPU-cores to the VM).</p>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -456,10 +547,14 @@ midnight : （不明、そのまま）
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

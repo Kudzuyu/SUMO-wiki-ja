@@ -1,0 +1,937 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Installing/Linux_Build/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Linux Build - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installing-required-tools-and-libraries" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux Build
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-required-tools-and-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing required tools and libraries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing required tools and libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parquet-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parquet support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-the-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting the source code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting the source code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repository-checkout-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      repository checkout (recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-version-or-nightly-tarball" class="md-nav__link">
+    <span class="md-ellipsis">
+      release version or nightly tarball
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-of-sumo_home" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition of SUMO_HOME
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-python-packages-for-the-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Python packages for the tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-sumo-binaries-with-cmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the SUMO binaries with cmake
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-with-clang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building with clang
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-sumo-binaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing the SUMO binaries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstalling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstalling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-python-wheels-for-sumolib-traci-and-libsumo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building Python wheels for sumolib, traci and libsumo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequent-rebuilds" class="md-nav__link">
+    <span class="md-ellipsis">
+      (Frequent) Rebuilds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-build-jupedsim-and-then-build-sumo-with-jupedsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to build JuPedSim and then build SUMO with JuPedSim
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to build JuPedSim and then build SUMO with JuPedSim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tweaking-the-jupedsim-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tweaking the JuPedSim build
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problems-with-the-socket-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems with the socket subsystem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ld-cannot-find-an-existing-library-fedora-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      ld cannot find an existing library (Fedora-23)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ld-cannot-find-certain-functions-in-an-existing-external-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      ld cannot find certain functions in an existing external library
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-notes-for-cygwin-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional notes for Cygwin users
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Linux Build</h1>
+
+<p>This document describes how to install SUMO on Linux from sources. If
+you don't want to <strong>extend</strong> SUMO, but merely <strong>use</strong> it, you might want
+to <a href="../">download one of our pre-built binary
+packages</a> instead.</p>
+<p>To be able to run SUMO on Linux, just follow these steps:</p>
+<ol>
+<li>Install all of the required tools and libraries</li>
+<li>Get the source code</li>
+<li>Build the SUMO binaries</li>
+</ol>
+<p>For ubuntu this boils down to</p>
+<pre><code>sudo apt-get install git
+git clone --recursive https://github.com/eclipse-sumo/sumo
+cd sumo
+export SUMO_HOME=&quot;$PWD&quot;
+sudo apt-get install $(cat build_config/build_req_deb.txt build_config/tools_req_deb.txt)
+cmake -B build .
+cmake --build build -j$(nproc)
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not build in an active Anaconda environment! The libraries have sometimes different versions than Anaconda which will break the build or the executables.</p>
+</div>
+<p>Each of these steps is described in more detail and with possible
+alternatives below.</p>
+<h2 id="installing-required-tools-and-libraries">Installing required tools and libraries<a class="headerlink" href="#installing-required-tools-and-libraries" title="Permanent link">&para;</a></h2>
+<ul>
+<li>For the build infrastructure you will need cmake together with a moderately
+  recent g++ (7 will do) or clang++ (or any other C++17 enabled compiler).</li>
+<li>It is possible to build SUMO with older compilers too (at least gcc 4.8) but
+  it is not recommended since some features will be disabled.</li>
+<li>The library Xerces-C is always needed. To use
+  <a href="../../sumo-gui/">sumo-gui</a> you also need Fox Toolkit in version
+  1.6.x. It is highly recommended to also install Proj to have support
+  for geo-conversion and referencing. Another common requirement is
+  network import from shapefile (arcgis). This requires the GDAL
+  library. To compile you will need the devel versions of all packages.
+  For openSUSE this means installing libxerces-c-devel, libproj-devel,
+  libgdal-devel, and fox16-devel. For ubuntu the call is above.
+  The installation of swig, python3-dev and the jdk enables also the build of libsumo
+  while eigen3 is necessary for the overheadwire model.
+  There are some outdated <a href="../Linux_Build_Libraries/">platform specific
+  and manual build instructions for the
+  libraries</a></li>
+<li>Optionally you may want to add</li>
+<li>ccache (to speed up builds)</li>
+<li>ffmpeg-devel (for video output),</li>
+<li>libOpenSceneGraph-devel (for the experimental 3D GUI),</li>
+<li>gtest (for <a href="../../Developer/Unit_Tests/">unit testing</a>, do not use 1.13 or later)</li>
+<li>gettext (for internationalization)</li>
+<li>texttest, xvfb  and tkdiff (for the acceptance tests, include python3-gobject for the texttest GUI)</li>
+<li>flake, astyle and autopep for style checking</li>
+<li>see also further dependencies <a href="../../Developer/GUI_Testing/">for GUI testing</a></li>
+</ul>
+<p>The package names above are for openSUSE, for ubuntu the call to get the most important optional libraries and tools is:</p>
+<pre><code>sudo apt-get install ccache libavformat-dev libswscale-dev libopenscenegraph-dev python3-pip python3-build
+sudo apt-get install libgtest-dev gettext tkdiff xvfb flake8 astyle python3-autopep8 python3-gi-cairo gir1.2-gtk-3.0
+sudo apt-get install python3-pyproj python3-rtree python3-pandas python3-pulp python3-ezdxf
+python3 -m pip install texttest
+</code></pre>
+<p>For the Python tools there are some more requirements depending on which tools you want to use. If you want to install
+everything using pip do <code>python3 -m pip install -r tools/requirements.txt -r tools/req_dev.txt</code>.</p>
+<h3 id="parquet-support">Parquet support<a class="headerlink" href="#parquet-support" title="Permanent link">&para;</a></h3>
+<p>see https://arrow.apache.org/install/</p>
+<pre><code>wget https://packages.apache.org/artifactory/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb
+sudo apt install -y -V ./apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb
+sudo apt update
+sudo apt install -y -V libarrow-dev libparquet-dev
+</code></pre>
+<h2 id="getting-the-source-code">Getting the source code<a class="headerlink" href="#getting-the-source-code" title="Permanent link">&para;</a></h2>
+<p>For the correct setting of SUMO_HOME you have to remember the correct
+path, where you build your SUMO, the SUMO build path. This path is shown
+with pwd at the end of getting the source code. If you want to develop
+actively on sumo we strongly recommend to use the git repository. Please
+build the tarball version if you need for some reason a specific version
+of sumo.</p>
+<h3 id="repository-checkout-recommended">repository checkout (recommended)<a class="headerlink" href="#repository-checkout-recommended" title="Permanent link">&para;</a></h3>
+<p>The following commands should be issued:</p>
+<pre><code>git clone --recursive https://github.com/eclipse-sumo/sumo
+cd sumo
+git fetch origin refs/replace/*:refs/replace/*
+pwd
+</code></pre>
+<p>The additional fetch of the replacements is necessary to get a full
+local project history.</p>
+<h3 id="release-version-or-nightly-tarball">release version or nightly tarball<a class="headerlink" href="#release-version-or-nightly-tarball" title="Permanent link">&para;</a></h3>
+<p>Download
+<a href="https://sumo.dlr.de/releases/1.13.0/sumo-src-1.13.0.tar.gz">sumo-src-1.13.0.tar.gz</a> or <a href="https://sumo.dlr.de/daily/sumo-src-git.tar.gz">https://sumo.dlr.de/daily/sumo-src-git.tar.gz</a></p>
+<pre><code>tar xzf sumo-src-&lt;version&gt;.tar.gz
+cd sumo-&lt;version&gt;/
+pwd
+</code></pre>
+<h2 id="definition-of-sumo_home">Definition of SUMO_HOME<a class="headerlink" href="#definition-of-sumo_home" title="Permanent link">&para;</a></h2>
+<p>Before compiling is advisable to
+define the environment variable SUMO_HOME. SUMO_HOME must be set to
+the SUMO build path from the previous step. Assuming that you placed
+SUMO in the folder "<em>/home/&lt;user&gt;/sumo-&lt;version&gt;</em>", if you want to
+define only for the current session, type in the console</p>
+<pre><code>export SUMO_HOME=&quot;/home/&lt;user&gt;/sumo-&lt;version&gt;&quot;
+</code></pre>
+<p>If you want to define for all sessions (i.e. for every time that you run
+your Linux distribution), go to your HOME folder, and find one of the
+next three files (depending of your Linux distribution):
+<strong>.bash_profile</strong>, <strong>.bash_login</strong> or <strong>.profile</strong> (Note that these
+files can be hidden). Then edit the file, add the line from above at the
+end and restart your session.</p>
+<p>You can check that SUMO_HOME was successfully set if you type</p>
+<pre><code>echo $SUMO_HOME
+</code></pre>
+<p>and console shows "/home/&lt;user&gt;/sumo-&lt;version&gt;"</p>
+<h2 id="installing-python-packages-for-the-tools">Installing Python packages for the tools<a class="headerlink" href="#installing-python-packages-for-the-tools" title="Permanent link">&para;</a></h2>
+<p>Calling the tools from netedit requires a list of Python packages to generate templates during compilation.
+Many of them might be available with the package manager of your distribution and most of the time we prefer
+to use those. For ubuntu this currently means, you should first do</p>
+<pre><code>sudo apt-get install python3-pyproj python3-rtree python3-pandas flake8 python3-autopep8 python3-pulp python3-ezdxf
+</code></pre>
+<p>and then install the remaining parts using pip:</p>
+<pre><code>python3 -m pip install -r tools/requirements.txt -r tools/req_dev.txt
+</code></pre>
+<p>The pip installation will ensure that all libraries are there, so it is safe to skip the first <code>apt-get</code> step.
+If you need information about the minimum required versions of the packages read them directly
+from the <a href="https://github.com/eclipse-sumo/sumo/blob/main/tools/requirements.txt">requirements.txt</a>. Be aware that
+the minimum versions in the requirements file just reflect our current test server setup, so you might also get away with earlier versions.</p>
+<p>If you want to reproduce our test server setup exactly, then use the versions in
+<a href="https://github.com/eclipse-sumo/sumo/blob/main/tools/req_test_server.txt">req_test_server.txt</a>
+Unfortunately some old pip packages are incomplete, so this requires <code>sudo apt install libspatialindex-dev</code>.</p>
+<h2 id="building-the-sumo-binaries-with-cmake">Building the SUMO binaries with cmake<a class="headerlink" href="#building-the-sumo-binaries-with-cmake" title="Permanent link">&para;</a></h2>
+<p>To build with cmake version 3.5 or higher is required.</p>
+<p>Create a build folder for cmake (in the SUMO root folder)
+and configure SUMO with the full set of available options like GDAL and
+OpenSceneGraph support (if the libraries are installed):</p>
+<pre><code>cmake -B build .
+</code></pre>
+<p>to build the debug version just use</p>
+<pre><code>cmake -D CMAKE_BUILD_TYPE=Debug -B build .
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On some platforms the required cmake executable is called <em>cmake3</em>.</p>
+</div>
+<p>Other useful cmake configuration options:</p>
+<ul>
+<li><code>-D PROFILING=ON</code> enable profiling instrumentation for gprof (gcc build only)</li>
+<li><code>-D COVERAGE=ON</code> enable coverage instrumentation for lcov (gcc build only)</li>
+<li><code>-D CHECK_OPTIONAL_LIBS=OFF</code> disable all optional libraries (only
+  include EPL compatible licensed code)</li>
+<li><code>-D CMAKE_BUILD_TYPE=RelWithDebInfo</code> enable debug symbols for
+  debugging the release build or using a different profiler</li>
+<li><code>-D PROJ_LIBRARY=</code> disable PROJ</li>
+<li><code>-D FOX_CONFIG=</code> disable FOX toolkit (GUI and multithreading)</li>
+<li><code>-D PYTHON_EXECUTABLE=/usr/bin/python3</code> select a different python version (also for libsumo / libtraci)</li>
+<li><code>-D MVN_EXECUTABLE=</code> disable maven packaging (especially useful if you have no network connection)</li>
+<li><code>-D ENABLE_CS_BINDINGS=ON</code> enable C# bindings when compiling libsumo / libtraci</li>
+</ul>
+<p>After this is finished, run</p>
+<pre><code>cmake --build build -j $(nproc)
+</code></pre>
+<p>The <code>nproc</code> command gives you the number of logical cores on your
+computer, so that make will start parallel build jobs which makes the
+build a lot faster. If <code>nproc</code> is not available on your system, insert a
+fixed number here or leave the option out. You may also try</p>
+<pre><code>cmake --build build -j $(grep -c ^processor /proc/cpuinfo)
+</code></pre>
+<h2 id="building-with-clang">Building with clang<a class="headerlink" href="#building-with-clang" title="Permanent link">&para;</a></h2>
+<p>If you want to use a different compiler (just for the fun of it or
+because it has additional features) you can enable it at configure time.
+Our current clang configuration for additional static code checking
+enables the following CXXFLAGS:</p>
+<pre><code>-stdlib=libstdc++ -fsanitize=undefined,address,integer -fno-omit-frame-pointer -fsanitize-blacklist=$SUMO_HOME/build_config/clang_sanitize_blacklist.txt
+</code></pre>
+<p>You may of course leave out all the sanitizer-checks you don't want but
+the stdlib option has to be set. The blacklist filters out a known bug
+in the cstdlib. For details see the clang documentation.</p>
+<p>The current CMake configuration already contains this for the debug
+build, so for building with CMake and clang just change to your build
+dir and use</p>
+<pre><code>CXX=clang++ cmake -DCMAKE_BUILD_TYPE=Debug --build build -j $(nproc)
+</code></pre>
+<p>The clang-debug-build will detect memory leaks (among other things)
+If the errors are reported with cryptic hexadecimal numbers as</p>
+<pre><code>Indirect leak of 72 byte(s) in 1 object(s) allocated from:
+    #0 0xa4ee2d  (.../sumo/bin/netconvertD+0xa4ee2d)
+</code></pre>
+<p>set the following environment variable to point to the llvm-symbolizer executable:
+<code>export ASAN_SYMBOLIZER_PATH=/usr/bin/llvm-symbolizer</code> before running the executable.</p>
+<p>Please note that the undefined behavior checker is very sensitive and will report
+some false negatives also in system libraries. It is recommended to use
+<code>export UBSAN_OPTIONS=suppressions=$SUMO_HOME/build_config/clang_ubsan_suppressions.txt</code>
+before calling the executable.</p>
+<h2 id="installing-the-sumo-binaries">Installing the SUMO binaries<a class="headerlink" href="#installing-the-sumo-binaries" title="Permanent link">&para;</a></h2>
+<p>This (optional) step will copy the SUMO binaries to another path, so
+that you can delete all source and intermediate files afterwards. If you
+do not want (or need) to do that, you can simply skip this step and run
+SUMO from the bin subfolder (bin/sumo-gui and bin/sumo).</p>
+<p>If you want to install the SUMO binaries into your system, run</p>
+<pre><code>sudo cmake --install build
+</code></pre>
+<p>You have to adjust your SUMO_HOME variable to the install dir (usually
+/usr/local/share/sumo)</p>
+<pre><code>export SUMO_HOME=/usr/local/share/sumo
+</code></pre>
+<h2 id="uninstalling">Uninstalling<a class="headerlink" href="#uninstalling" title="Permanent link">&para;</a></h2>
+<p>CMake provides no <code>make uninstall</code> so if you ever want to uninstall, run</p>
+<pre><code>sudo xargs rm &lt; install_manifest.txt
+</code></pre>
+<p>from the same folder you ran <code>make install</code>. This will leave some empty
+directories, so if you want to remove them as well, double check that
+$SUMO_HOME points to the right directory (see above) and run</p>
+<pre><code>sudo xargs rm -r $SUMO_HOME
+</code></pre>
+<h2 id="building-python-wheels-for-sumolib-traci-and-libsumo">Building Python wheels for sumolib, traci and libsumo<a class="headerlink" href="#building-python-wheels-for-sumolib-traci-and-libsumo" title="Permanent link">&para;</a></h2>
+<p>If you want to distribute sumolib, traci and/or libsumo as wheels
+you can build those wheels directly from the tools tree. Please be aware
+that nightly builds of those packages are also available on https://test.pypi.org</p>
+<pre><code>pip install wheel build
+cd tools
+python build_config/version.py build_config/setup-sumolib.py ./setup.py
+python -m build --wheel
+python build_config/version.py build_config/setup-traci.py ./setup.py
+python -m build --wheel
+python build_config/version.py build_config/setup-libsumo.py ./setup.py
+python -m build --wheel
+</code></pre>
+<p>You will need a recent version of pip (&gt;=22) for this to work. If for some reason
+you cannot update your pip you can also use the (discouraged!) method of calling
+setup.py directly.</p>
+<pre><code>cd tools
+python build_config/setup-sumolib.py bdist_wheel
+</code></pre>
+<p>Please note that you always need to be in the tools directory for this to work
+and your wheels will be placed in tools/dist. Furthermore the traci and the sumolib wheel
+are platform and Python version independent while libsumo depends on the exact
+platform and Python you built it with.</p>
+<h2 id="frequent-rebuilds">(Frequent) Rebuilds<a class="headerlink" href="#frequent-rebuilds" title="Permanent link">&para;</a></h2>
+<p>If you did a repository clone you can simply update it by doing <code>git pull</code>
+from inside the SUMO_HOME folder. Then change to the build directory and run
+<code>make -j $(nproc)</code> again.</p>
+<p>If your underlying system changed (updated libraries) or you experience other
+build problems please try a clean build first by removing the build directory (or at
+least the CMakeCache.txt) and running cmake and make again before reporting a bug.</p>
+<p>If you find yourself building very often after minor changes, consider installing
+ccache and run cmake again. It will be picked up automatically and can dramatically
+improve build speed.</p>
+<h2 id="how-to-build-jupedsim-and-then-build-sumo-with-jupedsim">How to build JuPedSim and then build SUMO with JuPedSim<a class="headerlink" href="#how-to-build-jupedsim-and-then-build-sumo-with-jupedsim" title="Permanent link">&para;</a></h2>
+<p>In this section, you will learn how to build the latest version of the pedestrian simulator JuPedSim and how to compile SUMO with this latest version of JuPedSim. First of all, clone the JuPedSim repository:</p>
+<pre><code class="language-bash">git clone https://github.com/PedestrianDynamics/jupedsim
+</code></pre>
+<p>Note that this will clone the full repository, including the latest version of JuPedSim. <strong>We strongly recommend to build the latest release of JuPedSim (not the master branch), which is officially supported by SUMO.</strong> You can consult the <a href="https://github.com/PedestrianDynamics/jupedsim#readme">JuPedSim build procedure</a>; hereafter we propose a similar procedure. First check which is the <a href="https://github.com/PedestrianDynamics/jupedsim/releases">latest release</a> then in the cloned directory checkout to the latest release and do a regular cmake build. For example, for JuPedSim release v1.2.1, you would need to type:</p>
+<pre><code class="language-bash">cd jupedsim
+git checkout v1.2.1
+cmake -B build .
+cmake --build build
+sudo cmake --install build
+</code></pre>
+<p>Now you should make sure GEOS is installed (<code>sudo apt-get install libgeos-dev</code>) and
+continue with the <a href="#building_the_sumo_binaries_with_cmake">standard build procedure above</a>.</p>
+<h3 id="tweaking-the-jupedsim-build">Tweaking the JuPedSim build<a class="headerlink" href="#tweaking-the-jupedsim-build" title="Permanent link">&para;</a></h3>
+<p>If you do not want to install jupedsim into your system, you can specify an alternative install directory like this:</p>
+<pre><code class="language-bash">cmake -B build -DCMAKE_INSTALL_PREFIX=$PWD/../jupedsim-install .
+cmake --build build
+cmake --install build
+</code></pre>
+<p>This will install jupedsim in the directory <code>jupedsim-install</code> right beside the checkout. If you installed jupedsim
+into the system or in a <code>jupedsim-install</code> directory beside sumo, the standard cmake call of SUMO will find it
+automatically.</p>
+<p>Please be aware that if you want to install sumo into the system, you also need to install jupedsim into the system.
+To tweak or debug the jupedsim build you can also change the configuration to Debug (with <code>-DCMAKE_BUILD_TYPE=Debug</code>)
+and also enable multithreading (with <code>-j4</code>) as usual with CMake. If you have different jupedsim versions or choose a
+different install path, you can notify CMake where JuPedSim is installed by setting <code>JUPEDSIM_CUSTOMDIR</code> when calling CMake.</p>
+<p>For further remarks on the use of JuPedSim inside SUMO, please consult <a href="../../Simulation/Pedestrians/#model_jupedsim">the documentation on the model</a>.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="problems-with-the-socket-subsystem">Problems with the socket subsystem<a class="headerlink" href="#problems-with-the-socket-subsystem" title="Permanent link">&para;</a></h3>
+<p>Problem:</p>
+<pre><code>recv ./foreign/tcpip/libtcpip.a(socket.o) (symbol belongs to implicit dependency /usr/lib/libsocket.so.1)
+</code></pre>
+<p>Solution:
+<a href="https://lists.danga.com/pipermail/memcached/2005-September/001611.html">https://lists.danga.com/pipermail/memcached/2005-September/001611.html</a></p>
+<h3 id="ld-cannot-find-an-existing-library-fedora-23">ld cannot find an existing library (Fedora-23)<a class="headerlink" href="#ld-cannot-find-an-existing-library-fedora-23" title="Permanent link">&para;</a></h3>
+<p>Problem:</p>
+<pre><code>/usr/bin/ld: cannot find -lfreetype
+ls -lah /usr/lib64/libfreetype*
+ lrwxrwxrwx. 1 root root   21 Jul 28 15:54 /usr/lib64/libfreetype.so.6 -&gt; libfreetype.so.6.12.0
+ lrwxr-xr-x. 1 root root 689K Jul 28 15:54 /usr/lib64/libfreetype.so.6.12.0
+</code></pre>
+<p>Solution: Install the dev package; for fedora:</p>
+<pre><code>sudo yum install freetype-devel
+</code></pre>
+<p>For details see
+<a href="https://stackoverflow.com/questions/335928/ld-cannot-find-an-existing-library">stackoverflow</a>
+discussion.</p>
+<h3 id="ld-cannot-find-certain-functions-in-an-existing-external-library">ld cannot find certain functions in an existing external library<a class="headerlink" href="#ld-cannot-find-certain-functions-in-an-existing-external-library" title="Permanent link">&para;</a></h3>
+<p>Make sure you don't have an environment like anaconda installed which modifies your library search path.</p>
+<h3 id="additional-notes-for-cygwin-users">Additional notes for Cygwin users<a class="headerlink" href="#additional-notes-for-cygwin-users" title="Permanent link">&para;</a></h3>
+<p>At the moment GUI building is still troublesome. It depends whether you
+want to use the X-Server or native Windows GUI. We tried native Windows
+GUI only and had to change the installed libFOX-1.4.la such that it
+contains</p>
+<pre><code>dependency_libs=' -lgdi32 -lglaux -ldl -lcomctl32 -lwsock32 -lwinspool -lmpr
+-lpthread -lpng /usr/lib/libtiff.la /usr/lib/libjpeg.la -lz -lbz2 -lopengl32 -lglu32'
+</code></pre>
+<p>Your mileage may vary.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

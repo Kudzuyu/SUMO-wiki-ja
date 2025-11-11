@@ -1,0 +1,646 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Developer/How_To/Net_Importer/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Net Importer - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#building-a-reader" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Net Importer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initial-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calling-the-reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calling the Reader
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import Order
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-to-parse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting to Parse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>In the following, advices on implementing a new network importer are
+given-</p>
+<p>Implementing an own network import module is very easy. The following
+steps are necessary:</p>
+<ul>
+<li>write methods which read and parse the information from the original
+  file</li>
+<li>insert parsed values into the netbuilding containers</li>
+<li>make the network importer know and use your code</li>
+<li>submit your code</li>
+</ul>
+<p>Yes, that's all. Still, the three steps are described more detailed in
+the following sections.</p>
+<h1 id="building-a-reader">Building a Reader<a class="headerlink" href="#building-a-reader" title="Permanent link">&para;</a></h1>
+<h2 id="initial-considerations">Initial Considerations<a class="headerlink" href="#initial-considerations" title="Permanent link">&para;</a></h2>
+<p>There are some conventions on network importers we try to follow. They
+are not mandatory, but they are assumed to assure the code's
+extendibility and to force a higher quality of the code.</p>
+<p>When starting to write your own importer, you should consider to base it
+on an existing one. NIImporter_OpenStreetMap.*, NIXML...Handler.* are
+examples of reading network descriptions form XML files.
+NIImporter_VISUM.* and NIImporter_DlrNavteq.* read plain text files,
+formatted in different ways. All these modules are located in
+<strong><em>&lt;SUMO_HOME&gt;</em></strong>/src/netimport and of course, your import should be placed here, too.</p>
+<div class="admonition convention">
+<p class="admonition-title">Convention</p>
+<p>network importer code is located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/src/netimport/</p>
+</div>
+<div class="admonition convention">
+<p class="admonition-title">Convention</p>
+<p>network importer should be named NIImporter_&lt;FORMAT_NAME&gt;</p>
+</div>
+<h2 id="calling-the-reader">Calling the Reader<a class="headerlink" href="#calling-the-reader" title="Permanent link">&para;</a></h2>
+<p>Before adding a call to the init-function of your network importer, you
+have to add according options; otherwise the first call will end with an
+error due to accessing an unknown option. The options have to be added
+to void NIFrame::fillOptions().</p>
+<p>Then, you can make the importing facility know your parser by including
+the .h-file of your parser to NILoader.cpp and add a call to his
+loadNetwork-method within void NILoader::load(OptionsCont &amp;oc).</p>
+<h2 id="import-order">Import Order<a class="headerlink" href="#import-order" title="Permanent link">&para;</a></h2>
+<p>In most cases, edges, nodes, traffic lights, connections between edges,
+and other road network attributes are given explicitly and separated.
+The information <strong>must</strong> be imported in the correct order. The following
+order is right:</p>
+<ul>
+<li>nodes</li>
+<li>edges (need references to origin and to destination nodes)</li>
+<li>connections between edges (need usually references to edges)</li>
+<li>traffic lights (need references to nodes)</li>
+</ul>
+<p>Some more outrageous programmers may try to optimize the order a bit if
+the original data is aligned different. This may be possible in some
+cases.</p>
+<p>In the case nodes, edges, and other information are parsed from several
+files, the import order must be considered. Of course, it is also
+possible to store data in temporary containers. Still, this should be
+avoided as it increases memory consumption, and yes, memory consumption
+is one of the major problems for the network building process. In the
+case temporary containers are used, they must of course be cleared
+before returning from importing.</p>
+<div class="admonition convention">
+<p class="admonition-title">Convention</p>
+<p>try to avoid static containers</p>
+</div>
+<div class="admonition convention">
+<p class="admonition-title">Convention</p>
+<p>clean static containers if used</p>
+</div>
+<h2 id="starting-to-parse">Starting to Parse<a class="headerlink" href="#starting-to-parse" title="Permanent link">&para;</a></h2>
+<p>All importers have a static method named "loadNetwork" which starts the
+parsing. This method is responsible for starting the import if the
+according options are set and to assure the read values are stored for
+further processing within the according netbuilding containers. For this
+purpose, it is necessary to have the options and the netbuilding
+structure be given to the importer, making the call have the following
+fingerprint:</p>
+<pre><code>static void loadNetwork(const OptionsCont &amp;oc, NBNetBuilder &amp;nb);
+</code></pre>
+<p>At first, this method asks whether the option which makes
+<a href="../../../netconvert/">netconvert</a> read a file of the according format
+is set and whether the set value is right. By now, this means only that
+a check whether the given file(s) really exist(s) is made, not whether
+it is well formatted or valid in any means. The method
+FileHelpers::exists(&lt;FILE&gt;) returns whether a given file is existing.</p>
+<div class="admonition convention">
+<p class="admonition-title">Convention</p>
+<p>all importer have a static member which checks whether the according option is set with a valid value</p>
+</div>
+<p>After the file has been checked for being existent, a parser is built
+and started.</p>
+<p>You may have noticed, that some of the import parsers allow to give more
+than one file, divided by ','. This is of a great help sometimes, still
+it is not mandatory. It is up to you to decide whether your importer
+should be able to handle several files or not.</p>
+<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
+<p>Different formats have different sources for being erroneous. In some
+cases, heuristics may have to be applied during the parsing. In all
+cases something is strange - and it is not strange each time a network
+from the given format is imported - a warning should be generated. This
+is done by calling the macro</p>
+<pre><code>WRITE_WARNING(&lt;TEXT&gt;);
+</code></pre>
+<p>If the odd behavior completely disallows further processing of the
+imported file, or in the case a read value is not in the right format (a
+string is read, though a floating point number was awaited, for
+example), a ProcessError should be thrown. The exception must have an
+information about the error, for example:</p>
+<pre><code>throw ProcessError(&quot;Number of lanes is &lt;0&quot;);
+</code></pre>
+<p>Yes, the decision whether a strange value is an error or a warning is
+sometimes difficult.</p>
+<div class="admonition convention">
+<p class="admonition-title">Convention</p>
+<p>throw a ProcessError in the case of errors</p>
+</div>
+<div class="admonition convention">
+<p class="admonition-title">Convention</p>
+<p>warn on strange behavior</p>
+</div>
+<div class="admonition convention">
+<p class="admonition-title">Convention</p>
+<p>both, a warning and an error exception must have an explanation about the reason supplied</p>
+</div>
+<h1 id="adding-read-values-to-the-netbuilding-containers">Adding read Values to the netbuilding Containers<a class="headerlink" href="#adding-read-values-to-the-netbuilding-containers" title="Permanent link">&para;</a></h1>
+<p>After the definition of a node, an edge, or anything else has been
+parsed, the according structure must be built and inserted into the
+according netbuilding container.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Road element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NBNode</td>
+<td>A node (intersection, junction)</td>
+</tr>
+<tr>
+<td>NBEdge</td>
+<td>An edge (road, street)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The following table shows which definitions are stored into which
+containers:</p>
+<p>In most cases, these methods return whether the addition was successful.
+If it was not, there probably is already an object with the same name.
+Normally, the imported networks we have dealt with so far did not
+contain duplicates - with the exception of edges which may
+bidirectional. In the case the object could not been added, you have to
+delete it explicitly. In the case your format is known to contain
+duplicates, you should ask whether a duplicate was already built and
+only if not, build the instance.</p>
+<div class="admonition convention">
+<p class="admonition-title">Convention</p>
+<p>try to avoid building and deleting of duplicates</p>
+</div>
+<h1 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">&para;</a></h1>
+<h1 id="submitting-the-code">Submitting the Code<a class="headerlink" href="#submitting-the-code" title="Permanent link">&para;</a></h1>
+<p>In the case you do not have a write access to the repository, we would
+be very happy if you could issue a pull request or send a patch against
+a recent version to <a href="../../../Contact/">the sumo-dev mailing list</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,567 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TabularOutputs/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Tabular Output - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generating-tabular-output" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tabular Output
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="generating-tabular-output">Generating tabular output<a class="headerlink" href="#generating-tabular-output" title="Permanent link">&para;</a></h1>
+<p>Almost all SUMO tools and applications consume and/or generate XML files
+which can be converted to other formats using some of the <a href="../Tools/Xml/">XML tools</a>.
+Starting with SUMO 1.24.0 there is experimental support for generating tabular outputs
+in CSV or <a href="https://parquet.apache.org/">Parquet</a> format directly from SUMO applications.</p>
+<p>The easiest way to do so is to give your output file a different name:</p>
+<pre><code>sumo -c my.sumocfg --fcd-output fcd.csv
+</code></pre>
+<p>will generate a CSV file instead of an XML file and</p>
+<pre><code>sumo -c my.sumocfg --fcd-output fcd.parquet
+</code></pre>
+<p>will generate Parquet output.</p>
+<p>Most of the time the mapping of XML to a tabular format is straight forward. For FCD output for instance the FCD file:</p>
+<pre><code class="language-xml">&lt;fcd-export xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;http://sumo.dlr.de/xsd/fcd_file.xsd&quot;&gt;
+    &lt;timestep time=&quot;0.00&quot;/&gt;
+    &lt;timestep time=&quot;1.00&quot;/&gt;
+    &lt;timestep time=&quot;2.00&quot;/&gt;
+...
+    &lt;timestep time=&quot;97.00&quot;/&gt;
+    &lt;timestep time=&quot;98.00&quot;/&gt;
+    &lt;timestep time=&quot;99.00&quot;/&gt;
+    &lt;timestep time=&quot;100.00&quot;&gt;
+        &lt;vehicle id=&quot;always_left.0&quot; x=&quot;5.10&quot; y=&quot;498.35&quot; angle=&quot;90.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;0.00&quot; pos=&quot;5.10&quot; lane=&quot;1fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;always_right.0&quot; x=&quot;501.65&quot; y=&quot;5.10&quot; angle=&quot;0.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;0.00&quot; pos=&quot;5.10&quot; lane=&quot;3fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;horizontal.0&quot; x=&quot;994.90&quot; y=&quot;501.65&quot; angle=&quot;270.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;0.00&quot; pos=&quot;5.10&quot; lane=&quot;2fi_0&quot; slope=&quot;0.00&quot;/&gt;
+    &lt;/timestep&gt;
+    &lt;timestep time=&quot;101.00&quot;&gt;
+        &lt;vehicle id=&quot;always_left.0&quot; x=&quot;7.02&quot; y=&quot;498.35&quot; angle=&quot;90.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;1.92&quot; pos=&quot;7.02&quot; lane=&quot;1fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;always_right.0&quot; x=&quot;501.65&quot; y=&quot;7.46&quot; angle=&quot;0.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;2.36&quot; pos=&quot;7.46&quot; lane=&quot;3fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;horizontal.0&quot; x=&quot;993.58&quot; y=&quot;501.65&quot; angle=&quot;270.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;1.32&quot; pos=&quot;6.42&quot; lane=&quot;2fi_0&quot; slope=&quot;0.00&quot;/&gt;
+    &lt;/timestep&gt;
+    &lt;timestep time=&quot;102.00&quot;&gt;
+        &lt;vehicle id=&quot;always_left.0&quot; x=&quot;10.66&quot; y=&quot;498.35&quot; angle=&quot;90.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;3.64&quot; pos=&quot;10.66&quot; lane=&quot;1fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;always_right.0&quot; x=&quot;501.65&quot; y=&quot;11.19&quot; angle=&quot;0.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;3.72&quot; pos=&quot;11.19&quot; lane=&quot;3fi_0&quot; slope=&quot;0.00&quot;/&gt;
+        &lt;vehicle id=&quot;horizontal.0&quot; x=&quot;990.38&quot; y=&quot;501.65&quot; angle=&quot;270.00&quot; type=&quot;DEFAULT_VEHTYPE&quot; speed=&quot;3.20&quot; pos=&quot;9.62&quot; lane=&quot;2fi_0&quot; slope=&quot;0.00&quot;/&gt;
+    &lt;/timestep&gt;
+...
+</code></pre>
+<p>will be mapped to the CSV</p>
+<pre><code class="language-csv">timestep_time;vehicle_id;vehicle_x;vehicle_y;vehicle_angle;vehicle_type;vehicle_speed;vehicle_pos;vehicle_lane;vehicle_edge;vehicle_slope
+100.00;always_left.0;5.10;498.35;90.00;DEFAULT_VEHTYPE;0.00;5.10;1fi_0;;0.00
+100.00;always_right.0;501.65;5.10;0.00;DEFAULT_VEHTYPE;0.00;5.10;3fi_0;;0.00
+100.00;horizontal.0;994.90;501.65;270.00;DEFAULT_VEHTYPE;0.00;5.10;2fi_0;;0.00
+101.00;always_left.0;7.02;498.35;90.00;DEFAULT_VEHTYPE;1.92;7.02;1fi_0;;0.00
+101.00;always_right.0;501.65;7.46;0.00;DEFAULT_VEHTYPE;2.36;7.46;3fi_0;;0.00
+101.00;horizontal.0;993.58;501.65;270.00;DEFAULT_VEHTYPE;1.32;6.42;2fi_0;;0.00
+102.00;always_left.0;10.66;498.35;90.00;DEFAULT_VEHTYPE;3.64;10.66;1fi_0;;0.00
+102.00;always_right.0;501.65;11.19;0.00;DEFAULT_VEHTYPE;3.72;11.19;3fi_0;;0.00
+102.00;horizontal.0;990.38;501.65;270.00;DEFAULT_VEHTYPE;3.20;9.62;2fi_0;;0.00
+...
+</code></pre>
+<p>That means the structure is completely flattened and all lines which do not have the data of the innermost element (the empty "timestep"s at the beginning)
+are omitted. All attributes of the outer elements ("timestep_time" in the example) are repeated in the inner elements.
+The column names are derived from the XML element name in conjunction with the attribute name (which is the same format the python tool xml2csv.py uses)
+but this can be configured (see below). Please note that the tabular format may contain more columns than the XML ("vehicle_edge" in the example above)
+to support different simulation configurations with the same format (for instance meso- and micro-simulation).</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Tabular output is still an experimental feature. Be prepared to loose data especially when getting warnings about unsupported formats.</p>
+</div>
+<p>The motivation for using CSV or Parquet is to get smaller files and better reading times for large outputs such as SUMO's
+<a href="../Simulation/Output/FCDOutput/">FCD output</a>. You can expect speedups of a factor up to 50 when reading those files
+from Parquet instead of XML using Python's pandas library (see <a href="#performance">performance</a>).</p>
+<p>To further configure the tabular outputs, the following options can be used:
+| Option  | Description  |
+|---|---|
+| <strong>--output.compression</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> | Defines the standard compression algorithm (currently only for parquet output: 'uncompressed', 'gzip', 'bz2', 'zstd'); <em>default:</em> <strong>uncompressed</strong> |
+| <strong>--output.format</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> | Defines the standard output format if not derivable from the file name ('xml', 'csv', 'parquet'); <em>default:</em> <strong>xml</strong> |
+| <strong>--output.column-header</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> | How to derive column headers from attribute names ('none', 'tag', 'auto', 'plain'); <em>default:</em> <strong>tag</strong> |
+| <strong>--output.column-separator</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> | Separator in CSV output; <em>default:</em> <strong>;</strong> |</p>
+<p>The <strong>--output.format</strong> option is only being used when the format cannot be derived from the filename so it is mostly useful when writing to stdout or to a socket
+or if for any reason you need give a file ending which is not "xml", "csv", "parquet", "xml.gz", or "csv.gz".</p>
+<p>For <strong>--output.compression</strong> please note that this will currently only be applied to parquet files and this is an internal compression algorithm applied to every column.
+So you will not be able to uncompress a parquet file with gzip compression using a gzip tool on the command line. Furthermore we do not support specifying different
+compression methods for different columns yet. Compression support may also depend on the way SUMO (or rather the Arrow / Parquet library it depends on) has been compiled.</p>
+<p>By default the column names are derived by connecting the element name with the attribute using "_". This can be changed by setting the option <strong>--output.column-header</strong> to one of the following values:
+  - 'none': no header is written in CSV (parquet still uses the default header)
+  - 'tag': the default behavior using element name and attribute name
+  - 'auto': use only the attribute name unless there is a name clash. If there is a clash use the 'tag' strategy for the clashing column names (except for the first one).
+  - 'plain': always use the attribute name only</p>
+<h1 id="parquet-data-types">Parquet data types<a class="headerlink" href="#parquet-data-types" title="Permanent link">&para;</a></h1>
+<p>For Parquet every column needs to have a data type. The current mapping is as follows:
+  - If the given <strong>--precision</strong> is 2 (the default) or less, 32 bit floats are used for all floating point values, higher precision values trigger the use of 64 bit (double) values.
+  - All coordinates in the plane ("x" and "y") use 64 bit floats (double).
+  - Time values use 64 bit floats unless <strong>--human-readable-time</strong> is enabled then it uses strings.
+  - All integers use 32 bit.
+  - Everything else uses UTF8 strings.</p>
+<h1 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h1>
+<p>Here are some initial benchmarks using FCD output for the acosta scenario:</p>
+<table>
+<thead>
+<tr>
+<th>format</th>
+<th style="text-align: right;">write</th>
+<th style="text-align: right;">size</th>
+<th style="text-align: right;">pandas.read</th>
+<th style="text-align: right;">parse_fast_nested</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fcd.xml</td>
+<td style="text-align: right;">12s</td>
+<td style="text-align: right;">357MB</td>
+<td style="text-align: right;">11s</td>
+<td style="text-align: right;">8s</td>
+</tr>
+<tr>
+<td>fcd.csv</td>
+<td style="text-align: right;">15s</td>
+<td style="text-align: right;">194MB</td>
+<td style="text-align: right;">2s</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>fcd.parquet</td>
+<td style="text-align: right;">13s</td>
+<td style="text-align: right;">74MB</td>
+<td style="text-align: right;">0.2s</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>fcd.xml.gz</td>
+<td style="text-align: right;">19s</td>
+<td style="text-align: right;">56MB</td>
+<td style="text-align: right;">7s</td>
+<td style="text-align: right;">9s</td>
+</tr>
+<tr>
+<td>fcd.csv.gz</td>
+<td style="text-align: right;">17s</td>
+<td style="text-align: right;">47MB</td>
+<td style="text-align: right;">3s</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h1>
+<p>Columns are currently determined by the first fully closed (innermost) element. This means the following structures are not supported:</p>
+<ul>
+<li>elements with optional attributes (i.e. edgeData defaults)</li>
+<li>different elements on the same level (i.e. elements <code>&lt;walk&gt;</code> and <code>&lt;ride&gt;</code> of a persons plan)</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

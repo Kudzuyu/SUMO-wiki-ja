@@ -1,0 +1,569 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Versioning/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>バージョン管理 - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#バージョン管理" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              バージョン管理
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumoのバージョン番号とその意味" class="md-nav__link">
+    <span class="md-ellipsis">
+      SUMOのバージョン番号とその意味
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SUMOのバージョン番号とその意味">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#リリースバージョン" class="md-nav__link">
+    <span class="md-ellipsis">
+      リリースバージョン
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#開発者向けバージョン" class="md-nav__link">
+    <span class="md-ellipsis">
+      開発者向けバージョン
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ネットワーク版" class="md-nav__link">
+    <span class="md-ellipsis">
+      ネットワーク版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traciバージョン" class="md-nav__link">
+    <span class="md-ellipsis">
+      TraCIバージョン
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#後方互換性" class="md-nav__link">
+    <span class="md-ellipsis">
+      後方互換性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="後方互換性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#入力" class="md-nav__link">
+    <span class="md-ellipsis">
+      入力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#処理" class="md-nav__link">
+    <span class="md-ellipsis">
+      処理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#出力" class="md-nav__link">
+    <span class="md-ellipsis">
+      出力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="バージョン管理">バージョン管理<a class="headerlink" href="#バージョン管理" title="Permanent link">&para;</a></h1>
+<h2 id="sumoのバージョン番号とその意味">SUMOのバージョン番号とその意味<a class="headerlink" href="#sumoのバージョン番号とその意味" title="Permanent link">&para;</a></h2>
+<p>SUMOのバージョン番号は多くの場所で確認できます。
+具体的には以下が挙げられます。</p>
+<ul>
+<li>リリースバージョン（<code>sumo -V</code>を実行した際のリリース情報、またはGUIアプリケーションの「バージョン情報」ダイアログで表示されるもの）。例：1.6.0</li>
+<li>開発者バージョン（ナイトリービルドや自己コンパイル版で同様の場所で確認可能）、例：v1_6_0+1520-cb474809f6</li>
+<li>ネットワークバージョン（すべての.net.xmlファイルの先頭で<code>&lt;net version="1.0" ...</code>として表示）</li>
+<li>TraCIまたはlibsumoの<a href="../TraCI/Control-related_commands/">getVersion</a>コマンドが返すTraCIバージョン</li>
+</ul>
+<h3 id="リリースバージョン">リリースバージョン<a class="headerlink" href="#リリースバージョン" title="Permanent link">&para;</a></h3>
+<p>SUMOは<a href="https://semver.org">セマンティックバージョニング</a>を大まかに採用しており、メジャーリリース（最初の数字が変更）、 マイナーリリース（2番目の数字が変更）、パッチまたはバグフィックスリリース（3番目の数字）を区別します。
+年間3～4回リリースを行い、ほとんどの場合マイナーリリースを配信します。
+変更量は比較的多く（連続リリース間で1000以上のコミットが発生）、 常に新たなマイナーバージョンを正当化する追加機能が存在します。
+比較的高い頻度とナイトリービルドの利用可能性のため、バグ修正リリースは マイナーリリースに深刻なバグが存在する場合にのみ提供されます。
+メジャーリリースは非常に稀（2001年以降1度のみ実施）であり、ほぼ政治的な決定事項です。</p>
+<p>サービスバージョン（例：1.6.0がリリース済みの状態で1.5.1をリリース）は行わず、別々のリリーストラックやブランチも維持しません。
+開発ラインは1本のみです。</p>
+<h3 id="開発者向けバージョン">開発者向けバージョン<a class="headerlink" href="#開発者向けバージョン" title="Permanent link">&para;</a></h3>
+<p>"v" に続き、直近のリリース番号 (例：1_6_0)、 プラス記号と前回のリリース以降の コミット数 (例：+1520) 、マイナス記号とGitHubメインブランチへの 最終コミットのハッシュ先頭文字列 (例: -cb474809f6) で構成されます。
+Pythonパッケージでは、PEP440 準拠のため "1.6.0.post1520" に変換されます。</p>
+<h3 id="ネットワーク版">ネットワーク版<a class="headerlink" href="#ネットワーク版" title="Permanent link">&para;</a></h3>
+<p>こちらも"メジャー.マイナー" 形式のバージョン番号であり、この形式が導入された時点のSUMOリリースを示すものです。
+<a href="../netconvert/">netconvert</a> ツールは通常、古いネットワークも解析可能 (少なくとも2015年0.25.0でネットワークのバージョン管理が導入された時点まで遡る) であり、現在の形式に変換します。</p>
+<h3 id="traciバージョン">TraCIバージョン<a class="headerlink" href="#traciバージョン" title="Permanent link">&para;</a></h3>
+<p>詳細は<a href="../TraCI/Control-related_commands/">関連コマンドの説明</a>を参照してください。</p>
+<h2 id="後方互換性">後方互換性<a class="headerlink" href="#後方互換性" title="Permanent link">&para;</a></h2>
+<h3 id="入力">入力<a class="headerlink" href="#入力" title="Permanent link">&para;</a></h3>
+<p>ネットワークやルートなどの主要入力ファイルは安定しており、通常は新規要素や属性を追加するのみです。</p>
+<h3 id="処理">処理<a class="headerlink" href="#処理" title="Permanent link">&para;</a></h3>
+<p>新機能の導入や動作変更時には、旧動作を復元するオプションを提供するように努めています (旧動作をバグと判断する場合を除く)。
+すべてのモデルは現在も非常に活発に開発中 (かつ主要開発は研究目的) であるため、異なるSUMOバージョン間で複雑な 交通状況において同一の挙動を得ることは困難な場合があります。
+シナリオを他者に提供する際は、想定実行環境のSUMOバージョンを明記することを強く推奨します。
+バージョン情報は全出力ファイルにも記載されます。</p>
+<h3 id="出力">出力<a class="headerlink" href="#出力" title="Permanent link">&para;</a></h3>
+<p>出力フォーマットも比較的安定していますが、車両挙動の変更や一般的なバグ修正の影響を受ける可能性があります。</p>
+<h3 id="gui">GUI<a class="headerlink" href="#gui" title="Permanent link">&para;</a></h3>
+<p>ユーザー体験の安定性に関しては最も注力が不足していますが、ユーザーを混乱させないよう常に努めています (本当です！)。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

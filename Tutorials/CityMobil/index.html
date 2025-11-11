@@ -1,0 +1,722 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tutorials/CityMobil/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>CityMobil - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-scenario" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CityMobil
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Scenario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network building
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-infrastructure-and-vehicle-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional infrastructure and vehicle types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traffic-demand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traffic Demand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-scenario-generation-and-the-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the scenario generation and the scenario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description-of-the-dispatching-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description of the dispatching algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-a-simple-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison with a simple bus
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>CityMobil</h1>
+
+<p>The <em>city_mobil</em> subdirectory in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/docs/tutorial contains the setup for
+a simulation of a parking lot using sumo with its taxi device to build a demand
+responsive transport service. Most of the files in the directory are for the
+<a href="../CityMobil_old/">old CityMobil tutorial</a>,
+for the new version only <code>createNetTaxi.py</code> is relevant.</p>
+<p>This tutorial explains how to build such a scenario programmatically by generating
+all input files with a (python) script we call <code>createNetTaxi.py</code>. The easiest way
+to follow it, is probably to read the existing code side by side with this tutorial
+since not every line will be covered here. Some basic knowledge of Python is assumed.</p>
+<p>Most parameters for the application (including the paths to the
+executables) are in <code>constants.py</code> and can be easily adapted there to modify the scenario.
+These parameters are written in ALL_CAPS below.</p>
+<p>At the start of our script we will import those constants as well as modifying the
+system path to be able to use the sumolib (this is optional if you installed sumolib via
+pip).</p>
+<pre><code class="language-python">... # more imports
+import os
+import sys
+from constants import PREFIX, DOUBLE_ROWS, ROW_DIST, SLOTS_PER_ROW, SLOT_WIDTH
+... # more constants
+if 'SUMO_HOME' in os.environ:
+    sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
+import sumolib
+</code></pre>
+<h2 id="the-scenario">The Scenario<a class="headerlink" href="#the-scenario" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../images/citymobil.png" title="CityMobil scenario" /></p>
+<p>The setup consists of a parking lot with access streets in several rows and parking
+areas on both sides of the road. Vehicles with passengers arrive on the main street
+in the lower left corner, drive to a parking lot where the passengers exit, and walk
+to a bus stop on the top road where an automated shuttle service brings them to their
+final destination in the upper right corner. The shuttle service will be demand driven,
+so it will only stop when passengers want to enter or leave.</p>
+<h2 id="network-building">Network building<a class="headerlink" href="#network-building" title="Permanent link">&para;</a></h2>
+<p>The main parameters of the network are the number of (double) rows the parking lot has
+(DOUBLE_ROWS), the number of slots per row (SLOTS_PER_ROW) and the distance of the rows
+(ROW_DIST). They define the layout assuming a fixed width of each slot.</p>
+<p>We generate a node file defining the positions of the junctions and an edge file
+specifying the connections between the nodes together with parameters such as the
+number of lanes and the allowed vehicle classes.</p>
+<p>We open the files as standard text files and use a helper function from the sumolib to
+write the XML header:</p>
+<pre><code class="language-python">nodes = open(&quot;%s.nod.xml&quot; % PREFIX, &quot;w&quot;)
+sumolib.xml.writeHeader(nodes, root=&quot;nodes&quot;)
+</code></pre>
+<p>This results in a header like this in our node file:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- generated on 2020-09-01 11:03:05.263997 by createNetTaxi.py v1_6_0+1864-1ecf301a37
+  options:
+--&gt;
+&lt;nodes xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/nodes_file.xsd&quot;&gt;
+</code></pre>
+<p>This gives complete information on how and when this file has been generated as well
+as a schema reference which allows for validating the input. This makes it easier to find mistakes
+such as typing errors in attribute names which could otherwise go unnoticed.</p>
+<p>After opening the edges file in the same way we can start writing the node and edge definitions.
+We first define a starting point for the insertion edge which is located 100m to the
+left of the first parking row and then one junction at the start of
+each double row:</p>
+<pre><code class="language-python">print('&lt;node id=&quot;in&quot; x=&quot;-100&quot; y=&quot;0&quot;/&gt;', file=nodes)
+for row in range(DOUBLE_ROWS):
+    nextNodeID = &quot;main%s&quot; % row
+    x = row * ROW_DIST
+    print('&lt;node id=&quot;%s&quot; x=&quot;%s&quot; y=&quot;0&quot;/&gt;' % (nextNodeID, x), file=nodes)
+</code></pre>
+<p>We can generate the edges in the same loop, which extends the code to:</p>
+<pre><code class="language-python">nodeID = &quot;main0&quot;
+print('&lt;node id=&quot;in&quot; x=&quot;-100&quot; y=&quot;0&quot;/&gt;', file=nodes)
+print('&lt;edge id=&quot;mainin&quot; from=&quot;in&quot; to=&quot;%s&quot; numLanes=&quot;2&quot;/&gt;' % nodeID, file=edges)
+for row in range(DOUBLE_ROWS):
+    nextNodeID = &quot;main%s&quot; % row
+    x = row * ROW_DIST
+    print('&lt;node id=&quot;%s&quot; x=&quot;%s&quot; y=&quot;0&quot;/&gt;' % (nextNodeID, x), file=nodes)
+    if row &gt; 0:
+        print('&lt;edge id=&quot;main%sto%s&quot; from=&quot;%s&quot; to=&quot;%s&quot; numLanes=&quot;2&quot;/&gt;' %
+              (row - 1, row, nodeID, nextNodeID), file=edges)
+    nodeID = nextNodeID
+</code></pre>
+<p>Note that we need to keep track of the id of the previous node and we need one
+edge less than nodes. The edge has almost no additional parameters except for the
+number of lanes, which is 2 to allow for overtaking vehicles which slowly turn
+into the lot.</p>
+<p>The code for the (cyber)bus edges follows the same pattern but is a little bit
+more involved because it needs also a street in the opposite direction since the busses
+need to turn around. Furthermore it needs a sidewalk (modelled as a lane for pedestrians).
+The code for generating a forward and back connection between two parking streets is:</p>
+<pre><code class="language-python">print(&quot;&quot;&quot;&lt;edge id=&quot;%s&quot; from=&quot;cyber%s&quot; to=&quot;cyber%s&quot; numLanes=&quot;3&quot; spreadType=&quot;center&quot;&gt;
+    &lt;lane index=&quot;0&quot; allow=&quot;pedestrian&quot; width=&quot;2.00&quot;/&gt;
+    &lt;lane index=&quot;1&quot; allow=&quot;taxi bus&quot;/&gt;
+    &lt;lane index=&quot;2&quot; allow=&quot;taxi bus&quot;/&gt;
+&lt;/edge&gt;&quot;&quot;&quot; % (edgeID, row - 1, row), file=edges)
+print(&quot;&quot;&quot;&lt;edge id=&quot;-%s&quot; from=&quot;cyber%s&quot; to=&quot;cyber%s&quot; numLanes=&quot;2&quot; spreadType=&quot;center&quot;&gt;
+    &lt;lane index=&quot;0&quot; allow=&quot;taxi bus&quot;/&gt;
+    &lt;lane index=&quot;1&quot; allow=&quot;taxi bus&quot;/&gt;
+&lt;/edge&gt;&quot;&quot;&quot; % (edgeID, row, row - 1), file=edges)
+</code></pre>
+<p>Note that the back leading streets do not have a side walk because the passengers are
+only allowed to enter and leave on the side of the parking lot.</p>
+<p>Now we only need the vertical running streets and we are done with the basic network.
+Here we do not need further nodes - we only connect the existing parts - but we need
+sidewalks again on both sides for the people to walk to the bus.</p>
+<pre><code class="language-python">for row in range(DOUBLE_ROWS):
+    print(&quot;&quot;&quot;&lt;edge id=&quot;road%s&quot; from=&quot;main%s&quot; to=&quot;cyber%s&quot; numLanes=&quot;2&quot;&gt;
+    &lt;lane index=&quot;0&quot; allow=&quot;pedestrian&quot; width=&quot;2.00&quot;/&gt;
+    &lt;lane index=&quot;1&quot; disallow=&quot;pedestrian&quot;/&gt;
+&lt;/edge&gt;&quot;&quot;&quot; % (row, row, row), file=edges)
+    print(&quot;&quot;&quot;&lt;edge id=&quot;-road%s&quot; from=&quot;cyber%s&quot; to=&quot;main%s&quot; numLanes=&quot;2&quot;&gt;
+    &lt;lane index=&quot;0&quot; allow=&quot;pedestrian&quot; width=&quot;2.00&quot;/&gt;
+    &lt;lane index=&quot;1&quot; disallow=&quot;pedestrian&quot;/&gt;
+&lt;/edge&gt;&quot;&quot;&quot; % (row, row, row), file=edges)
+</code></pre>
+<p>Now we can close the files and run netconvert:</p>
+<pre><code class="language-python">subprocess.call([sumolib.checkBinary('netconvert'),
+                 '-n', '%s.nod.xml' % PREFIX,
+                 '-e', '%s.edg.xml' % PREFIX,
+                 '-o', '%s.net.xml' % PREFIX])
+</code></pre>
+<p>You can already open the resulting network with netedit or sumo-gui
+and it will look like the picture above except for the parking slots and the
+bus stops which we add next.</p>
+<h2 id="additional-infrastructure-and-vehicle-types">Additional infrastructure and vehicle types<a class="headerlink" href="#additional-infrastructure-and-vehicle-types" title="Permanent link">&para;</a></h2>
+<p>For the bus stops and the parking areas we use a so called additional file
+which we open and write a header like above. The definition of the parking areas
+looks like this:</p>
+<pre><code class="language-python">for row in range(DOUBLE_ROWS):
+    print(&quot;&quot;&quot;
+    &lt;parkingArea id=&quot;ParkArea%s&quot; lane=&quot;road%s_1&quot;
+                 roadsideCapacity=&quot;%s&quot; angle=&quot;270&quot; length=&quot;8&quot;/&gt;
+    &lt;parkingArea id=&quot;ParkArea-%s&quot; lane=&quot;-road%s_1&quot;
+                 roadsideCapacity=&quot;%s&quot; angle=&quot;270&quot; length=&quot;8&quot;/&gt;&quot;&quot;&quot; %
+          (row, row, SLOTS_PER_ROW, row, row, SLOTS_PER_ROW), file=stops)
+</code></pre>
+<p>Here we use a small trick. Since sumo attaches the parking lot to the vehicle lane (which is not the rightmost) it
+would block (only visually but still) the sidewalk, so we enlarge the slots a little to 8m and define an
+angle which lets all vehicles park forward leaving some space for the pedestrians.</p>
+<p>For the bus stops the only small surprise is that we need one less than parking lots because they are only
+in between the parking roads.</p>
+<pre><code class="language-python">for row in range(DOUBLE_ROWS-1):
+    edgeID = &quot;cyber%sto%s&quot; % (row, row + 1)
+    print('    &lt;busStop id=&quot;%sstop&quot; lane=&quot;%s_1&quot; startPos=&quot;2&quot; endPos=&quot;12&quot;/&gt;' % (edgeID, edgeID), file=stops)
+</code></pre>
+<p>Now we could close the additional file and already load it to the see the infrastructure.</p>
+<p>We will however reuse the additional file to start defining the vehicles (at least the vehicle types).
+Most of the vehicle type definition is for the look (the color) and the vehicle class such that
+it will only use the right roads. The cyber car also has a taxi device to react to passenger requests.
+We will also define a regular bus to allow for comparisons with a regular bus service in further iterations
+of this tutorial.</p>
+<pre><code class="language-python">print((&quot;&quot;&quot;    &lt;vType id=&quot;car&quot; color=&quot;0.7,0.7,0.7&quot;/&gt;
+    &lt;vType id=&quot;ped_pedestrian&quot; vClass=&quot;pedestrian&quot; color=&quot;1,0.2,0.2&quot;/&gt;
+    &lt;vType id=&quot;cybercar&quot; vClass=&quot;taxi&quot; length=&quot;%s&quot; minGap=&quot;1&quot; guiShape=&quot;evehicle&quot; maxSpeed=&quot;%s&quot;
+           color=&quot;green&quot; emissionClass=&quot;HBEFA2/P_7_7&quot; personCapacity=&quot;%s&quot;&gt;
+        &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+    &lt;/vType&gt;
+    &lt;vType id=&quot;bus&quot; vClass=&quot;bus&quot; color=&quot;blue&quot; personCapacity=&quot;%s&quot;/&gt;
+&quot;&quot;&quot;) % (CYBER_LENGTH, CYBER_SPEED, CYBER_CAPACITY, BUS_CAPACITY), file=stops)
+</code></pre>
+<p>Now we are ready to define the traffic demand.</p>
+<h2 id="traffic-demand">Traffic Demand<a class="headerlink" href="#traffic-demand" title="Permanent link">&para;</a></h2>
+<p>We define the cybercars and the passenger vehicles in different route files. For the cybercars, a simple flow is enough:</p>
+<pre><code class="language-python">print(&quot;&quot;&quot;    &lt;flow id=&quot;c&quot; type=&quot;cybercar&quot; begin=&quot;50&quot; period=&quot;100&quot; number=&quot;%s&quot; line=&quot;taxi&quot;&gt;
+        &lt;route edges=&quot;cyberin cyber0to1&quot;/&gt;
+    &lt;/flow&gt;&quot;&quot;&quot; % (TOTAL_CAPACITY // CYBER_CAPACITY), file=routes)
+</code></pre>
+<p>The only special thing here is the line which uses the reserved string "taxi" to denote that this will be a demand driven
+transport system answering to special transportation requests. This specialty will also take care of the fact that
+the vehicle should not leave the scenario after it reached the end of its initial route but wait for new requests.</p>
+<p>The persons are slightly more complex as they arrive in their own car, drive to the parking lot, leave the car, walk to
+the bus stop and then enter the cybercar to got to their final destination. We do everything here in two nested loops
+because we want to fill all slots of all rows.</p>
+<pre><code class="language-python">for v in range(SLOTS_PER_ROW):
+        for idx in range(DOUBLE_ROWS):
+</code></pre>
+<p>Since the persons need to start in their car we need to define the cars first:</p>
+<pre><code class="language-python">print(&quot;&quot;&quot;    &lt;trip id=&quot;v%s.%s&quot; type=&quot;car&quot; depart=&quot;%s&quot; from=&quot;mainin&quot; to=&quot;road%s&quot;&gt;
+        &lt;stop parkingArea=&quot;ParkArea%s&quot; duration=&quot;1000&quot;/&gt;
+    &lt;/trip&gt;&quot;&quot;&quot; % (idx, v, v * period, idx, idx), file=routes)
+</code></pre>
+<p>Now we generate a random number of passengers per car each with her own plan:</p>
+<pre><code class="language-python">print(&quot;&quot;&quot;    &lt;person id=&quot;%sp%s&quot; type=&quot;ped_pedestrian&quot; depart=&quot;triggered&quot;&gt;
+        &lt;ride from=&quot;mainin&quot; to=&quot;%sroad%s&quot; lines=&quot;%s&quot;/&gt;
+        &lt;walk busStop=&quot;%s&quot;/&gt;
+        &lt;ride to=&quot;cyberout&quot; lines=&quot;taxi&quot;/&gt;
+    &lt;/person&gt;&quot;&quot;&quot; % (vehId, p, infix, idx, vehId, busStop), file=routes)
+</code></pre>
+<p>The first ride uses the private vehicle to the parking lot, then we walk to the
+bus stop and ride with the cybercar. The "triggered" depart is needed to let the
+person start in the car.</p>
+<p>That's already it! We sum up everything in writing a nice configuration file which binds together the network,
+the additional file (for stops and parking lots), the cyber-route file and the passenger route file.</p>
+<pre><code class="language-python">print(&quot;&quot;&quot;&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;%s.net.xml&quot;/&gt;
+        &lt;route-files value=&quot;%s_cyber.rou.xml,%s_demand%02i.rou.xml&quot;/&gt;
+        &lt;additional-files value=&quot;%s.add.xml&quot;/&gt;
+        &lt;no-step-log value=&quot;True&quot;/&gt;
+        &lt;time-to-teleport value=&quot;0&quot;/&gt;
+        &lt;device.taxi.dispatch-algorithm value=&quot;routeExtension&quot;/&gt;
+    &lt;/input&gt;
+&lt;/configuration&gt;&quot;&quot;&quot; % (PREFIX, PREFIX, PREFIX, period, PREFIX), file=config)
+</code></pre>
+<p>One thing to note here is the usage of the dispatch algorithm which will determine how the cybercars choose
+which request to serve next.</p>
+<h2 id="running-the-scenario-generation-and-the-scenario">Running the scenario generation and the scenario<a class="headerlink" href="#running-the-scenario-generation-and-the-scenario" title="Permanent link">&para;</a></h2>
+<p>Now finally we can run by double clicking the script or if you are on a Linux / MacOS console:</p>
+<pre><code>./createNetTaxi.py
+</code></pre>
+<p>It will create configuration files for the different demands
+which you can open and run with sumo-gui (again double click or from the console):</p>
+<pre><code>sumo-gui park05_cyber.sumocfg
+</code></pre>
+<p>Feel free to change the layout of the parking lot and the behavior
+(speed, capacity etc.) of the vehicles. Whenever you edit <code>constants.py</code>
+or <code>createNetTaxi.py</code>, remember to re-execute <code>createNetTaxi.py</code> before running the scenario.</p>
+<h2 id="description-of-the-dispatching-algorithm">Description of the dispatching algorithm<a class="headerlink" href="#description-of-the-dispatching-algorithm" title="Permanent link">&para;</a></h2>
+<p>TBD</p>
+<h2 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h2>
+<p>TBD</p>
+<h2 id="comparison-with-a-simple-bus">Comparison with a simple bus<a class="headerlink" href="#comparison-with-a-simple-bus" title="Permanent link">&para;</a></h2>
+<p>TBD</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

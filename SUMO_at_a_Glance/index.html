@@ -10,26 +10,29 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/SUMO_at_a_Glance/">
       
+      
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>SUMO早分かり - SUMO wiki ja</title>
+        <title>SUMO概要 - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sumo早分かり" class="md-skip">
+        <a href="#sumo概要" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -103,47 +107,57 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SUMO早分かり
+              SUMO概要
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href=".." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -299,50 +356,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sumoについて" class="md-nav__link">
-    SUMOについて
+  <a href="#about" class="md-nav__link">
+    <span class="md-ellipsis">
+      About
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#特徴" class="md-nav__link">
-    特徴
+  <a href="#機能" class="md-nav__link">
+    <span class="md-ellipsis">
+      機能
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#使用例" class="md-nav__link">
-    使用例
+    <span class="md-ellipsis">
+      使用例
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#含まれるアプリケーション" class="md-nav__link">
-    含まれるアプリケーション
+    <span class="md-ellipsis">
+      含まれるアプリケーション
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#歴史" class="md-nav__link">
-    歴史
+    <span class="md-ellipsis">
+      歴史
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ソフトウェアデザイン原則" class="md-nav__link">
-    ソフトウェアデザイン原則
+  <a href="#ソフトウェア設計基準" class="md-nav__link">
+    <span class="md-ellipsis">
+      ソフトウェア設計基準
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#関係者" class="md-nav__link">
-    関係者
+  <a href="#貢献者と参加者" class="md-nav__link">
+    <span class="md-ellipsis">
+      貢献者と参加者
+    </span>
   </a>
   
 </li>
@@ -355,16 +426,18 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="sumo早分かり">SUMO早分かり<a class="headerlink" href="#sumo早分かり" title="Permanent link">&para;</a></h1>
+
+<h1 id="sumo概要">SUMO概要<a class="headerlink" href="#sumo概要" title="Permanent link">&para;</a></h1>
 <p><a href="https://sumo.dlr.de/wiki/Sumo_at_a_Glance">原文ページ</a></p>
-<h2 id="sumoについて">SUMOについて<a class="headerlink" href="#sumoについて" title="Permanent link">&para;</a></h2>
-<p>"<strong>S</strong>imulation of <strong>U</strong>rban <strong>MO</strong>bility" または"SUMO"は、オープンソースで微視的かつマルチモーダルな道路交通シミュレーションです。
+<h2 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h2>
+<p>"<strong>S</strong>imulation of <strong>U</strong>rban <strong>MO</strong>bility" (SUMO) は、オープンソースで微視的かつマルチモーダルな道路交通シミュレーションです。
 SUMOは与えられた道路ネットワークにおいて車一台ごとの動きから構成された交通流がどのようなものかシミュレーションすることができます。
 シミュレーションでは交通整理に関する広範なトピックを扱うことができます。
 SUMOは純粋に微視的です。
@@ -373,215 +446,209 @@ SUMOは純粋に微視的です。
 <p>SUMOパッケージをダウンロードしたら、SUMOの他のアプリケーションも含まれていることに注意してください。
 これらのアプリケーションはSUMOで使う道路ネットワークや交通需要のデータをインポート/準備するのに使われます。
 詳細は<a href="#含まれるアプリケーション">#含まれるアプリケーション</a>を参照してください。</p>
-<h2 id="特徴">特徴<a class="headerlink" href="#特徴" title="Permanent link">&para;</a></h2>
+<p>「<strong>S</strong>imulation of <strong>U</strong>rban <strong>MO</strong>bility」（略称「SUMO」）は、オープンソースの微視的マルチモーダル交通シミュレーションです。
+車両一台ずつから成る交通需要が、与えられた道路ネットワーク上をどのように移動するかをシミュレートできます。
+このシミュレーションは、広範な交通管理課題の検討を可能にします。
+純粋に微視的アプローチを採用しており、各車両が明示的にモデル化され、独自の経路を持ち、ネットワーク内を個別に移動します。
+シミュレーションはデフォルトで決定論的ですが<a href="../Simulation/Randomness/">ランダム性の導入</a>に関する様々なオプションが用意されています。</p>
+<p>SUMOパッケージには、SUMO以外にも追加のアプリケーションが含まれています。
+これらのアプリケーションは、SUMOで使用するための道路ネットワークや需要データのインポート/準備に使用されます。
+より詳細なリストについては<a href="#included_applications">付属アプリケーション</a>を参照してください。</p>
+<h2 id="機能">機能<a class="headerlink" href="#機能" title="Permanent link">&para;</a></h2>
 <ul>
-<li>交通シミュレーションを構築し実行するのに必要な全てのアプリケーションが含まれています(ネットワークと経路のインポート、DUA、シミュレーション)</li>
-<li>シミュレーション<ul>
-<li>連続空間かつ離散時間での車の動き</li>
-<li>複数の自動車の種類</li>
-<li>車線変更のある複数車線道路</li>
-<li>異なった右側通行ルールや信号</li>
-<li>高速なopenGL GUI</li>
-<li>数万単位の枝(道路)を含むネットワークの制御</li>
-<li>高速起動(1GHzマシンにおいて10万台までの車を1秒以内に更新)</li>
-<li>起動中の他のアプリケーションとの相互利用性</li>
-<li>ネットワーク範囲での道路、車、検知器基準の出力\</li>
-<li>人基準のマルチモーダル移動のサポート</li>
-</ul>
-</li>
-<li>ネットワークインポート<ul>
-<li>VISUM, Vissm, Shapefiles, OSM, RoboCup, MATsim, OpenDRIVE, XML-Descriptionsのインポート</li>
-<li>ヒューリスティクスによる欠損値の決定</li>
-</ul>
-</li>
-<li>ルーティング<ul>
-<li>微視的経路 - 車一台ごとの経路設定</li>
-<li>様々な動的ユーザー割り当て</li>
-</ul>
-</li>
-<li>高い可搬性<ul>
-<li>C++の標準とポータブルなライブラリのみを使用</li>
-<li>Windowsと主要なLinuxディストリビューション用のパッケージ</li>
-</ul>
-</li>
-<li>XMLデータのみを扱うことによる高い相互運用性</li>
-<li>オープンソース(<a href="https://eclipse.org/legal/epl-v20.html">EPL</a>)</li>
+<li>交通シミュレーションの準備と実行に必要な全アプリケーションを包含 （ネットワーク・経路インポート、DUA、シミュレーション）</li>
+<li>シミュレーション</li>
+<li>連続空間・離散時間の車両移動</li>
+<li>多様な車両タイプ</li>
+<li>車線変更可能な複数車線道路</li>
+<li>様々な優先通行権ルール、信号機</li>
+<li>高速なOpenGL GUI</li>
+<li>数万のエッジ（道路）からなるネットワークを管理</li>
+<li>高速実行（1GHzマシンで最大100,000車両更新/秒）</li>
+<li>実行時の他アプリケーションとの相互運用性</li>
+<li>実行時における他アプリケーションとの相互運用性</li>
+<li>ネットワーク全体、エッジベース、車両ベース、検知器ベースの出力</li>
+<li>人ベースのインターモーダル移動をサポート</li>
+<li>ネットワークインポート</li>
+<li>VISUM、Vissim、シェープファイル、OSM、RoboCup、MATsim、 OpenDRIVE、XML記述のインポート</li>
+<li>欠損値はヒューリスティックにより決定</li>
+<li>ルート設定</li>
+<li>微視的ルート - 各車両が独自のルートを持つ</li>
+<li>様々な動的ユーザー割り当てアルゴリズム</li>
+<li>高い移植性</li>
+<li>標準C++と移植性のあるライブラリのみを使用</li>
+<li>Windowsおよび主要Linuxディストリビューション向けパッケージが存在</li>
+<li>XMLデータのみの使用による高い相互運用性</li>
+<li>オープンソース（<a href="https://www.eclipse.org/legal/epl-2.0/">EPL 2.0</a>）</li>
 </ul>
 <h2 id="使用例">使用例<a class="headerlink" href="#使用例" title="Permanent link">&para;</a></h2>
-<p>2001年からSUMOは国家的、国際的な研究<a href="">プロジェクト</a> で使われてきました。
-アプリケーションには以下に示すものが含まれています。</p>
+<p>2001年以降、SUMOパッケージは複数の国内および国際的な<a href="../Other/Projects/">研究プロジェクト</a>で利用されてきました。
+主な応用例は以下の通りです：</p>
 <ul>
-<li>交通信号評価</li>
-<li>経路選択と再選択</li>
+<li>交通信号機の評価</li>
+<li>経路選択と再設定</li>
 <li>交通監視手法の評価</li>
-<li><a href="https://sumo.dlr.de/wiki/Topics/V2X">車間通信シミュレーション(英語)</a></li>
+<li><a href="../Topics/V2X/">車載通信のシミュレーション</a></li>
 <li>交通予測</li>
 </ul>
 <h2 id="含まれるアプリケーション">含まれるアプリケーション<a class="headerlink" href="#含まれるアプリケーション" title="Permanent link">&para;</a></h2>
-<p>パッケージには以下のアプリケーションが含まれています。</p>
+<p>本パッケージには以下が含まれます：</p>
 <table>
 <thead>
 <tr>
-<th>名前</th>
-<th>説明</th>
+<th>アプリケーション名</th>
+<th>概要</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>SUMO</td>
-<td>可視化のない微視的シミュレーション(コマンドラインアプリケーション)</td>
+<td><a href="../sumo/">sumo</a></td>
+<td>可視化なしの微視的シミュレーション；コマンドラインアプリケーション</td>
 </tr>
 <tr>
-<td>SUMO-GUI</td>
-<td>可視化のある微視的シミュレーション</td>
+<td><a href="../sumo-gui/">sumo-gui</a></td>
+<td>グラフィカルユーザーインターフェース付き微視的シミュレーション</td>
 </tr>
 <tr>
-<td>NETCONVERT</td>
-<td>ネットワークインポート/生成器: 異なるフォーマットから道路ネットワークを読みこみ、SUMOフォーマットに変換する</td>
+<td><a href="../netconvert/">netconvert</a></td>
+<td>ネットワークインポーターおよびジェネレーター；様々な形式の道路ネットワークを読み込みSUMO形式に変換</td>
 </tr>
 <tr>
-<td>NETEDIT</td>
+<td><a href="../Netedit/">netedit</a></td>
 <td>グラフィカルネットワークエディタ</td>
 </tr>
 <tr>
-<td>NETGENERATE</td>
-<td>SUMO用の抽象ネットワークを生成する</td>
+<td><a href="../netgenerate/">netgenerate</a></td>
+<td>SUMOシミュレーション用の抽象ネットワークを生成</td>
 </tr>
 <tr>
-<td>DUAROUTER</td>
-<td>ネットワーク中で最速の経路を計算する</td>
+<td><a href="../duarouter/">duarouter</a></td>
+<td>様々な需要記述形式をインポートし、ネットワーク上の最速経路を計算。DUA（二項分布モデル）を実行</td>
 </tr>
 <tr>
-<td>JTRROUTER</td>
-<td>交差点での右左折の確率を元にした経路計算</td>
+<td><a href="../jtrrouter/">jtrrouter</a></td>
+<td>交差点方向転換率を用いた経路計算</td>
 </tr>
 <tr>
-<td>DFROUTER</td>
-<td>検知器基準の経路計算</td>
+<td><a href="../dfrouter/">dfrouter</a></td>
+<td>誘導ループ計測値からの経路計算</td>
 </tr>
 <tr>
-<td>MAROUTER</td>
-<td>微視的割り当ての実行</td>
+<td><a href="../marouter/">marouter</a></td>
+<td>マクロ的割当を実施</td>
 </tr>
 <tr>
-<td>OD2TRIPS</td>
-<td>O/D行列を単一の車の移動に分解</td>
+<td><a href="../od2trips/">od2trips</a></td>
+<td>出入地マトリクスを単一車両の移動に分解</td>
 </tr>
 <tr>
-<td>POLYCONVERT</td>
-<td>"points of interest"とそのポリゴンをインポートし、<a href="">SUMO-GUI</a>での可視化用に変換</td>
+<td><a href="../polyconvert/">polyconvert</a></td>
+<td>各種フォーマットの関心地点・ポリゴンをインポートし、<a href="../sumo-gui/">sumo-gui</a> で可視化可能な記述に変換</td>
 </tr>
 <tr>
-<td>ACTIVITYGEN</td>
-<td>モデル化された人口の交通利用希望から需要を生成</td>
+<td><a href="../activitygen/">activitygen</a></td>
+<td>モデル化された人口の移動意向に基づく需要を生成</td>
 </tr>
 <tr>
-<td>EMISSIONSMAP</td>
-<td>排気ガスマップの作成</td>
+<td><a href="../Tools/Emissions/#emissionsmap">emissionsMap</a></td>
+<td>排出量マップを生成</td>
 </tr>
 <tr>
-<td>EMISSIONSDRIVINGCYCLE</td>
-<td>与えられた走行サイクルでの排気ガス量の計算</td>
+<td><a href="../Tools/Emissions/#emissionsdrivingcycle">emissionsDrivingCycle</a></td>
+<td>指定された走行サイクルに基づく排出量を計算</td>
 </tr>
 <tr>
-<td>Additional Tools</td>
-<td>大きなアプリケーションを作る必要のないタスクがいくつかあります。そうした問題に関するいくつかの解法がこれらのツールでカバーされています。</td>
+<td><a href="../Tools/">追加ツール</a></td>
+<td>大規模なアプリケーションを記述する必要がないタスクが存在します。これらのツールは様々な問題に対する複数の解決策をカバーしています。</td>
 </tr>
 </tbody>
 </table>
-<p>いくつかのグループが彼らの仕事の一環としてSUMOパッケージを拡張しコードを申請しています。
-これらのリリースの一部ではない場合、こうした貢献はしばしばあまりテストされておらず、古くなっているでしょう。
-以下の貢献が含まれます。</p>
+<p>複数の関係者が作業中にSUMOパッケージを拡張し
+コードを提出しています。これらの貢献は通常テストされておらず、古くなっている可能性があります。全ての貢献のリストは<a href="../Contributed/">こちら</a>で確認できます。</p>
 <h2 id="歴史">歴史<a class="headerlink" href="#歴史" title="Permanent link">&para;</a></h2>
-<p>SUMOの開発は2000年にスタートしました。
-オープンソースの微視的道路交通シミュレーションを開発した主な理由は、交通研究コミュニティを自分たちのアルゴリズムを実装して評価できる道具でサポートするためです。
-ツールは道路ネットワークや交通需要、交通制御の実装を追加で必要とせず、それだけで完全な交通シミュレーションが可能です。
-こうしたツールを提供することで、DLRは (i)共通する基盤とモデルベースを用いて、実装されたアルゴリズムが比較しやすいように (ii)ほかのコントリビュータへの追加的な助けられる という二つがなされることを願っています。</p>
-<h2 id="ソフトウェアデザイン原則">ソフトウェアデザイン原則<a class="headerlink" href="#ソフトウェアデザイン原則" title="Permanent link">&para;</a></h2>
-<p>二つの主なデザインゴールが目標でした: ソフトウェアは高速でかつポータブルである。
-この目的のため、最初期のソフトはコマンドラインからのみ動くように開発されていました。グラフィカルインターフェースはなく、全てのパラメータは手作業で設定する必要がありました。</p>
-<p>また、これらのゴールのためにソフトウェアはいくつかの部分に分割されました。
-それぞれの部分に明確な目的があり、独立に実行できなければなりません。
-このことはSUMOを他のシミュレーションパッケージと異なったものにしており、例えば動的ユーザー割り当ては外部のアプリケーションではなくSUMO自身によって行なわれています。
-分割によってパッケージ内の個々のアプリケーションが全てを行なうモノリシックなアプリケーションに比べて小さくなったことにより拡張が簡単になりました。</p>
-<h2 id="関係者">関係者<a class="headerlink" href="#関係者" title="Permanent link">&para;</a></h2>
+<p>SUMOの開発は2000年に始まりました。
+オープンソースの微視的道路交通シミュレーションを開発した主な理由は、交通研究コミュニティに対し独自のアルゴリズムを実装・評価できるツールを提供するためでした。
+このツールは、完全な交通シミュレーションを実現するために必要な全ての要素、例えば道路ネットワーク、需要、交通制御を扱う手法の実装や設定などについては考慮する必要がありません。
+このようなツールを提供することでDLRはi)共通のアーキテクチャとモデル基盤を使用することで実装されたアルゴリズムの比較可能性を高め、ii)他の貢献者からの追加的な支援を得ることを目指しました。</p>
+<h2 id="ソフトウェア設計基準">ソフトウェア設計基準<a class="headerlink" href="#ソフトウェア設計基準" title="Permanent link">&para;</a></h2>
+<p>主要な設計目標は二つありました：高速であること、移植性を持つこと。
+このため、最初のバージョンはコマンドラインからのみ実行されるように開発されました——当初はグラフィカルインターフェースは提供されず、全てのパラメータを手動で入力する必要がありました．
+これにより遅延を招く可視化処理を省略し、実行速度を向上させることが目的でした。
+また、これらの目標に基づき、ソフトウェアは複数の部分に分割されあました。
+各コンポーネントは特定の目的を持ち、個別に実行する必要があります．
+この点がSUMOを他のシミュレーションパッケージと異なる点であり、 例えば動的なユーザー割り当てはシミュレーション本体内で実行され、 本ソフトのように外部アプリケーション経由ではない。
+この分割によりパッケージ内の各アプリケーションを拡張しやすくなる。
+なぜなら各コンポーネントは全てを処理する単一アプリケーションよりも規模が小さいためである。
+また、複雑で重荷となるデータ構造を使用する代わりに、現在の目的に合わせて調整された高速なデータ構造を各 で使用することが可能になります。
+それでも、このことは他のシミュレーションパッケージと比較して、SUMOの使用を少し不便なものにしています。
+まだやるべきことが残っているため、現時点では統合されたアプローチに向けた再設計は考えていません。</p>
+<h2 id="貢献者と参加者">貢献者と参加者<a class="headerlink" href="#貢献者と参加者" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr class="header">
-<th><p>組織</p></th>
+<th><p>所属機関</p></th>
 <th><p>氏名</p></th>
-<th><p>項目/貢献</p></th>
+<th><p>担当分野 / 貢献内容</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><figure>
-<img src="../images/Zaik_small.gif" alt="Zaik_small.gif" />
+<img src="images/Zaik_small.gif" alt="Zaik_small.gif" />
 </figure></td>
 <td><p>Christian Rössel</p></td>
-<td><p>初期の微視的シミュレーションのコア、初期の検知器の実装</p></td>
+<td><p>初期微視的シミュレーションコア; 初期検出器実装</p></td>
 </tr>
 <tr class="even">
 <td rowspan="11"><figure>
-<img src="../images/Dlr_small.gif" title="dlr_small.gif" alt="" />
+<img src="images/Dlr_small.gif" title="dlr_small.gif" alt="" />
 </figure></td>
 <td><p>Peter Wagner</p></td>
-<td><p>モデル、組織、精神的リーダー</p></td>
+<td><p>モデル、組織、精神的指導</p></td>
 </tr>
 <tr class="odd">
 <td><p>Daniel Krajzewicz</p></td>
 <td><p>全般</p></td>
-<td></td>
 </tr>
 <tr class="even">
 <td><p>Julia Ringel</p></td>
-<td><p>交通信号信号 &amp; WAUT のアルゴリズム</p></td>
-<td></td>
+<td><p>信号機 &amp; WAUT アルゴリズム</p></td>
 </tr>
 <tr class="odd">
 <td><p>Eric Nicolay</p></td>
 <td><p>全般</p></td>
-<td></td>
 </tr>
 <tr class="even">
 <td><p>Michael Behrisch</p></td>
 <td><p>全般</p></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td><p>Yun-Pang Wang</p></td>
-<td><p>ユーザー割り当て</p></td>
-<td></td>
+<td><p>利用者割り当て</p></td>
 </tr>
 <tr class="even">
 <td><p>Danilot Teta Boyom</p></td>
-<td><p>車両通信モデル (ソースからは削除済み)</p></td>
-<td></td>
+<td><p>車両間通信モデル（ソースから削除済み）</p></td>
 </tr>
 <tr class="odd">
 <td><p>Sascha Krieg</p></td>
-<td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Lena Kalleske</p></td>
 <td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td><p>Laura Bieker</p></td>
 <td><p>テスト、Pythonスクリプト</p></td>
-<td></td>
 </tr>
 <tr class="even">
 <td><p>Jakob Erdmann</p></td>
-<td><p>ネットワークインポート、<a href="netedit.html" title="wikilink">netedit</a></p></td>
-<td></td>
+<td><p>ネットワークインポート、<a href="netedit.md">netedit</a></p></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td><p>Andreas Gaubatz</p></td>
-<td></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -589,19 +656,17 @@ SUMOは純粋に微視的です。
 <td></td>
 </tr>
 <tr class="odd">
-<td rowspan="3"><p>Uni Lübeck</p></td>
+<td rowspan="3"><p>リューベック大学 (Uni Lübeck)</p></td>
 <td><p>Axel Wegener</p></td>
-<td><p>TraCI初期化器</p></td>
+<td><p>TraCI 発起人</p></td>
 </tr>
 <tr class="even">
 <td><p>Thimor Bohn</p></td>
 <td><p>TraCI</p></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td><p>Friedemann Wesner</p></td>
 <td><p>TraCI</p></td>
-<td></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -614,83 +679,94 @@ SUMOは純粋に微視的です。
 <td></td>
 </tr>
 <tr class="even">
-<td rowspan="4"><p><img src="../images/Uni_erlangen.png" title="fig:uni_erlangen.png" width="149" alt="uni_erlangen.png" /><br />
+<td rowspan="4"><p><img src="images/Uni_erlangen.png" title="fig:uni_erlangen.png" width="149" alt="uni_erlangen.png" /><br />
 <br />
-<img src="../images/Uibk-small.png" title="fig:uibk-small.png" width="64" alt="uibk-small.png" /><br />
+<img src="images/Uibk-small.png" title="fig:uibk-small.png" width="64" alt="uibk-small.png" /><br />
 <br />
-<img src="../images/Logo_cmu.png" title="fig:logo_cmu.png" width="100" alt="logo_cmu.png" /><br />
+<img src="images/Logo_cmu.png" title="fig:logo_cmu.png" width="100" alt="logo_cmu.png" /><br />
 <br />
-<img src="../images/Logo_ucla.png" title="fig:logo_ucla.png" width="100" alt="logo_ucla.png" /></p></td>
+<img src="images/Logo_ucla.png" title="fig:logo_ucla.png" width="100" alt="logo_ucla.png" /></p></td>
 <td><p>Christoph Sommer</p></td>
-<td><p><a href="http://veins.car2x.org/">Veins</a>とのTraCIマージ, Subscriptionインターフェース、その他</p></td>
+<td><p>TraCIと<a href="https://veins.car2x.org/">Veins</a>の統合、サブスクリプションインターフェース、その他</p></td>
 </tr>
 <tr class="odd">
 <td><p>David Eckhoff</p></td>
-<td><p>TraCI、決定的シミュレーションの振舞い</p></td>
-<td></td>
+<td><p>TraCI、決定論的シミュレーション動作</p></td>
 </tr>
 <tr class="even">
 <td><p>Falko Dressler</p></td>
 <td><p>TraCI</p></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td><p>Tobias Mayer</p></td>
-<td><p>交通モデル抽象化, IDM model port</p></td>
-<td></td>
+<td><p>交通モデル抽象化、IDMモデルポート</p></td>
 </tr>
 <tr class="even">
-<td><p>HU Berlin</p></td>
+<td><p>ベルリン工科大学 (HU Berlin)</p></td>
 <td><p>Matthias Heppner</p></td>
 <td><p>ユニットテスト</p></td>
 </tr>
 <tr class="odd">
 <td rowspan="3"><figure>
-<img src="../images/Tum-logo.png" title="tum-logo.png" alt="" />
+<img src="images/Tum-logo.png" title="tum-logo.png" alt="" />
 </figure></td>
 <td><p>Piotr Woznica</p></td>
-<td><p><a href="activitygen.html" title="wikilink">activitygen</a></p></td>
+<td><p><a href="activitygen.md">activitygen</a></p></td>
 </tr>
 <tr class="even">
 <td><p>Walter Bamberger</p></td>
-<td><p>Development of <a href="activitygen.html" title="wikilink">activitygen</a> as a base for the evaluation of trust scenarios in VANETs. The work is part of the project <a href="http://www.ldv.ei.tum.de/fidens/">Fidens: Trust between Cooperative Systems</a> featuring trusted probabilistic knowledge processing in vehicular networks.</p></td>
-<td></td>
+<td><p>VANET における信頼シナリオの評価基盤としての <a href="activitygen.md">activitygen</a> の開発。この作業は、自動車ネットワークにおける信頼性の高い確率的知識処理を特徴とするプロジェクト <a href="https://www.ldv.ei.tum.de/fidens/">Fidens: 協調システム間の信頼</a> の一部です。</p></td>
 </tr>
 <tr class="odd">
 <td><p>Matthew Fullerton</p></td>
 <td></td>
-<td></td>
 </tr>
 <tr class="even">
-<td><p>IIT Bombay, India</p></td>
+<td><p>インド工科大学ボンベイ校 (IIT Bombay, India)</p></td>
 <td><p>Ashutosh Bajpai</p></td>
-<td><p>randomDepart.py, a python script to generate the real traffic pattern by exponential Distribution.</p></td>
+<td><p>randomDepart.py、指数分布によって実際の交通パターンを生成する Python スクリプト。</p></td>
 </tr>
 <tr class="odd">
 <td><figure>
-<img src="../images/Torino_small.gif" title="torino_small.gif" alt="" />
+<img src="images/Torino_small.gif" title="torino_small.gif" alt="" />
 </figure></td>
 <td><p>Enrico Gueli</p></td>
-<td><p><a href="http://sourceforge.net/projects/traci4j/">TraCI4J</a></p></td>
+<td><p><a href="https://sourceforge.net/projects/traci4j/">TraCI4J</a></p></td>
 </tr>
 <tr class="even">
 <td></td>
 <td><p>Leontios Papaleontiou</p></td>
-<td><p><a href="Contributed/SUMO_Traffic_Modeler.html" title="wikilink">Contributed/SUMO Traffic Modeler</a></p></td>
+<td><p><a href="Contributed/SUMO_Traffic_Modeler.md">Contributed/SUMO Traffic Modeler</a></p></td>
 </tr>
 <tr class="odd">
 <td><figure>
-<img src="../images/Wroclaw_university_small.jpg" title="Wroclaw_university_small.jpg" alt="" />
+<img src="images/Wroclaw_university_small.jpg" title="Wroclaw_university_small.jpg" alt="" />
 </figure></td>
 <td><p>Karol Stosiek</p></td>
-<td><p>ドキュメント、ネットワーク生成</p></td>
+<td><p>ドキュメント作成、ネットワーク構築</p></td>
 </tr>
 </tbody>
 </table>
 
-              
-            </article>
-          </div>
+<p>その他多くの<a href="https://github.com/eclipse/sumo/blob/master/AUTHORS">貢献者</a>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -717,10 +793,14 @@ SUMOは純粋に微視的です。
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

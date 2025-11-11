@@ -10,26 +10,29 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Basics/Using_the_Command_Line_Applications/">
       
+      
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>コマンドラインの使いかた - SUMO wiki ja</title>
+        <title>Using the Command Line Applications - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#コマンドラインの使いかた" class="md-skip">
+        <a href="#using-sumo-applications-from-the-command-line" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -103,47 +107,57 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              コマンドラインの使いかた
+              Using the Command Line Applications
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -292,295 +349,425 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#コマンドラインからsumoアプリケーションを使う" class="md-nav__link">
-    コマンドラインからSUMOアプリケーションを使う
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#オプション" class="md-nav__link">
-    オプション
-  </a>
-  
-    <nav class="md-nav" aria-label="オプション">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#コマンドラインでのオプション設定" class="md-nav__link">
-    コマンドラインでのオプション設定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#オプションの値の型" class="md-nav__link">
-    オプションの値の型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#設定ファイル" class="md-nav__link">
-    設定ファイル
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#一般的なオプション" class="md-nav__link">
-    一般的なオプション
-  </a>
-  
-    <nav class="md-nav" aria-label="一般的なオプション">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#通知オプション" class="md-nav__link">
-    通知オプション
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#乱数のオプション" class="md-nav__link">
-    乱数のオプション
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ファイルの生成と読み込み" class="md-nav__link">
-    ファイルの生成と読み込み
-  </a>
-  
-    <nav class="md-nav" aria-label="ファイルの生成と読み込み">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#xml使用に関するヒント" class="md-nav__link">
-    XML使用に関するヒント
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ファイルの書き込み" class="md-nav__link">
-    ファイルの書き込み
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pythonツールをコマンドラインから使う" class="md-nav__link">
-    Pythonツールをコマンドラインから使う
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="コマンドラインの使いかた">コマンドラインの使いかた<a class="headerlink" href="#コマンドラインの使いかた" title="Permanent link">&para;</a></h1>
-<p><a href="https://sumo.dlr.de/docs/Basics/Using_the_Command_Line_Applications.html">原文ページ</a></p>
-<p>SUMOパッケージの多くのアプリケーションはコマンドラインツールです。
-現在<a href="">SUMO-GUI</a>のみが例外です。
-「コマンドライン」がなにかわからない場合は、<a href="">基本的なコンピュータスキル</a>を参照してください。</p>
-<h2 id="コマンドラインからsumoアプリケーションを使う">コマンドラインからSUMOアプリケーションを使う<a class="headerlink" href="#コマンドラインからsumoアプリケーションを使う" title="Permanent link">&para;</a></h2>
-<p>SUMOアプリケーションは単純な実行可能ファイルです。
-コマンドラインに名前を打ちこむことで使うことができます。
-例えば<a href="">NETGENERATE</a>なら</p>
-<pre><code>netgenerate.ext
+
+<p>Most of the applications from the SUMO package are command line tools.
+Currently, only <a href="../../sumo-gui/">sumo-gui</a> and <a href="../../Netedit/">netedit</a> are not. If you do not
+know what a "command line" is, we refer you to the page about <a href="../Basic_Computer_Skills/#running_programs_from_the_command_line">basic computer skills</a>.</p>
+<p>The following presents some peculiarities of the SUMO-suite
+applications.</p>
+<h1 id="using-sumo-applications-from-the-command-line">Using SUMO Applications from the Command Line<a class="headerlink" href="#using-sumo-applications-from-the-command-line" title="Permanent link">&para;</a></h1>
+<p>SUMO applications are plain executables. You just start them by typing
+their name from the command line; for example
+<a href="../../netgenerate/">netgenerate</a> is called by</p>
+<pre><code>netgenerate.exe
 </code></pre>
-<p>とすることでWindowsで</p>
+<p>under Windows and by</p>
 <pre><code>netgenerate
 </code></pre>
-<p>とすることでLinuxで起動することができます。</p>
-<p>これだけでアプリケーション(この場合は<a href="">NETGENERATE</a>)が起動します。
-なんのパラメータも与えられていないので、アプリケーションはやるべきことがわからないため、自分自身に関する情報のみを出力します。</p>
-<pre><code>SUMO netgenerate Version 1.2.0
+<p>under Linux.</p>
+<p>This simply starts the application
+(<a href="../../netgenerate/">netgenerate</a> in this case). As no parameter
+has been given, the application does not know what to do and prints only
+an information about itself:</p>
+<pre><code>Eclipse SUMO netgenerate Version 1.13.0
  Build features: Linux-4.1.39-56-default Proj GDAL GUI
- Copyright (C) 2001-2017 DLR and contributors; http://sumo.dlr.de
- License EPLv2: Eclipse Public License Version 2 &lt;https://eclipse.org/legal/epl-v20.html&gt;
+ Copyright (C) 2001-2020 German Aerospace Center (DLR) and others; https://sumo.dlr.de
+ License EPL-2.0: Eclipse Public License Version 2 &lt;https://www.eclipse.org/legal/epl-2.0/&gt;
  Use --help to get the list of options.
 </code></pre>
-<h2 id="オプション">オプション<a class="headerlink" href="#オプション" title="Permanent link">&para;</a></h2>
-<p>アプリケーションごとにどのファイルが処理/生成されるかのオプションがあります。
-通常、アプリケーションは最低二つのパラメータ -入力ファイルと出力ファイル- を必要としますが、きめ細かな制御のためにはほぼ常により多くのパラメータが使用されます。
-アプリケーションごとのオプションについてはそのアプリケーションの説明に書かれています。
-ここでは、オプションをどのように設定するかを示します。</p>
-<h3 id="コマンドラインでのオプション設定">コマンドラインでのオプション設定<a class="headerlink" href="#コマンドラインでのオプション設定" title="Permanent link">&para;</a></h3>
-<p>オプションには2種類あります。
-引数を必要とせず指定されると「真」に設定される真偽値オプション(引数として"true"、"false"のような真偽値が指定されればその値になります)と、引数を必要とするオプションです。
-コマンドラインでの引数付きオプションの設定はオプションの名前と値の二つに分かれます。
-例として、シミュレーションで"mynet.net.xml"というロードネットワークを読みこむ場合、次のように書けます。</p>
+<h1 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h1>
+<p>Each application has a set of options which define which files shall be
+processed or generated, or which define the application's behavior.
+Normally, an application needs at least two parameter - an input file
+and an output file - but almost always more parameter are used for a
+fine-grained control. Each application's options are described within
+the application's description. In the following, it is described how
+options are set.</p>
+<h2 id="setting-options-on-the-command-line">Setting Options on the Command Line<a class="headerlink" href="#setting-options-on-the-command-line" title="Permanent link">&para;</a></h2>
+<p>There are two kinds of options: boolean options which do not require an
+argument and are set to true if the option is present (but accept usual
+boolean values like "true" and "false" as argument) and options which
+require an argument. Setting an option with an argument on the command
+line consists of two parts - the option name and the option's value. For
+example, if one wants the simulation to load a certain road network,
+"mynet.net.xml", the following must be written:</p>
 <pre><code>--net mynet.net.xml
 </code></pre>
-<p>先頭の'--'は、オプションの長い名前("net")が来ることを示しています。
-空白のあとにはオプションの値を与える必要があります。l
-空白のかわりに'='を使うこともできます。</p>
+<p>The '--' in front indicates that the option's long name is following
+("net") in this case. After a whitespace the option's value must be
+given. It is also possible to use a '=' instead of the whitespace:</p>
 <pre><code>--net=mynet.net.xml
 </code></pre>
-<p>いくつかのよく使われるオプションについては、短縮表記することが可能です。
-<strong>--net</strong>オプションの短縮表記は<strong>-n</strong>です。
-下の表記は上二つと全く同じ動きをします。</p>
+<p>Some often used options can be abbreviated. The abbreviation for the
+<strong>--net</strong>-option is <strong>-n</strong>. The following has the same effect as the two examples
+above:</p>
 <pre><code>-n mynet.net.xml
 </code></pre>
-<p>短縮表記では一つの'-'を使うことに注意してください。</p>
+<p>Please note that an abbreviation is indicated using a single '-'.</p>
 <div class="admonition note">
-<p class="admonition-title">注</p>
-<p>SUMOソフト群のなかで、全ての短縮表記が常に同じ意味を示すわけではありません。</p>
+<p class="admonition-title">Note</p>
+<p>Not all abbreviations have the same meaning across the applications from the SUMO-suite.</p>
 </div>
-<h3 id="オプションの値の型">オプションの値の型<a class="headerlink" href="#オプションの値の型" title="Permanent link">&para;</a></h3>
-<p>SUMOアプリケーションは、どんな種類の値が設定されるべきか知っています。
-例えば、<a href="">NETGENERATE</a>は標準の車線幅を決めることができ、これは整数値でなければいけません。
-この時に文字列やその他の値が与えられると、</p>
-<h3 id="設定ファイル">設定ファイル<a class="headerlink" href="#設定ファイル" title="Permanent link">&para;</a></h3>
-<p>オプションのリストがとても長くなってしまうことがあるため、設定ファイルが導入されました。
-アプリケーション開始時に必要な全てのパラメータを含んだ設定ファイルを作ることができます。
-さらには、設定ファイルを与えるだけでアプリケーションが動くようにします。</p>
-<p>設定ファイルはXMLファイルで、<code>configuration</code>という名のルート要素を持っています。
-オプションは要素名で書かれ、値は<code>value</code>(または<code>v</code>)l属性に保持されます。
-<strong>--net-file test.next.xml</strong>というオプションは</p>
-<h2 id="一般的なオプション">一般的なオプション<a class="headerlink" href="#一般的なオプション" title="Permanent link">&para;</a></h2>
-<p>SUMOスイートのアプリケーションは以下に示すいくつかのオプションを共有しています。</p>
-<h3 id="通知オプション">通知オプション<a class="headerlink" href="#通知オプション" title="Permanent link">&para;</a></h3>
+<p>If you want to append options to a list of values given in a
+<a href="#configuration_files_vs_command_line_parameter">configuration file</a> you will use the following syntax:</p>
+<pre><code>+a myAdditional.add.xml
+</code></pre>
+<p>Please note that you can use the abbreviated or the non-abbreviated name here but always a single '+'.
+This will only work for lists of strings or numbers.</p>
+<h2 id="option-value-types">Option Value Types<a class="headerlink" href="#option-value-types" title="Permanent link">&para;</a></h2>
+<p>The SUMO applications know what kind of a value they expect to be set.
+For example, <a href="../../netgenerate/">netgenerate</a> allows you to set the
+default number of lanes, which of course must be an integer value. In
+the case, a string or something else is given, this is recognized and
+the application answers with an error message on startup. Please note
+that the decimal point in a float is encoded using a dot (".").</p>
+<p>A special case of value types are lists, for example the list of
+additional files to load into a simulation. When giving more than a
+single file, the files must be divided using ','. This also counts for
+lists of other value types, as integers or floating point numbers.</p>
+<h1 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h1>
+<p>Because the list of options may get very long, configuration files were
+introduced. You can set up a configuration file which contains all the
+parameter you want to start the application with. Moreover, you have to
+start the application with only this configuration file given.</p>
+<p>A configuration file is an XML-file that has a root element named
+<code>configuration</code>. The options are written as
+element names, with the wanted value being stored in the attribute
+<code>value</code> (or <code>v</code>);
+the option <strong>--net-file <em>test.net.xml</em></strong> given on the command line would become
+<code>&lt;net-file value="test.net.xml"/&gt;</code> within the
+configuration file. For the boolean options the value should be either
+"true", "on", "yes", "1", or "x" for the activation and "false", "off",
+"no", or "0" for deactivating the option (case does not matter here).</p>
+<p>For the example above, the configuration file (let's save it under
+"test.sumocfg", see below) would look like:</p>
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;test.net.xml&quot;/&gt;
+        &lt;route-files value=&quot;test.rou.xml&quot;/&gt;
+        &lt;additional-files value=&quot;test.add.xml&quot;/&gt;
+    &lt;/input&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>The section <code>input</code> given above has only
+documentation purposes and no functional meaning.</p>
+<p>A less verbose but equivalent version would look like:</p>
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;n v=&quot;test.net.xml&quot;/&gt;
+    &lt;r v=&quot;test.rou.xml&quot;/&gt;
+    &lt;a v=&quot;test.add.xml&quot;/&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>The according <a href="../../sumo/">sumo</a> execution call - working with both
+configuration versions - would be:</p>
+<pre><code>sumo.exe -c test.sumocfg
+</code></pre>
+<p>This means that instead of the parameters, we only give the name of the
+configuration file using the option <strong>--configuration-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> or <strong>-c</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>. If you want to give no further
+options on the command line it is possible to leave out the "-c" as
+well:</p>
+<pre><code>sumo.exe test.sumocfg
+</code></pre>
+<h2 id="naming-conventions-for-configuration-files">Naming Conventions for Configuration Files<a class="headerlink" href="#naming-conventions-for-configuration-files" title="Permanent link">&para;</a></h2>
+<p>Depending on the targeted application, the configuration files have
+different extensions. It is highly recommended to follow this
+convention. For using simulation configurations with
+<a href="../../sumo-gui/">sumo-gui</a> this is even required -
+<a href="../../sumo-gui/">sumo-gui</a> can only read simulation configurations
+named "*.sumocfg".</p>
+<p>All conventions for configuration extensions can be found on the page on
+<a href="../../Other/File_Extensions/">used file extensions</a>.</p>
+<h2 id="configuration-files-vs-command-line-parameter">Configuration Files vs. Command Line Parameter<a class="headerlink" href="#configuration-files-vs-command-line-parameter" title="Permanent link">&para;</a></h2>
+<p>In addition to a configuration file, further command line parameter can
+also be given on the command line. If a parameter is set within the
+named configuration file as well as given on the command line, the value
+given on the command line is used (overwrites the one within the
+configuration file) unless you use the '+' syntax described above.
+If you want to disable a boolean option which was
+enabled in the configuration file, you need to give the "false" value on
+the command line explicitly, like <strong>--verbose false</strong></p>
+<h2 id="generating-configuration-files-templates-and-schemata">Generating Configuration Files, Templates and Schemata<a class="headerlink" href="#generating-configuration-files-templates-and-schemata" title="Permanent link">&para;</a></h2>
+<p>The applications of the SUMO package allow you to generate configuration
+file templates. It is possible to save an empty configuration - a
+configuration template. This can be done by using the <strong>--save-template</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>. In this case,
+the configuration will only contain the parameters filled with their
+default values.</p>
+<p>Also it is possible to save a configuration file which contains the
+currently set values. An application can be forced to do this using the
+option <strong>--save-configuration</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>.</p>
+<p>Last but not least one can generate an <a href="https://en.wikipedia.org/wiki/XML_Schema_%28W3C%29">XML schema</a> (using the
+option <strong>--save-schema</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>) to validate configuration files against. For the SUMO
+application this schema should be equivalent to the one found at
+<a href="https://sumo.dlr.de/xsd/sumoConfiguration.xsd">https://sumo.dlr.de/xsd/sumoConfiguration.xsd</a> (respectively for the
+other executables). Please note that the schema is more strict than the
+SUMO options parser since it only validates the verbose version given
+above.</p>
+<p>In either case, if further information on the parameters is wanted, one
+can also pass the option <strong>--save-commented</strong>. Then, some further comments on each parameter
+are generated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SUMO applications will quit after saving a configuration. The application has to be called a second time to run the configuration.</p>
+</div>
+<h2 id="environment-variables-in-configuration-files">Environment variables in Configuration Files<a class="headerlink" href="#environment-variables-in-configuration-files" title="Permanent link">&para;</a></h2>
+<p>It is possible to refer to environment variables in configuration files. The syntax to refer to an environment variable is <strong>${VARNAME}</strong>.
+For example, your configuration file may reference a variable called <strong>NETFILENAME</strong>, containing the name of a network file, with the following configuration settings.</p>
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;${NETFILENAME}.net.xml&quot;/&gt;
+    &lt;/input&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>There are also some special values you can use here which aren't environment variables:</p>
+<ul>
+<li><strong>${LOCALTIME}</strong> refers to the local time when the configuration has been loaded</li>
+<li><strong>${UTC}</strong> same as <strong>${LOCALTIME}</strong> but in universal coordinated time</li>
+<li><strong>${PID}</strong> process id of the running application</li>
+<li><strong>${SUMO_LOGO}</strong> will be replaced ${SUMO_HOME}/data/logo/sumo-128x138.png (only if it is not set, useful for background images)</li>
+<li><strong>~</strong> will be replaced by ${HOME} (also see next item)</li>
+<li><strong>${HOME}</strong> on Windows will be replaced by ${USERPROFILE} (only if it is not set)</li>
+</ul>
+<p>The expansion of environment variables will not happen if you are only writing a new configuration.</p>
+<h1 id="common-options">Common Options<a class="headerlink" href="#common-options" title="Permanent link">&para;</a></h1>
+<p>The applications from the SUMO suite share several options. They are
+given in the following.</p>
+<h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>オプション</th>
-<th>説明</th>
+<th>Option</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>-v <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></strong> <br/> <strong>--verbose <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></strong></td>
-<td>冗長な出力に切りかえます<br/> デフォルト値: <strong>false</strong></td>
+<td><strong>-c</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--configuration-file</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Loads the named config on startup</td>
 </tr>
 <tr>
-<td><strong>--print-options <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></strong></td>
-<td>処理前にオプションを出力します <br/> デフォルト値: <strong>false</strong></td>
+<td><strong>-C</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br> <strong>--save-configuration</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Saves current configuration into FILE</td>
 </tr>
 <tr>
-<td><strong>-? <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></strong> <br/> <strong>--help <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></strong></td>
-<td>画面にこの表の情報を出力します <br/> デフォルト値: <strong>false</strong></td>
+<td><strong>--save-configuration.relative</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Enforce relative paths when saving the configuration; <em>default:</em> <strong>false</strong></td>
 </tr>
 <tr>
-<td><strong>-V {{ DT_STRING }}</strong> <br/> <strong>--version {{ DT_STRING }}</strong></td>
-<td>バリデーションスキームを設定します("never", "auto" または "always") <br/> デフォルト値: <strong>auto</strong></td>
+<td><strong>--save-template</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Saves a configuration template (empty) into FILE</td>
+</tr>
+<tr>
+<td><strong>--save-schema</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Saves the configuration schema into FILE</td>
+</tr>
+<tr>
+<td><strong>--save-commented</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Adds comments to saved template, configuration, or schema; <em>default:</em> <strong>false</strong></td>
 </tr>
 </tbody>
 </table>
-<h3 id="乱数のオプション">乱数のオプション<a class="headerlink" href="#乱数のオプション" title="Permanent link">&para;</a></h3>
-<p>これらのオプションは乱数生成器がどのシード値(seed)を使うかを設定します。
-同じシード値からは同じ乱数列が生成されます。</p>
+<h2 id="reporting-options">Reporting Options<a class="headerlink" href="#reporting-options" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>オプション</th>
-<th>説明</th>
+<th>Option</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>--seed <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></strong></td>
-<td>乱数生成器に特定のシード値を設定します。異なる値を使うことで結果が変わりますが、再現が可能になります。</td>
+<td><strong>-v</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a><br><strong>--verbose</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Switches to verbose output; <em>default: </em><em>false</em>**</td>
+</tr>
+<tr>
+<td><strong>--print-options</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Prints option values before processing; <em>default: </em><em>false</em>**</td>
+</tr>
+<tr>
+<td><strong>-?</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a><br><strong>--help</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Prints this screen; <em>default: </em><em>false</em>**</td>
+</tr>
+<tr>
+<td><strong>-V</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a><br><strong>--version</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Prints the current version; <em>default: </em><em>false</em>**</td>
+</tr>
+<tr>
+<td><strong>-X</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a><br><strong>--xml-validation</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Set schema validation scheme of XML inputs ("never", "auto" or "always"); <em>default: </em><em>auto</em>**</td>
+</tr>
+<tr>
+<td><strong>--xml-validation.net</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Set schema validation scheme of SUMO network inputs ("never", "auto" or "always"); <em>default: </em><em>never</em>**</td>
+</tr>
+<tr>
+<td><strong>-W</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a><br><strong>--no-warnings</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Disables output of warnings; <em>default: </em><em>false</em>**</td>
+</tr>
+<tr>
+<td><strong>-l</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--log</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes all messages to FILE (implies verbose)</td>
+</tr>
+<tr>
+<td><strong>--message-log</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes all non-error messages to FILE (implies verbose)</td>
+</tr>
+<tr>
+<td><strong>--error-log</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Writes all warnings and errors to FILE</td>
+</tr>
+<tr>
+<td><strong>--language</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Language to use in messages; <em>default:</em> <strong>C</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The logging options <strong>--log</strong> and <strong>--message-log</strong> also enable the verbose output but only into
+the given file (unless <strong>--verbose</strong> was given as well). Errors get always printed to
+the console (in addition to a possible log-file).</p>
+<p>The <a href="../../XMLValidation/">XML validation</a> options enable <a href="https://xerces.apache.org/xerces-c/schema-3.html">XML
+schema processing</a> in
+the XML parser. This performs a basic validation of the input and is
+highly recommended especially for beginners because it easily finds
+spelling mistakes in the input which otherwise might be silently
+ignored. Validation is only performed if the <a href="../../XMLValidation/">XML-schema is declared within the input file</a>.</p>
+<p>The <strong>--language</strong> option sets the language for messages, warnings and the GUI elements. The translation is still very incomplete
+thus by default the language is set to "C", which means untranslated. The parameter accepts a two letter language code
+such as <em>tr</em> or <em>de</em>. If it is explicitly set to the empty string, it will try to determine the language from
+environment variables as described in the <a href="https://www.gnu.org/software/gettext/manual/html_node/Locale-Environment-Variables.html">gettext documentation</a>.
+If you want to contribute to translations please have a look at the <a href="../../Developer/Translating/">translation documentation</a>.</p>
+<h2 id="random-number-options">Random Number Options<a class="headerlink" href="#random-number-options" title="Permanent link">&para;</a></h2>
+<p>These options configure how the seed of the random number generator is
+determined. The same seed leads to the same sequence of generated random
+numbers.</p>
+<p>By default the seed is a hard-coded fixed value. So, as long as all
+configuration settings are kept the same, the outputs of repeated
+simulation runs will be the same. To change this, use one of the
+following options.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--seed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Set a particular seed for the random number generator. By using different values you can have different but still reproducible simulation runs.</td>
 </tr>
 <tr>
 <td><strong>--random</strong></td>
-<td>SUMOがシード値を選ぶようにします。設定されるとシード値は/dev/urandom の出力に従うかさもなければ現在のシステム時刻を使います。このオプションは<strong>--seed <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></strong>オプションよりも<strong>優先</strong>されます。</td>
+<td>Make SUMO choose a seed. If available the seed will be based on output of /dev/urandom otherwise the seed will be derived from current system time. This option has <strong>precedence</strong> over option <strong>--seed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>注意</strong>: <strong>--random</strong>が<strong>--seed <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></strong>より優先するとは、設定ファイルに書かれた<strong>--random</strong>をコマンドラインでの<strong>--seed <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></strong>で上書きできないということを示します。
-将来的にはこの問題への解決策が導入されるでしょう。</p>
-<h2 id="ファイルの生成と読み込み">ファイルの生成と読み込み<a class="headerlink" href="#ファイルの生成と読み込み" title="Permanent link">&para;</a></h2>
-<p>SUMOパッケージのほとんど全てのツールが、xmlファイルを読み込み/生成します。
-SUMOを使い始める前に、<a href="https://ja.wikipedia.org/wiki/Extensible_Markup_Language">XML</a>に慣れておく必要があるでしょう。
-SUMOは異なるソースからファイルをインポートすることができますが、「ネイティブな」SUMOファイル - 道路ネットワーク設定、道路かつ/または 交通需要の設定、インフラ設定等々 - はSUMO固有のものであり、いかなる標準にも従っていません。
-XMLファイルは単純なテキストエディタで読み込み、編集ができ、私達(訳注: 本家Wiki編集者たち)もそのようにしています。
-とはいえ、いくつか再利用されるツールも存在するでしょう。</p>
-<p>SUMOで使用されるいくつかのファイルタイプについてはxsd(XML Scheme Definition: XMLスキーマ) が存在しています。
-<a href="">ファイル拡張子</a>のページを参照してください。</p>
-<h3 id="xml使用に関するヒント">XML使用に関するヒント<a class="headerlink" href="#xml使用に関するヒント" title="Permanent link">&para;</a></h3>
+<p><strong>Attention</strong>: The precedence of <strong>--random</strong> over <strong>--seed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> means that it is <strong>impossible</strong>
+to set <strong>--random</strong> in a configuration file and overwrite it by <strong>--seed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> in the command
+line. There might be a solution in future.</p>
+<h1 id="generating-and-reading-files">Generating and Reading Files<a class="headerlink" href="#generating-and-reading-files" title="Permanent link">&para;</a></h1>
+<p>Almost every file the tools from the SUMO package read or generate are
+written in XML. You should get familiar with
+<a href="https://en.wikipedia.org/wiki/XML">XML</a> before starting to work with
+SUMO. SUMO allows you to import files from different sources, but
+"native" SUMO files - road network descriptions, route and/or demand
+descriptions, infrastructure descriptions, etc. - are SUMO-specific, not
+following any standard. XML files can be read and written using a simple
+text editor and we usually do this. Nonetheless, several other tools
+exist and may be reused.</p>
+<p>For some of the file types used by SUMO, a xsd (XML Schema Definition)
+exists. Please consult the page on <a href="../../Other/File_Extensions/">file extensions</a> for a list of described
+file formats.</p>
+<h2 id="hints-on-using-xml">Hints on using XML<a class="headerlink" href="#hints-on-using-xml" title="Permanent link">&para;</a></h2>
 <ul>
-<li>WindowsにおけるXMLファイルのデフォルトビューアはInternet Explorerです。
-これはXMLファイルを</li>
-<li><a href="https://www.eclipse.org/downloads/">Eclipse</a>はXMLを与えられた<a href="https://ja.wikipedia.org/wiki/XML_Schema">xsd(XML Schema Definition)</a>に従って書くことができます。</li>
+<li>The default viewer for XML files on Windows is the Internet
+  Explorer. It may be used for validating your XML files. The syntax
+  of an XML file should be valid if the Internet Explorer can
+  completely load it.</li>
+<li><a href="https://www.eclipse.org/">Eclipse</a> allows to write XML documents
+  following a given <a href="https://en.wikipedia.org/wiki/XML_Schema_%28W3C%29">xsd (XML Schema Definition)</a>.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">訳注</p>
-<p>文中のリンクでダウンロードできるのはEclipseの英語版です。日本語版は<a href="http://mergedoc.osdn.jp/">Pleiades</a>からダウンロードできます。</p>
-</div>
-<h2 id="ファイルの書き込み">ファイルの書き込み<a class="headerlink" href="#ファイルの書き込み" title="Permanent link">&para;</a></h2>
-<p>ファイル名<a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>にはいくつかのオプションをパラメータとして与えることができます。
-コマンドラインから与えられたパスは現在のワーキングディレクトリに対して相対パスと見なされます。
-設定ファイルで与えられた時は、設定ファイルのある場所からの相対パスと見なされます。
-絶対パスの指定ももちろん可能です。</p>
-<p>一般に同じ名前のファイルが存在した場合には、警告なしに上書きされます。
-また、出力ファイルの書き込まれるフォルダは(実行時に)存在している必要があります。</p>
-<p>ファイルの書き込みについては、追加で以下の特別な記法が可能です</p>
+<h1 id="writing-files">Writing files<a class="headerlink" href="#writing-files" title="Permanent link">&para;</a></h1>
+<p>Several options expect a file name (<a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>) to write into as parameter. When
+being given at the command line, the given path is assumed to be
+relative to the current working directory. When being given in a
+configuration file, the file path is assumed to be relative to the
+configuration file's path. Absolute paths are of course also allowed.</p>
+<p>Usually, existing files with the same name are overwritten without a
+warning. The directory must exist, where the output file shall be
+written.</p>
+<p>Besides writing to a file, further special notations allow to:</p>
 <ul>
-<li>nullデバイスへの書き込み(なにも出力しない): "NUL"か"/dev/null"をファイル名にしてください(どちらの書き方もプラットフォーム非依存で動きます)</li>
-<li>ソケットへの書きこみ: "<code>&lt;HOST&gt;</code>:<code>&lt;PORT&gt;</code>"をファイル名にしてください</li>
-<li>stdout(標準出力)への書きこみ(コマンドラインに書きだし): "stdout"または"-"をファイル名にしてください</li>
-<li>stderrへの書き込み: "stdrr"をファイル名にしてください</li>
-<li>ファイル名中の'TIME'文字列は特別で、アプリケーションが開始した時刻に置き換えられます</li>
+<li>write into the null-device (no output at all): use "NUL" or
+  "/dev/null" for file name (both notations work platform independent)</li>
+<li>write into a socket: use "&lt;HOST&gt;:&lt;PORT&gt;" for file name</li>
+<li>write to stdout (print on command line): use "stdout" or "-" for
+  file name</li>
+<li>write to stderr: use "stderr" for file name</li>
+<li>The special string 'TIME' within a filename will be replaced with
+  the application start time</li>
 </ul>
-<p>今のところソケットや標準入力からの読みこみはできません。</p>
-<p>出力ファイルの名前を変える簡単な方法として、オプション<strong>--output-prefix <code>&lt;STRING&gt;</code></strong>が提供されています。
-設定すると、全てのファイルの先頭に指定された文字列が追加されます。</p>
+<p>At the moment it is not possible to read input from sockets or from
+stdin.</p>
+<p>As a simple way of modifying output file names, the option <strong>--output-prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> is provided.
+The given string will be prepended to all files written by an
+application.</p>
 <div class="admonition note">
-<p class="admonition-title">注</p>
-<p>同じ出力ファイルに複数のデータソース(例: 検知器の定義)から書き込むことも可能です</p>
+<p class="admonition-title">Note</p>
+<p>Multiple date sources (i.e. detector definitions) are permitted to write to the same output file.</p>
 </div>
-<h2 id="pythonツールをコマンドラインから使う">Pythonツールをコマンドラインから使う<a class="headerlink" href="#pythonツールをコマンドラインから使う" title="Permanent link">&para;</a></h2>
-<p>SUMOによって配布されている多くのツール(<strong><code>&lt;SUMO_HOME</code>&gt;</strong>/toolsフォルダ内)はプログラミング言語<a href="https://www.python.org/">python</a>で書かれています。
-これらを使うには <strong>python2.7</strong>が<a href="https://www.python.org/downloads/">インストール</a>されている必要があります。</p>
-<p>インストールしたら、<a href="">SUMO_HOME環境変数</a>が設定されていることを確認してください。
-最も簡単なのは<a href="">start-command-line.bat</a>を使ってコマンドラインを開くことです。</p>
-<p>さらに、コンピュータがあなたのpythonツールがどこにあるかを知っていることを確認する必要があります。
-最も簡単(しかしやや扱いにくい) 方法はフルパスで起動することです。</p>
-<pre><code>C:\Users\yourname&gt;D:\path_to_somo\tools\randomTrips.py  ... arguments ...
+<h1 id="time-values">Time values<a class="headerlink" href="#time-values" title="Permanent link">&para;</a></h1>
+<h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
+<p>By default, all time values written by sumo are in seconds. All applications and some python tools support the option <strong>--human-readable-time</strong> (short <strong>-H</strong>) which causes times in the output to be written as "HH:MM:SS" (hours, minutes second). Subsecond times will be written as "HH:MM:SS.SS". If the written time exceeds 24 hours, it will be written as "DD:HH:MM:SS" where DD is the number of days.</p>
+<p>Setting the option <strong>--human-readable-time</strong> also affects how some time values are formatted in sumo-gui dialogs (i.e. breakpoints).</p>
+<h2 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h2>
+<p>All time values in options and xml input may always be given as seconds or in "HH:MM:SS" or "DD:HH:MM:SS" format.</p>
+<h1 id="using-python-tools-from-the-command-line">Using Python tools from the Command Line<a class="headerlink" href="#using-python-tools-from-the-command-line" title="Permanent link">&para;</a></h1>
+<p>Many <a href="../../Tools/">tools</a> that are distributed by SUMO (in the
+<strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools folder) are written in the <a href="https://www.python.org/">python</a>
+programming language. To use them, <strong>Python 3.7 or later</strong> must be <a href="https://www.python.org/downloads/">installed on your computer</a>.</p>
+<p>Then you need to make sure that the <a href="../Basic_Computer_Skills/#sumo_home">environment variable <em>SUMO_HOME</em></a> is set. The
+easiest way is to open the command-line window using <strong>start-command-line.bat</strong>.</p>
+<p>Furthermore you need to make sure that your computer knows where to find
+the python tools. The easiest (but somewhat cumbersome) method is to run
+the tool using its full path:</p>
+<pre><code>C:\Users\yourname&gt;D:\path_to_sumo\tools\randomTrips.py  ... arguments ...
 </code></pre>
-<p>あるいは、ツールのあるディレクトリを<a href="">環境変数</a>に追加するという方法もあります。</p>
+<p>Alternatively, you can add the directory in which the tool lies to your
+<a href="../Basic_Computer_Skills/#configuring_path_settings">PATH-Variable</a>.</p>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -607,10 +794,14 @@ XMLファイルは単純なテキストエディタで読み込み、編集が�
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

@@ -1,0 +1,848 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Specification/Containers/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Containers - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#containers" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Containers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Containers can be used to simulate freight and goods. A container can
+represent, for example, an ISO container, a tank container, an arbitrary
+amount of bulk material, an arbitrary amount of animals etc.</p>
+<h1 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h1>
+<p>A container moves through the net by being transported by a vehicle or
+being transhipped between two stops. A container element has child
+elements defining stages of its plan. The stages are a connected
+sequence of <a href="#transports">transport</a>,
+<a href="#tranships">tranship</a> and
+<a href="#stops">stop</a> elements as described
+below. Each container must have at least one stage in its plan.</p>
+<pre><code class="language-xml">&lt;container id=&quot;foo&quot; depart=&quot;0&quot;&gt;
+    &lt;tranship edges=&quot;a b&quot;/&gt;
+    &lt;transport ../&gt;
+    &lt;transport ../&gt;
+    &lt;tranship ../&gt;
+    &lt;stop ../&gt;
+&lt;/container&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Range</th>
+<th>Default</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>string</td>
+<td>valid XML ids</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>depart</strong></td>
+<td>float(s)</td>
+<td>≥0</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>any declared vType</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>color</td>
+<td>rgb color</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="visualization">Visualization<a class="headerlink" href="#visualization" title="Permanent link">&para;</a></h2>
+<p>Containers are rendered in the GUI with the configured detail-level.
+When assigning a type with attribute <em>imgFile</em>, the container may be
+rendered with an image.</p>
+<h1 id="simulation-input">Simulation input<a class="headerlink" href="#simulation-input" title="Permanent link">&para;</a></h1>
+<h2 id="transports">Transports<a class="headerlink" href="#transports" title="Permanent link">&para;</a></h2>
+<p>Transports define the start and end point of a movement with a single
+mode of transport (e.g. a truck, train or a ship). They are child
+elements of plan definitions.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Range</th>
+<th>Default</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td>string</td>
+<td>valid edge ids</td>
+<td>-</td>
+<td>id of the start edge (optional, if it is a subsequent movement or <a href="./#starting_the_simulation_in_a_vehicle">starts in a vehicle</a>)</td>
+</tr>
+<tr>
+<td>to</td>
+<td>string</td>
+<td>valid edge ids</td>
+<td>-</td>
+<td>id of the destination edge</td>
+</tr>
+<tr>
+<td>lines</td>
+<td>list</td>
+<td>valid line or vehicle ids or <em>ANY</em></td>
+<td>ANY</td>
+<td>list of vehicle alternatives to take for the transport</td>
+</tr>
+<tr>
+<td>containerStop</td>
+<td>string</td>
+<td>valid container stop ids</td>
+<td>-</td>
+<td>id of the destination stop (allows to omit <em>to</em>)</td>
+</tr>
+<tr>
+<td>arrivalPos</td>
+<td>float(m)</td>
+<td></td>
+<td>-1</td>
+<td>arrival position on the destination edge</td>
+</tr>
+</tbody>
+</table>
+<p>The vehicle to use has to exist already and the route to take is defined by the vehicle. The vehicle needs to have capacity to transport additional containers (see <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#available_vtype_attributes">vType attribute containerCapacity</a>). The container is loaded into the vehicle if it stops on the 'from' edge and any of the following conditions are met</p>
+<ul>
+<li>the 'line' attribute of the vehicle or the 'id' of the vehicle is given in the list defined by the 'lines' attribute of the <code>transport</code> OR the lines attribute contains 'ANY' and the vehicle stops at the destination 'containerStop' of the <code>transport</code> (or at the destination edge if no destination containerStop is defined).</li>
+<li>the vehicle has a triggered stop and the container position is within the range of startpos,endPos of the stop.</li>
+<li>the vehicle has a timed stop and the container is waiting within 10m of the vehicle position</li>
+</ul>
+<p>The position of the container is either its departPos or the arrival position of the preceding plan element</p>
+<p>A given container stop (or any other stopping place) may serve as a replacement for a destination edge and arrival position. If an arrival position is given nevertheless it has to be inside the range of the stop.</p>
+<p>A transport of a container works similar to a <a href="../Persons/#rides">ride</a> of a person.</p>
+<h2 id="tranships">Tranships<a class="headerlink" href="#tranships" title="Permanent link">&para;</a></h2>
+<p>Tranships define a direct transfer of containers between two points.
+Thereby, containers do not move along edges. They move in a straight
+line, no matter if the line is crossing buildings or anything else. They
+are child elements of plan definitions.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Range</th>
+<th>Default</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>edges</td>
+<td>list</td>
+<td>valid edge ids</td>
+<td>-</td>
+<td>id of the edges to tranship</td>
+</tr>
+<tr>
+<td>from</td>
+<td>string</td>
+<td>valid edge ids</td>
+<td>-</td>
+<td>id of the start edge (optional, if it is a subsequent movement)</td>
+</tr>
+<tr>
+<td>to</td>
+<td>string</td>
+<td>valid edge ids</td>
+<td>-</td>
+<td>id of the destination edge</td>
+</tr>
+<tr>
+<td>containerStop</td>
+<td>string</td>
+<td>valid containerStop ids</td>
+<td>-</td>
+<td>id of the destination container stop</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>float(m/s)</td>
+<td>&gt;0</td>
+<td>5km/h</td>
+<td>speed of the container for this tranship in m/s</td>
+</tr>
+<tr>
+<td>departPos</td>
+<td>float(m)</td>
+<td></td>
+<td>0</td>
+<td>initial position on the starting edge</td>
+</tr>
+<tr>
+<td>arrivalPos</td>
+<td>float(m)</td>
+<td>[0,toEdge.length]</td>
+<td>toEdge.length</td>
+<td>arrival position on the destination edge</td>
+</tr>
+</tbody>
+</table>
+<p>You can define either a list of "edges" to travel or a "from" and a "to"
+edge. In the former case, only the first and the last edge will be
+considered. Instead of a "to" edge a container stop can be defined.
+If there is a move entry before, the "from" edge can be left out.
+The container will move straight from the first edge to last
+edge. In the latter case, the container will from straight from the edge
+"from" to the edge "to" or the container stop "containerStop".</p>
+<h2 id="stops">Stops<a class="headerlink" href="#stops" title="Permanent link">&para;</a></h2>
+<p>Stops define a delay until the next element of a plan is started. They
+can be used to model containers being stored in a storage place,
+harbour or anything else. A <a href="../Logistics/#container_stops">container
+stop</a> can be used to
+modal that storage place in the network (similar to a <a href="../../Simulation/Public_Transport/">bus stop for
+public transport</a>. Stops for
+containers follow the specification at
+<a href="../#stops">Specification#Stops</a>. However, only
+the attributes <em>containerStop</em>, <em>lane</em>, <em>duration</em>, <em>until</em> and <em>startPos</em> are evaluated.
+<em>startPos</em> defines the position on the lane where the container is
+supposed to stop. Using these attributes it is possible to model
+activities with a fixed duration as well as those with a fixed end time.</p>
+<h1 id="simulation-behavior">Simulation behavior<a class="headerlink" href="#simulation-behavior" title="Permanent link">&para;</a></h1>
+<p>A container is starting its life at its depart time on the source (resp.
+first) edge of the first tranship, transport or stop. It tries to start
+the next step of its plan.</p>
+<h2 id="transport">Transport<a class="headerlink" href="#transport" title="Permanent link">&para;</a></h2>
+<p>The container checks whether a vehicle with a line from the given list
+is stopping at the given edge. If such a vehicle exists and the
+container is positioned between the start and end position of the
+vehicle's stop, the container will be loaded onto the vehicle. If such a
+vehicle exists but the container is not positioned between the start and
+end position of the vehicle's stop, the container will still be loaded
+if the vehicle is triggered by the a container and the distance between
+container and vehicle is at most 10 metres. It will not be checked
+whether the vehicle has the aspired destination on the current route.
+The first time the vehicle stops (on a well defined stop) at the
+destination edge, the transport is finished and the container proceeds
+with the next step in the plan.</p>
+<h2 id="tranship">Tranship<a class="headerlink" href="#tranship" title="Permanent link">&para;</a></h2>
+<p>The container moves from the "departPos" of the "from" edge to the
+"arrivalPos" of the "to" edge. Thereby, the container is not following
+edges. Instead, it makes a straight movement between these two points.
+Any obstacles, like buildings, will be ignored.</p>
+<h2 id="stopping">Stopping<a class="headerlink" href="#stopping" title="Permanent link">&para;</a></h2>
+<p>The container stops for the maximum of <em>currentTime+duration</em> and
+<em>until</em>.</p>
+<h1 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h1>
+<p>The following is an example for a container which gets transhiped to a
+train station, gets transported by a train, gets unloaded and transhiped
+to a place, where it's stored (stopped) for some time and finally gets
+transported again.</p>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;container id=&quot;container0&quot; depart=&quot;0&quot;&gt;
+        &lt;tranship from=&quot;2/3to1/3&quot; to=&quot;1/3to0/3&quot; departPos=&quot;80&quot; arrivalPos=&quot;55&quot;/&gt;
+        &lt;transport from=&quot;1/3to0/3&quot; to=&quot;0/4to1/4&quot; lines=&quot;train0&quot;/&gt;
+        &lt;tranship from=&quot;0/4to1/4&quot; to=&quot;1/4to2/4&quot; arrivalPos=&quot;30&quot;/&gt;
+        &lt;stop lane=&quot;1/4to2/4_0&quot; duration=&quot;20&quot; startPos=&quot;40&quot;/&gt;
+        &lt;transport from=&quot;1/4to2/4&quot; to=&quot;3/4to4/4&quot; lines=&quot;truck0&quot;/&gt;
+    &lt;/container&gt;
+
+    &lt;vehicle id=&quot;train0&quot; depart=&quot;50&quot;&gt;
+        &lt;route edges=&quot;1/4to1/3 1/3to0/3 0/3to0/4 0/4to1/4 1/4to1/3&quot;/&gt;
+        &lt;stop containerStop=&quot;containerStop0&quot; until=&quot;120&quot; duration=&quot;10&quot;/&gt;
+        &lt;stop containerStop=&quot;containerStop1&quot; until=&quot;180&quot; duration=&quot;10&quot;/&gt;
+    &lt;/vehicle&gt;
+
+    &lt;vehicle id=&quot;truck0&quot; depart=&quot;containerTriggered&quot;&gt;
+        &lt;route edges=&quot;1/4to2/4 2/4to3/4 3/4to4/4&quot; departPos=&quot;30&quot;/&gt;
+        &lt;stop lane=&quot;1/4to2/4_0&quot; duration=&quot;20&quot; startPos=&quot;40&quot; endPos=&quot;60&quot;/&gt;
+    &lt;/vehicle&gt;
+
+&lt;/routes&gt;
+</code></pre>
+<h1 id="repeated-containers-containerflows">Repeated containers (containerFlows)<a class="headerlink" href="#repeated-containers-containerflows" title="Permanent link">&para;</a></h1>
+<p>To define multiple containers with the same plan, the element <code>&lt;containerFlow&gt;</code> can be used.
+It uses the same parameters and child elements as <a href="#containers"><code>&lt;container&gt;</code></a> except for the
+departure time. The ids of the created containers are
+"containerFlowId.runningNumber" and they are distributed either equally or
+randomly in the given interval. The following additional parameters are
+known:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin</td>
+<td>float (sec)</td>
+<td>first container departure time</td>
+</tr>
+<tr>
+<td>end</td>
+<td>float (sec)</td>
+<td>end of departure interval (if undefined, defaults to 24 hours)</td>
+</tr>
+<tr>
+<td>containersPerHour* <em>or</em> perHour*</td>
+<td>float (#/h)</td>
+<td>number of containers per hour, equally spaced</td>
+</tr>
+<tr>
+<td>period*</td>
+<td>float (sec)</td>
+<td>insert equally spaced containers at that period</td>
+</tr>
+<tr>
+<td>probability*</td>
+<td>float ([0,1])</td>
+<td>probability for emitting a container each second, see also <a href="../../Simulation/Randomness/#flows_with_a_random_number_of_vehicles">Simulation/Randomness</a></td>
+</tr>
+<tr>
+<td>number*</td>
+<td>int (#)</td>
+<td>total number of containers, equally spaced</td>
+</tr>
+</tbody>
+</table>
+<p>*: Only one of these attributes is allowed.</p>
+<p>See also <a href="../Persons/#repeated_persons_personflows">personFlows</a></p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<pre><code class="language-xml">   &lt;containerFlow id=&quot;c&quot; begin=&quot;0&quot; end=&quot;10&quot; period=&quot;2&quot;&gt;
+       &lt;tranship from=&quot;beg&quot; to=&quot;end&quot;/&gt;
+   &lt;/containerFlow&gt;
+</code></pre>
+<pre><code class="language-xml">   &lt;containerFlow id=&quot;container&quot; begin=&quot;0&quot; end=&quot;1&quot; number=&quot;4&quot; departPos=&quot;80&quot;&gt;
+       &lt;tranship from=&quot;2/3to1/3&quot; to=&quot;1/3to0/3&quot; arrivalPos=&quot;55&quot;/&gt;
+       &lt;transport containerStop=&quot;cs_train0&quot; lines=&quot;train0&quot;/&gt;
+       &lt;tranship to=&quot;1/4to2/4&quot; arrivalPos=&quot;45&quot;/&gt;
+       &lt;stop lane=&quot;1/4to2/4_0&quot; duration=&quot;20&quot; startPos=&quot;40&quot; actType=&quot;waiting&quot;/&gt;
+       &lt;transport to=&quot;3/4to4/4&quot; lines=&quot;truck0&quot;/&gt;
+   &lt;/containerFlow&gt;
+</code></pre>
+<h1 id="starting-the-simulation-in-a-vehicle">Starting the simulation in a Vehicle<a class="headerlink" href="#starting-the-simulation-in-a-vehicle" title="Permanent link">&para;</a></h1>
+<p>It is possible to start the container simulation simultaneously with the start of a vehicle simulation within that vehicle. I.e. the container starts with a transport within the vehicle, when the vehicle is inserted to the simulation. This is possible for a <code>container</code> definition and a <code>containerFlow</code>.
+It is the same as for <code>person</code> and <code>personFlow</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a href="../Persons/#starting_the_simulation_in_a_vehicle">Persons</a> but use <code>transport</code> instead of <code>ride</code>.</p>
+</div>
+<h1 id="planned-features">Planned features<a class="headerlink" href="#planned-features" title="Permanent link">&para;</a></h1>
+<p>The following features are not yet implemented.</p>
+<h2 id="plan">Plan<a class="headerlink" href="#plan" title="Permanent link">&para;</a></h2>
+<p>A containers plan has the same role as a vehicles route: A container may
+reference a plan or a distribution of plans using the attribute
+<span class="inlxml">plan</span>. Likewise, a container may include a
+plan or a distribution of plans as a child element. A plan is a sequence
+of stages (transports, tranships and
+<a href="../#stops">stops</a>).</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Range</th>
+<th>Default</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>probability</td>
+<td>float</td>
+<td>≥0</td>
+<td>1</td>
+<td>this is only evaluated if a container has multiple plans, the probability values of all plans do not have to add to 1, they are scaled accordingly before choosing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="intermodal-routing">Intermodal Routing<a class="headerlink" href="#intermodal-routing" title="Permanent link">&para;</a></h2>
+<p>The router input is still not completely defined. There has to be a
+possibility to define for the trips which vehicles / logistic lines may
+be used at all and for which vehicles the route can be defined / changed
+by the container.</p>
+<h3 id="trips">Trips<a class="headerlink" href="#trips" title="Permanent link">&para;</a></h3>
+<p>Trips define the start and end point of a movement with optional changes
+in mode.</p>
+<p>In definition they are identical to
+<a href="../#vehicles">vehicles</a> except for the missing
+route information (no route attribute and no route child is allowed).
+Instead they have the following attributes</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Range</th>
+<th>Default</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td>string</td>
+<td>valid edge ids</td>
+<td>-</td>
+<td>id of the start edge</td>
+</tr>
+<tr>
+<td>to</td>
+<td>string</td>
+<td>valid edge ids</td>
+<td>-</td>
+<td>id of the destination edge</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is an error for subsequent trips to be unconnected.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

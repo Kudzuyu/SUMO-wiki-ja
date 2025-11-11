@@ -1,0 +1,620 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Bicycles/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Bicycles - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bicycle-simulation" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bicycles
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bicycle-simulation">Bicycle Simulation<a class="headerlink" href="#bicycle-simulation" title="Permanent link">&para;</a></h1>
+<p>This page describes simulations of bicycles in SUMO. To build an
+intermodal simulation scenario with bicycles, additional steps have to
+be take in comparison to a plain vehicular simulation.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The simulation of bicycles is a developing subject and still carries some difficulties. These are discussed below.</p>
+</div>
+<h1 id="approaches-to-bicycle-modelling">Approaches to bicycle modelling<a class="headerlink" href="#approaches-to-bicycle-modelling" title="Permanent link">&para;</a></h1>
+<p>Currently, no exclusive movement model for bicycles is implemented.
+Existing models need to be re-purposed</p>
+<h2 id="bicycles-as-slow-vehicles">Bicycles as slow vehicles<a class="headerlink" href="#bicycles-as-slow-vehicles" title="Permanent link">&para;</a></h2>
+<p>In this case, vehicles are specified as vehicles with the appropriate
+type:</p>
+<pre><code class="language-xml">&lt;vType id=&quot;bike&quot; vClass=&quot;bicycle&quot;/&gt;
+&lt;vehicle type=&quot;bike&quot; .../&gt;
+</code></pre>
+<p>Note, that that the <code>guiShape="bicycle"</code> along with <a href="../../Vehicle_Type_Parameter_Defaults/">sensible default
+parameters</a> are
+automatically used when specifying <code>vClass="bicycle"</code>. By adapting <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicle_types">vType-parameters for
+acceleration,deceleration,maximumSpeed,etc..</a>
+different cyclist types can be modelled.</p>
+<h2 id="useful-model-parameters">Useful Model Parameters<a class="headerlink" href="#useful-model-parameters" title="Permanent link">&para;</a></h2>
+<p>Once the vClass "bicycle" is chosen, the following parameters, which can still be customized, are set for bicycle:</p>
+<ul>
+<li>minGap = 0.5 m</li>
+<li>max. acceleration = 1.2 m/s^2</li>
+<li>max. deceleration = 3 m/s^2</li>
+<li>emergency deceleration = 7 m/s^2</li>
+<li>Length = 1.6 m</li>
+<li>maxSpeed = 50 km/h</li>
+<li>desiredMaxSpeed = 20 km/h</li>
+</ul>
+<p>The values of some other parameters for bicycles are different from those for vehicles apparently. If no real data for the respective calibrations is available, some intuitive suggestions are listed below for reference.</p>
+<ul>
+<li>latAlignment = "right" (cyclists ride on the right side of their lane)</li>
+<li>carFollowModel = IDM (if smoothed acceleration is desired)</li>
+<li>lcStrategic = 0.5 (in comparison to the default value (1) this setting makes bicycles to perform strategic lane changing later)</li>
+<li>lcCooperativeRoundabout = 0. (cyclists keep on the right lane in a multi-lane roundabout)</li>
+<li>lcTurnAlignmentDistance = 20. (distance to a location where bicycles start to keeping right/left of their lane for preparing to make turns)</li>
+<li>jmCrossingGap = 4 (Minimum distance to pedestrians that are walking towards the conflict point with a bike - lower than the default of 10 for cars)</li>
+<li>jmSigmaMinor = 0. (no imperfection while passing a minor link)</li>
+<li>jmStoplineGap = 0.5 (Stopping distance in front of prioritary / TL-controlled stop line)</li>
+</ul>
+<h3 id="speed-limits">Speed limits<a class="headerlink" href="#speed-limits" title="Permanent link">&para;</a></h3>
+<p>Bicycles are usually not limited by the road speed limit but rather by individual preferences. This cannot easily be modelled by vType attribute <code>maxSpeed</code> because it is not subject the the randomly chosen personal <code>speedFactor</code> (unless <code>carFollowModel="KraussPS"</code> is set). Instead, bicycle speed is limited by <code>desiredMaxSpeed</code> (multiplied by the individual speedFactor). For this reason, the <code>desiredMaxSpeed &lt; maxSpeed</code> by default.</p>
+<p>To model the effect of slopes on bicycle speed (only with <code>carFollowModel="KraussPS"</code>), it is necessary that the <code>desiredMaxSpeed</code> is above the "power limit" (<code>maxSpeed</code>).
+The slope-dependent speed is scaled according to <code>maxSpeed * speedFactor</code> which results in the follow behavior:</p>
+<ul>
+<li>vehicles going uphill are slowed down to below <code>maxSpeed * speedFactor</code></li>
+<li>vehicles on level ground can go up to speed <code>maxSpeed * speedFactor</code></li>
+<li>vehicles going downhill may exceed <code>maxSpeed * speedFactor</code> and reach a speed up to <code>desiredMaxSpeed * speedFactor</code></li>
+</ul>
+<h3 id="problems-and-workarounds">Problems and workarounds<a class="headerlink" href="#problems-and-workarounds" title="Permanent link">&para;</a></h3>
+<ul>
+<li>No bi-directional movements on bicycle lanes</li>
+<li>No shared space for bicycles and pedestrians by default. This can be fixed by using the <a href="../SublaneModel/">Sublane Model</a> and defining lanes that allow bicycles and pedestrians.</li>
+<li>No overtaking by vehicles on a single-lane road. This can be fixed
+  by using the <a href="../SublaneModel/">Sublane Model</a>.</li>
+<li>The intersection model has no special adaptations for bicycles. This
+  results in unrealistic (large) safety gaps when bicycles are
+  approaching a large priority intersection from a prioritized road</li>
+</ul>
+<p>One way for overcoming most of these problems is to control bicycle
+movements at intersections with an <a href="../../TraCI/">external control
+script</a>. This approach is described in <a href="https://www.researchgate.net/publication/302909195_Integration_of_an_External_Bicycle_Model_in_SUMO">Integration of
+an external bicycle model in SUMO, Heather
+Twaddle 2016</a>.</p>
+<h2 id="bicycles-as-fast-pedestrians">Bicycles as fast pedestrians<a class="headerlink" href="#bicycles-as-fast-pedestrians" title="Permanent link">&para;</a></h2>
+<p>In this case, persons walking at high speed are used.</p>
+<h3 id="problems-and-workarounds_1">Problems and workarounds<a class="headerlink" href="#problems-and-workarounds_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>No support for proper visualization</li>
+<li>Movement model is not validated</li>
+</ul>
+<h1 id="building-a-network-for-bicycle-simulation">Building a network for bicycle simulation<a class="headerlink" href="#building-a-network-for-bicycle-simulation" title="Permanent link">&para;</a></h1>
+<h2 id="automatic-import">Automatic import<a class="headerlink" href="#automatic-import" title="Permanent link">&para;</a></h2>
+<p>The import of bicycle lanes from OpenStreetMap is supported since
+version 0.24.0. Since version 1.17.0 you can enable them using
+the option <strong>--osm.bike-access</strong>. The earlier
+<a href="../../Networks/Import/OpenStreetMap/#recommended_typemaps">typemap approach</a>
+can still be used (also together with the option to modify bike lane widths).</p>
+<h2 id="generating-a-network-with-bike-lanes">Generating a network with bike lanes<a class="headerlink" href="#generating-a-network-with-bike-lanes" title="Permanent link">&para;</a></h2>
+<p>A bike lane is a lane which only permits the vClass <em>bicycle</em>. There are various different options for generating a network with bike lanes which are explained below. All of these options recognize the presence of an existing bike lane and will not add another lane in that case.</p>
+<h3 id="explicit-specification-of-additional-lanes">Explicit specification of additional lanes<a class="headerlink" href="#explicit-specification-of-additional-lanes" title="Permanent link">&para;</a></h3>
+<p>Bike lanes may be defined explicitly in plain XML input when describing edges <a href="../../Networks/PlainXML/#lane-specific_definitions">edges
+(plain.edg.xml)</a>. This is done by defining an additional lane which only permits the vClass “bicycle” and setting the appropriate width. In this case it may be useful to disallow bicycles on other lanes. Also, any pre-existing connection definitions must be modified to account for the new bike lane.</p>
+<h3 id="explicit-specification-of-bike-lanes">Explicit specification of bike lanes<a class="headerlink" href="#explicit-specification-of-bike-lanes" title="Permanent link">&para;</a></h3>
+<p>Alternatively to the above method, the <code>&lt;edge&gt;</code>-attribute <a href="../../Networks/PlainXML/#edge_descriptions"><code>bikeLaneWidth</code> may be used</a>. It will cause a bike lane of the specified width to be added to that edge, connections to be remapped and bicycle permissions to be removed from all other lanes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The heuristic methods described below, also perform automatic connection shifting and removal of bicycle permissions from non-bike lanes</p>
+</div>
+<h3 id="type-based-generation">Type-based generation<a class="headerlink" href="#type-based-generation" title="Permanent link">&para;</a></h3>
+<p>When importing edges with defined types, it is also possible to declare that certain types should receive a sidewalk. This can be used to automatically generate bike lanes for residential streets while omitting them for motorways when importing OSM data.</p>
+<pre><code class="language-xml">&lt;types&gt;
+   &lt;type id=&quot;highway.motorway&quot; numLanes=&quot;3&quot; speed=&quot;44.44&quot; priority=&quot;13&quot; oneway=&quot;true&quot; disallow=&quot;pedestrian bicycle&quot;/&gt;
+   &lt;type id=&quot;highway.unclassified&quot;   numLanes=&quot;1&quot; speed=&quot;13.89&quot; priority=&quot;5&quot; bikeLaneWidth=&quot;1&quot; disallow=&quot;bicycle&quot;/&gt;
+   &lt;type id=&quot;highway.residential&quot;    numLanes=&quot;1&quot; speed=&quot;13.89&quot; priority=&quot;4&quot; bikeLaneWidth=&quot;1&quot; disallow=&quot;bicycle&quot;/&gt;
+   &lt;type id=&quot;highway.living_street&quot;  numLanes=&quot;1&quot; speed=&quot;2.78&quot;  priority=&quot;3&quot;/&gt;
+   ...
+&lt;/types&gt;
+</code></pre>
+<p>A special type file that imports bike lanes based on additional OSM attributes can be found in <a href="https://github.com/eclipse/sumo/blob/master/data/typemap/osmNetconvertBicycle.typ.xml"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/typemap/osmNetconvertBicycle.typ.xml</a>. This is to be preferred for importing bike lanes from OSM as it uses more accurate data.</p>
+<h3 id="heuristic-generation">Heuristic generation<a class="headerlink" href="#heuristic-generation" title="Permanent link">&para;</a></h3>
+<p>A third option which can be used if no edge types are available is a heuristic based on edge speed. It adds a bike lane for all edges within a given speed range. This is controlled by using the following options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--bikelanes.guess</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a></td>
+<td>Guess bike lanes based on edge speed</td>
+</tr>
+<tr>
+<td><strong>--bikelanes.guess.max-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Add bike lanes for edges with a speed equal or below the given limit <em>default:13.89</em></td>
+</tr>
+<tr>
+<td><strong>--bikelanes.guess.min-speed</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Add bike lanes for edges with a speed above the given limit <em>default:5.8</em></td>
+</tr>
+<tr>
+<td><strong>--bikelanes.guess.exclude</strong> {{ DT_ID }}[,<ID>]*</td>
+<td>Specify a list of edges that shall not receive a bike lane</td>
+</tr>
+</tbody>
+</table>
+<h3 id="permission-based-generation">Permission-based generation<a class="headerlink" href="#permission-based-generation" title="Permanent link">&para;</a></h3>
+<p>Option <strong>--bikelanes.guess.from-permissions</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;BOOL&gt;</em></a> is suitable for networks which specify their edge permissions (such as <a href="../../Networks/Import/DlrNavteq/">DlrNavteq</a>). It adds a bike lane for all edges which allow bicycles on any of their lanes. The option <strong>--bikelanes.guess.exclude</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;ID&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;ID&gt;</em></a>]* applies here as well.</p>
+<h3 id="adding-bike-lanes-with-netedit">Adding bike lanes with <a href="../../Netedit/">netedit</a><a class="headerlink" href="#adding-bike-lanes-with-netedit" title="Permanent link">&para;</a></h3>
+<p>To add bike lanes to a set of edges in <a href="../../Netedit/">netedit</a> select these and right click on them. From the context-menu select <em>lane operations-&gt;add restricted lane-&gt;Bikelane</em>.</p>
+<h2 id="notes-on-right-of-way-rules">Notes on Right-of-Way rules<a class="headerlink" href="#notes-on-right-of-way-rules" title="Permanent link">&para;</a></h2>
+<p>When using bicycle lanes in a network, right-turning vehicles must yield
+for straight-going bicycles. The intersection model supports these
+right-of-way rules and builds internal junctions where appropriate.</p>
+<p>Likewise, left-turning bicycles one a bicycle lane (on the right side of
+the road) must yield to straight-going vehicles.</p>
+<h2 id="indirect-left-turn">Indirect left turn<a class="headerlink" href="#indirect-left-turn" title="Permanent link">&para;</a></h2>
+<p>In reality, left-turning bicycles may move in two stages:
+1. move straight across, and then
+2. turn 90° left and then move straight across</p>
+<p>By default, <a href="../../netconvert/">netconvert</a> generates a wide curve rather than going straight twice as above. To change this behavior, connection attribute <code>indirect="true"</code> may be set by the user.</p>
+<p>If fine grained control of the the geometry of the indirect left turn is needed, it is also possible to set <a href="../../Netedit/editModesNetwork/#edit_connections">custom shapes for these internal lanes</a>. To adjust the waiting position of the bicycle (the point where the first stage ends), <a href="../../Netedit/editModesNetwork/#edit_connections">connection attribute 'contPos' must be set</a>.</p>
+<p>To define a controlled indirect turn where both stages respect the traffic light corresponding to the current movement direction another custom setting is needed. The first part of the left-turn connection will be controlled automatically by the traffic light according to the 'linkIndex' attribute of the connection.
+The second part can be controlled by <a href="../../Netedit/editModesNetwork/#edit_connections">setting the optional attribute 'linkIndex2'</a>. The easiest setup is to copy the linkIndex that controls the movement of vehicles (or pedestrians) going straight from right to left. In addition, parallel waiting of bicycles/motorpads in front of an intersection can be achieved by activating the <a href="../SublaneModel/">Sublane-Model</a>.</p>
+<p>Sometimes, bicycles/motorpads do not wait side by side properly. The following parameters can help to solve/improve this issue.</p>
+<ul>
+<li>latAlignment="nice"</li>
+<li>minGapLat="0.1"</li>
+</ul>
+<h2 id="short-overview">Short overview<a class="headerlink" href="#short-overview" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Desired output</th>
+<th>Options to use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shapefile or other data without bicycle info</td>
+<td>no bicycle infrastructure</td>
+<td>none</td>
+</tr>
+<tr>
+<td></td>
+<td>bicycle lanes where applicable</td>
+<td><strong>--bikelanes.guess</strong></td>
+</tr>
+<tr>
+<td>OpenStreetMap</td>
+<td>no bicycle infrastructure</td>
+<td>none</td>
+</tr>
+<tr>
+<td></td>
+<td>bicycle lanes as in the input</td>
+<td><strong>--osm.bike-access</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>guessed bicycle lanes (discarding input)</td>
+<td>a typemap which gives a bikelane width to all street types which should receive one or <strong>--bikelanes.guess</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The options above only apply to adding further lanes for existing streets or foot paths. Separate bike paths are always imported
+(if the typemap or other filter options do not prevent it).</p>
+<h1 id="bicycle-routing">Bicycle routing<a class="headerlink" href="#bicycle-routing" title="Permanent link">&para;</a></h1>
+<p>When <a href="../../Demand/Automatic_Routing/">routing bicycles in the simulation</a> the option <strong>--device.rerouting.bike-speeds</strong> can be used to enable separate tracking of bicycle speeds. This ensure that routing for bicycles which can use a dedicated bicycle lane is not affected by jammed cars.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

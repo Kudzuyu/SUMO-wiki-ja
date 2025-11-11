@@ -1,0 +1,649 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Installing/Windows_Libraries/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Windows Libraries - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#individual-packages" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Windows Libraries
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#individual-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Individual packages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Individual packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xerces-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Xerces-C
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fox" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#png-support-in-fox" class="md-nav__link">
+    <span class="md-ellipsis">
+      PNG support in Fox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jpeg-support-in-fox" class="md-nav__link">
+    <span class="md-ellipsis">
+      JPEG support in Fox
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proj-and-gdal" class="md-nav__link">
+    <span class="md-ellipsis">
+      PROJ and GDAL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PROJ and GDAL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-from-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building from source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ffmpeg" class="md-nav__link">
+    <span class="md-ellipsis">
+      FFMPEG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openscenegraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenSceneGraph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Windows Libraries</h1>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most of the time it is not necessary to build the libraries yourself. You can just use the versions available at <a href="https://github.com/DLR-TS/SUMOLibraries">https://github.com/DLR-TS/SUMOLibraries</a> as described in the <a href="../Windows_Build/#libraries">Windows build instructions</a>.</p>
+</div>
+<h2 id="individual-packages">Individual packages<a class="headerlink" href="#individual-packages" title="Permanent link">&para;</a></h2>
+<h3 id="xerces-c">Xerces-C<a class="headerlink" href="#xerces-c" title="Permanent link">&para;</a></h3>
+<p>SUMO uses Xerces-C 3.1.x or 3.2.x by default. Please be
+aware that Xerces-C 3.1.4 can cause problems when using unicode
+characters in your networks (especially importing chinese street names
+from OpenStreetMap).</p>
+<p>Apache does not provide binary distributions any longer, but you can
+try our own build of <a href="https://github.com/DLR-TS/SUMOLibraries">Xerces-C 3.2.4 in the SUMOLibraries</a>.
+Please note that setting environment variables to find a custom Xerces build does not work any longer.</p>
+<h3 id="fox">Fox<a class="headerlink" href="#fox" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If you do not need a GUI, you can skip this section.</li>
+<li>SUMO uses Fox 1.6 and will <em>not</em> work with Fox 1.7.</li>
+<li>Usually you do not need to build Fox yourself you can <a href="https://github.com/DLR-TS/SUMOLibraries">use the
+readily compiled
+binaries</a>.</li>
+<li>If you insist, please <a href="https://www.fox-toolkit.org/download.html">download fresh
+sources</a> and
+replace the ones in the SUMOLibraries (make sure not to delete the project file mentioned below).</li>
+<li>Go to the Fox directory and open the VC project e.g.
+D:\SUMOLibraries\fox-1.6.58\windows\vcpp\x64.sln.</li>
+<li>You might get approximately 240 warnings and one error, which can
+probably be ignored as long as you can find the resulting DLLs in
+the lib dir.</li>
+<li>Errors on not finding windows.h mean the SDK was not installed
+properly.</li>
+</ul>
+<h4 id="png-support-in-fox">PNG support in Fox<a class="headerlink" href="#png-support-in-fox" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Warning: This is a little advanced, we were successful with libpng
+1.5.2 and 1.6.20 together with zlib 1.2.5 and 1.2.8</li>
+<li>download zlib sources and libpng sources from
+<a href="http://www.libpng.org/pub/png/libpng.html">[1]</a> and
+<a href="https://www.zlib.net/">[2]</a></li>
+<li>unzip all zips</li>
+<li>there is no need to build zlib</li>
+<li>build pnglib by first adapting the path in
+&lt;libpng&gt;\projects\vstudio\zlib.props (if necessary) and then use
+the vstudio.sln from the same dir to build the libpng project</li>
+<li>you will get a png lib and a dll in
+&lt;libpng&gt;\projects\vstudio\Debug\</li>
+<li>if you want to be really sure, you can build the pngtest project as
+well and check the output</li>
+<li>you can build / add further configurations / platforms if needed</li>
+<li>Open the Fox project solution and edit properties of foxdll</li>
+<li>in the C++/General section add the &lt;libpng&gt; dir to the include
+    path</li>
+<li>in the C++/Preprocessor section add the HAVE_PNG_H define</li>
+<li>in the Linker/Input section add the .lib file to the input</li>
+<li>recompile fox and put the resulting dll together with libpng dll in
+your path</li>
+</ul>
+<h4 id="jpeg-support-in-fox">JPEG support in Fox<a class="headerlink" href="#jpeg-support-in-fox" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Warning: This is a little advanced, we were successful with jpeg 8d,
+and 9b the jpeg 8c which can be found at the fox-toolkit site was
+broken</li>
+<li>download libjpeg sources from <a href="https://www.ijg.org/">[4]</a> and unzip it</li>
+<li>download win32.mak and place it in the jpeg dir</li>
+<li>open a visual studio command prompt, cd to the jpeg dir and execute</li>
+</ul>
+<pre><code>nmake /f makefile.vc setup-v10
+nmake /f makefile.vc
+</code></pre>
+<ul>
+<li>you will get a libjpeg lib (and no dll!) in the jpeg dir</li>
+<li>if you need different configurations / platforms you can also open
+the solution file jpeg.sln and build jpeg from the GUI</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li>Open the Fox project solution and edit properties of foxdll</li>
+<li>in the C++/General section add the jpeg dir to the include path</li>
+<li>in the C++/Preprocessor section add the HAVE_JPEG_H define</li>
+<li>in the Linker/Input section add the .lib file to the input</li>
+<li>recompile foxdll (see above) and put the resulting dll (which has
+jpeg support linked statically inside) in your path</li>
+</ul>
+<h3 id="proj-and-gdal">PROJ and GDAL<a class="headerlink" href="#proj-and-gdal" title="Permanent link">&para;</a></h3>
+<p>If you do not need transformation of geocoordinates you can disable PROJ
+and GDAL in the CMakeCache.txt
+(set all lines referring to PROJ or GDAL to empty) and
+skip this section. Otherwise you have the choice between downloading the
+binary packages <a href="https://github.com/DLR-TS/SUMOLibraries">from the SUMOLibraries</a>
+or compiling for yourself (for the
+adventurous). Building from source should only be necessary if you want
+a 32bit build or some outdated version.</p>
+<h4 id="building-from-source">Building from source<a class="headerlink" href="#building-from-source" title="Permanent link">&para;</a></h4>
+<p>If you want to build PROJ and GDAL yourself for some reason, please
+follow the relevant <a href="https://proj.org/install.html">build instructions for
+PROJ</a> and <a href="https://gdal.org/download.html#build-requirements">for
+GDAL</a>. You then
+should replace the version in the SUMOLibraries with your build.</p>
+<h3 id="ffmpeg">FFMPEG<a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h3>
+<p>This is only needed, if you want to save videos directly from the
+sumo-gui and can for some reason not use the version provided in the
+<a href="https://github.com/DLR-TS/SUMOLibraries">SUMOLibraries</a>.</p>
+<ul>
+<li>You just need to download <a href="https://ffmpeg.org/download.html">the binary ffmpeg
+  distributions</a> in the Shared and
+  the Dev flavor. Also be sure to download all the platforms (32
+  and/or 64 bit) you need.</li>
+<li>Unzip the Dev version and overwrite the version in your SUMOLibraries with it.</li>
+<li>Unzip the Share version and copy the dll-files from the bin
+  directory into SUMOLibraries as well.</li>
+</ul>
+<h3 id="openscenegraph">OpenSceneGraph<a class="headerlink" href="#openscenegraph" title="Permanent link">&para;</a></h3>
+<p>This is only relevant for the 3D GUI. You will need to build at least
+OSG 3.4.0 because earlier versions do not work with Visual Studio 2012.
+Unfortunately there are no binaries readily available. If you want to
+use models which are not in &lt;SUMO&gt;/data/3D, you can add directories
+containing them to the OSG_FILE_PATH environment variable. the build
+will look for libraries and includes in the SUMOLibraries.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1018 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Developer/Network_Building_Process/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Network Building Process - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#steps" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Network Building Process
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-modifying-the-sets-of-nodes-and-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      #1: Modifying the sets of nodes and edges
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-moving-network-to-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      #2: Moving network to origin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tls-position-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      #3: TLS position computation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-connections-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      #4: Connections Computation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="#4: Connections Computation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computing-turning-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing turning directions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorting-nodes-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sorting nodes' edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computing-node-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing node types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computing-priorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing priorities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-geometry-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      #5: Geometry computation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-computing-right-of-way-and-traffic-light-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      #6: Computing right-of-way and traffic light programs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-finishing-inner-edges-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      #7: Finishing inner edges (optional)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../netconvert/">netconvert</a>,
+<a href="../../netgenerate/">netgenerate</a>, and <a href="../../Netedit/">netedit</a>
+share the same process of building networks which is started as soon as
+data are read (in <a href="../../netconvert/">netconvert</a>) or after an
+internal description is generated (in
+<a href="../../netgenerate/">netgenerate</a>).</p>
+<p>The process requires that at least nodes and edges are given, optionally
+also connections between edges and/or lanes and other optional
+information. Hints about how the network shall be built - whether
+turnarounds or highway on/off-ramps shall be added, traffic lights or
+roundabouts shall be guessed, etc. are retrieved from the options.</p>
+<p>Below, you may find a list of all steps performed while building the
+network. Optional steps are in <em>italics</em>.</p>
+<ol>
+<li>Modifying the sets of nodes and edges</li>
+<li><em>Joining junction clusters</em></li>
+<li>Removing self-loops</li>
+<li><em>Removing isolated roads</em></li>
+<li><em>Removing unwished edges</em></li>
+<li>Removing empty nodes <em>and geometry nodes</em></li>
+<li>Joining similar edges</li>
+<li><em>Splitting geometry edges</em></li>
+<li><em>Guessing and setting on-/off-ramps</em></li>
+<li><em>Moving network to origin</em></li>
+<li>TLS position computation</li>
+<li><em>Assigning nodes to traffic lights</em></li>
+<li><em>Joining traffic light nodes</em></li>
+<li>Computing connections between lanes</li>
+<li>Computing turning directions</li>
+<li>Sorting nodes' edges</li>
+<li>Computing Approached Edges</li>
+<li>Computing Approaching Lanes</li>
+<li>Dividing of Lanes on Approached Lanes</li>
+<li><em>Appending Turnarounds</em></li>
+<li>Rechecking of lane endings</li>
+<li>Geometry computation</li>
+<li>Computing node shapes</li>
+<li>Computing edge shapes</li>
+<li>Computing right-of-way and traffic light programs</li>
+<li>Computing tls logics</li>
+<li>Computing node logics</li>
+<li>Computing traffic light logics</li>
+<li>Finishing inner edges</li>
+</ol>
+<p>These computation steps are performed within void
+NBNetBuilder::compute(OptionsCont &amp;oc). These steps are described more
+detailed in the following.</p>
+<h1 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h1>
+<ul>
+<li><em>pre-condition</em>: All input is read</li>
+<li><em>pre-condition</em>: Nodes have: id, cartesian coordinates, type
+(optional, may change)</li>
+<li><em>pre-condition</em>: Edges have: valid from/to-nodes, lane number, max.
+speed limits, allowed vehicle classes, geometry (may change),
+typeID, lane spread information, name (optional), priority
+information (optional)</li>
+</ul>
+<h2 id="1-modifying-the-sets-of-nodes-and-edges">#1: Modifying the sets of nodes and edges<a class="headerlink" href="#1-modifying-the-sets-of-nodes-and-edges" title="Permanent link">&para;</a></h2>
+<p><strong>Purpose</strong>: Remove unwished edges/nodes from the internal
+representation; add geometry nodes if wished
+<em>post-condition</em>: all unwished elements (nodes, edges) are removed,
+geometry nodes are inserted/removed if wished, attributes as above</p>
+<p>The following sub-steps are done:</p>
+<ul>
+<li><strong>joinJunctions</strong> ('<code>Joining junction clusters</code>'): build node clusters</li>
+</ul>
+<p><strong>Purpose</strong>: Join network graph nodes which form a single
+  intersection.
+  <em>post-condition</em>: junction joined, attributes as above
+  <em>affects</em>: removes and adds nodes, removes edges, remaps
+  connections (tbd)
+  <em>state</em>: tbd</p>
+<ul>
+<li><strong>removeSelfLoops</strong> ('<code>Removing self-loops</code>'): remove all edges
+  where the from-node is the same as the to-node</li>
+</ul>
+<p><em>post-condition</em>: Each edge is a uni-directional connection between
+  two different nodes (ok)
+  <em>state</em>: green for me, though I am not sure why lists of edges are
+  built which are then given to remapping methods; wouldn't it be
+  enough to check within the remapping method whether a connection
+  exists?</p>
+<ul>
+<li><strong>joinSimilarEdges</strong> ('<code>Joining similar edges</code>'): "join" edges which
+  connect the same nodes</li>
+</ul>
+<p><em>post-condition</em>: No two edges with same geometry connecting same
+  nodes exist
+  <em>state</em>: yellow, as there are two comments in the code, one about a
+  bug, a second one about a missing check for vclasses; should be
+  revisited (why it's here, what would happen if not)
+  <em>comment</em>: ? Earlier, only one road could connect same
+  intersections; not now. Why, explain, how does it work?
+  <em>comment</em>: This method uses two magic numbers to determine whether
+  edges are "similar":
+  <code>distanceThreshold = 7.;</code> // don't merge edges further apart
+  <code>lengthThreshold = 0.10;</code> // don't merge edges with higher relative
+  length-difference</p>
+<ul>
+<li><strong>removeIsolatedRoads</strong> ('<code>Finding isolated roads</code>'): remove edges
+  which are isolated (not part of the network)</li>
+</ul>
+<p><em>post-condition</em>: ? not defined somewhere
+  <em>state</em>: yellow; the method is pretty large, and there is no removal
+  of edges within the tls control; how does it work?
+  <em>comment</em>: Should be revisited</p>
+<ul>
+<li><strong>removeUnwishedEdges</strong> ('<code>Removing unwished edges</code>'): Removes edges
+  not in myEdges2Keep</li>
+</ul>
+<p><em>post-condition</em>: not wanted edges are no longer in the internal
+  containers (ok)
+  <em>state</em>: yellow; the complete keep/remove/keep-postload - stuff
+  should be revisited</p>
+<ul>
+<li><strong>removeUnwishedNodes</strong> ('<code>Removing empty nodes and geometry nodes</code>'
+  or '<code>Removing empty nodes</code>'): Removes useless nodes</li>
+</ul>
+<p><em>post-condition</em>: empty nodes, nodes with no incoming/outgoing
+  edges, are removed (ok)
+  <em>post-condition</em>: nodes which only affect the geometry of an edge
+  are removed if wished (ok)
+  <em>state</em>: yellow; should be done in two steps for a cleaner code;
+  additionally, we had the bug that empty acosta nodes where still in
+  the network; is this solved?</p>
+<ul>
+<li><strong>splitGeometry</strong> ('<code>Splitting geometry edges</code>'): Splits edges at
+  geometry positions</li>
+</ul>
+<p><em>post-condition</em>: If wished, edges have a line-geometry only
+  <em>state</em>: yellow; the naming of built nodes is not proper</p>
+<ul>
+<li><strong>Guessing on-/off-ramps</strong> (<code>Guessing and setting on-/off-ramps</code>)</li>
+</ul>
+<p><strong>Purpose</strong>: Add missing on-/off-ramps
+  <em>state</em>: tbd</p>
+<p>As a result, the internal representation of the read/generated network
+contains the sets of nodes/edges the user wanted.</p>
+<h2 id="2-moving-network-to-origin">#2: Moving network to origin<a class="headerlink" href="#2-moving-network-to-origin" title="Permanent link">&para;</a></h2>
+<p><strong>Purpose</strong>: Let network coordinates start at 0,0
+<em>state</em>: green</p>
+<h2 id="3-tls-position-computation">#3: TLS position computation<a class="headerlink" href="#3-tls-position-computation" title="Permanent link">&para;</a></h2>
+<p><strong>Purpose</strong>: Let nodes know whether they are controlled by traffic
+lights</p>
+<ul>
+<li><strong>guessTLs</strong> ('<code>Assigning nodes to traffic lights</code>')</li>
+</ul>
+<p><em>post-condition</em>: empty nodes, nodes with no incoming/outgoing
+  edges, are removed (ok)
+  <em>state</em>: tbd</p>
+<ul>
+<li><strong>joinTLS</strong> ('<code>Joining traffic light nodes</code>')</li>
+</ul>
+<p><em>post-condition</em>: empty nodes, nodes with no incoming/outgoing
+  edges, are removed (ok)
+  <em>state</em>: tbd</p>
+<h2 id="4-connections-computation">#4: Connections Computation<a class="headerlink" href="#4-connections-computation" title="Permanent link">&para;</a></h2>
+<p><strong>Purpose</strong>: Determine and/or assign connections over intersections
+between lanes</p>
+<h3 id="computing-turning-directions">Computing turning directions<a class="headerlink" href="#computing-turning-directions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>code</strong>: NBTurningDirectionsComputer::computeTurnDirections(...);</li>
+<li><strong>post-condition</strong>: The edge knows its turnaround direction, if
+existing.</li>
+<li><strong>reason</strong>: Turnarounds are treated differently in the following
+steps than other directions of driving.</li>
+<li><strong>how</strong></li>
+</ul>
+<p>For each combination of an incoming and an outgoing edge, which may be
+connected, we compute the angle between them. If this angle is &gt;160°,
+we assume that this may be a turnaround. We add 360° to this angle if
+both edges connect same both nodes in different direction. We store the
+edge pairs with angle into a list sorted decreasing by the angle. After
+all combinations are computed, we go through the list and set those as
+turnarounds which we see at first, marking both the incoming and the
+outgoing edge as already seen what avoids to use them twice. We warn if
+an edge occurs twice with an angle &gt;360° - multiple edges connecting
+two same nodes.</p>
+<ul>
+<li><strong>state</strong>: yellow</li>
+</ul>
+<p>the check for being connected should be omitted, here, see
+  inline-documentation
+  as usual, you may find pathological intersections</p>
+<h3 id="sorting-nodes-edges">Sorting nodes' edges<a class="headerlink" href="#sorting-nodes-edges" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>code</strong>: NBNodesEdgesSorter::sortNodesEdges(...);</li>
+<li><strong>post-condition</strong>: each node's edges (incoming, outgoing, and all)
+are sorted clockwise, starting at 12 o'clock. Incoming edges with
+same angle as the according outgoing are before the outgoing one in
+the list of all edges.</li>
+<li><strong>reason</strong>: this order is assumed to be given in following
+computation steps</li>
+<li><strong>how</strong></li>
+</ul>
+<p>We sort a node's edge vectors (incoming, outgoing, all), first. Then, we
+go through the vector of all edges and exchange an incoming and an
+outgoing edge if both have the same angle, and the incoming is after the
+outgoing (determined using "isTurningDirection").</p>
+<ul>
+<li><strong>state</strong>: yellow</li>
+</ul>
+<p>unvalidated for left-hand networks
+  the method uses the method "NBEdge::isTurningDirectionAt(...)"
+  which is not a plain usage of the turnaround computation
+  performed earlier</p>
+<h3 id="computing-node-types">Computing node types<a class="headerlink" href="#computing-node-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>code</strong>: NBNodeTypeComputer::computeNodeTypes(...);</li>
+<li><strong>post-condition</strong>: Each node has one of the following types:
+NODETYPE_PRIORITY_JUNCTION, NODETYPE_RIGHT_BEFORE_LEFT,
+NODETYPE_TRAFFIC_LIGHT, NODETYPE_NOJUNCTION(?).</li>
+<li><strong>reason</strong>: We need this to compute the right-of-way rules.</li>
+<li><strong>how</strong></li>
+</ul>
+<p>We investigate each node by itself. We check some special cases, first:</p>
+<ul>
+<li>if the type is already set (myType != NODETYPE_UNKNOWN) -&gt; skip</li>
+<li>if we have only one incoming edge -&gt; set to
+  NODETYPE_PRIORITY_JUNCTION</li>
+<li>if it is a <em>simple continuation</em> -&gt; set to
+  NODETYPE_PRIORITY_JUNCTION</li>
+</ul>
+<p>At first, we assume the intersection is a NODETYPE_RIGHT_BEFORE_LEFT
+intersection. We then go through all incoming edge combinations which
+are not opposite. As soon as we encounter one where the speed limit
+between both edges differs by more than 10km/h (approx.), we set the
+type to NODETYPE_PRIORITY_JUNCTION. This is also the case if one of
+the edges has a speed limit of more than 49km/h (we use this value to
+avoid floating point issues).</p>
+<ul>
+<li><strong>state</strong>: yellow</li>
+</ul>
+<p>investigate whether NODETYPE_NOJUNCTION can be set earlier (by
+  the user)
+  the used method "getOppositeIncoming" should be revalidated</p>
+<h3 id="computing-priorities">Computing priorities<a class="headerlink" href="#computing-priorities" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>code</strong>: NBEdgePriorityComputer::computeEdgePriorities(...);</li>
+<li><strong>post-condition</strong>: Each edge has a priority at the node it starts
+and ends at. The priorities at the start and the end node may
+differ. An edge has either the priority 1 (higher prioritized) or 0
+(lower prioritized or all equal).</li>
+<li><strong>reason</strong>: We need this to compute the right-of-way rules.</li>
+<li><strong>how</strong></li>
+</ul>
+<p>All priorities are initialised to 0.</p>
+<ul>
+<li><strong>state</strong>: orange</li>
+</ul>
+<h2 id="5-geometry-computation">#5: Geometry computation<a class="headerlink" href="#5-geometry-computation" title="Permanent link">&para;</a></h2>
+<h2 id="6-computing-right-of-way-and-traffic-light-programs">#6: Computing right-of-way and traffic light programs<a class="headerlink" href="#6-computing-right-of-way-and-traffic-light-programs" title="Permanent link">&para;</a></h2>
+<h2 id="7-finishing-inner-edges-optional">#7: Finishing inner edges (optional)<a class="headerlink" href="#7-finishing-inner-edges-optional" title="Permanent link">&para;</a></h2>
+<h1 id="old">OLD<a class="headerlink" href="#old" title="Permanent link">&para;</a></h1>
+<h2 id="steps-9-10-computing-certain-signallingright-of-ways">Steps #9-#10: Computing certain signalling/right-of-ways<a class="headerlink" href="#steps-9-10-computing-certain-signallingright-of-ways" title="Permanent link">&para;</a></h2>
+<h2 id="steps-11-17-computing-and-setting-lane-to-lane-connections">Steps #11-#17: Computing and setting lane-to-lane connections<a class="headerlink" href="#steps-11-17-computing-and-setting-lane-to-lane-connections" title="Permanent link">&para;</a></h2>
+<h2 id="steps-18-19-computing-geometries">Steps #18-#19: Computing geometries<a class="headerlink" href="#steps-18-19-computing-geometries" title="Permanent link">&para;</a></h2>
+<p>I am currently concerned with the edge shapes, because even a eworld or
+a TrafficModeler export stops here in debug mode. It is in
+NBEdge::computeEdgeShape. (Actually, as far as I understand this method,
+it is about the lane shapes of this edge.) In this algorithm, the
+following three cases must be distinguished:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="laneShapeIntersectsWithNodeShape.png" src="../../images/LaneShapeIntersectsWithNodeShape.png" /></td>
+<td>The edge shape intersects with the node shape. Then, the shape is trimmed to the intersection point. This looks quite reasonable.</td>
+</tr>
+<tr>
+<td><img alt="laneShapeOutsideOfNodeShape.png" src="../../images/LaneShapeOutsideOfNodeShape.png" /></td>
+<td>The edge shape is outside the node shape. The present algorithm extrapolates the last line of the edge shape and enlarges the edge to the new intersection point. This looks reasonable to me as well.</td>
+</tr>
+<tr>
+<td><img alt="laneShapeInsideOfNodeShape.png" src="../../images/LaneShapeInsideOfNodeShape.png" /></td>
+<td>The edge shape is completely within the node shape. What should happen here? (The red dots show, what netconvert does at present.)</td>
+</tr>
+</tbody>
+</table>
+<p>So I am wondering, what the right behavior of netconvert would be in
+the third case.</p>
+<h2 id="steps-20-22-computing-right-of-way-rules">Steps #20-#22: Computing right-of-way rules<a class="headerlink" href="#steps-20-22-computing-right-of-way-rules" title="Permanent link">&para;</a></h2>
+<h2 id="steps-23-applying-additional-offset">Steps #23: Applying additional offset<a class="headerlink" href="#steps-23-applying-additional-offset" title="Permanent link">&para;</a></h2>
+<h1 id="table">Table<a class="headerlink" href="#table" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>affects</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>nodes</strong></td>
+<td><strong>edges</strong></td>
+<td><strong>connections</strong></td>
+</tr>
+<tr>
+<td><strong>Adapting the input</strong></td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>'<code>Building node clusters</code>'</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>'<code>Removing self-loops</code>'</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td>'<code>Joining similar edges</code>'</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>'<code>Finding isolated roads</code>'</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>'<code>Removing unwished edges</code>'</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>'<code>Removing empty nodes and geometry nodes</code>' or '<code>Removing empty nodes</code>'</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>'<code>Splitting geometry edges</code>'</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>'<code>Guessing and setting on-/off-ramps</code>'</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Moving network to origin</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TLS position computation</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Assigning nodes to traffic lights</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Joining traffic light nodes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Computing connections between lanes</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Computing turning directions</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sorting nodes' edges</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Computing Approached Edges</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Computing Approaching Lanes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Dividing of Lanes on Approached Lanes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Appending Turnarounds (optional)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rechecking of lane endings</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Geometry computation</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Computing node shapes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Computing edge shapes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Computing right-of-way and traffic light programs</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Computing tls logics</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Computing node logics</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Computing traffic light logics</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Finishing inner edges (optional)</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

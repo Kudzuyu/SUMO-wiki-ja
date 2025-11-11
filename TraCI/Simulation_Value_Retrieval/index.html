@@ -1,0 +1,1187 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TraCI/Simulation_Value_Retrieval/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Simulation Value Retrieval - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-0xab-get-simulation-variable" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Simulation Value Retrieval
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-0xab-get-simulation-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0xab: Get Simulation Variable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-0xbb-simulation-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response 0xbb: Simulation Variable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-retrieval-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extended retrieval messages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended retrieval messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-0x82-position-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x82: Position Conversion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-0x83-distance-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x83: Distance Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-0x86-find-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x86: Find Route
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-0x87-find-intermodal-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x87: Find Intermodal Route
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-0x23-get-collisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x23: Get Collisions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-parameter-retrieval-0x7e" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generic Parameter Retrieval 0x7e
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generic Parameter Retrieval 0x7e">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stoppping-place-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stoppping Place Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-parameter-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Parameter Retrieval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistics-parameter-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistics Parameter Retrieval
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Simulation Value Retrieval</h1>
+
+<h2 id="command-0xab-get-simulation-variable">Command 0xab: Get Simulation Variable<a class="headerlink" href="#command-0xab-get-simulation-variable" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable</td>
+<td style="text-align: center;">Simulation ID (always unused)</td>
+</tr>
+</tbody>
+</table>
+<p>Asks for the value of a certain simulation variable</p>
+<p>The following variable values can be retrieved and subscribed to.
+The type of the return
+value is also shown in the table. It is not possible to subscribe to
+position conversion (0x82), distance request (0x83), find route (0x86),
+find intermodal route (0x87) and all bus stop functions.</p>
+<center>
+**Overview Retrievable Simulation Variables**
+</center>
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Variable</p></th>
+<th><p>ValueType</p></th>
+<th><p>Description</p></th>
+<th><p><a href="../TraCI/Interfacing_TraCI_from_Python.md">Python Method</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>current simulation time (0x66)</p></td>
+<td><p>double</p></td>
+<td><p>Returns the current simulation time (in s)</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getTime">getTime</a></p></td>
+</tr>
+<tr class="even">
+<td><p>current simulation time (0x70) (deprecated)</p></td>
+<td><p>int</p></td>
+<td><p>Returns the current simulation time (in ms)</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCurrentTime">getCurrentTime</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>number of loaded vehicles (id 0x71)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles which were loaded in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getLoadedNumber">getLoadedNumber</a></p></td>
+</tr>
+<tr class="even">
+<td><p>ids of loaded vehicles (id 0x72)</p></td>
+<td><p>stringList</p></td>
+<td><p>A list of ids of vehicles which were loaded in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getLoadedIDList">getLoadedIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>number of departed vehicles (id 0x73)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles which departed (were inserted into the road network) in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDepartedNumber">getDepartedNumber</a></p></td>
+</tr>
+<tr class="even">
+<td><p>ids of departed vehicles (id 0x74)</p></td>
+<td><p>stringList</p></td>
+<td><p>A list of ids of vehicles which departed (were inserted into the road network) in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDepartedIDList">getDepartedIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>number of vehicles that start to teleport<br />
+(id 0x75)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles which started to teleport in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStartingTeleportNumber">getStartingTeleportNumber</a></p></td>
+</tr>
+<tr class="even">
+<td><p>ids of vehicles that start to teleport (id 0x76)</p></td>
+<td><p>stringList</p></td>
+<td><p>A list of ids of vehicles which started to teleport in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStartingTeleportIDList">getStartingTeleportIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>number of vehicles that end being teleported<br />
+(id 0x77)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles which ended to be teleported in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getEndingTeleportNumber">getEndingTeleportNumber</a></p></td>
+</tr>
+<tr class="even">
+<td><p>ids of vehicles that end being teleported<br />
+(id 0x78)</p></td>
+<td><p>stringList</p></td>
+<td><p>A list of ids of vehicles which ended to be teleported in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getEndingTeleportIDList">getEndingTeleportIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>number of arrived vehicles (id 0x79)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles which arrived (have reached their destination and are removed from the road network) in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getArrivedNumber">getArrivedNumber</a></p></td>
+</tr>
+<tr class="even">
+<td><p>ids of arrived vehicles (id 0x7a)</p></td>
+<td><p>stringList</p></td>
+<td><p>A list of ids of vehicles which arrived (have reached their destination and are removed from the road network) in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getArrivedIDList">getArrivedIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>network bounding box (id 0x7c)</p></td>
+<td><p>2D polygon</p></td>
+<td><p>The lower left and the upper right corner of the bounding box of the simulation network.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getNetBoundary">getNetBoundary</a></p></td>
+</tr>
+<tr class="even">
+<td><p>minimum number of vehicles that are still expected to leave the net (id 0x7d)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles which are in the net plus the ones still waiting to start. This number may be smaller than the actual number of vehicles still to come because of delayed route file parsing.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getMinExpectedNumber">getMinExpectedNumber</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>number of vehicles that begin a stop (id 0x68)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles that halted on a scheduled stop in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopStartingVehiclesNumber">getStopStartingVehiclesNumber</a></p></td>
+</tr>
+<tr class="even">
+<td><p>ids of vehicles that begin a stop (id 0x69)</p></td>
+<td><p>stringList</p></td>
+<td><p>A list of ids of vehicles that halted on a scheduled stop in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopStartingVehiclesIDList">getStopStartingVehiclesIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>number of vehicles that end a stop (id 0x6a)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles that begin to continue their journey, leaving a scheduled stop in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopEndingVehiclesNumber">getStopEndingVehiclesNumber</a></p></td>
+</tr>
+<tr class="even">
+<td><p>ids of vehicles that end a stop (id 0x6b)</p></td>
+<td><p>stringList</p></td>
+<td><p>A list of ids of vehicles that begin to continue their journey, leaving a scheduled stop in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getStopEndingVehiclesIDList">getStopEndingVehiclesIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>number of vehicles involved in a collision (id 0x80)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles that were involved in a collision in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCollidingVehiclesNumber">getCollidingVehiclesNumber</a></p></td>
+</tr>
+<tr class="even">
+<td><p>ids of vehicles involved in a collision (id 0x81)</p></td>
+<td><p>stringList</p></td>
+<td><p>A list of ids of vehicles that were involved in a collision in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCollidingVehiclesIDList">getCollidingVehiclesIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>number of vehicles that begin to be parked<br />
+(id 0x6c)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles that enter a parking position in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingStartingVehiclesNumber">getParkingStartingVehiclesNumber</a></p></td>
+</tr>
+<tr class="even">
+<td><p>ids of vehicles that begin to be parked<br />
+(id 0x6d)</p></td>
+<td><p>stringList</p></td>
+<td><p>A list of ids of vehicles that enter a parking position in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingStartingVehiclesIDList">getParkingStartingVehiclesIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>number of vehicles that end to be parked<br />
+(id 0x6e)</p></td>
+<td><p>int</p></td>
+<td><p>The number of vehicles that begin to continue their journey, leaving a scheduled parking in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingEndingVehiclesNumber">getParkingEndingVehiclesNumber</a></p></td>
+</tr>
+<tr class="even">
+<td><p>ids of vehicles that end being parked (id 0x6f)</p></td>
+<td><p>stringList</p></td>
+<td><p>A list of ids of vehicles that begin to continue their journey, leaving a scheduled parking in this time step.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParkingEndingVehiclesIDList">getParkingEndingVehiclesIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>bus stop waiting (id 0x67)</p></td>
+<td><p>int</p></td>
+<td><p>Get the total number of waiting persons at the named bus stop (deprecated, use busstop.getPersonCount instead).</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getBusStopWaiting">getBusStopWaiting</a></p></td>
+</tr>
+<tr class="even">
+<td><p>bus stop waiting ids (id 0xef)</p></td>
+<td><p>stringList</p></td>
+<td><p>Get the ids of waiting persons at the named bus stop (deprecated, use busstop.getPersonIDs instead).</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getBusStopWaitingIDList">getBusStopWaitingIDList</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>delta T (id 0x7b)</p></td>
+<td><p>double</p></td>
+<td><p>Returns the length of one simulation step in seconds.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDeltaT">getDeltaT</a></p></td>
+</tr>
+<tr class="even">
+<td><p>parameter (0x7e)</p></td>
+<td><p>string</p></td>
+<td><p>Returns the value for the given string parameter.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getParameter">getParameter</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>scale (id 0x8e)</p></td>
+<td><p>double</p></td>
+<td><p>Returns the traffic scaling factor.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getScale">getScale</a></p></td>
+</tr>
+<tr class="even">
+<td><p>option (0x3f)</p></td>
+<td><p>string</p></td>
+<td><p>Returns the value of one of the global SUMO options.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getOption">getOption</a></p></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="response-0xbb-simulation-variable">Response 0xbb: Simulation Variable<a class="headerlink" href="#response-0xbb-simulation-variable" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">&lt;return_type&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable</td>
+<td style="text-align: center;">&lt;invalid&gt;</td>
+<td style="text-align: center;">Return type of the variable</td>
+<td style="text-align: center;">&lt;VARIABLE_VALUE&gt;</td>
+</tr>
+</tbody>
+</table>
+<p>The respond to a <strong>"Command Get Simulation Variable"</strong>.</p>
+<h2 id="extended-retrieval-messages">Extended retrieval messages<a class="headerlink" href="#extended-retrieval-messages" title="Permanent link">&para;</a></h2>
+<p>Some further messages require additional parameters.</p>
+<center>
+**Overview Extended Variables Retrieval**
+</center>
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Variable</p></th>
+<th><p>Request ValueType</p></th>
+<th><p>Response ValueType</p></th>
+<th><p>Description</p></th>
+<th><p><a href="../TraCI/Interfacing_TraCI_from_Python.md">Python Method</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>position conversion (0x82)</p></td>
+<td><p>compound, see below</p></td>
+<td><p>Position, as wished</p></td>
+<td><p>Reads a position information and returns it converted into the given representation.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convert2D">convert2D</a><br />
+<a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convert3D">convert3D</a><br />
+<a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convertGeo">convertGeo</a><br />
+<a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convertRoad">convertRoad</a></p></td>
+</tr>
+<tr class="even">
+<td><p>distance request (0x83)</p></td>
+<td><p>compound, see below</p></td>
+<td><p>double</p></td>
+<td><p>Reads two positions and an indicator whether the air or the driving distance shall be computed. Returns the according distance.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDistanceRoad">getDistanceRoad</a><br />
+<a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getDistance2D">getDistance2D</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>find route (0x86)</p></td>
+<td><p>compound, see below</p></td>
+<td><p>compound, see below</p></td>
+<td><p>Reads origin and destination edge together with some vehicle parameters and computes the currently fastest driving route for the vehicle (for pedestrians / passengers use find intermodal route).</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-findRoute">findRoute</a></p></td>
+</tr>
+<tr class="even">
+<td><p>find intermodal route (0x87)</p></td>
+<td><p>compound, see below</p></td>
+<td><p>compound, see below</p></td>
+<td><p>Reads origin and destination position together with usable modes and other person parameters and computes the currently fastest route for the person using the available modes.</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-findIntermodalRoute">findIntermodalRoute</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>get collisions (0x23)</p></td>
+<td><p>-</p></td>
+<td><p>compound, see below</p></td>
+<td><p>Retrieves details on all collision events in the last time step. Collision detection is disabled by default (**--collision.action none**).</p></td>
+<td><p><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-getCollisions">getCollisions</a></p></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="command-0x82-position-conversion">Command 0x82: Position Conversion<a class="headerlink" href="#command-0x82-position-conversion" title="Permanent link">&para;</a></h3>
+<p>The request needs the following parameter:</p>
+<table>
+<thead>
+<tr>
+<th>byte</th>
+<th>integer</th>
+<th><em>Position</em></th>
+<th>byte</th>
+<th>ubyte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value type compound</td>
+<td>item number (always 2)</td>
+<td>position to convert</td>
+<td>value type <em>ubyte</em></td>
+<td>Type of the Position to return</td>
+</tr>
+</tbody>
+</table>
+<p>Use this command to convert between the different position types used by
+TraCI. The specified <em>Position</em> is converted into the requested format
+given through <em>PositionId</em>. When converting from coordinates to road
+positions, the result is the closest position that was found to match
+the given one. In all other cases, the conversion will give an exact
+match. The return values consists of the converted value only.</p>
+<p>To simplify position conversions, a number of convenience functions are provided by <a href="../#interfaces_by_programming_language">many traci client libraries</a>,and <a href="../../Libsumo/">libsumo</a>:</p>
+<ul>
+<li><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convert2D">convert2D</a>: convert road,laneIndex,offset to x,y or lon,lat</li>
+<li><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convert3D">convert3D</a>: convert road,laneIndex,offset to x,y,z or lon,lat</li>
+<li><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convertGeo">convertGeo</a>: convert x,y to lon,lat or vice versa</li>
+<li><a href="https://sumo.dlr.de/pydoc/traci._simulation.html#SimulationDomain-convert3D">convertRoad</a>: convert x,y or lon,lat to road,laneInex,offset</li>
+</ul>
+<p>See <a href="../Protocol/#position_representations">TraCI/Protocol#Position
+Representations</a> for
+available position formats.</p>
+<h3 id="command-0x83-distance-request">Command 0x83: Distance Request<a class="headerlink" href="#command-0x83-distance-request" title="Permanent link">&para;</a></h3>
+<p>The request needs the following parameter:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;"><em>Position</em></th>
+<th style="text-align: center;"><em>Position</em></th>
+<th style="text-align: center;">ubyte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">value type <em>compound</em></td>
+<td style="text-align: center;">item number (always 3)</td>
+<td style="text-align: center;">start position</td>
+<td style="text-align: center;">end position</td>
+<td style="text-align: center;">Distance Type</td>
+</tr>
+</tbody>
+</table>
+<p>where</p>
+<ul>
+<li>Distance Type==0: air distance</li>
+<li>Distance Type==1: driving distance</li>
+</ul>
+<p>The resulting distance is returned.</p>
+<h3 id="command-0x86-find-route">Command 0x86: Find Route<a class="headerlink" href="#command-0x86-find-route" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">value type <em>compound</em></td>
+<td style="text-align: center;">item number (always 5)</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">start edge</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">destination edge</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">vehicle type</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">departure time (s)</td>
+<td style="text-align: center;">value type <em>integer</em></td>
+<td style="text-align: center;">routing mode (see below)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Routing mode shall be used to specify which data source to use for estimation of edge travel times. This is not yet implemented and the same data sources as for command <a href="../../Simulation/Routing/#travel-time_values_for_routing">vehicle.rerouteTraveltime is used</a>.</p>
+</div>
+<p>The following response is returned:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">type + string</th>
+<th style="text-align: center;">type + string</th>
+<th style="text-align: center;">type + stringList</th>
+<th style="text-align: center;">type + double</th>
+<th style="text-align: center;">type + double</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">type (always "driving")</td>
+<td style="text-align: center;">line (always "")</td>
+<td style="text-align: center;">edges</td>
+<td style="text-align: center;">travel time (s)</td>
+<td style="text-align: center;">travel time (s)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The python and C++ client return a namedtuple / struct with field names <em>stageType, line, destStop, edges, travelTime, cost</em>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The seemingly unused/redundant fields are reserved for route-by-cost and intermodal routing (see below).</p>
+</div>
+<h3 id="command-0x87-find-intermodal-route">Command 0x87: Find Intermodal Route<a class="headerlink" href="#command-0x87-find-intermodal-route" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">integer</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">byte</th>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">value type <em>compound</em></td>
+<td style="text-align: center;">item number (always 12)</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">start edge</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">destination edge</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">available modes</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">departure time (s)</td>
+<td style="text-align: center;">value type <em>integer</em></td>
+<td style="text-align: center;">routing mode (see above)</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">walking speed (m/s)</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">walk factor</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">depart position (m)</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">arrival position (m)</td>
+<td style="text-align: center;">value type <em>double</em></td>
+<td style="text-align: center;">departPosLat (m)</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">vtype of the vehicle</td>
+<td style="text-align: center;">value type <em>string</em></td>
+<td style="text-align: center;">vtype of the pedestrian</td>
+</tr>
+</tbody>
+</table>
+<p>The available modes are "car", "public", "bicycle" or space separated
+combination. Walking is always considered possible and is the default
+(or used when giving an empty string). When "car" is an available mode
+the vehicle type can be given using the vtype parameter. If this is
+empty, the default vehicle type is used.</p>
+<p>The response is a list of stages similar to the one returned by
+findRoute.</p>
+<h3 id="command-0x23-get-collisions">Command 0x23: Get Collisions<a class="headerlink" href="#command-0x23-get-collisions" title="Permanent link">&para;</a></h3>
+<p>The response is a list of Collision objects:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">type + string</th>
+<th style="text-align: center;">type + string</th>
+<th style="text-align: center;">type + string</th>
+<th style="text-align: center;">type + string</th>
+<th style="text-align: center;">type + double</th>
+<th style="text-align: center;">type + double</th>
+<th style="text-align: center;">type + string</th>
+<th style="text-align: center;">type + string</th>
+<th style="text-align: center;">type + double</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">collider id</td>
+<td style="text-align: center;">victim id</td>
+<td style="text-align: center;">collider type</td>
+<td style="text-align: center;">victim type</td>
+<td style="text-align: center;">collider speed</td>
+<td style="text-align: center;">victim speed</td>
+<td style="text-align: center;">collision type</td>
+<td style="text-align: center;">lane id</td>
+<td style="text-align: center;">pos on lane</td>
+</tr>
+</tbody>
+</table>
+<h2 id="generic-parameter-retrieval-0x7e">Generic Parameter Retrieval 0x7e<a class="headerlink" href="#generic-parameter-retrieval-0x7e" title="Permanent link">&para;</a></h2>
+<p>The simulation supports retrieval of additional object parameters using
+the <a href="../GenericParameters/#get_parameter">generic parameter retrieval call</a>.</p>
+<h3 id="stoppping-place-information">Stoppping Place Information<a class="headerlink" href="#stoppping-place-information" title="Permanent link">&para;</a></h3>
+<p>The <em>object id</em> of <code>getParameter</code> refers to the object (i.e. chargingStation) id. The following parameters
+are supported:</p>
+<ul>
+<li>chargingStation.totalEnergyCharged</li>
+<li>chargingStation.name</li>
+<li>chargingStation.lane</li>
+<li>parkingArea.capacity</li>
+<li>parkingArea.occupancy</li>
+<li>parkingArea.name</li>
+<li>parkingArea.lane</li>
+<li>busStop.name</li>
+<li>busStop.lane</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since version 1.7.0 these and other values can be retrieved via new domains (i.e. <code>traci.busstop</code>)</p>
+</div>
+<h3 id="device-parameter-retrieval">Device Parameter Retrieval<a class="headerlink" href="#device-parameter-retrieval" title="Permanent link">&para;</a></h3>
+<p>The following parameters can be retrieved. They are not for a specific device holder but are instead global measures. The <em>object id</em> must be the empty string "".</p>
+<ul>
+<li>device.tripinfo.count</li>
+<li>device.tripinfo.routeLength</li>
+<li>device.tripinfo.speed</li>
+<li>device.tripinfo.duration</li>
+<li>device.tripinfo.waitingTime</li>
+<li>device.tripinfo.timeLoss</li>
+<li>device.tripinfo.departDelay</li>
+<li>device.tripinfo.departDelayWaiting</li>
+<li>device.tripinfo.totalTravelTime</li>
+<li>device.tripinfo.totalDepartDelay</li>
+<li>device.tripinfo.vehicleTripStatistics.count</li>
+<li>device.tripinfo.vehicleTripStatistics.routeLength</li>
+<li>device.tripinfo.vehicleTripStatistics.speed</li>
+<li>device.tripinfo.vehicleTripStatistics.duration</li>
+<li>device.tripinfo.vehicleTripStatistics.waitingTime</li>
+<li>device.tripinfo.vehicleTripStatistics.timeLoss</li>
+<li>device.tripinfo.vehicleTripStatistics.departDelay</li>
+<li>device.tripinfo.vehicleTripStatistics.departDelayWaiting</li>
+<li>device.tripinfo.vehicleTripStatistics.totalTravelTime</li>
+<li>device.tripinfo.vehicleTripStatistics.totalDepartDelay</li>
+<li>device.tripinfo.bikeTripStatistics.count</li>
+<li>device.tripinfo.bikeTripStatistics.routeLength</li>
+<li>device.tripinfo.bikeTripStatistics.speed</li>
+<li>device.tripinfo.bikeTripStatistics.duration</li>
+<li>device.tripinfo.bikeTripStatistics.waitingTime</li>
+<li>device.tripinfo.bikeTripStatistics.timeLoss</li>
+<li>device.tripinfo.bikeTripStatistics.totalTravelTime</li>
+<li>device.tripinfo.pedestrianStatistics.count</li>
+<li>device.tripinfo.pedestrianStatistics.number</li>
+<li>device.tripinfo.pedestrianStatistics.routeLength</li>
+<li>device.tripinfo.pedestrianStatistics.duration</li>
+<li>device.tripinfo.pedestrianStatistics.timeLoss</li>
+<li>device.tripinfo.rideStatistics.count</li>
+<li>device.tripinfo.rideStatistics.number</li>
+<li>device.tripinfo.rideStatistics.waitingTime</li>
+<li>device.tripinfo.rideStatistics.routeLength</li>
+<li>device.tripinfo.rideStatistics.duration</li>
+<li>device.tripinfo.rideStatistics.bus</li>
+<li>device.tripinfo.rideStatistics.train</li>
+<li>device.tripinfo.rideStatistics.taxi</li>
+<li>device.tripinfo.rideStatistics.bike</li>
+<li>device.tripinfo.rideStatistics.aborted</li>
+<li>device.tripinfo.transportStatistics.count</li>
+<li>device.tripinfo.transportStatistics.number</li>
+<li>device.tripinfo.transportStatistics.waitingTime</li>
+<li>device.tripinfo.transportStatistics.routeLength</li>
+<li>device.tripinfo.transportStatistics.duration</li>
+<li>device.tripinfo.transportStatistics.bus</li>
+<li>device.tripinfo.transportStatistics.train</li>
+<li>device.tripinfo.transportStatistics.taxi</li>
+<li>device.tripinfo.transportStatistics.bike</li>
+<li>device.tripinfo.transportStatistics.aborted</li>
+</ul>
+<h3 id="statistics-parameter-retrieval">Statistics Parameter Retrieval<a class="headerlink" href="#statistics-parameter-retrieval" title="Permanent link">&para;</a></h3>
+<p>The retrievable values are those described at <a href="../../Simulation/Output/StatisticOutput/">statistic-output</a> as applicable to the current simulation time.</p>
+<ul>
+<li>stats.vehicles.loaded</li>
+<li>stats.vehicles.inserted</li>
+<li>stats.vehicles.running</li>
+<li>stats.vehicles.waiting</li>
+<li>stats.teleports.total</li>
+<li>stats.teleports.jam</li>
+<li>stats.teleports.yield</li>
+<li>stats.teleports.wrongLane</li>
+<li>stats.safety.collisions</li>
+<li>stats.safety.emergencyStops</li>
+<li>stats.safety.emergencyBraking</li>
+<li>stats.persons.loaded</li>
+<li>stats.persons.running</li>
+<li>stats.persons.jammed</li>
+<li>stats.personTeleports.total</li>
+<li>stats.personTeleports.abortWait</li>
+<li>stats.personTeleports.wrongDest</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,533 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/Shapes/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Shapes - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#circlepolygonpy" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Shapes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="circlepolygonpy">circlePolygon.py<a class="headerlink" href="#circlepolygonpy" title="Permanent link">&para;</a></h1>
+<p>Generate circular polygons with custom radius, and number of vertices.</p>
+<pre><code>&lt;SUMO\&gt;/tools/shape/circlePolygon.py X,Y,RADIUS,NUMVERTICES [x2,y2,radius2,points2] ....
+</code></pre>
+<ul>
+<li>&lt;X&gt;: Polygon center X</li>
+<li>&lt;Y&gt;: Polygon center Y</li>
+<li>&lt;RADIUS&gt;: Polygon radius</li>
+<li>&lt;NUMVERTICES&gt;: number of vertices</li>
+</ul>
+<h1 id="csv2polyconvertxmlpy">CSV2polyconvertXML.py<a class="headerlink" href="#csv2polyconvertxmlpy" title="Permanent link">&para;</a></h1>
+<p>Converts a given CSV-file that contains a list of pois to an XML-file that may be read by POLYCONVERT</p>
+<pre><code>&lt;SUMO\&gt;/tools/shape/CSV2polyconvertXML.py &lt;CSV_FILE&gt; &lt;OUTPUT_FILE&gt; &lt;VALUENAME&gt;[,&lt;VALUENAME&gt;]*
+</code></pre>
+<ul>
+<li>&lt;CSV_FILE&gt;: CSV document to be converted</li>
+<li>&lt;OUTPUT_FILE&gt;: POIs compatible with POLYCONVERT</li>
+</ul>
+<h1 id="pois2inductionloopspy">pois2inductionLoops.py<a class="headerlink" href="#pois2inductionloopspy" title="Permanent link">&para;</a></h1>
+<p>Converts a PoIs within a given PoI-file which are located on lanes into
+induction loop detectors. Each PoI is replicated to cover all lanes of
+the road. The detectors are named "&lt;POINAME&gt;__l&lt;LANE_INDEX&gt;".</p>
+<pre><code>&lt;SUMO\&gt;/tools/shape/pois2inductionLoops.py &lt;NET&gt; &lt;POIS&gt; &lt;OUTPUT&gt;
+</code></pre>
+<ul>
+<li>&lt;NET&gt;: The net to use for retrieving lane numbers</li>
+<li>&lt;POIS&gt;: The file containing the PoIs</li>
+<li>&lt;OUTPUT&gt;: The file to write the detectors into</li>
+</ul>
+<p>The tool uses the &lt;SUMO&gt;/tools/lib/sumopoi.py library.</p>
+<h1 id="poi_alongroadspy">poi_alongRoads.py<a class="headerlink" href="#poi_alongroadspy" title="Permanent link">&para;</a></h1>
+<p>Spatial distribute of POIs along given edges on a given network.</p>
+<p>So far POIs are situated in the middle on all edges without regard to
+the type of the edge (street, junction). Edges may be given in arbitrary
+order, connected edges are found automatically. Therefore: crossing
+chains of connected edges are not allowed -&gt; this needs two different
+runs of this script. Output is written in file 'pois.add.xml'</p>
+<pre><code>&lt;SUMO\&gt;/tools/shape/poi_alongRoads.py &lt;NET&gt; &lt;EDGE_ID&gt;[,&lt;EDGE_ID&gt;]* &lt;DISTANCE&gt;
+</code></pre>
+<ul>
+<li>&lt;NET&gt;: The net to use for retrieving the geometry</li>
+<li>&lt;EDGE_ID&gt;[,&lt;EDGE_ID&gt;]*: The edges to go along</li>
+<li>&lt;DISTANCE&gt;: Distance between PoIs</li>
+</ul>
+<p>Edges are separated with comma and without spaces in between. The
+distance between POIs may be any positive real number PoIs are stored
+with type="default", color="1,0,0", and layer="0".</p>
+<p>The tool uses the &lt;SUMO&gt;/tools/lib/sumonet.py library.</p>
+<h1 id="poi_at_stopspy">poi_at_stops.py<a class="headerlink" href="#poi_at_stopspy" title="Permanent link">&para;</a></h1>
+<p>Spatial distribute of POIs along given edges on a given network.</p>
+<p>Generates a PoI-file containing a PoI for each Stop from the given net.</p>
+<pre><code>&lt;SUMO\&gt;/tools/shape/poi_at_stops.py &lt;NET&gt; &lt;STOPS&gt;
+</code></pre>
+<ul>
+<li>&lt;NET&gt;: The network</li>
+<li>&lt;STOPS&gt;: The stops to read stop positions from</li>
+</ul>
+<p>PoIs are stored with type="default", color="1,0,0", and layer="0".</p>
+<p>The tool uses the &lt;SUMO&gt;/tools/lib/sumonet.py library.</p>
+<h1 id="poi_attlspy">poi_atTLS.py<a class="headerlink" href="#poi_attlspy" title="Permanent link">&para;</a></h1>
+<p>Spatial distribute of POIs along given edges on a given network.</p>
+<p>Generates a PoI-file containing a PoI for each tls controlled
+intersection from the given net.</p>
+<pre><code>&lt;SUMO\&gt;/tools/shape/poi_atTLS.py &lt;NET&gt; [nojoin]
+</code></pre>
+<ul>
+<li>&lt;NET&gt;: The net to read traffic light (tls) positions from</li>
+<li>[nojoin]: If "nojoin" is given, PoIs will be built on all nodes
+  covered by traffic lights, otherwise, if a traffic light spans over
+  multiple intersections, only one PoI will be built for this traffic
+  lights, at the center of all intersections controlled by this
+  traffic light</li>
+</ul>
+<p>PoIs are stored with type="default", color="1,0,0", and layer="0".</p>
+<p>The tool uses the &lt;SUMO&gt;/tools/lib/sumonet.py library.</p>
+<h1 id="poly2edgedatapy">poly2edgedata.py<a class="headerlink" href="#poly2edgedatapy" title="Permanent link">&para;</a></h1>
+<p>Transform polygons with params into edgedata with attributes.
+For each polygon a unique edge is selected that gives the best geometrical match.</p>
+<pre><code>&lt;SUMO\&gt;/tools/shape/poly2edgedata.py &lt;POLYGONS&gt; -n NETFILE -o OUTPUT_EDGEDATA
+</code></pre>
+<p>Further options:</p>
+<ul>
+<li><strong>--split-attributes</strong> and <strong>--nosplit-attributes</strong> support the use case where a single polygon applies to both directions of a road and related data must be split for the forward and reverse edge (i.e. traffic counts).</li>
+<li><strong>--filter ATTR,MIN,MAX</strong> supports filtering out polygons where ATTR is not in range [MIN,MAX]</li>
+<li><strong>--radius</strong>: maximum matching radius (default 20)</li>
+<li><strong>--min-length</strong>: avoid matching to short edges (default 10)</li>
+<li><strong>--angle-tolerance</strong>: avoid matching if edge and shape angle are too different (default 20 degrees)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>polygons can be obtained from OSM, shapefiles or geojson with the help of <a href="../../polyconvert/">polyconvert</a></p>
+</div>
+<h2 id="patches">patches<a class="headerlink" href="#patches" title="Permanent link">&para;</a></h2>
+<p>Option <strong>--patchfile</strong> loads instructions to modify the matching in special cases.
+The following syntax is supported in the patch file (one patch per line):</p>
+<pre><code># lines starting with '#' are ignored as comments
+# rev overrides the reverse edge of EDGEID to be REVEDGEID
+rev EDGEID REVEDGEID
+# edg overrides the edge to assign for POLYID to be EDGEID
+edg POLYID EDGEID
+# dat overrrides the data attribute ATTR for POLYID to take on value VALUE
+dat POLYID ATTR VALUE
+</code></pre>
+<p>any ID or VALUE may bet set to 'None' to signify that</p>
+<ul>
+<li>a reverse edge should not be assigned</li>
+<li>a polygon should not be mapped</li>
+<li>data should be ignored</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1242 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Rerouter/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Rerouter - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rerouter" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Rerouter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition styles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definition styles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#everything-in-one-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      everything in one file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definitions-in-a-separate-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      definitions in a separate file
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-a-street" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closing a Street
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-a-lane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closing a Lane
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Closing a Lane">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reversible-lanes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reversible Lanes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assigning-a-new-destination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assigning a new Destination
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assigning a new Destination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#special-destination-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Destination Values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assigning-a-new-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assigning a new Route
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assigning a new Route">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repeated-public-transport-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repeated public transport routes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rerouting-to-an-alternative-parking-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rerouting to an alternative Parking Area
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rerouting to an alternative Parking Area">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-in-parking-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory in parking search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determining-the-alternative-parking-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determining the alternative parking area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#further-parameters-to-affect-parking-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further parameters to affect parking behavior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destination-after-rerouting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Destination after rerouting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traci-access-to-parkingsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      TraCI access to parkingSearch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-scenarios-for-parkingsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example scenarios for parkingSearch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="rerouter">Rerouter<a class="headerlink" href="#rerouter" title="Permanent link">&para;</a></h1>
+<p>Rerouter changes the route of a vehicle as soon as the vehicle moves
+onto a specified edge.</p>
+<p>A rerouter is set into the simulated network by adding the following
+declaration line to an <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>: <code>&lt;rerouter id="&lt;REROUTER_ID&gt;" edges="&lt;EDGE_ID&gt;[;&lt;EDGE_ID&gt;]*" file="&lt;DEFINITION_FILE&gt;" [probability="&lt;PROBABILITY&gt;"]/&gt;</code>.
+Rerouter may be placed on several edges, at least one edge is necessary.
+Furthermore, it is possible to define the probability for rerouting a
+vehicle by giving a number between 0 (none) and 1 (all) already within
+the definition. The declaration values are:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of of the rerouter</td>
+</tr>
+<tr>
+<td><strong>edges</strong></td>
+<td>stringList</td>
+<td>A list of edge ids where vehicles shall be rerouted</td>
+</tr>
+<tr>
+<td>probability</td>
+<td>float</td>
+<td>The probability for vehicle rerouting (0-1), default 1</td>
+</tr>
+<tr>
+<td>timeThreshold</td>
+<td>time (s)</td>
+<td>minimum accumulated waiting time before the rerouter takes effect (default 0 applies always)</td>
+</tr>
+<tr>
+<td>vTypes</td>
+<td>stringList</td>
+<td>Space-separated list of vType IDs for which this rerouter should apply (default "" applies to all)</td>
+</tr>
+<tr>
+<td>off</td>
+<td>bool</td>
+<td>Whether the router should be inactive initially (and switched on in the gui), <em>default:false</em></td>
+</tr>
+<tr>
+<td>optional</td>
+<td>bool</td>
+<td>Whether the vehicle / person needs to request rerouting actively, <em>default:false</em></td>
+</tr>
+<tr>
+<td>pos</td>
+<td>float</td>
+<td>The position on the edge, <em>default:undefined</em></td>
+</tr>
+<tr>
+<td>radius</td>
+<td>float</td>
+<td>At which distance the rerouter will trigger, <em>default:infinity</em></td>
+</tr>
+</tbody>
+</table>
+<p>A rerouter may work in several different ways. Within a time period you
+may close an edge, or assign new destinations or predefined routes to
+vehicles. The next sections will describe these actions in detail.</p>
+<h2 id="definition-styles">Definition styles<a class="headerlink" href="#definition-styles" title="Permanent link">&para;</a></h2>
+<p>There are two styles in which to declare rerouters.</p>
+<h3 id="everything-in-one-file">everything in one file<a class="headerlink" href="#everything-in-one-file" title="Permanent link">&para;</a></h3>
+<p>The <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a> looks like this:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+   &lt;rerouter id=&quot;&lt;REROUTER_ID&gt;&quot; edges=&quot;&lt;EDGE_ID&gt;[;&lt;EDGE_ID&gt;]*&quot; [probability=&quot;&lt;PROBABILITY&gt;&quot;]&gt;
+      &lt;interval begin=&quot;&lt;BEGIN_TIME&gt;&quot; end=&quot;&lt;END_TIME&gt;&quot;&gt;
+         ... action description ...
+      &lt;/interval&gt;
+
+      ... further intervals ...
+   &lt;/rerouter&gt;
+
+   ... further rerouters ...
+&lt;/additional&gt;
+</code></pre>
+<h3 id="definitions-in-a-separate-file">definitions in a separate file<a class="headerlink" href="#definitions-in-a-separate-file" title="Permanent link">&para;</a></h3>
+<p>The <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a> looks like this:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+   &lt;rerouter id=&quot;&lt;REROUTER_ID&gt;&quot; edges=&quot;&lt;EDGE_ID&gt;[;&lt;EDGE_ID&gt;]*&quot; [probability=&quot;&lt;PROBABILITY&gt;&quot;]&gt;
+     &lt;include href=&quot;definitions.xml&quot;/&gt;
+   &lt;/rerouter&gt;
+
+   ... further rerouters ...
+&lt;/additional&gt;
+</code></pre>
+<p>And the file <code>definitions.xml</code> (which describes the actions over time) looks
+like this:</p>
+<pre><code class="language-xml">   &lt;interval begin=&quot;&lt;BEGIN_TIME&gt;&quot; end=&quot;&lt;END_TIME&gt;&quot;&gt;
+      ... action description ...
+   &lt;/interval&gt;
+
+   ... further intervals ...
+</code></pre>
+<p>Note, that the definition file has no root-level element</p>
+<p>All the following examples use the <a href="#everything_in_one_file">everything-in-one-file</a>-syntax.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Support for rerouter attribute <code>file</code> to include additional definitions was removed in version 1.13.0</p>
+</div>
+<h2 id="closing-a-street">Closing a Street<a class="headerlink" href="#closing-a-street" title="Permanent link">&para;</a></h2>
+<p>A "closingReroute" forces the rerouter to close the edge &lt;EDGE_ID&gt;.
+Vehicles which normally would pass this edge will get a new route as
+soon as they reach one of the edges given in the edges-attribute of the
+rerouter's declaration. The algorithm for selecting a new route is the
+same as described at
+<a href="#assigning_a_new_destination">#Assigning_a_new_Destination</a>
+with the additional constraint that closed edges must be avoided. A
+closingReroute definition may look like this:</p>
+<pre><code class="language-xml">&lt;rerouter&gt;
+   &lt;interval begin=&quot;&lt;BEGIN_TIME&gt;&quot; end=&quot;&lt;END_TIME&gt;&quot;&gt;
+      &lt;closingReroute id=&quot;&lt;EDGE_ID&gt;&quot;/&gt;
+   &lt;/interval&gt;
+
+   ... further intervals ...
+
+&lt;/rerouter&gt;
+</code></pre>
+<p>The attributes used within such definitions are:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the closed edge; the id must be the id of an edge within the network</td>
+</tr>
+<tr>
+<td>allow</td>
+<td>list of vehicle classes</td>
+<td>The (optional) ' '-separated list of <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#abstract_vehicle_class">vehicle classes</a> which are still allowed to drive on the closed edge. All others are forbidden.</td>
+</tr>
+<tr>
+<td>disallow</td>
+<td>list of vehicle classes</td>
+<td>The (optional) ' '-separated list of <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#abstract_vehicle_class">vehicle classes</a> which are forbidden from driving on the closed edge. All others are allowed.</td>
+</tr>
+<tr>
+<td>until</td>
+<td>time</td>
+<td>optional estimated end time of the closing. Vehicles will stay on their old route and wait if a detour would take more time than waiting for the closing to end.</td>
+</tr>
+</tbody>
+</table>
+<p>When using a <code>&lt;closingReroute&gt;</code> without attributes <code>allow</code> and <code>disallow</code>, vehicles that cannot reach their
+destination by an alternative route simply continue on their old route
+and will effectively ignore the closing of the edges. When using either
+attribute <code>allow</code> or <code>disallow</code> (only one may be used in the same definition), vehicles
+which cannot change their route will stop in front of the closed edge
+until the defined interval ends. This may be used to simulate traffic
+jams, caused by spontaneous road closing.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When using modified permissions, it may be necessary to use the option <strong>--ignore-route-errors</strong> as vehicles which are inserted while the closing is active may raise a route error otherwise. Furthermore, permissions may cause emergency braking. This can be mitigated by placing <a href="../Variable_Speed_Signs/">VariableSpeedSigns</a> ahead of the closing and slowing down traffic briefly before the closing.</p>
+</div>
+<h2 id="closing-a-lane">Closing a Lane<a class="headerlink" href="#closing-a-lane" title="Permanent link">&para;</a></h2>
+<p>A "closingLaneReroute" forces the rerouter to close the lane &lt;LANE_ID&gt;
+by setting its permissions to <em>authority</em> (this can be customized).
+Vehicles that pass this route and which are equipped with a <a href="../../Demand/Automatic_Routing/">rerouting
+device</a> may compute a new route as
+soon as they reach one of the edges given in the edges-attribute of the
+rerouter's declaration. A closingLaneReroute definition may look like
+this:</p>
+<pre><code class="language-xml">&lt;rerouter&gt;
+   &lt;interval begin=&quot;&lt;BEGIN_TIME&gt;&quot; end=&quot;&lt;END_TIME&gt;&quot;&gt;
+      &lt;closingLaneReroute id=&quot;&lt;LANE_ID&gt;&quot;/&gt;
+   &lt;/interval&gt;
+
+   ... further intervals ...
+
+&lt;/rerouter&gt;
+</code></pre>
+<p>The attributes used within such definitions are:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the closed lane; the id must be the id of a lane within the network</td>
+</tr>
+<tr>
+<td>allow</td>
+<td>list of vehicle classes</td>
+<td>The (optional) ' '-separated list of <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#abstract_vehicle_class">vehicle classes</a> which are still allowed to drive on the closed edge. All others are forbidden. (default <em>authority</em>)</td>
+</tr>
+<tr>
+<td>disallow</td>
+<td>list of vehicle classes</td>
+<td>The (optional) ' '-separated list of <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#abstract_vehicle_class">vehicle classes</a> which are forbidden from driving on the closed edge. All others are allowed. (This attribute may be used instead of <strong>allow</strong> for brevity if only a few classes shall be disallowed).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Modified permissions may cause emergency braking. This can be mitigated by placing <a href="../Variable_Speed_Signs/">VariableSpeedSigns</a> ahead of the closing and slowing down traffic briefly before the closing.</p>
+</div>
+<h3 id="reversible-lanes">Reversible Lanes<a class="headerlink" href="#reversible-lanes" title="Permanent link">&para;</a></h3>
+<p>Two <code>closingLaneReroute</code> definitions may be used to simulate a reversible lane in the following way:</p>
+<ul>
+<li>Define two edges in reverse directions with at least 2 lanes each</li>
+<li><a href="../../Netedit/editModesCommon/#inspecting_lanes">prohibit driving on one of the central lanes</a> (disallow="all")</li>
+<li>and modify the edge geometry so that the central lanes occupy the same space.</li>
+<li>by shifting geometry of <a href="../../Netedit/editModesCommon/#frame_operation">both edges sideways (-1.6 for default lane width)</a></li>
+<li>or by <a href="../../Netedit/neteditUsageExamples/#specifying_the_complete_geometry_of_an_edge_including_endpoints">setting the geometry directly</a></li>
+</ul>
+<p>To change their direction for a specific duration, the following rerouter may be used:</p>
+<pre><code class="language-xml">&lt;rerouter id=&quot;example&quot; edges=&quot;E1 -E1&quot;&gt;
+      &lt;interval begin=&quot;7:0:0&quot; end=&quot;8:30:0&quot;&gt;
+            &lt;closingLaneReroute id=&quot;E1_1&quot; allow=&quot;all&quot;/&gt;
+            &lt;closingLaneReroute id=&quot;-E1_1&quot; disallow=&quot;all&quot;/&gt;
+      &lt;/interval&gt;
+
+   &lt;/rerouter&gt;
+</code></pre>
+<p>Alternatively to changing lane permissions with a rerouter, the traci functions <a href="../../TraCI/Change_Lane_State/"><code>traci.lane.setAllowed</code> and <code>setDisallowed</code></a> may also be used.</p>
+<h2 id="assigning-a-new-destination">Assigning a new Destination<a class="headerlink" href="#assigning-a-new-destination" title="Permanent link">&para;</a></h2>
+<p>A "destProbReroute" forces the rerouter to assign a new route to
+vehicles that pass one of the edges defined in the edges-attribute of
+the rerouter's declaration. A new route destination is used, defined by
+the name of a new destination in the according element:</p>
+<pre><code class="language-xml">&lt;rerouter&gt;
+   &lt;interval begin=&quot;&lt;BEGIN_TIME&gt;&quot; end=&quot;&lt;END_TIME&gt;&quot;&gt;
+      &lt;destProbReroute id=&quot;&lt;EDGE_ID1&gt;&quot; probability=&quot;&lt;PROBABILITY1&gt;&quot;/&gt;
+      &lt;destProbReroute id=&quot;&lt;EDGE_ID2&gt;&quot; probability=&quot;&lt;PROBABILITY2&gt;&quot;/&gt;
+   &lt;/interval&gt;
+
+   ... further intervals ...
+
+&lt;/rerouter&gt;
+</code></pre>
+<p>The fastest route is computed automatically using the Dijkstra-algorithm
+and starting at the edge the vehicle is located at and ending at the new
+destination. The following travel times are considered for routing (the
+first applicable value is used):</p>
+<ul>
+<li>the current (smoothed) travel times in the network are used if the
+   vehicle is equipped with a <a href="../../Demand/Automatic_Routing/">rerouting
+   device</a></li>
+<li>subjective edge costs for the current vehicle if set via <a href="../../TraCI/Change_Vehicle_State/#change_edge_travel_time_information_0x58">TraCI
+   command <em>change edge travel time
+   information</em></a></li>
+<li>edge weights loaded via the <a href="../../sumo/">sumo</a> option <strong>--weight-files</strong></li>
+<li>travel times in the empty network</li>
+</ul>
+<p>The attributes used within a destProbReroute are:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the new destination; the id must be the id of an edge within the network or one of the special values <em>keepDestination</em>, <em>terminateRoute</em></td>
+</tr>
+<tr>
+<td><strong>probability</strong></td>
+<td>float (should be between 0 and 1)</td>
+<td>The probability with which a vehicle will use the given edge as destination; the probabilities are automatically normalized to sum to 1</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to combine <strong>closingReroute</strong> and <strong>destProbReroute</strong> within the same interval. In this case, only vehicles which cannot reach their original destination draw new destinations from the probability distribution.</p>
+</div>
+<h3 id="special-destination-values">Special Destination Values<a class="headerlink" href="#special-destination-values" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>keepDestination</em>: the vehicle continues on its current route</li>
+<li><em>terminateRoute</em>: the vehicle immediately leaves the simulation and
+   counts as arrived at its current position on the rerouter edge</li>
+</ul>
+<h2 id="assigning-a-new-route">Assigning a new Route<a class="headerlink" href="#assigning-a-new-route" title="Permanent link">&para;</a></h2>
+<p>A "routeProbReroute" forces the rerouter to assign a new route to
+vehicles which pass one of the edges defined in the edges-attribute of
+the rerouter's declaration. In this case, the id of a complete route
+must be supplied instead of a new destination:</p>
+<pre><code class="language-xml">&lt;rerouter&gt;
+   &lt;interval begin=&quot;&lt;BEGIN_TIME&gt;&quot; end=&quot;&lt;END_TIME&gt;&quot;&gt;
+      &lt;routeProbReroute id=&quot;&lt;ROUTE_ID1&gt;&quot; probability=&quot;&lt;PROBABILITY1&gt;&quot;/&gt;
+      &lt;routeProbReroute id=&quot;&lt;ROUTE_ID2&gt;&quot; probability=&quot;&lt;PROBABILITY2&gt;&quot;/&gt;
+   &lt;/interval&gt;
+
+   ... further intervals ...
+
+&lt;/rerouter&gt;
+</code></pre>
+<p>The attributes used within such definitions are:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of a new route to assign; the id must be the id of a previously loaded route</td>
+</tr>
+<tr>
+<td>probability</td>
+<td>float</td>
+<td>The probability with which a vehicle will use the given edge as destination; (default 1). The probabilities are automatically normalized for all entries</td>
+</tr>
+</tbody>
+</table>
+<h3 id="repeated-public-transport-routes">Repeated public transport routes<a class="headerlink" href="#repeated-public-transport-routes" title="Permanent link">&para;</a></h3>
+<p>If the new route assigned with the rerouter contains stops, the vehicle will use these stops. If the stops use attribute 'until' then the route should use attribute <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#repeated_routes">'cycleTime'</a> to shift the until-times by a set amount on each repeat.</p>
+<h2 id="rerouting-to-an-alternative-parking-area">Rerouting to an alternative Parking Area<a class="headerlink" href="#rerouting-to-an-alternative-parking-area" title="Permanent link">&para;</a></h2>
+<p>Vehicles that stop at a <a href="../ParkingArea/">parking
+area</a> may encounter the situation
+that the parking area has reached the limit of its capacity and does not
+permit parking.</p>
+<p>In this case the vehicle either waits on the road until a parking space
+becomes available or it may reroute to an alternative parking area. For
+the latter behavior a <code>parkingAreaReroute</code>-definition must be specified. This rerouter
+definition defines a set of parking areas that may be mutually used as
+alternatives. Rerouting to another parking area is triggered in two
+cases:</p>
+<ul>
+<li>when a vehicle reaches a parkingArea and is unable to stop due to
+   lack of capacity</li>
+<li>when a vehicle enters one of the rerouter-edges and the following
+   conditions are all met:</li>
+<li>its current destination parkingArea is among the set of
+      parkingAreaReroute definitions and has attribute <code>visible="true"</code></li>
+<li>its current destination parkingArea is full</li>
+</ul>
+<p>The definition looks like this:</p>
+<pre><code class="language-xml">   &lt;rerouter id=&quot;myRerouter&quot; edges=&quot;a b&quot;&gt;
+      &lt;interval begin=&quot;0&quot; end=&quot;2000&quot;&gt;
+         &lt;parkingAreaReroute id=&quot;ParkAreaA&quot;/&gt;
+         &lt;parkingAreaReroute id=&quot;ParkAreaB&quot;/&gt;
+      &lt;/interval&gt;
+   &lt;/rerouter&gt;
+</code></pre>
+<p>The attributes used within such definitions are:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of an existing parking area</td>
+</tr>
+<tr>
+<td>probability</td>
+<td>float</td>
+<td>The probability for each of the alternatives to be selected (default 1).</td>
+</tr>
+<tr>
+<td>visible</td>
+<td>bool</td>
+<td>Whether occupancy of this parkingArea is known before reaching the parkingArea edge (this models line-of-sight as well as parking information systems).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>&lt;parkingAreaReroute&gt;</code> definitions to model parking search can be automatically generated with the tool <a href="../../Tools/Misc/#generateparkingarearerouterspy">generateParkingAreaRerouters.py</a></p>
+</div>
+<h3 id="memory-in-parking-search">Memory in parking search<a class="headerlink" href="#memory-in-parking-search" title="Permanent link">&para;</a></h3>
+<p>Parking search refers to the situation where a vehicle encounters an occupied parkingArea and has to pick among a list of alternative destinations without knowing their occupancy state. The vehicle has to iteratively drive to alternative destinations until a free parking space is found. ParkingAreas that were visited earlier (and occupied) might be reasonably visited again with the expectation that they have cleared up since the last visit. By default, vehicles will not visit an occupied parkingArea again for 600s. This can be modified with vehicle-param or vType-param as follows:</p>
+<pre><code class="language-xml">   &lt;vehicle ...&gt;
+      &lt;param key=&quot;parking.memory&quot; value=&quot;300&quot;/&gt;
+   &lt;/vehicle
+</code></pre>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Up to version 1.10.0 parking memory was 0 which could cause vehicles to visit only a small set of areas repeatedly.</p>
+</div>
+<h3 id="determining-the-alternative-parking-area">Determining the alternative parking area<a class="headerlink" href="#determining-the-alternative-parking-area" title="Permanent link">&para;</a></h3>
+<p>The alternative parkingArea will be selected among all parking areas
+that are visible and have at least 1 free space according to the minimum
+weighted sum over a number of attributes. For invisible parkingAreas
+(attribute <code>visible="false"</code>, the occupancy value is a taken as a random number from
+[0,capacity[ which means they are always among the set of alternatives
+even when full. Each attribute (i.e. occupancy, time, distance) is normalized to [0-1] with the maximum value of all candidate parkingAreas with positive remaining capacity) and inverted as necessary.
+Inversion means taking the remainder to 1 instead of the normalized value itself.</p>
+<p>By default only the distance from the current vehicle
+position to the new parking area is considered. The following table
+describes the weighting factors that can be customized using <a href="../GenericParameters/">generic
+parameters of the vehicle or its
+vType</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Default value</th>
+<th>Description</th>
+<th>Inverse (Bigger is better)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parking.probability.weight</td>
+<td>0</td>
+<td>the influence of the <em>probability</em> attribute of the <code>parkingAreaReroute</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>parking.capacity.weight</td>
+<td>0</td>
+<td>The total capacity of the parking area</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>parking.absfreespace.weight</td>
+<td>0</td>
+<td>The absolute number of free spaces</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>parking.relfreespace.weight</td>
+<td>0</td>
+<td>The relative number of free spaces</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>parking.distanceto.weight</td>
+<td>1</td>
+<td>The road distance to the parking area</td>
+<td>no</td>
+</tr>
+<tr>
+<td>parking.timeto.weight</td>
+<td>0</td>
+<td>The assumed travel time to the parking area</td>
+<td>no</td>
+</tr>
+<tr>
+<td>parking.distancefrom.weight</td>
+<td>0</td>
+<td>The road distance from the parking area to the vehicle destination</td>
+<td>no</td>
+</tr>
+<tr>
+<td>parking.timefrom.weight</td>
+<td>0</td>
+<td>The assumed travel time from the parking area to the vehicle destination</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>When 'parking.probability.weight' is set to a positive value, a random number between 0 and attribute 'probability' is drawn for each candidate parkingArea. This value is then normalized to the range [0,1] by dividing with the maximum probability value of all parkingAreaReroute elements. The inverted normalized value is then multiplied with parking.probability.weight to enter into the candidate score.</p>
+<h3 id="further-parameters-to-affect-parking-behavior">Further parameters to affect parking behavior<a class="headerlink" href="#further-parameters-to-affect-parking-behavior" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parking.anywhere</td>
+<td>-1</td>
+<td>permit using any free parkingArea along the way after doing unsuccessful parkingAreaReroute x times (-1 disables this behavior)</td>
+</tr>
+<tr>
+<td>parking.ignoreDest</td>
+<td>0</td>
+<td>When rerouting is triggered, any alternative may be used regardless of visibility and occupancy of the current destination</td>
+</tr>
+<tr>
+<td>parking.frustration</td>
+<td>100</td>
+<td>increases the preference for visibly free parkingAreas over time (after x unsuccessful parkingAreaReroutes, targets with unknown occupancy will assumed to be <em>almost</em> full)</td>
+</tr>
+<tr>
+<td>parking.knowledge</td>
+<td>0</td>
+<td>Let driver "guess" the exact occupancy of invisible parkingAreas with probability x</td>
+</tr>
+</tbody>
+</table>
+<h3 id="destination-after-rerouting">Destination after rerouting<a class="headerlink" href="#destination-after-rerouting" title="Permanent link">&para;</a></h3>
+<p>Generally, vehicles that reroute to a new parking area will continue to
+their original destination after finishing the stop. In the special case
+where</p>
+<ol>
+<li>the original route ended at the original parkingArea edge and</li>
+<li>the arrivalPos was within [startPos, endPos] of the original
+    parkingArea</li>
+</ol>
+<p>then the new route will also end at the new parkingArea and the endPos
+of the new parkingArea will be set as new arrivalPos.</p>
+<h3 id="traci-access-to-parkingsearch">TraCI access to parkingSearch<a class="headerlink" href="#traci-access-to-parkingsearch" title="Permanent link">&para;</a></h3>
+<p>The current state of the parkingSearch can be accessed via calls to <code>traci.vehicle.getParameter</code> with the list permitted parameters given at <a href="../../TraCI/Vehicle_Value_Retrieval/#supported_further_parameters">TraCI/Vehicle_Value_Retrieval</a>.</p>
+<h3 id="example-scenarios-for-parkingsearch">Example scenarios for parkingSearch<a class="headerlink" href="#example-scenarios-for-parkingsearch" title="Permanent link">&para;</a></h3>
+<p>Test cases can be downloaded <a href="https://sumo.dlr.de/extractTest.php?path=sumo/extended/rerouter/parking/parkingSearch">here</a></p>
+<h1 id="vehicle-behavior-when-closing-a-street">Vehicle Behavior when closing a street<a class="headerlink" href="#vehicle-behavior-when-closing-a-street" title="Permanent link">&para;</a></h1>
+<p>The interaction of vehicles with reroutes is complex and depends on many
+different factors. Below we give a description of each of the factors and then
+describe the behavior for each combination of factors.
+The following assumes vehicles that have an edge affected by <code>&lt;closingReroute .../&gt;</code>
+along their route (other vehicles are not affected directly).</p>
+<ol>
+<li>closing style</li>
+<li>a) hard closing: <code>&lt;closingReroute&gt;</code> uses attribute 'allow' or 'disallow' to prohibit the vehicle</li>
+<li>b) soft closing: attribute is not used (edge use is discouraged but not forbidden)</li>
+<li>alternatives</li>
+<li>a) an alternative route exists</li>
+<li>b) no alternative route exists</li>
+<li>detour signage</li>
+<li>a) an rerouter edge is encountered before the alternative route branches off</li>
+<li>b) no rerouter edge is encountered before the alternative route branches off</li>
+<li>vehicle style</li>
+<li>a) vehicle defined with origin and destination where the affected edge is on the preferred route (i.e. <code>&lt;trip from="..." to="..."&gt;</code>)</li>
+<li>b) vehicle defined with fixed route</li>
+<li>closing time versus departure time</li>
+<li>a) vehicle departs after closing becomes active</li>
+<li>b) vehicle departs before closing becomes active (closing occurs while en-route)</li>
+<li>routing mode of the vehicle (set via <strong>--device.rerouting.mode</strong> or vehicle/vtype <code>&lt;param key="device.rerouting.mode" value="8"/&gt;</code>)</li>
+<li>a) routing mode 0 (or generally, not setting the 4th bit): all hard closings are visible during routing</li>
+<li>b) routing mode 8 (or generally setting the 4th bit): all hard-closings are ignored during routing and will never cause a route error</li>
+</ol>
+<p>The following vehicle behaviors are possible:</p>
+<ul>
+<li><strong>R</strong>: use an alternative route upon reaching the rerouter edge</li>
+<li><strong>D</strong>: use an alternative route on departure</li>
+<li><strong>I</strong>: ignore the closed edge and keep driving</li>
+<li><strong>W</strong>: wait ahead of the closed edge until it reopens or time-to-teleport is
+  reached (in this case teleport across the closed edge(s))</li>
+<li><strong>E</strong>: generate an error</li>
+</ul>
+<p>To following effects occur:</p>
+<h2 id="hard-closing">Hard closing<a class="headerlink" href="#hard-closing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>1a-2a-3a-4a-5a: <strong>D</strong></li>
+<li>1a-2a-3a-4a-5b: <strong>R</strong></li>
+<li>1a-2a-3a-4b-5a: <strong>R</strong></li>
+<li>
+<p>1a-2a-3a-4b-5b: <strong>R</strong></p>
+</li>
+<li>
+<p>1a-2a-3b-4a-5a: <strong>D</strong></p>
+</li>
+<li>1a-2a-3b-4a-5b: <strong>W</strong></li>
+<li>1a-2a-3b-4b-5a: <strong>W</strong></li>
+<li>
+<p>1a-2a-3b-4b-5b: <strong>W</strong></p>
+</li>
+<li>
+<p>1a-2b-3a-4a-5a: <strong>E</strong> (becomes <strong>W</strong> with <strong>--ignore-route-errors</strong> or <strong>--device.rerouting.mode 8</strong>)</p>
+</li>
+<li>1a-2b-3a-4a-5b: <strong>W</strong></li>
+<li>1a-2b-3a-4b-5a: <strong>W</strong></li>
+<li>
+<p>1a-2b-3a-4b-5b: <strong>W</strong></p>
+</li>
+<li>
+<p>1a-2b-3b-4a-5a: <strong>E</strong> (becomes <strong>W</strong> with <strong>--ignore-route-errors</strong> or <strong>--device.rerouting.mode 8</strong>)</p>
+</li>
+<li>1a-2b-3b-4a-5b: <strong>W</strong></li>
+<li>1a-2b-3b-4b-5a: <strong>W</strong></li>
+<li>1a-2b-3b-4b-5b: <strong>W</strong></li>
+</ul>
+<h2 id="soft-closing">Soft closing<a class="headerlink" href="#soft-closing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>1b-2a-3a-4a-5a: <strong>R</strong></li>
+<li>1b-2a-3a-4a-5b: <strong>R</strong></li>
+<li>1b-2a-3a-4b-5a: <strong>R</strong></li>
+<li>
+<p>1b-2a-3a-4b-5b: <strong>R</strong></p>
+</li>
+<li>
+<p>1b-2a-3b-4a-5a: <strong>I</strong></p>
+</li>
+<li>1b-2a-3b-4a-5b: <strong>I</strong></li>
+<li>1b-2a-3b-4b-5a: <strong>I</strong></li>
+<li>
+<p>1b-2a-3b-4b-5b: <strong>I</strong></p>
+</li>
+<li>
+<p>1b-2b-3a-4a-5a: <strong>I</strong></p>
+</li>
+<li>1b-2b-3a-4a-5b: <strong>I</strong></li>
+<li>1b-2b-3a-4b-5a: <strong>I</strong></li>
+<li>
+<p>1b-2b-3a-4b-5b: <strong>I</strong></p>
+</li>
+<li>
+<p>1b-2b-3b-4a-5a: <strong>I</strong></p>
+</li>
+<li>1b-2b-3b-4a-5b: <strong>I</strong></li>
+<li>1b-2b-3b-4b-5a: <strong>I</strong></li>
+<li>1b-2b-3b-4b-5b: <strong>I</strong></li>
+</ul>
+<h2 id="departure-on-a-closed-edge">Departure on a closed edge<a class="headerlink" href="#departure-on-a-closed-edge" title="Permanent link">&para;</a></h2>
+<p>When the departure edge for a vehicle is closed, vehicles will ignore this for
+'soft' closing. For a 'hard' closing the simulation will raise an error. If <strong>--ignore-route-errors</strong> is set, the vehicle will be discarded with a warning.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

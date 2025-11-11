@@ -10,26 +10,29 @@
       
         <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Models/Emissions/">
       
+      
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>排気ガス - SUMO wiki ja</title>
+        <title>Emissions - SUMO wiki ja</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -47,10 +50,11 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -61,9 +65,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#排気ガス" class="md-skip">
+        <a href="#introduction" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -91,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -103,47 +107,57 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              排気ガス
+              Emissions
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             検索を初期化
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -157,43 +171,64 @@
           
             
 <nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
 
-
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      ドキュメント
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
 
-
-  <li class="md-tabs__item">
-    <a href="../../Downloads/" class="md-tabs__link">
-      ダウンロード
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
 
-
-  <li class="md-tabs__item">
-    <a href="../../Publications/" class="md-tabs__link">
-      出版物
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -212,6 +247,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -229,14 +265,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        ドキュメント
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -244,14 +287,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Downloads/" class="md-nav__link">
-        ダウンロード
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -259,14 +309,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../Publications/" class="md-nav__link">
-        出版物
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -292,102 +349,78 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#はじめに" class="md-nav__link">
-    はじめに
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#モデルの使用" class="md-nav__link">
-    モデルの使用
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#モデルによってカバーされる汚染物質測定値" class="md-nav__link">
-    モデルによってカバーされる汚染物質/測定値
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#出力" class="md-nav__link">
-    出力
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#その他のインターフェイス" class="md-nav__link">
-    その他のインターフェイス
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="排気ガス">排気ガス<a class="headerlink" href="#排気ガス" title="Permanent link">&para;</a></h1>
-<!--
-訳語対応
-* Edge: 道路
-* Lane: 車線
-* EmissionModel: 排気ガスモデル ()
--->
 
-<p><a href="https://sumo.dlr.de/docs/Models/Emissions.html">原文ページ</a></p>
-<p>参考原文バージョン: 2021.11.20(dffb70dfe6439383a644f9ac2de9de91f32abbcb)</p>
-<h2 id="はじめに">はじめに<a class="headerlink" href="#はじめに" title="Permanent link">&para;</a></h2>
-<p>SUMOには、以下の排気ガスモデルが含まれています。</p>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>SUMO includes the following emission models:</p>
 <ul>
-<li><a href="../Models/Emissions/HBEFA-based.md">HBEFA v2.1ベース</a>です。<a href="http://www.hbefa.net/">HBEFA</a>排出量データベース(オープンソース) v2.1 の継続的な改良版。</li>
-<li><a href="../Models/Emissions/HBEFA3-based.md">HBEFA v3.1-based</a>: <a href="http://www.hbefa.net/">HBEFA</a>排出量データベース(オープンソース) v3.1 の連続的な再定式化。</li>
-<li><a href="../Models/Emissions/PHEMlight.md">PHEMlight</a>: オリジナルモデルの派生版。
-  オリジナル</li>
-<li><a href="https://www.ivt.tugraz.at/en/research/areas/em/">PHEM</a>
-  エミッションモデル（クローズドソース、商用）。</li>
-<li><a href="../Models/Electric.md#emission_output">電気自動車モデル</a>は、<a href="../Models/Electric.md#publications">Kurczveil, T., López, P.A., Schnieder</a>による電気自動車の電力消費モデルです。</li>
-<li><a href="../Models/MMPEVEM.md">MMP電気自動車モデル</a>: [MMP電気自動車]による電力消費モデル。
-  Kevin Badalian from Teaching and Research] による電力消費モデル。
-  RWTHアーヘン大学のメカトロニクス（MMP)研究室のKevin Badalian氏によるものです。
-  大学](../Models/MMPEVEM.md#publications)による電力消費モデルです。</li>
+<li><a href="HBEFA-based/">HBEFA v2.1-based</a>: A
+  continuous reformulation of the <a href="https://www.hbefa.net/">HBEFA</a> v2.1
+  emissions data base (open source);</li>
+<li><a href="HBEFA3-based/">HBEFA v3.1-based</a>: A
+  continuous reformulation of the <a href="https://www.hbefa.net/">HBEFA</a> v3.1
+  emissions data base (open source);</li>
+<li><a href="HBEFA4-based/">HBEFA v4.2-based</a>: A
+  continuous reformulation of the <a href="https://www.hbefa.net/">HBEFA</a> v4.2
+  emissions data base (open source);</li>
+<li><a href="PHEMlight/">PHEMlight</a>, a derivation of
+  the original
+  <a href="https://www.itna.tugraz.at/en/research/areas/em/simulation/phem.html">PHEM</a>
+  emission model (model is open source, but full data sets are only commercially available);</li>
+<li><a href="PHEMlight5/">PHEMlight5</a>, the V5 version of PHEMlight
+  supporting deterioration emission model (model is open source, but full data sets are only commercially available);</li>
+<li><a href="../Electric/#emission_output">Electric Vehicle
+  Model</a>: an
+  electricity-consumption model by <a href="../Electric/#publications">Kurczveil, T., López, P.A.,
+  Schnieder</a>.</li>
+<li><a href="../MMPEVEM/">MMP Electric Vehicle Model</a>: an
+  electricity-consumption model by <a href="../MMPEVEM/#publications">Kevin Badalian from Teaching and Research
+  Area Mechatronics in Mobile Propulsion (MMP), RWTH Aachen
+  University</a>.</li>
 </ul>
-<p>モデルおよびその実装に関する文献は、[the DLR electronic library]で見ることができます。
-DLR電子図書館
-(http://elib.dlr.de/89398/)](http://elib.dlr.de/89398/)にあります。</p>
-<h2 id="モデルの使用">モデルの使用<a class="headerlink" href="#モデルの使用" title="Permanent link">&para;</a></h2>
-<p>すべてのモデルは、異なる車両排気ガスクラスを実装しています。
-これらのクラスは、車両タイプ属性である emissionClass<code>を使用することで車両に割り当てることができます。
-モデルに異なるクラスがある場合、その定義は</code>emissionClass="<model>/<class>"<code>という形式をとります（例：</code>HBEFA3/PC_G_EU4<code>）。
-もし、モデルが一つのクラスしか持っていない場合(例えば電気自動車モデルl)、入力では</code><class><code>を省略することができ、出力では</code>default<code>` として表示されます。
-特別なモデル</code>Zero` は排出量やエネルギー消費量を全く発生させないモデルです。</p>
-<p>利用可能な排出量クラスは排出モデルの説明の中で見つけることができます（<a href="../Models/Emissions/HBEFA-based.md">HBEFA v2.1ベース</a>、<a href="../Models/Emissions/HBEFA3-based.md">HBEFA v3.1-based</a>、<a href="../Models/Emissions/PHEMlight.md">PHEMlight</a>) があります。
-現在のデフォルトのモデルは <code>HBEFA3/PC_G_EU4</code> (ガソリンエンジンを搭載したユーロノルム4の乗用車) であるHBEFA3ベースのモデル)です。</p>
-<h2 id="モデルによってカバーされる汚染物質測定値">モデルによってカバーされる汚染物質/測定値<a class="headerlink" href="#モデルによってカバーされる汚染物質測定値" title="Permanent link">&para;</a></h2>
-<table>
+<p>Literature on the Models and their implementation can be found at <a href="https://elib.dlr.de/89398/">the
+DLR electronic library
+(https://elib.dlr.de/89398/)</a>.</p>
+<h1 id="using-models">Using Models<a class="headerlink" href="#using-models" title="Permanent link">&para;</a></h1>
+<p>All models implement different vehicle emission classes. These classes
+can be assigned to vehicles by using the vehicle type attribute
+<code>emissionClass</code>. If the model has different classes, the definition
+has the form <code>emissionClass="&lt;model&gt;/&lt;class&gt;"</code> e.g. <code>HBEFA3/PC_G_EU4</code>.
+If the model has only one class (for instance the Electric Vehicle Model),
+the <code>&lt;class&gt;</code> can be omitted in the input and will show up as <code>default</code>
+in the output. There is one special model <code>Zero</code> which does not
+generate emissions or energy consumption at all.</p>
+<p>Available emission classes
+can be found within the emission model descriptions
+(<a href="HBEFA-based/">HBEFA v2.1-based</a>,
+<a href="HBEFA3-based/">HBEFA v3.1-based</a>,
+<a href="HBEFA4-based/">HBEFA v4.2-based</a>,
+<a href="PHEMlight/">PHEMlight</a>,
+<a href="PHEMlight5/">PHEMlight5</a>). The current default
+model is <code>HBEFA3/PC_G_EU4</code> (a gasoline powered Euro norm 4 passenger car
+modeled using the HBEFA3 based model).</p>
+<h1 id="pollutants--measurements-covered-by-models">Pollutants / Measurements covered by models<a class="headerlink" href="#pollutants--measurements-covered-by-models" title="Permanent link">&para;</a></h1>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Please note that the unit of fuel-related outputs changed with SUMO 1.14.0 from liters to milligram.
+For the old behavior use the option <strong>--emissions.volumetric-fuel</strong>.</p>
+</div>
+<table class="tg">
   <tr>
-    <th class="tg-uzvj" rowspan="2">モデル</th>
-    <th class="tg-7btt" colspan="7">汚染物質/燃費</th>
+    <th class="tg-uzvj" rowspan="2">model</th>
+    <th class="tg-7btt" colspan="7">pollutant / measurement</th>
   </tr>
   <tr>
     <td class="tg-7btt">CO<sub>2</sub></td>
@@ -395,8 +428,8 @@ DLR電子図書館
     <td class="tg-7btt">HC</td>
     <td class="tg-7btt">NO<sub>x</sub></td>
     <td class="tg-7btt">PM<sub>x</sub></td>
-    <td class="tg-7btt">燃料消費</td>
-    <td class="tg-uzvj">電力消費</td>
+    <td class="tg-7btt">fuel consumption</td>
+    <td class="tg-uzvj">electricity consumption</td>
   </tr>
   <tr>
     <td class="tg-0pky">HBEFA v2.1-based<br><code>emissionClass="HBEFA/..."</code></td>
@@ -419,6 +452,16 @@ DLR電子図書館
     <td class="tg-c3ow">-</td>
   </tr>
   <tr>
+    <td class="tg-0pky">HBEFA v4.2-based<br><code>emissionClass="HBEFA4/..."</code></td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+  </tr>
+  <tr>
     <td class="tg-0pky">PHEMlight<br><code>emissionClass="PHEMlight/..."</code></td>
     <td class="tg-c3ow">x</td>
     <td class="tg-c3ow">x</td>
@@ -426,7 +469,17 @@ DLR電子図書館
     <td class="tg-c3ow">x</td>
     <td class="tg-c3ow">x</td>
     <td class="tg-c3ow">x</td>
-    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow">(x)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">PHEMlight<br><code>emissionClass="PHEMlight5/..."</code></td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">x</td>
+    <td class="tg-c3ow">(x)</td>
   </tr>
   <tr>
     <td class="tg-0pky">Electric Vehicle Model<br><code>emissionClass="Energy"</code></td>
@@ -450,40 +503,93 @@ DLR電子図書館
   </tr>
 </table>
 
-<h2 id="出力">出力<a class="headerlink" href="#出力" title="Permanent link">&para;</a></h2>
-<p>シミュレーション車両が排出する汚染物質は、以下の方法で可視化できます。
-<a href="../sumo-gui.md">sumo-gui</a> を用いて可視化するか<a href="../../sumo/">sumo</a> と <a href="../sumo-gui.md">sumo-gui</a> の両方で出力ファイルに書き出すことができます。
-以下の出力が可能です。</p>
+<p>PHEMlight and PHEMlight5 generate electricity consumption values only if the
+data files for battery powered or hybrid vehicles are available (which are not part of
+the free data set).</p>
+<h1 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h1>
+<p>Pollutants emitted by the simulated vehicles can be visualised using
+<a href="../../sumo-gui/">sumo-gui</a> or be written into output files, both by
+<a href="../../sumo/">sumo</a> and <a href="../../sumo-gui/">sumo-gui</a>. The
+following output can be used:</p>
 <ul>
-<li><a href="../Simulation/Output/TripInfo.md">トリップ情報</a>: 排出ガス装置との組み合わせで tripinfo出力は、車両の走行中に排出されたすべての汚染物質と消費された燃料の合計が出力されます。 全旅程の排出量を記録するには、オプション <strong>--tripinfo-output</strong> と <strong>--device.emissions.probability 1.0</strong> を追加してください。
-  また、選択された車両の排出量を記録するように設定することもできます。<a href="../Definition_of_Vehicles,_Vehicle_Types,_and_Routes.md#devices">一般的な parameters</a> を使って、選択した車種に排出ガス記録を設定することもできます。</li>
-<li><a href="../Simulation/Output/Lane_or_Edge-based_Emissions_Measures.md">Lane/Edge(道路/車線)ごとの排出</a>: これらの出力ファイルには、ある道路/車線で排出される汚染物質が含まれています。</li>
-<li><a href="../Simulation/Output/EmissionOutput.md">emission-output</a>: 各車両と時間ステップの排出量を集計していない値</li>
-<li><a href="../sumo-gui.md#vehicle_visualisation_settings">排出量に基づく車両ごとの色分け</a>:  これは 各シミュレーションステップにおける各車両の排出量を表示するために使用できます。</li>
-<li><a href="../sumo-gui.md#edgelane_visualisation_settings">排出量に基づくLane/Edge(道路/車線)の色分け</a>: これは、各シミュレーションステップでレーン上の全ての車両の排出量を表示するために使用されます(または、エッジ全体の排出量を表示する<a href="../Simulation/Meso.md">Simulation/Meso</a>を利用できます)。</li>
+<li><a href="../../Simulation/Output/TripInfo/">trip information</a>: In
+  combination with the emissions device, the tripinfo output contains
+  the sum of all pollutants emitted / fuel consumed during a vehicle's
+  journey. To record emissions for all trips add the options <strong>--tripinfo-output</strong> and <strong>--device.emissions.probability 1.0</strong>.
+  Alternatively, you can configure emission recording for selected
+  vehicles using <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#devices">generic
+  parameters</a>.</li>
+<li><a href="../../Simulation/Output/Lane-_or_Edge-based_Emissions_Measures/">edgelane
+  emissions</a>:
+  These output files contain the pollutants emitted at an edge / a
+  lane, aggregated over a variable time span</li>
+<li><a href="../../Simulation/Output/EmissionOutput/">emission-output</a>:
+  Unaggregated emission values for every vehicle and time step</li>
+<li><a href="../../sumo-gui/#vehicle_visualisation_settings">Color vehicles by
+  emissions</a>: This
+  can be used to show the emissions for each vehicle during each
+  simulation step</li>
+<li><a href="../../sumo-gui/#edgelane_visualisation_settings">Color lanes/edges by
+  emissions</a>:
+  This can be used to show the emissions for all vehicles on a lane
+  during each simulation step (or for the whole edge in
+  <a href="../../Simulation/Meso/">Simulation/Meso</a>).</li>
 </ul>
-<h2 id="その他のインターフェイス">その他のインターフェイス<a class="headerlink" href="#その他のインターフェイス" title="Permanent link">&para;</a></h2>
-<p><a href="../Tools/TraceExporter.md">traceExporter.py</a>は、SUMOの<a href="../Simulation/Output/FCDOutput.md">fcd-output</a>を<a href="https://www.ivt.tugraz.at/en/research/areas/em/">PHEM</a> で直接読み込めるファイルに変換するツールです。
-このツールを使った<a href="../Tutorials/Trace_File_Generation.md">トレースファイル生成のチュートリアル(PHEM入力ファイルを含む)</a>があります。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SUMOのこの機能は、<a href="https://verkehrsforschung.dlr.de/en/projects/colombo">"COLOMBO"</a>プロジェクト内で開発、修正、拡張され<a href="https://wayback.archive-it.org/12090/20191127213419/https:/ec.europa.eu/research/fp7/index_en.cfm">Seventh Framework Programme</a>の支援を受けたものです。</td>
-</tr>
-<tr>
-<td>SUMOのこの機能は、<a href="">AMITRANプロジェクト</a>の<a href="">"AMITRAN"</a>において開発、修正、拡張され、<a href="https://wayback.archive-it.org/12090/20191127213419/https:/ec.europa.eu/research/fp7/index_en.cfm">Seventh Framework Programme</a>の支援を受けたものです。</td>
-</tr>
-</tbody>
-</table>
+<h1 id="standing-vehicles">Standing vehicles<a class="headerlink" href="#standing-vehicles" title="Permanent link">&para;</a></h1>
+<p>A vehicle can have either a foreseeable stop on its route or stop at a junction or in a jam.
+In both cases it will still produce emissions / consume energy as long as the motor is running.
+For planned stops SUMO will switch off the engine immediately if the duration is longer than 300s
+(configurable via the vehicle type <a href="../../Simulation/GenericParameters/">generic parameter</a> <code>&lt;param key="shutOffStopDuration" value="300"/&gt;</code> with a value in seconds).</p>
+<p>The automated start/stop also for unplanned stops is not enabled by default but can be set using
+the vehicle type <a href="../../Simulation/GenericParameters/">generic parameter</a> <code>&lt;param key="shutOffAutoDuration" value="20"/&gt;</code>.
+This expects a value in seconds and will switch off the engine automatically if the vehicle does not move for longer than the given time.</p>
+<h1 id="coasting-vehicles">Coasting vehicles<a class="headerlink" href="#coasting-vehicles" title="Permanent link">&para;</a></h1>
+<p>A rolling (combustion driven) vehicle which does not accelerate actively (coasting) will not consume
+fuel because the engine gets switch off automatically in this case. All PHEMlight and HBEFA models use
+a threshold depending on the current speed, acceleration and slope to determine whether the vehicle is
+in this regime and set all emission values to zero. The value depends of course also on the
+characteristics of the vehicle such as mass and front area. For details see the code of
+PollutantsInterface::Helper::getCoastingDecel.</p>
+<h1 id="further-interfaces">Further Interfaces<a class="headerlink" href="#further-interfaces" title="Permanent link">&para;</a></h1>
+<p>The tool <a href="../../Tools/TraceExporter/">traceExporter.py</a> converts
+SUMO's <a href="../../Simulation/Output/FCDOutput/">fcd-output</a> into files
+that can be directly read by the
+<a href="https://www.itna.tugraz.at/en/research/areas/em/">PHEM</a>
+application. A <a href="../../Tutorials/Trace_File_Generation/">tutorial on generating trace files (including PHEM input
+files)</a> using this tool is
+available.</p>
+<div style="border:1px solid #909090; min-height: 35px;" align="right">
+<span style="float: right; margin-top: -5px;"><a href="https://web.archive.org/web/20191005024529/https:/ec.europa.eu/research/fp7/index_en.cfm"><img src="../images/FP7-small.gif" alt="Seventh Framework Programme"></a>
+<a href="http://web.archive.org/web/20240722054138/https://verkehrsforschung.dlr.de/en/projects/colombo"><img src="../images/COLOMBO-small.png" alt="COLOMBO project"></a></span>
+<span style="">This part of SUMO was developed, reworked, or extended within the project
+<a href="http://web.archive.org/web/20240722054138/https://verkehrsforschung.dlr.de/en/projects/colombo">"COLOMBO"</a>, co-funded by the European Commission within the <a href="https://web.archive.org/web/20191005024529/https:/ec.europa.eu/research/fp7/index_en.cfm">Seventh Framework Programme</a>.</span></div>
 
-              
-            </article>
-          </div>
+<div style="border:1px solid #909090; min-height: 35px;" align="right">
+<span style="float: right; margin-top: -5px;"><a href="https://web.archive.org/web/20191005024529/https:/ec.europa.eu/research/fp7/index_en.cfm"><img src="../images/FP7-small.gif" alt="Seventh Framework Programme"></a>
+<a href="https://web.archive.org/web/20180309093847/https://amitran.eu/"><img src="../images/AMITRAN-small.png" alt="AMITRAN project"></a></span>
+<span style="">This part of SUMO was developed, reworked, or extended within the project
+<a href="https://web.archive.org/web/20180309093847/https://amitran.eu/">"AMITRAN"</a>, co-funded by the European Commission within the <a href="https://web.archive.org/web/20191005024529/https:/ec.europa.eu/research/fp7/index_en.cfm">Seventh Framework Programme</a>.</span></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -510,10 +616,14 @@ DLR電子図書館
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

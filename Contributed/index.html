@@ -1,0 +1,578 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Contributed/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Contributed - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#within-sumo" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Contributed
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Some people extended SUMO or built tools to make it more usable. Not all
+of these extensions have found its way to what we would call "SUMO
+core".</p>
+<h1 id="within-sumo">Within SUMO<a class="headerlink" href="#within-sumo" title="Permanent link">&para;</a></h1>
+<p>The following extensions became a core part of the SUMO package.</p>
+<ul>
+<li>
+<p><a href="../TraCI/">TraCI</a></p>
+<p>online interaction with the simulation</p>
+</li>
+</ul>
+<h1 id="included-in-the-distribution">Included in the Distribution<a class="headerlink" href="#included-in-the-distribution" title="Permanent link">&para;</a></h1>
+<p>The following contributions are included in the package, but are less
+supported.</p>
+<ul>
+<li>
+<p><a href="Cadyts/">Cadyts</a></p>
+<p>a tool by Gunnar Flötteröd which adapts the simulate flows to the
+real flows in a known net</p>
+</li>
+<li>
+<p><a href="SUMOPy/">SUMOPy</a></p>
+<p>a tool by Joerg Schweizer supporting the whole SUMO toolchain with a
+GUI especially for demand modelling</p>
+</li>
+<li>
+<p><a href="../Tools/LiSuM/">LiSuM</a></p>
+<p>a middleware that couples <a href="https://www.schlothauer.de/software-lisa">LISA+</a> and SUMO to simulate real-world
+traffic light controllers and execute real-world traffic control software within SUMO.</p>
+</li>
+<li>
+<p><a href="https://github.com/lcodeca/SUMOActivityGen/blob/master/docs/SUMOActivityGen.md">SAGA</a></p>
+<p>a scriptable and user-defined activity-based mobility scenario generator for SUMO. <a href="https://github.com/eclipse-sumo/sumo/tree/main/tools/contributed">Generate intermodal traffic demand from OSM input</a> <a href="https://github.com/lcodeca/SUMOActivityGen/blob/master/docs/HOWTO.md">howto</a></p>
+</li>
+<li>
+<p>~~<a href="SUMO_Traffic_Modeler/">SUMO Traffic Modeler</a>~~</p>
+<p>~~a graphical user interface for defining high-level traffic for SUMO~~ (obsolete)</p>
+</li>
+</ul>
+<h1 id="external-extensions">External extensions<a class="headerlink" href="#external-extensions" title="Permanent link">&para;</a></h1>
+<p>The following extensions are managed and supported by other parties.</p>
+<h2 id="demand-generators">Demand Generators<a class="headerlink" href="#demand-generators" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://web.archive.org/web/20190910115452/https://www.grc.upv.es/Software/c4r.html">Citymob for Roadmaps</a></p>
+<p>mobility pattern generator for vehicular networks (VANet focus)</p>
+</li>
+</ul>
+<h2 id="scenario-and-network-editors">Scenario and Network Editors<a class="headerlink" href="#scenario-and-network-editors" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://web.archive.org/web/20161205050209/https://eworld.sourceforge.net/">eWorld</a></p>
+<p>an application that allows to convert and enrich roads networks</p>
+</li>
+<li>
+<p><a href="https://github.com/AugmentedDesignLab/Sumo2Unreal">Sumo2Unreal</a></p>
+<p>an importer for SUMO's .net.xml road network files into the Unreal
+Engine 4 environment.</p>
+</li>
+</ul>
+<h2 id="connections-to-network-simulators">Connections to Network Simulators<a class="headerlink" href="#connections-to-network-simulators" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://veins.car2x.org/">Veins</a></p>
+<p>connects SUMO to OMNeT++</p>
+</li>
+<li>
+<p><a href="https://www.ict-itetris.eu/">iTetris</a></p>
+<p>connects SUMO to ns-3</p>
+</li>
+<li>
+<p><a href="https://web.archive.org/web/20190512111856/http://lca.epfl.ch/projects/trans/">TraNS</a></p>
+<p>connects SUMO to ns-2</p>
+</li>
+<li>
+<p><a href="https://web.archive.org/web/20111210235800/https://lens1.csie.ncku.edu.tw/wiki/doku.php?id=%E2%80%A7realistic_mobility_generator_for_vehicular_networks">MOVE</a></p>
+<p>connects SUMO to ns-2</p>
+</li>
+<li>
+<p><a href="https://www.dcaiti.tu-berlin.de/research/simulation/">VSimRTI</a></p>
+<p>C2X environment connecting SUMO to different network and application simulators (OMNeT++ and JiST/SWANS)</p>
+</li>
+</ul>
+<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://github.com/susomena/PERMIT">PERMIT</a></p>
+<p>A SUMO Simulator for Platooning Maneuvers in Mixed Traffic Scenarios (extends PLEXE)</p>
+</li>
+<li>
+<p><a href="https://plexe.car2x.org/">PLEXE</a></p>
+</li>
+</ul>
+<p>Cooperative driving framework extending SUMO and Veins permitting the realistic simulation of platooning (i.e., automated car-following) systems. It features realistic vehicle dynamics and several cruise control models, permitting the analysis of control systems, large-scale and mixed scenario, as well as networking protocols and cooperative maneuvers.</p>
+<ul>
+<li>
+<p><a href="https://mathworks.com/matlabcentral/fileexchange/44805-traci4matlab">TraCI4Matlab</a></p>
+<p>A Matlab interface for connecting and extending information via <a href="../TraCI/">TraCI</a></p>
+</li>
+<li>
+<p><a href="../TraCI/TraaS/">TraaS</a></p>
+<p>A SOAP(webservice) interface for connecting and extending information via <a href="../TraCI/">TraCI</a>. Also a Java TraCI client library</p>
+</li>
+<li>
+<p><a href="https://github.com/DLR-TS/sumo-ocit">ocit2SUMO</a></p>
+<p>Generate traffic light signal plans from OCIT® data</p>
+</li>
+<li>
+<p><a href="https://flow-project.github.io/">FLOW</a></p>
+<p>a framework for applying reinforcement learning and custom controllers to SUMO, developed at the University of California, Berkeley
+<a href="https://github.com/flow-project/flow">[1]</a></p>
+</li>
+<li>
+<p><a href="https://www.cyberbotics.com/doc/automobile/sumo-interface">Webots</a></p>
+<p>coupling with a robot simulator</p>
+</li>
+<li>
+<p><a href="https://www.tetcos.com/vanets.html">TETCOS NetSim</a></p>
+<p>supports VANET simulations by interfacing with SUMO</p>
+</li>
+<li>
+<p><a href="https://pypi.org/project/SumoNetVis/">SumoNetVis</a></p>
+<p>A python library to render Sumo network files and trajectories with matplotlib or as an OBJ file.</p>
+</li>
+<li>
+<p><a href="https://sesam.co4e.com">SESAM</a></p>
+<p>SUMO as a cloud service to build, run and analyze simulation scenarios, developed by the DLR spin-off company co4e GmbH</p>
+</li>
+<li>
+<p><a href="https://www.trafficfluid.tuc.gr/en/trafficfluid-sim">TrafficFluid-Sim</a></p>
+</li>
+</ul>
+<p>TrafficFluid-Sim is an open source, microscopic traffic simulation tool for automated vehicles driving in lane-free traffic environments in the era of Connected and Automated Vehicles. The simulator is an extension of SUMO that explicitly targets the lane-free traffic paradigm. </p>
+<h1 id="purgatory">Purgatory<a class="headerlink" href="#purgatory" title="Permanent link">&para;</a></h1>
+<p>The following extensions exist or have existed, but their state is
+unclear.</p>
+<ul>
+<li>
+<p><a href="iTranSIM/">iTranSIM</a></p>
+<p>extension by online-calibration using induction loop data by Tino
+Morenz</p>
+</li>
+<li>
+<p><a href="SmallMaps/">SmallMaps</a></p>
+<p>prunes road networks to a given boundary; by Andreas Florides</p>
+</li>
+<li>
+<p><a href="SUMOPlayer/">SUMOPlayer</a></p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SUMOPlayer was removed in release 0.24.0. You should be able to use <a href="../Tools/TraceExporter/">traceExporter.py</a> for the same task.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

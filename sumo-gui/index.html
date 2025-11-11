@@ -1,0 +1,1905 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/sumo-gui/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>sumo-gui - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#from-30000-feet" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              sumo-gui
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="from-30000-feet">From 30.000 feet<a class="headerlink" href="#from-30000-feet" title="Permanent link">&para;</a></h1>
+<p><strong>sumo-gui</strong> is basically the same application as
+<a href="../sumo/">sumo</a>, just extended by a graphical user interface.</p>
+<ul>
+<li><strong>Purpose:</strong> Simulates a defined scenario</li>
+<li><strong>System:</strong> portable (Linux/Windows is tested); opens a window</li>
+<li><strong>Input (mandatory):</strong> A SUMO-configuration file (see <a href="../sumo/">sumo</a>)</li>
+<li><strong>Output:</strong> sumo-gui generates the same output as <a href="../sumo/">sumo</a></li>
+<li><strong>Programming Language:</strong> C++</li>
+</ul>
+<h1 id="usage-description">Usage Description<a class="headerlink" href="#usage-description" title="Permanent link">&para;</a></h1>
+<p><img alt="Guisim_empty.png" src="../images/Guisim_empty.png" /></p>
+<p><em>Initial appearance of sumo-gui; may differ from what you see</em></p>
+<p>Being a window-based application, sumo-gui is started by a double click
+with the left mouse button on Windows, on Linux probably with a single
+click. After this, an empty window should show up, similar to the one
+shown in the image.</p>
+<p>Using either the "File-&gt;Open Simulation..." menu entry or by using the
+"open"-icon (<img alt="icon_open.png" src="../images/icon_open.png" title="Open sim" />),
+you should be able to load an existing <a href="../sumo/">sumo</a>
+<a href="../Basics/Using_the_Command_Line_Applications/#configuration_files">configuration
+file</a>,
+if it has the proper <a href="../Other/File_Extensions/">extension</a>
+<em>".sumocfg"</em>. If the <a href="../sumo/">sumo</a> <a href="../Basics/Using_the_Command_Line_Applications/#configuration_files">configuration
+file</a>
+is erroneous, the errors are reported, otherwise your network referenced
+within the configuration file should be shown. Now you can start to
+simulate by pressing the "play" button (<img alt="icon_play.png" src="../images/icon_play.png" title="Play" />). The simulation works as if being started on the
+command line. The simulation can be halted using the "stop" button
+(<img alt="icon_stop.png" src="../images/icon_stop.png" title="Stop" />) and continued by pressing
+the "play" button again. When stopped, also single steps may be
+performed by pressing the "single step" button
+(<img alt="icon_step.png" src="../images/icon_step.png" title="Step" />).</p>
+<p>If the simulation is running, the current simulation second is shown in
+the "digital digits" field, right to "Time:"
+(<img alt="Current_step_example.png" src="../images/Current_step_example.png" title="Current step" />). By clicking on the word "Time:", the
+display can be toggled between showing <code>&lt;seconds&gt;</code> and <code>&lt;hour:minute:seconds&gt;</code>.</p>
+<p>Next to the time display is the delay control
+(<img alt="Delay.png" src="../images/Delay.png" title="Delay" />). This allows you to
+slow down the simulation by waiting for the given number of milliseconds
+between simulation steps.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default the <em>delay</em> is set to 0. This can result in a simulation that runs too fast to see any vehicles. Increase the delay value if this happens.</p>
+</div>
+<p>Besides loading simulation configurations, it is also possible to load
+networks by using either the "File-&gt;Open Network..." menu entry or by
+using the "open network"-icon (<img alt="icon_opennet.png" src="../images/icon_opennet.png" title="Open net" />). Please note, that normally
+<strong>sumo-gui</strong> assumes networks have the
+<a href="../Other/File_Extensions/">extension</a> <em>".net.xml"</em>, but also
+accepts other extensions.</p>
+<p>Both, the loaded simulation or the loaded network may be reloaded using
+the "reload" button (<img alt="icon_reload.png" src="../images/icon_reload.png" title="Reload" />)
+or the menu entry "File-&gt;Reload".</p>
+<p>If a network or a simulation are loaded, the navigation through the
+network is possible with the mouse or with the keyboard. One can drag
+the network with the left mouse button pressed into all directions and
+zoom either by using the mouse wheel or by pressing the right mouse
+button and moving the mouse up and down. For fine grained zooming (half
+zoom speed) press the "Control" key while using the mouse wheel, for
+double speed use "Shift".</p>
+<h1 id="interaction-with-the-view">Interaction with the View<a class="headerlink" href="#interaction-with-the-view" title="Permanent link">&para;</a></h1>
+<h2 id="basic-navigation">Basic Navigation<a class="headerlink" href="#basic-navigation" title="Permanent link">&para;</a></h2>
+<p><img alt="Viewport_editor.png" src="../images/Viewport_editor.png" title="Viewport editor" /></p>
+<p>As soon as a network is displayed, one can interact with the view.
+Pressing the left mouse button within the view and moving the mouse with
+the button pressed, will shift the network. Moving the mouse up and down
+while pressing the right mouse button changes the zoom of the network.
+It is also possible to change the zoom by using the mouse wheel (holding
+<kbd>Shift</kbd> increases the zooming speed and holding <kbd>Ctrl</kbd> lowers it).
+Zooming is either focused on the center of the screen or on the cursor
+position. The zoom style can be selected with the
+<img alt="icon_zoomstyle.png" src="../images/icon_zoomstyle.png" title="Zoomstyle" /> button.</p>
+<p>You can also control which part of the network is visible by directly
+setting the network coordinates which shall be at the center of the
+screen along with the zoom (given a value of 100 the whole network will
+fit onto the screen). These settings can be changed by opening the
+viewport editor using the
+<img alt="icon_magnify.png" src="../images/icon_magnify.png" title="Open viewport editor" /> button. From this editor, it is
+possible to save the current settings (<img alt="icon_save.png" src="../images/icon_save.png" title="Save" />) or load previously saved ones
+(<img alt="icon_open.png" src="../images/icon_open.png" title="Open sim" /> within the
+viewport editor).</p>
+<p>The viewport is defined as following:
+<code>&lt;viewport zoom="&lt;ZOOM&gt;" x="&lt;X&gt;" y="&lt;Y&gt;" angle="&lt;ANGLE&gt;"/&gt;</code>. It can be in a gui-settings file.</p>
+<p>Pressing the center-button (<img alt="images/icon_recenter_view.png" src="../images/icon_recenter_view.png" title="Center" />) from the menu bar at the top of the view, will
+reset the viewport so that the complete network is shown.</p>
+<h2 id="breakpoints">Breakpoints<a class="headerlink" href="#breakpoints" title="Permanent link">&para;</a></h2>
+<p>The simulation can be stopped automatically to allow investigating
+specific points in time. Breakpoints can be set via any of the following
+methods:</p>
+<ul>
+<li>via menu <em>Edit-&gt;Breakpoints</em></li>
+<li>by setting option <strong>--breakpoints TIME1,TIME2,...</strong></li>
+<li>by loading <a href="#configuration_files">Configuration Files</a> with breakpoint information</li>
+<li>by clicking on an underlined time value in the message/warning log area. The breakpoint will be set 5s <em>before</em> the time value. This offset is configurable via the 'Settings'-menu (<kbd>Ctrl</kbd> + <kbd>H</kbd>). To investigate the reason for a teleport warning, setting the offset to 305s before the teleport event is recommended.</li>
+</ul>
+<h2 id="keyboard-shortcuts">Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permanent link">&para;</a></h2>
+<p>Various menu items are accessible via keyboard shortcuts. These are
+documented directly in the menu. (i.e. <kbd>Ctrl</kbd> + <kbd>l</kbd>, <kbd>Ctrl</kbd> + <kbd>e</kbd> opens the edge
+locator, <kbd>Ctrl</kbd> + <kbd>d</kbd> performs a single simulation step). Additional shortcuts
+are listed below:</p>
+<ul>
+<li><kbd>Ctrl</kbd> + <kbd>LeftClick</kbd>: toggle selection status of object under cursor</li>
+<li><kbd>Arrow keys</kbd>: move the view</li>
+<li><kbd>Ctrl</kbd> + <kbd>Arrow keys</kbd>: move the view less</li>
+<li><kbd>Alt</kbd> + <kbd>Arrow keys</kbd>: move the view a lot</li>
+<li><kbd>Page Up</kbd> / <kbd>Page Down</kbd>: change simulation delay</li>
+<li>+/-, Keypad +/-: zoom in/out</li>
+<li>Home/Keypad Home: recenter view</li>
+<li><kbd>F9</kbd>: open view settings dialog</li>
+<li><kbd>Shift</kbd> + <kbd>LeftClick</kbd>:</li>
+<li>vehicle: start tracking</li>
+<li>rerouter: change routeProbReroute probabilities</li>
+<li>Double-LeftClick: stop tracking</li>
+<li><kbd>Ctrl</kbd> + <kbd>J</kbd>: toggle 'show junction shapes'</li>
+<li><kbd>Ctrl</kbd> + <kbd>K</kbd>: toggle 'show secondary edge shape' (loaded with option <strong>--alternative-net-file</strong>)</li>
+</ul>
+<h2 id="object-properties--right-click-functions">Object Properties / Right-Click-Functions<a class="headerlink" href="#object-properties--right-click-functions" title="Permanent link">&para;</a></h2>
+<p>Right-clicking simulation objects gives access to additional
+information:</p>
+<ul>
+<li>copy object id</li>
+<li>object parameter dialog (menu item <em>Show Parameter</em>)</li>
+<li>position information (x,y and lat,lon)</li>
+<li>select/deselect object</li>
+</ul>
+<p>The following objects can be accessed by right-click:</p>
+<ul>
+<li>Vehicles (some attributes are only available when using a specific
+  simulation model, i.e. <a href="../Simulation/Meso/">MESO</a> or <a href="../Simulation/SublaneModel/#new_parameters">sublane
+  model</a>)</li>
+<li>Persons</li>
+<li>Lanes</li>
+<li>Junctions</li>
+<li>Traffic Lights (by clicking on the green/red colored bars)</li>
+<li>Detectors</li>
+<li>Rerouters</li>
+<li>Variable Speed Signs</li>
+<li>POIs</li>
+<li>Polygons</li>
+<li>Simulation (by clicking the background where there is no other
+  object). Also accessible by clicking the
+  <img alt="button_simulation_parameters.png" src="../images/button_simulation_parameters.png" title="Simulation parameters" /> button.</li>
+</ul>
+<p>!!! note
+        Simulation Parameters include all values available via <a href="../Simulation/Output/#commandline_output_verbose">verbose output</a> such as departed, running and arrived vehicles. It also includes network statistics such as number of edges and nodes.</p>
+<p>The following additional functions are available via right-click:</p>
+<ul>
+<li>Tracking movements (vehicles and persons)</li>
+</ul>
+<p>!!! note
+        Tracking can be disabled via double-click or via context menu.</p>
+<ul>
+<li>Activate additional visualizations (persons and vehicles)</li>
+<li>Select junction foe vehicles (vehicles). Requires coloring vehicles
+  <em>by selection</em> to be visible</li>
+<li>Close for traffic (edges and lanes)</li>
+<li>Set speed limit (variable speed sign)</li>
+<li>Switch programs (traffic lights)</li>
+<li><a href="../Simulation/Traffic_Lights/#signal_plan_visualization">Visualize Signal Plans</a> (traffic lights)</li>
+</ul>
+<h2 id="plotting-object-properties">Plotting object properties<a class="headerlink" href="#plotting-object-properties" title="Permanent link">&para;</a></h2>
+<p>All objects support the <em>Show Parameter</em> item in their context menu.
+This opens up a dialog in tabular shape as show below:
+<img alt="vehicle_parameters.png" src="../images/vehicle_parameters.png" title="Vehicle Parameter Dialog" /></p>
+<p>Each of the listed attributes or <a href="../Simulation/GenericParameters/">Generic Parameters</a> is accompanied by one of the following symbols:</p>
+<ul>
+<li><img alt="attribute_static.png" src="../images/attribute_static.png" title="Static Attribute" /> : Attribute does not change</li>
+<li><img alt="attribute_dynamic.png" src="../images/attribute_dynamic.png" title="Dynamic Attribute" /> : Attribute may change but cannot be plotted</li>
+<li><img alt="attribute_dynamic_plot.png" src="../images/attribute_dynamic_plot.png" title="Plottable Attribute" /> : Attribute may change and can be plotted. Left-clicking the plot symbol will open up a plotting window.</li>
+</ul>
+<p>A plotting window (acceleration over time) is shown below:</p>
+<p><img alt="plotted_accel.png" src="../images/plotted_accel.png" title="Acceleration plotted over time" /></p>
+<p>Clicking on additional Attribute plot symbols opens up new plotting windows.
+By activating the 'Multiplot'-checkbox, any additional attribute plots will be added to that plot window instead of opening a new plot window.</p>
+<p>When moving the mouse over a plot window, plot point closest to the mouse cursor is highlighted and its <em>x</em> and <em>y</em> values are printed in blue along the plot axes.</p>
+<h2 id="selecting-objects">Selecting Objects<a class="headerlink" href="#selecting-objects" title="Permanent link">&para;</a></h2>
+<p><strong>sumo-gui</strong> allows for the selection of arbitrary
+network elements such as edges, lanes and junctions, which can be saved
+to a file (and also loaded from a file) for further processing.
+Selection is done by either choosing "Add to Selected" from the context
+menu (right click) of the element or by clicking left on an element
+while pressing the "Control" key.</p>
+<p>The selected elements can be saved / loaded and looked at in the "Edit
+Selected" dialog available from the edit menu. The list contains entries
+of the form objectType:objectId with each of these entries on a separate
+line:</p>
+<pre><code>edge:someEdge
+edge:someOtherEdge
+junction:myJunction
+</code></pre>
+<p>Most network objects can be colored according to their selection status
+(<em>color by selection</em>) and selected network elements may be manipulated
+as a group in <a href="../Netedit/">netedit</a>.</p>
+<h3 id="loading-a-selection-automatically">Loading a selection automatically<a class="headerlink" href="#loading-a-selection-automatically" title="Permanent link">&para;</a></h3>
+<p>By setting option <strong>--selection-file FILE</strong> a selection file as described above can be given to <strong>sumo-gui</strong> at startup.
+Any objects that are loaded at the start of the simulation will be selected immediately. 
+Any persons, vehicles or containers that were not loaded will be selected once they are loaded at a later simulation time.</p>
+<h2 id="locating-objects">Locating Objects<a class="headerlink" href="#locating-objects" title="Permanent link">&para;</a></h2>
+<p>All simulation objects can be located based on their ID by using the
+locate dialog <img alt="button_locate.png" src="../images/button_locate.png" title="Locate" />. By
+clicking this button a sub-menu for selecting the object type is
+opened. The following types are available:</p>
+<ul>
+<li><a href="../Networks/PlainXML/#node_descriptions">Junction</a></li>
+<li><a href="../Networks/PlainXML/#edge_descriptions">Edge</a></li>
+<li><a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/">Vehicle</a></li>
+<li><a href="../Specification/Persons/">Person</a></li>
+<li><a href="../Specification/Containers/">Container</a></li>
+<li><a href="../Simulation/Traffic_Lights/">Traffic light</a></li>
+<li>Additional infrastructure for <a href="../Simulation/Output/#simulated_detectors">detecting</a> or for <a href="../#traffic_management_and_other_structures">influencing traffic</a>.</li>
+<li><a href="../Simulation/Shapes/#poi_point_of_interest_definitions">Point of Interest (PoI)</a></li>
+<li><a href="../Simulation/Shapes/#polygon_definitions">Polygon</a></li>
+</ul>
+<p>After selecting the object type, a dialog opens that provides a text box
+for entering the object ID. Search for objects starts after the first
+characters are entered until an object ID that starts with these
+characters is found. Once selected in the object list, the view can be
+centered on that object.</p>
+<p>The button <em>Hide unselected</em>, restricts the object list to <a href="#selecting_objects">selected
+objects of that type</a>. The <em>Locate Menu</em>
+in the main menu bar also contains a check-box that toggles whether
+<a href="../Networks/SUMO_Road_Networks/#internal_edges">internal edges</a>
+and <a href="../Networks/SUMO_Road_Networks/#internal_junctions">internal
+junctions</a>
+shall be listed in the object locator dialog.</p>
+<h2 id="screenshots">Screenshots<a class="headerlink" href="#screenshots" title="Permanent link">&para;</a></h2>
+<p>The current view can be captured as a raster or a vector image file (called snapshot) from inside sumo-gui pressing the apposite button <img alt="icon_camera.png" src="../images/icon_camera.png" title="Make Snapshot" />. If vector image file types are not available, this feature has not been activated in the build process.</p>
+<h1 id="influencing-the-simulation">Influencing the simulation<a class="headerlink" href="#influencing-the-simulation" title="Permanent link">&para;</a></h1>
+<p>Currently, there is only limited interaction that can be done from
+the GUI. This will change in the future (see below)</p>
+<h2 id="switching-traffic-lights">Switching Traffic Lights<a class="headerlink" href="#switching-traffic-lights" title="Permanent link">&para;</a></h2>
+<p>By right-clicking on the <a href="#right_of_way">colored bars</a> at an
+intersection, a popup-menu allows switching between all <a href="../Simulation/Traffic_Lights/#loading_a_new_program">signal plans
+that have been
+loaded</a>. The
+special program <em>off</em> is always available and can be used to switch the
+intersection into a priority-intersection.</p>
+<h2 id="closing-and-opening-edges-and-lanes">Closing and Opening Edges and Lanes<a class="headerlink" href="#closing-and-opening-edges-and-lanes" title="Permanent link">&para;</a></h2>
+<p>By right clicking on a lane, each lane (or the corresponding edge) can
+be closed for all traffic (except vClass <em>authority</em> and <em>ignoring</em>) by
+selecting the option <em>Close lane</em> or <em>Close edge</em>. In the same way lanes
+or edges can be reopened for traffic by selecting <em>Reopen lane</em> or
+<em>Reopen edge</em>.</p>
+<h2 id="scaling-the-amount-of-traffic">Scaling the amount of Traffic<a class="headerlink" href="#scaling-the-amount-of-traffic" title="Permanent link">&para;</a></h2>
+<p>The 'Scale Traffic' input in the top menu bar allows scaling the amount of traffic up and down. This works as for the sumo option <strong>--scale</strong>. The frequency / probability of any loaded flows is scaled in proportion and any newly loaded vehicles will be scaled as well.</p>
+<h2 id="setting-vehicle-speed-factor">Setting Vehicle Speed Factor<a class="headerlink" href="#setting-vehicle-speed-factor" title="Permanent link">&para;</a></h2>
+<p>When tracking a vehicle (Shift-Click on Vehicle or Vehicle context menu option 'Start Tracking'), a new speedFactor slider is shown.
+This slider allows setting the speedFactor to values between 0 and 2.</p>
+<h2 id="setting-rerouter-probabilities">Setting Rerouter Probabilities<a class="headerlink" href="#setting-rerouter-probabilities" title="Permanent link">&para;</a></h2>
+<p>When loading <a href="../Simulation/Rerouter/#assigning_a_new_route">Rerouters with routeProbReroute definitions</a>, directional arrows will be shown where the available routes diverge. Shift-Clicking on the rerouter icon or the directional arrows will set 100% probability to one of the available routes. Clicking repeatedly will cycle through the routes and again set 100% to a route.</p>
+<h2 id="starting-and-stopping-vehicles">Starting and Stopping Vehicles<a class="headerlink" href="#starting-and-stopping-vehicles" title="Permanent link">&para;</a></h2>
+<p>From the vehicle context menu, the current vehicle can be made to stop (at the earliest possible location with maximum deceleration). If the vehicle is currently stopped it can also be made to abort the current stop.</p>
+<h2 id="removing-vehicles">Removing Vehicles<a class="headerlink" href="#removing-vehicles" title="Permanent link">&para;</a></h2>
+<p>From the vehicle context menu, the current vehicle can be removed from the simulation.</p>
+<h2 id="activating-detectors">Activating Detectors<a class="headerlink" href="#activating-detectors" title="Permanent link">&para;</a></h2>
+<p>The following detectors support overriding detection From their context menu:</p>
+<ul>
+<li>inductionLoops (e1Detector): overriding sets the time since detection to 0 (as if a vehicle is standing on the detector)</li>
+<li>laneAreaDetector (e2Detector): overriding sets the vehicle number to 1</li>
+</ul>
+<p>If the override is active, the context menu allows to reset the override.</p>
+<p>Overriding detection can influence the <a href="../Simulation/Traffic_Lights/#traffic_lights_that_respond_to_traffic">operation of traffic lights</a> (type 'actuated' and 'NEMA'). For this it is useful, the <a href="../Simulation/Traffic_Lights/#visualization">make their detectors visible</a>.</p>
+<h2 id="planned-interactions">Planned Interactions<a class="headerlink" href="#planned-interactions" title="Permanent link">&para;</a></h2>
+<p>In the future more interactions are planned for exploratory simulation:</p>
+<ul>
+<li>changing simulation options dynamically (i.e. <strong>--scale, --time-to-teleport, ....</strong>)</li>
+<li>adding traffic</li>
+<li>changing vehicle or vehicle type parameters</li>
+<li>testing TraCI function calls</li>
+</ul>
+<h1 id="understanding-what-you-see">Understanding what you see<a class="headerlink" href="#understanding-what-you-see" title="Permanent link">&para;</a></h1>
+<h2 id="right-of-way">Right of way<a class="headerlink" href="#right-of-way" title="Permanent link">&para;</a></h2>
+<p>At the end of every lane and at the outset of a junction there is a
+little colored bar which indicates right of way. When there are multiple
+target lanes from one lane, the bar is split in smaller parts each
+indication the rules for one connection. The colors a defined as
+follows:</p>
+<ul>
+<li><span style="color:#00FF00; background:#00FF00">FOO</span> Traffic
+  light, green phase, vehicle has right of way</li>
+<li><span style="color:#00B300; background:#00B300">FOO</span> Traffic
+  light, green phase, vehicle has to yield to some streams</li>
+<li><span style="color:#FF0000; background:#FF0000">FOO</span> Traffic
+  light, red phase, vehicle has to wait</li>
+<li><span style="color:#FF8000; background:#FF8000">FOO</span> Traffic
+  light, red/yellow phase, indicates upcoming green phase, vehicle has
+  to wait</li>
+<li><span style="color:#FFFF00; background:#FFFF00">FOO</span> Traffic
+  light, yellow phase, vehicle should stop if possible</li>
+<li><span style="color:#804000; background:#804000">FOO</span> Traffic
+  light, off-blinking, vehicle has to yield</li>
+<li><span style="color:#00FFFF; background:#00FFFF">FOO</span> Traffic
+  light, off-no-signal, vehicle has right of way</li>
+<li><span style="color:#FFFFFF; background:#FFFFFF">FOO</span>
+  uncontrolled, vehicle has right of way</li>
+<li><span style="color:#333333; background:#333333">FOO</span>
+  uncontrolled, vehicle has to yield to some streams</li>
+<li><span style="color:#808080; background:#808080">FOO</span>
+  uncontrolled, right-before-left rules, all vehicles yield to the
+  rightmost incoming lane</li>
+<li><span style="color:#800080; background:#800080">FOO</span>
+  uncontrolled, stop-sign / controlled, right-turn arrow, vehicle has
+  to stop and then yield</li>
+<li><span style="color:#0000C0; background:#0000C0">FOO</span>
+  uncontrolled, allway-stop, all vehicles have to stop and then drive
+  in the order of arrival</li>
+<li><span style="color:#c08140; background:#c08140">FOO</span>
+  uncontrolled, zipper, vehicles have to perform <a href="https://en.wikipedia.org/wiki/Merge_%28traffic%29">zipper
+  merging</a></li>
+<li><span style="color:#000000; background:#000000">FOO</span> dead-end,
+  vehicle may not drive there</li>
+<li><span style="color:#FF00FF; background:#FF00FF">FOO</span> suspicious dead-end,
+  there are outgoing edges but the vehicle may not continue anywhere</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a vehicle is braking in the simulation, the responsible foe vehicle (if any) can also be identified directly by taking the following steps:</p>
+<ul>
+<li>set vehicle coloring to <em>color</em> by <em>selection</em></li>
+<li>right-click the braking vehicle and then click <em>Select Foes</em>
+The foe vehicles will then be color with the selection color (typically blue).</li>
+</ul>
+</div>
+<h2 id="road-access-permissions">Road Access Permissions<a class="headerlink" href="#road-access-permissions" title="Permanent link">&para;</a></h2>
+<p><a href="../Simulation/VehiclePermissions/">Road access permissions</a> are
+an important tool for building multi-modal scenarios. To better
+understand the road network configuration there are various ways to
+support coloring according to permissions.</p>
+<h3 id="default-coloring">Default Coloring<a class="headerlink" href="#default-coloring" title="Permanent link">&para;</a></h3>
+<p>The default coloring scheme (<em>uniform</em>) aims to color roads in a
+realistic way and also show some basic <a href="../Simulation/VehiclePermissions/">access
+permissions</a>. The road colors
+have the following meanings:</p>
+<ul>
+<li><span style="color:#808080; background:#808080">FOO</span> sidewalk (<code>allow="pedestrian"</code>)</li>
+<li><span style="color:#C0422C; background:#C0422C">FOO</span> bike lane (<code>allow="bicycle"</code>)</li>
+<li><span style="color:#5C5C5C; background:#5C5C5C">FOO</span> bus lane (<code>allow="bus"</code>)</li>
+<li><span style="color:#96C8C8; background:#96C8C8">FOO</span> waterway (<code>allow="ship"</code>)</li>
+<li><span style="color:#FF0000; background:#FF0000">FOO</span> closed lane (<code>allow="authority"</code>)</li>
+<li><span style="color:#FF8000; background:#FF8000">FOO</span> forbidden edge (<code>disallow="all"</code> on all lanes)</li>
+<li><span style="color:#C8FFC8; background:#C8FFC8">FOO</span> green verge in netedit (<code>disallow="all"</code>)</li>
+<li><span style="color:#FFFFFF; background:#FFFFFF">FOO</span> green verge invisible in sumo-gui (<code>disallow="all"</code>)</li>
+<li><span style="color:#400040; background:#400040">FOO</span> rails on road</li>
+<li><span style="color:#5C5C5C; background:#5C5C5C">FOO</span> anything
+  else that does not allow passenger</li>
+<li><span style="color:#000000; background:#000000">FOO</span> anything
+  else</li>
+</ul>
+<h3 id="color-by-permission-code">Color by <em>permission code</em><a class="headerlink" href="#color-by-permission-code" title="Permanent link">&para;</a></h3>
+<p>Each possible set of access combinations is represented by a unique
+numerical code. The code for each lane can be retrieved from the lane
+parameter dialog (permission code). The lane coloring scheme <em>permission
+code</em> allows assigning an individual color for each of code. This can be
+used for arbitrary coloring according to the users needs (the default
+coloring scheme can be regarded as a special case of this coloring
+type).</p>
+<h3 id="show-permissions-for-a-specific-vehicle-class">Show permissions for a specific vehicle class<a class="headerlink" href="#show-permissions-for-a-specific-vehicle-class" title="Permanent link">&para;</a></h3>
+<p>To investigate connectivity in the network, it is often useful to
+quickly highlight lanes that allow a specific vehicle class. This can be
+done from the main menu by selecting <em>Edit</em>-&gt;<em>Select lanes which allow
+...</em>-&gt;<em>the desired vehicle class</em>.</p>
+<p>This changes the current selection to the set of all lanes that allow
+the specified vehicle class and also changes the coloring scheme to
+<em>color by selection</em>. All lanes that allow the selected vehicle class
+will be shown in blue (by default).</p>
+<h2 id="connectivity">Connectivity<a class="headerlink" href="#connectivity" title="Permanent link">&para;</a></h2>
+<p>At each intersection all incoming lanes that allow driving across the
+intersection have one or more white arrows to show the allowed driving
+directions. However, these arrows only give partial information since
+every lane may have more connections than the number of arrows. For
+example, when a lane targets two lanes one the same edge beyond the
+intersection, only one arrow will be drawn even though two distinct
+connections exist.</p>
+<ul>
+<li>To see all connections, activate the junction visualization option
+  <em>Show lane to lane connections</em>. The colors of the connection lines
+  correspond to the <a href="#right_of_way">Right of way</a>-colors.</li>
+<li>Each connection at an intersection has a unique index starting at 0
+  and going clockwise around the intersection. These indices can be
+  shown using the junction visualization option <em>Show link junction
+  index</em>.</li>
+<li>Each connection that is controlled by a traffic light has a unique
+  index with regard to that traffic light. By default each traffic
+  light controls one intersection and these indices are identical to
+  the <em>link junction index</em> mentioned above. In the case of joined
+  traffic lights which control multiple intersections, the indices are
+  different. Also, the indices may be freely customized by the user
+  (e.g. to define signal groups). These indices are shown using the
+  junction visualization option <em>Show link tls index</em>.</li>
+</ul>
+<h3 id="check-connected-components">Check connected components<a class="headerlink" href="#check-connected-components" title="Permanent link">&para;</a></h3>
+<p>You can show all network components that are reachable from a particular lane by right-clicking on a lane and then using the 'select reachable' menu option. A new menu opens where you have to select the vehicle class to check. After choosing a vehicle class, all reachable lanes will be added to the lane selection and the edge coloring mode will be set to 'color by selection'.
+Consequently, all reachable lanes will be colored blue and all unreachable lanes will be gray.</p>
+<h3 id="color-by-reachability">Color by reachability<a class="headerlink" href="#color-by-reachability" title="Permanent link">&para;</a></h3>
+<p>After using the <a href="#check_connected_components">'select reachable' function</a>, you can also set edge-coloring mode to 'color by reachability'.
+This will color each edge according to the travel time from the point of origin.
+The following coloring options are useful in this regard:</p>
+<ul>
+<li>Recalibrate Rainbow: Configure colors to the data range of encountered travel times</li>
+<li>'hide below threshold' (0): color unreachable edges grey as their value is set to -1. (must be activated before using 'Recalibrate Rainbow')</li>
+<li>'show edge color value': show the actual travel times for each edge</li>
+<li>disable 'constant text size' for 'show edge color value': avoid cluttering the display when zoomed out</li>
+</ul>
+<h2 id="simulation-modemodel-micro-or-meso-sublane">Simulation mode/model: micro or meso? sublane?<a class="headerlink" href="#simulation-modemodel-micro-or-meso-sublane" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Under a meso-simulation: No lane can be selected/shown. "segment" information will be displayed by right-clicking an edge
+  or further choosing "Show Parameter" (see the example image below).
+  <img alt="segment_example" src="https://github.com/eclipse-sumo/sumo/assets/26454969/74eee4d2-5799-4a0e-a96e-6032bef34a3a" /></li>
+<li>Under a micro-simulation: Each lane ID can be displayed by mouse hovering, when the icon "View Tooltips" is toggled.
+  Each lane can be selected.</li>
+<li>If specific models are used, e.g. sublane and IDM, the respective information can be seen by right-clicking
+  a road user (vehicle, pedestrian,train...) and further choosing "Show Parameter".</li>
+</ul>
+<h1 id="changing-the-appearancevisualisation-of-the-simulation">Changing the appearance/visualisation of the simulation<a class="headerlink" href="#changing-the-appearancevisualisation-of-the-simulation" title="Permanent link">&para;</a></h1>
+<p>The View Settings menu allows to change and customize the simulations'
+appearance and visualization. To open the visualization settings use
+<img alt="icon_colorwheel.png" src="../images/icon_colorwheel.png" title="Colorwheel" /> in the
+menu bar at the top of the view.</p>
+<p>For customizing the simulation one can make changes e.g. to the
+background coloring, streets and vehicle appearance as well as the
+visualization of POIs. Furthermore one can save
+(<img alt="icon_save_database.png" src="../images/icon_save_database.png" title="Save to registry" />) and delete
+(<img alt="icon_removedb.png" src="../images/icon_removedb.png" title="Delete from registry" />) settings to the registry or export
+(<img alt="icon_save.png" src="../images/icon_save.png" title="Save" />) custom made settings
+files and load previews settings again
+<img alt="icon_open.png" src="../images/icon_open.png" title="Open sim" />. So one can
+use different favorite settings files for any simulation.</p>
+<p>The current settings file is shown in a drop down menu in the top bar of
+the View Settings window where you can switch back to default settings.</p>
+<h2 id="common-visualization-settings">Common Visualization Settings<a class="headerlink" href="#common-visualization-settings" title="Permanent link">&para;</a></h2>
+<p>Separate settings exist for different simulation objects such as
+vehicle, lanes, persons and detectors. Some options exist for all (or
+most) of these objects:</p>
+<ul>
+<li>Size options</li>
+<li><em>Exaggerate by</em>: Draws objects bigger to make them more visible</li>
+<li><em>Minimum Size</em>: Do not draw objects below a minimum size</li>
+<li><em>Draw with constant size when zoomed out</em>: Automatically
+    increase the drawing size when zooming out to keep the visual
+    size constant.</li>
+<li>id options</li>
+<li><em>Show id</em>: Enable drawing of object IDs</li>
+<li><em>constant text size</em>: toggle whether the visual text size will stay constant when zooming</li>
+<li><em>Size</em>: Size of the drawn ID</li>
+<li><em>Color</em>: Color of drawn ID</li>
+<li><em>Background</em>: Background color of drawn ID</li>
+<li><em>Show name</em>: Show optional name (either using the 'name' attribute or 'name' <code>&lt;param&gt;</code>)</li>
+<li>Coloring options: Color by some attribute and change the color
+value/range</li>
+<li>Show color value: show the numerical value that is used for
+    coloring (text configuration options as for the id)</li>
+</ul>
+<h2 id="vehicle-visualisation-settings">Vehicle Visualisation Settings<a class="headerlink" href="#vehicle-visualisation-settings" title="Permanent link">&para;</a></h2>
+<h3 id="vehicle-shape-schemes">Vehicle shape schemes<a class="headerlink" href="#vehicle-shape-schemes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>triangle</td>
+<td>All vehicles are shaped triangular</td>
+</tr>
+<tr>
+<td>boxes</td>
+<td>All vehicles are shaped square</td>
+</tr>
+<tr>
+<td>simple shapes</td>
+<td>All vehicles have simple car shape</td>
+</tr>
+<tr>
+<td>raster images</td>
+<td>All vehicles are drawn with a loaded bitmap defined for their type using attribute <code>imgFile</code> (using <em>simple shapes</em> as fallback)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using an <code>imgFile</code> as the shape, it is necessary to select the vehicles to show as "raster images" in the <em>View Settings</em> menu.</p>
+</div>
+<h3 id="vehicle-coloring-schemes">Vehicle coloring schemes<a class="headerlink" href="#vehicle-coloring-schemes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Measure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>given vehicle/type/route color</td>
+<td>-</td>
+<td>The color given within the vehicle definition with fallback to type and then to route color</td>
+</tr>
+<tr>
+<td>uniform</td>
+<td>-</td>
+<td>All vehicles are colored uniformly</td>
+</tr>
+<tr>
+<td>given/assigned vehicle color</td>
+<td>-</td>
+<td>The color given within the vehicle definition</td>
+</tr>
+<tr>
+<td>given/assigned type color</td>
+<td>-</td>
+<td>The color given within the vehicle type definition</td>
+</tr>
+<tr>
+<td>given/assigned route color</td>
+<td>-</td>
+<td>The color given within the vehicle route definition</td>
+</tr>
+<tr>
+<td>depart position as HSV</td>
+<td>-</td>
+<td>The depart position of each vehicle, relative to the network center, is used to color the vehicle. Direction will be used as H(ue), distance from the center as S(aturation), V(alue) is always 1.</td>
+</tr>
+<tr>
+<td>arrival position as HSV</td>
+<td>-</td>
+<td>The arrival position of each vehicle, relative to the network center, is used to color the vehicle. Direction will be used as H(ue), distance from the center as S(aturation), V(alue) is always 1.</td>
+</tr>
+<tr>
+<td>direction/distance as HSV</td>
+<td>-</td>
+<td>The direction and distance between a vehicle's departure and arrival position, are used to color the vehicle. Direction will be used as H(ue), distance from the center as S(aturation), V(alue) is always 1.</td>
+</tr>
+<tr>
+<td>by speed</td>
+<td>m/s</td>
+<td>The current vehicle speed</td>
+</tr>
+<tr>
+<td>by action step</td>
+<td>-</td>
+<td>Action in current step, next stop or otherwise</td>
+</tr>
+<tr>
+<td>by waiting time</td>
+<td>s</td>
+<td>The time for which a vehicle is halting</td>
+</tr>
+<tr>
+<td>by accumulated waiting time</td>
+<td>s</td>
+<td>The total time for which a vehicle has been halting recently (default: within the last 300s.)</td>
+</tr>
+<tr>
+<td>by time since last lanechange</td>
+<td>s</td>
+<td>The time since the last lane change. The color also indicates the direction of the last lane-change (negative values indicated a change to the right).</td>
+</tr>
+<tr>
+<td>by max speed</td>
+<td>m/s</td>
+<td>Vehicle's maximum velocity</td>
+</tr>
+<tr>
+<td>by CO2 emissions</td>
+<td>g/s</td>
+<td>The amount of CO2 currently emitted by the vehicle</td>
+</tr>
+<tr>
+<td>by CO emissions</td>
+<td>g/s</td>
+<td>The amount of CO currently emitted by the vehicle</td>
+</tr>
+<tr>
+<td>by PMx emissions</td>
+<td>g/s</td>
+<td>The amount of PMx currently emitted by the vehicle</td>
+</tr>
+<tr>
+<td>by NOx emissions</td>
+<td>g/s</td>
+<td>The amount of NOx currently emitted by the vehicle</td>
+</tr>
+<tr>
+<td>by HC emissions</td>
+<td>g/s</td>
+<td>The amount of HC currently emitted by the vehicle</td>
+</tr>
+<tr>
+<td>by fuel consumption</td>
+<td>l/s</td>
+<td>The consumed fuel</td>
+</tr>
+<tr>
+<td>by electricity consumption</td>
+<td>kWh/s</td>
+<td>The consumed electricity (for electric vehicles only)</td>
+</tr>
+<tr>
+<td>by noise emissions</td>
+<td>dbA</td>
+<td>The noise produced by the vehicle</td>
+</tr>
+<tr>
+<td>by reroute number</td>
+<td>count</td>
+<td>The number of times this vehicle has bee rerouted</td>
+</tr>
+<tr>
+<td>by selection</td>
+<td>-</td>
+<td>Colors selected and unselected vehicles differently</td>
+</tr>
+<tr>
+<td>by offset from best lane</td>
+<td>count</td>
+<td>The number of immediate lane changes the vehicle must perform in order to follow its route</td>
+</tr>
+<tr>
+<td>by acceleration</td>
+<td>m/s^2</td>
+<td>The current vehicle acceleration</td>
+</tr>
+<tr>
+<td>by time gap</td>
+<td>s</td>
+<td>The time to collide with the leader vehicle assuming constant speeds</td>
+</tr>
+<tr>
+<td>by depart delay</td>
+<td>s</td>
+<td>The difference of actual insertion time and intended depart time</td>
+</tr>
+<tr>
+<td>by time loss</td>
+<td>s</td>
+<td>The total time loss from driving slower than desired since departure</td>
+</tr>
+<tr>
+<td>by stop delay</td>
+<td>s</td>
+<td>The departure delay for next (or current) public transport stop (with defined 'until' time)</td>
+</tr>
+<tr>
+<td>by stop arrival delay</td>
+<td>s</td>
+<td>The arrival delay for next (or current) public transport stop (with defined 'arrival' time)</td>
+</tr>
+<tr>
+<td>by lateral speed</td>
+<td>m/s</td>
+<td>The lateral speed of the vehicle</td>
+</tr>
+<tr>
+<td>by param (numerical)</td>
+<td>value</td>
+<td>The numerical value of the given vehicle, <a href="../TraCI/Vehicle_Value_Retrieval/#device_and_lanechangemodel_parameter_retrieval_0x7e">device or model</a> parameter</td>
+</tr>
+<tr>
+<td>random</td>
+<td>-</td>
+<td>Random vehicle color</td>
+</tr>
+<tr>
+<td>by angle</td>
+<td>-</td>
+<td>Color by heading angle of the vehicle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toggles">Toggles<a class="headerlink" href="#toggles" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Show blinkers / brake lights</li>
+<li>Show brake gap</li>
+<li>Show route index: When activating <em>show route</em> in the vehicle context menu, each highlighted edge is annotated with its index along the route (permitting to analyze looped routes)</li>
+<li>Show parking info: When activating <em>show route</em> in the vehicle context menu, the vehicle is annotated with the number of failed parking attempts and each parking area is annotated with the last target selection score</li>
+<li>Show minimum gap</li>
+<li>Show <a href="../Simulation/Bluetooth/">Bluetooth range</a></li>
+<li>Scale length with geometry (see <a href="../Simulation/Distances/#vehicle_lengths_in_sumo-gui">length-geometry-mismatch</a>)</li>
+</ul>
+<h3 id="scaling">Scaling<a class="headerlink" href="#scaling" title="Permanent link">&para;</a></h3>
+<p>Vehicle size is affected by the following features</p>
+<ul>
+<li><strong>Exaggerate by</strong> : Sets a constant scaling factor</li>
+<li><strong>Draw with constant size when zoomed out</strong>: Increases vehicle size (relative to road network) and thereby keeps them visible when zooming out
+It is also possible to scale the size of the vehicle according its attributes.</li>
+<li><strong>Scale size</strong>: Selects scaling by a given attribute (i.e. speed). The user may configure a table of scaling factors corresponding to a list of numerical values (with automatic interpolation). This works similar to color interpolation.</li>
+<li><strong>Scale length with geometry</strong> : Deactivating this option makes a difference in networks with mismatching edge length values (e.g. given length value greater than the one derived from geometry) - vehicles can be drawn longer / shorter than they actually extend physically along the lane.</li>
+</ul>
+<h3 id="textual-annotations">Textual annotations<a class="headerlink" href="#textual-annotations" title="Permanent link">&para;</a></h3>
+<p>The following textual annotations are supported:</p>
+<ul>
+<li><strong>vehicle id</strong>: Renders the vehicle id and also 'line' attribute if defined for the vehicle</li>
+<li><strong>vehicle color value</strong>: The numerical value that forms the basis for coloring (i.e. speed) is rendered</li>
+<li><strong>vehicle scale value</strong>: The numerical value that forms the basis for scaling (i.e. acceleration) is rendered. It may be useful to activate scaling just for the textual value (and setting a scaling factors to 1).</li>
+<li><strong>Vehicle text param</strong>: Renders any <a href="../Simulation/GenericParameters/">Generic Parameter</a> set on the vehicle. This also supports any <a href="../TraCI/Vehicle_Value_Retrieval/#device_and_lanechangemodel_parameter_retrieval_0x7e">virtual parameters accessible via TraCI</a></li>
+</ul>
+<p>Each text can be configured with regard to its size color and background color. By activating the option <em>Only for selected</em>, The textual annotation is limited to vehicles with the <a href="#selecting_objects"><em>selected</em></a> status.</p>
+<h2 id="edgelane-visualisation-settings">Edge/Lane Visualisation Settings<a class="headerlink" href="#edgelane-visualisation-settings" title="Permanent link">&para;</a></h2>
+<p><strong>Table 2.1 Lane coloring schemes</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Measure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uniform</td>
+<td>-</td>
+<td>All road edges are drawn using the same color. Bicycle lanes are drawn in brown, sidewalks in grey and prohibited lanes (allowing no vehicle classes) are transparent.</td>
+</tr>
+<tr>
+<td>by selection (lane-/streetwise)</td>
+<td>-</td>
+<td>selected lanes are drawn different than those that are not</td>
+</tr>
+<tr>
+<td>by permission code</td>
+<td>-</td>
+<td>all lanes are colored according to the permitted vehicle classes. The code for each lane can be retrieved from the lane parameter dialog (permission code).</td>
+</tr>
+<tr>
+<td>by allowed speed (lanewise)</td>
+<td>m/s</td>
+<td>The maximum velocity allowed on this lane</td>
+</tr>
+<tr>
+<td>by current occupancy (lanewise, brutto)</td>
+<td>% / 100</td>
+<td>By the amount of place that is covered by vehicles (including minGap)</td>
+</tr>
+<tr>
+<td>by current occupancy (lanewise, netto)</td>
+<td>% / 100</td>
+<td>By the amount of place that is covered by vehicles (excluding minGap)</td>
+</tr>
+<tr>
+<td>by first vehicle waiting time (lanewise)</td>
+<td>s</td>
+<td>By the time the first vehicle on the lane waits</td>
+</tr>
+<tr>
+<td>by lane number (streetwise)</td>
+<td>-</td>
+<td>By the number of lanes this edge has</td>
+</tr>
+<tr>
+<td>by CO2 emissions</td>
+<td>g/s</td>
+<td>The mean amount of CO2 emitted per a lane's meter</td>
+</tr>
+<tr>
+<td>by CO emissions</td>
+<td>g/s</td>
+<td>The mean amount of CO emitted per a lane's meter</td>
+</tr>
+<tr>
+<td>by PMx emissions</td>
+<td>g/s</td>
+<td>The mean amount of PMx emitted per a lane's meter</td>
+</tr>
+<tr>
+<td>by NOx emissions</td>
+<td>g/s</td>
+<td>The mean amount of NOx emitted per a lane's meter</td>
+</tr>
+<tr>
+<td>by HC emissions</td>
+<td>g/s</td>
+<td>The mean amount of HC emitted per a lane's meter</td>
+</tr>
+<tr>
+<td>by fuel consumption</td>
+<td>l/s</td>
+<td>The mean amount of consumed fuel per a lane's meter</td>
+</tr>
+<tr>
+<td>by electricity consumption</td>
+<td>kWh/s</td>
+<td>The mean amount of consumed electricity per a lane's meter</td>
+</tr>
+<tr>
+<td>by noise emission</td>
+<td>dBa</td>
+<td>The noise generated by the vehicles on the lane</td>
+</tr>
+<tr>
+<td>by global travel time</td>
+<td>s</td>
+<td>The travel time on that edge loaded from a weight file</td>
+</tr>
+<tr>
+<td>by global speed percentage</td>
+<td>%</td>
+<td>By the fraction of the maximum speed that the edge allows based on travel times from a loaded weight file</td>
+</tr>
+<tr>
+<td>by given length/geometrical length</td>
+<td></td>
+<td>The factor by which the geometrical length differs from the user-specified edge length</td>
+</tr>
+<tr>
+<td>by angle</td>
+<td></td>
+<td>The angle of the edge measured from start to end (excluding in-between geometry)</td>
+</tr>
+<tr>
+<td>by loaded weight</td>
+<td></td>
+<td>By the value loaded using options <strong>--weight-files, --weight-attribute</strong></td>
+</tr>
+<tr>
+<td>by priority</td>
+<td></td>
+<td>By the right-of-way priority using during network building</td>
+</tr>
+<tr>
+<td>by height at start</td>
+<td>m</td>
+<td>By the z-coordinate at the start of the lane</td>
+</tr>
+<tr>
+<td>by height at segment start</td>
+<td>m</td>
+<td>By the z-coordinate at the start of each geometry segment</td>
+</tr>
+<tr>
+<td>by inclination</td>
+<td>%</td>
+<td>By the average change in height between start and end of the lane per m</td>
+</tr>
+<tr>
+<td>by segment inclination</td>
+<td>%</td>
+<td>By the average change in height between start and end of each geometry segment</td>
+</tr>
+<tr>
+<td>by average speed</td>
+<td>m/s</td>
+<td>By the average speed of vehicles on the lane</td>
+</tr>
+<tr>
+<td>by average relative speed</td>
+<td>%</td>
+<td>By the average speed of vehicles on the lane as percentage of the allowed speed</td>
+</tr>
+<tr>
+<td>by routing device assumed speed</td>
+<td>m/s</td>
+<td>The averaged speed <a href="../Demand/Automatic_Routing/#edge_weights">computed by the rerouting device</a></td>
+</tr>
+<tr>
+<td>by insertion backlog</td>
+<td></td>
+<td>The number of cars currently delayed for insertion on the lane</td>
+</tr>
+<tr>
+<td>by TAZ</td>
+<td></td>
+<td>By the color of the TAZ to which this edge belongs (if <a href="../Demand/Importing_O/D_Matrices/#describing_the_taz">TAZs</a> with colors are loaded)</td>
+</tr>
+<tr>
+<td>by param (numerical, streetwise)</td>
+<td></td>
+<td>By the edge parameter configured in the drop-down list of all known edge parameters.</td>
+</tr>
+<tr>
+<td>by param (numerical, lanewise)</td>
+<td></td>
+<td>By the lane parameter configured in the drop-down list of all known lane parameters.</td>
+</tr>
+<tr>
+<td>by edgeData (numerical, streetwise)</td>
+<td></td>
+<td>By the edgeData attribute configured in the drop-down list of all loaded edgeData attributes.</td>
+</tr>
+<tr>
+<td>by edgeData (numerical, streetwise)</td>
+<td></td>
+<td>By the edgeData attribute configured in the drop-down list of all loaded edgeData attributes.</td>
+</tr>
+<tr>
+<td>by distance (kilometrage)</td>
+<td>m</td>
+<td>By the kilometrage value at start of the edge (negative values indicate falling kilometrage)</td>
+</tr>
+<tr>
+<td>by abs distance (kilometrage)</td>
+<td>m</td>
+<td>By the kilometrage value at start of the edge</td>
+</tr>
+<tr>
+<td>by reachability (traveltime)</td>
+<td>s</td>
+<td>Traveltime for reaching this edge from the most recently used 'selected reachability' location</td>
+</tr>
+<tr>
+<td>by thread index</td>
+<td></td>
+<td>Index of the thread that is computing this lane (when running with option <strong>--threads</strong>)</td>
+</tr>
+<tr>
+<td>free parking spaces</td>
+<td></td>
+<td>Total number of free parkingArea spaces on that edge</td>
+</tr>
+<tr>
+<td>by live edgeData</td>
+<td></td>
+<td>By the selected attribute value of the selected meanData id being recorded in the current simulation (configuration via two drop-down lists)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 2.2 Lane scaling schemes</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Measure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>by selection (lane-/streetwise)</td>
+<td>-</td>
+<td>selected lanes are drawn different than those that are not</td>
+</tr>
+<tr>
+<td>by allowed speed (lanewise)</td>
+<td>m/s</td>
+<td>The maximum velocity allowed on this lane</td>
+</tr>
+<tr>
+<td>by current occupancy (lanewise, brutto)</td>
+<td>% / 100</td>
+<td>By the amount of place that is covered by vehicles (including minGap)</td>
+</tr>
+<tr>
+<td>by current occupancy (lanewise, netto)</td>
+<td>% / 100</td>
+<td>By the amount of place that is covered by vehicles (excluding minGap)</td>
+</tr>
+<tr>
+<td>by first vehicle waiting time (lanewise)</td>
+<td>s</td>
+<td>By the time the first vehicle on the lane waits</td>
+</tr>
+<tr>
+<td>by lane number (streetwise)</td>
+<td>-</td>
+<td>By the number of lanes this edge has</td>
+</tr>
+<tr>
+<td>by CO2 emissions</td>
+<td>g/s</td>
+<td>The mean amount of CO2 emitted per a lane's meter</td>
+</tr>
+<tr>
+<td>by CO emissions</td>
+<td>g/s</td>
+<td>The mean amount of CO emitted per a lane's meter</td>
+</tr>
+<tr>
+<td>by PMx emissions</td>
+<td>g/s</td>
+<td>The mean amount of PMx emitted per a lane's meter</td>
+</tr>
+<tr>
+<td>by NOx emissions</td>
+<td>g/s</td>
+<td>The mean amount of NOx emitted per a lane's meter</td>
+</tr>
+<tr>
+<td>by HC emissions</td>
+<td>g/s</td>
+<td>The mean amount of HC emitted per a lane's meter</td>
+</tr>
+<tr>
+<td>by fuel consumption</td>
+<td>l/s</td>
+<td>The mean amount of consumed fuel per a lane's meter</td>
+</tr>
+<tr>
+<td>by electricity consumption</td>
+<td>kWh/s</td>
+<td>The mean amount of consumed electricity per a lane's meter</td>
+</tr>
+<tr>
+<td>by noise emission</td>
+<td>dBa</td>
+<td>The noise generated by the vehicles on the lane</td>
+</tr>
+<tr>
+<td>by global travel time</td>
+<td>s</td>
+<td>The travel time on that edge loaded from a weight file</td>
+</tr>
+<tr>
+<td>by global speed percentage</td>
+<td>%</td>
+<td>By the fraction of the maximum speed that the edge allows based on travel times from a loaded weight file</td>
+</tr>
+<tr>
+<td>by given length/geometrical length</td>
+<td></td>
+<td>The factor by which the geometrical length differs from the user-specified edge length</td>
+</tr>
+<tr>
+<td>by angle</td>
+<td></td>
+<td>The angle of the edge measured from start to end (excluding in-between geometry)</td>
+</tr>
+<tr>
+<td>by loaded weight</td>
+<td></td>
+<td>By the value loaded using options <strong>--weight-files, --weight-attribute</strong></td>
+</tr>
+<tr>
+<td>by priority</td>
+<td></td>
+<td>By the right-of-way priority using during network building</td>
+</tr>
+<tr>
+<td>by average speed</td>
+<td>m/s</td>
+<td>By the average speed of vehicles on the lane</td>
+</tr>
+<tr>
+<td>by average relative speed</td>
+<td>%</td>
+<td>By the average speed of vehicles on the lane as percentage of the allowed speed</td>
+</tr>
+</tbody>
+</table>
+<p>In addition to the lane / edge coloring one can display lane borders,
+link decals, rails, edge names, street names, internal edge names, and
+hide macro connectors. The edge names as well as the street and internal
+edge names will always be scaled to the chosen size, no matter which
+zoom step is chosen.</p>
+<h2 id="loading-shapes-and-pois">Loading Shapes and POIs<a class="headerlink" href="#loading-shapes-and-pois" title="Permanent link">&para;</a></h2>
+<p><a href="../Simulation/Shapes/">Polygonal shapes and Points of Interests
+(POIs)</a> can either be loaded in a
+<em>.sumocfg</em> configuration file or interactively through the <em>Open Shapes</em>
+option in the <em>File</em>-menu.</p>
+<p>Shapes and POIs can be <a href="#locating_objects">located based on their unique
+ID</a> and their appearance can be
+<a href="#changing_the_appearancevisualisation_of_the_simulation">customized as
+well</a>.</p>
+<h2 id="showing-background-images">Showing Background Images<a class="headerlink" href="#showing-background-images" title="Permanent link">&para;</a></h2>
+<p>In addition to changing the appearance of simulated structures, one may
+also load additional background images ("decals") into
+<strong>sumo-gui</strong>. For this, open the visualization
+settings using <img alt="icon_colorwheel.png" src="../images/icon_colorwheel.png" title="Colorwheel" /> and - if you are not yet here - choose the
+"Background" panel (see Figure below). You will see a table with the following
+columns: <strong>file</strong>, <strong>centerX</strong>, <strong>centerY</strong>, <strong>width</strong>,
+<strong>height</strong>, <strong>rotation</strong>, <strong>layer</strong> and <strong>relative</strong>.</p>
+<p><img alt="" src="../images/Decals_gui.png" title="The decals GUI" /></p>
+<p><strong>The decals GUI.</strong></p>
+<p>Now, if you click into the first row of the "picture file" column, you
+should be able to enter the complete path of an image file. Confirming
+the path by pressing RETURN should force <strong>sumo-gui</strong>
+to load and display the file below the road network, as shown in the figure:</p>
+<p><img alt="" src="../images/Background_example.png" title="Background example" /></p>
+<p><strong>Example of a background image (decal).</strong></p>
+<p>Currently, <strong>sumo-gui</strong> may load .gif, .png, .jpeg and .bmp
+files. If built with gdal-support further formats such as .tif are also
+usable.</p>
+<p>Now, you may position/stretch/rotate the image using the columns
+<strong>centerX</strong>, <strong>centerY</strong>, <strong>width</strong>, <strong>height</strong>, and <strong>rotation</strong>.</p>
+<p>When setting the column <strong>relative</strong> to <em>1</em>, position and size values
+will be taken as screen-relative pixel values instead of
+network-relative meter values.</p>
+<p>After aligning your decals, you can save them using the "Save Decals"
+button located in the dialog. Accordingly, previously saved decals can
+be loaded by pressing the "Load Decals" button.</p>
+<p>When defining decals in XML a single line which looks like this:</p>
+<pre><code class="language-xml">&lt;decal file=&quot;background.gif&quot; centerX=&quot;550.00&quot; centerY=&quot;1530.00&quot; width=&quot;64.00&quot; height=&quot;64.00&quot; rotation=&quot;0.00&quot;/&gt;
+</code></pre>
+<p>The following attributes are supported</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>file</strong></td>
+<td>path (string)</td>
+<td><em>picture file</em>, the full name of the background image</td>
+</tr>
+<tr>
+<td><strong>centerX</strong></td>
+<td>float</td>
+<td><em>center x</em>, the x-position of the center of the image in network coordinates (in meters)</td>
+</tr>
+<tr>
+<td><strong>centerY</strong></td>
+<td>float</td>
+<td><em>center y</em>, the y-position of the center of the image in network coordinates (in meters)</td>
+</tr>
+<tr>
+<td><strong>width</strong></td>
+<td>float</td>
+<td>The width of the image in network coordinates (in meters)</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>float</td>
+<td>The height of the image in network coordinates (in meters)</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>float</td>
+<td>The angle of the image in degrees</td>
+</tr>
+<tr>
+<td>layer</td>
+<td>float</td>
+<td>The layer at which the image is drawn in meters over ground</td>
+</tr>
+<tr>
+<td>screenRelative</td>
+<td>bool</td>
+<td><em>relative</em>, whether the position and size are pixel coordinates relative to the screen rather then the network coordinates</td>
+</tr>
+<tr>
+<td>centerZ</td>
+<td>float</td>
+<td>The z-position of the center of the object in network coordinates (in meters), only used in 3D visualization instead of <em>layer</em></td>
+</tr>
+<tr>
+<td>tilt</td>
+<td>float</td>
+<td>The tilt angle of the object, only used in 3D visualization</td>
+</tr>
+<tr>
+<td>roll</td>
+<td>float</td>
+<td>The roll angle of the object, only used in 3D visualization</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The contents of a decal-configuration can also be embedded in a view-settings file and thus loaded on startup. see <a href="#configuration_files">Configuration Files</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When loading an image file with an embedded geo-reference (i.e. <a href="https://en.wikipedia.org/wiki/GeoTIFF">GeoTIFF</a>) and the simulation network also has a geo-reference, then the image will be positioned automatically.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When loading an image with an assocciated <a href="https://en.wikipedia.org/wiki/World_file">world file</a>, that file must be encoded in WGS84 (lon,lat).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Background images for a network can be downloaded with the <a href="../Tools/Misc/#tilegetpy">tileGet tool</a> or by using the <a href="../Tools/Import/OSM/#osmwebwizardpy">osmWebWizard</a>.</p>
+</div>
+<h2 id="transparency">Transparency<a class="headerlink" href="#transparency" title="Permanent link">&para;</a></h2>
+<p>All image files in the visualization support transparency. For vehicles,
+pois and polygons, this transparency can be set dynamically by changing
+the color via <a href="../TraCI/">TraCI</a> and setting the alpha-channel.</p>
+<p>All objects that have their color set (via input files or visualisation
+settings) support (Red,Green,Blue,Alpha) color values.</p>
+<h2 id="3d-specific-settings">3D-specific Settings<a class="headerlink" href="#3d-specific-settings" title="Permanent link">&para;</a></h2>
+<p>The scene is illuminated by a directional light source ("the sun"). The light color originates from the grayscale range can be varied through the 3D-specific Visualization Settings. The <strong>sun brightness</strong> value ranges from 0 (=black) to 255 (=white) and represents the grayscale diffuse light. The ambient light value is half of the diffuse light.</p>
+<p>The 3D scene background color can be set to any RGB color. The OSG standard background color is <em>(51,51,102)</em>.</p>
+<p>Additionally, the visibility of traffic light related items can be set (see <a href="#automatically_generated_3d_environment">automatically generated 3D environment</a>).</p>
+<h1 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h1>
+<p><strong>sumo-gui</strong> uses the same configuration files as
+SUMO. The recognized options can be obtained by calling <em>sumo --help</em> or
+you save a configuration file with default settings by calling <code>sumo --save-template &lt;file&gt; --save-commented</code>.</p>
+<p>The options in the <em>GUI</em> category are specific to sumo-gui</p>
+<ul>
+<li><strong>--gui-settings-file</strong> (shortcut <strong>-g</strong>) allows to load a previously saved gui-settings file (see below)</li>
+<li><strong>-S, --start</strong>: starts the simulation upon opening the gui (without the need to click the <em>start</em> button)</li>
+<li><strong>-Q, --quit-on-end</strong>: closes the gui upon simulation end</li>
+<li><strong>-d, --delay</strong>: sets an initial simulation delay to prevent the simulation from running to quickly</li>
+<li><strong>--window-size WIDTH,HEIGHT</strong>: sets the initial window size (by default the previous size is restored)</li>
+<li><strong>--window-pos X,Y</strong>: sets the initial window position (by default the previous position is restored)</li>
+</ul>
+<p>A sumo configuration that loads gui settings is shown below:</p>
+<p><em>example.sumocfg</em></p>
+<pre><code class="language-xml">    &lt;configuration&gt;
+        &lt;net-file value=&quot;yournetwork.net.xml&quot;/&gt;
+        &lt;gui-settings-file value=&quot;viewsettings.xml&quot;/&gt;
+    &lt;/configuration&gt;
+</code></pre>
+<p>You may either load <em>example.sumocfg</em> using the <em>open simulation</em>-dialog
+or by using the command-line <code>sumo-gui -c example.sumocfg</code>.</p>
+<p>You may use a XML schema definition file for setting up a sumo-gui
+configuration:
+<a href="https://sumo.dlr.de/xsd/sumoConfiguration.xsd">sumoConfiguration.xsd</a>.****</p>
+<h1 id="gui-settings-files">GUI-settings Files<a class="headerlink" href="#gui-settings-files" title="Permanent link">&para;</a></h1>
+<p>All the settings configured in the <em>View Settings</em> dialog can be saved to a file and re-used for a new simulation. We refer to such files as gui-settings files. Such a file can also include information about breakpoints, screenshots, simulation delay and background images.
+The easiest way to obtain a gui-settings file is via the <em>View Settings</em>-Dialog
+<img alt="icon_colorwheel.png" src="../images/icon_colorwheel.png" title="Open viewsettings editor" />. Simply modify the settings and
+save <img alt="icon_save.png" src="../images/icon_save.png" title="Save" />.</p>
+<p>Note, that the gui-settings-file obtained this way only contain
+information about the viewport (zoom and offset), delay, breakpoints and
+decals if the corresponding check-boxes are activated before saving.</p>
+<p><em>viewsettings.xml</em></p>
+<pre><code class="language-xml">    &lt;viewsettings&gt;
+        &lt;scheme name=&quot;...&quot;&gt;
+           ...
+        &lt;/scheme&gt;
+
+        &lt;viewport zoom=&quot;200&quot; x=&quot;100&quot; y=&quot;-100&quot; angle=&quot;0.00&quot;/&gt;
+        &lt;delay value=&quot;42&quot;/&gt;
+        &lt;decal file=&quot;background.gif&quot; centerX=&quot;550.00&quot; centerY=&quot;1530.00&quot; width=&quot;64.00&quot; height=&quot;64.00&quot; rotation=&quot;0.00&quot;/&gt;
+        &lt;breakpoint value=&quot;42&quot;/&gt;
+        &lt;breakpoint value=&quot;1337&quot;/&gt;
+    &lt;/viewsettings&gt;
+</code></pre>
+<h2 id="minimal-settings-file">Minimal settings file<a class="headerlink" href="#minimal-settings-file" title="Permanent link">&para;</a></h2>
+<p>It possible to reference a predefined scheme by its name alone:</p>
+<pre><code class="language-xml">&lt;viewsettings&gt;
+    &lt;scheme name=&quot;real world&quot;/&gt;
+&lt;/viewsettings&gt;
+</code></pre>
+<p>The name may either be one of the "native" schemas ("standard", "real world", ...) or any schema <a href="#changing_the_appearancevisualisation_of_the_simulation">stored in the registry</a> by the user.</p>
+<h2 id="breakpoints_1">Breakpoints<a class="headerlink" href="#breakpoints_1" title="Permanent link">&para;</a></h2>
+<p>There are multiple ways to load pre-defined <a href="#breakpoints">breakpoints</a>.
+The breakpoint element can be included directly in a gui-settings file: <code>&lt;breakpoint value="1337"/&gt;</code></p>
+<p>Alternatively, a breakpoint-file definition can be specified in the gui-settings file:</p>
+<pre><code class="language-xml">&lt;viewsettings&gt;
+    ...
+    &lt;breakpoints-file value=&quot;breakpoints.txt&quot;/&gt;
+&lt;/viewsettings&gt;
+</code></pre>
+<p>The breakpoints file should hold one time-value per line.
+A file, suitable for loading breakpoints can be obtained by setting
+breakpoints in the gui and using the menu-option for saving (Edit-&gt;Edit
+Breakpoints-&gt;save).</p>
+<p>A further way to set breakpoints is by using the sumo option <strong>--breakpoints</strong> to load a comma-separated list of time values (shortcut <strong>-B</strong>). This circumvents the need for a gui-settings file.</p>
+<h2 id="screenshots_1">Screenshots<a class="headerlink" href="#screenshots_1" title="Permanent link">&para;</a></h2>
+<p>It is possible to take screenshots at predefined times by adding
+elements to the configuration:</p>
+<pre><code class="language-xml">&lt;viewsettings&gt;
+    &lt;snapshot file=&quot;myScreenshot.png&quot; time=&quot;42&quot;/&gt;
+&lt;/viewsettings&gt;
+</code></pre>
+<h2 id="miscellaneous-view-settings">Miscellaneous View Settings<a class="headerlink" href="#miscellaneous-view-settings" title="Permanent link">&para;</a></h2>
+<p>3D Scene lighting can be defined via the following (indices 0 - 9 are supported):</p>
+<pre><code class="language-xml">&lt;light index=&quot;0&quot; centerX=&quot;671.02&quot; centerY=&quot;639.20&quot; centerZ=&quot;200&quot;/&gt;
+</code></pre>
+<h1 id="multiple-views">Multiple Views<a class="headerlink" href="#multiple-views" title="Permanent link">&para;</a></h1>
+<p>Using the (<img alt="icon_new_window.png" src="../images/icon_new_window.png" title="New view" />)-button, multiple viewing windows can be opened onto the same
+simulation. The visualization settings can be set
+independently for each view. The viewing windows can be managed using
+the <em>Windows</em> menu in the main menu bar.</p>
+<p>When passing multiple files to the <a href="../sumo/">sumo</a>-option <strong>--gui-settings-file</strong>, one
+viewing window is opened for each file at the start of the simulation.</p>
+<h1 id="3d-visualization">3D Visualization<a class="headerlink" href="#3d-visualization" title="Permanent link">&para;</a></h1>
+<p>When sumo-gui was compiled with <a href="https://www.openscenegraph.org/">OpenSceneGraph
+(OSG)</a> support an additional
+(<img alt="icon_new_window_3d.png" src="../images/icon_new_window_3d.png" title="New 3D view" />)-button is
+present to open a new 3D view. A pre-compiled Windows version for testing is available
+<a href="https://sumo.dlr.de/daily/sumo-win64extra-git.zip">here</a>. Optionally sumo-gui will open a 3D view already from the start by
+supplying the command line option <strong>--osg-view true</strong>.</p>
+<h2 id="3d-viewport">3D Viewport<a class="headerlink" href="#3d-viewport" title="Permanent link">&para;</a></h2>
+<p>The view of the 3D scene can be changed using two methods: The camera can be moved by mouse and keyboard or the view can be defined in the
+viewport dialog. The following table summarizes which mouse actions and keys can be used to control the view.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>F</code></td>
+<td>Switch between <code>terrain</code> and <code>ego</code> camera manipulator modes (default: <code>terrain</code>)</td>
+</tr>
+<tr>
+<td><code>Up</code> arrow</td>
+<td>Move in view direction</td>
+</tr>
+<tr>
+<td><code>Down</code> arrow</td>
+<td>Move away from view direction</td>
+</tr>
+<tr>
+<td><code>Left</code> arrow</td>
+<td>Move sidewards to the left</td>
+</tr>
+<tr>
+<td><code>Right</code> arrow</td>
+<td>Move sidewards to the right</td>
+</tr>
+<tr>
+<td>LMB drag</td>
+<td>Move position in <code>terrain</code> mode</td>
+</tr>
+<tr>
+<td>MMB drag</td>
+<td>Rotate view in <code>terrain</code> mode (with view target as pivot point)</td>
+</tr>
+<tr>
+<td>RMB drag</td>
+<td>Zoom view in <code>terrain</code> mode</td>
+</tr>
+<tr>
+<td>Mouse movement</td>
+<td>Rotate view in <code>ego</code> mode (with eye position as pivot point)</td>
+</tr>
+</tbody>
+</table>
+<p>Open the viewport editor using the <img alt="icon_magnify.png" src="../images/icon_magnify.png" title="Open viewport editor" /> button. The camera position itself is listed in the left column whereas right "LookAt" coordinates define the
+target to look at. "LookAt" coordinates are normalized to length 1 by OSG automatically.</p>
+<p>Interacting with network elements and vehicles works like in the 2D view: Context-dependent options are available by RMB click on the object
+to inspect.</p>
+<h2 id="rendering-statistics">Rendering statistics<a class="headerlink" href="#rendering-statistics" title="Permanent link">&para;</a></h2>
+<p>OSG draws some rendering statistics (e.g. frames per seconds) on top of the 3D view by pressing the <code>I</code> key. Pressing the key multiple times will unveil different statistics and finally hide them again.</p>
+<h2 id="automatically-generated-3d-environment">Automatically generated 3D environment<a class="headerlink" href="#automatically-generated-3d-environment" title="Permanent link">&para;</a></h2>
+<p>Only some of the regular network components have been ported to the 3D view (yet). Currently the following are displayed:</p>
+<ul>
+<li>edges (with sidewalks curbs)</li>
+<li>junctions</li>
+<li>pedestrian crossings</li>
+<li>traffic lights</li>
+</ul>
+<p>Automatically generated traffic lights come in different variants and can be shown/hidden independently of each other
+through the 3D part of the <a href="#changing_the_appearancevisualisation_of_the_simulation">GUI settings</a>:</p>
+<ul>
+<li>bubbles above the stop line which change their color according to the connection they belong to</li>
+<li>detailed model with pole(s) and signals (either a cantilever beam or a signal bridge for large roads; single pedestrian signals are placed across the street)</li>
+</ul>
+<p><img alt="OSGTrafficLights.png" src="../images/OSGTrafficLights.png" /></p>
+<h3 id="semi-automatic-3d-traffic-light">Semi-automatic 3D traffic light<a class="headerlink" href="#semi-automatic-3d-traffic-light" title="Permanent link">&para;</a></h3>
+<p>Alternatively to automatically generated traffic lights, there is the option to place a single traffic light on a pole
+at a custom position and orientation in the network. The <a href="#showing_background_images">decals table</a> interprets the following
+<em>magic</em> entry in the file column to a single traffic light: <code>tl:&lt;TL_ID&gt;:&lt;TLLINKINDEX&gt;</code>. The current signal state is updated
+accordingly to the <em>tlLinkIndex</em> <code>&lt;TLLINKINDEX&gt;</code> of the traffic light <code>&lt;TL_ID&gt;</code>.</p>
+<h2 id="adding-3d-objects">Adding 3D objects<a class="headerlink" href="#adding-3d-objects" title="Permanent link">&para;</a></h2>
+<h3 id="static-models">Static models<a class="headerlink" href="#static-models" title="Permanent link">&para;</a></h3>
+<p>Loading individual 3D objects can be done through the <a href="#showing_background_images">decals table</a> of the GUI settings.
+3D object files in file formats supported by OSG (e.g. obj, 3ds) are loaded in the scene and positioned with the
+offset values from the decals table. For large scenes, it may be advantageous to build a single 3D object which
+contains all elements (e.g. buildings) used in sumo-gui.</p>
+<p>Additionally, the same background images as in the 2D view can be loaded.</p>
+<h3 id="vehicle-models">Vehicle models<a class="headerlink" href="#vehicle-models" title="Permanent link">&para;</a></h3>
+<p>Some basic vehicle models are shipped with SUMO in the <code>data/3D</code> directory. Custom vehicle models can be specified
+in the <code>osgFile</code> attribute of the respective vehicle type (see <a href="../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#available_vtype_attributes">vehicle types</a>). If the custom model
+cannot be used, it is replaced by a cone shape pointing to the direction of travel.</p>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The 3D-Visualization is still experimental</p>
+</div>
+<ul>
+<li>no pedestrian and cyclist models</li>
+<li>performance problems when simulating several vehicles</li>
+<li>reload leaves previous 3D scene in place</li>
+</ul>
+<h1 id="visualizing-edge-related-data">Visualizing edge-related data<a class="headerlink" href="#visualizing-edge-related-data" title="Permanent link">&para;</a></h1>
+<p>Several applications generate edge-related measures for one or more
+time-intervals.</p>
+<ul>
+<li><a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgeData-output files</a></li>
+<li>edge-probability files generated by <a href="../Tools/Trip/#customized_weights">randomTrips.py</a> with option <strong>--weights-output-prefix</strong></li>
+<li><a href="../marouter/#macroscopic_outputs">marouter netload-output</a></li>
+<li><a href="../Demand/Automatic_Routing/">Smoothed traveltimes from device.rerouting</a> when running <a href="../sumo/">sumo</a> with option <strong>--device.rerouting.output</strong>.</li>
+<li><a href="../Tools/Routes/#countedgeusagepy">countEdgeUsage.py</a></li>
+<li><a href="../Tools/Detector/#edgedatafromflowpy">edgeDataFromFlow.py</a> transforms detector counts into edgeData</li>
+<li><a href="../Tools/Turns/#routesamplerpy">routeSampler.py</a> writes achieved counts and the deficit with regard to the input counts with option <strong>--mismatch-output</strong></li>
+<li><a href="../Netedit/#data_specific_modes">netedit</a> can be used to create and modify edgeData files</li>
+</ul>
+<p>These files can be used with
+<a href="../Demand/Shortest_or_Optimal_Path_Routing/#custom_edge_weights">duarouter</a>
+and with <a href="../sumo/">sumo</a> to affect vehicle routing.</p>
+<p><strong>sumo-gui</strong> can also visualize the
+contained data to see how various traffic measures changed over time
+(without running a simulation at the same time).</p>
+<h2 id="loading-data">Loading Data<a class="headerlink" href="#loading-data" title="Permanent link">&para;</a></h2>
+<p>Edgedata files for visualization can be loaded by setting option <strong>--edgedata-files</strong>.
+When loaded this way, the simulation end time will be
+automatically adjusted to the end of the data range.</p>
+<p>Edgedata files can also be loaded in <strong>sumo-gui</strong> from
+the menu using <em>File-&gt;Open EdgeData</em>.</p>
+<p>All attributes will be loaded and can be selected in the street visualization
+settings</p>
+<h2 id="using-live-data">Using Live Data<a class="headerlink" href="#using-live-data" title="Permanent link">&para;</a></h2>
+<p>Instead of loading data from a file you can visualize the <a href="../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">aggregated data</a> that is currently being collected by the simulation.
+For this you need to color 'by live edgeData' and select the id of the configured <code>edgeData</code> (or <code>laneData</code>) element.
+This will always show the current aggregation interval (so the collected data is reset to 0 at the start of a new interval).
+By using the option <strong>--edgedata-output FILE</strong> or <strong>--lanedata-output FILE</strong> you can quickly configure a data collection that aggregates over the whole simulation.</p>
+<h2 id="coloring-by-data">Coloring by Data<a class="headerlink" href="#coloring-by-data" title="Permanent link">&para;</a></h2>
+<p>To make use of the loaded data, street coloring must be set to <strong>color by
+edgeData</strong> in the visualization settings dialog.
+The button <em>Recalibrate Rainbow</em> can be used to generate a
+coloring scheme that spans the loaded data range for the selected attribute.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the gui-settings dialog, the function 'Recalibrate Rainbow' can be used to adapt the coloring to the data range of the current attribute.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>edgeData is time based so it will only be shown when the simulation time has advance to the begin time of the respective data interval. Make sure to advance the simulation to time 0 (step once) or to whatever begin time was used for edgeData generation before using <em>Recalibrate Rainbow</em>. To see further data frames, advance the simulation by using delay or breakpoints.</p>
+</div>
+<p>When defining a color scheme, a dedicated color for missing data ('No Data') can always be configured.</p>
+<h2 id="scaling-by-data">Scaling by Data<a class="headerlink" href="#scaling-by-data" title="Permanent link">&para;</a></h2>
+<p>To make use of the loaded data for increasing the visual width of the roads, street scaling must be set to <strong>scale width by
+edgeData</strong> in the visualization settings dialog. After the scaling scheme has been selected, an attribute selection element becomes active which lists all the available edgeData attributes and must be used to pick the desired attribute for scaling.</p>
+<h1 id="usage-examples">Usage Examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h1>
+<h2 id="visualizing-shapes-and-points-of-interest">Visualizing Shapes and Points of Interest<a class="headerlink" href="#visualizing-shapes-and-points-of-interest" title="Permanent link">&para;</a></h2>
+<p>see <a href="../Simulation/Shapes/">Using additional Polygons and POIs within the
+Simulation</a></p>
+<h2 id="display-arbitrary-text-in-the-simulation-view">Display Arbitrary Text in the Simulation View<a class="headerlink" href="#display-arbitrary-text-in-the-simulation-view" title="Permanent link">&para;</a></h2>
+<p>To display arbitrary text in the simulation view, the easiest way is to place a poi element with alpha channel 0 (invisible),
+set its type attribute to the text you wish to show and load gui settings that show poi types in the desired color and size.</p>
+<pre><code class="language-xml">&lt;poi id=&quot;textPlacement0&quot; type=&quot;my custom text&quot; x=&quot;myX&quot; y=&quot;myY&quot; color=&quot;0,0,0,0&quot;/&gt;
+</code></pre>
+<p>To use another text size or color, you can use a poi parameter and pick that parameter next to the "show poi text param" checkbox:</p>
+<pre><code class="language-xml">&lt;poi id=&quot;textPlacement2&quot; x=&quot;myX2&quot; y=&quot;myY2&quot; color=&quot;0,0,0,0&quot;&gt;
+   &lt;param key=&quot;anykey&quot; value=&quot;my custom text in another size or color&quot;/&gt;
+&lt;poi&gt;
+</code></pre>
+<p>The same trick can be repeated for Polygons.</p>
+<p>You can also use <code>traci.simulation.writeMessage</code> to put custom messages into the bottom message window.</p>
+<h2 id="display-a-custom-logo-in-the-simulation-view">Display a custom Logo in the simulation View<a class="headerlink" href="#display-a-custom-logo-in-the-simulation-view" title="Permanent link">&para;</a></h2>
+<p>The <a href="#showing_background_images">background images (decals)</a> support attribute <code>screenRelative</code> to place an object relative to the screen rather than the network. This allows to place a logo in a fixed position.</p>
+<h2 id="showing-routes-and-route-related-information">Showing routes and route-related information<a class="headerlink" href="#showing-routes-and-route-related-information" title="Permanent link">&para;</a></h2>
+<ul>
+<li>To show the route(s) of a vehicle in the simulation, right-click and
+  select <em>Show Current Route</em> or <em>Show all Routes</em>.</li>
+<li>To show only the remaining portion of the current route, select <em>Show Future Route</em>.</li>
+<li>The upcoming stops and their planned timing (or trigger condition) is automatically shown along the route. To show only the next round of a cyclic route (i.e. for public transport), disable the checkbox 'show looped route'</li>
+<li>Direction reversal of rail vehicles will be shown along the route with the text 'reverse' and an index.</li>
+<li>To show the index of each edge along the route, the vehicle visualization option 'Show route index' can be activated</li>
+<li>To show the route of a person, right click and select <em>Show Current
+  Route</em>. To show the trajectory on a walkingarea, select <em>Show
+  Walkingarea Path</em>.</li>
+<li>To highlight an arbitrary set of edges in the simulation create a
+  <a href="#selecting_objects">selection file</a> and <a href="#edgelane_visualisation_settings">color edges <em>by
+  selection</em></a></li>
+<li>To Visualize all routes in a route file use the tool
+  <a href="../Tools/Routes/#route2polypy">Tools/Routes#route2poly.py</a>
+  or
+  <a href="../Tools/Routes/#route2selpy">Tools/Routes#route2sel.py</a></li>
+<li>To Visualize the number of vehicles arriving or departing at any
+  edge use the tool
+  <a href="../Tools/Routes/#countedgeusagepy">Tools/Routes\countEdgeUsage</a></li>
+</ul>
+<h2 id="investigating-internal-edges-and-lanes">Investigating internal edges and lanes<a class="headerlink" href="#investigating-internal-edges-and-lanes" title="Permanent link">&para;</a></h2>
+<p><a href="../Networks/SUMO_Road_Networks/#internal_edges">Internal Edges</a>
+define the movements across an intersection. By default they are hidden
+behind the shape of the junction to give a prettier visualization.
+Occasionally it is of interest to understand which internal lane
+corresponds to which movement as their IDs may be referenced in the
+output or in error messages. The following visualization settings are
+helpful:</p>
+<ul>
+<li>Junction settings:</li>
+<li>disable <em>draw junction shape</em> (toggle with hotkey <kbd>Ctrl</kbd> + <kbd>J</kbd>)</li>
+<li><em>show internal edge name</em></li>
+<li><em>show internal junction name</em></li>
+<li><em>show link junction index</em> (to see the correspondence between IDs and link indices)</li>
+<li>Edge settings:</li>
+<li><em>Exaggerate width by 0.1</em> (otherwise the shapes overlap which makes it hard to understand them)</li>
+<li><em>Color by selection</em> (coloring individual lanes makes it easier to understand geometry before and after <a href="../Networks/SUMO_Road_Networks/#internal_junctions">internal junctions</a>)</li>
+</ul>
+<p>In the <a href="#locating_objects">object locator menu</a>, activate the "Show internal Structures" checkbox to have them appear in the edge and junction locator dialogs. They are found at the end of the object list since their ID starts with a ':'.</p>
+<hr />
+<h2 id="investigation-stopping-at-intersections">Investigation Stopping At Intersections<a class="headerlink" href="#investigation-stopping-at-intersections" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select Vehicle visualization settings "color by selection"</li>
+<li>Right-Click on a vehicle and activate "Select Foes"</li>
+</ol>
+<p>The foe vehicles which cause a vehicle to stop or slow down will be
+highlighted.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

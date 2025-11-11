@@ -1,0 +1,713 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TraCI/Person_Value_Retrieval/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Person Value Retrieval - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-0xae-get-person-variable" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Person Value Retrieval
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-0xae-get-person-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0xae: Get Person Variable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-0xb4-person-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response 0xb4: Person Variable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-0xc6-taxi-reservations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response 0xc6: taxi reservations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-retrieval-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extended retrieval messages
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Person Value Retrieval</h1>
+
+<h2 id="command-0xae-get-person-variable">Command 0xae: Get Person Variable<a class="headerlink" href="#command-0xae-get-person-variable" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable</td>
+<td style="text-align: center;">Person ID</td>
+</tr>
+</tbody>
+</table>
+<p>Asks for the value of a certain variable of the named person. The value
+returned is the state of the asked variable/value within the last
+simulation step. In the case the person is loaded, but outside the
+network - due not being yet inserted into the network or being
+teleported within the current time step - a default "error" value is
+returned.</p>
+<p>The following variable values can be retrieved and subscribed to.
+The type of the return
+value is also shown in the table. It is not possible to subscribe to
+split taxi reservation which is technically more of a change function
+and just implemented as a retrieval function because it needs a return value.</p>
+<center>
+**Overview Retrievable Person Variables**
+</center>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>ValueType</th>
+<th>Description</th>
+<th><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id list (0x00)</td>
+<td>stringList</td>
+<td>Returns a list of ids of all persons currently running within the scenario (the given person ID is ignored)</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getIDList">getIDList</a></td>
+</tr>
+<tr>
+<td>count (0x01)</td>
+<td>int</td>
+<td>Returns the number of persons currently running within the scenario (the given person ID is ignored)</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getIDCount">getIDCount</a></td>
+</tr>
+<tr>
+<td>speed (0x40)</td>
+<td>double</td>
+<td>Returns the speed of the named person within the last step [m/s]; error value: -2^30</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getSpeed">getSpeed</a></td>
+</tr>
+<tr>
+<td>position (0x42)</td>
+<td>position</td>
+<td>Returns the position(two doubles) of the named person within the last step [m,m]; error value: [-2^30, -2^30].</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getPosition">getPosition</a></td>
+</tr>
+<tr>
+<td>position 3D (0x39)</td>
+<td>position</td>
+<td>Returns the 3D-position(three doubles) of the named vehicle (center of the front bumper) within the last step [m,m,m]; error value: [-2^30, -2^30, -2^30].</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getPosition3D">getPosition3D</a></td>
+</tr>
+<tr>
+<td>angle (0x43)</td>
+<td>double</td>
+<td>Returns the angle of the named person within the last step [°]; error value: -2^30</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getAngle">getAngle</a></td>
+</tr>
+<tr>
+<td>slope (0x36)</td>
+<td>double</td>
+<td>Retrieves the slope at the current person position in degrees</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getSlope">getSlope</a></td>
+</tr>
+<tr>
+<td>road id (0x50)</td>
+<td>string</td>
+<td>Returns the id of the edge the named person was at within the last step; error value: ""</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getRoadID">getRoadID</a></td>
+</tr>
+<tr>
+<td>type id (0x4f)</td>
+<td>string</td>
+<td>Returns the id of the type of the named person</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getTypeID">getTypeID</a></td>
+</tr>
+<tr>
+<td>color (0x45)</td>
+<td>ubyte,ubyte,ubyte,ubyte</td>
+<td>Returns the person's color (RGBA).</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getColor">getColor</a></td>
+</tr>
+<tr>
+<td>edge position (0x56)</td>
+<td>double</td>
+<td>The position of the person along the edge (in [m]); error value: -2^30</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getLanePosition">getLanePosition</a></td>
+</tr>
+<tr>
+<td>length (0x44)</td>
+<td>double</td>
+<td>Returns the length of the persons [m]</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getLength">getLength</a></td>
+</tr>
+<tr>
+<td>minGap (0x4c)</td>
+<td>double</td>
+<td>Returns the offset (gap to front person if halting) of this person [m]</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getMinGap">getMinGap</a></td>
+</tr>
+<tr>
+<td>width (0x4d)</td>
+<td>double</td>
+<td>Returns the width of this person [m]</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getWidth">getWidth</a></td>
+</tr>
+<tr>
+<td>waiting time (0x7a)</td>
+<td>double</td>
+<td>Returns the waiting time [s]</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getWaitingTime">getWaitingTime</a></td>
+</tr>
+<tr>
+<td>next edge (0xc1)</td>
+<td>string</td>
+<td>Returns the next edge on the persons route while it is walking. If there is no further edge or the person is in another stage, returns the empty string.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getNextEdge">getNextEdge</a></td>
+</tr>
+<tr>
+<td>remaining stages (0xc2)</td>
+<td>int</td>
+<td>Returns the number of remaining stages for the given person including the current stage.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getStage">getRemainingStages</a></td>
+</tr>
+<tr>
+<td>vehicle (0xc3)</td>
+<td>string</td>
+<td>Returns the id of the vehicle if the person is in stage driving and has entered a vehicle.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getVehicle">getVehicle</a></td>
+</tr>
+<tr>
+<td>taxi reservations (0xc6)</td>
+<td>list(Reservation) (see below)</td>
+<td>Returns all reservations. If onlyNew is 1, each reservation is returned only once.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getTaxiReservations">getTaxiReservations</a></td>
+</tr>
+<tr>
+<td>split taxi reservations (0xc7)</td>
+<td>string</td>
+<td>Splits persons from the given reservation and creates a new one for them. Returns the new reservation id.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-splitTaxiReservation">splitTaxiReservation</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-0xb4-person-variable">Response 0xb4: Person Variable<a class="headerlink" href="#response-0xb4-person-variable" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">ubyte</th>
+<th style="text-align: center;">&lt;return_type&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable</td>
+<td style="text-align: center;">Person ID</td>
+<td style="text-align: center;">Return type of the variable</td>
+<td style="text-align: center;">&lt;VARIABLE_VALUE&gt;</td>
+</tr>
+</tbody>
+</table>
+<p>The respond to a <strong>"Command Get Person Variable"</strong>.</p>
+<h2 id="response-0xc6-taxi-reservations">Response 0xc6: taxi reservations<a class="headerlink" href="#response-0xc6-taxi-reservations" title="Permanent link">&para;</a></h2>
+<p>Returns all reservations. If onlyNew is 1, each reservation is returned only once.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">string</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">double</th>
+<th style="text-align: center;">double</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">id</td>
+<td style="text-align: center;">persons</td>
+<td style="text-align: center;">group</td>
+<td style="text-align: center;">fromEdge</td>
+<td style="text-align: center;">toEdge</td>
+<td style="text-align: center;">departPos</td>
+<td style="text-align: center;">arrivalPos</td>
+<td style="text-align: center;">depart</td>
+<td style="text-align: center;">reservationTime</td>
+</tr>
+</tbody>
+</table>
+<h2 id="extended-retrieval-messages">Extended retrieval messages<a class="headerlink" href="#extended-retrieval-messages" title="Permanent link">&para;</a></h2>
+<p>Some further messages require additional parameters.</p>
+<center>
+**Overview Extended Variables Retrieval**
+</center>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Request ValueType</th>
+<th>Response ValueType</th>
+<th>Description</th>
+<th><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stage (0xc0)</td>
+<td>next stage index (int)</td>
+<td><a href="../Change_Person_State/#append_stage_0xc4">TraCIStage</a></td>
+<td>Returns the a compound object that describes nth next stage. Index 0 retrieves the value for the current stage. The given index must be lower than the value of 'remaining stages'.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getStage">getStage</a></td>
+</tr>
+<tr>
+<td>edges (0x54)</td>
+<td>next stage index (int)</td>
+<td>stringList</td>
+<td>Returns the edges of the nth next stage. Index 0 retrieves the value for the current stage. The given index must be lower than the value of 'remaining stages'. For driving stages only origin and destination edge are returned.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci._person.html#PersonDomain-getEdges">getEdges</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

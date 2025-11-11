@@ -1,0 +1,542 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Libtraci/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Libtraci - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#libtraci" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Libtraci
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="libtraci">Libtraci<a class="headerlink" href="#libtraci" title="Permanent link">&para;</a></h1>
+<p>The main way to interact with a running simulation is
+<a href="../TraCI/">TraCI</a> which gives the complete flexibility of doing
+cross-platform, cross-language, and networked interaction with
+<a href="../sumo/">sumo</a> acting as a server.
+To allow coupling with client code, bindings must be provided for each client
+language. Historically, this has led to a larger number of client
+implementations with varying levels of API completeness and only the python
+client was kept up-to-date by the core SUMO development team.</p>
+<p>To avoid this problem, Libtraci is provided as a SWIG compatible C++ client
+library that is fully compatible with <a href="../Libsumo/">Libsumo</a>. It even uses the
+same header files as Libsumo.</p>
+<ul>
+<li>C++ interface based on static functions and a few simple wrapper
+  classes for results which can be linked directly to the client code</li>
+<li>Pre-built language bindings for Java and Python (using
+  <a href="https://www.swig.org/">SWIG</a>)</li>
+<li>Future support for other programming languages via SWIG</li>
+</ul>
+<p>Unlike Libsumo, Libtraci allows</p>
+<ul>
+<li>multiple clients</li>
+<li>running with <a href="../sumo-gui/">sumo-gui</a></li>
+</ul>
+<h1 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h1>
+<p>The following things currently do not work (or work differently than with the TraCI Python client):</p>
+<ul>
+<li>subscriptions that require additional arguments (except for <em>vehicle.getLeader</em>)</li>
+<li>stricter type checking</li>
+<li>the pure Python TraCI client sometimes accepts any iterable object where Libtraci wants a list</li>
+<li>pure Python may accept any object where Libtraci needs a boolean value or a string</li>
+<li>there is no cleanup / waiting for the started subprocess (sumo)</li>
+</ul>
+<h1 id="building-and-installing-it">Building and Installing it<a class="headerlink" href="#building-and-installing-it" title="Permanent link">&para;</a></h1>
+<p>The binary windows release already contains the readily compiled libtraci
+for C++ and Java. For Python you should prefer the pure Python implementation
+anyway (<code>pip install traci</code>) but if you must you can install it via <code>pip install libtraci</code>.
+Only if your platform or language is not supported follow the steps below.</p>
+<p>If swig and the developer packages for your target language (e.g. Python or Java)
+are installed the build should be enabled by default.
+For the Python bindings you will get a libtraci.py and a
+_libtraci.so (or .pyd on Windows) in SUMO_HOME/tools/libtraci.
+For Java the jar and .so (or .dlls) are placed in the bin dir.
+Please add the bin or tools dir to your relevant search paths.
+If you want to enable the experimental C# support, make sure that
+you have <code>ENABLE_CS_BINDINGS</code> set in your cmake configuration.</p>
+<h1 id="using-libtraci">Using libtraci<a class="headerlink" href="#using-libtraci" title="Permanent link">&para;</a></h1>
+<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is no advantage in using libtraci instead of the standard python traci
+library. The method below is mostly used for testing libtraci.</p>
+</div>
+<pre><code class="language-py">import libtraci
+libtraci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;test.sumocfg&quot;])
+libtraci.simulationStep()
+libtraci.close()
+</code></pre>
+<p>Existing traci scripts can mostly be reused by calling</p>
+<pre><code class="language-py">import libtraci as traci
+</code></pre>
+<p>In case you have a lot of scripts you can also set the environment
+variable <code>LIBTRACI_AS_TRACI</code> to a non empty value which will trigger the
+import as above.</p>
+<h2 id="c">C++<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<h3 id="example-code-testcpp">Example Code (test.cpp)<a class="headerlink" href="#example-code-testcpp" title="Permanent link">&para;</a></h3>
+<p>The example assumes you have the named sumocfg file in your current working directory and the SUMO bin directory included
+in the PATH environmental variable. Otherwise you need to provide the full file path.</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;libsumo/libtraci.h&gt;
+
+using namespace libtraci;
+
+int main(int argc, char* argv[]) {
+    Simulation::start({&quot;sumo&quot;, &quot;-n&quot;, &quot;net.net.xml&quot;});
+    for (int i = 0; i &lt; 5; i++) {
+        Simulation::step();
+    }
+    Simulation::close();
+}
+</code></pre>
+<h3 id="compiling-on-linux-make-sure-sumo_home-is-set-and-sumo-has-been-built">compiling on Linux (make sure SUMO_HOME is set and sumo has been built)<a class="headerlink" href="#compiling-on-linux-make-sure-sumo_home-is-set-and-sumo-has-been-built" title="Permanent link">&para;</a></h3>
+<pre><code>g++ -o test -std=c++11 -I$SUMO_HOME/src test.cpp -L$SUMO_HOME/bin -ltracicpp
+</code></pre>
+<h3 id="running-on-linux">running on Linux<a class="headerlink" href="#running-on-linux" title="Permanent link">&para;</a></h3>
+<pre><code>LD_LIBRARY_PATH=$SUMO_HOME/bin ./test
+</code></pre>
+<h2 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h2>
+<p>You might want to use the available <a href="../Developer/Maven/">Maven package</a>.</p>
+<h3 id="example-code-apitestjava">Example Code (APITest.java)<a class="headerlink" href="#example-code-apitestjava" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">import org.eclipse.sumo.libtraci.*;
+
+public class APITest {
+    public static void main(String[] args) {
+        Simulation.preloadLibraries();
+        Simulation.start(new StringVector(new String[] {&quot;sumo&quot;, &quot;-n&quot;, &quot;net.net.xml&quot;}));
+        for (int i = 0; i &lt; 5; i++) {
+            Simulation.step();
+        }
+        Simulation.close();
+    }
+}
+</code></pre>
+<p>See also the information on <a href="../Libsumo/#casting_subscription_results">casting subscription results</a>.</p>
+<h3 id="compiling-on-linux">compiling on Linux<a class="headerlink" href="#compiling-on-linux" title="Permanent link">&para;</a></h3>
+<p>make sure SUMO_HOME is set and the jar / so / dll files are available</p>
+<pre><code>javac -cp $SUMO_HOME/bin/libtraci-1.8.0-SNAPSHOT.jar APITest.java
+</code></pre>
+<h3 id="running-on-linux_1">running on Linux<a class="headerlink" href="#running-on-linux_1" title="Permanent link">&para;</a></h3>
+<pre><code>java -Djava.library.path=$SUMO_HOME/bin -cp $SUMO_HOME/bin/libtraci-1.8.0-SNAPSHOT.jar:. APITest
+</code></pre>
+<h2 id="matlab">Matlab<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h2>
+<p>Please install the Python package using <code>pip install traci</code>. You can then use all commands inside your Matlab scripts
+just as in Python by adding the <code>py.</code> prefix. (Please note that this is actually not using libtraci but the pure Python TraCI
+implementation.)</p>
+<pre><code>py.traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;test.sumocfg&quot;])
+py.traci.simulationStep()
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

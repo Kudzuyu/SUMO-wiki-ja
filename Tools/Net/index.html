@@ -1,0 +1,654 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/Net/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Net - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#netdiffpy" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Net
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#patching-on-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      patching on import
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patching-a-network-different-from-the-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      patching a network different from the original
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="netdiffpy">netdiff.py<a class="headerlink" href="#netdiffpy" title="Permanent link">&para;</a></h1>
+<p>This script compares two <em>.net.xml</em> files. The call</p>
+<pre><code>python tools/net/netdiff.py A.net.xml B.net.xml diff
+</code></pre>
+<p>will produce 4 <a href="../../Networks/PlainXML/">plain-XML network</a> files:</p>
+<ul>
+<li>diff.nod.xml</li>
+<li>diff.edg.xml</li>
+<li>diff.con.xml</li>
+<li>diff.tll.xml</li>
+</ul>
+<p>These files contain groups of xml elements (i.e. nodes) that have been
+deleted, created, or modified and can be used to investigate differences
+between the two networks <strong><em>A</em></strong> and <strong><em>B</em></strong>. Furthermore, these files can be used to
+maintain change-sets for making repeatable modifications:</p>
+<pre><code>netconvert --sumo-net-file A.net.xml -n diff.nod.xml -e diff.edg.xml -x diff.con.xml -i diff.tll.xml -o B.net.xml
+</code></pre>
+<p>The above call can be used to recreate network <strong><em>B</em></strong> based on <strong><em>A</em></strong> and the
+recorded change-set. Note, that for any modified elements (i.e. modified
+speed limit for an edge), the file <strong><em>diff.edg.xml</em></strong> only contains to
+modified attributes.</p>
+<p>A typical use case for <code>netdiff.py</code> is this:</p>
+<ol>
+<li><a href="../../Networks/Import/OpenStreetMap/">Import a network from
+    OSM</a> (call this
+    <strong><em>A.net.xml</em></strong>)</li>
+<li>Make some modifications with <a href="../../Netedit/">netedit</a> (save
+    this under the new name <strong><em>B.net.xml</em></strong>)</li>
+<li>Use <code>netdiff.py</code> to create the <em>diff</em>-files</li>
+<li>At a later date, re-import the OSM network (with a newer OSM file, a
+    new version of <a href="../../netconvert/">netconvert</a> or different
+    options)</li>
+<li>Re-apply the <em>diff</em>-files to avoid repeating manual corrections with
+    <a href="../../Netedit/">netedit</a></li>
+</ol>
+<p><img alt="" src="../../images/mergeA.png" />
+<img alt="" src="../../images/mergeB.png" />
+<img alt="" src="../../images/mergeAB.png" /></p>
+<h2 id="patching-on-import">patching on import<a class="headerlink" href="#patching-on-import" title="Permanent link">&para;</a></h2>
+<p>If the patch file is to be applied during the initial network import
+(e.g. from OSM), the netdiff option <strong>-i</strong> must be set. Due to the way
+connections are guessed during network import, all connections for an
+edge must be included in the patch file if any of them were changed. This
+is accomplished by setting <strong>-i</strong> (<strong>--patch-on-import</strong>).</p>
+<h2 id="patching-a-network-different-from-the-original">patching a network different from the original<a class="headerlink" href="#patching-a-network-different-from-the-original" title="Permanent link">&para;</a></h2>
+<p>Sometimes it may be useful to apply the difference between networks <em>A</em> and <em>B</em> to another network <em>C</em> than differs slightly from <em>A</em>.
+In this case it may be useful to only consider some of the changes (i.e. only created elements).</p>
+<p>If only the newly created elements in <em>B</em> (relative to <em>A</em>) shall be considered, open each of the difference files (ie. diff.edg.xml, diff.nod.xml, diff.con.xml, diff.tll.xml) and keep only the elements below the heading</p>
+<pre><code>&lt;!-- Created Elements --&gt;&quot;
+</code></pre>
+<p>This way the patch should be applicable to network <em>C</em> regardless of how it differs from the original <em>A</em>.</p>
+<p>Sometimes, errors may occur due to inconsistent connections or traffic lights. In this case, it may be useful to only update <em>C</em> with 'diff.nod.xml and 'diff.edg.xml' and let netconvert guess
+the respective connections and traffic lights.</p>
+<p>In the end all regions where the area of <em>C</em> and <em>B</em> borders each other should be checked manually for consistency.</p>
+<h1 id="createroundaboutconnectionspy">createRoundaboutConnections.py<a class="headerlink" href="#createroundaboutconnectionspy" title="Permanent link">&para;</a></h1>
+<p>This script generates additional connections for roundabouts from a
+given network. The following connections are added:</p>
+<ul>
+<li>vehicles can stay inside of the roundabout on every lane.</li>
+<li>vehicles can leave a roundabout even if they are driving on an inner
+  lane if there are enough outgoing lanes.</li>
+</ul>
+<p>Usage:</p>
+<pre><code>python tools/net/createRoundaboutConnections.py &lt;net-file&gt;
+</code></pre>
+<p>This creates the output file <code>roundabout-connection.con.xml</code>, where the input network is <strong><em>&lt;net-file&gt;</em></strong>.</p>
+<h1 id="netcheckpy">netcheck.py<a class="headerlink" href="#netcheckpy" title="Permanent link">&para;</a></h1>
+<p>This tool checks the network (first parameter) for weak connectivity
+(whether there is a route from every node to every other node,
+regardless of edge direction) and prints the connected components if
+not.</p>
+<p>Additionally, you may run this script to discover which edges are
+reachable from a particular edge.</p>
+<pre><code>python tools/net/netcheck.py &lt;net-file&gt; --source &lt;edge_id&gt; --selection-output selection.txt
+</code></pre>
+<p>This will create a file called <code>selection.txt</code> which can be loaded in
+<a href="../../sumo-gui/">sumo-gui</a> to visualize the portion of the network
+reachable from <strong><em>&lt;edge_id&gt;</em></strong>. To visualize the selection, you must load the
+file via <strong>Edit-&gt;Edit chosen</strong>. Then, you need to enable
+edge coloring by selection status in the view settings dialog
+<strong>Street-&gt;Color by: selection</strong>. The reachable portion of the network
+will be colored differently from the unreachable portion which is
+usually sufficient to figure out network modeling errors.</p>
+<p>The options can be shortened to <strong>-s &lt;edge_id&gt;</strong> for source edges and <strong>-o &lt;filename&gt;</strong> for selection
+output.</p>
+<p>Using option <strong>--destination &lt;edge_id&gt;</strong>, or <strong>-d &lt;edge_id&gt;</strong>, lists edges which can reach the given edge. By
+adding the option <strong>--vclass &lt;vClass&gt;</strong>, or <strong>-l &lt;vClass&gt;</strong>, the check becomes
+<a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#abstract_vehicle_class">vClass</a>-aware.</p>
+<p>The option <strong>--component-output &lt;filename&gt;</strong>, or <strong>-c &lt;filename&gt;</strong>, writes all the identified components and their
+constituent edges to the specified file. The option <strong>--results-output &lt;filename&gt;</strong>, or <strong>-r &lt;filename&gt;</strong>, writes the
+whole network summary of largest component percentage coverage and
+component edge count distribution to the specified file.</p>
+<p>The <strong>--component-output</strong> and <strong>--results-output</strong> options are not compatible with the <strong>--destination</strong> or <strong>--source options</strong>.</p>
+<p>Use the option <strong>--help</strong> for the latest version information.</p>
+<h1 id="xmledges_applyoffsetpy-and-xmlnodes_applyoffsetpy">xmledges_applyOffset.py and xmlnodes_applyOffset.py<a class="headerlink" href="#xmledges_applyoffsetpy-and-xmlnodes_applyoffsetpy" title="Permanent link">&para;</a></h1>
+<p>Both tools apply the given offset to the geometrical information of
+edges or nodes given in the input file. The results are written into
+&lt;XMLEDGES&gt;.mod.xml or &lt;XMLNODES&gt;.mod.xml, respectively.</p>
+<pre><code>python tools/net/xmledges_applyOffset.py &lt;XMLEDGES-FILE&gt; &lt;X-OFFSET&gt; &lt;Y-OFFSET&gt;
+python tools/net/xmlnodes_applyOffset.py &lt;XMLNODES-FILE&gt; &lt;X-OFFSET&gt; &lt;Y-OFFSET&gt;
+</code></pre>
+<ul>
+<li>&lt;XMLEDGES-FILE&gt;/&lt;XMLNODES-FILE&gt;: The edges/nodes file whose content shall be
+  shifted</li>
+<li>&lt;X-OFFSET&gt;: The x-offset to apply</li>
+<li>&lt;Y-OFFSET&gt;: The y-offset to apply</li>
+</ul>
+<h1 id="xmlconnections_mapedgespy">xmlconnections_mapEdges.py<a class="headerlink" href="#xmlconnections_mapedgespy" title="Permanent link">&para;</a></h1>
+<p>Reads edge id replacements from "edgemap.txt"; the format of this file
+is:</p>
+<pre><code>&lt;OLD_EDGE_ID&gt;-&gt;&lt;NEW_EDGE_ID&gt;
+</code></pre>
+<p>Reads the given connections file &lt;CONNECTIONS-FILE&gt; and replaces old edge
+names by the new ones. The result is written to &lt;CONNECTIONS-FILE&gt;.mod.xml</p>
+<pre><code>python tools/net/xmlconnections_mapEdges.py &lt;CONNECTIONS-FILE&gt;
+</code></pre>
+<ul>
+<li>&lt;OLD_EDGE_ID&gt;: Id of an edge as used within &lt;CONNECTIONS-FILE&gt;</li>
+<li>&lt;NEW_EDGE_ID&gt;: Id of the edge to use instead</li>
+<li>&lt;CONNECTIONS-FILE&gt;: The connections file to change</li>
+</ul>
+<h1 id="net2kmlpy">net2kml.py<a class="headerlink" href="#net2kmlpy" title="Permanent link">&para;</a></h1>
+<p>converts '.net.xml' road geometries to <a href="https://en.wikipedia.org/wiki/Keyhole_Markup_Language">KML</a> format.</p>
+<pre><code>python tools/net/net2kml.py -n &lt;net-file&gt; -o output.kml
+</code></pre>
+<p>By default, normal edge geometries will be exported. This can be changed with options</p>
+<ul>
+<li><strong>--lanes</strong>: write lane geometries</li>
+<li><strong>--internal</strong>: write junction-internal edges or lanes</li>
+<li><strong>--junctions</strong>: export junction geometries</li>
+<li><strong>--boundary</strong>: write edge/lane boundaries instead of center-lines</li>
+<li><strong>--traffic-lights</strong> write coordinates for the <a href="../../sumo-gui/#right_of_way">colored signals</a></li>
+</ul>
+<h1 id="net2geojsonpy">net2geojson.py<a class="headerlink" href="#net2geojsonpy" title="Permanent link">&para;</a></h1>
+<p>converts '.net.xml' road geometries to <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> format.</p>
+<pre><code>python tools/net/net2geojson.py -n &lt;net-file&gt; -o output.geojson
+</code></pre>
+<p>By default, normal edge geometries will be exported. This can be changed with options</p>
+<ul>
+<li><strong>--lanes</strong>: write lane geometries</li>
+<li><strong>--internal</strong>: write junction-internal edges or lanes</li>
+</ul>
+<p>It is also possible to enrich the generated geojson with edge-related data (i.e. traffic counts or speeds) by loading an edgedata file with option <strong>--edgedata-file</strong>.</p>
+<h1 id="split_at_stopspy">split_at_stops.py<a class="headerlink" href="#split_at_stopspy" title="Permanent link">&para;</a></h1>
+<p>Generates an .edg.xml patch file with <code>split</code> definitions to ensure that each public transport stop of the given type (default <code>&lt;trainStop&gt;</code>) is on a separate edge from every other stop. The tool also generates an updated <code>.net.xml</code> and stop file. Furthermore, it can adapt a route-file so it matches the updated network.</p>
+<p>Example call:</p>
+<pre><code>python tools/net/split_at_stops.py &lt;stopfile&gt; -n &lt;net-file&gt; -r &lt;route-file&gt; -o &lt;output-net-file&gt; --stop-output &lt;output-stop-file&gt; --route-output &lt;output-route-file&gt; --stop-type busStop
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A similar functionality is achieved by <a href="../District/#stationdistrictspy">stationDistricts.py --split-output FILE</a> which splits edges at the midpoint between stops.</p>
+</div>
+<h1 id="abstractrailpy">abstractRail.py<a class="headerlink" href="#abstractrailpy" title="Permanent link">&para;</a></h1>
+<p>Converts a geodetical rail network into an abstract (schematic) rail network.
+If the network is segmented (with <a href="../District/#stationdistrictspy">stationDistricts.py</a>), the resulting network will be
+a hybrid of multiple schematic pieces being oriented in a roughly geodetical manner</p>
+<p>Example call:</p>
+<pre><code>python tools/net/abstractRail.py -n input_net.net.xml --stop-file input_additional.add.xml --region-file stations.taz.xml --output-prefix abstract
+</code></pre>
+<p>It is also possible to automatically segment the network:</p>
+<pre><code>python tools/net/abstractRail.py -n input_net.net.xml --stop-file input_additional.add.xml --split --output-prefix abstract
+</code></pre>
+<h2 id="further-options">Further options<a class="headerlink" href="#further-options" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>--filter-regions</strong>: Only convert the given list of regions and delete everything else</li>
+<li><strong>--keep-all</strong>: When filtering regions, keep all other regions at their old geometry. This may be used to build region-specific patch files than can the combined to patch larger parts of the network**</li>
+<li><strong>--horizontal</strong>: The abstract network is aligned on the horizontal</li>
+<li><strong>--track-offset</strong>: Define the offset between parallel tracks in m (default 20)</li>
+<li><strong>--skip-building</strong>: Only create patch files but do not assemble the new network</li>
+<li><strong>--skip</strong>: creates a region file (taz) from the stop-file, optionally splits network edges to ensure that each edge belongs to a single station</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If the network is large and not segmented or if the individual station segments are large, the conversion process can take a long time. The option <strong>--skip-large INT</strong> can be used to selective skip large regions (measured by the number of optimization constraints, reported via <strong>--verbose</strong> output).</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If option <strong>--skip</strong> is used the original network may be split (under a new name) and the generated abstract network will have the same edges as the split net. The input stop-file will also be adapted for the split net (under a new name) but any traffic demand (route files) have to be adapted for the split network.</p>
+</div>
+<h1 id="remap_additionalspy">remap_additionals.py<a class="headerlink" href="#remap_additionalspy" title="Permanent link">&para;</a></h1>
+<p>Remap infrastructure from one network to another if the networks have similar geometry. The following differences between networks are acceptable:</p>
+<ul>
+<li>changed edge ids</li>
+<li>changed lane number and permissions</li>
+<li>changed splits and joins of edges</li>
+<li>small variations in geometry</li>
+</ul>
+<p>In case of changed lanes, permissions are taken into account to select a suitable replacement lane.</p>
+<p>Example call:</p>
+<pre><code>python tools/net/remap_additionals.py --orig-net input_net.net.xml --target-net input_net2.net.xml -a input_additional.add.xml -o out.add.xml
+</code></pre>
+<h1 id="remap_renamedpy">remap_renamed.py<a class="headerlink" href="#remap_renamedpy" title="Permanent link">&para;</a></h1>
+<p>Remap infrastructure, vehicles, routes or a selection file from one network to another if the new network has an <code>origId</code> param on every lane that reflects the edge id of the original network. A supported use case is converting the origial network with option <strong>--numerical-ids</strong> and then transforming other scenario file so that it can be used with the new network.</p>
+<p>Example calls:</p>
+<pre><code>python tools/net/remap_additionals.py -n input_net2.net.xml -r input_routes.rou.xml -o out.rou.xml
+python tools/net/remap_additionals.py -n input_net2.net.xml -a input_additionals.add.xml -o out.add.xml
+python tools/net/remap_additionals.py -n input_net2.net.xml -s input_selection.txt -o selection.txt
+</code></pre>
+<h1 id="remap_networkpy">remap_network.py<a class="headerlink" href="#remap_networkpy" title="Permanent link">&para;</a></h1>
+<p>Compute correspondence between two networks with somewhat similar geometry (but different splits, joins, ids etc). The output is a csv-file with an 1-to-n mapping of original edge to zero or more target edges. 
+For each target edge, the common length in m as well as the fraction of the target edge being covered by the original edge are listed. Output on the quality of the mapping is written to <strong>--success-output</strong>.</p>
+<p>Example call:</p>
+<pre><code>python tools/net/remap_network.py --orig-net net.net.xml --target-net net2.net.xml -o out.csv --success-output success.txt
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

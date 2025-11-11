@@ -1,0 +1,645 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Output/VehRoutes/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>VehRoutes - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instantiating-within-the-simulation" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VehRoutes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instantiating-within-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instantiating within the Simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-only-for-selected-vehicles-or-vehicle-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output only for selected vehicles or vehicle types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualization example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#departure-times-versus-arrival-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      departure times versus arrival times
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>VehRoutes</h1>
+
+<p>The vehicle routes output contains information about which route a
+vehicle took and if his route was replaced at any time by a new one,
+each of the previous routes together with the edge at the time their
+replacement took place is reported. Furthermore, the times the vehicle
+has entered and has left the network are stored herein.</p>
+<p>In normal conditions, when all vehicles use predefined routes, the
+output does not contain any information that could not be retrieved from
+the routes and the tripinfo output. But as soon as you reroute your
+vehicles within the simulation, f.e. using rerouters, it will contain
+new information.</p>
+<h2 id="instantiating-within-the-simulation">Instantiating within the Simulation<a class="headerlink" href="#instantiating-within-the-simulation" title="Permanent link">&para;</a></h2>
+<p>This output is enabled for a simulation using the option <strong>--vehroute-output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> or <strong>--vehroutes</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>. Further
+options affecting this output are listed at
+<a href="../../../sumo/#output">SUMO#Output</a>.</p>
+<h2 id="generated-output">Generated Output<a class="headerlink" href="#generated-output" title="Permanent link">&para;</a></h2>
+<p>The generated file look like this:</p>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle id=&quot;&lt;VEHICLE_ID&gt;&quot; [type=&quot;&lt;TYPE_ID&gt;&quot;] depart=&quot;&lt;INSERTION_TIME&gt;&quot; arrival=&quot;&lt;ARRIVAL_TIME&gt;&quot; [routeLength=&quot;&lt;LENGTH&gt;&quot;]&gt;
+        &lt;routeDistribution&gt;
+            &lt;route replacedOnEdge=&quot;&lt;EDGE_ID&gt;&quot; replacedAtTime=&quot;&lt;TIME&gt;&quot; probability=&quot;0&quot; edges=&quot;&lt;PREVIOUS_ROUTE&gt;&quot;/&gt;
+
+            ... further replaced routes ...
+
+            &lt;route edges=&quot;&lt;LAST_ROUTE&gt;&quot; [exitTimes=&quot;&lt;EXIT_TIMES&gt;&quot;]/&gt;
+        &lt;routeDistribution&gt;
+    &lt;/vehicle&gt;
+
+    &lt;person id=&quot;&lt;PERSON_ID&gt;&quot; depart=&quot;&lt;INSERTION_TIME&gt;&quot; arrival=&quot;&lt;ARRIVAL_TIME&gt;&quot;&gt;
+        &lt;ride from=&quot;...&quot; to=&quot;...&quot; lines=&quot;...&quot; [started=&quot;&lt;START_TIME&gt;&quot; ended=&quot;&lt;END_TIME&gt;&quot;]/&gt;
+        &lt;walk edges=&quot;...&quot; speed=&quot;...&quot; [exitTimes=&quot;&lt;EXIT_TIMES&gt;&quot; started=&quot;&lt;START_TIME&gt;&quot; ended=&quot;&lt;END_TIME&gt;&quot;]/&gt;
+    &lt;/person&gt;
+
+    ... information about further vehicles and persons ...
+
+&lt;/routes&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type/Unit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>(vehicle) id</td>
+<td>The id of the vehicle this entry describes</td>
+</tr>
+<tr>
+<td>type</td>
+<td>vehicle type id</td>
+<td>The id of the vehicle type if different from the default</td>
+</tr>
+<tr>
+<td>depart</td>
+<td>s</td>
+<td>The time the vehicle was emitted into the network</td>
+</tr>
+<tr>
+<td>arrival</td>
+<td>s</td>
+<td>The time the vehicle was removed from the simulation (due to arriving at the route end)</td>
+</tr>
+<tr>
+<td>routeLength</td>
+<td>m</td>
+<td>The total length of the vehicle's route (if activated by the vehroutes.route-length option)</td>
+</tr>
+<tr>
+<td>replacedOnEdge</td>
+<td>(edge) id</td>
+<td>The edge the vehicle was on when the described route was replaced</td>
+</tr>
+<tr>
+<td>replacedAtTime</td>
+<td>s</td>
+<td>The time step of this replacement</td>
+</tr>
+<tr>
+<td>edges</td>
+<td>[(edge) id]</td>
+<td>The replaced route</td>
+</tr>
+<tr>
+<td>route edges</td>
+<td>[(edge) id]</td>
+<td>The final vehicle route</td>
+</tr>
+<tr>
+<td>exitTimes</td>
+<td>[time in s]</td>
+<td>The leave time for every edge in the route or walk, if enabled with the option <strong>--vehroute-output.exit-times</strong></td>
+</tr>
+<tr>
+<td>ended</td>
+<td>s</td>
+<td>The arrival time for the walk or ride (or tranship/transport for containers), if enabled with the option <strong>--vehroute-output.exit-times</strong></td>
+</tr>
+<tr>
+<td>started</td>
+<td>s</td>
+<td>The departure time for the walk or the time when the ride vehicle has been entered and starts to drive again (also for tranship/transport with containers), if enabled with the option <strong>--vehroute-output.exit-times</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Additional attributes of the vehicle are also included if they were set.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only finished trips are saved in the vehroute file as default. With the option <strong>--vehroute-output.write-unfinished</strong> unfinished trips can be saved as well. They can be identified in the file when (1) the option <strong>--vehroute-output.exit-times</strong> is set to true: the started and ended values are -1.; or (2) the option <strong>--vehroute-output.route-length</strong> is set to true: the routeLength value = -1; If following walks exist, their routeLengths will be still reported.</p>
+</div>
+<p>Both the previous and the final routes are complete, that means that
+they contain all the edges the vehicle was meant to pass as long as the
+route was not replaced, yet. The information replacedOnEdge and
+replacedAtTime are available only for routes which were replaced. The
+probability field is only given to make the file directly usable as
+input to the simulation which lets the vehicle travel its final route.
+For proper simulation input the file should be also sorted by departure
+time. This can be accomplished by also setting option <strong>--vehroute-output.sorted</strong>.</p>
+<h2 id="output-only-for-selected-vehicles-or-vehicle-types">Output only for selected vehicles or vehicle types<a class="headerlink" href="#output-only-for-selected-vehicles-or-vehicle-types" title="Permanent link">&para;</a></h2>
+<p>By default all vehicles will generate vehroute-output. By <a href="../../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#assignment_by_generic_parameters">assigning a vehroute device</a> to selected vehicles or vehicle types, this can be changed.
+As an example, the following definition enables the device for the vehicle type <strong>t1</strong>:</p>
+<pre><code class="language-xml">&lt;vType id=&quot;t1&quot;&gt;
+  &lt;param key=&quot;has.vehroute.device&quot; value=&quot;true&quot;/&gt;
+&lt;/vType&gt;
+</code></pre>
+<p>Alternatively, you can use the SUMO option <strong>--device.vehroute.probability</strong> to set the probability for a vehicle to generate the vehroute-output.
+For example, setting the option <strong>--device.vehroute.probability 0.25</strong> will equip about a quarter of the vehicles with a vehroute device (each vehicle determines this randomly with 25% probability).</p>
+<h2 id="further-options">Further Options<a class="headerlink" href="#further-options" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>--personroute-output FILE</strong>: Writes output for persons/containers to a separate FILE</li>
+<li><strong>--vehroute-output.exit-times</strong>: Write the exit times for all edges, the attributes 'started' and 'ended' for stops and include attribute 'ended' for rides.</li>
+<li><strong>--vehroute-output.last-route</strong>: Only write the final route (if the vehicle was rerouted during the simulation)</li>
+<li><strong>--vehroute-output.sorted</strong>:     Sorts the written vehicles by departure time</li>
+<li><strong>--vehroute-output.dua</strong>:        Write the output in the duarouter-alternatives format</li>
+<li><strong>--vehroute-output.cost</strong>:       Write attribute 'cost' for all routes</li>
+<li><strong>--vehroute-output.intended-depart</strong>: Use the intended departure time rather than the actual departure time (in case of departure delays)</li>
+<li><strong>--vehroute-output.route-length</strong>: Write total route length as attribute 'length'</li>
+<li><strong>--vehroute-output.write-unfinished</strong>:   Write vehroute output for vehicles and persons which have not reached their destination at the end of the simulation</li>
+<li><strong>--vehroute-output.skip-ptlines</strong>:  Skip vehroute output for public transport vehicles (vehicles that have a 'line' attribute)</li>
+<li><strong>--vehroute-output.incomplete</strong>:   Include invalid routes and route stubs (from-to) in the vehroute output</li>
+<li><strong>--vehroute-output.stop-edges</strong>:   Include information about edges between stops</li>
+<li><strong>--vehroute-output.speedfactor</strong>:   Include information vehicle specific speedFactor in output (defaults to 'true' if the vehicle had its departSpeed set)</li>
+<li><strong>--vehroute-output.internal</strong>:   Include internal edges in the output. Note, that such routes are not suitable for being loaded by sumo or duarouter!</li>
+</ul>
+<h2 id="visualization-example">Visualization example<a class="headerlink" href="#visualization-example" title="Permanent link">&para;</a></h2>
+<h3 id="departure-times-versus-arrival-times">departure times versus arrival times<a class="headerlink" href="#departure-times-versus-arrival-times" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/vehroute_output.png" width="500px"/></p>
+<p>Generated with <a href="../../../Tools/Visualization/#departure_times_versus_arrival_times">plotXMLAttributes.py</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

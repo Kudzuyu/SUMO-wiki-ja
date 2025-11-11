@@ -1,0 +1,745 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Public_Transport/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Public Transport - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Public Transport
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>Most public transport uses fixed routes (busses, trams and trains) and this page describes how to model this type of transport. For demand responsive transport that is more flexible see <a href="../Taxi/">Taxi</a>.</p>
+<p>The descriptions below describe how to model busses but the same rules apply for trams, subways and trains.</p>
+<h1 id="bus-stops">Bus Stops<a class="headerlink" href="#bus-stops" title="Permanent link">&para;</a></h1>
+<p>It is possible to define positions of bus stops and let vehicles
+("busses") stop at these positions for a pre-given time. Definitions of
+bus stop locations in SUMO have the following format:</p>
+<pre><code class="language-xml">&lt;busStop id=&quot;&lt;BUS_STOP_ID&gt;&quot; lane=&quot;&lt;LANE_ID&gt;&quot; startPos=&quot;&lt;STARTING_POSITION&gt;&quot; endPos=&quot;&lt;ENDING_POSITION&gt;&quot; [lines=&quot;&lt;LINE_ID&gt;[ &lt;LINE_ID&gt;]*&quot;]/&gt;
+</code></pre>
+<p>That means that a bus
+stop is an area on a lane. The parameters have the following meanings:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Value Range</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>string</td>
+<td>id</td>
+<td></td>
+<td>The ID of the bus stop; must be unique</td>
+</tr>
+<tr>
+<td><strong>lane</strong></td>
+<td>string</td>
+<td>valid lane id</td>
+<td></td>
+<td>The name of the lane the bus stop shall be located at</td>
+</tr>
+<tr>
+<td>startPos</td>
+<td>float</td>
+<td>-lane.length &lt; x &lt; lane.length (negative values count backwards from the end of the lane)</td>
+<td>0</td>
+<td>The begin position on the lane (the lower position on the lane) in meters</td>
+</tr>
+<tr>
+<td>endPos</td>
+<td>float</td>
+<td>-lane.length &lt; x &lt; lane.length (negative values count backwards from the end of the lane)</td>
+<td>lane.length</td>
+<td>The end position on the lane (the higher position on the lane) in meters, must be larger than <em>startPos</em> by more than 0.1m</td>
+</tr>
+<tr>
+<td>friendlyPos</td>
+<td>bool</td>
+<td><em>true,false</em></td>
+<td><em>false</em></td>
+<td>whether invalid stop positions should be corrected automatically (default <em>false</em>)</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>simple String</td>
+<td></td>
+<td>Bus stop name. This is only used for visualization purposes.</td>
+</tr>
+<tr>
+<td>color</td>
+<td>color</td>
+<td>see <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#colors">color definition</a></td>
+<td>"76,170,50"</td>
+<td>Bus stop color. This is only used for visualization purposes.</td>
+</tr>
+<tr>
+<td>lines</td>
+<td>string list</td>
+<td>A list of names separated by spaces (' ')</td>
+<td></td>
+<td>meant to be the names of the bus lines that stop at this bus stop. This is only used for visualization purposes.</td>
+</tr>
+<tr>
+<td>personCapacity</td>
+<td>int</td>
+<td>&gt;= 0</td>
+<td>min(6, (endPos-StartPos) * 2.4)</td>
+<td>larger numbers of persons trying to enter will create an upstream jam on the sidewalk.</td>
+</tr>
+<tr>
+<td>parkingLength</td>
+<td>float</td>
+<td>&gt;= 0</td>
+<td>(endPos - startPos)</td>
+<td>space available for parking vehicles</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Please note that bus stops must be added to a config via the <em>--additional-files</em> parameter (see <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The alias <code>&lt;trainStop&gt;</code> may be used anywhere instead of <code>&lt;busStop&gt;</code> and has the exact same functionality.</p>
+</div>
+<p>The <a href="../GenericParameters/">generic parameters</a> <code>&lt;param key="waitingWidth" value="FLOAT"/&gt;</code> and <code>&lt;param key="waitingDepth" value="FLOAT"/&gt;</code> can be used to define the visual spacing of waiting persons at the busStop. </p>
+<h2 id="access-lanes">Access Lanes<a class="headerlink" href="#access-lanes" title="Permanent link">&para;</a></h2>
+<p>Each bus or train stop may have additional child elements to model access from
+other parts of the network (e.g. road access to a stop on the rail
+network). This takes the following form:</p>
+<pre><code class="language-xml">&lt;busStop id=&quot;myStop&quot; lane=&quot;A_0&quot; startPos=&quot;230&quot; endPos=&quot;250&quot;&gt;
+   &lt;access lane=&quot;B_0&quot; pos=&quot;150&quot;/&gt;
+&lt;/busStop&gt;
+</code></pre>
+<p>Access information is added automatically for railway stops when
+<a href="../../Tutorials/PT_from_OpenStreetMap/#initial_network_and_public_transit_information_extraction">importing public transport information from
+OSM</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Value Range</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>lane</strong></td>
+<td>string</td>
+<td>id</td>
+<td>The name of the lane from which this stop may also be accessed</td>
+</tr>
+<tr>
+<td><strong>pos</strong></td>
+<td>float, "random", "doors"</td>
+<td>position along lane</td>
+<td>The position along the lane from which the stop is reached</td>
+</tr>
+<tr>
+<td>length</td>
+<td>float</td>
+<td>&gt;= 0</td>
+<td>The distance for computing the access time of pedestrians that use this element</td>
+</tr>
+<tr>
+<td>friendlyPos</td>
+<td>bool</td>
+<td></td>
+<td>Whether an invalid <strong>pos</strong> should be silently converted to the closest correct approximation</td>
+</tr>
+</tbody>
+</table>
+<p>The value <code>doors</code> is currently only used when exiting a train or bus. The starting position for a
+subsequent walk of the exiting passengers will be randomly chosen among the door positions of the train or bus.
+The door positions themselves cannot be defined but they are derived from the number of carriages
+and the number of doors per carriage of the vehicle, see <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#carriages_custom_visualization">carriage definition</a>.</p>
+<h2 id="virtual-stops">Virtual Stops<a class="headerlink" href="#virtual-stops" title="Permanent link">&para;</a></h2>
+<p>While it is possible to <a href="#stopping_without_defining_a_bus_stop">stop anywhere</a>, it may be useful to define busStops that are visible as infrastructure but only when in use.
+This makes it possible to define a limited list of potential stopping locations for use with <a href="../Taxi/">on-demand public transport</a> and <a href="../../IntermodalRouting/#switching_between_modes">intermodal routing</a>. To distinguish "real" busStops from "virtual" busStops the <a href="../GenericParameters/">generic parameter</a> <code>emptyColor</code> can be set:</p>
+<pre><code>    &lt;busStop id=&quot;example&quot; lane=&quot;E0_0&quot; startPos=&quot;50&quot; endPos=&quot;60&quot; color=&quot;255,145,4&quot;&gt;
+        &lt;param key=&quot;emptyColor&quot; value=&quot;1,1,1,0&quot;/&gt;
+    &lt;/busStop&gt;
+</code></pre>
+<p>The busStop will take on the <code>emptyColor</code> if it has neither waiting persons nor stopping vehicles. If the fourth value of the color definition (the <em>alpha</em>-channel) is set to <em>0</em>, the busStop will be invisible when empty.</p>
+<h1 id="letting-vehicles-stop-at-a-bus-stop">Letting Vehicles stop at a bus stop<a class="headerlink" href="#letting-vehicles-stop-at-a-bus-stop" title="Permanent link">&para;</a></h1>
+<p>Vehicles must be informed that they must stop at a bus stop. The
+following example shows how this can be done (taken from <strong><em>&lt;SUMO_HOME&gt;</em></strong><em>/examples/sumo/busses</em>):</p>
+<pre><code class="language-xml">&lt;additional xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/additional_file.xsd&quot;&gt;
+    &lt;busStop id=&quot;busstop1&quot; lane=&quot;2/1to1/1_0&quot; startPos=&quot;20&quot; endPos=&quot;40&quot; lines=&quot;100 101 102&quot;/&gt;
+    &lt;busStop id=&quot;busstop2&quot; lane=&quot;1/2to0/2_0&quot; startPos=&quot;20&quot; endPos=&quot;40&quot; lines=&quot;100 101&quot;/&gt;
+    &lt;busStop id=&quot;busstop3&quot; lane=&quot;0/1to0/0_0&quot; startPos=&quot;20&quot; endPos=&quot;40&quot; lines=&quot;100 101 102&quot;/&gt;
+    &lt;busStop id=&quot;busstop4&quot; lane=&quot;1/0to2/0_0&quot; startPos=&quot;20&quot; endPos=&quot;40&quot; lines=&quot;100 101&quot;/&gt;
+
+    &lt;vType id=&quot;BUS&quot; accel=&quot;2.6&quot; decel=&quot;4.5&quot; sigma=&quot;0&quot; length=&quot;12&quot; minGap=&quot;3&quot; maxSpeed=&quot;70&quot; color=&quot;1,1,0&quot; guiShape=&quot;bus&quot;/&gt;
+
+    &lt;vehicle id=&quot;0&quot; type=&quot;BUS&quot; depart=&quot;0&quot; color=&quot;1,1,0&quot;&gt;
+        &lt;route edges=&quot;2/0to2/1 2/1to1/1 1/1to1/2 1/2to0/2 0/2to0/1 0/1to0/0 0/0to1/0 1/0to2/0 2/0to2/1&quot;/&gt;
+        &lt;stop busStop=&quot;busstop1&quot; duration=&quot;20&quot;/&gt;
+        &lt;stop busStop=&quot;busstop2&quot; duration=&quot;20&quot;/&gt;
+        &lt;stop busStop=&quot;busstop3&quot; duration=&quot;20&quot;/&gt;
+        &lt;stop busStop=&quot;busstop4&quot; duration=&quot;20&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/additional&gt;
+</code></pre>
+<p>What is defined here is a vehicle named "0" being a "BUS". "BUS" is a
+referenced vehicle type declared earlier. The vehicle has an embedded route
+(written by hand in this case) and a list of stop places. Each stop
+place is described by two attributes, "bus_stop" and "duration" where
+"bus_stop" is the name of the bus stop the vehicle shall halt at and
+"duration" is the time the vehicle shall wait at the bus stop in
+seconds. Please note that the order of bus stops the vehicle shall halt
+at must be correct.</p>
+<p>For a complete list of attributes for the "stop"-element of a vehicle
+see
+<a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#stops_and_waypoints">Definition_of_Vehicles,_Vehicle_Types,_and_Routes#Stops</a>.</p>
+<h2 id="incomplete-route-definition">Incomplete Route Definition<a class="headerlink" href="#incomplete-route-definition" title="Permanent link">&para;</a></h2>
+<p>It is also possible to define a bus route without defining all
+intermediate edges:</p>
+<pre><code class="language-xml">   &lt;trip id=&quot;0&quot; type=&quot;BUS&quot; depart=&quot;0&quot; color=&quot;1,1,0&quot; from=&quot;2/0to2/1&quot; to=&quot;2/0to2/1&quot;&gt;
+       &lt;stop busStop=&quot;busstop1&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop2&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop3&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop4&quot; duration=&quot;20&quot;/&gt;
+   &lt;/trip&gt;
+</code></pre>
+<p>The vehicle will take the fastest path between <em>from</em>-edge and <em>to</em>-edge
+that visits all stops in their correct order.</p>
+<p>Even the trip attributes 'from' and 'to' can be omitted to let the bus start at the first stop and end at the last. Using <code>departPos="stop"</code>, the vehicle will be inserted directly at the first stop in its route:</p>
+<pre><code class="language-xml">   &lt;trip id=&quot;0&quot; type=&quot;BUS&quot; depart=&quot;0&quot; color=&quot;1,1,0&quot; departPos=&quot;stop&quot;&gt;
+       &lt;stop busStop=&quot;busstop1&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop2&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop3&quot; duration=&quot;20&quot;/&gt;
+       &lt;stop busStop=&quot;busstop4&quot; duration=&quot;20&quot;/&gt;
+   &lt;/trip&gt;
+</code></pre>
+<h1 id="public-transport-schedules">Public Transport Schedules<a class="headerlink" href="#public-transport-schedules" title="Permanent link">&para;</a></h1>
+<p>In most cases, public transport runs according to a fixed schedule. Such a schedule must be defined using the <code>until</code> attribute in the stops. Vehicles in the simulation will adhere to the schedule as they cannot leave a stop before the until-time is reached but they may still be delayed due to traffic. When <code>until</code> and <code>duration</code> are used, duration defines the minimum stopping time which can also cause delayed departures when already arriving late at a stop.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Defining a public transport schedule is necessary for <a href="../../IntermodalRouting/">intermodal routing</a>.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>A public transport schedule for <a href="../../IntermodalRouting/">intermodal routing</a> must be fully defined when loading the simulation. Stops that are defined during the simulation via rerouters or TraCI will not be considered when routing a <a href="../../Specification/Persons/#persontrips"><code>&lt;personTrip&gt;</code></a>.</p>
+</div>
+<h2 id="single-vehicles-and-trips">Single vehicles and trips<a class="headerlink" href="#single-vehicles-and-trips" title="Permanent link">&para;</a></h2>
+<p>When defining <code>until</code> values for a vehicle and trip, the values denote absolute simulation times.
+Note, that seconds or human-readable times may be used.</p>
+<pre><code class="language-xml">&lt;trip=&quot;bus&quot; from=&quot;beg&quot; to=&quot;end&quot; line=&quot;bus&quot; depart=&quot;6:0:0&quot;&gt;
+     &lt;stop busStop=&quot;busStopA&quot; until=&quot;6:30:00&quot;/&gt;
+     &lt;stop busStop=&quot;busStopB&quot; until=&quot;6:32:30&quot;/&gt;
+     &lt;stop busStop=&quot;busStopC&quot; until=&quot;23700&quot;/&gt;
+&lt;/trip&gt;
+</code></pre>
+<h2 id="flows">Flows<a class="headerlink" href="#flows" title="Permanent link">&para;</a></h2>
+<p>When defining a vehicle flow the <code>until</code> times are absolute times for the first vehicle in the flow. For all later vehicles, the times will be shifted according to later departure times (period * vehicleIndex).</p>
+<p>The example below defines a flow that inserts two vehicles. The first vehicle will stop until 10,110,210 and the second vehicle will stop until 310,410,510:</p>
+<pre><code class="language-xml">&lt;flow id=&quot;bus&quot; from = &quot;beg&quot; to =&quot;end&quot; line=&quot;bus&quot; begin=&quot;0&quot; end=&quot;301&quot; period=&quot;300&quot;&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;10&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;110&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;210&quot;/&gt;
+&lt;/flow&gt;
+</code></pre>
+<h2 id="stops-in-a-stand-alone-route">Stops in a stand-alone route<a class="headerlink" href="#stops-in-a-stand-alone-route" title="Permanent link">&para;</a></h2>
+<p>Stops may also be part of a route that is defined by itself (with an id) and referenced by vehicles or flows. In that case the <code>until</code> times will be interpreted as 'times after vehicle departure'.</p>
+<p>The example below defines a flow that inserts two vehicles. The first vehicle will depart at 500 and stop until 510,610,710. The second vehicle will depart at 800 and stop until 810,910,1010:</p>
+<pre><code class="language-xml">&lt;route id=&quot;busRoute&quot; edges=&quot;A B C D E&quot;&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;10&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;110&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;210&quot;/&gt;
+&lt;/route&gt;
+
+&lt;flow id=&quot;bus&quot; route=&quot;busRoute&quot; line=&quot;bus&quot; begin=&quot;500&quot; end=&quot;801&quot; period=&quot;300&quot;/&gt;
+
+</code></pre>
+<h2 id="looped-routes">Looped routes<a class="headerlink" href="#looped-routes" title="Permanent link">&para;</a></h2>
+<p>Looped routes can be defined by repeating edges and stops in the above definitions.
+To shorten the input description, a route may also be defined with the attributes <code>repeat</code> and <code>cycleTime</code>:</p>
+<pre><code class="language-xml">&lt;route id=&quot;busRoute&quot; edges=&quot;A B C D E&quot; repeat=&quot;3&quot; cycleTime=&quot;300&quot;&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;10&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;110&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;210&quot;/&gt;
+&lt;/route&gt;
+</code></pre>
+<p>This repeats the route edges and the stops three times.
+The <code>until</code> times of the stops are shifted by 300s in each cycle and thus the simulation expands this to the following schedule:</p>
+<pre><code class="language-xml">&lt;route id=&quot;busRoute&quot; edges=&quot;A B C D E A B C D E A B C D E&quot; repeat=&quot;3&quot; cycleTime=&quot;300&quot;&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;10&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;110&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;210&quot;/&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;310&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;410&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;510&quot;/&gt;
+    &lt;stop busStop=&quot;busStopA&quot; until=&quot;610&quot;/&gt;
+    &lt;stop busStop=&quot;busStopB&quot; until=&quot;710&quot;/&gt;
+    &lt;stop busStop=&quot;busStopC&quot; until=&quot;810&quot;/&gt;
+&lt;/route&gt;
+</code></pre>
+<p>In contrast to a period flow (which also repeats a given stop sequence), this simulation keeps a single vehicle in the loop. This allows for delays from one loop to be carried over into the next iteration. Flow definitions can make use of repeating routes in order to have multiple vehicles serving the repeating loop at the same time.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When using attribute <code>repeat</code>, the last edge of the route must be connected to the first edge of the route in order to have a valid route definition.</p>
+</div>
+<h2 id="further-schedule-attributes">Further Schedule Attributes<a class="headerlink" href="#further-schedule-attributes" title="Permanent link">&para;</a></h2>
+<p>The following <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#stops_and_waypoints">stop attributes</a> are relevant for public transport schedules:</p>
+<ul>
+<li>arrival: Defines expected arrival at the public transport stop. When set this causes arrivalDelay to be computed and written in <a href="../Output/StopOutput/">stop-output</a>. It also enables results for the function <code>traci.vehicle.getStopArrivalDelay</code>.</li>
+<li>extension: The maximum time by which a public transport stop may be extended due to boarding passengers</li>
+<li>line: A new line attribute to be set on the vehicle when reaching the stop. This is currently ignored by the intermodal router!</li>
+<li>tripId: Updates the tripId parameter of the vehicle when reaching the stop. This parameter has no impact on simulation behavior but may be useful to reflect real-world bookkeeping on the vehicle status over the course of an operating day</li>
+<li>started: Defines actual arrival time at the stop (i.e. from a real world data source or a prior simulation run)</li>
+<li>ended: Defines actual time at which the stop ended (i.e. from a real world data source or a prior simulation run). Can be used to override the 'until' attribute by setting sumo option <strong>--use-stop-ended</strong>.</li>
+</ul>
+<p>The attributes <code>started</code> and <code>ended</code> are used to account for real-life modifications to a railway schedule (train order changes), when <a href="../../Tools/Railways/#generaterailsignalconstraintspy">generating railSignalConstraints</a> for <a href="../Railways/#schedule_constraints">schedule-based railway simulation</a>.</p>
+<h2 id="visualization-example">Visualization Example<a class="headerlink" href="#visualization-example" title="Permanent link">&para;</a></h2>
+<p><img src="../images/schedule_until.png" width="500px"/></p>
+<p>Generated by <a href="../../Tools/Visualization/#public_transport_schedule">plotXMLAttributes.py</a>.</p>
+<h1 id="stopping-without-defining-a-bus-stop">Stopping without defining a bus stop<a class="headerlink" href="#stopping-without-defining-a-bus-stop" title="Permanent link">&para;</a></h1>
+<p>You may also let a vehicle stop at another position than a bus stop. The
+short definition of a vehicle's stop is:</p>
+<pre><code class="language-xml">&lt;stop bus_stop=&quot;&lt;BUS_STOP_ID&gt;&quot; | ( lane=&quot;&lt;LANE_ID&gt;&quot; endPos=&quot;&lt;POSITION_AT_LANE&gt;&quot; ) duration=&quot;&lt;HALTING_DURATION&gt;&quot;/&gt;
+</code></pre>
+<p>This means you can either use a bus stop or a lane position to define
+where a vehicle has to stop. For a complete list of attributes for the
+<code>stop</code> element of a vehicle see
+<a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#stops_and_waypoints">Definition_of_Vehicles,_Vehicle_Types,_and_Routes#Stops</a>.</p>
+<h1 id="passengers">Passengers<a class="headerlink" href="#passengers" title="Permanent link">&para;</a></h1>
+<p><a href="../../Specification/Persons/#rides">Additional definitions are necessary if the persons using the public
+transport lines shall be modeled as
+well</a>.</p>
+<p>To make use of <a href="../../IntermodalRouting/">intermodal routing, additional constrains on public
+transport definition must be met.</a></p>
+<h1 id="importing-public-transport">Importing Public Transport<a class="headerlink" href="#importing-public-transport" title="Permanent link">&para;</a></h1>
+<h2 id="osm">OSM<a class="headerlink" href="#osm" title="Permanent link">&para;</a></h2>
+<p>The <a href="../../Tutorials/OSMWebWizard/">osmWebWizard tool</a> can be used
+to import public transport data from OpenStreetMap for a selected area.</p>
+<p>This import uses an intermediate data format (<em>ptlines-file</em>) to describe public
+transport lines. The usage of this line data is explained at
+<a href="../../Tutorials/PT_from_OpenStreetMap/">Tutorials/PT_from_OpenStreetMap</a>.</p>
+<h2 id="gtfs">GTFS<a class="headerlink" href="#gtfs" title="Permanent link">&para;</a></h2>
+<p>The tool <a href="../../Tools/Import/GTFS/">gtfs2pt.py</a> can be used to import public transport data for a geo-referenced network.</p>
+<h2 id="automatic-schedule-generation">Automatic Schedule Generation<a class="headerlink" href="#automatic-schedule-generation" title="Permanent link">&para;</a></h2>
+<p>The tool <a href="../../Tools/Misc/#ptlines2flowspy">ptlines2flows.py</a> can be used to generated a public transport schedule with 'until' and 'duration' values for a given sequence of stops. The schedule times are derived by running a simulation in the background.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

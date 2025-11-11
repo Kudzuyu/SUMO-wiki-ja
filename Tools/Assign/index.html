@@ -1,0 +1,610 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/Assign/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Assign - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#assignment-tools" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Assign
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duaiteratepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      duaIterate.py
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="duaIterate.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-vehicle-types-from-an-additional-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading vehicle types from an additional file
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duaiteratemixpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      duaIterateMix.py
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="duaIterateMix.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duaiterate_analysispy" class="md-nav__link">
+    <span class="md-ellipsis">
+      duaIterate_analysis.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cadytsiteratepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      cadytsIterate.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-shotpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      one-shot.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrixdailytohourlypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      matrixDailyToHourly.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#costfunctioncheckerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      costFunctionChecker.py
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>The following tools are useful in the contect of <a href="../../Demand/Dynamic_User_Assignment/">Dynamic User Assignment</a>.</p>
+<h1 id="assignment-tools">Assignment Tools<a class="headerlink" href="#assignment-tools" title="Permanent link">&para;</a></h1>
+<h2 id="duaiteratepy">duaIterate.py<a class="headerlink" href="#duaiteratepy" title="Permanent link">&para;</a></h2>
+<p>"duaIterate.py" helps you to perform the computation of a <a href="../../Demand/Dynamic_User_Assignment/">dynamic user
+assignment (DUA)</a>. It works by alternatingly running the simulation to
+discover travel times and then assigning alternative routes to some of
+the vehicles according to these travel times. This is repeated for a
+defined number of iteration steps. At least two files have to be given
+as input the script: a SUMO network and a set of trip definitions. A
+stochastic user-equilibrium (UE)traffic state is not guaranteed after
+the assignment. Increasing the number of iteration steps increases the
+likelihood of convergence to equilibrium.</p>
+<p>Within each iteration step, the script generates a configuration file
+for the <a href="../../duarouter/">duarouter</a> application and starts it with
+this configuration file. Then, a configuration file for
+<a href="../../sumo/">sumo</a> is built and <a href="../../sumo/">sumo</a> is started.
+Both configuration files are completely defined within the script itself.
+As default, for each time step, SUMO will generate three dump files with
+edge-dumps aggregated over 150, 300, and 900s, a summary information as
+well as a trip information output. The names of these outputs are
+numbered according to the iteration step. If you want to change the
+outputs, you also have to take a look into the script, but you should
+not disable the edge-based dump for aggregation over 900s, because this
+is read by the <a href="../../duarouter/">duarouter</a> in the next iteration
+steps in order to compute the DUA.</p>
+<p>For further options of the script either look at the source code or
+start it with the "--help" option.</p>
+<pre><code>python tools/assign/duaIterate.py -n &lt;PATH_TO_SUMO_NET&gt; -t &lt;PATH_TO_TRIPS&gt;
+</code></pre>
+<h3 id="loading-vehicle-types-from-an-additional-file">Loading vehicle types from an additional file<a class="headerlink" href="#loading-vehicle-types-from-an-additional-file" title="Permanent link">&para;</a></h3>
+<p>If the file <code>vtypes.add.xml</code> defines vehicle types that are needed by the traffic demand input for duaIterate.py, the following options must be set</p>
+<p><strong>--additional vtypes.add.xml duarouter--vtype-output dummy.xml duarouter--additional-files vtypes.add.xml</strong></p>
+<p>The first option passes its arguments only to the <a href="../../sumo/">sumo</a> process. The other options are passed to <a href="../../duarouter/">duarouter</a> and ensure that the types are read but are not written to the route output file (since they would then be loaded twice by sumo resulting in an error).</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Options, prefixed with <strong>duarouter--</strong> must be the last in the list of all options</p>
+</div>
+<h2 id="duaiteratemixpy">duaIterateMix.py<a class="headerlink" href="#duaiteratemixpy" title="Permanent link">&para;</a></h2>
+<p>This tool is designed to solve the multiclass traffic assignment problem for mixed traffic flow. Most of the options in this tool are similar to those in <a href="#duaiteratepy">duaIterate.py</a>, with a few exceptions. To solve the multiclass traffic assignment problem, you need to provide two demand files. Use the option <code>-t</code> to specify the demand for UE-seeking vehicles, and use the option <code>-r</code> to specify the demand for SO-seeking vehicles. To obtain the multiclass traffic assignment solution, you should set the following options: <code>--mix</code>, <code>--marginal-cost</code>, and <code>--marginal-cost.exp</code>.</p>
+<h3 id="duaiterate_analysispy">duaIterate_analysis.py<a class="headerlink" href="#duaiterate_analysispy" title="Permanent link">&para;</a></h3>
+<p>To check the evolution of different simulation parameters during the dua
+estimation an additional script is provided which analyses teleport counts
+and how they evolve over the iterations.</p>
+<pre><code>python tools/assign/duaIterate_analysis.py dualog.txt
+</code></pre>
+<h2 id="cadytsiteratepy">cadytsIterate.py<a class="headerlink" href="#cadytsiteratepy" title="Permanent link">&para;</a></h2>
+<p>This script is a variant of duaIterate.py which uses the
+Cadyts calibration tool, developed by Gunnar Flötteröd at EPFL,
+Switzerland. With this script, route choices will be adjusted according
+to given link counts. The validation work of the calibration between
+SUMO and Cadyts is work in progress. You will need to download
+<a href="https://github.com/gunnarfloetteroed/java">Cadyts</a> separately and add a
+reference to the jar file to the call.</p>
+<pre><code>python tools/assign/cadytsIterate.py -n input_net.net.xml -r routes.rou.xml -d input_measurements.xml --classpath cadyts.jar
+</code></pre>
+<h2 id="one-shotpy">one-shot.py<a class="headerlink" href="#one-shotpy" title="Permanent link">&para;</a></h2>
+<p>The one-shot.py provides a variant of the dynamic user assignment. The
+assignment method is the same one which SUMO and the dua-iterate.py use.
+Given trips will be assigned to respective fastest routes according to
+their departure times and a given travel-time updating interval.
+Different travel-time updating intervals can be defined by users, such
+as 900, i.e. link travel times will be updated every 900 sec. If the
+travel-time updating interval is set to -1, link travel times will not
+updated and link trave times at free-flow speeds are used for all trips.</p>
+<p>A stochastic user-equilibrium traffic state will not achieved with the
+use of this script.</p>
+<p>An exemplary execution command is shown below.</p>
+<pre><code> one-shot.py -f &lt;travel-time updating interval&gt; -n &lt;network file&gt; -t &lt;trip file&gt;
+
+ where -f travel-time updating interval (sec); -1 means no travel-time updating (default: -1,1800,300,15)
+       -n network file name and the respective path
+       -t trip file name and the respective path
+</code></pre>
+<p>Additional setting, such as outputs of summary and trip-information as
+well as begin time, could be made by adding respective options which can
+be found in the script.</p>
+<h2 id="matrixdailytohourlypy">matrixDailyToHourly.py<a class="headerlink" href="#matrixdailytohourlypy" title="Permanent link">&para;</a></h2>
+<p>This script is to generate hourly matrices from a VISUM daily matrix.
+The traffic demand of the traffic zones, which have the same connection
+links, will be integrated. The exemplary command is indicated below.</p>
+<pre><code>matrixDailyToHourly.py -m &lt;matrix file&gt; -z &lt;district file&gt; -t &lt;flow time-series file&gt; -o
+
+&lt;output directory&gt;
+
+where -m: matrix file name
+      -z: district file name
+      -t: name of the file containing traffic flow time series (optional); If not specified, the defined
+          daily matrix will be regularly divided into 24 hours.
+      -o: output directory name and the respective path
+</code></pre>
+<h2 id="costfunctioncheckerpy">costFunctionChecker.py<a class="headerlink" href="#costfunctioncheckerpy" title="Permanent link">&para;</a></h2>
+<p>Run duarouter repeatedly and simulate weight changes via a cost
+function. (to be continued)</p>
+<p>Still under construction!</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

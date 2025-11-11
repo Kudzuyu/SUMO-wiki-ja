@@ -1,0 +1,689 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tutorials/port/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Port Tutorial - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Port Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful links
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>This tutorial shows how to create a simple port simulation with the help of the osmWebWizard. This tutorial includes the following steps:</p>
+<ul>
+<li>Starting with osmWebWizard.py</li>
+<li>Revision and adaptation of the road network with netedit</li>
+<li>Agent data and how to find them</li>
+<li>Passenger / Bus</li>
+<li>Container</li>
+<li>Trucks, RoRo</li>
+<li>Vessels</li>
+<li>Examples</li>
+</ul>
+<h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../">Tutorials</a></li>
+</ul>
+<p>Documentation:</p>
+<ul>
+<li><a href="../OSMWebWizard/">osmWebWizard.py</a></li>
+<li><a href="../../Simulation/Public_Transport/#public_transport_schedules">Public Transport Schedules</a></li>
+<li><a href="../../Specification/Persons/">Person</a></li>
+<li><a href="../../TraCI/Vehicle_Value_Retrieval/">Vehicle</a></li>
+<li><a href="../../Specification/Containers/">Container</a></li>
+<li><a href="../../TraCI/Polygon_Value_Retrieval/">Polygon</a></li>
+</ul>
+<h1 id="create-a-simple-port-simulation">Create a simple port simulation<a class="headerlink" href="#create-a-simple-port-simulation" title="Permanent link">&para;</a></h1>
+<h2 id="osmwebwizard">osmWebWizard<a class="headerlink" href="#osmwebwizard" title="Permanent link">&para;</a></h2>
+<p>Open the osmWebWizard.py</p>
+<pre><code>python &lt;SUMO_HOME&gt;/tools/osmWebWizard.py
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All files that make up the scenario are created in a subfolder of the working directory with the current timestamp (e.g. <SUMO_HOME>/tools/2021-02-22-10-00-00/). If you edit the network, you can use the script <code>build.bat</code> to rebuild the random demand.</p>
+</div>
+<p>A browser window will open. On the left side, you see the map and on the right side, you can find your position and some options. First, navigate through the map to find the right port.
+<img src="../images/tutorialport1.png" width="100%"></p>
+<p>In our case it is the Skandinavienkai of the Port Lübeck, Germany. Here, there are ferries (passenger transport) and cargo vessels (container transport).</p>
+<p><img src="../images/tutorialport2.png" width="100%"></p>
+<h3 id="network-generation">Network Generation<a class="headerlink" href="#network-generation" title="Permanent link">&para;</a></h3>
+<p>Now take a look at the right side. You can choose the whole area visible on the screen or select an area by choosing the option <code>Select Area</code>.
+Also select the <code>Add Polygons</code> and <code>Import Public Transport</code> options to put this information directly from OSM to our network.</p>
+<h3 id="demand-generation">Demand Generation<a class="headerlink" href="#demand-generation" title="Permanent link">&para;</a></h3>
+<p>The demand is defined by the demand generation panel. You can activate this panel by clicking on the car pictogram. Here you can choose every agent you need at your port area. If you have any special port vehicles like crane or stapler, you can not create them here. Ideas for possible implementations are described a little further below.
+The OSM Web Wizard generates random demand, for more information see the documentation of the <a href="../OSMWebWizard/">osmWebWizard</a>.</p>
+<p>For our scenario we choose <code>cars</code>, <code>trucks</code>, <code>pedestrians</code>, <code>trains</code>, and of course <code>ships</code>.</p>
+<p><img src="../images/tutorialport3.png" width="100%"></p>
+<p>After you chose all the agents you need press the <code>Generate Scenario</code> button.</p>
+<p>The complete scenario is generated automatically. The scenario generation takes a couple of seconds or minutes (depending, among other factors, on the size of the scenario). Once the scenario generation process has finished, the sumo-gui starts and the simulation can be started by pressing the Play button.</p>
+<p>Here is our scenario! But it looks a little strange because the waterways are very large, so we first have to zoom in to find the port (somewhere in the south).</p>
+<p><img src="../images/tutorialport4.png" width="100%"></p>
+<p>This is our port: (With additional polygons to get a better overview of the port.)</p>
+<p><img src="../images/tutorialport5.png" width="100%"></p>
+<p>But as you can see, not all piers are connected to the waterways and if you take a closer look you will find more things to fix. So let´s open netedit to correct the network.</p>
+<p><img src="../images/tutorialport6.png" width="100%"></p>
+<h2 id="network-editing">Network editing<a class="headerlink" href="#network-editing" title="Permanent link">&para;</a></h2>
+<p>Now we open <a href="../../Netedit/">netedit</a> to correct these parts. You can open it from sumo-gui with the shortcut <kbd>Ctrl</kbd> + <kbd>T</kbd>.</p>
+<h3 id="netedit">Netedit:<a class="headerlink" href="#netedit" title="Permanent link">&para;</a></h3>
+<p><img src="../images/tutorialport8.png" width="100%"></p>
+<h3 id="1-shorten-the-waterways-so-that-only-the-originally-selected-area-remains">1) Shorten the waterways, so that only the originally selected area remains.<a class="headerlink" href="#1-shorten-the-waterways-so-that-only-the-originally-selected-area-remains" title="Permanent link">&para;</a></h3>
+<p>Use the inspect mode (<kbd>I</kbd>): Locate the waterways that extend beyond the area and separate these edges in both directions into an appropriate part at the port and a part that can be deleted. To do so, right click on the edge at the position where the edge should be separated.</p>
+<p><kbd><img src="../images/tutorialport9.png" width="600"></kbd></p>
+<p>Use the select mode (<kbd>S</kbd>):  Select the waterways far from the port and delete them.</p>
+<table><tr>
+    <td>Before</td>
+    <td>After</td>
+</tr><tr>
+    <td><img title="Before" alt="net before cutting the waterways" src="../images/tutorialport10.png" width="100%"></td>
+    <td><img title="after" alt="net after cutting and deleting the waterways" src="../images/tutorialport11.png" width="100%"></td>
+</tr></table>
+
+<h3 id="2-delete-everything-that-is-superfluous">2) Delete everything that is superfluous<a class="headerlink" href="#2-delete-everything-that-is-superfluous" title="Permanent link">&para;</a></h3>
+<p>Use the select mode (<kbd>S</kbd>): Select all superfluous edges and delete them.</p>
+<table><tr>
+    <td>Before</td>
+    <td>After</td>
+</tr><tr>
+    <td><img src="../images/tutorialport12.png" width="500"></td>
+    <td><img src="../images/tutorialport13.png" width="500"></td>
+</tr></table>
+
+<h3 id="3-add-the-missing-connections-between-the-piers-and-the-waterways">3) Add the missing connections between the piers and the waterways<a class="headerlink" href="#3-add-the-missing-connections-between-the-piers-and-the-waterways" title="Permanent link">&para;</a></h3>
+<p>Use the inspect mode (<kbd>I</kbd>): Split the waterway edge in both directions at the position where you want to add the connection to the pier.</p>
+<p><kbd><img src="../images/tutorialport14.png" width="500"></kbd></p>
+<p>Use the edge mode (<kbd>E</kbd>): Connect the pier with the waterway edge (twoway road).</p>
+<p><kbd><img src="../images/tutorialport15.png" width="500"></kbd></p>
+<p>Use the inspect mode (<kbd>I</kbd>): Select the new edge and set <code>allow = ship</code></p>
+<h3 id="4-change-road-vclasses-at-the-port-area">4) Change road vClasses at the port area<a class="headerlink" href="#4-change-road-vclasses-at-the-port-area" title="Permanent link">&para;</a></h3>
+<p>Here is our main port area.</p>
+<p><kbd><img src="../images/tutorialport16.png" width="1000"></kbd></p>
+<p>If you have a look at the "allow"-parameter for the edges, you will see that they have different allowed vClasses. We prefer to have the same allowed vClasses for all edges (trucks, passenger car, pedestrian, delivery, taxi and bus)</p>
+<p>Use the select mode (<kbd>S</kbd>): Select all roads (except the train tracks).</p>
+<p>Use the inspect mode (<kbd>I</kbd>): Open the allow option on the left side and change the allowed vClasses.</p>
+<p><img src="../images/tutorialport18.png" width="1000"></p>
+<h3 id="5-train-tracks">5) Train Tracks<a class="headerlink" href="#5-train-tracks" title="Permanent link">&para;</a></h3>
+<p>The train tracks imported by the osmWebWizard from OSM just have one direction.
+Use netedit or netconvert to add bidirectional tracks.</p>
+<h4 id="netconvert">Netconvert:<a class="headerlink" href="#netconvert" title="Permanent link">&para;</a></h4>
+<p>Use netconvert with option <a href="../../Simulation/Railways/#handling_problems_in_bidirectional_railway_networks"><code>railway.topology.all-bidi</code></a></p>
+<p>or</p>
+<h4 id="netedit_1">Netedit:<a class="headerlink" href="#netedit_1" title="Permanent link">&para;</a></h4>
+<p>Use the select mode (<kbd>S</kbd>): Select all train tracks.</p>
+<p>Use the inspect mode (<kbd>I</kbd>): Right click on a track, -&gt; <strong>edge operations</strong> -&gt; <strong>add reverse direction for edge</strong></p>
+<p>Use the connection mode (<kbd>C</kbd>): Check and adapt the connections between the tracks (maybe it is easier to control if all tracks have the spread type <code>right</code> instead of <code>center</code>).</p>
+<h3 id="6-create-bus-stops-and-container-stops">6) Create bus stops and container stops<a class="headerlink" href="#6-create-bus-stops-and-container-stops" title="Permanent link">&para;</a></h3>
+<p>Use netedit with the additional mode (<kbd>A</kbd>).
+Select <code>busStop</code> or <code>containerStop</code> and define a name. Then place the stop at an edge.</p>
+<p><img src="../images/tutorialport19.png" width="100%"></p>
+<p>After adding all needed stops save them as an additional file (e.g. stops.add.xml).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If an agent shall go to a stop with an edge with no permission, you can use access lanes for the stop.
+For more information see <a href="../../Simulation/Public_Transport/#access_lanes">public transport</a>.</p>
+</div>
+<p>These are the stops for our scenario: (H=busStop, C=containerStop)</p>
+<p><img src="../images/tutorialport20.png" width="100%"></p>
+<p>If the network is now correct, save the network. Run the file <code>build.bat</code> at the scenario folder (for us: <SUMO_HOME>/tools/2021-02-22-10-00-00/ ) to create a new demand suitable for the customized network. You can run the file <code>run.bat</code> to restart the simulation.</p>
+<p><img src="../images/tutorialport21.png" width="100%"></p>
+<p>Here you can see that in our scenario there are far too many ships. So it is time to have a deeper look into the demand.</p>
+<h2 id="demand">Demand<a class="headerlink" href="#demand" title="Permanent link">&para;</a></h2>
+<p>Before we edit the demand, it would be a good idea to bring together some information about it. If you are in luck, you get this data directly from the port. Otherwise, there are also some ways to get approximate values. For the ships it is possible to look for data from the automatic identification system (AIS). There are a lot of free sources and you get information about the ships and their movements. Often you can find information about the port from the ports website and from the local logistics companies. Information about passenger transport can be retrieved from OpenStreetMap and local public transport and ferry companies.</p>
+<h3 id="demand-editing">Demand editing<a class="headerlink" href="#demand-editing" title="Permanent link">&para;</a></h3>
+<p>If you just want to have a very simple scenario (without containers) then you just change the <code>Through Traffic Factor</code> and <code>count</code> within the file <code>build.bat</code> and generate a better simple demand. For more information see the <a href="../OSMWebWizard/">osmWebWizard</a>.</p>
+<p>If you want a more complex scenario delete the generated demand, first. :-)</p>
+<p>In this tutorial we simulate one hour with one container ship, one passenger ship, one train and a lot of trucks, cars, containers and passengers. We also need a bus for the passengers, because at this port there is no connection between the passenger terminal and the piers. For the container movements we need some kind of trailer/ stapler to move the container from the train station to the pier.</p>
+<p>Here is the list of all Agents we want to insert:</p>
+<pre><code class="language-text">1 passenger ship with:
+    20 passenger cars: arrive per ship and go to the passenger terminal
+    20 passenger cars: start at the passenger terminal and go to the ship
+    20 pedestrians: arrive per ship and go to the passenger terminal
+    20 pedestrians: start at the passenger terminal and go to the ship
+
+1 container ship with:
+    25 trucks: from train to ship
+    25 trucks: from ship to train
+
+1 train with:
+    15 containers: from train to ship
+    15 containers: from ship to train
+
+1 bus: for the passenger transport between passenger terminal and the ship
+
+5 trailer/stapler: for the container transport between the train and the ship
+</code></pre>
+<h3 id="create-a-demand-file">Create a demand file<a class="headerlink" href="#create-a-demand-file" title="Permanent link">&para;</a></h3>
+<p>First, we need some adaptions to the vTypes to add the necessary capacities to load enough containers and persons. Create a file and add the following definitions for the vTypes:</p>
+<pre><code class="language-xml">&lt;vType id=&quot;type_ship&quot; vClass=&quot;ship&quot; containerCapacity=&quot;25&quot; personCapacity=&quot;20&quot;/&gt;
+&lt;vType id=&quot;type_train&quot; vClass=&quot;rail&quot; containerCapacity=&quot;15&quot;/&gt;
+&lt;vType id=&quot;type_truck_taxi&quot; vClass=&quot;truck&quot; containerCapacity=&quot;1&quot; personCapacity=&quot;1&quot; loadingDuration=&quot;30.0&quot;/&gt;
+&lt;vType id=&quot;type_truck&quot; vClass=&quot;truck&quot; containerCapacity=&quot;1&quot; loadingDuration=&quot;30.0&quot;/&gt;
+&lt;vType id=&quot;type_car&quot; vClass=&quot;passenger&quot;/&gt;
+&lt;vType id=&quot;type_bus_taxi&quot; vClass=&quot;bus&quot; personCapacity=&quot;20&quot;/&gt;
+&lt;vType id=&quot;type_passenger&quot; vClass=&quot;pedestrian&quot;/&gt;
+</code></pre>
+<h4 id="train">Train<a class="headerlink" href="#train" title="Permanent link">&para;</a></h4>
+<p>Add the trip for the train to the port and back.</p>
+<pre><code class="language-xml">&lt;trip id=&quot;train&quot; type=&quot;type_train&quot; depart=&quot;0&quot; departLane=&quot;best&quot; from=&quot;149084838#0&quot; to=&quot;-149084838#0&quot; via=&quot;29497609&quot;&gt;
+    &lt;stop containerStop=&quot;containerStop_trainstation&quot; duration=&quot;100&quot;/&gt;
+&lt;/trip&gt;
+</code></pre>
+<h4 id="ships">Ships<a class="headerlink" href="#ships" title="Permanent link">&para;</a></h4>
+<p>There are two possible ways to define a ship. Either by defining the complete route or by using the trip definition:</p>
+<pre><code class="language-xml">&lt;vehicle id=&quot;ferry&quot; depart=&quot;0.00&quot; departPos=&quot;0&quot; line=&quot;ferry&quot; type=&quot;type_ship&quot; color=&quot;0,255,0&quot;&gt;
+    &lt;route edges=&quot;-127071510.253116 127071510&quot;/&gt;
+    &lt;stop busStop=&quot;busStop_waterway&quot; duration=&quot;100&quot;/&gt;
+&lt;/vehicle&gt;
+
+&lt;trip id=&quot;containership&quot; type=&quot;type_ship&quot; depart=&quot;0&quot; departLane=&quot;best&quot; from=&quot;-5005413&quot; to=&quot;5005413.18170&quot; via=&quot;gneE2&quot;&gt;
+    &lt;stop containerStop=&quot;containerStop_waterway&quot; duration=&quot;100&quot;/&gt;
+&lt;/trip&gt;
+</code></pre>
+<h4 id="passenger-cars">Passenger Cars<a class="headerlink" href="#passenger-cars" title="Permanent link">&para;</a></h4>
+<p>For the passenger cars we use flow definitions:</p>
+<pre><code class="language-xml">&lt;flow id=&quot;passengercartoship&quot; begin=&quot;0&quot; end=&quot;200&quot; number=&quot;20&quot; type=&quot;type_car&quot; from=&quot;39549605&quot; to=&quot;-128042010&quot; via=&quot;619566331&quot;&gt;
+    &lt;stop busStop=&quot;busStop_pier&quot; until=&quot;800.00&quot;/&gt;
+&lt;/flow&gt;
+
+&lt;flow id=&quot;passengercarfromship&quot; begin=&quot;730&quot; end=&quot;750&quot; number=&quot;20&quot; type=&quot;type_car&quot; from=&quot;-277007518&quot; to=&quot;39549605&quot; via=&quot;-197841302&quot;/&gt;
+</code></pre>
+<h4 id="staplers">Staplers<a class="headerlink" href="#staplers" title="Permanent link">&para;</a></h4>
+<p>Because there are no stapler implemented in SUMO, we use trucks equipped with a taxi device. Here, we give them <code>containerCapacity="1"</code> and <code>loadingDuration="30.0"</code> (the taxi device also needs <code>personCapacity="1"</code> because it does not work properly without it at the moment).</p>
+<pre><code class="language-xml">&lt;flow id=&quot;stapler&quot; begin=&quot;0&quot; end=&quot;0&quot; number=&quot;5&quot; type=&quot;type_truck_taxi&quot;&gt;
+    &lt;param key=&quot;has.taxi.device&quot; value=&quot;true&quot;/&gt;
+    &lt;route edges=&quot;276781727#9&quot;/&gt;
+    &lt;stop containerStop=&quot;containerStop_truck_trainstation&quot; duration=&quot;10.00&quot;/&gt;
+&lt;/flow&gt;
+</code></pre>
+<h4 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h4>
+<p>For the containers we use containerFlow definitions:</p>
+<pre><code class="language-xml">&lt;containerFlow id=&quot;containerfromship&quot; begin=&quot;triggered&quot; number=&quot;15&quot; color=&quot;255,0,0&quot;&gt;
+   &lt;transport from=&quot;-5005413&quot; containerStop=&quot;containerStop_waterway&quot; lines=&quot;containership&quot;/&gt;
+   &lt;tranship containerStop=&quot;containerStop_pier&quot;/&gt;
+   &lt;transport containerStop=&quot;containerStop_truck_trainstation&quot; lines=&quot;taxi&quot;/&gt;
+   &lt;tranship containerStop=&quot;containerStop_trainstation&quot;/&gt;
+   &lt;transport to=&quot;-149084838#0&quot; lines=&quot;train&quot;/&gt;
+&lt;/containerFlow&gt;
+
+&lt;containerFlow id=&quot;containertoship&quot; begin=&quot;triggered&quot; number=&quot;15&quot; color=&quot;255,0,255&quot;&gt;
+    &lt;transport from=&quot;149084838#0&quot; containerStop=&quot;containerStop_trainstation&quot; lines=&quot;train&quot;/&gt;
+    &lt;tranship containerStop=&quot;containerStop_truck_trainstation&quot;/&gt;
+    &lt;transport containerStop=&quot;containerStop_pier&quot; lines=&quot;taxi&quot;/&gt;
+    &lt;tranship containerStop=&quot;containerStop_waterway&quot;/&gt;
+    &lt;transport to=&quot;5005413.18170&quot; lines=&quot;containership&quot;/&gt;
+&lt;/containerFlow&gt;
+</code></pre>
+<h4 id="trucks-and-cars">Trucks and Cars<a class="headerlink" href="#trucks-and-cars" title="Permanent link">&para;</a></h4>
+<p>For the trucks and cars we use flow definitions:</p>
+<pre><code class="language-xml">&lt;flow id=&quot;passengercartoship&quot; begin=&quot;0&quot; end=&quot;200&quot; number=&quot;20&quot; type=&quot;type_car&quot; from=&quot;39549605&quot; to=&quot;-128042010&quot; via=&quot;619566331&quot;&gt;
+    &lt;stop busStop=&quot;busStop_pier&quot; until=&quot;800.00&quot;/&gt;
+&lt;/flow&gt;
+&lt;flow id=&quot;trucktoship&quot; begin=&quot;0&quot; end=&quot;200&quot; number=&quot;20&quot; type=&quot;type_truck&quot; from=&quot;39549605&quot; to=&quot;-277007500#0&quot; via=&quot;619566331&quot;&gt;
+    &lt;stop containerStop=&quot;containerStop_pier&quot; until=&quot;970.00&quot;/&gt;
+&lt;/flow&gt;
+&lt;flow id=&quot;passengercarfromship&quot; begin=&quot;730&quot; end=&quot;750&quot; number=&quot;20&quot; type=&quot;type_car&quot; from=&quot;-277007518&quot; to=&quot;84630550&quot; via=&quot;-197841302&quot;/&gt;
+&lt;flow id=&quot;truckfromship&quot; begin=&quot;870&quot; end=&quot;920&quot; number=&quot;20&quot; type=&quot;type_truck&quot; from=&quot;277007496#0&quot; to=&quot;84630550&quot; via=&quot;-197841302&quot;/&gt;
+</code></pre>
+<h4 id="bus">Bus<a class="headerlink" href="#bus" title="Permanent link">&para;</a></h4>
+<p>Consider the <code>line</code> attribute for the bus.</p>
+<pre><code class="language-xml">&lt;trip id=&quot;bus&quot; type=&quot;type_bus_taxi&quot; depart=&quot;0&quot; departLane=&quot;best&quot; from=&quot;-197841302&quot; via=&quot;-128042010&quot; to=&quot;-197841302&quot; line=&quot;bus&quot;&gt;
+    &lt;stop busStop=&quot;busStop_busstation_terminal&quot; until=&quot;300.00&quot;/&gt;
+    &lt;stop busStop=&quot;busStop_pier&quot; until=&quot;750.00&quot;/&gt;
+    &lt;stop busStop=&quot;busStop_busstation_terminal&quot; until=&quot;900.00&quot;/&gt;
+&lt;/trip&gt;
+</code></pre>
+<h4 id="persons">Persons<a class="headerlink" href="#persons" title="Permanent link">&para;</a></h4>
+<p>For the persons we use flow definitions:</p>
+<pre><code class="language-xml">&lt;personFlow id=&quot;pedestrianfromship&quot; begin=&quot;triggered&quot; number=&quot;20&quot; color=&quot;0,255,0&quot;&gt;
+   &lt;ride from=&quot;-127071510.253116&quot; busStop=&quot;busStop_waterway&quot; lines=&quot;ferry&quot;/&gt;
+   &lt;walk busStop=&quot;busStop_waterway&quot;/&gt;
+   &lt;walk busStop=&quot;busStop_pier&quot;/&gt;
+   &lt;ride busStop=&quot;busStop_busstation_terminal&quot; lines=&quot;bus&quot;/&gt;
+   &lt;walk busStop=&quot;busStop_passenger_terminal&quot;/&gt;
+&lt;/personFlow&gt;
+
+&lt;personFlow id=&quot;pedestriantoship&quot; begin=&quot;0&quot; end=&quot;200&quot; number=&quot;20&quot;&gt;
+   &lt;walk from=&quot;-596327078#2&quot; busStop=&quot;busStop_passenger_terminal&quot;/&gt;
+   &lt;walk busStop=&quot;busStop_busstation_terminal&quot;/&gt;
+   &lt;ride busStop=&quot;busStop_pier&quot; lines=&quot;bus&quot;/&gt;
+   &lt;walk busStop=&quot;busStop_waterway&quot;/&gt;
+   &lt;ride to=&quot;127071510&quot; lines=&quot;ferry&quot;/&gt;
+&lt;/personFlow&gt;
+</code></pre>
+<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
+<p>You can find the Skandinavienkai, Port Lübeck Germany scenario files on <a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/port_tutorials/port_l%C3%BCbeck">Github</a></p>
+<p>And two more simple port scenarios are there as well:</p>
+<ul>
+<li><a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/port_tutorials/port_cologne">Cologne</a> scenario on Github</li>
+<li><a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/port_tutorials/port_brunswick">Brunswick</a> scenario on Github</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

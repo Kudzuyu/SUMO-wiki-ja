@@ -1,0 +1,657 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tutorials/Import_from_OpenStreetMap/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Import from OpenStreetMap - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prepare-the-map-of-openstreetmap" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Import from OpenStreetMap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-the-map-of-openstreetmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare the Map of OpenStreetMap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-implicit-attributes-of-the-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Implicit Attributes of the Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-the-map-in-a-sumo-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert the Map in a SUMO Network
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Import from OpenStreetMap</h1>
+
+<p><img alt="OpenStreetMapOverview.svg" src="../../images/OpenStreetMapOverview.svg" title="OpenStreetMapOverview.svg" /></p>
+<p>Overview of the steps: Make up the map, compile an edge type file, and generate the SUMO network file.</p>
+<p>OpenStreetMap is a valuable source for
+real-world map data. This tutorial shows you</p>
+<ol>
+<li>how to prepare a map of OpenStreetMap to be useful for traffic
+    simulation and</li>
+<li>how to import this map to SUMO.</li>
+</ol>
+<p>You may also find the following pages useful:</p>
+<ul>
+<li><a href="../OSMWebWizard/">Tutorials/OSMWebWizard</a></li>
+<li><a href="../../Networks/Import/OpenStreetMap/">Networks/Import/OpenStreetMap</a></li>
+<li><a href="../PT_from_OpenStreetMap/">Tutorials/PT_from_OpenStreetMap</a></li>
+<li><a href="../../OpenStreetMap_file/">OpenStreetMap file</a></li>
+<li><a href="../../Networks/Import/OpenStreetMapDownload/">Networks/Import/OpenStreetMapDownload</a>.</li>
+</ul>
+<h2 id="prepare-the-map-of-openstreetmap">Prepare the Map of OpenStreetMap<a class="headerlink" href="#prepare-the-map-of-openstreetmap" title="Permanent link">&para;</a></h2>
+<p><img alt="eichstaett.osm.png" src="../../images/Eichstaett.osm.png" title="eichstaett.osm.png" /></p>
+<p>The OpenStreetMap file is created in this step. The picture shows the German city Eichstätt opened in JOSM.</p>
+<p>The first step in this tutorial is to obtain a map the vehicles can drive in. If
+you do not want to perform this step, you can take
+<a href="../OSMActivityGen/eichstaett.osm/">Tutorials/OSMActivityGen/eichstaett.osm</a>.
+It has been prepared with this tutorial.</p>
+<p>To get a detail out of OpenStreetMap, you can either use the export
+function of the web site or the program JOSM. Both can save a selection
+of objects (usually given as a rectangular range) into a file: the
+<a href="../../OpenStreetMap_file/">OpenStreetMap file</a>. You can simply use
+this file as the map for your traffic simulation with SUMO.</p>
+<p>The data in OpenStreetMap is often not completely ready for traffic
+simulation though. For a good simulation, the map must usually be
+enhanced. The following steps are recommended for the same:</p>
+<ol>
+<li>Complete the map directly in OpenStreetMap. Follow the guidelines on
+    the <a href="https://wiki.openstreetmap.org">OpenStreetMap wiki</a> in the area
+    <em>Map Making</em>. They give valuable hints what software to use and how
+    to encode all attributes of the map. You should ensure that the map
+    contains all data related to traffic simulation. (At this stage,
+    fill in only correct data that can be well understood by others. Do
+    not tweak the map just for your simulation - that comes below.)
+    For the given example of the city Eichstätt, I found that most
+    streets were already in the map – they were sufficient for my
+    simulation. So I only looked at the tags (description of
+    properties) of the streets in OpenStreetMap and did not add new
+    streets. I took a notebook with the OpenStreetMap editor JOSM, drove
+    through the city and corrected the following attributes:</li>
+<li>The type (importance) of a street is defined with the tag
+    <em>highway</em>. This attribute helps SUMO to determine the implicit
+    speed limit and right of way rule.</li>
+<li>All streets with speed limits that differ from the implicit
+    regulatory limits (i.e. speed limits set by traffic signs)
+    should have a tag <em>maxspeed</em>. The correct speed limits help SUMO
+    to find reasonable routes through the road network.</li>
+<li>One-way streets often have a significant impact on the traffic
+    flow. They can be marked in OpenStreetMap with the key-value
+    pair <em>oneway=yes</em>.</li>
+<li>The correct number of lanes helps to avoid unrealistic traffic
+    congestions in the simulation. The tag <em>lanes</em> specifies the
+    total number of lanes of a street, for both directions together.
+    So you cannot describe various complex lane configurations in
+    OpenStreetMap (like two lanes in one direction, another lane for
+    turning right and one lane for the opposite direction). They can
+    only be defined in the <a href="../../Networks/SUMO_Road_Networks/">SUMO network
+    file</a> directly or its
+    corresponding <a href="../../Networks/PlainXML/">SUMO XML description
+    files</a>.
+    Such lane configurations go beyond this tutorial.</li>
+<li>In OpenStreetMap, traffic lights are nodes marked with the
+    key-value pair <em>highway=traffic_signals</em>. Each traffic light is
+    independent; you cannot associate several interdependent traffic
+    lights at a big junction with each other. Again the <a href="../../Networks/SUMO_Road_Networks/">SUMO
+    network file</a> can
+    contain such a complex logic and netconvert tries to detect such
+    interdependent traffic lights when you use the option
+    --try-join-tls (see section <a href="#convert_the_map_in_a_sumo_network">#Convert the Map in the SUMO Net
+    Format</a>
+    below).</li>
+<li>Finally go through the warnings of JOSM. Most of them do not
+    affect your work, but some of them help you to find significant
+    errors in the map (like unconnected streets).
+    During this step, do regularly upload your modifications to
+    OpenStreetMap to avoid conflicts with the modifications of other
+    editors.</li>
+<li>Now the map in OpenStreetMap should have the necessary quality for
+    your simulation. Next, you should determine the desired detail of the
+    map and export it in an <a href="../../OpenStreetMap_file/">OpenStreetMap
+    file</a>. Be careful to never upload the
+    map back to OpenStreetMap from now on.</li>
+<li>Finally you can enhance the map for your specific purpose: Open the
+    OpenStreetMap file in JOSM. Find the right nodes at which streets
+    should end and remove unnecessary objects (which are out of the
+    desired detail). The section <a href="../../Networks/Import/OpenStreetMap/#editing_osm_networks">Networks/Import/OpenStreetMap#Editing
+    OSM
+    networks</a>
+    describes further ways to clean up the OSM file. But actually, most
+    clean up is done by netconvert anyway (see section <a href="#convert_the_map_in_a_sumo_network">#Convert the
+    Map in the SUMO Net
+    Format</a> below).
+    You are able to tweak the map for your purpose, for example, by
+    adding or removing roads, changing their type, and so on.</li>
+</ol>
+<p>Now you have a good map for your simulation in an <a href="../../OpenStreetMap_file/">OpenStreetMap
+file</a>. The image on the top shows the map
+of the city Eichstätt, which I have prepared for traffic simulation. You
+can <a href="../OSMActivityGen/eichstaett.osm/">download the map
+(eichstaett.osm)</a> to
+follow this tutorial.</p>
+<p>While the OpenStreetMap format is a widely spread format to describe a
+map, SUMO has its own format for this: the <a href="../../Networks/SUMO_Road_Networks/">SUMO network
+format</a>. As a consequence, you
+must first convert the OpenStreetMap file in a SUMO network file. The
+next two steps guide you through the conversion process.</p>
+<h2 id="configure-implicit-attributes-of-the-map">Configure Implicit Attributes of the Map<a class="headerlink" href="#configure-implicit-attributes-of-the-map" title="Permanent link">&para;</a></h2>
+<p>In a <a href="../../OpenStreetMap_file/">OpenStreetMap file</a>, the highway
+attribute implicitly determines values of some other attributes, like
+the speed limit. You must tell SUMO these implicit values in the <a href="../../SUMO_edge_type_file/">SUMO
+edge type file</a>. It assigns default
+values to the road attributes speed limit, number of lanes, priority,
+one-way street and allowed vehicle classes depending on the highway
+type. The article <a href="../../SUMO_edge_type_file/">SUMO edge type file</a>
+provides several pre-defined SUMO edge type files and explains how you
+can compile your own edge type file.</p>
+<p>In this step of the tutorial, determine the implicit values of every highway type defined by the OpenStreetMap community. <a href="../../Networks/Import/OpenStreetMap/#recommended_typemaps">Several
+edge-type files suitable for OpenStreetMap are included with SUMO, some
+of them are meant to be
+combined.</a></p>
+<p>For this tutorial, the type files <a href="https://github.com/eclipse/sumo/blob/master/data/typemap/osmNetconvert.typ.xml"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/typemap/osmNetconvert.typ.xml</a> and <a href="https://github.com/eclipse/sumo/blob/master/data/typemap/osmNetconvertUrbanDe.typ.xml"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/data/typemap/osmNetconvertUrbanDe.typ.xml</a> were used. Please make a copy to
+your local directory if you want to modify them.</p>
+<h2 id="convert-the-map-in-a-sumo-network">Convert the Map in a SUMO Network<a class="headerlink" href="#convert-the-map-in-a-sumo-network" title="Permanent link">&para;</a></h2>
+<p>You can now create a <a href="../../Networks/SUMO_Road_Networks/">SUMO network
+file</a>. The minimum options are
+the OSM file and the name of the output file. <a href="../../Networks/Import/OpenStreetMap/#recommended_netconvert_options">Further options are
+recommended when importing OSM data into
+SUMO</a>:</p>
+<pre><code>    netconvert --xml-type-files osmNetconvert.typ.xml,osmNetconvertUrbanDe.typ.xml \
+     --osm-files eichstaett.osm --output-file eichstaett.net.xml \
+     --geometry.remove --roundabouts.guess --ramps.guess \
+     --junctions.join --tls.guess-signals --tls.discard-simple --tls.join
+</code></pre>
+<p>netconvert extracts the simulation-related information from the
+OpenStreetMap file (see the image of
+<a href="../OSMActivityGen/eichstaett.osm/">Tutorials/OSMActivityGen/eichstaett.osm</a>
+above) and puts it out in the SUMO network file (see the image of
+<a href="../OSMActivityGen/eichstaett.net.xml/">Tutorials/OSMActivityGen/eichstaett.net.xml</a>
+below). During this process, it adds some assumptions about the traffic
+lights and the connections between lanes at junctions. You can read
+further information on this process in
+<a href="../../netconvert/">netconvert</a>,
+<a href="../../Networks/Import/OpenStreetMap/">Networks/Import/OpenStreetMap</a>
+and <a href="../../Networks/SUMO_Road_Networks/">SUMO Road Networks</a>.</p>
+<p><img alt="eichstaett.net.png" src="../../images/Eichstaett.net.png" title="eichstaett.net.png" /></p>
+<p>The map stored in the file eichstaett.net.xml. In this map, SUMO runs its simulation. Compare it with its source, the OpenStreetMap file shown in the image above.</p>
+<p>Further options of netconvert can be very useful for the OpenStreetMap import:</p>
+<ul>
+<li><strong>--remove-edges.by-vclass / --keep-edges.by-vclass</strong></li>
+</ul>
+<p>In the SUMO edge
+  type file, you could discard roads of a certain type. In addition,
+  SUMO can discard roads that are restricted to certain vehicle
+  classes. These classes are given with this option. In <a href="../../SUMO_edge_type_file/">SUMO edge
+  type file</a> you can find a list of
+  SUMO vehicle classes. Reducing unnecessary roads makes (i.e.
+  footpaths) makes it easier to work with the network. To obtain a
+  network for simulation of passenger traffic only, the option <strong>--keep-edges.by-vclass passenger</strong> can be
+  used.</p>
+<ul>
+<li><strong>--keep-edges.components</strong></li>
+</ul>
+<p>Keeps only the <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> largest connected
+  components of the network (Usually only <em>1</em> is desired). Warning:
+  This could remove railroads or other edges you would like to keep.
+  So check the messages of netconvert.</p>
+<ul>
+<li><strong>--verbose</strong></li>
+</ul>
+<p>Prints additional output.</p>
+<p>Now read the messages netconvert printed out very carefully. Try to
+understand the warnings, if any - they can give you hints about how your OpenStreetMap
+file could be improved to make it suitable for conversion. Get back to
+your OpenStreetMap file in JOSM to fix errors or tweak the map for
+conversion. I found, for example, unconnected roads with this process. I
+also moved some junctions slightly, because netconvert had problems if
+two junctions are very close together. But finally, I managed to convert
+the OpenStreetMap file without any warnings in a SUMO network file.
+(Certainly the OpenStreetMap file <code>eichstaett.osm</code> I provided above is
+already the improved version.)</p>
+<p><em>Congratulations! When you performed all the steps so far, you have a
+map suitable for traffic simulation with SUMO.</em> It is in the <a href="../../Networks/SUMO_Road_Networks/">SUMO
+network format</a>. The map of the
+tutorial's example is in the file
+<a href="../OSMActivityGen/eichstaett.net.xml/">Tutorials/OSMActivityGen/eichstaett.net.xml</a>.
+Above on the right, you see an image that visualizes the file. I opened
+<code>eichstaett.net.xml</code> with the program sumo-gui and took a screenshot.</p>
+<p>When you look back at the work you have done so far, most of it was
+necessary to polish the OpenStreetMap data for traffic simulation and to
+add missing information.
+A good map is hard to obtain but very important
+for traffic simulation.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

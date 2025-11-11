@@ -1,0 +1,667 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Developer/HowToRelease/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>HowToRelease - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#packages" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HowToRelease
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Release steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge phase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freeze-phase-release-day---7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Freeze phase (Release day - 7)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-day---1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release day - 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release day
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-release-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      After-release cleanup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>HowToRelease</h1>
+
+<h2 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h2>
+<p>For an overview of created packages and contents see
+<a href="../../Downloads/">Downloads</a>.</p>
+<h2 id="release-steps">Release steps<a class="headerlink" href="#release-steps" title="Permanent link">&para;</a></h2>
+<p>Below, a list of steps that should be done in order to publish a new
+release is given. All necessary commits which have no ticket of their
+own may refer to #563. All the steps assume you are using bash
+either natively (Linux, macOS), on WSL or the git bash (or some other mingw bash).
+Furthermore you should have either your passwords ready or even better ssh keys
+deployed on all the remote servers in question.</p>
+<h3 id="merge-phase">Merge phase<a class="headerlink" href="#merge-phase" title="Permanent link">&para;</a></h3>
+<p>Major changes to the SUMO trunk should end about two weeks before the
+release date. This refers especially to merges of project branches into
+the trunk. It is also a good idea to inform the developers of dependent
+software (Veins, VSimRTI, flow etc.) at this stage.
+- send out mail to sumo-dev informing about the upcoming release so that 'contributed'-authors can check their stuff for compatibility</p>
+<h3 id="freeze-phase-release-day---7">Freeze phase (Release day - 7)<a class="headerlink" href="#freeze-phase-release-day---7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>check the sources</li>
+<li>compile, try to remove warnings and commit the patches</li>
+<li>run <a href="../CodeStyle/">tools/build_config/checkStyle.py</a> and commit
+    changed files</li>
+<li>check the calendar to update copyright statements</li>
+<li>check whether the TraCI version needs to be incremented
+    and rebuild TraCI constants in python
+    (tools/traci/rebuildConstants.py)</li>
+<li>check whether the network version needs to be incremented and
+    update the value in NWFrame::MAJOR_VERSION. netconvert tests
+    need to be updated afterwards.</li>
+<li>update author information</li>
+<li>check the regular tests</li>
+<li>put special attention to the tests which serve as examples, see
+    tests/examples.txt!</li>
+<li>Win64 and gcc4_64 should have no failing tests, the other
+    platforms are less important</li>
+<li>If there are failing tests, which are not flagged as known bugs,
+    save them after careful checking or open a ticket and assign a
+    known bug.</li>
+<li>recheck/rebuild the test networks (if necessary due to
+    netconvert changes)</li>
+<li>check for orphaned tests by running <code>tools/devel/orphaned_tests.py tests</code> and patch testsuites to add them back in</li>
+<li>check the tests again</li>
+<li>check the documentation</li>
+<li>update the <a href="../../ChangeLog/">ChangeLog</a></li>
+<li>generate options documentation and xsd schemata for configuration files
+    using <code>tools/build_config/rebuildConfigDocsAndXsd.py</code></li>
+<li>update <code>tools/build_config/templates.py</code> to include any tools that were added or had their compatibility fixed since the last release</li>
+<li>check the internal tests (same procedure as above), especially the
+  (to be) published scenarios</li>
+<li>GitHub</li>
+<li>add new <a href="https://github.com/eclipse-sumo/sumo/milestones">milestone</a>
+    if necessary</li>
+<li>check all remaining tickets and assign them to later milestones
+    or to persons.</li>
+<li>scenarios (optional)</li>
+<li>prepare scenarios for release if the previous version does not
+    run with the current release or significant changes were made to
+    the scenarios</li>
+<li>update submodules by running <code>git submodule update --remote</code> and committing
+  the changes if necessary</li>
+</ul>
+<p>The trunk is now frozen. All commits which do not refer to an open
+ticket for the upcoming release need to be made to a separate branch.
+The freeze phase should not last longer than one week. The goal is to
+fix all scenarios and have all failing tests fixed, which are not
+assigned to a later milestone.</p>
+<h3 id="release-day---1">Release day - 1<a class="headerlink" href="#release-day---1" title="Permanent link">&para;</a></h3>
+<p>All scenarios should be fixed by now.</p>
+<ul>
+<li>start and save a new version draft <a href="https://zenodo.org/">in Zenodo</a> (using the sumo@dlr.de user), in order to reserve a DOI. Don't Publish it yet, and don't upload a file to it!</li>
+<li>update the version doi in <a href="https://github.com/eclipse/sumo/blob/master/CITATION.cff">CITATION.cff</a> and in the <a href="https://github.com/eclipse/sumo/blob/master/README.md">README</a> badge to this new reserved one</li>
+<li>update the <a href="../../ChangeLog/">ChangeLog</a> again if necessary</li>
+<li>check the correct email address and list of current ubuntu releases in <code>tools/build_config/ubuntu_release.sh</code></li>
+<li>patch the version information using <code>tools/build_config/updateReleaseInfo.py 1.13.0</code> and double check changes</li>
+<li>in src/config.h.cmake, also the HAVE_VERSION_H macro should be disabled</li>
+<li>in CMakeLists.txt</li>
+<li><a href="https://github.com/eclipse/sumo/blob/master/docs/web/mkdocs.yml">in mkdocs.yml</a> in the <strong>extra:</strong> section at the end
+    to update the <a href="../../Downloads/">download links</a></li>
+<li><a href="https://github.com/eclipse/sumo/blob/master/build_config/package/sumo.metainfo.xml">in sumo.metainfo.xml</a>
+    for correct flatpak info</li>
+<li>in <a href="https://github.com/eclipse/sumo/blob/master/CITATION.cff">CITATION.cff</a></li>
+<li>in the <a href="../../ChangeLog/">ChangeLog</a></li>
+<li>commit the changes</li>
+<li>recheck whether submodules changed by doing <code>git submodule update --remote</code> and commit the changes after careful inspection</li>
+<li>check IP due diligence</li>
+<li>every library in <a href="https://github.com/DLR-TS/SUMOLibraries/">SUMOLibraries</a>, in src/foreign and in tools/contributed needs an entry in the <a href="../../Libraries_Licenses/">Libraries list</a> and in <a href="https://github.com/eclipse-sumo/sumo/blob/main/docs/dependencies.txt">https://github.com/eclipse-sumo/sumo/blob/main/docs/dependencies.txt</a></li>
+<li>the <a href="https://gitlab.eclipse.org/eclipsefdn/emo-team/iplab">iplab</a> should have a closed issue for each entry</li>
+<li>check the documentation</li>
+<li>check presence of RPMs on <a href="https://build.opensuse.org/package/show/science:dlr/sumo_nightly">https://build.opensuse.org/package/show/science:dlr/sumo_nightly</a></li>
+<li>add a new version tag</li>
+</ul>
+<pre><code>&gt; git tag -a v0_13_7 -m &quot;tagging release 0.13.7, refs #563&quot;
+&gt; git push --tags
+</code></pre>
+<h3 id="release-day">Release day<a class="headerlink" href="#release-day" title="Permanent link">&para;</a></h3>
+<p>The nightly build should have generated all releasable packages. If not,
+delay the release. (The complete documentation, tests and source
+distribution build can be achieved via "make dist".) The
+following things need to be in the S:\daily directory:</p>
+<ul>
+<li>the platform independent part of the distribution;</li>
+<li>source and all inclusive distributions (.tar.gz, .zip) ("make dist")</li>
+<li>the binary part of the distribution</li>
+<li>windows binary distribution (zip, unzip the x64 file and run at least sumo-gui)</li>
+<li>windows installer (msi, Win32 and x64, includes docs)</li>
+<li>check the wheels in S:\daily\wheels</li>
+<li>eclipse-sumo and libsumo for Windows, macOS, Linux x64 and Linux aarch64 (libsumo for all current python versions)</li>
+<li>sumolib, traci</li>
+<li>check the Maven build https://ci.eclipse.org/sumo/job/maven-artifacts/ and ensure that the artifacts have been uploaded to:</li>
+<li>https://repo.eclipse.org/content/repositories/sumo-releases/org/eclipse/sumo/libtraci and</li>
+<li>https://repo.eclipse.org/content/repositories/sumo-releases/org/eclipse/sumo/libsumo/</li>
+</ul>
+<p>If everything is fine:</p>
+<ul>
+<li>make a new folder in S:\Releases</li>
+<li>make new sumo.dlr.de-release</li>
+<li>copy the folder from S:\Releases to the releases dir <code>scp -r /s/Releases/1.13.0 delphi@ts-sim-front-ba.intra.dlr.de:docs/releases</code></li>
+<li>update the eclipse.dev/sumo website</li>
+<li>modify the version number (Version) and the DOI number (DOI) <a href="https://github.com/eclipse-sumo/sumo.website/blob/source/config/_default/config.yaml">in config.yaml</a> in the <strong>Default Parameters</strong> section</li>
+<li>make new sourceforge-release</li>
+<li>Login on the web browser, create a new folder and upload the files at https://sourceforge.net/projects/sumo/files/sumo/version%201.13.0/<ul>
+<li>you might need to do this in several rounds because of the size</li>
+</ul>
+</li>
+<li>change default download attributes by clicking on the circled "i" after each file<ul>
+<li>the default for Windows is sumo-win64extra-1.13.0.msi, for macOS sumo-1.13.0.pkg and for all the others sumo-src-1.13.0.tar.gz</li>
+</ul>
+</li>
+<li>finish the Zenodo version draft, by uploading the <code>sumo-src-1.13.0.tar.gz</code>, adding the release info (can also be done later) and publishing it</li>
+<li>Create a new Eclipse release at https://projects.eclipse.org/projects/automotive.sumo (after login there should be a "Create Release" button)</li>
+<li>create a new entry in <a href="https://elib.dlr.de/">elib</a></li>
+<li>the easiest way to do it, is by going to <a href="https://elib.dlr.de/cgi/users/home?screen=Items">Einträge verwalten</a> and clicking on the magnifying-glass-icon for an old release, then going to the "Aktionen" tab and selecting "Als Vorlage verwenden"</li>
+<li>take a look at the <a href="https://wiki.dlr.de/pages/viewpage.action?pageId=711888423">Eintrag von Forschungssoftware-Publikationen - Tutorial</a>, or the entry for a previous release: https://elib.dlr.de/205320/</li>
+<li>if necessary, talk to the elib-appointee for the department/institute</li>
+<li>update files at the <a href="https://build.opensuse.org/package/show/science:dlr/sumo">opensuse build
+    service</a></li>
+<li>update the ubuntu ppa (see
+<a href="https://askubuntu.com/questions/642632/how-to-bump-the-version-of-a-package-available-in-another-users-ppa">https://askubuntu.com/questions/642632/how-to-bump-the-version-of-a-package-available-in-another-users-ppa</a>)</li>
+<li>this assumes you have the devscripts package as well as all sumo dependencies installed</li>
+<li>unzip the special source release <code>tar xzf sumo_1.13.0.orig.tar.gz</code></li>
+<li>run <code>cd sumo-1.13.0 &amp;&amp; tools/build_config/ubuntu_release.sh</code> and enter the release comment</li>
+<li>start a pull request against <a href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/EclipseFoundation/SUMO">winget</a></li>
+<li>upload the wheels to PyPI using <code>twine upload /s/daily/wheels/*1.13.0*.whl</code></li>
+<li>you might need to do this with an up to date twine in a virtual environment, see https://github.com/pypi/warehouse/issues/15611</li>
+<li>scenarios (optional)</li>
+<li>add files to <a href="https://sourceforge.net/projects/sumo/files/traffic_data/scenarios/">the scenario folder</a></li>
+<li>updated README.txt</li>
+<li>inform the users about the new release</li>
+<li>post information about the release to sumo-user@eclipse.org and
+    sumo-announce@eclipse.org</li>
+<li>submit news about the release on the Eclipse Newsroom <a href="https://newsroom.eclipse.org/node/add/news">https://newsroom.eclipse.org/node/add/news</a></li>
+<li>tweet about it, post on Facebook and Instagram stories</li>
+<li>close <a href="https://github.com/eclipse-sumo/sumo/milestones">the milestone</a>
+  (retargeting open tickets needs to be done manually for now)</li>
+<li>add the latest version to the <strong>"software version identifier"</strong> statement in <a href="https://www.wikidata.org/wiki/Q15847637">Wikidata</a> (this will update the Wikipedia articles about SUMO), making sure to select the latest version as <strong>"preferred rank"</strong> and setting the previous one to <strong>"normal rank"</strong>.</li>
+</ul>
+<h3 id="after-release-cleanup">After-release cleanup<a class="headerlink" href="#after-release-cleanup" title="Permanent link">&para;</a></h3>
+<p>The trunk is now open for changes again.</p>
+<ul>
+<li>wait for the automated <a href="https://github.com/flathub/org.eclipse.sumo">flatpak</a> pull request to appear and built, then accept it</li>
+<li>re-enable HAVE_VERSION_H in src/config.h.cmake</li>
+<li>rename version to "git" in CMakeLists.txt</li>
+<li>insert a new empty "Git Main" section at the top of the <a href="../../ChangeLog/">ChangeLog</a></li>
+<li>commit changes</li>
+<li>drink your favorite beverage and/or eat cake</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2002 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/Visualization/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Visualization - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#current-tools" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visualization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plotxmlattributespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plotXMLAttributes.py
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="plotXMLAttributes.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plot-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plot Styles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Plot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-line-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-line plots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSV-output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xml-format-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      XML format assumptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inductionloop-speed-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inductionloop Speed over Time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lane-area-detectors-over-nvehentered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lane Area Detectors over nVehEntered
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-entry-exit-detectors-mean-speed-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Entry-Exit Detectors Mean Speed over Time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boarding-passengers-vs-delay-for-each-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      boarding passengers vs delay for each station
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fundamental-diagram-from-edgedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fundamental Diagram from edgeData
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-timelines-from-summary-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple timelines from summary-output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depart-delay-over-time-from-tripinfo-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Depart delay over time from TripInfo data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-to-collision-over-simulation-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time to collision over simulation time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queuing-times-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Queuing times over time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#departure-times-versus-arrival-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      Departure times versus arrival times
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leader-gaps-versus-speeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leader gaps versus speeds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-trajectories-over-time-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      All trajectories over time 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-trajectories-over-time-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selected trajectories over time 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-transport-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public transport schedule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-counts-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turn-counts over time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boxplot-waiting-time-by-departlane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boxplot: waiting time by departLane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#histogram-of-timeloss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histogram of timeLoss
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot_trajectoriespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_trajectories.py
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="plot_trajectories.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-trajectory-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples Trajectory Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accelerations-versus-distances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accelerations versus distances
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-trajectories-over-time-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      All trajectories over time 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-trajectories-over-time-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selected trajectories over time 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fcd-based-speeds-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      FCD based speeds over time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-plot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Plot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot_net_dumppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_net_dump.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot_net_selectionpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_net_selection.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot_net_speedspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_net_speeds.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot_net_trafficlightspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_net_trafficLights.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot_summarypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_summary.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot_tripinfo_distributionspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_tripinfo_distributions.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot_csv_timelinepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_csv_timeline.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot_csv_piepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_csv_pie.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot_csv_barspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_csv_bars.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macroutputpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      macrOutput.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      common options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="common options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formatting-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatting Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../sumo/">sumo</a> offers a wide range of
+<a href="../../Simulation/Output/">outputs</a>, but one may find it hard to
+parse and visualize them. Below, you may find some tools that allow to
+visualize a simulation run's results for being included in a scientific
+paper. Additional tools read plain .csv-files and were added to the
+suite as they offer a similar interface.</p>
+<p>All these tools are just wrappers around the wonderful
+<a href="https://matplotlib.org/">matplotlib</a> library. If you are familiar with
+Python, you must have a look.</p>
+<p>The tools share a set of <a href="#common_options">common options</a> to
+fine-tune the appearance of the generated figures. These options' names
+where chosen similar to the <a href="https://matplotlib.org/">matplotlib</a> calls.</p>
+<p>The tools are implemented in Python and need
+<a href="https://matplotlib.org/">matplotlib</a> to be installed. The tools can be
+found in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/visualization.</p>
+<h1 id="current-tools">Current Tools<a class="headerlink" href="#current-tools" title="Permanent link">&para;</a></h1>
+<p>Below, you will find the descriptions of tools that should work with the
+current outputs <a href="../../sumo/">sumo</a>/<a href="../../sumo-gui/">sumo-gui</a>
+generate. To run them, you'll need:</p>
+<ul>
+<li>to install Python</li>
+<li>to install <a href="https://matplotlib.org/">matplotlib</a></li>
+<li>to set <strong><em>&lt;SUMO_HOME&gt;</em></strong></li>
+</ul>
+<p>All scripts are executed from the command line and you have to give the
+command line options as listed in the descriptions below. Please note
+that <a href="#common_options">#common options</a> may be applied to
+all the scripts listed in the following sub-sections albeit few options
+may not work for certain scripts.</p>
+<h2 id="plotxmlattributespy">plotXMLAttributes.py<a class="headerlink" href="#plotxmlattributespy" title="Permanent link">&para;</a></h2>
+<p>Create multiple 2D-plots of 2 arbitrary attributes from on or more xml files aggregated by an third attribute (i.e. detector-id).</p>
+<p>Example uses:</p>
+<pre><code>python  tools/visualization/plotXMLAttributes.py -x x -y y fcd.xml
+python  tools/visualization/plotXMLAttributes.py -x x -y y fcd.xml fcd2.xml
+</code></pre>
+<p>The above example draws the paths of all vehicles through the network based on fcd-output. (It is a special case that can also be accomplished with  <a href="#plot_trajectoriespy">plot_trajectories.py</a>)</p>
+<p>When option <strong>--show</strong> is set, a interactive plot is opened that allows identifying data points vehicles by clicking on the plot (dataID is printed on the console).</p>
+<p>Option <strong>--filter-ids ID1,ID2,...</strong> allows restricting the plot to the given data element ids. You can use a wildcard to filter out ids that follow some pattern; for instance <strong>--filter-ids bus_</strong>* will filter out all ids that begin with the four characters "bus_".</p>
+<p>Further examples are shown below. Some of them are generated with the scenario acosta, one of the published sumo scenarios (https://github.com/DLR-TS/sumo-scenarios/tree/main/bologna/acosta).</p>
+<h3 id="plot-styles">Plot Styles<a class="headerlink" href="#plot-styles" title="Permanent link">&para;</a></h3>
+<p>The script supports the following distinct styles of plots:</p>
+<ul>
+<li><strong>lineplot</strong>: default</li>
+<li><strong>scatterplot:</strong> with option <strong>--scatterplot</strong></li>
+<li><strong>box plot:</strong> by setting one of <strong>--xattr @BOX</strong> or <strong>--yattr @BOX</strong></li>
+<li><strong>bar plot:</strong> by setting either <strong>--barplot</strong> or <strong>--hbarplot</strong></li>
+</ul>
+<h3 id="special-attributes">Special Attributes<a class="headerlink" href="#special-attributes" title="Permanent link">&para;</a></h3>
+<p>The following attribute values have a special meaning. Instead of using an attribute from the input file they derive a value based on the <em>other</em> attribute. (i.e. the special attribute is set for <strong>--xattr</strong> then the <em>other</em> value is given by the <strong>--yattr</strong>).</p>
+<ul>
+<li><code>@INDEX</code>: the index of the <em>other</em> value within the input file is used.</li>
+<li><code>@FILE</code>: the (shortened) input file name is used (useful when plotting one value per file)</li>
+<li><code>@RANK</code>: the index of the <em>other</em> value within the sorted (descending) list of values is used</li>
+<li><code>@COUNT</code>: the number of occurrences of the <em>other</em> value is used. Together with option <strong>--barplot</strong> or <strong>-hbarplot</strong> this gives a histogram. Binning size can be set via options <strong>--xbin</strong> and <strong>--ybin</strong>.</li>
+<li><code>@DENSITY</code>: the number of occurrences of the <em>other</em> value is used, normalized by the total number of values.</li>
+<li><code>@BOX</code>: one or more <a href="https://en.wikipedia.org/wiki/Box_plot">box plots</a> of the <em>other</em> value are drawn. The <strong>--idattr</strong> is used for grouping and there will be one box plot per id</li>
+<li><code>@NONE</code>: can be used with option <strong>--idattr</strong> to explicitly avoid grouping</li>
+</ul>
+<h3 id="interactive-plot">Interactive Plot<a class="headerlink" href="#interactive-plot" title="Permanent link">&para;</a></h3>
+<p>When clicking on a line or plot point, the data point ids near the click position are printed in the console.</p>
+<h3 id="filtering">Filtering<a class="headerlink" href="#filtering" title="Permanent link">&para;</a></h3>
+<p>Option <strong>--filter-ids ID1,ID2,...</strong> allows restricting the plot to the given data ids.</p>
+<p>It is permitted to use the wildcars <em>*</em>, <em>?</em>, <em>[</em> and <em>]</em> when specifying filters. This workings according to <a href="https://en.wikipedia.org/wiki/Glob_(programming)">file name globbing rules</a>.</p>
+<h3 id="multi-line-plots">Multi-line plots<a class="headerlink" href="#multi-line-plots" title="Permanent link">&para;</a></h3>
+<ul>
+<li>By default, every distinct ID (as defined by <strong>--idattr</strong>) will generated a new line for all the data points associated with that ID.</li>
+<li>If multiple files are given, the abbreviated filename will become part of the data point ID and thereby create distinct lines or scatterpoints for data from each file</li>
+<li>If a comma-separated list of values is passed to option <strong>--idattr</strong>, then values for each of the attributes will be combined with <code>|</code> to form the data point ID</li>
+<li>If a comma-separated list of values given to <strong>--xattr</strong> or <strong>--yattr</strong> (or both), and the data does not supply an ID (or option <strong>--idattr @NONE</strong> is set) then each combination of individual xattr and yattr will create a new line</li>
+</ul>
+<h3 id="csv-output">CSV-output<a class="headerlink" href="#csv-output" title="Permanent link">&para;</a></h3>
+<p>If a combined plot is needed that cannot be created with any of the above methods (i.e. because the data comes from different kinds of data files such as summary-output and edgeData) then an alternative is to use option <strong>--csv-output</strong> and plotting the resulting data with another tool (i.e. <a href="https://en.wikipedia.org/wiki/Gnuplot">gnuplot</a>).</p>
+<p>In csv-output each group of data points belonging to the same ID will form it's own block separated by two blank lines from the next block.
+To replicate a plot where each ID/block has its distinct color, the following approach can be used in gnuplot:</p>
+<pre><code>stats 'data.csv'
+plot for [idx=0:STATS_blocks] 'data.csv' i idx with lines
+</code></pre>
+<h3 id="xml-format-assumptions">XML format assumptions<a class="headerlink" href="#xml-format-assumptions" title="Permanent link">&para;</a></h3>
+<p>The default parsing engine of plotXMLAttributes assumes that each xml element occupies exactly one line in the input files. This fits with the output formatting of all SUMO applications.
+If an arbitrary XML file shall be plotted (i.e. without linebreaks), the option <strong>--robust-parser</strong> can be set. This will reduce processing speed.</p>
+<h3 id="inductionloop-speed-over-time">Inductionloop Speed over Time<a class="headerlink" href="#inductionloop-speed-over-time" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/Induction_Loops_Detectors_%28E1%29/">inductionloop-output</a> with 30s aggregation from 2 detectors (<code>&lt;e1Detector id="e1Detector_-109_0_0" lane="-109_0" pos="54.06" period="30.00" file="data.xml"/&gt;</code></p>
+<p>Call: <code>python tools/visualization/plotXMLAttributes.py data.xml -x begin -y speed -s</code></p>
+<p><img src="../images/plotAttrs_detector.png" width="500px"/></p>
+<h3 id="lane-area-detectors-over-nvehentered">Lane Area Detectors over nVehEntered<a class="headerlink" href="#lane-area-detectors-over-nvehentered" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/Lanearea_Detectors_%28E2%29/">laneareadetectors-output</a> with 30s aggregation from 6 detectors</p>
+<p>Call: <code>python tools/visualization/plotXMLAttributes.py -x begin -y maxOccupancy -o plot-maxOccupancy.png --legend e2_output.xml --filter-ids e2_0,e2_5,e2_10,e2_15,e2_20,e2_25</code></p>
+<p><img src="../images/plot-nVehEntered.png" width="500px"/></p>
+<h3 id="multi-entry-exit-detectors-mean-speed-over-time">Multi-Entry-Exit Detectors Mean Speed over Time<a class="headerlink" href="#multi-entry-exit-detectors-mean-speed-over-time" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/Multi-Entry-Exit_Detectors_%28E3%29/">multi-entry-exit-detector-output</a> with 30s aggregation and a cutoff at begin and end</p>
+<p>Call: <code>python tools/visualization/plotXMLAttributes.py -x begin -y meanSpeed detector.xml --legend --xlim 100,5000</code></p>
+<p><img src="../images/plot_meme_speed.png" width="500px"/></p>
+<h3 id="boarding-passengers-vs-delay-for-each-station">boarding passengers vs delay for each station<a class="headerlink" href="#boarding-passengers-vs-delay-for-each-station" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/StopOutput/">stop-output</a></p>
+<p>Call: <code>python tools/visualization/plotXMLAttributes.py stopinfos.xml -i busStop -x loadedPersons -y delay --scatterplot --legend</code></p>
+<p><img src="../images/plotAttrs_boardingDelay.png" width="500px"/></p>
+<h3 id="fundamental-diagram-from-edgedata">Fundamental Diagram from edgeData<a class="headerlink" href="#fundamental-diagram-from-edgedata" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgeData-output</a> with 1-minute aggregation (<code>&lt;edgeData id="example" file="data.xml" period="60"/&gt;</code>)</p>
+<p>Call: <code>python tools/visualization/plotXMLAttributes.py data.xml -i id -x density -y left --scatterplot --yfactor 60 --ylabel vehs/hour</code></p>
+<p>Each color gives encodes a different edge-id. Option <strong>--factor 60</strong> is used to convert from vehicles per 60s (edgeData-period 60) to vehicles per hour.</p>
+<p><img src="../images/plotAttrs_fundamental.png" width="500px"/></p>
+<h3 id="multiple-timelines-from-summary-output">Multiple timelines from summary-output<a class="headerlink" href="#multiple-timelines-from-summary-output" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/Summary/">summary</a>.
+This plot demonstrates using a list of attributes to generate multiple data points from the same xml input element.
+In the absence of an id-attribute, the respective attribute name is used to "identify" and group the data points.</p>
+<p>Call: <code>python tools/visualization/plotXMLAttributes.py summary.xml -x time -y running,halting -o plot-running.png --legend</code></p>
+<p><img src="../images/plot-running.png" width="500px"/></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>In version 1.15.0 and lower, the id-attribute must be provided so you need
+to provide a dummy value (i.e. with <code>-i collisions</code>) and only a single value is
+permitted for the x and y attribute.</p>
+</div>
+<h3 id="depart-delay-over-time-from-tripinfo-data">Depart delay over time from TripInfo data<a class="headerlink" href="#depart-delay-over-time-from-tripinfo-data" title="Permanent link">&para;</a></h3>
+<p>The plot is created out of <a href="../../Simulation/Output/TripInfo/">TripInfo</a> output data:</p>
+<p>Call <code>python tools/visualization/plotXMLAttributes.py -i id -x depart -y departDelay --scatterplot --xlabel "depart time [s]" --ylabel "depart delay [s]" --ylim 0,40 --xticks 0,1200,200,10 --yticks 0,40,5,10 --xgrid --ygrid --title "depart delay over depart time" --titlesize 16  tripInfo.xml</code></p>
+<p><img src="../images/departDelayScatter.png" width="500px"/></p>
+<h3 id="time-to-collision-over-simulation-time">Time to collision over simulation time<a class="headerlink" href="#time-to-collision-over-simulation-time" title="Permanent link">&para;</a></h3>
+<p>The plot is created from the output file of a SUMO simulation for which a global <a href="../../Simulation/Output/SSM_Device/">SSM device</a> has been added. For this example, starting from the <a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/bologna/acosta">Bologna "acosta" scenario</a>, the SUMO configuration file had been modified in order to compute time to collision:</p>
+<pre><code class="language-xml">&lt;configuration xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.dlr.de/xsd/sumoConfiguration.xsd&quot;&gt;
+
+    &lt;device.ssm.deterministic value=&quot;true&quot;/&gt;
+    &lt;device.ssm.file value=&quot;ssm.xml&quot;/&gt;
+    &lt;device.ssm.measures value=&quot;TTC&quot;/&gt;
+
+&lt;/configuration&gt;
+</code></pre>
+<p>After the simulation has finished to run, a XML file <code>ssm.xml</code> has been produced. Using this file we can extract and plot the TTC values by using the command line:</p>
+<pre><code>python.exe .\plotXMLAttributes.py ssm.xml -x time --xlabel &quot;Time [s]&quot; -y value --ylabel &quot;TTC [s]&quot; -i ego --filter-ids bus_* --title &quot;time to collision over simulation time&quot; --scatterplot
+</code></pre>
+<p><img src="../images/plot_ttc.png" title="plot_ttc.png" width=600px/></p>
+<h3 id="queuing-times-over-time">Queuing times over time<a class="headerlink" href="#queuing-times-over-time" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/QueueOutput/">queue-output</a>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/visualization/plotXMLAttributes.py -x timestep -y queueing_time -o queue.png queue.xml -i id --filter-ids 121_0
+</code></pre>
+<p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -o is the output file name; -i is the filtered attribute name (lane id in this case); --filter-ids are the value(s) of the filtered attribute name (id = 121_0 in this case).</p>
+<p><img src="../images/queue_out.png" width="500px"/></p>
+<h3 id="departure-times-versus-arrival-times">Departure times versus arrival times<a class="headerlink" href="#departure-times-versus-arrival-times" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/VehRoutes/">vehroutes-output</a>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/visualization/plotXMLAttributes.py -x depart -y arrival -o vehroute.png vehroute.xml --scatterplot
+</code></pre>
+<p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -o is the output file name; --scatterplot is to make a scatter plot instead of a line plot.</p>
+<p><img src="../images/vehroute_output.png" width="500px"/></p>
+<h3 id="leader-gaps-versus-speeds">Leader gaps versus speeds<a class="headerlink" href="#leader-gaps-versus-speeds" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/Lanechange/">lanechange-output</a>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/visualization/plotXMLAttributes.py -x speed -y leaderGap -o lc.png lanechange.xml -i reason --filter-ids speedGain
+</code></pre>
+<p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -o is the output file name; -i is the filtered attribute name (reason for lane changing in this case); --filter-ids are the values of the filtered attribute name (reason = speedGain in this case).</p>
+<p><img src="../images/lanechange_output.png" width="500px"/></p>
+<h3 id="all-trajectories-over-time-1">All trajectories over time 1<a class="headerlink" href="#all-trajectories-over-time-1" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/FCDOutput/">fcd_output</a>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/visualization/plotXMLAttributes.py -x x -y y -o allXY_output.png fcd.xml --scatterplot
+</code></pre>
+<p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -o is the output file name; --scatterplot is to make a scatter plot instead of a line plot..</p>
+<p><img src="../images/allXY_output.png" width="500px"/></p>
+<h3 id="selected-trajectories-over-time-1">Selected trajectories over time 1<a class="headerlink" href="#selected-trajectories-over-time-1" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/FCDOutput/">fcd_output</a>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/visualization/plotXMLAttributes.py -x x -y y -o vehLocations_output.png fcd.xml -i id --filter-ids Audinot_7_0 --scatterplot --legend
+</code></pre>
+<p>where -x is the attribute for the x axis; -y is the attribute for the y axis; -o is the output file name; -i is the filtered attribute name (vehicle id in this case); --filter-ids are the values of the filtered attribute name (vehicle id = Audinot_7_0 in this case); --scatterplot is to make a scatter plot instead of a line plot; --legend is to show the legend.</p>
+<p><img src="../images/vehLocations_output.png" width="500px"/></p>
+<h3 id="public-transport-schedule">Public transport schedule<a class="headerlink" href="#public-transport-schedule" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The tool <a href="../Railways/#plotstopspy">plotStops.py</a> simplifies plotting such schedules</p>
+</div>
+<p>In this type of plot time is on the y-axis running from top to bottom. Input is route file of a <a href="../../Simulation/Public_Transport/#public_transport_schedules">public transport schedule</a> where each vehicle is modelled individually.
+A similar plot could also be generated from <a href="../../Simulation/Output/StopOutput/">stop-output</a> by using attribute <code>started</code> or <code>ended</code> (or <code>started,ended</code>) instead of <code>until</code>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/visualization/plotXMLAttributes.py route.rou.xml -x busStop -y until --ytime1 --legend --xticks-file stoplist.txt --invert-yaxis --marker o
+</code></pre>
+<p><img src="../images/schedule_until.png" width="500px"/></p>
+<p>The file stoplist.txt is used to define the ordering of the stops (corresponding to their ordering along a transport line) and is shown below.
+In order to group busStops that belong to different tracks of the same train station, they were named with a common suffix in their id and the stoplist.txt file uses wildcards (<code>*</code>) to match them.</p>
+<pre><code>*WLA
+*KI
+*MM
+*KX
+*LHG
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The main advantage of <a href="../Railways/#plotstopspy">plotStops.py</a> is creating a stoplist.txt file automatically.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When plotting stops from a route file that also defines <code>&lt;vType&gt;</code> elements, then the option <strong>--idelem</strong> must be used to declare where the id attribute must be loaded from (i.e. <strong>--idelem trip</strong>).</p>
+</div>
+<h3 id="turn-counts-over-time">Turn-counts over time<a class="headerlink" href="#turn-counts-over-time" title="Permanent link">&para;</a></h3>
+<p>This plot uses an attribute list for the value id (<code>-i from,to</code>) to reflect the fact that a turning relation is uniquely identified by the combination of two attributes. It also demonstrates flexible filtering to show all traffic that passes over edge <code>-40</code> or edge <code>36</code>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/visualization/plotXMLAttributes.py turnCounts.xml -i from,to -x begin -y count --xtime0 --legend  --filter-ids=&quot;-40|*,36|*&quot;
+</code></pre>
+<p><img src="../images/turn-counts.png" width="500px"/></p>
+<h3 id="boxplot-waiting-time-by-departlane">Boxplot: waiting time by departLane<a class="headerlink" href="#boxplot-waiting-time-by-departlane" title="Permanent link">&para;</a></h3>
+<p>This plot demonstrates box-plotting for a single attribute (waitingTime). Optionally split by category (departLane). The call uses <a href="../../Simulation/Output/TripInfo/">tripinfo-output</a> from two different simulation runs as it's input.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/visualization/plotXMLAttributes.py tripinfos.xml tripinfos2.xml  -x waitingTime -y @BOX -i departLane --show
+</code></pre>
+<p><img src="../images/boxplot_departLane_waitingTime_horiz.png" width="500px"/></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By swapping x-attribute and y-attribute the orientation of the boxplot can be changed from horizontal to vertical</p>
+</div>
+<h3 id="histogram-of-timeloss">Histogram of timeLoss<a class="headerlink" href="#histogram-of-timeloss" title="Permanent link">&para;</a></h3>
+<p>This plot demonstrates the use of <strong>--barplot</strong> binning and <code>@COUNT</code> to create a histogram of timeLoss values from two simulation runs.
+It also shows how to clamp data to the upper range of 300.</p>
+<p>Call to generate the plot:</p>
+<pre><code>plotXMLAttributes.py tripinfos.xml tripinfos2.xml -x timeLoss -y @COUNT -i @NONE --legend  --barplot --xbin 20 --xclamp :300
+</code></pre>
+<p><img src="../images/hist_timeLoss_clamped.png" width="500px"/></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>It is important to set <strong>-i @NONE</strong> to ensure that the timeLoss values are aggregated by file rather than by vehicle id.</p>
+</div>
+<h2 id="plot_trajectoriespy">plot_trajectories.py<a class="headerlink" href="#plot_trajectoriespy" title="Permanent link">&para;</a></h2>
+<p>Create plot of all trajectories obtained from a file generated through <a href="../../Simulation/Output/FCDOutput/">--fcd-output</a>. This tool in particular is located in <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools.</p>
+<p>Example use:</p>
+<pre><code>python tools/plot_trajectories.py fcd.xml -t td -o plot.png -s
+</code></pre>
+<p>The option <strong>-t (--trajectory-type)</strong> supports different attributes that can be plotted against each other. The argument is a two-letter code with each letter encoding an attribute that is derived from the fcd input.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>plot_trajectories.py is similar to <a href="#plotxmlattributespy">plotXMLAttributes.py</a> but specialized for <a href="../../Simulation/Output/FCDOutput/">fcd-output</a>. It supports derived attributes that are not present in the loaded data (driven distance) and also allows for more filtering (<strong>--filter-route</strong>, <strong>--filter-edges</strong>).</p>
+</div>
+<h3 id="available-attributes">Available Attributes<a class="headerlink" href="#available-attributes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>t</strong>: Time in s</li>
+<li><strong>d</strong>: Distance driven (starts with 0 at the first fcd datapoint for each vehicle). Distance is computed based on speed using Euler-integration. Set option <strong>--ballistic</strong> for <a href="../../Simulation/Basic_Definition/#defining_the_integration_method">ballistic integration</a>.</li>
+<li><strong>a</strong>: Acceleration</li>
+<li><strong>s</strong>: Speed (m/s)</li>
+<li><strong>i</strong>: Vehicle angle (navigational degrees)</li>
+<li><strong>x</strong>: X-Position in m</li>
+<li><strong>y</strong>: Y-Position in m</li>
+<li><strong>k</strong>: <a href="../../Simulation/Railways/#kilometrage_mileage_chainage">Kilometrage</a> (requires <strong>--fcd-output.distance</strong>)</li>
+<li><strong>g</strong>: gap to leader (requires <strong>--fcd-output.max-leader-distance</strong>)</li>
+</ul>
+<h3 id="examples-trajectory-types">Examples Trajectory Types<a class="headerlink" href="#examples-trajectory-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>td</strong>: time vs distance</li>
+<li><strong>ts</strong>: time vs speed</li>
+<li><strong>ta</strong>: time vs acceleration</li>
+<li><strong>ds</strong>: distance vs speed</li>
+<li><strong>da</strong>: distance vs acceleration</li>
+<li><strong>xy</strong>: Spatial plot of driving path</li>
+<li><strong>kt</strong>: kilometrage vs time (combine with option <strong>--invert-yaxis</strong> to get a classic railway diagram).</li>
+</ul>
+<h3 id="accelerations-versus-distances">Accelerations versus distances<a class="headerlink" href="#accelerations-versus-distances" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/FCDOutput/">fcd-output</a>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/plot_trajectories.py -t da -o Plot_trajectories.png fcd.xml
+</code></pre>
+<p>where -t is the aforementioned trajectory type; -o is the output file name.</p>
+<p><img src="../images/Plot_trajectories.png" width="500px"/></p>
+<h3 id="all-trajectories-over-time-2">All trajectories over time 2<a class="headerlink" href="#all-trajectories-over-time-2" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/FCDOutput/">fcd-output</a>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/plot_trajectories.py -t xy -o allLocations_output.png fcd.xml
+</code></pre>
+<p>where -t is the aforementioned trajectory type; -o is the output file name.</p>
+<p><img src="../images/allLocations_output.png" width="500px"/></p>
+<h3 id="selected-trajectories-over-time-2">Selected trajectories over time 2<a class="headerlink" href="#selected-trajectories-over-time-2" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/FCDOutput/">fcd-output</a>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/plot_trajectories.py -t xy -o selectXY_output.png fcd.xml --filter-ids Audinot_7_0
+</code></pre>
+<p>where -t is the aforementioned trajectory type; -o is the output file name;--filter-ids are the value(s) of the filtered attributes (id = Audinot_7_0 in this case).</p>
+<p><img src="../images/selectXY_output.png" width="500px"/></p>
+<h3 id="fcd-based-speeds-over-time">FCD based speeds over time<a class="headerlink" href="#fcd-based-speeds-over-time" title="Permanent link">&para;</a></h3>
+<p>Input is <a href="../../Simulation/Output/FCDOutput/">fcd-output</a>.</p>
+<p>Call to generate the plot:</p>
+<pre><code>python tools/plot_trajectories.py -t ts -o timeSpeed_output.png fcd.xml --filter-ids Audinot_7_0,Costa_12_0,Pepoli_3_0,Silvani_11_0,XXI_APRILE_7_0 --legend
+</code></pre>
+<p>where -t is the aforementioned trajectory type; -o is the output file name; --filter-ids are the value(s) of the filtered attributes (id in [Audinot_7_0, Costa_12_0, Pepoli_3_0, Silvani_11_0, XXI_APRILE_7_0] in this case); --legend is to show the legend</p>
+<p><img src="../images/timeSpeed_output.png" width="500px"/></p>
+<h3 id="interactive-plot_1">Interactive Plot<a class="headerlink" href="#interactive-plot_1" title="Permanent link">&para;</a></h3>
+<p>When option <strong>-s</strong> is set, a interactive plot is opened that allows
+identifying vehicles by clicking on the respective line (vehicle ids is
+printed in the console).</p>
+<h3 id="filtering_1">Filtering<a class="headerlink" href="#filtering_1" title="Permanent link">&para;</a></h3>
+<p>Option <strong>--filter-route EDGE1,EDGE2,...</strong> allows restricting the plot to all trajectories that contain the
+given set of edges.</p>
+<p>Option <strong>--filter-ids ID1,ID2,...</strong> allows restricting the plot to the given vehicle ids</p>
+<h2 id="plot_net_dumppy">plot_net_dump.py<a class="headerlink" href="#plot_net_dumppy" title="Permanent link">&para;</a></h2>
+<p>plot_net_dump.py shows a network, where the network edges' colors and
+width are set in dependence to defined edge attributes. The edge weights
+are read from "edgedumps" - <a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgelane
+traffic</a>,
+<a href="../../Simulation/Output/Lane-_or_Edge-based_Emissions_Measures/">edgelane
+emissions</a>,
+or <a href="../../Simulation/Output/Lane-_or_Edge-based_Noise_Measures/">edgelane
+noise</a>.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><figure>
+<img src="../images/Plot_net_dump.png" title="plot_net_dump.png" width="500" alt="" /></figure></td>
+<td><p><code>python plot_net_dump.py -v -n bs.net.xml \</code><br />
+<code> --xticks 7000,14001,2000,16 --yticks 9000,16001,1000,16 \</code><br />
+<code> --measures entered,entered --xlabel [m] --ylabel [m] \</code><br />
+<code> --default-width 1 -i base-jr.xml,base-jr.xml \</code><br />
+<code> --xlim 7000,14000 --ylim 9000,16000 -\</code><br />
+<code> --default-width .5 --default-color #606060 \</code><br />
+<code> --min-color-value -1000 --max-color-value 1000 \</code><br />
+<code> --max-width-value 1000 --min-width-value -1000  \</code><br />
+<code> --max-width 3 --min-width .5 \</code><br />
+<code> --colormap "#0:#0000c0,.25:#404080,.5:#808080,.75:#804040,1:#c00000"</code></p>
+<p>It shows the shift in traffic in the city of Brunswick, Tuesday-Thursday week type after establishing an environmental zone.</p></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="../images/Plot_net_dump2.png" title="plot_net_dump2.png" width="500" alt="" /></figure></td>
+<td><p><code>python plot_net_dump.py -v -n bs.net.xml \</code><br />
+<code> --xticks 7000,14001,2000,16 --yticks 9000,16001,1000,16 \</code><br />
+<code> --measures NOx_normed,NOx_normed --xlabel [m] --ylabel [m] \</code><br />
+<code> --default-width 1 -i HBEFA_base-jr.xml,HBEFA_base-jr.xml \</code><br />
+<code> --xlim 7000,14000 --ylim 9000,16000 \</code><br />
+<code> --default-width .5 --default-color #606060 \</code><br />
+<code> --min-color-value -.1 --max-color-value .1 \</code><br />
+<code> --max-width-value .1  --max-width 3 --min-width .5 \</code><br />
+<code> --colormap "#0:#00c000,.25:#408040,.5:#808080,.75:#804040,1:#c00000"</code></p>
+<p>Showing the according changes in NOx emissions.</p></td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>both, <strong>--dump-inputs</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> as well as <strong>--measures</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> expect two entries being divided by a ','. The
+  first is used for the edges' color, the second for their widths. But
+  you may simply skip one entry. Then, the default values are used.</li>
+<li>dump-files cover usually more than one interval. To generate an extra output file for each interval, use the string '%s' as part of the output filename (this part will be replaced with the corresponding begin time).</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If two input files are given they must cover the same time intervals or no data will be plotted.</p>
+</div>
+<p><strong>Options</strong></p>
+<p>Here the most important options are listed. Use <strong>--help</strong> to see all options.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--net</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Defines the network to read</td>
+</tr>
+<tr>
+<td><strong>-i</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--dump-inputs</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Defines the dump-output files to use as input</td>
+</tr>
+<tr>
+<td><strong>-m</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a><br><strong>--measures</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Define which measure to plot;default: speed,entered</td>
+</tr>
+<tr>
+<td><strong>-w</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a><br><strong>--default-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the default edge width; default: .1</td>
+</tr>
+<tr>
+<td><strong>-c</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;COLOR&gt;</em></a><br> <strong>--default-color</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;COLOR&gt;</em></a></td>
+<td>Defines the default edge color</td>
+</tr>
+<tr>
+<td><strong>--min-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the minimum edge width; default: .5</td>
+</tr>
+<tr>
+<td><strong>--max-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the maximumedge width; default: 3</td>
+</tr>
+<tr>
+<td><strong>--log-colors</strong></td>
+<td>If set, colors are log-scaled</td>
+</tr>
+<tr>
+<td><strong>--log-widths</strong></td>
+<td>If set, widths are log-scaled</td>
+</tr>
+<tr>
+<td><strong>--min-color-value</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>If set, defines the minimum edge color value</td>
+</tr>
+<tr>
+<td><strong>--max-color-value</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>If set, defines the maximum edge color value</td>
+</tr>
+<tr>
+<td><strong>--min-width-value</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>If set, defines the minimum edge width value</td>
+</tr>
+<tr>
+<td><strong>--max-width-value</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>If set, defines the maximum edge width value</td>
+</tr>
+<tr>
+<td><strong>-v</strong><br><strong>--verbose</strong></td>
+<td>If set, the progress is printed on the screen</td>
+</tr>
+<tr>
+<td><strong>--internal</strong></td>
+<td>If set, internal edges (of junctions) are included to the generated shapes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plot_net_selectionpy">plot_net_selection.py<a class="headerlink" href="#plot_net_selectionpy" title="Permanent link">&para;</a></h2>
+<p>plot_net_selection.py reads a road network and a selection file as
+written by <a href="../../sumo-gui/">sumo-gui</a>. It plots the road network,
+choosing a different color and width for the edges which are within the
+selection (all edge with at least one lane in the selection).</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><figure>
+<img src="../images/Plot_net_selection.png" title="plot_net_selection.png" width="500" alt="" /></figure></td>
+<td><p><code>python plot_net_selection.py -n bs.net.xml \</code><br />
+<code> --xlim 7000,14000 --ylim 9000,16000 \</code><br />
+<code> -i selection_environmental_zone.txt \</code><br />
+<code> --xlabel [m] --ylabel [m] \</code><br />
+<code> --xticks 7000,14001,2000,16 --yticks 9000,16001,1000,16 \</code><br />
+<code> --selected-width 1 --edge-width .5 -o selected_ez.png \</code><br />
+<code> --edge-color #606060 --selected-color #800000 </code></p>
+<p>The example shows the selection of an "environmental zone".</p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--net</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Defines the network to read</td>
+</tr>
+<tr>
+<td><strong>-i</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--selection</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Defines selection file to read</td>
+</tr>
+<tr>
+<td><strong>--selected-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the width for selected edges;default: 1</td>
+</tr>
+<tr>
+<td><strong>--selected-color</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;COLOR&gt;</em></a></td>
+<td>Defines the color for selected edges; default: r (red)</td>
+</tr>
+<tr>
+<td><strong>--edge-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the default edge width; default: .2</td>
+</tr>
+<tr>
+<td><strong>--edge-color</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;COLOR&gt;</em></a></td>
+<td>Defines the default edge color; default: #606060</td>
+</tr>
+<tr>
+<td><strong>-v</strong><br><strong>--verbose</strong></td>
+<td>If set, the progress is printed on the screen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plot_net_speedspy">plot_net_speeds.py<a class="headerlink" href="#plot_net_speedspy" title="Permanent link">&para;</a></h2>
+<p>plot_net_speeds.py reads a road network and plots it using the allowed
+speeds to color the edges. It is rather an example for using measures
+read from the network file.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><figure>
+<img src="../images/Plot_net_speeds.png" title="plot_net_speeds.png" width="500" alt="" /></figure></td>
+<td><p><code>python plot_speeds.py -n bs.net.xml --xlim 1000,25000 \</code><br />
+<code> --ylim 2000,26000 --edge-width .5 -o speeds2.png \</code><br />
+<code> --minV 0 --maxV 60 --xticks 16 --yticks 16 \</code><br />
+<code> --xlabel [m] --ylabel [m] --xlabelsize 16 --ylabelsize 16 \</code><br />
+<code> --colormap jet</code></p>
+<p>The example colors the streets in Brunswick, Germany by their maximum allowed speed.</p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--net</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Defines the network to read</td>
+</tr>
+<tr>
+<td><strong>--edge-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the default edge width; default: .2</td>
+</tr>
+<tr>
+<td><strong>--edge-color</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;COLOR&gt;</em></a></td>
+<td>Defines the default edge color; default: #606060</td>
+</tr>
+<tr>
+<td><strong>--minV</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Define the minimum value boundary</td>
+</tr>
+<tr>
+<td><strong>--maxV</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Define the maximum value boundary</td>
+</tr>
+<tr>
+<td><strong>-v</strong><br><strong>--verbose</strong></td>
+<td>If set, the script says what it's doing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plot_net_trafficlightspy">plot_net_trafficLights.py<a class="headerlink" href="#plot_net_trafficlightspy" title="Permanent link">&para;</a></h2>
+<p>plot_net_trafficLights.py reads a road network and plots it and
+additionally adds dots/markers at the position of traffic lights that
+are part of the net.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><figure>
+<img src="../images/Plot_net_trafficLights.png" title="plot_net_trafficLights.png" width="500" alt="" /></figure></td>
+<td><p><code>python plot_trafficLights.py -n bs.net.xml \</code><br />
+<code> --xlim 1000,25000 --ylim 2000,26000 --edge-width .5 \</code><br />
+<code> --xticks 16 --yticks 16 --xlabel [m] --ylabel [m] \ </code><br />
+<code> --xlabelsize 16 --ylabelsize 16 --width 5 \</code><br />
+<code> --edge-color #606060</code></p>
+<p>The example shows the traffic lights in Brunswick.</p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--net</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Defines the network to read</td>
+</tr>
+<tr>
+<td><strong>--edge-width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the default edge width; default: .2</td>
+</tr>
+<tr>
+<td><strong>--edge-color</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;COLOR&gt;</em></a></td>
+<td>Defines the default edge color; default: #606060</td>
+</tr>
+<tr>
+<td><strong>--minV</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Define the minimum value boundary</td>
+</tr>
+<tr>
+<td><strong>--maxV</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Define the maximum value boundary</td>
+</tr>
+<tr>
+<td><strong>-v</strong><br><strong>--verbose</strong></td>
+<td>If set, the script says what it's doing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plot_summarypy">plot_summary.py<a class="headerlink" href="#plot_summarypy" title="Permanent link">&para;</a></h2>
+<p>plot_summary.py reads one or multiple
+<a href="../../Simulation/Output/Summary/">summary-files</a> and plots a
+selected measure (attribute of the read
+<a href="../../Simulation/Output/Summary/">summary-files</a>). The measure is
+visualised as a time line along the simulation time.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><figure>
+<img src="../images/Summary_running.png" title="summary_running.png" width="500" alt="" /></figure></td>
+<td><p><code>python plot_summary.py </code><br />
+<code> -i mo.xml,dido.xml,fr.xml,sa.xml,so.xml \</code><br />
+<code> -l Mo,Di-Do,Fr,Sa,So --xlim 0,86400 --ylim 0,10000 </code><br />
+<code> -o sumodocs/summary_running.png --yticks 0,10001,2000,14 \</code><br />
+<code> --xticks 0,86401,14400,14 --xtime1 --ygrid \</code><br />
+<code> --ylabel "running vehicles [#]" --xlabel "time" \</code><br />
+<code> --title "running vehicles over time" --adjust .14,.1 </code></p>
+<p>The example shows the numbers of vehicles running in a large-scale scenario of the city of Brunswick over the day for the standard week day classes. "mo.xml", "dido.xml", "fr.xml", "sa.xml", and "so.xml" are <a href="../Simulation/Output/Summary.md">summary-files</a> resulting from simulations of the weekday-types Monday, Tuesday-Thursday, Friday, Saturday, and Sunday, respectively.</p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-i</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>]*<br><strong>--summary-inputs</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>]*</td>
+<td>Defines the <a href="../../Simulation/Output/Summary/">summary-file</a>(s) to read</td>
+</tr>
+<tr>
+<td><strong>-m</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a><br><strong>--measure</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines the measure to read from the summary file; default: <em>running</em></td>
+</tr>
+<tr>
+<td><strong>-v</strong><br><strong>--verbose</strong></td>
+<td>If set, the progress is printed on the screen</td>
+</tr>
+<tr>
+<td><strong>--dpi</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Define dpi resolution for figures; default: <em>None</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="plot_tripinfo_distributionspy">plot_tripinfo_distributions.py<a class="headerlink" href="#plot_tripinfo_distributionspy" title="Permanent link">&para;</a></h2>
+<p>plot_tripinfo_distributions.py reads one or multiple
+<a href="../../Simulation/Output/TripInfo/">tripinfo-files</a> and plots a
+selected measure (attribute of the read
+<a href="../../Simulation/Output/TripInfo/">tripinfo-files</a>). The measure is
+visualised as vertical bars that represent the numbers of occurrences of
+the measure (vehicles) that fall into a bin.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><figure>
+<img src="../images/Tripinfo_distribution_duration.png" title="tripinfo_distribution_duration.png" width="500" alt="" />
+</figure></td>
+<td><p><code>python plot_tripinfo_distributions.py \</code><br />
+<code> -i mo.xml,dido.xml,fr.xml,sa.xml,so.xml \</code><br />
+<code> -o tripinfo_distribution_duration.png -v -m duration \</code><br />
+<code> --minV 0 --maxV 3600 --bins 10 --xticks 0,3601,360,14 \</code><br />
+<code> --xlabel "duration [s]" --ylabel "number [#]" \</code><br />
+<code> --title "duration distribution" \</code><br />
+<code> --yticks 14 --xlabelsize 14 --ylabelsize 14 --titlesize 16 \</code><br />
+<code> -l mon,tue-thu,fri,sat,sun --adjust .14,.1 --xlim 0,3600</code></p>
+<p>The example shows the travel time distribution for the vehicles of different week day classes (Braunschweig scenario). "mo.xml", "dido.xml", "fr.xml", "sa.xml", and "so.xml" are <a href="../Simulation/Output/TripInfo.md">tripinfo-files</a> resulting from simulations of the weekday-types Monday, Tuesday-Thursday, Friday, Saturday, and Sunday, respectively.</p></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="../images/stopCountDist.png" title="stopCountDist.png" width="500" alt="" />
+</figure></td>
+<td><p><code>python plot_tripinfo_distributions.py -i tripinfo.xml -o stopCountDist.png \</code><br/>
+<code> --measure waitingCount --bins 10 --maxV 10 \</code><br/>
+<code> --xlabel "number of stops [-]" --ylabel "count [-]" \</code><br/>
+<code> --title "distribution of number of stops" --colors blue -b --no-legend</code></p>
+<p>The example shows the distribution of stops the vehicles had to make during their trip. Vehicles with more than 9 stops are added to the last bin of the histogram.
+</p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-i</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>]*<br><strong>--tripinfos-inputs</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>]*</td>
+<td>Defines the <a href="../../Simulation/Output/Summary/">summary-file</a>(s) to read</td>
+</tr>
+<tr>
+<td><strong>-m</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a><br><strong>--measure</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines the measure to read from the summary file</td>
+</tr>
+<tr>
+<td><strong>-v</strong><br><strong>--verbose</strong></td>
+<td>If set, the progress is printed on the screen</td>
+</tr>
+<tr>
+<td><strong>--bins</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>The number of bins to divide the values into</td>
+</tr>
+<tr>
+<td><strong>--norm</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines a number by which read values are divided; default: 1.0</td>
+</tr>
+<tr>
+<td><strong>--minV</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The minimum value; if set, read values that are lower than this value are set to this value</td>
+</tr>
+<tr>
+<td><strong>--maxV</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The maximum value; if set, read values that are higher than this value are set to this value</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plot_csv_timelinepy">plot_csv_timeline.py<a class="headerlink" href="#plot_csv_timelinepy" title="Permanent link">&para;</a></h2>
+<p>plot_csv_timeline.py reads a .csv file and plots columns selected
+using the <strong>--columns</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>]* option. The values are visualised as lines.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><figure>
+<img src="../images/Nefz.png" title="nefz.png" width="500" alt="" /></figure></td>
+<td><p><code>plot_csv_timeline.py \</code><br />
+<code> -i nefz.csv -c 1 --no-legend --xlabel "time [s]" \</code><br />
+<code> --ylabel "velocity [km/h]" --xlabelsize 14 --ylabelsize 14 \</code><br />
+<code> --xticks 14 --yticks 14 --colors k --ylim 0,125 \</code><br />
+<code> --output nefz.png \</code><br />
+<code> --title "New European Driving Cycle (NEDC)" --titlesize 16</code></p>
+<p>The example shows the <a href="Emissions.md#driving_cycles">New European Driving Cycle (NEDC)</a>.</p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-i</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--input</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Defines the input file to use</td>
+</tr>
+<tr>
+<td><strong>-c</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>]*<br><strong>--columns</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>[,<a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>]*</td>
+<td>Defines which columns shall be plotted</td>
+</tr>
+<tr>
+<td><strong>-v</strong><br><strong>--verbose</strong></td>
+<td>If set, the progress is printed on the screen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plot_csv_piepy">plot_csv_pie.py<a class="headerlink" href="#plot_csv_piepy" title="Permanent link">&para;</a></h2>
+<p>plot_csv_pie.py reads a .csv file that is assumed to contain a name in
+the first and an according value in the second column. The read
+name/value-pairs are visualised as a pie chart.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><figure>
+<img src="../images/Paradigm.png" title="paradigm.png" width="500" alt="" />
+</figure></td>
+<td><p><code>plot_csv_pie.py \</code><br />
+<code> -i paradigm.csv -b --colormap Accent --no-legend -s 6,6 </code></p><br><br><b>Note:</b> Please note that you should set the width and the height to the same value using the <b>--size</b> &lt;FLOAT&gt;,&lt;FLOAT&gt; option, see <a href="#common_options">#common options</a>. Otherwise you'll get an oval.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-i</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--input</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Defines the input file to read</td>
+</tr>
+<tr>
+<td><strong>-p</strong><br><strong>--percentage</strong></td>
+<td>Interprets read measures as percentages</td>
+</tr>
+<tr>
+<td><strong>-r</strong><br><strong>--revert</strong></td>
+<td>Reverts the order of read values before plotting them</td>
+</tr>
+<tr>
+<td><strong>--no-labels</strong></td>
+<td>Does not plot the labels</td>
+</tr>
+<tr>
+<td><strong>--shadow</strong></td>
+<td>Puts a shadow below the circle</td>
+</tr>
+<tr>
+<td><strong>--startangle</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Sets the start angle</td>
+</tr>
+<tr>
+<td><strong>-v</strong><br><strong>--verbose</strong></td>
+<td>If set, the progress is printed on the screen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plot_csv_barspy">plot_csv_bars.py<a class="headerlink" href="#plot_csv_barspy" title="Permanent link">&para;</a></h2>
+<p>plot_csv_bars.py reads a .csv file that is assumed to contain a name
+in the first and an according value in the second column. The read
+name/value-pairs are visualised as a bar chart.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><figure>
+<img src="../images/Nox_effects_bars.png" title="nox_effects_bars.png" width="500" alt="" />
+</figure></td>
+<td><p><code>plot_csv_bars.py \</code><br />
+<code> -i nox_effects.txt --colormap RdYlGn --no-legend --width .4 \</code><br />
+<code> -s 8,4 --revert --xlim 0,50 --xticks 0,51,10,16 --yticks 16 \</code><br />
+<code> --adjust .28,.1,.95,.9 --show-values </code></p></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-i</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--input</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Defines the csv file to use as input</td>
+</tr>
+<tr>
+<td><strong>-x</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a><br><strong>--column</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a></td>
+<td>Defines which column of the read .csv-file shall be plotted; default: 1</td>
+</tr>
+<tr>
+<td><strong>-r</strong><br><strong>--revert</strong></td>
+<td>Reverts the order of read values before plotting them</td>
+</tr>
+<tr>
+<td><strong>-w</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a><br><strong>--width</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the width of the bars; default: .8</td>
+</tr>
+<tr>
+<td><strong>--space</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the space between the bars; default: .2</td>
+</tr>
+<tr>
+<td><strong>--norm</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines a number by which read values are divided; default: 1.0</td>
+</tr>
+<tr>
+<td><strong>--show-values</strong></td>
+<td>Shows the values</td>
+</tr>
+<tr>
+<td><strong>--values-offset</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Position offset for values</td>
+</tr>
+<tr>
+<td><strong>--vertical</strong></td>
+<td>Draws vertical bars (default are horizontal bars)</td>
+</tr>
+<tr>
+<td><strong>--no-labels</strong></td>
+<td>Does not plot the labels</td>
+</tr>
+<tr>
+<td><strong>-v</strong><br><strong>--verbose</strong></td>
+<td>If set, the progress is printed on the screen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="macroutputpy">macrOutput.py<a class="headerlink" href="#macroutputpy" title="Permanent link">&para;</a></h2>
+<p>This tool will plot EdgeData output as fundamental diagram graphs (volume-density, speed-density and volume-speed relations, each edge and lane-based).
+This requires the EdgeData input file to have interval data with <strong>sampledSeconds</strong>, <strong>density</strong>, <strong>laneDensity</strong> and <strong>speed</strong> attributes. The tool supports the
+<a href="#common_options">common options</a>. The output is interpreted as a directory rather than a file, though. The output file names are given as:</p>
+<ul>
+<li>Edge_vk.png (speed-density relation)</li>
+<li>Edge_qk.png (volume-density relation)</li>
+<li>Edge_qv.png (volume-speed relation)</li>
+<li>Lane_vk.png (speed-density relation)</li>
+<li>Lane_qk.png (volume-density relation)</li>
+<li>Lane_qv.png (volume-speed relation)</li>
+</ul>
+<p>Example call: <code>python macrOutput.py edgeData.xml</code></p>
+<h2 id="common-options">common options<a class="headerlink" href="#common-options" title="Permanent link">&para;</a></h2>
+<p>The following options are common to all previously listed tools. They
+can be divided into two groups:</p>
+<ul>
+<li>options for formatting the figure (including adding captions etc.)</li>
+<li>options for determining what to do with the generated figure</li>
+</ul>
+<p>The options are listed and discussed in the following sub-sections,
+respectively.</p>
+<h3 id="formatting-options">Formatting Options<a class="headerlink" href="#formatting-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--colors</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;COLOR&gt;</em></a></td>
+<td>Uses the given colors; the number of given colors must be the same as the number of measures to plot</td>
+</tr>
+<tr>
+<td><strong>--colormap</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Uses the named colormap</td>
+</tr>
+<tr>
+<td><strong>--labels</strong> <code>&lt;LABELS&gt;</code><br><strong>-l</strong> <code>&lt;LABELS&gt;</code></td>
+<td>Uses the given labels; the number of given labels must be the same as the number of measures to plot</td>
+</tr>
+<tr>
+<td><strong>--xlim</strong> <code>&lt;XMIN&gt;</code>,<code>&lt;XMAX&gt;</code></td>
+<td>Describes the limits of the figure along the x-axis</td>
+</tr>
+<tr>
+<td><strong>--ylim</strong> <code>&lt;YMIN&gt;</code>,<code>&lt;YMAX&gt;</code></td>
+<td>Describes the limits of the figure along the y-axis</td>
+</tr>
+<tr>
+<td><strong>--xticks</strong> <code>&lt;XMIN&gt;</code>,<code>&lt;XMAX&gt;</code>,<code>&lt;XSTEP&gt;</code>,<code>&lt;XSIZE&gt;</code><br><strong>--yticks</strong> <code>&lt;XSIZE&gt;</code></td>
+<td>If only one number is given, it is interpreted as the size of the tick labels on the x-axis; if four numbers are given, they are interpreted as the lowest ticks position, the highest ticks position, the step between ticks, and the tick's size, respectively, all along the x-axis</td>
+</tr>
+<tr>
+<td><strong>--yticks</strong> <code>&lt;XMIN&gt;</code>,<code>&lt;XMAX&gt;</code>,<code>&lt;XSTEP&gt;</code>,<code>&lt;XSIZE&gt;</code> <br><strong>--yticks</strong> <code>&lt;XSIZE&gt;</code></td>
+<td>If only one number is given, it is interpreted as the size of the tick labels on the y-axis; if four numbers are given, they are interpreted as the lowest ticks position, the highest ticks position, the step between ticks, and the tick's size, respectively, all along the y-axis</td>
+</tr>
+<tr>
+<td><strong>--xtime0</strong></td>
+<td>If set, the tick labels along the x-axis are formatted as time entries (hh)</td>
+</tr>
+<tr>
+<td><strong>--ytime0</strong></td>
+<td>If set, the tick labels along the y-axis are formatted as time entries (hh)</td>
+</tr>
+<tr>
+<td><strong>--xtime1</strong></td>
+<td>If set, the tick labels along the x-axis are formatted as time entries (hh:mm)</td>
+</tr>
+<tr>
+<td><strong>--ytime1</strong></td>
+<td>If set, the tick labels along the y-axis are formatted as time entries (hh:mm)</td>
+</tr>
+<tr>
+<td><strong>--xtime2</strong></td>
+<td>If set, the tick labels along the x-axis are formatted as time entries (hh:mm:ss)</td>
+</tr>
+<tr>
+<td><strong>--ytime2</strong></td>
+<td>If set, the tick labels along the y-axis are formatted as time entries (hh:mm:ss)</td>
+</tr>
+<tr>
+<td><strong>--xgrid</strong></td>
+<td>If set, a grid along the ticks on the x-axis is drawn</td>
+</tr>
+<tr>
+<td><strong>--ygrid</strong></td>
+<td>If set, a grid along the ticks on the y-axis is drawn</td>
+</tr>
+<tr>
+<td><strong>--xticksorientation</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The orientation of the x-ticks (in °); default: matplotlib default</td>
+</tr>
+<tr>
+<td><strong>--yticksorientation</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>The orientation of the y-ticks (in °); default: matplotlib default</td>
+</tr>
+<tr>
+<td><strong>--xlabel</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines the label to set for the x-axis</td>
+</tr>
+<tr>
+<td><strong>--ylabel</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines the label to set for the y-axis</td>
+</tr>
+<tr>
+<td><strong>--xlabelsize</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the size of the label of the x-axis</td>
+</tr>
+<tr>
+<td><strong>--ylabelsize</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the size of the label of the y-axis</td>
+</tr>
+<tr>
+<td><strong>--marker</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Matplotlib marker style for drawing points; default: 'o' for dots in scatter plot, otherwise not used</td>
+</tr>
+<tr>
+<td><strong>--linestyle</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Matplotlib line style for drawing lines; default: '-' for continuous lines</td>
+</tr>
+<tr>
+<td><strong>--title</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines the title of the figure</td>
+</tr>
+<tr>
+<td><strong>--titlesize</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the size of the title</td>
+</tr>
+<tr>
+<td><strong>--adjust</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a><br><strong>--adjust</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Adjust the plot; If two floats are given, they are interpreted as left and bottom values, if four numbers are given, they are interpreted as left, bottom, right, top</td>
+</tr>
+<tr>
+<td><strong>--size</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a>,<a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the size of figure</td>
+</tr>
+<tr>
+<td><strong>--no-legend</strong></td>
+<td>If set, no legend is drawn</td>
+</tr>
+<tr>
+<td><strong>--legend-position</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Defines the position of the legend; default: matplolib default</td>
+</tr>
+<tr>
+<td><strong>--alpha</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a></td>
+<td>Defines the opacity of the plot background in the range 0=fully transparent to 1=opaque; default: 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction-options">Interaction Options<a class="headerlink" href="#interaction-options" title="Permanent link">&para;</a></h3>
+<p>If one of the scripts is simply started with no options that are listed
+below, the figure will be shown. To write the figure additionally into a
+file, the filename to generate must be given using the <strong>--output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> (or <strong>-o</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> for short).</p>
+<p>If the script is run in a batch file, it is often not convenient to show
+the figure (once known it is as it should be). In such cases, the option
+<strong>--blind</strong> (<strong>-b</strong>) can be used that suppresses showing the figure.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-o</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a><br><strong>--output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Defines the name under which the figure shall be saved</td>
+</tr>
+<tr>
+<td><strong>-b</strong><br><strong>--blind</strong></td>
+<td>If set, the figure will not be shown</td>
+</tr>
+</tbody>
+</table>
+<h1 id="further-visualization-methods">Further Visualization Methods<a class="headerlink" href="#further-visualization-methods" title="Permanent link">&para;</a></h1>
+<h2 id="coloring-and-scaling-edges-in-sumo-gui-according-to-arbitrary-data">Coloring and scaling edges in <a href="../../sumo-gui/">sumo-gui</a> according to arbitrary data<a class="headerlink" href="#coloring-and-scaling-edges-in-sumo-gui-according-to-arbitrary-data" title="Permanent link">&para;</a></h2>
+<p><a href="../../sumo-gui/">sumo-gui</a> can load <a href="../../sumo-gui/#visualizing_edge-related_data">edgeData files</a> and use the contained values of any attribute for coloring edges (roads) as well as for modifying the visual width of the edges. This serves a similar use case as <a href="#plot_net_dumppy">plot_net_dump.py</a> but allows all dynamic zooming and panning features of of sumo-gui.</p>
+<p>When stepping through the simulation, different time intervals contained in
+the weight file can be shown. It can be useful to adapt the simulation step length to the data period for easier stepping:</p>
+<pre><code>sumo-gui -n NET --edgedata-files FILE --step-length 3600 --end 24:0:0
+</code></pre>
+<p>After that, you need to do the following settings:</p>
+<ul>
+<li>Choose "edgeData" for coloring:</li>
+</ul>
+<p><img width="332" height="453" alt="1" src="https://github.com/user-attachments/assets/e6ebd7f2-5edd-4bb5-ac8a-71be7c53f8c5" /></p>
+<ul>
+<li>Choose the data type and recalibrate the interval thresholds for coloring:</li>
+</ul>
+<p><img width="492" height="327" alt="2" src="https://github.com/user-attachments/assets/73372922-2c11-4722-bed2-51c9501ea17a" /></p>
+<ul>
+<li>Set color edge legend (optional):</li>
+</ul>
+<p><img width="188" height="262" alt="3" src="https://github.com/user-attachments/assets/ba57342b-6b2c-432f-a8a9-41631bf6dafe" /></p>
+<p>Regarding "Recalibrate Rainbow" it is done with use of the data read in the current step. So, it may be needed to run some steps to get data sometimes before klicking "Recalibrate Rainbow". Moreover, the result may be different if data in another step are used. Alternatively, you can (1) set min and max next to the icon "Recalibrate Rainbow" directly or (2) set the interval threshold for each interval manuelly.</p>
+<h2 id="intersection-flow-diagram">Intersection Flow Diagram<a class="headerlink" href="#intersection-flow-diagram" title="Permanent link">&para;</a></h2>
+<p>To visualize the flow on an intersection with line widths according to the amount of traffic, the tool <a href="../Routes/#route2polypy">route2poly.py</a> can be used.</p>
+<ol>
+<li>Use <a href="../../Netedit/">netedit</a> to select all edges at one or more intersection for which the flow shall be visualized and save the selection to a file (e.g. <em>sel.txt</em>)</li>
+<li>
+<p>generate polygons with widths according to the number of vehicles passing the selected edges. When setting <strong>--scale-width to 0.01</strong>, 100 vehicles using the same edge sequence will correspond to a polygon width of 1m. The option <strong>--spread</strong> is used to prevent overlapping of the generated polygons and should be adapted according to the polygon width.</p>
+<pre><code>route2poly.py NET routes.rou.xml -o flows.poly.xml --filter-output.file sel.txt --scale-width 0.01 --internal --spread 1 --hue cycle
+</code></pre>
+</li>
+<li>
+<p>visualize the flows in <a href="../../sumo-gui/">sumo-gui</a></p>
+<pre><code>sumo-gui -n NET -a flows.poly.xml
+</code></pre>
+</li>
+</ol>
+<p><img src="../images/Route2poly_intersectionFlow.png" width="400px"/></p>
+<h2 id="visulizing-fcd-data-as-moving-pois">Visulizing FCD-Data as moving POIs<a class="headerlink" href="#visulizing-fcd-data-as-moving-pois" title="Permanent link">&para;</a></h2>
+<p>The tool <code>fcdReplay.py</code> can be used to replay an <a href="../../Simulation/Output/FCDOutput/">fcd-output file</a> in <a href="../../sumo-gui/">sumo-gui</a>.</p>
+<p>Example uses:</p>
+<pre><code>python  tools/fcdReplay.py -k example.sumocfg -f fcd.xml
+</code></pre>
+<p>To make use of fcd data with lon/lat values (generated with sumo option <strong>--fcd-output.geo</strong>), the option <strong>--geo</strong> must be set.</p>
+<h1 id="outdated">Outdated<a class="headerlink" href="#outdated" title="Permanent link">&para;</a></h1>
+<p>The tools are meant to be named as following: &lt;API&gt;__&lt;DESCRIPTION&gt;.py, where:</p>
+<ul>
+<li><em>&lt;API&gt;</em>: mpl for matplotlib</li>
+<li>: the SUMO-output that is processed (mainly)</li>
+<li><em>&lt;DESCRIPTION&gt;</em>: what the tool does</li>
+</ul>
+<h2 id="mpl_dump_twoagainstpy">mpl_dump_twoAgainst.py<a class="headerlink" href="#mpl_dump_twoagainstpy" title="Permanent link">&para;</a></h2>
+<p>Reads two dump files (mandatory options <strong>--dump1</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> and <strong>--dump2</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>, or, for short <strong>-1</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> and <strong>-2</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>). Extracts the value described by <strong>--value</strong> (default: <em>speed</em>). Plots the values of dump2 over the according (same interval time and edge) values from dump1.</p>
+<p>Either shows the plot (when <strong>--show</strong> is set) or saves it into a file (when <strong>--output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> is set).</p>
+<p>You can additionally plot the normed sums of the value using (<strong>--join</strong>). In the other case, you can try to use <strong>--time-coloring</strong> to assign different colors to the read intervals.</p>
+<p>You can format the axes by using <strong>--xticks</strong> <strong>&lt;XMIN,XMAX,XSTEP,FONTSIZE&gt;</strong> and <strong>--yticks</strong> <strong>&lt;YMIN,YMAX,YSTEP,FONTSIZE&gt;</strong> and set theit limits using <strong>--xlim</strong> <strong>&lt;XMIN,XMAX&gt;</strong> and <strong>--ylim</strong> <strong>&lt;YMIN,YMAX&gt;</strong>. The output size of the image may be set using <strong>--size</strong> <strong>&lt;WIDTH,HEIGHT&gt;</strong>.</p>
+<h2 id="mpl_tripinfos_twoagainstpy">mpl_tripinfos_twoAgainst.py<a class="headerlink" href="#mpl_tripinfos_twoagainstpy" title="Permanent link">&para;</a></h2>
+<p>Reads two tripinfos files (mandatory options <strong>--tripinfos1</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> and <strong>--tripinfos2</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>, or, for short <strong>-1</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> and <strong>-2</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>). Extracts the value described by <strong>--value</strong> (default: <em>duration</em>). Plots the values of tripinfos2 over the according (same vehicle) values from tripinfos1.</p>
+<p>Either shows the plot (when <strong>--show</strong> is set) or saves it into a file (when <strong>--output</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> is set).</p>
+<p>You can format the axes by using <strong>--xticks</strong> <strong>&lt;XMIN,XMAX,XSTEP,FONTSIZE&gt;</strong> and <strong>--yticks</strong> <strong>&lt;YMIN,YMAX,YSTEP,FONTSIZE&gt;</strong> and set theit limits using <strong>--xlim</strong> <strong>&lt;XMIN,XMAX&gt;</strong> and <strong>--ylim</strong> <strong>&lt;YMIN,YMAX&gt;</strong>. The output size of the image may be set using <strong>--size</strong> <strong>&lt;WIDTH,HEIGHT&gt;</strong>.</p>
+<h2 id="mpl_dump_timelinepy">mpl_dump_timeline.py<a class="headerlink" href="#mpl_dump_timelinepy" title="Permanent link">&para;</a></h2>
+<p>Reads a value (given as <strong>--value</strong> <strong>&lt;VALUE&gt;</strong>, default speed) for edges defined via <strong>--edges</strong> <strong>&lt;EDGEID&gt;[,&lt;EDGEID&gt;]*</strong> from the dumps defined via <strong>--dumps</strong> <strong>&lt;DUMP&gt;[,&lt;DUMP&gt;]*</strong>. Plots them as time lines, using the colors defined via <strong>--colors</strong> <strong>&lt;MPL_COLOR&gt;[,&lt;MPLCOLOR&gt;]*</strong>. Please note that the number of colors must be equal to number of edges * number of dumps.</p>
+<p>Either shows the plot (when <strong>--show</strong> is set) or saves it into a file (when <strong>--output</strong> <strong>&lt;FILENAME&gt;</strong> is set).</p>
+<p>You can format the axes by using <strong>--xticks</strong> <strong>&lt;XMIN,XMAX,XSTEP,FONTSIZE&gt;</strong> and <strong>--yticks</strong> <strong>&lt;YMIN,YMAX,YSTEP,FONTSIZE&gt;</strong> and set theit limits using <strong>--xlim</strong> <strong>&lt;XMIN,XMAX&gt;</strong> and <strong>--ylim</strong> <strong>&lt;YMIN,YMAX&gt;</strong>. The output size of the image may be set using <strong>--size</strong> <strong>&lt;WIDTH,HEIGHT&gt;</strong>.</p>
+<h2 id="mpl_dump_onnetpy">mpl_dump_onNet.py<a class="headerlink" href="#mpl_dump_onnetpy" title="Permanent link">&para;</a></h2>
+<p>Reads a network (defined using <strong>--net-file</strong> <strong>&lt;NET&gt;</strong> or <strong>-n</strong> <strong>&lt;NET&gt;</strong>) and an edge-dump file (<strong>--dump</strong> <strong>&lt;DUMPFILE&gt;</strong> or <strong>-d</strong> <strong>&lt;DUMP_FILE&gt;</strong>). <strong>Plots the network using the geometries read from &lt;NET&gt;. Both the width and the colors used for each edge are determined using --value &lt;WIDTHVALUE&gt;,&lt;COLORVALUE&gt; where both &lt;WIDTHVALUE&gt; and &lt;COLORVALUE&gt; are attributes within the dump-file that exist for each edge.</strong></p>
+<p>You can change the used color map by setting <strong>--color-map</strong> <strong>&lt;DEFINITION&gt;</strong>. &lt;DEFINITION&gt; is made of a sorted list of values (between 0 and 1) and assigned colors. This means that the default 0:#ff0000,.5:#ffff00,1:#00ff00 let streets with low value for &lt;COLORVALUE&gt; appear red, for those in the middle yellow and for those with a high value green. For values between the given values, the color is determined using linear interpolation. Please note that only lowercase hexadecimal characters may be used.</p>
+<p>Either shows the plot (when <strong>--show</strong> is set) or saves it into a file (when <strong>--output</strong> <strong>&lt;FILENAME&gt;</strong> is set).</p>
+<p><strong>--join</strong> sums up the values found for each edge and divides the result by the number of these values. If join is not set and <strong>--output</strong> is given, one should choose an output name which looks as following: &lt;NAME&gt;<strong>'%05d.png. The %05d will be replaced by the current time step written.</strong></p>
+<p>If you have generated a set of images by not "joining" (aggregating) the data, you can convert the obtained pictures into an animated gif using ImageMagick and the following command:</p>
+<pre><code>convert -delay 20 *.png -loop 0 animation.gif
+</code></pre>
+<p>(loop 0 means that the animation repeats from begin after the end)</p>
+<p>You can format the axes by using <strong>--xticks</strong> <strong>&lt;XMIN,XMAX,XSTEP,FONTSIZE&gt;</strong> and <strong>--yticks</strong> <strong>&lt;YMIN,YMAX,YSTEP,FONTSIZE&gt;</strong> and set theit limits using <strong>--xlim</strong> <strong>&lt;XMIN,XMAX&gt;</strong> and <strong>--ylim</strong> <strong>&lt;YMIN,YMAX&gt;</strong>. The output size of the image may be set using <strong>--size</strong> <strong>&lt;WIDTH,HEIGHT&gt;</strong>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1020 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TraCI/Interfacing_TraCI_from_Python/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Interfacing TraCI from Python - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#importing-traci-in-a-script" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interfacing TraCI from Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importing-traci-in-a-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      importing traci in a script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscriptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Subscriptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-subscription-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Subscription Filters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-steplistener" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a StepListener
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-parallel-simulations-from-the-same-traci-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlling parallel simulations from the same TraCI script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-the-same-simulation-from-multiple-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlling the same simulation from multiple clients
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrent-access-to-the-same-traci-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrent access to the same TraCI connection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pitfalls-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfalls and Solutions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pitfalls and Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determine-the-traci-library-being-loaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determine the traci library being loaded
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-a-traci-session-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging a TraCI session on Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-log-of-all-traci-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating a log of all traci commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determine-why-the-traci-client-cannot-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determine why the TraCI client cannot connect
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-a-simulation-until-all-vehicles-have-arrived" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run a simulation until all vehicles have arrived
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-trips-incomplete-routes-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add trips (incomplete routes) dynamically
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinate transformations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-the-timeloss-for-all-vehicles-currently-in-the-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve the timeLoss for all vehicles currently in the network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Interfacing TraCI from Python</h1>
+
+<p>The <a href="../#traci_commands">TraCI</a> commands are split into the
+domains busstop, calibrator, chargingstation, edge, gui, inductionloop, junction, lane,
+lanearea, meandata, multientryexit, overheadwire, parkingarea, person, poi, polygon,
+rerouter, route, routeprobe, simulation, trafficlight, variablespeedsign, vehicle, and vehicletype,
+vehicle, which correspond to individual modules. For a detailed list of
+available functions see the <a href="https://sumo.dlr.de/pydoc/traci.html">pydoc generated documentation</a>. The source code
+can be found at
+<a href="https://github.com/eclipse-sumo/sumo/tree/main/tools/traci">[1]</a>.</p>
+<p>Please note that if performance is an issue and you don't a need GUI, it is almost always better
+to use <a href="../../Libsumo/">libsumo</a> instead of traci, which has the same API.</p>
+<h2 id="importing-traci-in-a-script">importing <strong>traci</strong> in a script<a class="headerlink" href="#importing-traci-in-a-script" title="Permanent link">&para;</a></h2>
+<p>To use the library, you can install it using <code>pip install traci</code> or add the <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools directory
+to your Python load path. This is typically done with a stanza like this:</p>
+<pre><code class="language-python">import os
+import sys
+if 'SUMO_HOME' in os.environ:
+    sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
+import traci
+</code></pre>
+<p>This assumes that the <a href="../../Basics/Basic_Computer_Skills/#sumo_home">environment variable
+<strong>SUMO_HOME</strong></a>
+is set before running the script. Alternatively, you can declare the
+path to <em>sumo/tools</em> directly as in the line</p>
+<pre><code class="language-python">sys.path.append(os.path.join('c:', os.sep, 'whatever', 'path', 'to', 'sumo', 'tools'))
+</code></pre>
+<p>If you decide to switch to libsumo at a later stage or want to be flexible here,
+you can replace the import line later by:</p>
+<pre><code class="language-python">import libsumo as traci
+</code></pre>
+<h2 id="first-steps">First Steps<a class="headerlink" href="#first-steps" title="Permanent link">&para;</a></h2>
+<p>In general it is very easy to interface with SUMO from Python (the
+following example is a modification of
+<a href="../../Tutorials/TraCI4Traffic_Lights/">tutorial/traci_tls</a>):</p>
+<p>First you compose the command line to start either
+<a href="../../sumo/">sumo</a> or <a href="../../sumo-gui/">sumo-gui</a> (leaving out
+the option  which was needed before 0.28.0):</p>
+<pre><code class="language-python">sumoBinary = &quot;/path/to/sumo-gui&quot;
+sumoCmd = [sumoBinary, &quot;-c&quot;, &quot;yourConfiguration.sumocfg&quot;]
+</code></pre>
+<p>Then you start the simulation and connect to it with your script:</p>
+<pre><code class="language-python">import traci
+traci.start(sumoCmd)
+step = 0
+while step &lt; 1000:
+    traci.simulationStep()
+    if traci.inductionloop.getLastStepVehicleNumber(&quot;0&quot;) &gt; 0:
+        traci.trafficlight.setRedYellowGreenState(&quot;0&quot;, &quot;GrGr&quot;)
+    step += 1
+
+traci.close()
+</code></pre>
+<p>After connecting to the simulation, you can emit various commands and
+execute simulation steps until you want to finish by closing the
+connection. By default, the close command will wait until the sumo
+process really finishes. You can disable this by calling:</p>
+<pre><code class="language-python">traci.close(False)
+</code></pre>
+<h2 id="subscriptions">Subscriptions<a class="headerlink" href="#subscriptions" title="Permanent link">&para;</a></h2>
+<p>Subscriptions can be thought of as a batch mode for retrieving
+variables. Instead of asking for the same variables over and over again,
+you can retrieve the values of interest automatically after each time
+step. TraCI subscriptions are handled on a per module basis. That is you
+can ask the module for the result of all current subscriptions after
+each time step. In order to subscribe for variables you need to know
+their variable ids which can be looked up in the traci/constants.py
+file.</p>
+<pre><code class="language-python">import traci
+import traci.constants as tc
+
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;my.sumocfg&quot;])
+traci.vehicle.subscribe(vehID, (tc.VAR_ROAD_ID, tc.VAR_LANEPOSITION))
+print(traci.vehicle.getSubscriptionResults(vehID))
+for step in range(3):
+    print(&quot;step&quot;, step)
+    traci.simulationStep()
+    print(traci.vehicle.getSubscriptionResults(vehID))
+traci.close()
+</code></pre>
+<p>The values retrieved are always the ones from the last time step, it is
+not possible to retrieve older values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before version 1.18.0 <code>traci.simulationStep()</code> returned all subscription results, now it returns None.
+If you need the old behavior, use <code>traci.simulationStepLegacy()</code>.</p>
+</div>
+<h2 id="context-subscriptions">Context Subscriptions<a class="headerlink" href="#context-subscriptions" title="Permanent link">&para;</a></h2>
+<p>Context subscriptions work like subscriptions in that they retrieve a
+list of variables automatically for every simulation stop. However, the
+do so by setting a reference object and a range and then retrieving
+variables for all objects of a given type within range of the reference
+object.</p>
+<p>TraCI context subscriptions are handled on a per module basis. That is
+you can ask the module for the result of all current subscriptions after
+each time step. In order to subscribe for variables you need to the
+domain id of the objects that shall be retrieved and the variable ids
+which can be looked up in the traci/constants.py file. The domain id
+always has the form CMD_GET_&lt;DOMAIN&gt;_VARIABLE. The following code
+retrieves all vehicle speeds and waiting times within range (42m) of a
+junction (the vehicle ids are retrieved implicitly).</p>
+<pre><code class="language-python">import traci
+import traci.constants as tc
+
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;my.sumocfg&quot;])
+traci.junction.subscribeContext(junctionID, tc.CMD_GET_VEHICLE_VARIABLE, 42, [tc.VAR_SPEED, tc.VAR_WAITING_TIME])
+print(traci.junction.getContextSubscriptionResults(junctionID))
+for step in range(3):
+    print(&quot;step&quot;, step)
+    traci.simulationStep()
+    print(traci.junction.getContextSubscriptionResults(junctionID))
+traci.close()
+</code></pre>
+<p>The values retrieved are always the ones from the last time step, it is
+not possible to retrieve older values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before version 1.18.0 <code>traci.junction.getAllContextSubscriptionResults</code> would not contain
+the ids of the junctions which did not have objects in their context.
+Now it returns their id mapped to an empty dictionary (similar to libsumo). This holds for the other domains as well.</p>
+</div>
+<h2 id="context-subscription-filters">Context Subscription Filters<a class="headerlink" href="#context-subscription-filters" title="Permanent link">&para;</a></h2>
+<p>For vehicle-to-vehicle context subscriptions (i.e., context
+subscriptions, whose reference object is a vehicle and whose requested
+context objects are vehicles as well) it is possible to request
+additional filters to be applied already on the server side. The general
+procedure is to equip a requested context subscription with the filter
+directly after the call to <code>subscribeContext()</code> by a successive call to
+<code>addSubscriptionFilter&lt;FILTER_ID&gt;()</code> as for instance in the following
+snippet:</p>
+<pre><code class="language-python">traci.vehicle.subscribeContext(&quot;ego&quot;, tc.CMD_GET_VEHICLE_VARIABLE, 0.0, [tc.VAR_SPEED])
+traci.vehicle.addSubscriptionFilterLanes(lanes, noOpposite=True, downstreamDist=100, upstreamDist=50)
+</code></pre>
+<p>The first line requests a context subscription for the speed of vehicles
+in the neighborhood of the reference vehicle with the ID <code>"ego"</code>. The
+range of the context subscription (which refers to the radial context
+region of the usual subscription mechanism) can be set equal to <code>0.0</code>,
+since it is be overridden by the selective values of <code>downstreamDist</code>
+and <code>upstreamDist</code>, respectively, given to the call of
+<code>addSubscriptionFilterLanes()</code> in the second line. The call to
+<code>addSubscriptionFilter&lt;FILTER_NAME&gt;()</code> automatically takes effect on
+the last issued context subscription, which has to be of the
+vehicle-to-vehicle form for a successful application.</p>
+<p>The following filter types are available:</p>
+<ul>
+<li>Lanes: Return surrounding vehicles on lanes specified relatively to
+  the reference vehicle</li>
+<li>CFManeuver: Return leader and follower on the reference vehicle's
+  lane</li>
+<li>LCManeuver: Return leader and follower on the reference vehicle's
+  lane and neighboring lane(s)</li>
+<li>Turn: Return conflicting vehicles on upcoming junctions along the
+  vehicle's route</li>
+<li>VType: Only return vehicles of the specified vTypes</li>
+<li>VClass: Only return vehicles of the specified vClasses</li>
+</ul>
+<p>See the <a href="https://sumo.dlr.de/pydoc/traci._vehicle.html#VehicleDomain-addSubscriptionFilterCFManeuver">pydoc
+documentation</a>
+for detailed specifications.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The filter only takes effect in subsequent simulation steps. The vehicle values returned directly after issuing the subscription are not affected.</p>
+</div>
+<h2 id="adding-a-steplistener">Adding a StepListener<a class="headerlink" href="#adding-a-steplistener" title="Permanent link">&para;</a></h2>
+<p>Often a function needs to be called each time when
+traci.simulationStep() is called, to let this happen automatically
+(always <em>after</em> each call to simulationStep()) it is possible to add a
+StepListener object 'listener' (more precisely an instance of a subclass
+of traci.StepListener) i.e.</p>
+<pre><code class="language-python">class ExampleListener(traci.StepListener):
+    def step(self, t):
+        # do something after every call to simulationStep
+        print(&quot;ExampleListener called with parameter %s.&quot; % t)
+        # indicate that the step listener should stay active in the next step
+        return True
+
+listener = ExampleListener()
+traci.addStepListener(listener)
+</code></pre>
+<p>Please note that the listener is not activated for every simulation step
+but for every call to simulationStep (which may perform multiple steps up to the given time <em>t</em>).
+Furthermore the parameter <em>t</em> is not the current simulation time but exactly
+the (optional) parameter passed to the simulationStep call (which is 0 by default).</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>A TraCI StepListener cannot be used in the case that one TraCI client controls several SUMO-instances.</p>
+</div>
+<h2 id="controlling-parallel-simulations-from-the-same-traci-script">Controlling parallel simulations from the same TraCI script<a class="headerlink" href="#controlling-parallel-simulations-from-the-same-traci-script" title="Permanent link">&para;</a></h2>
+<p>The TraCI python library can be used to control multiple simulations at
+the same time with a single script. The function <em>traci.start()</em> has an
+optional label argument which allows you to call it multiple times with
+different simulation instances and labels. The function <em>traci.switch()</em>
+can then be used to switch to any of the initialized labels:</p>
+<pre><code class="language-python">traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;sim1.sumocfg&quot;], label=&quot;sim1&quot;)
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;sim2.sumocfg&quot;], label=&quot;sim2&quot;)
+traci.switch(&quot;sim1&quot;)
+traci.simulationStep() # run 1 step for sim1
+traci.switch(&quot;sim2&quot;)
+traci.simulationStep() # run 1 step for sim2
+traci.switch(&quot;sim1&quot;)
+traci.close()
+traci.switch(&quot;sim2&quot;)
+traci.close()
+</code></pre>
+<p>If you prefer a more object oriented approach you can also use
+connection objects to communicate with the simulation. They have the
+same interface as the static <em>traci.</em> calls but you will still need to
+start the simulation manually for them:</p>
+<pre><code class="language-python">traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;sim1.sumocfg&quot;], label=&quot;sim1&quot;)
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;sim2.sumocfg&quot;], label=&quot;sim2&quot;)
+conn1 = traci.getConnection(&quot;sim1&quot;)
+conn2 = traci.getConnection(&quot;sim2&quot;)
+conn1.simulationStep() # run 1 step for sim1
+conn2.simulationStep() # run 1 step for sim2
+</code></pre>
+<h2 id="controlling-the-same-simulation-from-multiple-clients">Controlling the same simulation from multiple clients<a class="headerlink" href="#controlling-the-same-simulation-from-multiple-clients" title="Permanent link">&para;</a></h2>
+<p>To connect with multiple clients, the number of clients must be known in
+advance and specified with sumo option <strong>--num-clients</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a>. Also, the connection port must
+be known to all clients. After deciding on a port it can be made
+available to the clients via arguments or configuration files. A free
+port can be obtained by</p>
+<pre><code class="language-python">from sumolib.miscutils import getFreeSocketPort
+port = sumolib.miscutils.getFreeSocketPort()
+</code></pre>
+<p>One client may use method <em>traci.start()</em> to start the simulation and
+connect to it at the same time while the other client only needs to
+connect. After establishing client order, each client must continuously
+call <em>simulationStep</em> to allow the simulation to advance:</p>
+<pre><code class="language-python">#client1
+# PORT = int(sys.argv[1]) # example
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;sim.sumocfg&quot;, &quot;--num-clients&quot;, &quot;2&quot;], port=PORT)
+traci.setOrder(1) # number can be anything
+while traci.simulation.getMinExpectedNumber() &gt; 0:
+    traci.simulationStep()
+    # more traci commands
+traci.close()
+</code></pre>
+<pre><code class="language-python"># client2
+# PORT = int(sys.argv[1]) # example
+traci.init(PORT)
+traci.setOrder(2) # number can be anything as long as each client gets its own number
+while traci.simulation.getMinExpectedNumber() &gt; 0:
+    traci.simulationStep()
+    # more traci commands
+traci.close()
+</code></pre>
+<h2 id="concurrent-access-to-the-same-traci-connection">Concurrent access to the same TraCI connection<a class="headerlink" href="#concurrent-access-to-the-same-traci-connection" title="Permanent link">&para;</a></h2>
+<p>Before SUMO 1.17.0 the pure Python client as well as the libtraci implementation
+will probably crash if you try to access the same connection from different
+threads.</p>
+<p>Currently there are some measures implemented which at least prevent the direct
+conflicts when accessing the socket. It is however still encouraged to use the
+multi-client approach from the previous section. It is the only way to ensure
+that commands are sent in the expected order. If there is only one thread issuing
+the simulationStep command and the others only query
+the simulation also multi threaded access should work.</p>
+<h2 id="additional-functions">Additional Functions<a class="headerlink" href="#additional-functions" title="Permanent link">&para;</a></h2>
+<p>When using TraCI there are some common tasks which are not covered by
+the traci library such as</p>
+<ul>
+<li>Analyzing the road network</li>
+<li>Parsing simulation outputs</li>
+</ul>
+<p>For this functionality it is recommended to use
+<a href="../../Tools/Sumolib/">Tools/Sumolib</a></p>
+<h2 id="pitfalls-and-solutions">Pitfalls and Solutions<a class="headerlink" href="#pitfalls-and-solutions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Note that strings, if exchanged, had to be plain ASCII before 1.18.0.
+  Currently UTF-8 should be possible for all the strings.</li>
+<li>If you start sumo from within your python script using
+  subprocess.Popen, be sure to call wait() on the resulting process
+  object before quitting your script. You might loose output
+  otherwise.</li>
+</ul>
+<h3 id="determine-the-traci-library-being-loaded">Determine the traci library being loaded<a class="headerlink" href="#determine-the-traci-library-being-loaded" title="Permanent link">&para;</a></h3>
+<p>When working with different sumo versions it may happen that the call <code>import traci</code> loads the wrong library.
+The easiest way to debug this is to add the following lines after the import</p>
+<pre><code class="language-python">import traci
+print(&quot;LOADPATH:&quot;, '\n'.join(sys.path))
+print(&quot;TRACIPATH:&quot;, traci.__file__)
+sys.exit()
+</code></pre>
+<p>Make sure that the TRACIPATH corresponds to the sumo version that you wish to use.
+If it does not, then the order of directories in LOADPATH (sys.path) must be changed
+or the SUMO installation must be removed from any directories that come before the wanted directory.</p>
+<h3 id="debugging-a-traci-session-on-linux">Debugging a TraCI session on Linux<a class="headerlink" href="#debugging-a-traci-session-on-linux" title="Permanent link">&para;</a></h3>
+<p>Sometimes SUMO may crash while running a simulation with TraCI. The
+below steps make it simple to run sumo with traci in a debugger:</p>
+<p>1) Add the option <em>--save-configuration</em> to your traci script:</p>
+<pre><code class="language-python">traci.start([sumoBinary, '-c', 'run.sumocfg', '--save-configuration', 'debug.sumocfg'])
+</code></pre>
+<p>2) Run your traci script. Instead of starting sumo it will just write
+the configuration with the chosen port but it will still try to connect
+repeatedly.</p>
+<p>3) Run</p>
+<pre><code>gdb --args sumoD -c debug.sumocfg
+</code></pre>
+<p>(where sumoD is sumo <a href="../../Installing/Linux_Build/#building_the_sumo_binaries_with_cmake">compiled in debug
+mode</a>)</p>
+<h3 id="generating-a-log-of-all-traci-commands">Generating a log of all traci commands<a class="headerlink" href="#generating-a-log-of-all-traci-commands" title="Permanent link">&para;</a></h3>
+<p>To share a traci scenario (i.e. in a bug report) it may be useful to separate the logic of the traci script from the actual commands.
+For this, the function <code>traci.start</code> accepts the optional arguments <code>traceFile</code> and <code>traceGetters</code>.
+When calling <code>traci.start([&lt;commands&gt;], traceFile=&lt;LOG_FILE_PATH&gt;)</code> all traci commands that were sent to sumo will be written to the given LOG_FILE_PATH.
+This allows re-running the scenario without the original runner script.</p>
+<p>When option <code>traceGetters=False</code> is set, only functions that change the simulation state are included in the log file. Functions that retrieve simulation data are technically not needed to reproduce a scenario but it may be useful to include them if the data retrieval functions are themselves the cause of a bug.</p>
+<p>When option <code>traceGetters="print"</code> is set, all getter functions will print themselves and their results to standard output when running the log as a python program.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Avoid running the simulation with option <strong>--random</strong> since this will most likely prevent your traceFile from being repeated</p>
+</div>
+<h3 id="determine-why-the-traci-client-cannot-connect">Determine why the TraCI client cannot connect<a class="headerlink" href="#determine-why-the-traci-client-cannot-connect" title="Permanent link">&para;</a></h3>
+<p>Possibly, the arguments given to <code>traci.start</code> generated an error when launching SUMO. This will manifest as</p>
+<p><code>traci.exceptions.FatalTraCIError: Could not connect.</code></p>
+<p>To diagnose the problem, add options for writing a log file <code>traci.start</code> (i.e. <code>traci.start(['sumo', '-c', 'example.sumocfg', '--log', 'logfile.txt'])</code>)
+After the script fails to start, look into the written logfile and fix the error reported therein.</p>
+<h2 id="usage-examples">Usage Examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h2>
+<h3 id="run-a-simulation-until-all-vehicles-have-arrived">Run a simulation until all vehicles have arrived<a class="headerlink" href="#run-a-simulation-until-all-vehicles-have-arrived" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">while traci.simulation.getMinExpectedNumber() &gt; 0:
+    traci.simulationStep()
+</code></pre>
+<h3 id="add-trips-incomplete-routes-dynamically">Add trips (incomplete routes) dynamically<a class="headerlink" href="#add-trips-incomplete-routes-dynamically" title="Permanent link">&para;</a></h3>
+<p>Define a route that consists of the start and destination edge:</p>
+<pre><code class="language-python">traci.route.add(&quot;trip&quot;, [&quot;startEdge&quot;, &quot;endEdge&quot;])
+</code></pre>
+<p>Then add the vehicle with that route</p>
+<pre><code class="language-python">traci.vehicle.add(&quot;newVeh&quot;, &quot;trip&quot;, typeID=&quot;reroutingType&quot;)
+</code></pre>
+<p>This will cause the vehicle to compute a new route from startEdge to
+endEdge according to the estimated travel times in the network at the
+time of departure. For details of this mechanism see
+<a href="../../Demand/Automatic_Routing/">Demand/Automatic_Routing</a>.</p>
+<h3 id="coordinate-transformations">Coordinate transformations<a class="headerlink" href="#coordinate-transformations" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">x, y = traci.vehicle.getPosition(vehID)
+lon, lat = traci.simulation.convertGeo(x, y)
+x2, y2 = traci.simulation.convertGeo(lon, lat, fromGeo=True)
+</code></pre>
+<pre><code class="language-python">edgeID, lanePosition, laneIndex = traci.simulation.convertRoad(x3, y3)
+edgeID, lanePosition, laneIndex = traci.simulation.convertRoad(lon2, lat2, True)
+</code></pre>
+<h3 id="retrieve-the-timeloss-for-all-vehicles-currently-in-the-network">Retrieve the timeLoss for all vehicles currently in the network<a class="headerlink" href="#retrieve-the-timeloss-for-all-vehicles-currently-in-the-network" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import traci
+import traci.constants as tc
+traci.start([&quot;sumo&quot;, &quot;-c&quot;, &quot;my.sumocfg&quot;])
+# pick an arbitrary junction
+junctionID = traci.junction.getIDList()[0]
+# subscribe around that junction with a sufficiently large
+# radius to retrieve the speeds of all vehicles in every step
+traci.junction.subscribeContext(
+    junctionID, tc.CMD_GET_VEHICLE_VARIABLE, 1000000,
+    [tc.VAR_SPEED, tc.VAR_ALLOWED_SPEED]
+)
+stepLength = traci.simulation.getDeltaT()
+while traci.simulation.getMinExpectedNumber() &gt; 0:
+    traci.simulationStep()
+    scResults = traci.junction.getContextSubscriptionResults(junctionID)
+    halting = 0
+    if scResults:
+        relSpeeds = [d[tc.VAR_SPEED] / d[tc.VAR_ALLOWED_SPEED] for d in scResults.values()]
+        # compute values corresponding to summary-output
+        running = len(relSpeeds)
+        halting = len([1 for d in scResults.values() if d[tc.VAR_SPEED] &lt; 0.1])
+        meanSpeedRelative = sum(relSpeeds) / running
+        timeLoss = (1 - meanSpeedRelative) * running * stepLength
+    print(traci.simulation.getTime(), timeLoss, halting)
+traci.close()
+</code></pre>
+<h3 id="handling-exceptions">Handling Exceptions<a class="headerlink" href="#handling-exceptions" title="Permanent link">&para;</a></h3>
+<p>Sometimes commands raise an (recoverable) exception to indicate an error (unknown id, route not found etc.). These exceptions
+can be handled by your code as follows:</p>
+<pre><code class="language-python">try:
+    pos = traci.vehicle.getPosition(vehID)
+except traci.TraCIException:
+    pass # or do something smarter
+</code></pre>
+<h2 id="further-resources">Further Resources<a class="headerlink" href="#further-resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The module <a href="../../Simpla/">Simpla</a> provides a library for
+  platooning functions that can be integrated with user client
+  scripts.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

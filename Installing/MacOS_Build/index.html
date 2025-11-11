@@ -1,0 +1,694 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Installing/MacOS_Build/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>macOS Build - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-homebrew-approach" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              macOS Build
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-the-fox-library-on-macos-catalina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting the fox library on macOS Catalina
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-cloning-and-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Cloning and Building
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traci-as-a-service-traas" class="md-nav__link">
+    <span class="md-ellipsis">
+      TraCI as a Service (TraaS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-and-unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples and Unit Tests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-tests-with-texttest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration Tests with TextTest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-for-libsumo-on-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python for libsumo on macOS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>This document describes how to install and build SUMO on macOS from its source code. If you don't want to <strong>extend</strong> SUMO, but just <strong>use</strong> it, you may want to simply download the installer <a href="../../Downloads/#macos">here</a> instead.</p>
+<p>You may use one of two ways to build and install SUMO on macOS: <strong>Homebrew</strong> (recommended) and <strong>MacPorts</strong>.</p>
+<h1 id="the-homebrew-approach">The Homebrew Approach<a class="headerlink" href="#the-homebrew-approach" title="Permanent link">&para;</a></h1>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>The installation requires <a href="https://brew.sh">Homebrew</a>. If you did not already install homebrew, do so by invoking</p>
+<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
+</code></pre>
+<p>and make sure your homebrew db is up-to-date.</p>
+<pre><code>brew update
+</code></pre>
+<p>In order to compile the C++ source code files of SUMO, a C++ compiler is needed. On macOS the default C/C++ compiler is Clang. If you want to install the Clang compilers, please use the following command:</p>
+<pre><code>xcode-select --install
+</code></pre>
+<p>After the successful installation, you can test Clang with the following command:</p>
+<pre><code>clang --version
+</code></pre>
+<p>SUMO uses <a href="https://cmake.org/">CMake</a> to manage the software compilation process. You can install CMake with homebrew easily.</p>
+<pre><code>brew install cmake
+</code></pre>
+<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<p>In order to compile and execute SUMO, there are several libraries that need to be installed. You can install these dependencies with homebrew with the following commands:</p>
+<pre><code>brew install --cask xquartz
+brew install xerces-c fox proj gdal gl2ps
+</code></pre>
+<p>Depending on the SUMO features you want to enable during compilation, you may want to additional libraries. Most libraries are available in homebrew and should be recognized with CMake. Here is what you need to prepare some more features such as libsumo and the testing environment:</p>
+<pre><code>brew install python ccache googletest fmt swig eigen pygobject3 gtk+3 adwaita-icon-theme
+python3 -m pip install texttest
+</code></pre>
+<p>You can optionally include OSG (OpenSceneGraph) to enable the experimental <a href="../../sumo-gui/#3d_visualization">3D-Visualization</a>:</p>
+<pre><code>brew install open-scene-graph
+</code></pre>
+<h3 id="troubleshooting-the-fox-library-on-macos-catalina">Troubleshooting the fox library on macOS Catalina<a class="headerlink" href="#troubleshooting-the-fox-library-on-macos-catalina" title="Permanent link">&para;</a></h3>
+<p>If you encounter segmentation faults on macOS Catalina, please follow the following steps (see <a href="https://github.com/eclipse-sumo/sumo/issues/6242#issuecomment-553458710">Issue 6242</a>).</p>
+<ol>
+<li>
+<p>Uninstall Catalina bottle of fox:
+<code>brew uninstall --ignore-dependencies fox</code></p>
+</li>
+<li>
+<p>Edit brew Formula of fox:
+<code>brew edit fox</code></p>
+</li>
+<li>
+<p>Comment out or delete the following line:
+<code>sha256 "c6697be294c9a0458580564d59f8db32791beb5e67a05a6246e0b969ffc068bc" =&gt; :catalina</code></p>
+</li>
+<li>
+<p>Install Mojave bottle of fox:
+<code>brew install fox</code></p>
+</li>
+</ol>
+<h2 id="git-cloning-and-building">Git Cloning and Building<a class="headerlink" href="#git-cloning-and-building" title="Permanent link">&para;</a></h2>
+<p>The source code of SUMO can be cloned with the following command to the directory <code>./sumo</code>. The environment variable <code>SUMO_HOME</code> should also be set to this directory.</p>
+<pre><code>git clone --recursive https://github.com/eclipse-sumo/sumo
+export SUMO_HOME=&quot;$PWD/sumo&quot;
+</code></pre>
+<p>SUMO is usually build as an out-of-source build. You need to create a directory for your build and invoke CMake to trigger the configuration from there.</p>
+<pre><code>cd $SUMO_HOME
+cmake -B build .
+</code></pre>
+<p>The output of the CMake configuration process will show you which libraries have been found on your system and which SUMO features have been enabled accordingly.
+The build process can now be triggered with the following command</p>
+<pre><code>cd $SUMO_HOME
+cmake --build build --parallel $(sysctl -n hw.ncpu)
+</code></pre>
+<p>You may want to also run <code>make install</code> or add <code>$SUMO_HOME/bin</code> to the <code>PATH</code>, in order to easily start <code>sumo</code> or any other application from the command line.</p>
+<h2 id="optional-steps">Optional Steps<a class="headerlink" href="#optional-steps" title="Permanent link">&para;</a></h2>
+<h3 id="traci-as-a-service-traas">TraCI as a Service (TraaS)<a class="headerlink" href="#traci-as-a-service-traas" title="Permanent link">&para;</a></h3>
+<p>TraaS is a java library for working with TraCI. Building TraaS can be triggered with the following commands.</p>
+<pre><code>cd $SUMO_HOME
+cmake --build build --target traas --parallel
+</code></pre>
+<h3 id="examples-and-unit-tests">Examples and Unit Tests<a class="headerlink" href="#examples-and-unit-tests" title="Permanent link">&para;</a></h3>
+<p>SUMO provides unit tests to be used with Google's Testing and Mocking Framework - Googletest. In order to execute these tests you need to install Googletest first.</p>
+<pre><code>brew install googletest
+</code></pre>
+<p>The creation of the examples and the execution of the tests can be triggered as follows</p>
+<pre><code>cd $SUMO_HOME
+CTEST_OUTPUT_ON_FAILURE=1 cmake --build build --target examples test
+</code></pre>
+<p>More information is provided <a href="../../Developer/Unit_Tests/">here</a>.</p>
+<h3 id="integration-tests-with-texttest">Integration Tests with TextTest<a class="headerlink" href="#integration-tests-with-texttest" title="Permanent link">&para;</a></h3>
+<p>SUMO uses an application called TextTest to manage and execute and extensive set of integration tests. If you plan to extend SUMO with new features, we would like to encourage you to also add tests for your code to the SUMO testsuite and to make sure that existing functionality is not affected.</p>
+<p>The installation of TextTest on macOS is documented <a href="../../Developer/Tests/">here</a>.</p>
+<h3 id="code-editor">Code Editor<a class="headerlink" href="#code-editor" title="Permanent link">&para;</a></h3>
+<p>Finally, you may also want to use a code editor or integrated development environment. There is a great variety of suitable tools available. If you are unsure which tool to pick, we would suggest to have a look at <a href="https://code.visualstudio.com/">Visual Studio Code</a> for macOS. The configuration of Visual Studio Code for the CMake setup is documented <a href="../../Developer/VisualStudioCode/">here</a>.</p>
+<h3 id="python-for-libsumo-on-macos">Python for libsumo on macOS<a class="headerlink" href="#python-for-libsumo-on-macos" title="Permanent link">&para;</a></h3>
+<p>There are usually three Python versions available on a mac with brew.
+- Python 2.7 (shipped with macOS) - (<code>/usr/bin/python</code>)
+- Python 3.8.2 (shipped with Xcode) - (<code>/usr/bin/python3</code>)
+- Python 3.8.6 (installed with Brew) - (<code>/usr/local/bin/python3.8</code>)</p>
+<p>If you do not configure anything "special" during <code>cmake</code>, it will find the Python 2.7 installation and use that version of the Python framework for building libsumo. In your cmake output, you will find something like this:</p>
+<pre><code>-- Found PythonInterp: /usr/bin/python (found version &quot;2.7.16&quot;)
+-- Found Python: /usr/bin/python
+...
+-- Found PythonLibs: /usr/lib/libpython2.7.dylib (found version &quot;2.7.16&quot;)
+</code></pre>
+<p>You should be able to just use python 2.7 and import libsumo.</p>
+<pre><code>Python 2.7.16 (default, Jun  5 2020, 22:59:21)
+[GCC 4.2.1 Compatible Apple LLVM 11.0.3 (clang-1103.0.29.20) (-macos10.15-objc- on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import libsumo
+&gt;&gt;&gt;
+</code></pre>
+<p>If you want to use Python <strong>3.x</strong>, we recommend to use the Python version shipped with Brew (e.g. <code>brew install python@3.8</code>). In order to use this Python version, you have to tell CMake to use this particular Python interpreter:</p>
+<pre><code>cd $SUMO_HOME
+mkdir -p out/build-python3.8
+cd out/build-python3.8
+cmake -DPYTHON_EXECUTABLE=/usr/local/bin/python3.8 ../..
+</code></pre>
+<p>In the CMake configuration output, you should see lines like the following:</p>
+<pre><code>-- Found PythonInterp: /usr/local/bin/python3.8 (found version &quot;3.8.6&quot;)
+...
+-- Found PythonLibs: /usr/local/Frameworks/Python.framework/Versions/3.8/lib/libpython3.8.dylib (found version &quot;3.8.6&quot;)
+</code></pre>
+<p>After building, you should be able to load <code>libsumo</code></p>
+<pre><code>$ python3.8
+Python 3.8.6 (default, Oct 27 2020, 08:57:44)
+[Clang 12.0.0 (clang-1200.0.32.21)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import libsumo
+&gt;&gt;&gt;
+</code></pre>
+<p>If you do not want to use Python 2.7 (from macOS) or Python 3 (from Brew), but instead want to use Python 3.x from Xcode, you will need to tell <code>cmake</code> where to find the Python installation of the command line tools of Xcode. The following path settings work on macOS Catalina with the command line tools of Xcode 12.1.</p>
+<pre><code>cmake \
+-DPYTHON_EXECUTABLE=/usr/bin/python3 \
+-DPYTHON_INCLUDE_DIR:PATH=/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Headers \
+-DPYTHON_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/Current/lib/libpython3.8.dylib \
+../..
+</code></pre>
+<p>After the build, you should be able to load libsumo.</p>
+<pre><code>/usr/bin/python3
+Python 3.8.2 (default, Sep 24 2020, 19:37:08)
+[Clang 12.0.0 (clang-1200.0.32.21)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import libsumo
+&gt;&gt;&gt;
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To build JuPedSim and build SUMO with JuPedSim follow the <a href="../Linux_Build/#how_to_build_jupedsim_and_then_build_sumo_with_jupedsim">instructions for the Linux build</a></p>
+</div>
+<h1 id="the-macports-approach-legacy">The Macports Approach (legacy)<a class="headerlink" href="#the-macports-approach-legacy" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This uses a pre-packaged version of sumo which is convenient but may lag behind the latest official release of SUMO.</p>
+</div>
+<p>You should start by <a href="https://www.macports.org/install.php">installing Macports</a>. Afterwards start a terminal session and run</p>
+<pre><code>sudo port install sumo
+</code></pre>
+<p>While this will install a SUMO version you maybe do not want to use, it will pull in all dependencies you need.</p>
+<p>If you want to build from a repository checkout you should additionally do</p>
+<pre><code>sudo port install automake autoconf
+</code></pre>
+<p>After obtaining the <a href="../Linux_Build/#installing_required_tools_and_libraries">required libraries</a>
+you can follow the build steps of <a href="../Linux_Build/#getting_the_source_code">building under Linux</a>, you
+might want to add another --prefix=/opt/sumo to the configure line.</p>
+<p>If you wish to use clang rather than gcc for compilation do:</p>
+<pre><code>./configure CXX=clang++ CXXFLAGS=&quot;-stdlib=libstdc++&quot;
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

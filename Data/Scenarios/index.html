@@ -1,0 +1,573 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Data/Scenarios/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Scenarios - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#we-need-your-help" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scenarios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="we-need-your-help">We need your Help!<a class="headerlink" href="#we-need-your-help" title="Permanent link">&para;</a></h1>
+<p>Building a scenario is a lot of work. If you have built a SUMO scenario
+you can share (under a sufficiently open license), please
+<a href="../../Contact/">contact us</a>.</p>
+<h1 id="alicante-murcia-highway-scenario">Alicante-Murcia highway scenario<a class="headerlink" href="#alicante-murcia-highway-scenario" title="Permanent link">&para;</a></h1>
+<p>Large-scale and high-accuracy traffic simulation scenario that models 9 full days of traffic over a 97 km freeway section, with mixed traffic (light and heavy vehicles). The simulation scenario has been calibrated using a unique dataset provided by the Spanish road authority and a novel learning-based and iterative traffic demand calibration technique for SUMO.</p>
+<p>More info at: https://github.com/msepulcre/Alicante-Murcia-SUMO-Scenario</p>
+<h1 id="berlin">Berlin<a class="headerlink" href="#berlin" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://github.com/mosaic-addons/best-scenario">Mosaic Berlin Sumo Traffic (BeST) Scenario on GitHub</a></li>
+</ul>
+<h1 id="bologna">Bologna<a class="headerlink" href="#bologna" title="Permanent link">&para;</a></h1>
+<p>A small-scale scenario based on the city of Bologna. The large
+roundabout can be found at 44.494554,11.314393. These scenarios were
+developed as part of the <a href="https://www.ict-itetris.eu">iTETRIS project</a>. A
+<a href="https://elib.dlr.de/89354">publication</a> on these scenarios was presented
+at <a href="https://sumo.dlr.de/docs/Publications.html#SUMO_2014">SUMO
+Conference 2014</a>: L.
+Bieker, D. Krajzewicz, A. Morra, C. Michelacci and F. Cartolano,
+"Traffic simulation for all: a real world traffic scenario from the city
+of Bologna", SUMO2014, p 19-26</p>
+<ul>
+<li><a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/bologna/">Bologna Scenario on GitHub</a></li>
+<li>(Old release) <a href="https://sourceforge.net/projects/sumo/files/traffic_data/scenarios/Bologna_small">Download .zip files from SourceForge</a></li>
+</ul>
+<h1 id="braunschweig">Braunschweig<a class="headerlink" href="#braunschweig" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/brunswick">Brunswick Scenario on GitHub</a></li>
+</ul>
+<h1 id="dublin---irish-motorway-national-road-and-city-centre">Dublin - Irish Motorway, National road and city centre<a class="headerlink" href="#dublin---irish-motorway-national-road-and-city-centre" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://github.com/maxime-gueriau/ITSC2020_CAV_impact">Main Page</a></li>
+<li>Publication: Quantifying the impact of connected and autonomous vehicles on traffic efficiency and safety in mixed traffic" by Maxime Gueriau and Ivana Dusparic, presented at the 23rd IEEE International Conference on Intelligent Transportation Systems (ITSC 2020)</li>
+</ul>
+<h1 id="geneva---digital-twin---geneva-motorway-dt-gm">Geneva - Digital Twin - Geneva Motorway (DT-GM)<a class="headerlink" href="#geneva---digital-twin---geneva-motorway-dt-gm" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://github.com/SiLab-group/DigitalTwin_GenevaMotorway">Repository</a></li>
+</ul>
+<p>Everyone (after registering at ODPMS) can get access to fine-grained (minute resolution) real-time traffic data from traffic counters and use it as input in DT-GM.
+The details of modelling and results will also be publicly available in two papers, which for the moment we only mentioned in the README file since they are under review process. (if need it we can provide you preprint of the paper "Building a Motorway Digital Twin in SUMO: Real-Time Simulation of Continuous Data Stream from Traffic Counters")</p>
+<h1 id="ingolstadt-traffic-scenario">Ingolstadt traffic scenario<a class="headerlink" href="#ingolstadt-traffic-scenario" title="Permanent link">&para;</a></h1>
+<h2 id="intas">InTAS<a class="headerlink" href="#intas" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/silaslobo/InTAS">Main Page</a></li>
+<li><a href="https://www.youtube.com/watch?v=UgPeBxXzDHc">Presentation video</a></li>
+</ul>
+<h2 id="sumo-ingolstadt">SUMO Ingolstadt<a class="headerlink" href="#sumo-ingolstadt" title="Permanent link">&para;</a></h2>
+<p>Created in the SAVe:, SAVeNoW and KIVI research projects
+- <a href="https://github.com/TUM-VT/sumo_ingolstadt">Main Page</a></p>
+<h1 id="luxembourg-sumo-traffic-lust">Luxembourg SUMO Traffic (LuST)<a class="headerlink" href="#luxembourg-sumo-traffic-lust" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://github.com/lcodeca/LuSTScenario">Main Page</a></li>
+<li><a href="https://github.com/lcodeca/LuSTScenario/releases">Releases</a></li>
+<li><a href="https://github.com/lcodeca/LuSTScenario/blob/master/docs/LuSTDocumentation.md">Documentation</a></li>
+<li>Publication: Lara CODECA, Raphael FRANK, Thomas ENGEL. December 2015. Luxembourg SUMO Traffic (LuST) Scenario: 24 Hours of Mobility
+for Vehicular Networking Research in Proceedings of the 7th IEEE
+Vehicular Networking Conference (VNC15).</li>
+</ul>
+<h1 id="monaco-sumo-traffic-most">Monaco SUMO Traffic (MoST)<a class="headerlink" href="#monaco-sumo-traffic-most" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://github.com/lcodeca/MoSTScenario">Main Page</a></li>
+<li><a href="https://github.com/lcodeca/MoSTScenario/releases">Releases</a></li>
+<li>Publication: L. Codeca, J. Härri, "Towards Multimodal Mobility
+Simulation of C-ITS: The Monaco SUMO Traffic Scenario" VNC 2017,
+IEEE Vehicular Networking Conference November 27-29, 2017, Torino,
+Italy.</li>
+</ul>
+<h1 id="stuttgart-open-motorway-project-stomp">Stuttgart Open Motorway Project (STOMP)<a class="headerlink" href="#stuttgart-open-motorway-project-stomp" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://github.com/boschresearch/stuttgart-sumo-traffic-scenario">Main Page</a></li>
+<li>Publication: David Förster, Hans Löhr, Anne Grätz, Jonathan Petit, and Frank Kargl, "An Evaluation of Pseudonym Changes for Vehicular Networks in Large-scale, Realistic Traffic Scenarios", IEEE Transactions on Intelligent Transportation Systems 19.10 (2017): 3400-3405, doi: <a href="https://doi.org/10.1109/TITS.2017.2775519">10.1109/TITS.2017.2775519</a>.</li>
+</ul>
+<h1 id="toronto">Toronto<a class="headerlink" href="#toronto" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://github.com/Jahandad-Baloch/TorontoSUMONetworks"><strong>TorontoSUMONetworks on GitHub</strong></a></li>
+</ul>
+<p>TorontoSUMONetworks is an open-source platform designed for creating, manipulating, and simulating traffic networks in Toronto using SUMO. This tool provides a realistic simulation environment for transportation research, urban planning, and traffic management. Its flexibility makes it valuable for diverse research areas, including Intelligent Transportation Systems (ITS), Reinforcement Learning for Adaptive Traffic Signal Control (ATSC), and more.</p>
+<p>Key Features:
+- Realistic traffic simulations based on the Toronto network, including major arterials and local streets.
+- Multi-modal transportation support, simulating private vehicles, buses, bicycles, and pedestrians.
+- Utilizes real-world data from the City of Toronto Open Data Portal for accurate simulations.
+- Highly configurable, supporting detectors like inductionloop, lanearea, and multi-entry/exit for traffic management.</p>
+<p>This project offers a comprehensive platform for researchers, urban planners, and engineers aiming to improve urban mobility and optimize traffic systems through advanced simulation and analysis.</p>
+<h1 id="turin-sumo-traffic-tust">Turin SUMO Traffic (TuST)<a class="headerlink" href="#turin-sumo-traffic-tust" title="Permanent link">&para;</a></h1>
+<p>A large-scale mesoscopic traffic simulation of a 600-sqkm area around the Municipality of Turin.</p>
+<ul>
+<li><a href="https://github.com/marcorapelli/TuSTScenario">Main Page</a></li>
+<li>Publications:</li>
+<li>M. Rapelli, C. Casetti and G. Gagliardi, “Vehicular Traffic Simulation in the City of Turin from Raw Data” in IEEE Transactions on Mobile Computing, April 2021. DOI: 10.1109/TMC.2021.3075985 <a href="https://ieeexplore.ieee.org/document/9416842">pre-print</a></li>
+<li>M. Rapelli, C. Casetti and G. Gagliardi, "TuST: from Raw Data to Vehicular Traffic Simulation in Turin," 2019 IEEE/ACM 23rd International Symposium on Distributed Simulation and Real Time Applications (DS-RT), Cosenza, Italy, 2019, pp. 1-8, doi: 10.1109/DS-RT47707.2019.8958652. <a href="https://ieeexplore.ieee.org/document/8958652">pre-print</a></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It requires <a href="https://git-lfs.github.com/">git-lfs</a> to download</p>
+</div>
+<p><img alt="TuST.png" src="../../images/TuST.gif" title="TuST" /></p>
+<h1 id="tapascologne">TAPASCologne<a class="headerlink" href="#tapascologne" title="Permanent link">&para;</a></h1>
+<p><img alt="ssnap_TapasCologne_0.1.gif" src="../../images/Ssnap_TapasCologne_0.1.gif" title="TAPAS Cologne" />
+The "TAPAS Cologne" simulation scenario
+describes the traffic within the city of Cologne, Germany for a whole
+day. The original demand data stems from TAPAS, a system which computes
+mobility wishes for an area population generated based on information
+about travelling habits of Germans and on information about the
+infrastructure of the area they live in.</p>
+<p>More information about the system can be found within this <a href="https://elib.dlr.de/45058/02/SRL_81_-_Beitrag_Varschen.pdf">publication
+on TAPAS</a>.
+The original data was using a closed-source road network and was mapped
+onto one stemming from the <a href="https://www.openstreetmap.de/">OpenStreetMap
+project</a>.</p>
+<p>There is further information about
+<a href="TAPASCologne/">TAPASCologne</a>.</p>
+<h1 id="tavf-hamburg">TAVF-Hamburg<a class="headerlink" href="#tavf-hamburg" title="Permanent link">&para;</a></h1>
+<p>A scenario from the <a href="https://tavf.hamburg/en/">TAVF</a> test track for automated and
+connected driving in Hamburg.</p>
+<ul>
+<li><a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/TAVF-Hamburg">TAVF-Hamburg Scenario on GitHub</a></li>
+</ul>
+<h1 id="boston-lisbon-los-angeles-rio-de-janeiro-san-francisco">Boston, Lisbon, Los Angeles, Rio de Janeiro, San Francisco<a class="headerlink" href="#boston-lisbon-los-angeles-rio-de-janeiro-san-francisco" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.research-collection.ethz.ch/handle/20.500.11850/584669">SUMO simulation files for running 24h of car traffic in five large-scale cities</a></p>
+<h1 id="outdated-real-world-scenarios">Outdated real-world scenarios<a class="headerlink" href="#outdated-real-world-scenarios" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://web.archive.org/web/20220707045650/https://academic.lucabedogni.it/the-bologna-ringway-dataset/">Bologna Ringway</a>.
+    Scenario built within the <a href="https://web.archive.org/web/20170716120720/https://www.colombo-fp7.eu/">COLOMBO R&amp;D
+    project</a>.</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This scenario seems to have been removed and is only here for historical reference. It was known to have lots of collisions due to unsafe traffic lights and some invalid junction definitions. It is also quite jammed.</p>
+</div>
+<h1 id="synthetic-scenarios">Synthetic scenarios<a class="headerlink" href="#synthetic-scenarios" title="Permanent link">&para;</a></h1>
+<p>Synthetic - or abstract - scenarios only resemble typical layouts of
+real-world junctions and arterials without mapping a very specific one.
+Some synthetic scenarios of the <a href="https://web.archive.org/web/20170716120720/https://www.colombo-fp7.eu/">COLOMBO R&amp;D
+project</a> are examples of the German guideline
+RiLSA. They are described in <a href="https://web.archive.org/web/20170808122505/https://elib.dlr.de/98046/1/COLOMBO_D1.1_ScenariosExtensions_v2.4.pdf">D1.1 "Scenario Specifications and Required
+Modifications to Simulation
+Tools"</a>(chapter
+4).</p>
+<ul>
+<li>Download: <a href="https://sourceforge.net/projects/sumo/files/traffic_data/scenarios/RiLSA">4 RiLSA *.zip files</a></li>
+</ul>
+<h1 id="wildau">Wildau<a class="headerlink" href="#wildau" title="Permanent link">&para;</a></h1>
+<p>This scenario can be followed as a tutorial - it showcases how routes can be generated within a network, using counting data.</p>
+<ul>
+<li><a href="https://github.com/DLR-TS/sumo-scenarios/tree/main/Wildau">Wildau Scenario on GitHub</a></li>
+</ul>
+<h1 id="test-cases">Test cases<a class="headerlink" href="#test-cases" title="Permanent link">&para;</a></h1>
+<p>SUMO comes with a large set of tests which are run at least once per day (and most are run on each repository commit).
+You can <a href="../../Tutorials/#using_examples_from_the_test_suite">extract them</a> and use them as basis for your own (small) scenarios.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,588 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/ChangeLog/Changes_from_version_pre0.8_up_to_0.8.3/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Changes in versions pre0.8 up to 0.8.3 - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#version-083-07102005" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changes in versions pre0.8 up to 0.8.3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-083-07102005" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.8.3 (07.10.2005)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0822-09092005" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.8.2.2 (09.09.2005)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0821-22122004" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.8.2.1 (22.12.2004)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0801" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.8.0.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-pre08" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version pre0.8
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Changes in versions pre0.8 up to 0.8.3</h1>
+
+<h2 id="version-083-07102005">Version 0.8.3 (07.10.2005)<a class="headerlink" href="#version-083-07102005" title="Permanent link">&para;</a></h2>
+<p>User-relevant changes</p>
+<ul>
+<li>Simulation</li>
+<li>debugged false tls-offset computation</li>
+<li>Windows-package</li>
+<li>added libraries missing in 0.8.2.2</li>
+</ul>
+<h2 id="version-0822-09092005">Version 0.8.2.2 (09.09.2005)<a class="headerlink" href="#version-0822-09092005" title="Permanent link">&para;</a></h2>
+<p>User-relevant changes:</p>
+<ul>
+<li>Simulation</li>
+<li>XML-Trigger bug on using speed triggers removed</li>
+<li>emission of vehicles on multi-lane source edges debugged (now all lanes are used)</li>
+<li>Debugged the problem of vehicles stopping before the route is over (reported by Jonathan Davies)</li>
+<li>setting tls-offsets debugged</li>
+<li>netconvert</li>
+<li>Computation of left-movers debugged</li>
+</ul>
+<h2 id="version-0821-22122004">Version 0.8.2.1 (22.12.2004)<a class="headerlink" href="#version-0821-22122004" title="Permanent link">&para;</a></h2>
+<p><strong>Please remind that several option names have changed!</strong> The most
+important: "net-files" (router, simulation) is now "net-file"...</p>
+<p>Check user documentation and man-pages for this.</p>
+<p>User-relevant changes:</p>
+<ul>
+<li>GUI</li>
+<li>"Clear Message Window" menu added</li>
+<li>the icons now allow loading instantly after the previous loading has failed</li>
+<li>Renamed to "guisim"</li>
+<li>using gradients instead of pure interpolation</li>
+<li>windows-icons patched</li>
+<li>added ability to take snapshots</li>
+<li>using popups instead of comboboxes for finding structures and switching between coloring schemes in order to save place</li>
+<li>speeded up handling of errors</li>
+<li>Locators hidden behind a popup</li>
+<li>ToolTips do now not hide dialog windows</li>
+<li>Configuration errors are now reported to the window</li>
+<li>Added the possibility to display a vehicle's route</li>
+<li>added the possibility to save timelines</li>
+<li>Simulation</li>
+<li>building dump-files now reports about failures</li>
+<li>Patched some of the lane-changing bugs</li>
+<li>time-to-teleport -option added</li>
+<li>replace "treshhold" by "threshold"</li>
+<li>netconvert</li>
+<li>Plain output of node and edges added (--plain-output)</li>
+<li>got rid of the arcview/shapelib-import chaos</li>
+<li>--explicite-junctions -&gt; --explicite-tls</li>
+<li>--explicite-no-junctions -&gt; --explicite-no-tls</li>
+<li>--keep-edges.input-file</li>
+<li>--keep-edges - option added</li>
+<li>--keep-edges.input-file</li>
+<li>Geometry computation bug patched</li>
+<li>Router</li>
+<li>Bug on processing all time steps patched</li>
+<li>Route output reformatted</li>
+<li>max-alternatives</li>
+<li>Documentation</li>
+<li>Man-pages added</li>
+</ul>
+<p>Developer-relevant changes:</p>
+<ul>
+<li>GUI</li>
+<li>Have reworked the class dependencies completely in order to make derivation more easy</li>
+<li>Simulation</li>
+<li>output moved to "output"</li>
+<li>outputs write to OutputDevices, not ostreams</li>
+<li>reworked lanechanging</li>
+</ul>
+<h2 id="version-0801">Version 0.8.0.1<a class="headerlink" href="#version-0801" title="Permanent link">&para;</a></h2>
+<ul>
+<li>GUI</li>
+<li>The gui now remembers the last used folder</li>
+<li>The gui now remembers his</li>
+<li>The instance chooser was reworked and shows now which items are selected</li>
+<li>An selected-items dialog with the ability to save the names of the selected items was implemented</li>
+<li>New colors for aggregated view (aggregated views are still a prototype)</li>
+<li>Fixed a bug at optional texture disabling</li>
+<li>Update of trackers and tables on simulation steps added</li>
+<li>About-dialog debugged</li>
+<li>Message window scrolls if new text is appended</li>
+<li>Router</li>
+<li>Output holding the number of loaded, build, and discarded routes
+    added</li>
+<li>--move-on-short function implemented</li>
+<li>Bug on repeatedly emitted vehicles patched</li>
+<li>Simulation</li>
+<li>Bug on repeatedly emitted vehicles patched</li>
+<li>netconvert</li>
+<li>Made the geometry of junctions pretty again</li>
+<li>Too conservative right-of-way rules on importing vissim-networks was reworked</li>
+<li>general implementation issues</li>
+<li>Replaced most output to cerr by MsgHandler-calls</li>
+<li>Documentation</li>
+<li>extended the detector-documentation (user)</li>
+<li>extended the gui-documentation</li>
+<li>extended the description of the build process</li>
+<li>added missing pictures</li>
+<li>resized some pictures</li>
+<li>improved the visibility of XML-format descriptions</li>
+</ul>
+<p>... and some other things ...</p>
+<h2 id="version-pre08">Version pre0.8<a class="headerlink" href="#version-pre08" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Further applications added: router, od2trips-converter, tagreader</li>
+<li>A graphical user interface</li>
+<li>Further import possibilities added: ArcView, Visum, Vissim (partly in work), ARTEMIS</li>
+<li>A new concept of the microsimulation</li>
+<li>Traffic lights simulation</li>
+<li>Working lane changing</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

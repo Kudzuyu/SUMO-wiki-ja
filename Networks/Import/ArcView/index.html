@@ -1,0 +1,758 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Networks/Import/ArcView/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>ArcView - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#defining-the-input" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ArcView
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../../netconvert/">netconvert</a> is able to directly read binary
+ArcView databases ("shapefiles"). To convert such databases, at least
+three files are needed: a file with the extension ".dbf", one with the
+extension ".shp" and one with the extension ".shx". Additionally, having
+a projection file with the extension ".proj" is of benefit. The option
+to load a shape-file into <a href="../../../netconvert/">netconvert</a> in order
+to convert it into a SUMO-network is named <strong>--shapefile-prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>. Because shape-file
+descriptions use more than a single file, one has to supply the file
+name without extension, only. So, the following call to
+<a href="../../../netconvert/">netconvert</a> should be used to import the road
+network stored in "my_shape_files.shp", "my_shape_files.shx",
+"my_shape_files.proj", and "my_shape_files.dbf":</p>
+<pre><code>netconvert --shapefile-prefix my_shape_files
+</code></pre>
+<p><strong>netconvert</strong> supports <a href="https://gdal.org/en/latest/user/virtual_file_systems.html">virtual file systems</a> when
+importing shape files. So if you have your shapes in myshapes.zip and the main file has the name arcview.shp
+you can import them via <code>netconvert --shapefile /vsizip/myshapes.zip/arcview</code> (<strong>--shapefile</strong> is an alias to <strong>--shapefile-prefix</strong>).</p>
+<p>Unfortunately, shape files describe how information is stored
+physically, but neither which is stored nor how the entries of the
+according database (*.dbf) are named. Due to this, one has to examine
+how a given road network is stored within the database file and give
+this information to <a href="../../../netconvert/">netconvert</a>; a plain call
+almost always fails.</p>
+<h1 id="defining-the-input">Defining the Input<a class="headerlink" href="#defining-the-input" title="Permanent link">&para;</a></h1>
+<p>The table below shows which information
+<a href="../../../netconvert/">netconvert</a> is trying to read from the given
+input files, what the standard values are, and how they can be changed.
+Also, it shows whether the information is mandatory - must be given - or
+optional.</p>
+<center>
+
+**Table: Information [netconvert](../../netconvert.md) reads from
+shape-files**
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th>Information</th>
+<th>Mandatory</th>
+<th>Default field name</th>
+<th>Option</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The id of an edge</td>
+<td>y</td>
+<td><strong>LINK_ID</strong></td>
+<td><strong>--shapefile.street-id &lt;FIELD_NAME&gt;</strong></td>
+</tr>
+<tr>
+<td>The street name of an edge (need not be unique, for displaying)</td>
+<td>n</td>
+<td><strong>ST_NAME</strong></td>
+<td><strong>--shapefile.name &lt;FIELD_NAME&gt;</strong></td>
+</tr>
+<tr>
+<td>The name of the node the edge starts at</td>
+<td>y</td>
+<td><strong>REF_IN_ID</strong></td>
+<td><strong>--shapefile.from-id &lt;FIELD_NAME&gt;</strong></td>
+</tr>
+<tr>
+<td>The name of the node the edge ends at</td>
+<td>y</td>
+<td><strong>NREF_IN_ID</strong></td>
+<td><strong>--shapefile.to-id &lt;FIELD_NAME&gt;</strong></td>
+</tr>
+<tr>
+<td>The type of the street</td>
+<td>n</td>
+<td><strong>ST_TYP_AFT</strong></td>
+<td><strong>--shapefile.type-id &lt;FIELD_NAME&gt;</strong></td>
+</tr>
+<tr>
+<td>Speed category</td>
+<td>n (see below)</td>
+<td><strong>SPEED_CAT</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Lane category</td>
+<td>n (see below)</td>
+<td><strong>LANE_CAT</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Road class, used to determine the priority</td>
+<td>n (see below)</td>
+<td><strong>FUNC_CLASS</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Allowed speed on a road</td>
+<td>n (see below)</td>
+<td><strong>SPEED</strong> or <strong>speed</strong></td>
+<td><strong>--shapefile.speed &lt;FIELD_NAME&gt;</strong></td>
+</tr>
+<tr>
+<td>Number of lanes a road has</td>
+<td>n (see below)</td>
+<td><strong>NOLANES</strong>, <strong>nolanes</strong> or <strong>rnol</strong></td>
+<td><strong>--shapefile.laneNumber &lt;FIELD_NAME&gt;</strong></td>
+</tr>
+<tr>
+<td>Total directional road width</td>
+<td>n</td>
+<td></td>
+<td><strong>--shapefile.width &lt;FIELD_NAME&gt;</strong></td>
+</tr>
+<tr>
+<td>Road length</td>
+<td>n (see below)</td>
+<td></td>
+<td><strong>--shapefile.length &lt;FIELD_NAME&gt;</strong></td>
+</tr>
+<tr>
+<td>Direction of travel ("B": both, "F": forward, "T": backward)</td>
+<td>n</td>
+<td><strong>DIR_TRAVEL</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>If being familiar with NavTeq, you may have noticed that the defaults
+are the ones that are used by NavTeq.</p>
+<p>Some shape file databases do not contain explicit information about the
+edges' attributes (number of lanes, priority, allowed speed) at all. It
+is possible to use <a href="../../../SUMO_edge_type_file/">SUMO edge type file</a>
+to describe the edges' attributes. In this case, the column to
+retrieve an according street's type name from must be named using <strong>--shapefile.type-id</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;ID&gt;</em></a> and a
+<a href="../../../SUMO_edge_type_file/">SUMO edge type file</a> must be given to
+<a href="../../../netconvert/">netconvert</a> using <strong>--type-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>. If something fails with the
+types or the explicit values, it can be caught using <strong>--shapefile.use-defaults-on-failure</strong>. In these cases,
+the default <a href="../../../netconvert/">netconvert</a> values are used. Besides
+this, it is possible to load own <a href="../../PlainXML/#connection_descriptions">connection
+descriptions</a>.</p>
+<p>If the edge length is not specified, the length is computed based on the provided geometry.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One can insert own attributes into the database using a GIS. This means, one can also insert own fields for the number of lanes, priority, or allowed speed, naming them as described above.</p>
+</div>
+<p>ArcView-networks are encoded using geocoordinates which have to be
+converted to the cartesian coordinates system used by SUMO. To describe
+how to convert the coordinates, one should know in which UTM-zone your
+network is located. Use projection
+options to set the correct one.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Road geometries must be encoded with type 'linestring'</p>
+</div>
+<h1 id="arcview-import-options">ArcView Import Options<a class="headerlink" href="#arcview-import-options" title="Permanent link">&para;</a></h1>
+<p>The complete list of options used for reading shapefiles is given in the
+table below. You may find further options which control the import
+behavior on <a href="../../../netconvert/">netconvert</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--shapefile-prefix</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a></td>
+<td>Read shapefiles (ArcView, Tiger, ...) from files starting with 'FILE'</td>
+</tr>
+<tr>
+<td><strong>--shapefile.street-id</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read edge ids from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.from-id</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read from-node ids from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.to-id</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read to-node ids from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.type-id</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a></td>
+<td>Read type ids from column STR</td>
+</tr>
+<tr>
+<td><strong>--shapefile.use-defaults-on-failure</strong></td>
+<td>Uses edge type defaults on problems; <em>default: </em><em>false</em>**</td>
+</tr>
+<tr>
+<td><strong>--shapefile.all-bidirectional</strong></td>
+<td>Insert edges in both directions; <em>default: </em><em>false</em>**</td>
+</tr>
+<tr>
+<td><strong>--shapefile.guess-projection</strong></td>
+<td>Guess the proper projection; <em>default: </em><em>false</em>**</td>
+</tr>
+<tr>
+<td><strong>--shapefile.node-join-dist</strong></td>
+<td>Assume edges share a node if when no node id was found and their geometry-endpoints are within FLOAT m (default 0)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
+<h2 id="36_new_york-from-tiger-database">'36_NEW_YORK' from TIGER database<a class="headerlink" href="#36_new_york-from-tiger-database" title="Permanent link">&para;</a></h2>
+<p>The network is available from the <a href="https://www2.census.gov/geo/tiger/TIGER2008/36_NEW_YORK/36061_New_York_County/">US Census Bureau ftp server</a>.
+TIGER data is freely available because U.S. Government publications are
+required to be released into the public domain.</p>
+<p>Opening the edges-dbf (<em>tl_2008_36061_edges.dbf</em>) of which we hope
+that it contains information about roads shows us, that:</p>
+<ul>
+<li>the from- and the to-nodes of the streets are described in fields
+  named <strong>TNIDF</strong> and <strong>TNIDT</strong>, respectively.</li>
+<li>the field <strong>tlid</strong> may be stored as the one to name the edges by</li>
+<li>there is a further information about the type (mtfcc)</li>
+</ul>
+<p>As a begin, we try to import the road graph. We use the information we
+have found and apply a projection:</p>
+<pre><code>netconvert -v --shapefile-prefix tl_2008_36061_edges -o net.net.xml \
+   --shapefile.from-id TNIDF --shapefile.to-id TNIDT --arcview.street-id tlid \
+   --shapefile.use-defaults-on-failure
+</code></pre>
+<p>As a result, we obtain the network shown below.</p>
+<p><img alt="tl_2008_36061_edges.gif" src="../../../images/Tl_2008_36061_edges.gif" title="tl_2008_36061_edges.gif" /></p>
+<p><strong>Figure 1.1. The converted network of New York</strong></p>
+<p>There are several issues one should note:</p>
+<ul>
+<li>The types were not used - no information about their meanings was
+  investigated</li>
+<li>All roads are unidirectional</li>
+<li>The projection has not been verified (though it should be valid)</li>
+<li>Maybe the further files which are included in the zip contain
+  additional information. This has not been investigated.</li>
+</ul>
+<h2 id="frida-network-city-of-osnabrück">'Frida' network (city of Osnabrück)<a class="headerlink" href="#frida-network-city-of-osnabrück" title="Permanent link">&para;</a></h2>
+<p>The network is available at the
+<a href="https://frida.intevation.org/">Frida-homepage</a> and is licensed under the
+GPL.</p>
+<p>Our main interest is of course the street network. The following files
+describe this: <em>strassen.dbf</em>, <em>strassen.shp</em>, <em>strassen.shx</em>
+("strassen" is the german word for "streets"). When opening
+"strassen.dbf" we have to realize that there is only a few information
+stored herein - neither the node names are given nor the street
+attributes. Instead, the street attributes seem to be stored in an
+additional database and are references by type names (column "strTypID"
+- strassen_typ_id = street_type_id). Also, the names of this
+database's columns have other names than expected.</p>
+<p>Ok, let's solve these problems one after another.</p>
+<ul>
+<li>Different field naming</li>
+</ul>
+<p>The only problem with this is that we can not extract street names
+  properly. Still, within <a href="https://frida.intevation.org/">FRIDA</a>, the
+  edges are numbered, and we may use the street id as name.
+  The call has to be extended by: <strong>--arcview.street-id strShapeID</strong></p>
+<ul>
+<li>Missing node names</li>
+</ul>
+<p><a href="../../../netconvert/">netconvert</a> can deal with networks which do
+  not have node names (since version 0.9.4).</p>
+<ul>
+<li>Parsing street attributes from a <a href="../../../SUMO_edge_type_file/">SUMO edge type
+  file</a></li>
+</ul>
+<p>The possibility to describe edges using attributes was already
+  available in <a href="../../../netconvert/">netconvert</a> and may be used in
+  combination with ArcView files since version 0.9.4. Still, the types
+  have to be translated into XML. The generated file (<em>frida.typ.xml</em>)
+  looks like this:</p>
+<pre><code class="language-xml">&lt;types&gt;
+  &lt;!-- &quot;noch nicht attributiert&quot; (= not yet attributed) --&gt;
+  &lt;type id=&quot;0&quot;  priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;13.89&quot;/&gt;
+  &lt;!-- &quot;Autobahn&quot; (highway) --&gt;
+  &lt;type id=&quot;1&quot;  priority=&quot;5&quot; numLanes=&quot;3&quot; speed=&quot;41.67&quot;/&gt;
+  &lt;!-- &quot;Bundesstrasse&quot; (motorway) --&gt;
+  &lt;type id=&quot;2&quot;  priority=&quot;4&quot; numLanes=&quot;1&quot; speed=&quot;22.22&quot;/&gt;
+  &lt;!-- &quot;Hauptstrasse&quot; (main (city) road) --&gt;
+  &lt;type id=&quot;3&quot;  priority=&quot;3&quot; numLanes=&quot;2&quot; speed=&quot;13.89&quot;/&gt;
+  &lt;!-- &quot;Nebenstrasse&quot; (lower priorised (city) road) --&gt;
+  &lt;type id=&quot;4&quot;  priority=&quot;2&quot; numLanes=&quot;1&quot; speed=&quot;13.89&quot;/&gt;
+  &lt;!-- &quot;Weg&quot; (path) --&gt;
+  &lt;type id=&quot;5&quot;  priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;5&quot;/&gt;
+  &lt;!-- &quot;Zone 30&quot; (lower street with a speed limit of 30km/h) --&gt;
+  &lt;type id=&quot;6&quot;  priority=&quot;2&quot; numLanes=&quot;1&quot; speed=&quot;8.33&quot;/&gt;
+  &lt;!-- &quot;Spielstrasse&quot; (a street where children may play (10km/h)) --&gt;
+  &lt;type id=&quot;7&quot;  priority=&quot;1&quot; numLanes=&quot;1&quot; speed=&quot;1.39&quot;/&gt;
+  &lt;!-- &quot;Fussgaengerzone&quot; (pedestrains zone) --&gt;
+  &lt;type id=&quot;8&quot;  priority=&quot;0&quot; numLanes=&quot;1&quot; speed=&quot;0.1&quot;/&gt;
+  &lt;!-- &quot;gesperrte Strasse&quot; (closed street) --&gt;
+  &lt;type id=&quot;9&quot;  priority=&quot;0&quot; numLanes=&quot;1&quot; speed=&quot;0.1&quot;/&gt;
+  &lt;!-- &quot;sonstige Strasse&quot; (something else) --&gt;
+  &lt;type id=&quot;10&quot; priority=&quot;0&quot; numLanes=&quot;1&quot; speed=&quot;0.1&quot;/&gt;
+  &lt;!-- &quot;Fussweg&quot; (way for pedestrians) --&gt;
+  &lt;type id=&quot;11&quot; priority=&quot;0&quot; numLanes=&quot;1&quot; speed=&quot;0.1&quot;/&gt;
+&lt;/types&gt;
+</code></pre>
+<p>The call has to be extended by: <strong>-t frida.typ.xml --arcview.type-id strTypID</strong></p>
+<p>After having applied all those changes, the network was buildable, but
+looked quite messy. After having played with geocoordinate projections,
+this was fixed. So the call (so far) looks like this:</p>
+<pre><code>netconvert --arcview strassen -o frida.net.xml \
+  --arcview.street-id strShapeID -t frida.typ.xml \
+  --arcview.type-id strTypID --use-projection
+</code></pre>
+<h3 id="data-quality">Data Quality<a class="headerlink" href="#data-quality" title="Permanent link">&para;</a></h3>
+<p>Looking a bit deeper at the network, we had to realise two further
+problems. At first, highway on- and off-ramps are marked as "highway".
+this yields in a network where on- and offramps have the same number of
+lanes as the highways themselves. And it's definitely not fitting to
+reality, as the next picture shows:</p>
+<p><img alt="frida_uni_highway_ramp.png" src="../../../images/Frida_uni_highway_ramp.png" title="frida_uni_highway_ramp.png" /></p>
+<p><strong>Figure 2.2. Detail view showing problems with (unidirectional) highway
+on-/off-ramps</strong></p>
+<p>Furthermore, all streets are unidirectional - even highways. This makes
+the network not usable for traffic simulations when left in the original
+state. Trying to convert the network with <strong>--arcview.all-bidi</strong>, that means trying to insert
+edges bidirectional, makes the city usable, but the highways are even
+worse, now, because also the on-/off-ramps are bidirectional, then...</p>
+<p><img alt="frida_bidi_highway_ramp.png" src="../../../images/Frida_bidi_highway_ramp.png" title="frida_bidi_highway_ramp.png" /></p>
+<p><strong>Figure 2.3. Detail view showing problems with (bidirectional) highway
+on-/off-ramps</strong></p>
+<h3 id="demand">Demand<a class="headerlink" href="#demand" title="Permanent link">&para;</a></h3>
+<p>There is no demand available for Frida - at least none we know about.</p>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
+<p>Using the current features we are able to parse the network from the
+Frida-project but we can not state it is completely usable for traffic
+simulations. At least areas around highways are not realistic, because
+on-/offramps lack an explicit declaration and are due to this as wide as
+the highways themselves. Furthermore, all streets within the network are
+coded in just one direction. Extending them to be bidirectional solves
+the problem in inner-city areas, but yields in an unacceptable result
+for highways.</p>
+<p style="border:1px solid #909090; padding:1px 4px 3px 4px"><img src="../../images/CC-BY-SA-small.png" alt="Creative Commons License">
+This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. The authors are listed in the history.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

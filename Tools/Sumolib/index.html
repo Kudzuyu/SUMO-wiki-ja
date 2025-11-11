@@ -1,0 +1,565 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/Sumolib/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Sumolib - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#importing-sumolib-in-a-script" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sumolib
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><strong>sumolib</strong> is a set of python modules for working with sumo networks,
+simulation output and other simulation artifacts. For a detailed list of
+available functions see the <a href="https://sumo.dlr.de/pydoc/sumolib.html">pydoc generated
+documentation</a>. You can
+<a href="https://github.com/eclipse-sumo/sumo/tree/main/tools/sumolib">browse the code here</a>.</p>
+<h1 id="importing-sumolib-in-a-script">importing <strong>sumolib</strong> in a script<a class="headerlink" href="#importing-sumolib-in-a-script" title="Permanent link">&para;</a></h1>
+<p>To use the library, the <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools directory must be on the python load
+path. This is typically done with a stanza like this:</p>
+<pre><code class="language-python">import os
+import sys
+if 'SUMO_HOME' in os.environ:
+    sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
+</code></pre>
+<h1 id="loading-a-network-file">loading a network file<a class="headerlink" href="#loading-a-network-file" title="Permanent link">&para;</a></h1>
+<pre><code class="language-python"># import the library
+import sumolib
+# parse the net
+net = sumolib.net.readNet('myNet.net.xml')
+</code></pre>
+<p>The following named arguments may be given to the <code>readNet</code> function (i.e. <code>readNet('myNet.net.xml', withInternal=True)</code>):</p>
+<ul>
+<li>withPrograms (bool): import all traffic light programs (default False)</li>
+<li>withLatestPrograms (bool) : import only the last program for each traffic light. This is the program that would be active in sumo by default. (default False)</li>
+<li>withConnections (bool) : import all connections (default True)</li>
+<li>withFoes (bool) : import right-of-way information (default True)</li>
+<li>withInternal (bool) : import internal edges and lanes (default False)</li>
+<li>withPedestrianConnections (bool) : import connections between sidewalks, crossings (default False)</li>
+</ul>
+<h1 id="usage-examples">usage examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h1>
+<h2 id="import-a-network-and-retrieve-nodes-and-edges">import a network and retrieve nodes and edges<a class="headerlink" href="#import-a-network-and-retrieve-nodes-and-edges" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python"># import the library
+import sumolib
+# parse the net
+net = sumolib.net.readNet('myNet.net.xml')
+
+# retrieve the coordinate of a node based on its ID
+print(net.getNode('myNodeID').getCoord())
+
+# retrieve the successor node ID of an edge
+nextNodeID = net.getEdge('myEdgeID').getToNode().getID()
+</code></pre>
+<h2 id="compute-the-average-edge-speed-in-a-plain-xml-edge-file">compute the average edge speed in a <em>plain xml</em> edge file<a class="headerlink" href="#compute-the-average-edge-speed-in-a-plain-xml-edge-file" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">speedSum = 0.0
+edgeCount = 0
+for edge in sumolib.xml.parse('myNet.edg.xml', ['edge']):
+    speedSum += float(edge.speed)
+    edgeCount += 1
+avgSpeed = speedSum / edgeCount
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is just a processing example. To compute average travel speeds in a network, process <a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgeData</a>, <a href="../../Simulation/Output/TripInfo/">tripinfos</a> or <a href="../../Simulation/Output/Summary/">summary-output</a> instead.</p>
+</div>
+<h2 id="compute-the-length-of-the-selected-edges">compute the length of the selected edges<a class="headerlink" href="#compute-the-length-of-the-selected-edges" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">net.loadSelection('selection.txt')
+cumulLength = 0.
+for edge in net.getEdges():
+    if edge.isSelected():
+        cumulLength += edge.getLength()
+</code></pre>
+<h2 id="compute-the-median-speed-using-the-statistics-module">compute the median speed using the <a href="https://sumo.dlr.de/pydoc/sumolib.miscutils.html#Statistics">Statistics</a> module<a class="headerlink" href="#compute-the-median-speed-using-the-statistics-module" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">edgeStats = sumolib.miscutils.Statistics(&quot;edge speeds&quot;)
+for edge in sumolib.xml.parse('myNet.edg.xml', ['edge']):
+    edgeStats.add(float(edge.speed))
+avgSpeed = edgeStats.median()
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Attribute <em>speed</em> is optional in user-generated <em>.edg.xml</em> files but will always be included if that file was written by <a href="../../netconvert/">netconvert</a> or <a href="../../Netedit/">netedit</a>.</p>
+</div>
+<h2 id="locate-nearby-edges-based-on-the-geo-coordinate">locate nearby edges based on the geo-coordinate<a class="headerlink" href="#locate-nearby-edges-based-on-the-geo-coordinate" title="Permanent link">&para;</a></h2>
+<p>This requires the module <a href="https://github.com/pyproj4/pyproj">pyproj</a> to be installed.
+For larger networks <a href="https://pypi.org/project/Rtree/">rtree</a> is also strongly recommended.</p>
+<pre><code class="language-python">net = sumolib.net.readNet('myNet.net.xml')
+radius = 0.1
+x, y = net.convertLonLat2XY(lon, lat)
+edges = net.getNeighboringEdges(x, y, radius)
+# pick the closest edge
+if len(edges) &gt; 0:
+    distancesAndEdges = sorted([(dist, edge) for edge, dist in edges], key=lambda x:x[0])
+    dist, closestEdge = distancesAndEdges[0]
+</code></pre>
+<h2 id="parse-all-edges-in-a-route-file">parse all edges in a route file<a class="headerlink" href="#parse-all-edges-in-a-route-file" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">for route in sumolib.xml.parse_fast(&quot;myRoutes.rou.xml&quot;, 'route', ['edges']):
+    edge_ids = route.edges.split()
+    # do something with the vector of edge ids
+</code></pre>
+<h2 id="parse-vehicles-and-their-route-edges-in-a-route-file">parse vehicles and their route edges in a route file<a class="headerlink" href="#parse-vehicles-and-their-route-edges-in-a-route-file" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">for vehicle in sumolib.xml.parse(&quot;myRoutes.rou.xml&quot;, &quot;vehicle&quot;):
+    route = vehicle.route[0] # access the first (and only) child element with name 'route'
+    edges = route.edges.split()
+</code></pre>
+<p>with automatic data conversions (including depart time as "HH:MM:SS"):</p>
+<pre><code class="language-python">from sumolib.miscutils import parseTime
+for vehicle in sumolib.xml.parse(&quot;myRoutes.rou.xml&quot;, &quot;vehicle&quot;, attr_conversions={
+            'depart' : parseTime,
+            'edges' : (lambda x : x.split())}):
+    edges = vehicle.route[0].edges
+    if vehicle.depart &gt; 42:
+       ...
+</code></pre>
+<h2 id="parse-all-edges-in-a-edge-data-meandata-file">parse all edges in a edge data (meanData) file<a class="headerlink" href="#parse-all-edges-in-a-edge-data-meandata-file" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">for interval in sumolib.xml.parse(&quot;edgedata.xml&quot;, &quot;interval&quot;):
+    for edge in interval.edge:
+        # do something with the edge attributes i.e. edge.entered
+</code></pre>
+<h2 id="coordinate-transformations">coordinate transformations<a class="headerlink" href="#coordinate-transformations" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">net = sumolib.net.readNet('myNet.net.xml')
+
+# network coordinates (lower left network corner is at x=0, y=0)
+x, y = net.convertLonLat2XY(lon, lat)
+lon, lat = net.convertXY2LonLat(x, y)
+
+# raw UTM coordinates
+x, y = net.convertLonLat2XY(lon, lat, True)
+lon, lat = net.convertXY2LonLat(x, y, True)
+
+# lane/offset coordinates
+# from lane position to network coordinates
+x,y = sumolib.geomhelper.positionAtShapeOffset(net.getLane(laneID).getShape(), lanePos)
+# from network coordinates to lane position
+lane, d = net.getNeighboringLanes(x, y, radius)[0] (see &quot;locate nearby edges based on the geo-coordinate&quot; above)
+lanePos, dist = sumolib.geomhelper.polygonOffsetAndDistanceToPoint((x,y), lane.getShape())
+</code></pre>
+<p>see also
+<a href="../../TraCI/Interfacing_TraCI_from_Python/#coordinate_transformations">TraCI/Interfacing_TraCI_from_Python#coordinate_transformations</a></p>
+<h2 id="manipulating-and-writing-xml">Manipulating and writing xml<a class="headerlink" href="#manipulating-and-writing-xml" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">with open(&quot;patched.nod.xml&quot;, 'w') as outf:
+    # setting attrs is optional, it results in a cleaner patch file
+    attrs = {'node': ['id', 'x', 'y']}  # other attrs are not needed for patching
+    # parse always returns a generator but there is only one root element
+    nodes = list(sumolib.xml.parse('plain.nod.xml', 'nodes', attrs))[0]
+    for node in nodes.node:
+        node.addChild(&quot;param&quot;, { &quot;key&quot;: &quot;origPos&quot;, &quot;value&quot; : &quot;%s %s&quot; % (node.x, node.y) } )
+        node.x = float(node.x) + random.randint(-20, 20)
+        node.y = float(node.y) + random.randint(-20, 20)
+    outf.write(nodes.toXML())
+</code></pre>
+<h1 id="further-examples">Further Examples<a class="headerlink" href="#further-examples" title="Permanent link">&para;</a></h1>
+<p>The <em>runner.py</em> files in the test subfolders of <a href="https://github.com/eclipse/sumo/blob/master/tests/tools/sumolib"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/tests/tools/sumolib</a> provide additional
+examples for sumolib use.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

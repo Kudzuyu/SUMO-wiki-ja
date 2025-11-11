@@ -1,0 +1,958 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/ChangeLog/Changes_in_2009_releases/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Changes in the 2009 releases (versions 0.10.0, 0.10.1, 0.10.2, 0.10.3, 0.11.0 and 0.11.1) - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#version-0111-23112009" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changes in the 2009 releases (versions 0.10.0, 0.10.1, 0.10.2, 0.10.3, 0.11.0 and 0.11.1)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-0111-23112009" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.11.1 (23.11.2009)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0110-29072009" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.11.0 (29.07.2009)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0103-30032009" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.10.3 (30.03.2009)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0102-16032009" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.10.2 (16.03.2009)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0101-11012009" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.10.1 (11.01.2009)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0100-09012009" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.10.0 (09.01.2009)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Changes in the 2009 releases (versions 0.10.0, 0.10.1, 0.10.2, 0.10.3, 0.11.0 and 0.11.1)</h1>
+
+<h2 id="version-0111-23112009">Version 0.11.1 (23.11.2009)<a class="headerlink" href="#version-0111-23112009" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All</li>
+<li>configuration xml format changed again to <code>&lt;section&gt;&lt;key value="val"/&gt;&lt;/section&gt;</code> (use <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/10to11.py to convert from old to new
+    representation)</li>
+<li>
+<p>Bugs in Dijkstra implementation fixed (affecting at least
+    duarouter, routing with traci and automatic rerouting)
+    (01.10.2009)</p>
+</li>
+<li>
+<p>Simulation</p>
+</li>
+<li>debugged problems when loading TLS definitions with T=0</li>
+<li>implemented a variable car-following model API; many thanks to Tobias Mayer
+    and Christoph Sommer for the collaboration who did most of the work.</li>
+<li>debugged occurrence of negative vehicle speeds during emit</li>
+<li>
+<p>reworked the mean data output (handling multiple lanes
+    correctly)</p>
+</li>
+<li>
+<p>sumo-gui</p>
+</li>
+<li>implemented <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=1641989&amp;group_id=45607&amp;atid=443424">request 1641989: No view reset on reload</a>.</li>
+<li>the number of colors used for range visualization is now variable</li>
+<li>
+<p>debugged problems with not shown junction names</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>making projection mandatory for OSM and DLR-Navteq networks
+    (03.09.2009)</li>
+<li>removed option <strong>--rotation-to-apply</strong> - was not properly working anyway (02.09.2009)</li>
+<li>removed support for "old" TIGER networks - assuming the current
+    ones are given as shape files; <strong>--tiger</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> is now mapped onto <strong>--shapefile</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> (02.09.2009)</li>
+<li>removed support for "split" Elmar networks (option <strong>--elmar</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a>) (02.09.2009)</li>
+<li>renamed <strong>--elmar2</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> to <strong>--dlr-navteq</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> (02.09.2009)</li>
+<li>renamed <strong>--arcview</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> to <strong>--shapefile</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FILE&gt;</em></a> (02.09.2009)<ul>
+<li>please note, that all subsequent options have been adapted
+  (but the old names still work as aliases)</li>
+</ul>
+</li>
+<li>added the possibility to define <a href="../../Networks/PlainXML/#road_segment_refining">changes of lane numbers along an edge</a>
+    in XML-descriptions (03.09.2009)</li>
+<li>replaced <strong>--use-projection</strong> by <strong>--proj.utm</strong> and <strong>--proj.dhdn</strong> which determine the correct parameters for
+    the two widely used projections from the input data</li>
+<li>
+<p>for developers: using same loading procedure for all imported
+    networks, see <a href="../../Developer/How_To/Net_Importer/">Developer/How To/Net Importer</a></p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li>debugging sending/receiving messages with length&gt;255 bytes</li>
+<li>added further <a href="../../TraCI/Traffic_Lights_Value_Retrieval/">traffic lights variable retrieval options</a></li>
+<li>added further <a href="../../TraCI/Induction_Loop_Value_Retrieval/">induction loops variable retrieval options</a></li>
+<li>added further <a href="../../TraCI/Multi-Entry-Exit_Detectors_Value_Retrieval/">multi-entry/multi-exit detectors variable retrieval options</a></li>
+<li>added further <a href="../../TraCI/Junction_Value_Retrieval/">junction variable retrieval options</a></li>
+<li>added further <a href="../../TraCI/Vehicle_Value_Retrieval/">vehicle variable retrieval options</a></li>
+<li>added further possibilities to <a href="../../TraCI/Change_Vehicle_State/">change vehicle values</a></li>
+<li>added possibilities to <a href="../../TraCI/Edge_Value_Retrieval/">retrieve edge variables</a> and <a href="../../TraCI/Change_Edge_State/">change edge values</a></li>
+<li>added possibilities to <a href="../../TraCI/Lane_Value_Retrieval/">retrieve lane variables</a> and <a href="../../TraCI/Change_Lane_State/">change lane values</a></li>
+<li>added possibilities to <a href="../../TraCI/Change_PoI_State/">change PoI values</a> and to <a href="../../TraCI/Change_Polygon_State/">change polygon values</a></li>
+<li>
+<p>added the possibility assign a vehicle a new route via TraCI</p>
+</li>
+<li>
+<p>dfrouter</p>
+</li>
+<li>debugged problems with induction loop measure with time&gt;end
+    time</li>
+<li>
+<p>debugged problems with spaces in induction loop measures</p>
+</li>
+<li>
+<p>od2trips</p>
+</li>
+<li>debugged problems with O/D matrices that have no comments, was:
+    <a href="https://github.com/eclipse-sumo/sumo/issues/148">defect 148: od2trips breaks on matrices without comments</a>;
+    thanks to Wilson Wong for pointing us to it</li>
+</ul>
+<h2 id="version-0110-29072009">Version 0.11.0 (29.07.2009)<a class="headerlink" href="#version-0110-29072009" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All</li>
+<li>moved to xerces 3.0</li>
+<li>moved to FOX1.6</li>
+<li>changes in network format (use <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/net/0103to0110.py to
+    convert from old to new representation)<ul>
+<li>traffic light descriptions (18.05.2009)</li>
+<li>descriptions of giving lanes free / prohibiting lanes for
+  certain vehicle classes (10.06.2009)</li>
+<li>moved character sections to attributes (22.-24.07.2009), see
+  <a href="../../Networks/SUMO_Road_Networks/">SUMO Road Networks</a></li>
+</ul>
+</li>
+<li>configuration xml format changed from <code>&lt;section&gt;&lt;key&gt;value&lt;/key&gt;&lt;/section&gt;</code> to <code>&lt;section key="value"/&gt;</code> (use <strong><em>&lt;SUMO_HOME&gt;</em></strong>/tools/10to11.py to convert from old to new
+    representation)</li>
+<li>
+<p>The data-folder was removed; instead the examples got a part of
+    the tests and are generated using these.</p>
+</li>
+<li>
+<p>Simulation</p>
+</li>
+<li>Collisions<ul>
+<li>Collisions are now checked per default (removed option <strong>--check-accidents</strong>;
+  added option <strong>--ignore-accidents</strong> with "reverse meaning" instead)</li>
+<li>Removed option <strong>--quit-on-accident</strong></li>
+<li>Debugged buggy dealing with false vehicle leaving order
+  (what should in fact not happen anyway)</li>
+</ul>
+</li>
+<li>Cleaning<ul>
+<li>Removed unused/undescribed lane-change output (<strong>--lanechange-output</strong>)</li>
+<li>Removed unused/undescribed lane-change options <strong>--lanechange.min-sight</strong> and <strong>--lanechange.min-sight-edges</strong></li>
+</ul>
+</li>
+<li>Outputs<ul>
+<li>patched problems with the intervals of detector outputs
+  (including <a href="https://github.com/eclipse-sumo/sumo/issues/73">defect 73: false end step information in detectors output</a>)</li>
+</ul>
+</li>
+<li>removed TrafficOnline classes; new approaches will be
+    described/discussed at
+    TrafficOnline; was: <a href="https://github.com/eclipse-sumo/sumo/issues/57">enhancement 57: remove TrafficOnline classes from simulation core</a><ul>
+<li><a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgelane traffic</a>,
+  <a href="../../Simulation/Output/Lane-_or_Edge-based_Emissions_Measures/">edgelane hbefa</a>,
+  and [edgelane harmonoise]../(Simulation/Output/Lane-_or_Edge-based_Noise_Measures.md)
+  are no longer writing empty intervals (13.05.2009)</li>
+<li>corrected behavior of using intervals in <a href="../../Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">edgelane traffic</a>,
+  <a href="../../Simulation/Output/Lane-_or_Edge-based_Emissions_Measures/">edgelane hbefa</a>,
+  and <a href="../../Simulation/Output/Lane-_or_Edge-based_Noise_Measures/">edgelane harmonoise</a>
+  (solved <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=2168007&amp;group_id=45607&amp;atid=443424">bug 2504162: multiple begins / ends should be defined in separate dumps</a>
+  and <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=2168007&amp;group_id=45607&amp;atid=443424">bug 2504144: dump intervals are mandatory</a>)</li>
+<li><a href="../../Simulation/Output/Lane-_or_Edge-based_Emissions_Measures/">edgelane hbefa</a>
+  now additionally writes per-vehicle values</li>
+</ul>
+</li>
+<li>
+<p>fixed re-emission check for edges with multiple waiting vehicles</p>
+</li>
+<li>
+<p>sumo-gui</p>
+</li>
+<li>Added the possibility to load view settings and
+    <a href="../../sumo-gui/#showing_background_images">decals</a> from
+    a configuration file (implemented <a href="https://sourceforge.net/tracker/?func=detail&amp;aid=2168007&amp;group_id=45607&amp;atid=443424">request 2168007: add possibility to load view settings file with start of gui</a>).
+    Added the possibility to generate snapshots on startup, defined
+    in a configuration file.</li>
+<li>
+<p>Removed the "additional weight" dialog - was not known to be
+    used</p>
+</li>
+<li>
+<p>NETGEN</p>
+</li>
+<li>random networks may now contain bidirectional edges; the
+    probability to have an edge being bidirectional is controlled by
+    the <strong>--rand-bidi-probability</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;FLOAT&gt;</em></a> with default=1 (all edges are bidirectional)</li>
+<li>
+<p>The default junction type (option <strong>--default-junction-type</strong>) may now be only one of
+    "priority", "right_before_left", or "traffic_light". Building
+    agent-based and actuated traffic lights from within NETGEN will
+    no longer be supported.</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>Nodes which have same or almost same positions are no longer
+    joined per default.</li>
+<li>Type descriptions allow a certain edge type to be discarded from
+    being imported using the <code>discard="x"</code> attribute.</li>
+<li>netconvert can guess roundabouts; force using <strong>--guess-roundabouts</strong></li>
+<li>corrected usage of the <code>spread_type</code> attribute in edges; was: <a href="https://github.com/eclipse-sumo/sumo/issues/111">defect 111 correct usage of the spread_type attribute</a></li>
+<li>
+<p>patching problems with RoboCup Rescue League import</p>
+</li>
+<li>
+<p>od2trips</p>
+</li>
+<li>The default departure/arrival behavior can be controlled on the
+    command line, now. The following options were introduced for
+    this purpose: <strong>--departlane</strong>, <strong>--departpos</strong>, <strong>--departspeed</strong>, <strong>--arrivallane</strong>, <strong>--arrivalpos</strong>, <strong>--arrivalspeed</strong>. See also
+    <a href="../../Specification/">Specification</a></li>
+<li>
+<p>solved <a href="https://github.com/eclipse-sumo/sumo/issues/67">defect 67: false interpretation of the second time field (od2trips)</a></p>
+</li>
+<li>
+<p>duarouter</p>
+</li>
+<li>
+<p>The default departure/arrival behavior can be controlled on the
+    command line, now. The following options were introduced for
+    this purpose: <strong>--departlane</strong>, <strong>--departpos</strong>, <strong>--departspeed</strong>, <strong>--arrivallane</strong>, <strong>--arrivalpos</strong>, <strong>--arrivalspeed</strong>. See also
+    <a href="../../Specification/">Specification</a></p>
+</li>
+<li>
+<p>jtrrouter</p>
+</li>
+<li>
+<p>The default departure/arrival behavior can be controlled on the
+    command line, now. The following options were introduced for
+    this purpose: <strong>--departlane</strong>, <strong>--departpos</strong>, <strong>--departspeed</strong>, <strong>--arrivallane</strong>, <strong>--arrivalpos</strong>, <strong>--arrivalspeed</strong>. See also
+    <a href="../../Specification/">Specification</a></p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li>changed name of "areal detectors" to "multi-entry/multi-exit
+    detectors"</li>
+<li>fixed crashes occurring when using the distance command
+    (<a href="https://github.com/eclipse-sumo/sumo/issues/70">defect 70: TraCI does not recognize edges with'['...</a>)</li>
+<li>added <a href="../../TraCI/">APIs for getting information about vehicles, vehicle types, lanes, routes, polygons, PoIs, and junctions</a>.</li>
+<li>added the possibility to change the phase and retrieve the
+    current phase and complete definition of a tls using the new
+    phase definition</li>
+</ul>
+<h2 id="version-0103-30032009">Version 0.10.3 (30.03.2009)<a class="headerlink" href="#version-0103-30032009" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All</li>
+<li>A daily build for windows is available at:
+    <a href="https://sumo.dlr.de/docs/Downloads.php#nightly_snapshots">https://sumo.dlr.de/docs/Downloads.php#nightly_snapshots</a></li>
+<li>Made tests tolerant for floating point imprecision</li>
+<li>First Unit Tests added by Matthias Heppner (thanks!!)</li>
+<li>
+<p>Xerces 3 may now be used optionally</p>
+</li>
+<li>
+<p>Simulation</p>
+</li>
+<li>
+<p>further work on simulation of inner-junction traffic in dense
+    scenarios</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>
+<p>prunning on a bounding box was revalidated; tests were added</p>
+</li>
+<li>
+<p>dfrouter</p>
+</li>
+<li>
+<p>made reading of detector positions more fault-tolerant</p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li>tests revalidated</li>
+<li>Tutorial on interaction with traffic lights added by Lena
+    Kalleske (thanks!!)</li>
+<li>added the possibility to retrieve a complete tls definition via
+    TraCI</li>
+</ul>
+<h2 id="version-0102-16032009">Version 0.10.2 (16.03.2009)<a class="headerlink" href="#version-0102-16032009" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All</li>
+<li>If configuration is written using <strong>--write-config</strong>, the
+    application stops after this step</li>
+<li>
+<p>The devices now also allow "<strong>NUL</strong>" or "<strong>/dev/NULL</strong>" as
+    output file name. In this case, the output is redirected to
+    <strong>NUL</strong> (MS Windows) or <strong>/dev/null</strong> (Linux)</p>
+</li>
+<li>
+<p>sumo-gui</p>
+</li>
+<li>solved bug 2519476: vss are not shown properly</li>
+<li>solved bug 2510002: Crash on vss manipulator</li>
+<li>debugged size info ("legend") drawing</li>
+<li>solved bug 2519761: guisim crashes on "show all routes"</li>
+<li>changed how decals are aligned (see
+    <a href="../../sumo-gui/#showing_background_images">sumo-gui#showing_background_images</a>)</li>
+<li>Consolidated the startup-options <strong>--suppress-end-info</strong> and
+    <strong>--quit-on-end</strong>: <strong>--suppress-end-info</strong> was removed, the
+    application quits after performing the simulation when
+    <strong>--quit-on-end</strong> is given. This is also done even if errors
+    occur</li>
+<li>added the possibility to copy the cursor position to clipboard</li>
+<li>debugged false position information within the popup-menu of a
+    lane</li>
+<li>
+<p>Tests based on SUMO tests are now also performed for sumo-gui.
+    Thanks to Michael Behrisch for this very nice work</p>
+</li>
+<li>
+<p>Simulation</p>
+</li>
+<li>solved bug 2524031: sumo xml parser relies on sequence order
+    instead IDs;
+    thanks to Andrey Gursky for supplying the example</li>
+<li>solved bug 2519762: rerouter are not shown
+    properly</li>
+<li>solved bug 2105526: Subsecond simulation does not
+    compile</li>
+<li>changed default simulation end time to INT_MAX</li>
+<li>simulation stops on running empty only if there is no end time
+    specified</li>
+<li>
+<p>closed work on pollutant emission modelling based on HBEFA</p>
+</li>
+<li>
+<p>netconvert / Netgen</p>
+</li>
+<li>trying to deal with problems on network building; networks are
+    more correct for most cases, but may look weird sometimes</li>
+<li>solved <a href="https://github.com/eclipse-sumo/sumo/issues/38">defect 38: speed instead of length while importing XML</a></li>
+<li>
+<p>changed the tls-guessing procedure (unverified, yet); tls which
+    span over multiple junctions can now been "guessed" if both,
+    nodes are marked as being controlled by traffic lights or not
+    within the imported data; see also: <a href="https://github.com/eclipse-sumo/sumo/issues/42">task 42: (TAPAS) add possibility to generate joined tls if tls are given</a></p>
+</li>
+<li>
+<p>polyconvert</p>
+</li>
+<li>solved <a href="https://github.com/eclipse-sumo/sumo/issues/14">defect 14: polyconvert does not report about double ids</a></li>
+<li>renamed option <strong>--xml-points</strong> to <strong>--xml</strong></li>
+<li>
+<p>renamed option <strong>--shape-files</strong> to <strong>--shape-file</strong></p>
+</li>
+<li>
+<p>Tools</p>
+</li>
+<li>
+<p>Rebuilt traceExporter; added tests</p>
+</li>
+<li>
+<p>Documentation</p>
+</li>
+<li>
+<p>solved bug 1993983: Errors in User Documentation</p>
+</li>
+<li>
+<p>TAPAS</p>
+</li>
+<li>see <a href="../../Data/Scenarios/TAPASCologne/#changelog">TAPASCologne ChangeLog</a></li>
+</ul>
+<h2 id="version-0101-11012009">Version 0.10.1 (11.01.2009)<a class="headerlink" href="#version-0101-11012009" title="Permanent link">&para;</a></h2>
+<ul>
+<li>sumo-gui</li>
+<li>
+<p>debugged right-click on an empty cell</p>
+</li>
+<li>
+<p>Simulation</p>
+</li>
+<li>removed bug in collision detection</li>
+<li>added warning about old route format</li>
+</ul>
+<h2 id="version-0100-09012009">Version 0.10.0 (09.01.2009)<a class="headerlink" href="#version-0100-09012009" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Build</li>
+<li>
+<p>removed obsolete configuration option <strong>--enable-speedcheck</strong></p>
+</li>
+<li>
+<p>All</p>
+</li>
+<li>using a reduced, faster XML parser (not validating)</li>
+<li>default vehicle length is set to 7.5m (including gap)</li>
+<li>route format changed ("edges" attribute)</li>
+<li>(junction) internal lanes are the default now</li>
+<li>
+<p>copyright changed (removed obsolete ZAIK reference)</p>
+</li>
+<li>
+<p>sumo-gui</p>
+</li>
+<li>solved bug 2163422: Simulation does not start automatically</li>
+<li>refactored the visualization speed-up; instead of using a
+    self-made hack that uses a grid, an rtree structure is now used.
+    This should solve problems with disappearing edges and nodes and
+    with a slow selection</li>
+<li>Added the possibility to save and load decals (int an XML-file)</li>
+<li>View settings are now saved loaded using XML</li>
+<li>implemented feature 1906106: make lines of bus stops always visible</li>
+<li>
+<p>implemented feature 2103556: Remove "Add Successors To Selected"</p>
+</li>
+<li>
+<p>Simulation</p>
+</li>
+<li>Refactored mean data; instead of having it as an additional item
+    that has to be touched by vehicles, it is a MSMoveReminder</li>
+<li>changed the definition of triggers; the old definition is still
+    possible, but prints a warning.<ul>
+<li>&lt;trigger objecttype="lane" attr="speed" objectid="&lt;LANE&gt;[;&lt;LANE&gt;]*" ... --&gt; &lt;variableSpeedSign lanes="&lt;LANE&gt;[;&lt;LANE&gt;]*" ...</li>
+<li>&lt;trigger objecttype="rerouter" objectid="&lt;EDGE&gt;[;&lt;EDGE&gt;]*" ... --&gt; &lt;rerouter edges="&lt;EDGE&gt;[;&lt;EDGE&gt;]*" ...</li>
+<li>&lt;trigger objecttype="emitter" objectid="&lt;LANE&gt;" ... --&gt; &lt;emitter lane="&lt;LANE&gt;" ...</li>
+<li>&lt;trigger objecttype="bus_stop" objectid="&lt;LANE&gt;" ... --&gt; &lt;busStop lane="&lt;LANE&gt;" ...</li>
+</ul>
+</li>
+<li>new "route probe" output added</li>
+<li>solved bug 2350888: vehicle on false lane with cyclic routes
+    (thanks to Daniel Janusz for supplying the example)</li>
+<li>solved bug 2082959: bus stops that end at edge end confuse vehicles
+    (thanks to Gerrit Lammert for supplying the example)</li>
+<li>solved bug 2468327: log files together with input errors let sumo crash</li>
+<li>solved bug 2227272: Random routes do not work with simple net</li>
+<li>distributions for routes and vehicle types</li>
+<li>
+<p>changed format of dump definitions from command line to xml
+    configuration</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>solved bug 2137657: edges disappear in combination with --keep-edges</li>
+<li>changed APIs for setting lane-2-lane connections</li>
+<li>work on Vissim-import</li>
+<li>Now, the node positions are not added to an edge's geometry if
+    one exists (if the edge has no explicit geometry, the node
+    positions are still used). <strong>--add-node-positions</strong> was added,
+    so that the old behavior is still available</li>
+<li>Changed features of <strong>--plain-outoput</strong>: plain-nodes now contain
+    tls information, additionally, plain-connections are written</li>
+<li>changed computation whether a link is a left-mover</li>
+<li>changed traffic lights computation</li>
+<li>removed unneeded option <strong>--all-logics</strong></li>
+<li>removed "FileErrorReporter" usage</li>
+<li>too complicated junctions (#links&gt;64) are catched and set to
+    unregulated</li>
+<li>corrected computation of right-of-way rules</li>
+<li>solved bug 2392943: netconvert fails when removing edges and guessing ramps</li>
+<li>solved bug 2171355: turnarounds even with --no-turnarounds</li>
+<li>
+<p>building turnarounds may be now skipped for tls-controlled edges
+    (using <strong>--no-tls-turnarounds</strong>)</p>
+</li>
+<li>
+<p>NETGEN</p>
+</li>
+<li>
+<p>removed unneeded option <strong>--all-logics</strong></p>
+</li>
+<li>
+<p>Router</p>
+</li>
+<li>
+<p>solved bug 2149069: dfrouter does not work with internal lanes</p>
+</li>
+<li>
+<p>dfrouter</p>
+</li>
+<li>removed support for elmar's detector descriptions</li>
+<li>removed <strong>--fast-flows</strong> option</li>
+<li>solved bug 2165708: False speed conversion in dfrouter?</li>
+<li>named classes properly</li>
+<li>applied changes to trigger definitions (see "Simulation")</li>
+<li>
+<p>solved bug 2165666: dfrouter does not regard ''--all-end-follower"</p>
+</li>
+<li>
+<p>polyconvert</p>
+</li>
+<li>refactoring</li>
+<li>in-line documentation added</li>
+<li>added OSM-import functionality</li>
+<li>added shape-file - import functionality (imports points, line
+    strings, polygons, and their multi-pendants)<ul>
+<li>import is done via <strong>--shape-files</strong></li>
+<li>the id-field is given via <em><em>--shape-file.id-name </em>&lt;NAME&gt;</em> **</li>
+<li>optional projection guess is done via
+  <strong>--arcview.guess-projection</strong></li>
+</ul>
+</li>
+<li>renamed <strong>--visum-file</strong> to <strong>--visum-files</strong>; debugged</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

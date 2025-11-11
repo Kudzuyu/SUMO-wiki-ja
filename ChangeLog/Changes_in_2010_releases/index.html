@@ -1,0 +1,566 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/ChangeLog/Changes_in_2010_releases/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Changes in the 2010 releases (versions 0.12.0, 0.12.1 and 0.12.2) - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#version-0122-07122010" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changes in the 2010 releases (versions 0.12.0, 0.12.1 and 0.12.2)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-0122-07122010" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.12.2 (07.12.2010)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0121-07102010" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.12.1 (07.10.2010)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0120-27052010" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 0.12.0 (27.05.2010)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Changes in the 2010 releases (versions 0.12.0, 0.12.1 and 0.12.2)</h1>
+
+<h2 id="version-0122-07122010">Version 0.12.2 (07.12.2010)<a class="headerlink" href="#version-0122-07122010" title="Permanent link">&para;</a></h2>
+<ul>
+<li>all</li>
+<li>added options to save the xml schema for the configuration file</li>
+<li>added "--version" option</li>
+<li>Simulation</li>
+<li>arrivalpos, arrivallane and arrivalspeed parameters for vehicles</li>
+<li>correcting lots of person handling bugs</li>
+<li>refactoring vehicle route output and tripinfo into devices</li>
+<li>clean up of inheritance structure of MSVehicle</li>
+<li>GUI</li>
+<li>drawing arrows instead of using bitmaps</li>
+</ul>
+<h2 id="version-0121-07102010">Version 0.12.1 (07.10.2010)<a class="headerlink" href="#version-0121-07102010" title="Permanent link">&para;</a></h2>
+<ul>
+<li>TraCI</li>
+<li>added a possibility to access a vehicle's signals, wipers, and
+    other things; see <a href="../../TraCI/Vehicle_Value_Retrieval/">Vehicle Value Retrieval</a>, <a href="../../TraCI/Change_Vehicle_State/">Change Vehicle State</a>, and
+    <a href="../../TraCI/Vehicle_Signalling/">Vehicle Signalling</a></li>
+<li>Simulation</li>
+<li>corrected direction when departing at a lane's begin</li>
+<li>introduced a new <code>departpos</code> named "<code>base</code>". The vehicle starts at
+    position=vehicle_length+.1, this means at the begin of the
+    lane, but being completely on it. This <code>departpos</code> is now the default. (see
+    <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicles_and_routes">Definition of Vehicles, Vehicle Types, and Routes#Vehicles and Routes</a>).</li>
+<li>addressing teleports<ul>
+<li>corrected "incoming lanes" determination</li>
+<li>added the option <strong>--lanechange.allow-swap</strong>; if enabled, vehicles blocking each other are exchanged</li>
+</ul>
+</li>
+<li>GUI</li>
+<li>debugged traffic lights tracker broken when moving to subseconds</li>
+<li>netconvert</li>
+<li>OSM-Import<ul>
+<li>osm importer fails fast - furtherly given files are not
+  processed in the case of an error</li>
+<li>assigned default velocities to not-numerical maxspeed values
+  ('none':300km/h, 'walk':5km/h); was: <a href="https://github.com/eclipse-sumo/sumo/issues/344">defect 344: The TAPAS Cologne scenario does not work with the current(0.12.0) SUMO version - maxspeed not numeric</a></li>
+<li>parsing maxspeed values given as '50 km/h'; was:
+  <a href="https://github.com/eclipse-sumo/sumo/issues/344">defect 344: The TAPAS Cologne scenario does not work with the current(0.12.0) SUMO version - maxspeed not numeric</a></li>
+<li>new option <strong>--osm.skip-duplicates-check</strong> added which, well, skips checks for duplicate nodes and edges</li>
+</ul>
+</li>
+</ul>
+<h2 id="version-0120-27052010">Version 0.12.0 (27.05.2010)<a class="headerlink" href="#version-0120-27052010" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Simulation</li>
+<li>solved <a href="https://sourceforge.net/apps/trac/sumo/ticket/173">regarding red light late blocks vehicles</a></li>
+<li>corrected the documentation on using <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#abstract_vehicle_class">an abstract vehicle class</a>;
+    the attribute which defines it is named <code>vclass</code> not <code>class</code>.</li>
+<li>introducing flows as replacement for vehicles with repno and
+    period</li>
+<li>introducing stops in routes</li>
+<li>corrected unmotivated deceleration in front of intersections
+    reported by Björn Hendriks (thanks!)</li>
+<li>
+<p>added option <strong>--sloppy-emit</strong> for not trying to emit on full edges (speeds up
+    the simulation a lot)</p>
+</li>
+<li>
+<p>TraCI</p>
+</li>
+<li>moved to representation of time in milliseconds</li>
+<li>
+<p>Induction Loop occupancy is now given in % as defined</p>
+</li>
+<li>
+<p>sumo-gui</p>
+</li>
+<li>Improved layering (correct order of element drawing)</li>
+<li>solved bug 2872900: same title/naming for different dialog boxes</li>
+<li>solved bug 2872824: fox related sumo crash</li>
+<li>Viewport settings can now be saved/loaded</li>
+<li>
+<p>Added new visualisation options</p>
+<ul>
+<li>lanes: by vclass</li>
+<li>vehicles: HSV by depart position/arrival position/direction
+  and distance</li>
+</ul>
+</li>
+<li>
+<p>ROUTER</p>
+</li>
+<li>
+<p>removed random routes generation; introduced a <a href="../../Tools/Trip/#randomtripspy">script for generating random trips</a>
+    instead</p>
+</li>
+<li>
+<p>netconvert</p>
+</li>
+<li>removed the <strong>--tls-poi-output</strong>; instead, <a href="../../Tools/Shapes/">poi_atTLS.py</a> can be used</li>
+<li>OpenStreetMap import<ul>
+<li>removal of edges and nodes which have the attribute <code>action='delete'</code></li>
+<li>recognition and removal of duplicate edges (all values but
+  ids are same) added</li>
+<li>opposite direction edge is built if oneway==-1</li>
+</ul>
+</li>
+<li>
+<p>edge and node attributes can be overridden</p>
+</li>
+<li>
+<p>Tools</p>
+</li>
+<li><a href="../../Networks/Import/OpenStreetMap/">tools for easier open street map import</a> added</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,954 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/Output/Lane-_or_Edge-based_Traffic_Measures/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Lane- or Edge-based Traffic Measures - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instantiating-within-the-simulation" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lane- or Edge-based Traffic Measures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instantiating-within-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instantiating within the Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instantiating within the Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meandata-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meandata Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simplified-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simplified definition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generated Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge-based-network-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge-Based Network States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lane-based-network-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lane-Based Network States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Descriptions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-aggregate--derive-further-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to aggregate / derive further values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization--plotting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization / Plotting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Lane- or Edge-based Traffic Measures</h1>
+
+<p>Values within this output describe the situation within the network in
+terms of traffic science by giving macroscopic values such as the mean
+vehicle speed, the mean density, etc. This output can be generated
+either for lanes, edges or groups of edges.</p>
+<p>In the following, it is described how both outputs are generated and
+which values they contain. Then, the meanings of the values are given as
+well as a description of intervals. At last, some additional
+possibilities to constrain the outputs are given.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please remark that these outputs are also called "aggregated lane/edge states", "meandata", or "edge/lane-dumps".</p>
+</div>
+<h2 id="instantiating-within-the-simulation">Instantiating within the Simulation<a class="headerlink" href="#instantiating-within-the-simulation" title="Permanent link">&para;</a></h2>
+<h3 id="meandata-definition">Meandata Definition<a class="headerlink" href="#meandata-definition" title="Permanent link">&para;</a></h3>
+<p>An edge-based state dump is defined within an <a href="/SUMO.html#format_of_additional_files"><em>additional-file</em></a>:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+    &lt;edgeData id=&quot;&lt;MEASUREMENT_ID&gt;&quot; file=&quot;&lt;OUTPUT_FILE&gt;&quot; .../&gt;
+&lt;/additional&gt;
+</code></pre>
+<p>For a lane based dump simply write:</p>
+<pre><code class="language-xml">&lt;additional&gt;
+    &lt;laneData id=&quot;&lt;MEASUREMENT_ID&gt;&quot; file=&quot;&lt;OUTPUT_FILE&gt;&quot; .../&gt;
+&lt;/additional&gt;
+</code></pre>
+<p>The defined file can either be loaded with sumo option <strong>--additional-files FILENAME</strong> or declared in a <em>.sumocfg</em> file with <code>&lt;additional-files value="FILENAME"/&gt;</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>attribute 'id' is only used to distinguish outputs if there are multiple edgeData definitions. The value is otherwise arbitrary and does not influence written outputs.</p>
+</div>
+<p>For additional attributes see the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of this set of measurements. This user-defined id is needed for differentiating between multiple sets of measurements in a single output file.</td>
+</tr>
+<tr>
+<td><strong>file</strong></td>
+<td>filename</td>
+<td>The path to the output file. The path may be relative.</td>
+</tr>
+<tr>
+<td>period (alias freq)</td>
+<td>int (time)</td>
+<td>The aggregation period the values the detector collects shall be summed up. If not given the whole time interval from begin to end (see below) is aggregated.</td>
+</tr>
+<tr>
+<td>begin</td>
+<td>int (time)</td>
+<td>The time to start writing (intervals starting before this time are discarded). If not given, the simulation's begin is used.</td>
+</tr>
+<tr>
+<td>end</td>
+<td>int (time)</td>
+<td>The time to end writing (intervals starting at or after this time are discarded). If not given the simulation's end is used.</td>
+</tr>
+<tr>
+<td>excludeEmpty</td>
+<td>string (true, false, defaults)</td>
+<td>If set to true, edges/lanes which were not used by a vehicle during this period will not be written; <em>default: false</em>. If set to "defaults" default values for travel time and speed depending on edge length and maximum speed get printed.</td>
+</tr>
+<tr>
+<td>withInternal</td>
+<td>bool</td>
+<td>If set, junction internal edges/lanes will be written as well; <em>default: false</em>.</td>
+</tr>
+<tr>
+<td>maxTraveltime</td>
+<td>float (time)</td>
+<td>The maximum traveltime in seconds to write if only very small movements occur; <em>default 100000</em>.</td>
+</tr>
+<tr>
+<td>minSamples</td>
+<td>float (time)</td>
+<td>The minimum total number of seconds vehicles have to be on the edge / lane to consider it non-empty; <em>default: &gt;0</em>.</td>
+</tr>
+<tr>
+<td>speedThreshold</td>
+<td>float (m/s)</td>
+<td>The maximum speed to consider a vehicle halting; <em>default 0.1</em>.</td>
+</tr>
+<tr>
+<td>vTypes</td>
+<td>string</td>
+<td>space separated list of vehicle type ids to consider. If not given, all vTypes will be considered.</td>
+</tr>
+<tr>
+<td>trackVehicles</td>
+<td>bool</td>
+<td>whether aggregation should be performed over all vehicles that entered the edge/lane in the aggregation interval</td>
+</tr>
+<tr>
+<td>detectPersons</td>
+<td>string list</td>
+<td>whether pedestrians shall be recorded instead of vehicles. Allowed value is <em>walk</em>.<br><strong>Note:</strong> further modes are planned</td>
+</tr>
+<tr>
+<td>writeAttributes</td>
+<td>string list</td>
+<td>list of attribute names that shall be written (defaults to all attribute)</td>
+</tr>
+<tr>
+<td>edges</td>
+<td>string list</td>
+<td>restrict output to the given list of edge ids</td>
+</tr>
+<tr>
+<td>edgesFile</td>
+<td>filename</td>
+<td>restrict output to the given the list of edges given in file (either one edgeID per line or an id prefixed with 'edge:' as in a <a href="../../../Netedit/editModesCommon/#selection_operations">selection file</a>)</td>
+</tr>
+<tr>
+<td>aggregate</td>
+<td>bool</td>
+<td>Whether the traffic statistic of all edges shall be aggregated into a single value (edge id will be <code>AGGREGATED</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="simplified-definition">Simplified definition<a class="headerlink" href="#simplified-definition" title="Permanent link">&para;</a></h3>
+<p>If none of the additional attributes listed above are needed, a meandata definition can be declared without defining an additional file by setting one of the following options:</p>
+<ul>
+<li><strong>--edgedata-output</strong> FILENAME</li>
+<li><strong>--lanedata-output</strong> FILENAME</li>
+</ul>
+<p>The generated definitions will be named <em>DEFAULT_EDGEDATA</em> and <em>DEFAULT_LANEDATA</em> respectively and will aggregate their values over the whole length of the simulation (edges without traffic will not be included in the output).</p>
+<h2 id="generated-output">Generated Output<a class="headerlink" href="#generated-output" title="Permanent link">&para;</a></h2>
+<h3 id="edge-based-network-states">Edge-Based Network States<a class="headerlink" href="#edge-based-network-states" title="Permanent link">&para;</a></h3>
+<p>For edge-based state dumps, the output file will look like the
+following:</p>
+<pre><code class="language-xml">&lt;meandata&gt;
+    &lt;interval begin=&quot;&lt;INTERVAL_BEGIN&gt;&quot; end=&quot;&lt;INTERVAL_END&gt;&quot; id=&quot;&lt;MEASUREMENT_ID&gt;&quot;&gt;
+      &lt;edge id=&quot;&lt;EDGE_ID&gt;&quot; sampledSeconds=&quot;&lt;COLLECTED_VEHICLE_SECONDS&gt;&quot; \
+            traveltime=&quot;&lt;MEAN_TRAVEL_TIME&gt;&quot; \
+            density=&quot;&lt;MEAN_DENSITY&gt;&quot; occupancy=&quot;&lt;MEAN_OCCUPANCY&gt;&quot; \
+            waitingTime=&quot;&lt;TOTAL_WAITING_TIME&gt;&quot; speed=&quot;&lt;MEAN_SPEED&gt;&quot; \
+            departed=&quot;&lt;EMITTED_VEH_NUMBER&gt;&quot; arrived=&quot;&lt;ARRIVED_VEH_NUMBER&gt;&quot; \
+            entered=&quot;&lt;ENTERED_VEH_NUMBER&gt;&quot; left=&quot;&lt;LEFT_VEH_NUMBER&gt;&quot; \
+            laneChangedFrom=&quot;NUMBER_OF_LANE_LEAVERS&quot; laneChangedTO=&quot;NUMBER_OF_LANE_ENTERER&quot;/&gt;
+
+      ... more edges ...
+
+    &lt;/interval&gt;
+
+    ... further intervals ...
+
+&lt;/meandata&gt;
+</code></pre>
+<p>Please note, that in contrary to the example above, for each edge, all
+values are reported in one line.</p>
+<h3 id="lane-based-network-states">Lane-Based Network States<a class="headerlink" href="#lane-based-network-states" title="Permanent link">&para;</a></h3>
+<p>The generated output looks like the following:</p>
+<pre><code class="language-xml">&lt;meandata&gt;
+    &lt;interval begin=&quot;&lt;INTERVAL_BEGIN&gt;&quot; end=&quot;&lt;INTERVAL_END&gt;&quot; id=&quot;&lt;MEASUREMENT_ID&gt;&quot;&gt;
+      &lt;edge id=&quot;&lt;EDGE_ID&gt;&quot;&gt;
+          &lt;lane id=&quot;&lt;LANE_ID&gt;&quot; sampledSeconds=&quot;&lt;COLLECTED_VEHICLE_SECONDS&gt;&quot; \
+                traveltime=&quot;&lt;MEAN_TRAVEL_TIME&gt;&quot; \
+                density=&quot;&lt;MEAN_DENSITY&gt;&quot; occupancy=&quot;&lt;MEAN_OCCUPANCY&gt;&quot; \
+                waitingTime=&quot;&lt;TOTAL_WAITING_TIME&gt;&quot; speed=&quot;&lt;MEAN_SPEED&gt;&quot; \
+                departed=&quot;&lt;EMITTED_VEH_NUMBER&gt;&quot; arrived=&quot;&lt;ARRIVED_VEH_NUMBER&gt;&quot; \
+                entered=&quot;&lt;ENTERED_VEH_NUMBER&gt;&quot; left=&quot;&lt;LEFT_VEH_NUMBER&gt;&quot; \
+                laneChangedFrom=&quot;&lt;NUMBER_OF_LANE_LEAVERS&gt;&quot; laneChangedTo=&quot;&lt;NUMBER_OF_LANE_ENTERER&gt;&quot; \
+                speedRelative=&quot;&lt;MEAN_SPEED_RELATIVE&gt;&quot; /&gt;
+
+          ... more lanes...
+
+      &lt;/edge&gt;
+
+      ... more edges ...
+
+    &lt;/interval&gt;
+
+    ... further intervals ...
+
+&lt;/meandata&gt;
+</code></pre>
+<p>Please note, that in contrary to the example above, for each lane, all
+values are reported in one line.</p>
+<h3 id="value-descriptions">Value Descriptions<a class="headerlink" href="#value-descriptions" title="Permanent link">&para;</a></h3>
+<p>Both the edge-dump and the lane-dump are computing the values the same
+way: every vehicle move - even those with v=0 - is recorded and saved
+during the interval. After the interval has passed, these values are
+written into the file after being normalized.</p>
+<p>With regard to edgeData <code>density</code>, the values are normalized by the number of the
+collected vehicle movements and the length of the lane. For <code>laneDensity</code> they are also normalized by the
+number of lanes of the edge.</p>
+<p>The meanings of the written values are given in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin</td>
+<td>(simulation) seconds</td>
+<td>The first time step the values were collected in</td>
+</tr>
+<tr>
+<td>end</td>
+<td>(simulation) seconds</td>
+<td>The last time step + DELTA_T in which the reported values were collected</td>
+</tr>
+<tr>
+<td>edge\@id</td>
+<td>(edge) id</td>
+<td>The name of the reported edge</td>
+</tr>
+<tr>
+<td>lane\@id</td>
+<td>(lane) id</td>
+<td>The name of the reported lane</td>
+</tr>
+<tr>
+<td>sampledSeconds</td>
+<td>s</td>
+<td>The number of vehicles that are present on the edge/lane in each second summed up over the measurement interval (may be subseconds if a vehicle enters/leaves the edge/lane).</td>
+</tr>
+<tr>
+<td>traveltime</td>
+<td>s</td>
+<td>Time needed to pass the edge/lane, note that this is just an estimation based on the mean speed, not the exact time the vehicles needed. The value is based on the time needed for the front of the vehicle to pass the edge.</td>
+</tr>
+<tr>
+<td>overlapTraveltime</td>
+<td>s</td>
+<td>Time needed to pass the edge/lane completely, note that this is just an estimation based on the mean speed, not the exact time the vehicles needed. The value is based on the time any part of the vehicle was the edge.</td>
+</tr>
+<tr>
+<td>density</td>
+<td>#veh/km</td>
+<td>Vehicle density on the edge</td>
+</tr>
+<tr>
+<td>laneDensity</td>
+<td>#veh/km/lane</td>
+<td>Vehicle density on the edge per lane</td>
+</tr>
+<tr>
+<td>occupancy</td>
+<td>%</td>
+<td>Occupancy of the edge/lane in %. A value of 100 would indicate vehicles standing bumper to bumper on the whole edge (minGap=0).</td>
+</tr>
+<tr>
+<td>waitingTime</td>
+<td>s</td>
+<td>The total number of seconds vehicles were considered halting (speed &lt; speedThreshold). Summed up over all vehicles</td>
+</tr>
+<tr>
+<td>timeLoss</td>
+<td>s</td>
+<td>The total number of seconds vehicles lost due to driving slower than desired (summed up over all vehicles)</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>m/s</td>
+<td>The mean speed on the edge/lane within the reported interval.<br><br><strong>Caution:</strong> This is an average over time and space (space-mean-speed), rather than a local average over the vehicles (time-mean-speed). Since slow vehicles spend more time on the edge they will have a proportionally bigger influence on average speed.</td>
+</tr>
+<tr>
+<td>speedRelative</td>
+<td>-</td>
+<td>quotient of mean speed value (see above) and the lane speed limit</td>
+</tr>
+<tr>
+<td>departed</td>
+<td>#veh</td>
+<td>The number of vehicles that have been emitted onto the edge/lane within the described interval</td>
+</tr>
+<tr>
+<td>arrived</td>
+<td>#veh</td>
+<td>The number of vehicles that have finished their route on the edge lane</td>
+</tr>
+<tr>
+<td>entered</td>
+<td>#veh</td>
+<td>The number of vehicles that have entered the edge/lane by moving from upstream</td>
+</tr>
+<tr>
+<td>left</td>
+<td>#veh</td>
+<td>The number of vehicles that have left the edge/lane by moving downstream</td>
+</tr>
+<tr>
+<td>laneChangedFrom</td>
+<td>#veh</td>
+<td>The number of vehicles that changed away from this lane</td>
+</tr>
+<tr>
+<td>laneChangedTo</td>
+<td>#veh</td>
+<td>The number of vehicles that changed to this lane</td>
+</tr>
+<tr>
+<td>vaporized</td>
+<td>#veh</td>
+<td>The number of vehicles vaporized on this edge <strong>(only present if #veh &gt; 0)</strong></td>
+</tr>
+<tr>
+<td>teleported</td>
+<td>#veh</td>
+<td>The number of vehicles teleported from this edge <strong>(only present if #veh &gt; 0)</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Please note that in the case of <em>edge</em> meandata both laneChanged entries
+are equal to the total number of lane changes on the edge. Furthermore
+each lane change is counted separately, that means if one vehicle
+changes from lane 1 to lane 3 it will generate two lane change counts.</p>
+<h2 id="how-to-aggregate--derive-further-values">How to aggregate / derive further values<a class="headerlink" href="#how-to-aggregate--derive-further-values" title="Permanent link">&para;</a></h2>
+<p>In order to aggregate the output for the same edge / lane over larger
+time periods the values which count vehicles have to be simply summed,
+density and occupancy can be simply averaged (if the interval lengths
+are equal) and speed should be a weighted average with sampledSeconds as
+weight. To aggregate the traveltime further, calculate the mean speed
+first and then divide edge/lane length by the speed.</p>
+<p>Spatial aggregation (over multiple edges or lanes) is not as easy,
+especially if they are consecutive, because each vehicle generates data
+on each lane it is on, even if it is on multiple lanes. In the case of
+many short and fast moving vehicles the error is negligible but if you
+have long and slow vehicles you cannot aggregate as above.</p>
+<p>The following measurements can be derived from the values given (period
+denotes the length of the aggregation interval):</p>
+<ul>
+<li>Average number of vehicles on the edge (#) = <code>sampledSeconds /  period</code></li>
+<li>Average traffic volume (#/h) = <code>speed * 3.6 * density</code></li>
+<li>Traffic volume at the begin of the lane / edge (#/h) = <code>3600 * entered / period</code></li>
+<li>Traffic volume at the end of the lane / edge (#/h) = <code>3600 * left /  period</code></li>
+<li>Total distance travelled (m) = <code>speed * sampledSeconds</code></li>
+<li>Edge length = <code>sampledSeconds / period * 1000 / density</code></li>
+</ul>
+<p>Sometimes one wants to know how many vehicles were on an edge. The exact
+definition of this value depends on how departed, arrived and
+lane-changing vehicles are counted. Each vehicle is either in <em>arrived</em>,
+<em>left</em> or <em>laneChangedFrom</em> and each vehicle is also either in
+<em>departed</em>, <em>entered</em> or <em>laneChangedTo</em>. However, a vehicle may be
+counted multiple times in <em>laneChangedFrom</em> and <em>laneChangedTo</em> if it
+performed back-and-forth lane changing.</p>
+<p>The following <code>&lt;edgeData&gt;</code> values are all reasonable counts in that they count each
+vehicle only once but they include/exclude some special cases.</p>
+<ul>
+<li>entered</li>
+<li>entered + departed</li>
+<li>left</li>
+<li>left + arrived</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using <code>&lt;laneData&gt;</code> the sum <em>left</em> + <em>arrived</em> excludes all the vehicles that exited the lane by lane-changing. whereas the sum <em>left</em> + <em>arrived</em> + <em>laneChangedFrom</em> may count vehicles multiple times. If total counts on a lane are needed it is better to use a <a href="../#simulated_detectors">detector</a>.</p>
+</div>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Per default, all edges are written, even those on which no vehicle
+  drove. If the lane / edge collected no data the attributes speed,
+  traveltime, density, occupancy and waitingTime are not written. One
+  can disable writing unused edges/lanes by setting the
+  <code>excludeEmpty</code> attribute to true.</li>
+<li>Even on lanes/edges which have sampledSeconds="0.00" since the real
+  number of sampledSeconds may be 0.001 and was cut off in the output.
+  To define a minimum number of samples before you consider your data
+  valid, use <code>minSamples</code> in the meandata
+  definition.</li>
+<li>Even though no data was collected (sampledSeconds="0") departed and
+  laneChangedTo may be different from 0 because internally lane
+  changes and departures happen at the end of a time step.</li>
+<li>The interval end is the interval begin + aggregation time, meaning
+  that values were collected within these steps excluding the end time
+  itself. If the simulation ends before the last interval is over, the
+  interval will be pruned.</li>
+<li>The output file will be generated, does not have to exist earlier
+  and will be overwritten if existing without any warning. The folder
+  the output file shall be generated in must exist.</li>
+<li>If you need only information about the network states during certain
+  time periods, you may constraint generation of the dumps by creating
+  multiple dumps with the attributes
+  <code>begin=""</code> and
+  <code>end=""</code>. All of them may have
+  identical ids and write to the same output file.</li>
+</ul>
+<h2 id="visualization--plotting">Visualization / Plotting<a class="headerlink" href="#visualization--plotting" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../../sumo-gui/#visualizing_edge-related_data">sumo-gui</a> can load edgeData files and color network edges/lanes according to any of its attributes</li>
+<li><a href="../../../sumo-gui/#edgelane_visualisation_settings">sumo-gui</a> can color edges/lanes by any of the attributes being collected while the simulation is running</li>
+<li><a href="../../../Netedit/editModesData/">netedit</a> can be used to load/view/edit edgeData files</li>
+<li>The <a href="../../../Tools/Visualization/#mpl_dump_onnetpy">mpl_dump_onNet.py</a>
+  script can display values of this output as a colored net (and
+  further <a href="../../../Tools/Visualization/">visualization tools</a>
+  exist).</li>
+<li><a href="../../../Tools/Visualization/#fundamental_diagram_from_edgedata">plotXMLAttributes</a> can extract and plot values such as the <a href="../../../Tutorials/FundamentalDiagram/">Fundamental Diagram</a> below</li>
+</ul>
+<p><img src="../../images/plotAttrs_fundamental.png" width="600px"/></p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../Lane-_or_Edge-based_Emissions_Measures/">edge/lane-based vehicular pollutant emission
+  output</a>
+  and <a href="../Lane-_or_Edge-based_Noise_Measures/">edge/lane-based vehicular noise emission
+  output</a>
+  which have similar formats</li>
+<li>You can generate mean data definitions automatically. See <a href="../../../Tools/Output/">output
+  tools</a> for more information.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

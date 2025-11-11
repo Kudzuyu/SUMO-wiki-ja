@@ -1,0 +1,828 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tools/Routes/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Routes - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#routecheckpy" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Routes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#known-caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known caveats
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>The tools' names accord to their function.</p>
+<h1 id="routecheckpy">routecheck.py<a class="headerlink" href="#routecheckpy" title="Permanent link">&para;</a></h1>
+<p>Allows to verify whether routes within the given route-file(s) are valid
+for the given network. Call(s):</p>
+<pre><code>python tools\route\routecheck.py &lt;net&gt; &lt;vehicletypes&gt; [-f|--fix] &lt;routes&gt;+
+</code></pre>
+<pre><code>python tools\route\routecheck.py &lt;net&gt; &lt;vehicletypes+routes&gt;
+</code></pre>
+<p>If a route is broken (or disconnected), the tool gives a warning, e.g.: "Warning:
+Route for vehicle 0 disconnected between startEdge and endEdge"</p>
+<p>If <strong>--fix</strong> (<strong>-f</strong>) is given, routes are tried to be repaired
+(assuming only one link is missing). The name of the output file(s) is
+generated by appending ".fixed". These file contain repaired routes (if
+it was possible), each appended link is written in comments after the
+vehicle.</p>
+<h2 id="known-caveats">Known caveats<a class="headerlink" href="#known-caveats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The tool does not deal with vehicle types; it only checks whether
+  routes are connected</li>
+<li>When working in <strong>--fix</strong>-mode a vehicle type file must be given</li>
+<li>No tests for dealing with networks that have internal edges</li>
+<li>Does not handle nested elements (i.e. stops) reliably</li>
+<li>Does not handle named routes</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A alternative to routecheck.py is duarouter with options <strong>--skip-new-routes --repair --ignore-errors --ptline-routing</strong> which doesn't have the above limitations.</p>
+</div>
+<h1 id="findallroutespy">findAllRoutes.py<a class="headerlink" href="#findallroutespy" title="Permanent link">&para;</a></h1>
+<p>The tool determines all possible routes between the given source and target edges. Example:</p>
+<pre><code>python tools/findAllRoutes.py -n &lt;net-file&gt; -o &lt;output-file&gt; -s &lt;source-edges&gt; -t &lt;target-edges&gt;
+</code></pre>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Routes may contain any number of loops and detours. In a highly meshed network (i.e. a grid), the number of possible routes grows very large and most of them will not be plausible.</p>
+</div>
+<h1 id="analyzepersonplanspy">analyzePersonPlans.py<a class="headerlink" href="#analyzepersonplanspy" title="Permanent link">&para;</a></h1>
+<p>Count the different types of person plans according to the sequence of used modes. Private rides are distinguished from public transport rides using the assumption that the name of the private vehicle will start with the name of the person (as happens for <a href="../../duarouter/">duarouter</a>-generated person plans).</p>
+<pre><code>python tools\route\analyzePersonPlans.py -r routes.xml
+</code></pre>
+<p>example output:</p>
+<pre><code>34: walk public walk
+55: car walk
+90: walk
+</code></pre>
+<h1 id="routes_joinpy">routes_Join.py<a class="headerlink" href="#routes_joinpy" title="Permanent link">&para;</a></h1>
+<p>Joins routes belonging to two networks. A map file with the following
+syntax is read first:</p>
+<pre><code>&lt;EDGE_ID&gt;-&gt;&lt;EDGE_ID&gt;
+</code></pre>
+<p>It describes at which edges the networks overlapped and which edge was
+kept in the resulting one. Vehicles from both given route files starting
+at the first of those edges will be at first not regarded, but their
+routes are kept in memory. All other vehicles are kept, but if they pass
+one of the mapped edges, the route is continued by choosing a random
+route from the list of previously discarded ones which start at the
+corresponding edge.</p>
+<pre><code>python tools\route\routes_Join.py &lt;prefix#1&gt; &lt;routes#1&gt; &lt;prefix#2&gt; &lt;routes#2&gt; &lt;mapfile&gt;
+</code></pre>
+<ul>
+<li>&lt;prefix#1&gt;: The prefix to use for vehicles from the first routes
+  file</li>
+<li>&lt;routes#1&gt;: The first routes file</li>
+<li>&lt;prefix#2&gt;: The prefix to use for vehicles from the second routes
+  file</li>
+<li>&lt;routes#2&gt;: The second routes file</li>
+<li>&lt;mapfile&gt;: The edge mapping</li>
+</ul>
+<p>Attention! The routes are not sorted in time!</p>
+<h1 id="sort_routespy">sort_routes.py<a class="headerlink" href="#sort_routespy" title="Permanent link">&para;</a></h1>
+<p>This script sorts the vehicles in the given route file by their depart
+time. If the option <strong>--big</strong> is supplied, a slow but memory efficient algorithm
+is used.</p>
+<pre><code>python tools/route/sort_routes.py input.rou.xml -o output.rou.xml
+</code></pre>
+<h1 id="cutroutespy">cutRoutes.py<a class="headerlink" href="#cutroutespy" title="Permanent link">&para;</a></h1>
+<p>This script cuts down routes from a large scenario to a sub-scenario.
+This assumes the existence of a big scenario (<em>orig.net.xml</em> and
+<em>orig.rou.xml</em>). The goal is to simulate only a smaller part of the
+network (<em>reduced.net.xml</em>) keeping all of the routes that pass through
+the reduced network. Output can be a route file or a trip file.
+Depending on the given options the new departure times can be computed
+from exitTimes (see <a href="../../sumo/">sumo</a> option <strong>--vehroute-output.exit-times</strong>), extrapolated from
+the original network or simply copied from the original departure times.
+If the option <strong>--big</strong> is supplied, a slow but memory efficient algorithm is used
+for sorting the output by departure time. Example usage</p>
+<pre><code>python tools/route/cutRoutes.py reduced.net.xml orig.rou.xml
+  --routes-output output.rou.xml --orig-net orig.net.xml
+</code></pre>
+<p>Filtering stopping places is also supported by setting the options <strong>--additional-input</strong> and <strong>--stops-output</strong>.</p>
+<h1 id="cuttripspy">cutTrips.py<a class="headerlink" href="#cuttripspy" title="Permanent link">&para;</a></h1>
+<p>This script cuts down trips from a large scenario to a sub-scenario.
+Only trips that start and end in the sub-scenario network are kept
+(this differs from <a href="#cutroutespy">cutRoutes.py</a> which also keeps routes passing through the
+sub-scenario network).</p>
+<pre><code>python tools/route/cutRoutes.py --trips-output output.rou.xml cut.net.xml orig.rou.xml
+</code></pre>
+<h1 id="splitroutefilespy">splitRouteFiles.py<a class="headerlink" href="#splitroutefilespy" title="Permanent link">&para;</a></h1>
+<p>This script splits a list of route files (e.g. coming from <a href="../../duarouter/">duarouter</a>)
+by start time. If a detector file is given, the routes will be also split by
+the edges with detectors. Example:</p>
+<pre><code>python tools/route/splitRouteFiles.py &lt;route-files&gt;
+</code></pre>
+<p>As default, the routes will be split in steps of 900 seconds. This can be changed
+with the option <strong>-s</strong>.
+The detector file can be loaded with the option <strong>-f</strong>. Example:</p>
+<pre><code>python tools/route/splitRouteFiles.py &lt;route-files&gt; -f &lt;detector-file&gt;
+</code></pre>
+<h1 id="routestatspy">routeStats.py<a class="headerlink" href="#routestatspy" title="Permanent link">&para;</a></h1>
+<p>Compute a length-histogram for all routes in a given route file.
+Alternatively, compute the difference in lengths for two route files
+with the same vehicles. Routes must be child elements of <code>&lt;vehicle&gt;</code>-elements.
+Output for plotting may also be generated (see <strong>--help</strong>).</p>
+<pre><code>python tools/route/routeStats.py &lt;net-file&gt; &lt;route-file&gt;
+</code></pre>
+<p>When setting option <strong>--attribute depart</strong> a histogram on departure times (or departure time
+differences) is generated instead.</p>
+<p>When setting option <strong>edges-file</strong>, all <code>&lt;edge&gt;</code> elements in the file will be read and the set of their ids stored. For every route, the number of edges within the set is counted.</p>
+<h1 id="routecomparepy">routecompare.py<a class="headerlink" href="#routecomparepy" title="Permanent link">&para;</a></h1>
+<p>This script compares two route sets by calculating
+a similarity for any two routes based on the number of common edges
+and determining a maximum weighted matching between the route sets.
+It needs at least two parameters, which are the route sets to compare.
+Optionally a district file may be given, then only routes with
+the same origin and destination district are matched.</p>
+<pre><code>python tools/route/routecompare.py routes.rou.xml routes2.rou.xml
+</code></pre>
+<h1 id="route2polypy">route2poly.py<a class="headerlink" href="#route2polypy" title="Permanent link">&para;</a></h1>
+<p>Transform routes into polygons for visualization in
+<a href="../../sumo-gui/">sumo-gui</a>. Using the options <strong>--hue, --saturation, --brightness</strong> the colors can be
+controlled. Each of these options supports values from [0, 1] as well
+as the special value <em>random</em>.</p>
+<pre><code>python tools/route/route2poly.py &lt;net-file&gt; &lt;route-file&gt;
+</code></pre>
+<h1 id="route2selpy">route2sel.py<a class="headerlink" href="#route2selpy" title="Permanent link">&para;</a></h1>
+<p>Transform routes into an edge selection file which contains all edges
+used in any of the routes, trips or person plans. This file may be used
+for visualization in <a href="../../sumo-gui/">sumo-gui</a> or pruning a
+network via <a href="../../netconvert/">netconvert</a>.</p>
+<pre><code>python tools/route/route2sel.py &lt;route-file&gt; -o usedEdges.txt
+</code></pre>
+<pre><code>netconvert --net-file &lt;net-file&gt; --keep-edges.input-file usedEdges.txt --output reduced.net.xml
+</code></pre>
+<h1 id="route_departoffset">route_departOffset<a class="headerlink" href="#route_departoffset" title="Permanent link">&para;</a></h1>
+<p>Shifts the departure times of <code>&lt;vehicle&gt;</code>, <code>&lt;trip&gt;</code>, and <code>&lt;flow&gt;</code> elements by a specified amount.
+When setting the option <strong>--depart-edges Edge1,Edge2,...</strong>, only vehicles that depart on one of the given
+edges are affected.</p>
+<pre><code>python tools/route/route_departOffset.py --input-file &lt;route-file&gt; --output-file shifted.rou.xml --depart-offset 900
+</code></pre>
+<p>The option <strong>--depart-interval a,b,c,d</strong> shifts all departures within the interval [a,b[ to the
+interval [c,d[.</p>
+<pre><code>python tools/route/route_departOffset.py --input-file &lt;route-file&gt; --output-file shifted.rou.xml --depart-interval 3600,7200,0,500
+</code></pre>
+<h1 id="route_1htoday">route_1htoDay<a class="headerlink" href="#route_1htoday" title="Permanent link">&para;</a></h1>
+<p>Uses "route_departOffset.py" for building 24 route files which describe a whole day assuming the given route files describes an hour.</p>
+<pre><code>python tools/route/route_1htoDay.py &lt;route-file&gt;
+</code></pre>
+<h1 id="scaletimelinepy">scaleTimeline.py<a class="headerlink" href="#scaletimelinepy" title="Permanent link">&para;</a></h1>
+<p>increase or reduces traffic in a given route file by applying a timeline definition. The time extend of the output file is the same as the input. </p>
+<pre><code>sumo/tools/route/scaleTimeLine.py -r 1d_flat.rou.xml -o 1d_timeline.rou.xml --timeline-list 3600,8,5,4,3,4,12,45,74,66,52,50,50,52,53,56,67,84,86,74,50,39,30,21,16
+</code></pre>
+<p>The first value in the <strong>timeline-list</strong> defines the duration of one time interval and the following values define a percentage of the input traffic to be used for each time interval.</p>
+<p>Usage example for transforming a 1-hour peak-traffic scenario into a whole-day scenario:</p>
+<pre><code>sumo/tools/route/route_1htoDay.py 1h_peak.rou.xml -o 1d_peak.rou.xml
+sumo/tools/route/scaleTimeLine.py -r 1d_peak.rou.xml -o 1d_timeline.rou.xml
+</code></pre>
+<h1 id="route2altspy">route2alts.py<a class="headerlink" href="#route2altspy" title="Permanent link">&para;</a></h1>
+<p>Counts possible routes for all depart/arrival edges.
+Builds route alternatives assigning the so determined probabilities to use a route.
+Please note that the cost of the route is not computed!</p>
+<pre><code>python tools/route/route2alts.py &lt;route-file&gt;
+</code></pre>
+<h1 id="countedgeusagepy">countEdgeUsage.py<a class="headerlink" href="#countedgeusagepy" title="Permanent link">&para;</a></h1>
+<p>Generates a <a href="../../sumo-gui/#visualizing_edge-related_data">visualization</a> file for investigating traffic patterns in a
+route file.</p>
+<pre><code>python tools/countEdgeUsage.py &lt;route-file&gt; --output-file &lt;output-file&gt;
+</code></pre>
+<p>The option <strong>--intermediate</strong> may be used to include the total number of passing vehicles
+for each edge in the generated output.</p>
+<p>The generated file <em>result.xml</em> can be loaded in <a href="../../sumo-gui/#visualizing_edge-related_data">sumo-gui to color
+edges by number of departs, arrivals or total number of passing
+vehicles</a></p>
+<p>When investigating routes that pass a particular edge or intersection,
+the input routes may be filtered using the option <strong>--subpart</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a>:</p>
+<pre><code>python tools/countEdgeUsage.py &lt;route-file&gt; --output-file &lt;output-file&gt; --subpart edge3,edge4,edge5
+</code></pre>
+<p>This will only generate results for routes that contain the edge
+sequence <em>edge3 edge4 edge5</em>.
+By default, subpart must be a sequence of consecutive edges. By adding option <strong>--subpart.via</strong>, non-consecutive sequences are permitted.</p>
+<h1 id="addparkingareastops2routespy">addParkingAreaStops2Routes.py<a class="headerlink" href="#addparkingareastops2routespy" title="Permanent link">&para;</a></h1>
+<p>Declares a vehicle to stop in one or more parking areas (separated by comma).</p>
+<pre><code>python tools/addParkingAreaStops2Routes.py -r &lt;route-file&gt; -p &lt;parking-areas&gt; -d &lt;duration in seconds&gt; [-o &lt;output-file&gt;]
+</code></pre>
+<p>The stop will be added to the vehicles route, if the id of the given parking area is part of the vehicle id. Example:</p>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle id=&quot;0_parkingAreaA&quot; depart=&quot;0&quot;&gt;
+      &lt;route edges=&quot;e1 e2 e3&quot;/&gt;
+    &lt;/vehicle&gt;
+    &lt;vehicle id=&quot;1&quot; depart=&quot;0&quot;&gt;
+      &lt;route edges=&quot;e1 e2 e3&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/routes&gt;
+</code></pre>
+<pre><code>python tools/route/addParkingAreaStops2Routes.py -r &lt;route-file&gt; -p ParkingAreaA -d 3600 [-o &lt;output-file&gt;]
+</code></pre>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle id=&quot;0_parkingAreaA&quot; depart=&quot;0&quot;&gt;
+      &lt;route edges=&quot;e1 e2 e3&quot;/&gt;
+      &lt;stop parkingArea=&quot;parkingAreaA&quot; duration=&quot;3600&quot;&gt;
+    &lt;/vehicle&gt;
+    &lt;vehicle id=&quot;1&quot; depart=&quot;0&quot;&gt;
+      &lt;route edges=&quot;e1 e2 e3&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/routes&gt;
+</code></pre>
+<p>This only adds a stop at <strong>parkingAreaA</strong> to the vehicle with id <strong>0_parkingAreaA</strong>.
+, that the lane of that parking area must belong to one of the edges
+"e1, e2, e3" of the vehicles route.</p>
+<h1 id="addparkingareastops2tripspy">addParkingAreaStops2Trips.py<a class="headerlink" href="#addparkingareastops2tripspy" title="Permanent link">&para;</a></h1>
+<p>Add a stop over parking in all trips given in input file</p>
+<pre><code>python tools/route/addParkingAreaStops2Trips.py -r &lt;route-file&gt; -p &lt;parking-areas&gt; -d &lt;duration in seconds&gt; [-o &lt;output-file&gt;]
+</code></pre>
+<p>The stop will be added to the trip route.</p>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;trip id=&quot;vehicle_0&quot; depart=&quot;0.00&quot; from=&quot;WC&quot; to=&quot;CN&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
+<pre><code>python tools/route/addParkingAreaStops2Routes.py -r &lt;route-file&gt; -p &lt;parkings-file&gt; -d 1800 [-o &lt;output-file&gt;]
+</code></pre>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;trip depart=&quot;0.00&quot; from=&quot;WC&quot; id=&quot;vehicle_0&quot; to=&quot;CN&quot;&gt;
+        &lt;stop duration=&quot;1800&quot; parkingArea=&quot;parkingArea_WC_3_0&quot;/&gt;
+    &lt;/trip&gt;
+&lt;/routes&gt;
+</code></pre>
+<p>This only adds a stop at <strong>parkingAreaA</strong> to the vehicle with id <strong>0_parkingAreaA</strong>.
+, that the lane of that parking area must belong to one of the edges
+"e1, e2, e3" of the vehicles route.</p>
+<h1 id="addstops2routespy">addStops2Routes.py<a class="headerlink" href="#addstops2routespy" title="Permanent link">&para;</a></h1>
+<p>Declares vehicles to stop at the end of their route (or at some other defined / random location).</p>
+<pre><code>python tools/route/addStops2Routes.py -n &lt;net-file&gt; -r &lt;route-file&gt; -t &lt;vType-file&gt; -o &lt;output-file&gt; -d &lt;stop duration in seconds&gt; -u &lt;stop until time&gt;
+</code></pre>
+<p>Either the "duration" or "until" for stop must be given. Using the option <strong>-p</strong>, the vehicle stops besides the road without blocking other vehicles. Example:</p>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle id=&quot;0&quot; depart=&quot;0&quot;&gt;
+      &lt;route edges=&quot;e1 e2 e3&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/routes&gt;
+</code></pre>
+<pre><code>python tools/route/addStops2Routes.py -n &lt;net-file&gt; -r &lt;route-file&gt; -t &lt;vType-file&gt; -o &lt;output-file&gt; -p --duration 1800 --until 12:0:0
+</code></pre>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;vehicle depart=&quot;0&quot; id=&quot;0&quot; type=&quot;type1&quot;&gt;
+        &lt;route edges=&quot;SC CN&quot;/&gt;
+        &lt;stop lane=&quot;CN_2&quot; parking=&quot;true&quot; duration=&quot;1800&quot; until=&quot;12:0:0&quot;/&gt;
+    &lt;/vehicle&gt;
+&lt;/routes&gt;
+</code></pre>
+<h2 id="random-stopping">Random stopping<a class="headerlink" href="#random-stopping" title="Permanent link">&para;</a></h2>
+<p>The following options can be used to randomize the added stops:</p>
+<ul>
+<li><strong>--probability</strong>: Randomly adds a stop for each vehicle with probability in <code>[0,1]</code></li>
+<li><strong>--reledge random</strong>: Adds stop on a random edge along the route</li>
+<li><strong>--relpos random</strong>: Adds stop on random offset along the edge</li>
+<li><strong>--lane random</strong>: Adds stop on random (permitted) lane of the stop edge</li>
+</ul>
+<h2 id="stationary-traffic">Stationary traffic<a class="headerlink" href="#stationary-traffic" title="Permanent link">&para;</a></h2>
+<p>Instead of modifying a given route file by adding stops, the tool can also synthesize vehicles to fill up a given list of parkingAreas. This requires the option <strong>--parking-areas FILE</strong> to be set. The generated vehicles will have a stop with the configured duration/until time and leave the simulation after stopping.</p>
+<ul>
+<li><strong>--abs-occupancy</strong> : generate the given number of vehicles for each parkingArea</li>
+<li><strong>--rel-occupancy</strong> : generate vehicles to fill each parkingArea to the given relative capacity</li>
+<li><strong>--abs-free</strong> : generate vehicles to have the given number of free spaces for each parking area</li>
+</ul>
+<h2 id="further-options">Further Options<a class="headerlink" href="#further-options" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>--parking-areas FILE</strong>: Load additional file with parking area definitions. If the final edge of a vehicle has a parkingArea, this will be used as the destination</li>
+<li><strong>--person-duration</strong>, <strong>--person-until</strong>: if set, any persons in the input will receive a <code>&lt;stop&gt;</code> as the last element of their plan</li>
+<li><strong>--start-at-stop</strong>: if set, vehicle routes will be shortened so they start at the final edge. This can be used to define stationary traffic which fills up parkingAreas without driving around.</li>
+</ul>
+<h1 id="vehicle2flowpy">vehicle2flow.py<a class="headerlink" href="#vehicle2flowpy" title="Permanent link">&para;</a></h1>
+<p>This tool transforms every vehicle definition to a flow definition with the configured end time and period (depart is used as begin time).</p>
+<pre><code>python tools/route/vehicles2flow.py &lt;route-file&gt; -o &lt;output-route-file&gt; -e &lt;end-time&gt; -r &lt;repeat-period&gt;
+</code></pre>
+<h1 id="tracegeneratorpy">tracegenerator.py<a class="headerlink" href="#tracegeneratorpy" title="Permanent link">&para;</a></h1>
+<p>This creates a list of (geo) coordinates from an input route file and and a network.</p>
+<pre><code>python tools/route/tracegenerator.py -n &lt;net-file&gt; -r &lt;route-file&gt; -o &lt;output-trace-file&gt;
+</code></pre>
+<h1 id="tracemapperpy">tracemapper.py<a class="headerlink" href="#tracemapperpy" title="Permanent link">&para;</a></h1>
+<p>This script maps a list of (geo) coordinates to a consecutive list of
+edges in a given network (a route)</p>
+<pre><code>python tools/route/tracemapper.py -n &lt;net-file&gt; -t &lt;trace-file&gt; -o &lt;route-output-file&gt;
+</code></pre>
+<p>The input contains the coordinates for every vehicle in a single line.
+Example:</p>
+<pre><code>vehicle1:363.66,497.79 2008.64,498.82
+vehicle2:363.66,497.79 1498.46,989.78 2008.64,498.82
+</code></pre>
+<p>As an alternative input, <a href="../../Simulation/Output/FCDOutput/">fcd-output</a> files (or similar files that contain attributes <code>id</code>, <code>x</code> and <code>y</code>) are supported.</p>
+<p>The output is a standard sumo route file</p>
+<pre><code class="language-xml">&lt;routes&gt;
+    &lt;route id=&quot;vehicle1&quot; edges=&quot;beg rend&quot;/&gt;
+    &lt;route id=&quot;vehicle2&quot; edges=&quot;beg left2end rend&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
+<p>The option <strong>--geo</strong> enables the conversion of the input coordinates with
+the parameters given in the network. If a <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#abstract_vehicle_class">vehicle class</a> is supplied using
+the option <strong>--vehicle-class</strong>, the mapping algorithm will consider only edges where
+this vehicle class is allowed. If the network contains many multi-lane edges, it
+may be beneficial to increase the accepted <strong>--delta</strong> distance between trace points and
+the edge reference line. The mapping algorithm is also available in the
+python library function sumolib.route.mapTrace.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Geographic coordinates have to be provided in the lon/lat form (first coordinate is the longitude, second the latitude)!</p>
+</div>
+<h1 id="implausibleroutespy">implausibleRoutes.py<a class="headerlink" href="#implausibleroutespy" title="Permanent link">&para;</a></h1>
+<p>This tool analyzes a give route file and computes a implausibility score for each route.</p>
+<pre><code>python tools/route/implausibleRoutes.py &lt;net-file&gt; &lt;route-file&gt;
+</code></pre>
+<p>The implausibility score is a weighted sum of individual measures of implausibility (with configurable weights):</p>
+<ul>
+<li>The quotient of (routeLength / airDistance)</li>
+<li>The relative detour time: (routeDuration / shortestRouteDuration)</li>
+<li>The absolute detour time: (routeDuration - shortestRouteDuration)</li>
+<li>Short route penalty: max(0, minimumDistanceParameter - routeDistance)</li>
+<li>Short air-distance penalty: max(0, minimumAirDistanceParameter - routeAirDistance)</li>
+</ul>
+<p>The tool reports routes with an implausibility score above a given threshold.
+It can also be used to generated restrictions for <a href="../Detector/#flowrouterpy">flowrouter</a>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When using a route file with named routes (i.e. flowrouter <strong>--routes-output</strong>), the option <strong>--standalone</strong> must be set.</p>
+</div>
+<h1 id="addstopdelaypy">addStopDelay.py<a class="headerlink" href="#addstopdelaypy" title="Permanent link">&para;</a></h1>
+<p>This tool adds a random delay to some or all stops that have a 'duration' value by increasing the duration</p>
+<pre><code>python tools/route/addStopDelay.py -r &lt;route-file&gt; -o &lt;output-route-file&gt;
+</code></pre>
+<p>The delays are sampled from a <a href="https://en.wikipedia.org/wiki/Truncated_normal_distribution">truncated Normal distribution</a> with parameters set via options
+<strong>--mean FLOAT, --dev FLOAT, --min FLOAT, --max FLOAT</strong>. In the special case where min=max, a fixed delay is added.
+By setting option <strong>--probability FLOAT</strong>, stops only receive a delay with the given probability.#</p>
+<h1 id="checkstoporderpy">checkStopOrder.py<a class="headerlink" href="#checkstoporderpy" title="Permanent link">&para;</a></h1>
+<p>This tool reads a <a href="../../Simulation/Public_Transport/#single_vehicles_and_trips">public transport schedule for vehicles or trips</a> and checks whether the time spent at the same stop by different vehicles is overlapping. This occurrence may be expected for bus lines but typically indicates a data error for a railway schedule (unless <a href="../../Simulation/Railways/#portion_working">portion working</a> takes place).</p>
+<pre><code>python tools/route/checkStopOrder.py -r &lt;route-file&gt;
+</code></pre>
+<p>When setting option <strong>--stop-table STOP_ID</strong> a time table for all vehicles that service the given <code>&lt;busStop&gt;</code>-id is written to standard output.
+The option accepts a list of stops and also the <code>*</code> wildcard to generate a combined table for multiple busStops (i.e belonging to the same station).</p>
+<p>The resulting stop table may look as in the below example, where the columns correspond to the <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#stops_and_waypoints">attributes of the stop</a> except for the following two columns:
+- <strong>veh</strong>: the id of the vehicle to which this stop belongs
+- <strong>flags</strong>:
+  - p: parking
+  - F: first stop of the vehicle
+  - L: last stop of the vehicle
+  - w: waypoint
+  - o: vehicle is overtaken (some other vehicle arrives later at the same stop and departs earlier)
+  - O: vehicle overtakes (some other vehicle arrives earlier and departs later)</p>
+<pre><code># busStop: stop_A,stop_B
+arrival  until      veh      tripId started   ended     flags   busStop
+12:20:30  12:24:12  H2303_6  4199   12:23:22    12:26:23            stop_B
+12:21:42  12:21:42  H2303_8  11010  12:25:15    12:25:15    F       stop_A
+12:50:36  12:53:48  H2303_7  11023  12:50:26    12:52:57            stop_B
+13:20:36  13:23:42  H2303_9  11073                                stop_B
+13:35:00  13:38:42  H2303_8  11025                                stop_B
+13:36:24  13:36:24  H2303_3  11012                                stop_A
+14:04:36  14:07:24  Z2602_2  1435                                   stop_B
+14:21:12  14:24:12  H2303_1  11027                              stop_B
+14:35:18  14:37:18  H3458_2  28915                              stop_B
+14:51:36  14:54:12  Z1351_9  2075                                   stop_B
+</code></pre>
+<h1 id="splitrandompy">splitRandom.py<a class="headerlink" href="#splitrandompy" title="Permanent link">&para;</a></h1>
+<p>This tool splits a route file in two different route files</p>
+<pre><code>python tools/route/splitRandom.py -r &lt;route-file&gt; -a &lt;first output file&gt; -b &lt;second output file&gt; -n &lt;number of trips in second file&gt;
+</code></pre>
+<h1 id="addtazpy">addTAZ.py<a class="headerlink" href="#addtazpy" title="Permanent link">&para;</a></h1>
+<p>This tool adds 'fromTaz' and 'toTaz' information to vehicles in a route file.</p>
+<pre><code>python tools/route/addTAZ.py -r &lt;route-file&gt; -a &lt;taz-file&gt; -o &lt;output-file&gt;
+</code></pre>
+<h1 id="route2odpy">route2OD.py<a class="headerlink" href="#route2odpy" title="Permanent link">&para;</a></h1>
+<p>This tool generates a <a href="../../Demand/Importing_O/D_Matrices/#tazrelation_format">tazRelation-file (OD-Matrix)</a> from a taz-file and route-file.</p>
+<pre><code>python tools/route/route2OD.py -r &lt;route-file&gt; -a &lt;taz-file&gt; -o &lt;output-file&gt;
+</code></pre>
+<p>Not only route file but also trip file can be used as input. The tool will firstly try to find the start edge and the end edge of each trip or flows and match them to the respective origin and destination TAZ according to the input taz-file. The counts of the TAZ-relations will be calculated and saved. If only TAZ-information in the given trip or route file is available, this tool will directly calculate TAZ-based OD relation counts without using the information in the given taz-file, which connection edges locate in each TAZ. If the option <strong>--edge-relations</strong> is set, edge-based relation counts will be calculated and saved, only when start/end edge information is available.</p>
+<p>When option <strong>--interval TIME</strong> (short <strong>-i</strong>) is set, the OD-Matrix will be split into time slices of the given duration.</p>
+<h1 id="geotrip2poipy">geoTrip2POI.py<a class="headerlink" href="#geotrip2poipy" title="Permanent link">&para;</a></h1>
+<p>Load a file with trips define with fromLonLat / toLonLat and convert it to a poi file
+Departure pois will be red and arrival pois will be blue and their visual size reflects the number of departs/arrivals at that location.</p>
+<pre><code>python tools/route/geoTrip2POI.py &lt;trip-files&gt; -o &lt;output-poi-file&gt;
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

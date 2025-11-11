@@ -1,0 +1,699 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tutorials/Driving_in_Circles/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Driving in Circles - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#steps-to-follow-using-xml-files" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Driving in Circles
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-a-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build a network
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-vehicles-and-run-sumo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create vehicles and run SUMO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circular-rerouting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circular rerouting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>In this tutorial we will build a simple circular net with netedit and
+use <a href="../../Simulation/Rerouter/">rerouters</a> to make vehicles drive in circles.
+All definition files can be found in the <strong><em>&lt;SUMO_HOME&gt;</em></strong>/docs/tutorial/circles
+directory.</p>
+<p>This tutorial can be done using only netedit or you can generate the
+demand data by writing the XML-files yourself. Both methods are explained
+below.</p>
+<h1 id="steps-to-follow-using-xml-files">Steps to follow using XML-Files<a class="headerlink" href="#steps-to-follow-using-xml-files" title="Permanent link">&para;</a></h1>
+<h2 id="build-a-network">Build a network<a class="headerlink" href="#build-a-network" title="Permanent link">&para;</a></h2>
+<p>Building a network with XML-Files is not recommended, so we will use
+netedit for this step. First open <a href="../../Netedit/">netedit</a> and create
+edges to form a closed loop. To do that press <kbd>Ctrl</kbd> + <kbd>N</kbd> to create a new network
+and then press <kbd>e</kbd> to enter the edge editing mode. Now create a closed loop of
+edges (you might consider to check 'chain' just right from the edit-mode
+selection, see figure).</p>
+<p><img src="../images/tutorialCirclesCreateNet.gif" width="600"></p>
+<p>The result should look more or less like shown in the figure. The
+important thing is the circular shape. Now save the network somewhere
+(<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>) in an empty directory (we will refer to that place by
+<code>baseDir</code>). Use <code>circles.net.xml</code> as the name for the created net-file.</p>
+<h2 id="create-vehicles-and-run-sumo">Create vehicles and run SUMO<a class="headerlink" href="#create-vehicles-and-run-sumo" title="Permanent link">&para;</a></h2>
+<p>In <code>baseDir</code> create two empty text-files and call them
+<code>circles.rou.xml</code> and <code>circles.sumocfg</code>. These files will define our
+vehicles and the run configuration.</p>
+<p>First, we edit <code>circles.rou.xml</code> and define a vehicle flow of five
+standard passenger cars. The file contents should look like this:</p>
+<pre><code class="language-xml">&lt;routes&gt;
+   &lt;vType id=&quot;car&quot; type=&quot;passenger&quot; length=&quot;5&quot; accel=&quot;3.5&quot; decel=&quot;2.2&quot; sigma=&quot;1.0&quot;/&gt;
+   &lt;flow id=&quot;carflow&quot; type=&quot;car&quot; beg=&quot;0&quot; end=&quot;0&quot; number=&quot;5&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
+<p>For further explanation of how to define flows and vTypes see the
+respective documentation-pages: <a href="../../Demand/Shortest_or_Optimal_Path_Routing/#flow_definitions">Flow Definitions</a>
+and <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicle_types">Vehicle Types</a>.</p>
+<p>To use the route-file and the generated net-file with SUMO, we edit the
+configuration-file <code>circles.sumocfg</code> to tell SUMO where it should look for vehicle
+and net definitions:</p>
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;input&gt;
+       &lt;net-file value=&quot;circles.net.xml&quot;/&gt;
+       &lt;route-files value=&quot;circles.rou.xml&quot;/&gt;
+    &lt;/input&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>Now let us try to start sumo with the config that we have just created.
+To do so either double-click on the configuration-file <code>circles.sumocfg</code>
+(under Windows, if your installation was done with default settings) or
+change to the <code>baseDir</code> in a terminal and start sumo (with graphical
+user interface) there by typing <code>sumo -c circles.sumocfg</code>. (If this does
+not start sumo, you might have to add the SUMO/bin directory to your
+PATH or set the environment variable <code>SUMO_HOME</code>
+(<a href="../../Basics/Basic_Computer_Skills/#sumo_home">how to</a>)).</p>
+<p><img src="../images/StartAttempt1.PNG" alt="First attempt to run the simulation" width="500"></p>
+<p>First attempt to run the simulation</p>
+<p>Does it work? No.</p>
+<p>Let us have a look at the Message Window at the bottom of the GUI (see figure
+above) to endeavor what went wrong (by the way: the Message Window is often a
+very useful resource for information for setting up a simulation take a look
+at it first, if you run into problems).</p>
+<p>It says: <code>Error: The route for flow 'carflow' has no edges.</code> This means
+that SUMO does not know from where to where the vehicles of the flow we
+declared in <code>circles.rou.xml</code> should move. To fix this, we need to add
+attributes <code>to</code> and <code>from</code>, and provide corresponding edge-ids to the
+flow.</p>
+<p>The edge-ids can be inspected and modified in netedit: open your
+network-file <code>circles.net.xml</code> and press <kbd>i</kbd> to enter the inspect-mode.
+Left-click on an arbitrary edge and rename it to <code>edge1</code> (see figure below).
+Left-click on a different edge and rename it to <code>edge2</code>. Then save your network
+(<kbd>Ctrl</kbd> + <kbd>S</kbd>).</p>
+<p><img src="../images/NameEdges.PNG" alt="Renaming an edge in netedit" width="500"></p>
+<p>Renaming an edge in netedit</p>
+<p>Now we add the from-edge and the to-edge to the flow in
+<code>circles.rou.xml</code>:</p>
+<pre><code class="language-xml"> ...
+    &lt;flow id=&quot;carflow&quot; type=&quot;car&quot; beg=&quot;0&quot; end=&quot;0&quot; number=&quot;5&quot; from=&quot;edge1&quot; to=&quot;edge2&quot;/&gt;
+ ...
+</code></pre>
+<p>Let's try to run SUMO again. The window should now show the network you
+have created before in netedit (see figure below) and you can start the
+simulation by clicking on the play button
+(<img alt="Image:icon_play.png" src="../../images/icon_play.png" title="Image:icon_play.png" />) or the step button
+(<img alt="Image:icon_step.png" src="../../images/icon_step.png" title="Image:icon_step.png" />). If you use
+<img alt="Image:icon_play.png" src="../../images/icon_play.png" title="Image:icon_play.png" />, be sure to adjust the
+value for the animation delay time between consecutive simulation steps (the
+field labeled "Delay (ms):", see figure). Otherwise SUMO will run the simulation
+as fast as possible and you will probably see nothing happening at all. (Note
+that the figure uses the style "real world" from the
+representation-dropdown-menu in the toolbar.)</p>
+<p><img src="../images/Running1.PNG" alt="Running five cars on the circular net" width="500"></p>
+<p>Running five cars on the circular net</p>
+<p>The cars will drive from the beginning of edge1 to the end of edge2 and
+then leave the net (side remark: you can control the positions of
+departure and arrival by additional arguments to the flow, see <a href="../../Demand/Shortest_or_Optimal_Path_Routing/#flow_definitions">Flow
+Definitions</a>).
+The simulation ends when all vehicles have left the net.</p>
+<h2 id="circular-rerouting">Circular rerouting<a class="headerlink" href="#circular-rerouting" title="Permanent link">&para;</a></h2>
+<p>Now let us make the vehicles drive in circles around the track again and
+again. To this end we will create a rerouter.</p>
+<p>Since in SUMO the additional elements are not considered as elements of
+the net, we have to specify them in a separate file (the
+"additionals-file"). Create and open a file <code>circles.add.xml</code> in <code>baseDir</code> and add the following xml-code (see <a href="../../Simulation/Rerouter/#assigning_a_new_destination">Rerouter/Assigning a new
+Destination</a>
+for details):</p>
+<pre><code class="language-xml">&lt;additionals&gt;
+    &lt;rerouter id=&quot;rerouter_0&quot; edges=&quot;edge1&quot;&gt;
+        &lt;interval end=&quot;1e9&quot;&gt;
+           &lt;destProbReroute id=&quot;edge2&quot;/&gt;
+        &lt;/interval&gt;
+    &lt;/rerouter&gt;
+    &lt;rerouter id=&quot;rerouter_1&quot; edges=&quot;edge2&quot;&gt;
+        &lt;interval end=&quot;1e9&quot;&gt;
+           &lt;destProbReroute id=&quot;edge1&quot;/&gt;
+        &lt;/interval&gt;
+    &lt;/rerouter&gt;
+&lt;/additionals&gt;
+</code></pre>
+<p>Then we have to tell SUMO to include the rerouters into the simulation
+by adding a line to the config <code>circles.sumocfg</code>. Within the <code>&lt;input&gt;</code> tag
+add a child:</p>
+<pre><code class="language-xml">&lt;additional-files value=&quot;circles.add.xml&quot;/&gt;
+</code></pre>
+<p>This will add two (destination-)rerouters to our network making the
+vehicles go around the circle until the given end time (i.e., until one
+hundred million seconds have passed). Effectively, each rerouter will
+update the destination for each vehicle entering its edge (specified by
+its <code>edge</code>-attribute) and set it to the edge given in the <code>id</code>-attribute
+of the <code>destProbReroute</code>-element. So as soon as a vehicle enters <code>edge1</code>
+(its current destination), its destination will be updated to <code>edge2</code>
+and vice-versa, when entering <code>edge2</code> it will be rerouted towards
+<code>edge1</code>, thus following a circular route.</p>
+<p><img src="../images/tutorialCirclesSimulation.png" alt="Circular rerouting" width="500"></p>
+<p>Circular rerouting</p>
+<h1 id="steps-to-follow-using-netedit">Steps to follow using netedit<a class="headerlink" href="#steps-to-follow-using-netedit" title="Permanent link">&para;</a></h1>
+<h2 id="build-a-network_1">Build a network<a class="headerlink" href="#build-a-network_1" title="Permanent link">&para;</a></h2>
+<p>The steps to build the network in netedit were already explained
+<a href="./#build_a_network">above</a>. Please come back when you have
+the network created to continue with the tutorial.</p>
+<h2 id="create-vehicles-and-run-sumo_1">Create vehicles and run SUMO<a class="headerlink" href="#create-vehicles-and-run-sumo_1" title="Permanent link">&para;</a></h2>
+<p>First we have to change the mode to "demand" by pressing <kbd>F3</kbd> and then press
+<kbd>r</kbd> for switch to "create route" mode. We can either choose to create a route by
+clicking over "consecutive edges" or "non consecutive edges", which will find
+the shortest path between the non consecutive edges given. For this test, we
+will choose the last option. We can change the route "id" by clicking on the
+id box. In this case, we will leave the default "id" <code>route_0</code>.</p>
+<p>First we have to click on the first edge of our route (let's take one of the
+upper edges) and then click on the last edge of the route (let's choose one
+of the lower edges). An orange path connecting both edges has been created. To
+create the route we have to press the "create route" button or the <kbd>Enter</kbd> key.
+Route creation can be aborted using the "abort creation" button or pressing the
+<kbd>Esc</kbd> key.</p>
+<p><img src="../images/tutorialCirclesCreateRoute.gif" alt="CreateRoute" width="600"></p>
+<p>Create a route with netedit.</p>
+<p>Now we have to create a flow of vehicles that will drive along this route. For
+this, we press <kbd>V</kbd> to go to the vehicles mode and then select over the vehicles
+list "flow (over route)". We leave the default values for "id" (<code>flow_0</code>) and
+"begin" (<code>0</code>). If we scroll through the list we will find more flow attributes. In
+this case, we want to simulate 5 vehicles after each other, so we set <code>0</code> as
+"end" and <code>5</code> as "number". To create the flow we just have to click over the
+route we have created and a vehicle will appear at the beginning of the route.</p>
+<p>As a last step, we have to save all demand elements created (route and flow) by
+pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd> and enter the file name, in this case <code>circles.rou.xml</code>.</p>
+<p><img src="../images/tutorialCirclesCreateFlow.gif" alt="CreateFlow" width="600"></p>
+<p>Create a flow with netedit.</p>
+<p>After saving the route, we can run the simulation with sumo-gui by pressing
+<kbd>Ctrl</kbd> + <kbd>T</kbd>. Change the delay (e.g. to 100) to be able to see the vehicles driving
+and click the play button
+(<img alt="Image:icon_play.png" src="../../images/icon_play.png" title="Image:icon_play.png" />). As we can see, the
+five vehicles drive from the first edge to the last one given and then
+disappear. In the next step we will see how to make them drive in circles with
+a rerouter.</p>
+<p><img src="../images/tutorialCirclesOpenSumogui.gif" alt="OpenSumogui" width="600"></p>
+<p>Open sumo-gui.</p>
+<h2 id="circular-rerouting_1">Circular rerouting<a class="headerlink" href="#circular-rerouting_1" title="Permanent link">&para;</a></h2>
+<p>Let's go back to netedit to add a rerouter. First we change to the network mode
+(<kbd>F2</kbd>) and then press <kbd>A</kbd> to enter the additional edit-mode. From the
+"Additional element" drop-down menu on the left select <code>rerouter</code>. We need to
+add two rerouters:</p>
+<ul>
+<li>
+<p>The first rerouter will be placed on the <strong>last edge</strong> of our route and have
+a <code>destProbReroute</code>-element to the <strong>first edge</strong> of our route. So when the
+vehicles arrive to the last edge, they won't disappear, but will continue
+driving to the first edge and completing the circle.</p>
+</li>
+<li>
+<p>The second rerouter will be located on the <strong>first edge</strong> of our route and
+have a <code>destProbReroute</code>-element to the <strong>last edge</strong>. So when vehicles arrive
+at the first edge, they will be redirected to the last edge of the route where
+the first rerouter is located and so the vehicles will be driving in circles
+again and again.</p>
+</li>
+</ul>
+<p>To add the first rerouter we have to check the "id" of the last edge of our
+route by clicking over the edge with the right button. In this example the edge
+id is <code>edge2</code>. Select the id over the list and click again, this time with the
+left button, over the edge. The rerouter has been created. Now we have to add
+a <code>destProbReroute</code>-element. Select the rerouter and click over it with the
+right-button. Select "Open rerouter Dialog" over the list.</p>
+<p>We click over the add button
+(<img alt="Image:add.gif" src="../../images/icon_add.png" title="Image:icon_add.png" />) to add a new Interval. We
+will leave the default interval (0 to 3600 seconds), but you can change it if
+you want. Now we add a new <code>destProbReroute</code> by clicking over the add button on
+the upper-right window. The first rerouter has to send the vehicles to the
+<code>edge1</code>, so we have to change the default edge by double-clicking over it. Now
+we just have to click accept twice and our rerouter is added.</p>
+<p><img src="../images/tutorialCirclesCreateRerouter.gif" alt="CreateRerouter" width="600"></p>
+<p>Create the first rerouter.</p>
+<p>Now don´t forget to add the second rerouter. For this we will follow the same
+steps but remember to replace the edges.</p>
+<p>Once we have created both rerouters, we save them in an additional file by
+pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd> and enter the file name, in this case <code>circles.add.xml</code>.
+Now we can run the simulation again by pressing <kbd>Ctrl</kbd> + <kbd>T</kbd> to open sumo-gui and
+click the play button (<img alt="Image:icon_play.png" src="../../images/icon_play.png" title="Image:icon_play.png" />).
+Now the vehicles are driving in circles until the end time given (3600 seconds).</p>
+<p><img src="../images/tutorialCirclesRunSimulation.gif" alt="RunSimulation" width="600"></p>
+<p>Run simulation.</p>
+<h1 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h1>
+<p>Here are some simple ideas to extend this toy example:</p>
+<p><img src="../images/Twoloops.png" alt="twoloops.png" width="500"></p>
+<p>A net with two loops</p>
+<ol>
+<li>add more lanes in netedit and another vehicle flow with faster cars
+    to observe SUMO's overtaking behavior.</li>
+<li>add a scooter flow and use the <a href="../../Simulation/SublaneModel/">Sublane
+    Model</a> to observe SUMO's sublane
+    model.</li>
+<li>add another loop (see figure) and trigger the next loop for each
+    vehicle by a probabilistic choice of the destination
+    (<a href="../../Simulation/Rerouter/#assigning_a_new_destination">Rerouter/Assigning a new
+    Destination</a>),
+    observe merging at the location where both loops are connected.</li>
+<li>Insert more vehicles, lower the simulation <a href="../../Simulation/Basic_Definition/#defining_the_time_step_length">time-step
+    length</a>
+    and try to observe stop-and-go waves, experiment with different
+    <a href="../../Car-Following-Models/">car-following models</a>, <a href="../../sumo-gui/#vehicle_visualisation_settings">color the
+    vehicles</a> by
+    speed.</li>
+</ol>
+<p>If you create solutions for the exercises post them on this page!</p>
+<p>Back to <a href="../">Tutorials</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

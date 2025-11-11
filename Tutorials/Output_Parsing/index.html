@@ -1,0 +1,640 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Tutorials/Output_Parsing/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Output Parsing - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-setup" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Output Parsing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#route-and-flow-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Route and flow setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rerouters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rerouters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting it all together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyzing-the-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyzing the output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-socket-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonus: Socket communication
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Output Parsing</h1>
+
+<p>In this tutorial you will learn how to</p>
+<ul>
+<li>set up an abstract network using edge types,</li>
+<li>create repeatedly identical vehicles using flows,</li>
+<li>reroute vehicles dynamically such that they drive endlessly,</li>
+<li>analyze output files using the <a href="../../Tools/Sumolib/">sumolib python
+  library</a>,</li>
+</ul>
+<p>and as a bonus how to</p>
+<ul>
+<li>use socket output for online evaluation and saving disk space.</li>
+</ul>
+<p>Despite the keywords online, socket, and python API, this tutorial does
+<em>not</em> cover any TraCI related content.</p>
+<h2 id="network-setup">Network setup<a class="headerlink" href="#network-setup" title="Permanent link">&para;</a></h2>
+<p>The goal is to build a simple network where the vehicles drive in
+circles so we set up four nodes at the corners as follows
+(<code>circular.nod.xml</code>):</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;nodes version=&quot;0.13&quot; xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/nodes_file.xsd&quot;&gt;
+    &lt;node id=&quot;bottom-left&quot; x=&quot;0&quot; y=&quot;0&quot;/&gt;
+    &lt;node id=&quot;bottom-right&quot; x=&quot;1250&quot; y=&quot;0&quot;/&gt;
+    &lt;node id=&quot;top-right&quot; x=&quot;1250&quot; y=&quot;1250&quot;/&gt;
+    &lt;node id=&quot;top-left&quot; x=&quot;0&quot; y=&quot;1250&quot;/&gt;
+&lt;/nodes&gt;
+</code></pre>
+<p>All edges connecting the nodes should have the same number of lanes and
+the same maximum speed. In order to save on typing we define the edge
+type in a separate file (<code>circular.typ.xml</code>):</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;types xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/types_file.xsd&quot;&gt;
+    &lt;type id=&quot;edgeType&quot; numLanes=&quot;2&quot; speed=&quot;36.1&quot;/&gt;
+&lt;/types&gt;
+</code></pre>
+<p>Finally we define the edges connecting the nodes (<code>circular.edg.xml</code>):</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;edges version=&quot;0.13&quot; xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/edges_file.xsd&quot;&gt;
+    &lt;edge from=&quot;bottom-left&quot; id=&quot;bottom&quot; to=&quot;bottom-right&quot; type=&quot;edgeType&quot;/&gt;
+    &lt;edge from=&quot;bottom-right&quot; id=&quot;right&quot; to=&quot;top-right&quot; type=&quot;edgeType&quot;/&gt;
+    &lt;edge from=&quot;top-right&quot; id=&quot;top&quot; to=&quot;top-left&quot; type=&quot;edgeType&quot;/&gt;
+    &lt;edge from=&quot;top-left&quot; id=&quot;left&quot; to=&quot;bottom-left&quot; type=&quot;edgeType&quot;/&gt;
+&lt;/edges&gt;
+</code></pre>
+<p>The netconvert call is very straightforward</p>
+<pre><code>netconvert -n circular.nod.xml -t circular.typ.xml -e circular.edg.xml -o circular.net.xml
+</code></pre>
+<p>In order to simplify the resulting net (and get the highest speed out of
+the simulation), we omit turnarounds and simplify the movement over
+junctions by removing the junction internal lanes. The complete
+netconvert configuration file is as follows (<code>circular.netccfg</code>):</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;configuration xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/netconvertConfiguration.xsd&quot;&gt;
+
+   &lt;input&gt;
+       &lt;node-files value=&quot;circular.nod.xml&quot;/&gt;
+       &lt;edge-files value=&quot;circular.edg.xml&quot;/&gt;
+       &lt;type-files value=&quot;circular.typ.xml&quot;/&gt;
+   &lt;/input&gt;
+
+&lt;output&gt;
+       &lt;output-file value=&quot;circular.net.xml&quot;/&gt;
+&lt;/output&gt;
+
+   &lt;processing&gt;
+       &lt;no-internal-links value=&quot;true&quot;/&gt;
+       &lt;no-turnarounds value=&quot;true&quot;/&gt;
+   &lt;/processing&gt;
+
+&lt;/configuration&gt;
+</code></pre>
+<p>Call netconvert again using this configuration file:</p>
+<pre><code>netconvert -c circular.netcfg
+</code></pre>
+<p>Try</p>
+<pre><code>sumo-gui -n circular.net.xml
+</code></pre>
+<p>for a look at the final network.</p>
+<h2 id="route-and-flow-setup">Route and flow setup<a class="headerlink" href="#route-and-flow-setup" title="Permanent link">&para;</a></h2>
+<p>Next, we define routes and traffic flows. Open a new file called <code>circular.rou.xml</code> and insert the following vehicle type definitions for cars and trucks:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;routes xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/routes_file.xsd&quot;&gt;
+    &lt;vType accel=&quot;1.5&quot; decel=&quot;4.5&quot; id=&quot;car&quot; length=&quot;5&quot; maxSpeed=&quot;36.1&quot;/&gt;
+    &lt;vType accel=&quot;0.4&quot; decel=&quot;4.5&quot; id=&quot;truck&quot; length=&quot;12&quot; maxSpeed=&quot;22.2&quot;/&gt;
+&lt;/routes&gt;
+</code></pre>
+<p>For further details, see the <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#vehicle_types">vehicle type attributes description</a>.
+Since our network's edges are uni-directional, we want to define corresponding circular routes, i.e., counter-clockwise, as follows:</p>
+<pre><code class="language-xml">    &lt;route id=&quot;routeRight&quot; edges=&quot;bottom right top left&quot;/&gt;
+    &lt;route id=&quot;routeLeft&quot; edges=&quot;top left bottom right&quot;/&gt;
+    &lt;route id=&quot;routeTop&quot; edges=&quot;right top left bottom&quot;/&gt;
+    &lt;route id=&quot;routeBottom&quot; edges=&quot;left bottom right top&quot;/&gt;
+</code></pre>
+<p>Add these lines just before the closing <code>&lt;/routes&gt;</code> element. More information on defining your own routes can be found <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#routes">here</a>.
+Finally, we define traffic flows on these routes. For each route, we want a flow for cars as well as for trucks:</p>
+<pre><code class="language-xml">    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;carRight&quot; period=&quot;1&quot; number=&quot;70&quot; route=&quot;routeRight&quot; type=&quot;car&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;carTop&quot; period=&quot;1&quot; number=&quot;70&quot; route=&quot;routeTop&quot; type=&quot;car&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;carLeft&quot; period=&quot;1&quot; number=&quot;70&quot; route=&quot;routeLeft&quot; type=&quot;car&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;carBottom&quot; period=&quot;1&quot; number=&quot;70&quot; route=&quot;routeBottom&quot; type=&quot;car&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;truckRight&quot; period=&quot;1&quot; number=&quot;30&quot; route=&quot;routeRight&quot; type=&quot;truck&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;truckTop&quot; period=&quot;1&quot; number=&quot;30&quot; route=&quot;routeTop&quot; type=&quot;truck&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;truckLeft&quot; period=&quot;1&quot; number=&quot;30&quot; route=&quot;routeLeft&quot; type=&quot;truck&quot;/&gt;
+    &lt;flow begin=&quot;0&quot; departPos=&quot;free&quot; id=&quot;truckBottom&quot; period=&quot;1&quot; number=&quot;30&quot; route=&quot;routeBottom&quot; type=&quot;truck&quot;/&gt;
+</code></pre>
+<p>These lines can be inserted just after the route definitions. More on the attributes of the <code>flow</code> element can be found <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#repeated_vehicles_flows">here</a>.</p>
+<h2 id="rerouters">Rerouters<a class="headerlink" href="#rerouters" title="Permanent link">&para;</a></h2>
+<p>Currently, all flows taking one of the defined routes leave the simulation as soon as they reach their route's destination.
+In order to obtain endlessly driving vehicles, we need to define rerouters.
+Thus, we create a file called <code>circular.add.xml</code> which defines a <a href="../../Simulation/Rerouter/#assigning_a_new_route">rerouter</a> on the edges <code>bottom</code> and <code>top</code> each, such that vehicles continue on routes <code>routeRight</code> and <code>routeLeft</code>, respectively.</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;additional xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/additional_file.xsd&quot;&gt;
+    &lt;rerouter id=&quot;rerouterBottom&quot; edges=&quot;bottom&quot;&gt;
+        &lt;interval begin=&quot;0&quot; end=&quot;100000&quot;&gt;
+            &lt;routeProbReroute id=&quot;routeRight&quot; /&gt;
+        &lt;/interval&gt;
+    &lt;/rerouter&gt;
+    &lt;rerouter id=&quot;rerouterTop&quot; edges=&quot;top&quot;&gt;
+        &lt;interval begin=&quot;0&quot; end=&quot;100000&quot;&gt;
+            &lt;routeProbReroute id=&quot;routeLeft&quot; /&gt;
+        &lt;/interval&gt;
+    &lt;/rerouter&gt;
+&lt;/additional&gt;
+</code></pre>
+<h2 id="putting-it-all-together">Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permanent link">&para;</a></h2>
+<p>With all input files (network, routes, rerouters) completed, we can create a SUMO configuration file <code>circular.sumocfg</code>:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;configuration xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;https://sumo.sf.net/xsd/sumoConfiguration.xsd&quot;&gt;
+    &lt;input&gt;
+        &lt;net-file value=&quot;circular.net.xml&quot;/&gt;
+        &lt;additional-files value=&quot;circular.rou.xml,circular.add.xml&quot;/&gt;
+    &lt;/input&gt;
+
+    &lt;output&gt;
+        &lt;netstate-dump value=&quot;dump.xml&quot;/&gt;
+    &lt;/output&gt;
+
+    &lt;time&gt;
+        &lt;begin value=&quot;0&quot;/&gt;
+        &lt;end value=&quot;1000&quot;/&gt;
+    &lt;/time&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>Note that the routes file <code>circular.rou.xml</code> is declared as an additionals file here to prevent a referencing error due to the <a href="../../sumo/#loading_order_of_input_files">loading order of input files</a>.
+Since we want to analyze the output from the simulation later on, we also define the output file <code>dump.xml</code> storing the complete network state (cf. <a href="../../sumo/#output">Output Options</a> and <a href="../../Simulation/Output/RawDump/">RawDump</a>).</p>
+<h2 id="analyzing-the-output">Analyzing the output<a class="headerlink" href="#analyzing-the-output" title="Permanent link">&para;</a></h2>
+<h2 id="bonus-socket-communication">Bonus: Socket communication<a class="headerlink" href="#bonus-socket-communication" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

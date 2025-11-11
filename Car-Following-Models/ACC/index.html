@@ -1,0 +1,575 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Car-Following-Models/ACC/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>ACC - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ACC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-speed-control-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      (i) Speed control mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-gap-control-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      (ii) Gap control mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-gap-closing-control-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      (iii) Gap-closing control mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-collision-avoidance-control-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      (iv) Collision avoidance control mode
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+<p>The integrated ACC car-following model is based on the work of Milanés &amp;
+Shladover <a href="#references">[1]</a> and Xiao, Wang &amp; van Arem <a href="#references">[2]</a>, wherein the developed
+control law in the ACC control algorithm is explicitly divided into
+three modes: (i) speed (or cruising) control, (ii) gap control
+and (iii) gap-closing control. A fourth mode (i.e. collision avoidance mode) has
+been introduced within the project <a href="https://www.transaid.eu">TransAID</a>, when the ACC model was first integrated to SUMO <a href="#references">[3]</a>.</p>
+<p>Note, that the additional modes (iii) and (iv) aim to enable stable and safe car-following behavior in SUMO,
+whereas the original publication <a href="#references">[1]</a> reveals string instabilities in experimental data and simulations
+for vehicle platoons with ACC controllers (see <a href="#string_instabilities_in_acc_platoons">String Instabilities in ACC Platoons</a>).</p>
+<p>see also <a href="../CACC/">CACC model</a>.</p>
+<h2 id="i-speed-control-mode">(i) Speed control mode<a class="headerlink" href="#i-speed-control-mode" title="Permanent link">&para;</a></h2>
+<p>The speed control mode is designed to maintain the pre-defined by the
+driver desired speed and is activated when there are no preceding
+vehicles in the range covered by the sensors or preceding vehicles exist
+in a spacing larger of 120 m.</p>
+<h2 id="ii-gap-control-mode">(ii) Gap control mode<a class="headerlink" href="#ii-gap-control-mode" title="Permanent link">&para;</a></h2>
+<p>The gap control mode aims to maintain a constant time gap between the
+ACC-equipped vehicle and its predecessor and is activated when the gap
+and speed deviations (with respect to the preceding vehicle) are
+concurrently smaller than 0.2 m and 0.1 m/s, respectively.</p>
+<h2 id="iii-gap-closing-control-mode">(iii) Gap-closing control mode<a class="headerlink" href="#iii-gap-closing-control-mode" title="Permanent link">&para;</a></h2>
+<p>The gap-closing controller enables the smooth transition from speed
+control mode to gap control mode and is triggered when the spacing to
+the preceding vehicle is smaller than 100 m. If the spacing is between
+100 m and 120 m, the ACC-equipped vehicle retains the previous control
+strategy to provide hysteresis in the control loop and perform a smooth
+transfer between the two strategies.</p>
+<h2 id="iv-collision-avoidance-control-mode">(iv) Collision avoidance control mode<a class="headerlink" href="#iv-collision-avoidance-control-mode" title="Permanent link">&para;</a></h2>
+<p>The collision avoidance mode prevents rear-end collisions when safety
+critical conditions prevail. This mode is activated when the spacing to
+the preceding vehicle is smaller than 100 m and the gap deviation is
+negative.</p>
+<p>Also, if the <code>followSpeed</code> computed by the ACC model grows higher than the safe <code>followSpeed</code> as computed by the default <em>Krauss</em> model by a given margin (configured by <code>collisionAvoidanceOverride</code>), the speed is limited to the value of <em>Krauss</em>-speed + margin. The override margin defaults to 2m/s.</p>
+<h1 id="string-instabilities-in-acc-platoons">String Instabilities in ACC Platoons<a class="headerlink" href="#string-instabilities-in-acc-platoons" title="Permanent link">&para;</a></h1>
+<p>Milanés &amp; Shladover <a href="#references">[1]</a> showed in their experiments that the proposed ACC controller is string instable. Although ACC controllers can be calibrated to be string stable, e.g. Gunter et al. <a href="#references">[4]</a> raise concern that commercial vehicles mostly deploy ACC controllers that are string instable due to driving comfort reasons.</p>
+<p>To investigate stability effects of vehicle platoons deploying the original ACC model with SUMO, it's possible to disable the modes (iii) and (iv) by resetting the following parameters to:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Attribute</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iii</td>
+<td>gapClosingControlGainSpeed</td>
+<td>0.07</td>
+</tr>
+<tr>
+<td>iii</td>
+<td>gapClosingControlGainSpace</td>
+<td>0.23</td>
+</tr>
+<tr>
+<td>iv</td>
+<td>collisionAvoidanceGainSpeed</td>
+<td>0.07</td>
+</tr>
+<tr>
+<td>iv</td>
+<td>collisionAvoidanceGainSpace</td>
+<td>0.23</td>
+</tr>
+</tbody>
+</table>
+<p>Note, that the parameter <code>collisionAvoidanceOverride</code> (default: 2) affects the mode (iv) by overriding the followSpeed when deemed unsafe by the given margin. To eliminate this case, which slightly affects the platooning behavior, but not the string instability itself, this parameter may be set to to a much larger value (i.e. 100) to avoid the effect.</p>
+<p>The default parameters of the ACC model can be found here: <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#car-following_model_parameters">Car-Following Model Parameters</a></p>
+<p>Given the parametrization from the table, you could replicate the platoon oscillation as in Fig.12 in <a href="#references">[1]</a> with SUMO:</p>
+<p><img alt="ACC platoon" src="../../images/ACC_platoon_speed.png" title="ACC platoon" /></p>
+<h1 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h1>
+<ul>
+<li>The implemented model can be found in <a href="https://github.com/eclipse/sumo/blob/master/src/microsim/cfmodels/MSCFModel_ACC.cpp"><strong><em>&lt;SUMO_HOME&gt;</em></strong>/src/microsim/cfmodels/MSCFModel_ACC.cpp</a>.</li>
+<li>Literature on the developed ACC driving model and its implementation
+  can be found
+  <a href="https://www.transaid.eu/wp-content/uploads/2017/Deliverables/WP3/TransAID_D3.1_Modelling-simulation-and-assessment-of-vehicle-automations.pdf">here</a>.</li>
+<li>This part of SUMO was developed and extended within the project
+  <a href="https://www.transaid.eu">TransAID</a>.</li>
+<li>The model is primarily intended for use in specific traffic
+  situations.</li>
+<li>When there is no leader vehicle, the model uses the same speed as the Krauss model to approach junctions and speed limits</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The model is known to produce collisions at the default step-length of 1s. Better results can be achieved by setting a lower step length (e.g. 0.1s).</p>
+</div>
+<h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h1>
+<ol>
+<li>Milanés, V., &amp; Shladover, S. E. (2014). Modeling cooperative and
+    autonomous adaptive cruise control dynamic responses using
+    experimental data. Transportation Research Part C: Emerging
+    Technologies, 48, pp. 285–300.
+    <a href="https://doi.org/10.1016/j.trc.2014.09.001">https://doi.org/10.1016/j.trc.2014.09.001</a></li>
+<li>Xiao, L., Wang, M., &amp; van Arem, B. (2017). Realistic Car-Following
+    Models for Microscopic Simulation of Adaptive and Cooperative
+    Adaptive Cruise Control Vehicles. Transportation Research Record:
+    Journal of the Transportation Research Board, 2623, pp. 1–9.
+    <a href="https://doi.org/10.3141/2623-01">https://doi.org/10.3141/2623-01</a></li>
+<li>Porfyri, K. N., Mintsis, E., &amp; Mitsakis, E. (2018). Assessment of ACC and CACC systems using SUMO.
+    EPiC Series in Engineering, 2, 82-93.
+    <a href="https://doi.org/10.29007/r343">https://doi.org/10.29007/r343</a></li>
+<li>G. Gunter et al., "Are Commercially Implemented Adaptive Cruise Control Systems String Stable?,"
+    in IEEE Transactions on Intelligent Transportation Systems, vol. 22, no. 11, pp. 6992-7003, Nov. 2021.
+    <a href="https://doi.org/10.1109/TITS.2020.3000682">https://doi.org/10.1109/TITS.2020.3000682</a></li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

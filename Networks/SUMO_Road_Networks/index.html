@@ -1,0 +1,1347 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Networks/SUMO_Road_Networks/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>SUMO Road Networks - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-format" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SUMO Road Networks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coordinates-and-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinates and alignment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edges-and-lanes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edges and Lanes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edges and Lanes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normal Edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lanes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lanes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-offsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stop Offsets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-light-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traffic Light Programs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#junctions-and-right-of-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      Junctions and Right-of-Way
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Junctions and Right-of-Way">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plain-junctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plain Junctions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-junctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Junctions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plain-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plain Connections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indices-of-a-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indices of a connection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roundabouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roundabouts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-for-viewing-editing-and-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software for Viewing, Editing and Processing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Documentation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>SUMO Road Networks</h1>
+
+<p><img alt="eichstaett.net.png" src="../../images/Eichstaett.net.png" title="Screenshot of a SUMO net file opened in sumo-gui. It shows the map of the German city Eichstätt." />
+Screenshot of a SUMO net file opened in sumo-gui. It shows the map of the German city Eichstätt.</p>
+<table>
+<thead>
+<tr>
+<th>SUMO road network</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Filename extension</td>
+<td>.net.xml</td>
+</tr>
+<tr>
+<td>Type of content</td>
+<td>Map</td>
+</tr>
+<tr>
+<td>Open format?</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>SUMO specific?</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>XML Schema</td>
+<td><a href="https://sumo.dlr.de/xsd/net_file.xsd">net_file.xsd</a></td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>SUMO network file</strong> describes the traffic-related part of a map, the
+roads and intersections the simulated vehicles run along or across. At a
+coarse scale, a SUMO network is a directed graph. Nodes, usually named
+"junctions" in SUMO-context, represent intersections, and "edges" roads
+or streets. Note that edges are unidirectional. Specifically, the SUMO
+network contains the following information:</p>
+<ul>
+<li>every street (edge) as a collection of lanes, including the
+  position, shape and speed limit of every lane,</li>
+<li>traffic light logics referenced by junctions,</li>
+<li>junctions, including their right of way regulation,</li>
+<li>connections between lanes at junctions (nodes).</li>
+</ul>
+<p>Also, depending on the used input formats and set processing options,
+one can also find</p>
+<ul>
+<li>districts,</li>
+<li>roundabout descriptions.</li>
+</ul>
+<p><strong>Although being readable (XML) by human beings, a SUMO network file is
+not meant to be edited by hand.</strong> Rather you should use <a href="../PlainXML/">SUMO XML
+description
+files</a>
+together with <a href="../../netconvert/">netconvert</a>. You can also convert
+an existing map from various formats using
+<a href="../../netconvert/">netconvert</a> or generate geometrically simple,
+abstract road maps with <a href="../../netgenerate/">netgenerate</a>. To modify
+an existing <em>.net.xml</em>-file you may <a href="../Import/SUMO_Road_Networks/">load it with netconvert along with
+patch files</a> You may also
+use <a href="../../Netedit/">netedit</a> for building own road networks or for
+reworking the ones obtained from <a href="../../netconvert/">netconvert</a> or
+<a href="../../netgenerate/">netgenerate</a>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When creating SUMO networks from custom input data, the recommended approach is to create/generate <a href="../PlainXML/">plain-xml-files</a> and use <a href="../../netconvert/">netconvert</a> to turn these into a <em>.net.xml file.</em> Trying to <a href="../../FAQ/#i_made_changes_to_the_netxml-file_but_it_did_not_work_as_expected_why">generate the .net.xml file directly is fraught with dangers</a>.</p>
+</div>
+<h2 id="network-format">Network Format<a class="headerlink" href="#network-format" title="Permanent link">&para;</a></h2>
+<p>SUMO road networks are encoded as XML files. The contents are grouped by
+the instances in the following order:</p>
+<ul>
+<li>cartographic projection valid for this network</li>
+<li>edges; at first, internal edges are given, then plain edges; each
+  edge contains the list of lanes that belong to it</li>
+<li>traffic light logics</li>
+<li>junctions, including their right-of-way definitions; plain junctions
+  first, then internal junctions</li>
+<li>connections, plain first, then internal</li>
+<li>optionally roundabouts</li>
+</ul>
+<h3 id="coordinates-and-alignment">Coordinates and alignment<a class="headerlink" href="#coordinates-and-alignment" title="Permanent link">&para;</a></h3>
+<p>The networks are using cartesian, metric coordinates where the leftmost
+node is at x=0 and the node being most at the bottom is at y=0. This
+means that when being imported, <a href="../../netconvert/">netconvert</a> and
+<a href="../../netgenerate/">netgenerate</a> are projecting the network, first,
+if the original network was not using cartesian and/or metric
+coordinates. Then, they move the road network to the origin at (0,0).</p>
+<p>This process is documented within the generated network within the
+element <code>location</code>. You may find here the
+following attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>netOffset</td>
+<td>offset (<a href="/Basics/Notation/#データタイプ"><em>&lt;2D-POSITION&gt;</em></a>)</td>
+<td>The offset applied for moving the network to (0,0)</td>
+</tr>
+<tr>
+<td>convBoundary</td>
+<td>boundary (<a href="/Basics/Notation/#データタイプ"><em>&lt;2D-BOUNDING_BOX&gt;</em></a>)</td>
+<td>The boundary spanning over the nodes of the converted network (the network as now given)</td>
+</tr>
+<tr>
+<td>origBoundary</td>
+<td>boundary (<a href="/Basics/Notation/#データタイプ"><em>&lt;2D-BOUNDING_BOX&gt;</em></a>)</td>
+<td>The network's initial boundary before projecting and translating it</td>
+</tr>
+<tr>
+<td>projParameter</td>
+<td>projection parameter</td>
+<td>Information how the network was projected (see below)</td>
+</tr>
+</tbody>
+</table>
+<p><code>projParameter</code> may have one of the following
+values:</p>
+<table>
+<thead>
+<tr>
+<th>Encoding</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'!'</td>
+<td>No projection was applied.</td>
+</tr>
+<tr>
+<td>'-'</td>
+<td>"Simple" projection was applied</td>
+</tr>
+<tr>
+<td>'.'</td>
+<td>?</td>
+</tr>
+<tr>
+<td>proj-definition (<a href="/Basics/Notation/#データタイプ"><em>&lt;PROJ_DEFINITION&gt;</em></a>)</td>
+<td>The projection was done using proj, initialising it using these parameter.</td>
+</tr>
+</tbody>
+</table>
+<p>For obtaining the original coordinates from the x/y-coordinates SUMO
+reports, one has to subtract the network offset first. Then, one has to
+apply an inverse transformation of the initial projection, regarding
+<code>projParameter</code>. For proj-projected networks,
+one can use proj's function named pj_inv which performs the inverse
+transformation. proj has to be initialised with the projection
+parameters from <code>projParameter</code>, first. For
+proj-projected networks this would look like:</p>
+<pre><code>Position2D cartesian = sumoXY(x, y);
+projPJ myProjection = pj_init_plus(projParameter.c_str());
+cartesian.sub(netOffset);
+projUV p;
+p.u = cartesian.x();
+p.v = cartesian.y();
+p = pj_inv(p, myProjection);
+p.u *= RAD_TO_DEG;
+p.v *= RAD_TO_DEG;
+cartesian.set(p.u, p.v);
+</code></pre>
+<p>For networks with no projection
+(<code>projParameter</code>='!'), only the offset must
+be applied. For networks with "simple" projection
+(<code>projParameter</code>='-'), a back-projection
+method is currently not known.</p>
+<p>SUMO road networks are meant to be aligned to the north. Of course, it
+is up to the user how he defines a road network, but when being imported
+from sources as Open Street Map or shape files, the up-direction is
+meant to correspond to north.</p>
+<h3 id="edges-and-lanes">Edges and Lanes<a class="headerlink" href="#edges-and-lanes" title="Permanent link">&para;</a></h3>
+<p>"plain" and "internal" edges are encoded almost the same way, but they
+differ by the mandatory and used attributes.</p>
+<h4 id="normal-edges">Normal Edges<a class="headerlink" href="#normal-edges" title="Permanent link">&para;</a></h4>
+<p>A "normal" edge is a connection between two nodes ("junctions").</p>
+<pre><code class="language-xml">&lt;edge id=&quot;&lt;ID&gt;&quot; from=&quot;&lt;FROM_NODE_ID&gt;&quot; to=&quot;&lt;TO_NODE_ID&gt;&quot; priority=&quot;&lt;PRIORITY&gt;&quot;&gt;
+    ... one or more lanes ...
+&lt;/edge&gt;
+</code></pre>
+<p>Here, the ID (<em>&lt;ID&gt;</em> in the example above) is an ID as read during the
+network import. Both the IDs of the begin and the end node are given
+within the attributes <code>from</code> and
+<code>to</code>, respectively. The priority is an
+abstract ordinal number that determines right-of-way rules. The
+<code>function</code> attribute was omitted in the
+example above, as it defaults to "<code>normal</code>",
+which is the example edge's <code>function</code> value.</p>
+<p>The attributes of an edge are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>id (string)</td>
+<td>The id of the edge</td>
+</tr>
+<tr>
+<td>from</td>
+<td>id (string)</td>
+<td>The id of the node it starts at</td>
+</tr>
+<tr>
+<td>to</td>
+<td>id (string)</td>
+<td>The id of the node it ends at</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>integer</td>
+<td>Indicates how important the road is (optional)</td>
+</tr>
+<tr>
+<td>function</td>
+<td>enum ( "<code>normal</code>", "<code>internal</code>", "<code>connector</code>", "<code>crossing</code>", "<code>walkingarea</code>" )</td>
+<td>An abstract edge purpose (optional with default "<code>normal</code>")</td>
+</tr>
+</tbody>
+</table>
+<p>For the simulation, only the "function" attribute is of interest. It
+describes how the edge is used, and whether it is an edge that can be
+found within the real world or only a helper construct used for
+assignment. The following purposes are defined:</p>
+<ul>
+<li><code>normal</code>: The edge is a plain part of a
+  road network, like a highway or a normal street which connects two
+  roads</li>
+<li><code>connector</code>: The edge is a macroscopic
+  connector - not a part of the real world road network. Still, within
+  the simulation, no distinction is made between "connector" roads and
+  "normal" nodes. Only <a href="../../sumo-gui/">sumo-gui</a> allows to hide
+  connector edges.</li>
+<li><code>internal</code>: The edge is a part of an
+  intersection (is located within the intersection), see above.</li>
+<li><code>crossing</code>:</li>
+<li><code>walkingarea</code>:</li>
+</ul>
+<h4 id="lanes">Lanes<a class="headerlink" href="#lanes" title="Permanent link">&para;</a></h4>
+<p>Each edge includes the definitions of lanes it consists of. The
+following example shows a single edge with two lanes. Note, that
+coordinates may be 2D as well as 3D.</p>
+<pre><code class="language-xml">    &lt;edge id=&quot;&lt;ID&gt;&quot; from=&quot;&lt;FROM_NODE_ID&gt;&quot; to=&quot;&lt;TO_NODE_ID&gt;&quot; priority=&quot;&lt;PRIORITY&gt;&quot;&gt;
+        &lt;lane id=&quot;&lt;ID&gt;_0&quot; index=&quot;0&quot; speed=&quot;&lt;SPEED&gt;&quot; length=&quot;&lt;LENGTH&gt;&quot; shape=&quot;0.00,495.05 248.50,495.05&quot;/&gt;
+        &lt;lane id=&quot;&lt;ID&gt;_1&quot; index=&quot;1&quot; speed=&quot;&lt;SPEED&gt;&quot; length=&quot;&lt;LENGTH&gt;&quot; shape=&quot;0.00,498.35,2.00 248.50,498.35,3.00&quot;/&gt;
+    &lt;/edge&gt;
+</code></pre>
+<p>As one can see, the id is composed by the ID of the edge the lane
+belongs to and a running number, both divided by an underline ('_').
+The running number starts at zero for the right-most lane. The same
+number is also given in the "<code>index</code>"
+attribute. The lanes are sorted by this number, too. \@note: this is
+highly duplicate</p>
+<p>The attributes of a lane are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the lane</td>
+</tr>
+<tr>
+<td><strong>index</strong></td>
+<td>running number (unsigned int)</td>
+<td>A running number, starting with zero at the right-most lane</td>
+</tr>
+<tr>
+<td><strong>speed</strong></td>
+<td>float</td>
+<td>The maximum speed allowed on this lane [m/s]</td>
+</tr>
+<tr>
+<td><strong>length</strong></td>
+<td>float</td>
+<td>The length of this lane [m]</td>
+</tr>
+<tr>
+<td><strong>shape</strong></td>
+<td>position vector</td>
+<td>The geometry of the lane, given by a polyline that describes the lane's center line; must not be empty or have less than two positions</td>
+</tr>
+</tbody>
+</table>
+<p>It should be noted, that currently all lanes of an edge have the same
+length, even if it differs from the geometrical length of the shape.
+<a href="../../netconvert/">netconvert</a> even explicitly allows to override
+the geometrical lengths. Additionally, even though the network is
+shifted to start at (0,0), it is not guaranteed that all of the
+network's parts have positive coordinates.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The minimum edge length is 0.1m.</p>
+</div>
+<h4 id="internal-edges">Internal Edges<a class="headerlink" href="#internal-edges" title="Permanent link">&para;</a></h4>
+<p>An internal edge lies within an intersection and connects and incoming
+<em>normal</em> edge with an outgoing <em>normal</em> edge. Internal edges are not
+included if the network was built using the <strong>--no-internal-links</strong> option. An example of an
+internal edge may look like this:</p>
+<pre><code class="language-xml">&lt;edge id=&quot;&lt;ID&gt;&quot; function=&quot;internal&quot;&gt;
+    ... one lane ...
+&lt;/edge&gt;
+</code></pre>
+<p>The id of an internal edge is composed as :<em>&lt;NODE_ID&gt;</em>_<em>&lt;EDGE_INDEX&gt;</em>
+where <em>&lt;NODE_ID&gt;</em> is the ID of the node the edge is located within and
+<em>&lt;EDGE_INDEX&gt;</em> is a running number running clockwise around the node
+(starting in the north). Please note that the ID has a ':' as prefix. If
+the incoming and outgoing edges connected by the internal edge have
+multiple lanes, the internal edge has multiple lanes as well (according
+to the number of connections between these two edges). In case of
+multi-lane internal edges, the INDEX jumps by the number of lanes so
+that EDGE_INDEX + LANE_INDEX = CONNECTION_INDEX.</p>
+<p>The attributes are given in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the internal edge</td>
+</tr>
+<tr>
+<td><strong>function</strong></td>
+<td>"<code>internal</code>"</td>
+<td>Always "<code>internal</code>" for an internal edge</td>
+</tr>
+</tbody>
+</table>
+<p>When the network was built with internal edges, each connection will typically correspond to exactly one internal lane.
+If there are multiple connections that have the same pair of <code>from</code> and <code>to</code> edges, then the internal lanes for these edges will be part of the same internal edge. On connections marked as <em>straight</em> (<code>dir="s"</code>), lane changing on internal lanes is permitted.</p>
+<p>Special cases are so called <a href="#internal_junctions">internal junctions</a>. These mark places where vehicles wait within an intersection before passing through foe traffic. The most common occurrence for this are:</p>
+<ul>
+<li>left-turning vehicles that yield to oncoming traffic</li>
+<li>right-turning vehicles that yield to pedestrian crossings</li>
+</ul>
+<p>The connection corresponding to such a movement are split into two internal lanes: one lane before the waiting position and one lane after the waiting position. The lanes after an internal junction always have their own internal edge.</p>
+<h4 id="stop-offsets">Stop Offsets<a class="headerlink" href="#stop-offsets" title="Permanent link">&para;</a></h4>
+<p>Each edge or lane may carry a <code>stopOffset</code> child element to specify an additional
+stopping offset for vehicles of certain classes. This can be used to define a <a href="https://en.wikipedia.org/wiki/Advanced_stop_line">bike box</a>.
+The exact syntax is explained at <a href="../PlainXML/#stop_offsets">stopOffset</a>.</p>
+<h3 id="traffic-light-programs">Traffic Light Programs<a class="headerlink" href="#traffic-light-programs" title="Permanent link">&para;</a></h3>
+<p>A traffic light program defines the phases of a traffic light.</p>
+<pre><code class="language-xml">    &lt;tlLogic id=&quot;&lt;ID&gt;&quot; type=&quot;&lt;ALGORITHM_ID&gt;&quot; programID=&quot;&lt;PROGRAM_ID&gt;&quot; offset=&quot;&lt;TIME_OFFSET&gt;&quot;&gt;
+        &lt;phase duration=&quot;&lt;DURATION#1&gt;&quot; state=&quot;&lt;STATE#1&gt;&quot;/&gt;
+        &lt;phase duration=&quot;&lt;DURATION#1&gt;&quot; state=&quot;&lt;STATE#1&gt;&quot;/&gt;
+        ... further states ...
+        &lt;phase duration=&quot;&lt;DURATION#n&gt;&quot; state=&quot;&lt;STATE#n&gt;&quot;/&gt;
+    &lt;/tlLogic&gt;
+</code></pre>
+<p>For an explanation of the attributes and semantics, please consult
+<a href="../../Simulation/Traffic_Lights/">Simulation/Traffic Lights</a>.
+Please note that usually, the generated program has the ID "0".</p>
+<h3 id="junctions-and-right-of-way">Junctions and Right-of-Way<a class="headerlink" href="#junctions-and-right-of-way" title="Permanent link">&para;</a></h3>
+<h4 id="plain-junctions">Plain Junctions<a class="headerlink" href="#plain-junctions" title="Permanent link">&para;</a></h4>
+<p>Junctions represent the area where different streams cross, including
+the right-of-way rules vehicles have to follow when crossing the
+intersection. An example may be:</p>
+<pre><code class="language-xml">&lt;junction id=&quot;&lt;ID&gt;&quot; type=&quot;&lt;JUNCTION_TYPE&gt;&quot; x=&quot;&lt;X-POSITION&gt;&quot; y=&quot;&lt;Y-POSITION&gt;&quot;
+          incLanes=&quot;&lt;INCOMING_LANES&gt;&quot; intLanes=&quot;&lt;INTERNAL_LANES&gt;&quot;
+          shape=&quot;&lt;SHAPE&gt;&quot;&gt;
+    ... requests ...
+&lt;/junction&gt;
+</code></pre>
+<p>The junction itself is described by the following attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the junction; By default, a traffic light controlling this junction will have the same id but this may changed by the user or when joining traffic lights.</td>
+</tr>
+<tr>
+<td><strong>x</strong></td>
+<td>x-position (real)</td>
+<td>The x-coordinate of the intersection</td>
+</tr>
+<tr>
+<td><strong>y</strong></td>
+<td>y-position (real)</td>
+<td>The y-coordinate of the intersection</td>
+</tr>
+<tr>
+<td>z</td>
+<td>z-position (real)</td>
+<td>The (optional) z-coordinate of the intersection</td>
+</tr>
+<tr>
+<td><strong>incLanes</strong></td>
+<td>id list</td>
+<td>The ids of the lanes that end at the intersection; sorted by direction, clockwise, with direction up = 0</td>
+</tr>
+<tr>
+<td><strong>intLanes</strong></td>
+<td>id list</td>
+<td>The IDs of the lanes within the intersection</td>
+</tr>
+<tr>
+<td><strong>shape</strong></td>
+<td>position list</td>
+<td>A polygon describing the road boundaries of the intersection</td>
+</tr>
+<tr>
+<td>customShape</td>
+<td>bool</td>
+<td>Whether the shape was customized by the user (and should thus not be rebuilt by <a href="../../netconvert/">netconvert</a> or <a href="../../Netedit/">netedit</a>), default <em>False</em></td>
+</tr>
+</tbody>
+</table>
+<p>Please note, that the x/y-positions of the junction describe the given,
+not the computed center of the junction. It is allowed for two nodes to
+have the same position.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The maximum number of connections (links) per junction is limited to 256 since version 0.25.0. In earlier versions of sumo the limit was 64.</p>
+</div>
+<h4 id="requests">Requests<a class="headerlink" href="#requests" title="Permanent link">&para;</a></h4>
+<p>What follows are "<code>request</code>"s, looking like:</p>
+<pre><code class="language-xml">  &lt;request index=&quot;&lt;INDEX&gt;&quot; response=&quot;&lt;RELATIVE_MAJOR_LINKS&gt;&quot; foes=&quot;&lt;FOE_LINKS&gt;&quot; cont=&quot;&lt;MAY_ENTER&gt;&quot;/&gt;
+</code></pre>
+<p>They describe, for each link (given as
+"<code>index</code>") which streams have a higher
+priority ("<code>response</code>") and force the vehicle
+on link "<code>index</code>" to stop, and which streams
+are in conflict ("foes"). "<code>foes</code>" is a
+super-set of "<code>response</code>", adding streams that
+have a lower priority than the stream referenced as
+"<code>index</code>".</p>
+<p>One can read the requests as following: the index describes a certain
+connection, between an incoming and an outgoing lane, over the
+intersection. The indices are computed connection-wise and the order is
+as following: first, sort edges by their direction, starting with 0°
+(up); second, use lane order (right-most-first); third, order by the
+direction the connection follows, starting by the right-most.</p>
+<p>The same order is applied in the "response" and the "foes" field,
+starting from right. This means:</p>
+<pre><code class="language-xml">  &lt;request index=&quot;2&quot; response=&quot;001&quot; foes=&quot;011&quot; cont=&quot;0&quot;/&gt;
+</code></pre>
+<p>The a vehicle using the connection with the index "2" has to wait for
+vehicles that use the connection "0". Connections "0" and "1" are its
+foes. The attributes of a request element are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>index</strong></td>
+<td>index (unsigned int)</td>
+<td>The index of the described connection in the right-of-way matrix</td>
+</tr>
+<tr>
+<td><strong>response</strong></td>
+<td>bitset (string)</td>
+<td>A bitstring that describes for each connection whether it prohibits un-decelerated passing of the intersection for vehicles at this connection. The rightmost bit corresponds to index 0.</td>
+</tr>
+<tr>
+<td><strong>foes</strong></td>
+<td>bitset (string)</td>
+<td>A bitstring that describes for each connection whether it conflicts with this connection. The rightmost bit corresponds to index 0.</td>
+</tr>
+<tr>
+<td><strong>cont</strong></td>
+<td>bool</td>
+<td>Whether a vehicle may pass the first stop line to wait within the intersection until there are no vehicles with higher priority. This is typically the case for left-moving streams from the prioritized direction.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The bitstrings in attributes <code>response</code> and <code>foes</code> must be read from right to left (response to link 0 is the rightmost entry) in contrast to <code>tlLogic</code>-<code>state</code> strings which are read from left to right (state of link 0 is the leftmost entry).</p>
+</div>
+<h4 id="internal-junctions">Internal Junctions<a class="headerlink" href="#internal-junctions" title="Permanent link">&para;</a></h4>
+<p>"internal" junctions are used to define a <a href="../../Simulation/Intersections/#waiting_within_the_intersection">waiting position within the
+intersection</a>
+for some traffic relations. This is typically used for left-turning
+vehicles from the prioritized direction or for right-turning vehicles
+that have to wait for straight-going pedestrians.</p>
+<p>Since version 0.25.0 the user can <a href="../PlainXML/#explicitly_setting_which_edge_lane_is_connected_to_which">customize the positioning (and
+presence) of internal
+junctions</a></p>
+<p>These junctions do not need a right-of-way matrix but only following
+information</p>
+<ul>
+<li>the lanes that are incoming into the junction the internal junction
+  is located in and prohibit to pass the internal junction if a
+  vehicle is approaching</li>
+<li>the internal lanes that must not be occupied for crossing the
+  internal junction</li>
+</ul>
+<p>An internal junction is encoded like this:</p>
+<pre><code class="language-xml">&lt;junction id=&quot;&lt;ID&gt;&quot; type=&quot;internal&quot; x=&quot;&lt;X-POSITION&gt;&quot; y=&quot;&lt;Y-POSITION&gt;&quot;
+          incLanes=&quot;&lt;INCOMING_PROHIBITING_LANES&gt;&quot;
+          intLanes=&quot;&lt;INTERNAL_PROHIBITING_LANES&gt;&quot;/&gt;
+</code></pre>
+<p>The ID is the same as the lane to use when crossing the internal
+junction itself. The type is always "internal". Please note that an
+internal junction is usually encoded in one line. The attributes of an
+internal junction are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>id (string)</td>
+<td>The id of the internal junction; It always starts with <code>:</code> followed by the id of the parent junction, then an <code>_</code>and finally a unique index.</td>
+</tr>
+<tr>
+<td><strong>x</strong></td>
+<td>x-position (real)</td>
+<td>The x-coordinate of the intersection</td>
+</tr>
+<tr>
+<td><strong>y</strong></td>
+<td>y-position (real)</td>
+<td>The y-coordinate of the intersection</td>
+</tr>
+<tr>
+<td>z</td>
+<td>z-position (real)</td>
+<td>The (optional) z-coordinate of the intersection</td>
+</tr>
+<tr>
+<td><strong>incLanes</strong></td>
+<td>id list</td>
+<td>The ids of the lanes that end at the intersection the internal junction is located within and prohibit to cross the internal junction</td>
+</tr>
+<tr>
+<td><strong>intLanes</strong></td>
+<td>id list</td>
+<td>The ids of the lanes within the intersection the internal junction is located within and prohibit to cross the internal junction</td>
+</tr>
+</tbody>
+</table>
+<h3 id="connections">Connections<a class="headerlink" href="#connections" title="Permanent link">&para;</a></h3>
+<h4 id="plain-connections">Plain Connections<a class="headerlink" href="#plain-connections" title="Permanent link">&para;</a></h4>
+<p>Plain connections or "links" describe which outgoing lanes can be
+reached from an incoming lane. Additionally, the first lane to use for
+passing the intersection is given. Additional information describe the
+direction and the "state" of the connection. If the connection is
+controlled by a traffic light, the name of the traffic light and the
+index of the signal that controls this connection within the traffic
+light's phase definition is given. A connection is encoded as:</p>
+<pre><code class="language-xml">&lt;connection from=&quot;&lt;FROM_EDGE_ID&gt;&quot; to=&quot;&lt;TO_EDGE_ID&gt;&quot; fromLane=&quot;&lt;FROM_LANE_INDEX&gt;&quot; toLane=&quot;&lt;TO_LANE_INDEX&gt;&quot;
+            via=&quot;&lt;VIA_LANE_ID&gt;&quot; tl=&quot;&lt;TRAFFIC_LIGHT_ID&gt;&quot; linkIndex=&quot;12&quot; dir=&quot;r&quot; state=&quot;o&quot;/&gt;
+</code></pre>
+<p>The attributes are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>from</strong></td>
+<td>edge id (string)</td>
+<td>The ID of the incoming edge at which the connection begins</td>
+</tr>
+<tr>
+<td><strong>to</strong></td>
+<td>edge id (string)</td>
+<td>The ID of the outgoing edge at which the connection ends</td>
+</tr>
+<tr>
+<td><strong>fromLane</strong></td>
+<td>index (unsigned int)</td>
+<td>The lane of the incoming edge at which the connection begins</td>
+</tr>
+<tr>
+<td><strong>toLane</strong></td>
+<td>index (unsigned int)</td>
+<td>The lane of the outgoing edge at which the connection ends</td>
+</tr>
+<tr>
+<td><strong>via</strong></td>
+<td>lane id (string)</td>
+<td>The id of the lane to use to pass this connection across the junction</td>
+</tr>
+<tr>
+<td><strong>tl</strong></td>
+<td>traffic light id (string)</td>
+<td>The id of the traffic light that controls this connection; the attribute is missing if the connection is not controlled by a traffic light</td>
+</tr>
+<tr>
+<td><strong>linkIndex</strong></td>
+<td>index (unsigned int)</td>
+<td>The index of the signal responsible for the connection within the traffic light; the attribute is missing if the connection is not controlled by a traffic light</td>
+</tr>
+<tr>
+<td><strong>dir</strong></td>
+<td>enum ("s" = straight, "t" = turn, "l" = left, "r" = right, "L" = partially left, R = partially right, "invalid" = no direction)</td>
+<td>The direction of the connection</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>enum ("-" = dead end, "=" = equal, "m" = minor link, "M" = major link, traffic light only: "O" = controller off, "o" = yellow flashing, "y" = yellow minor link, "Y" = yellow major link, "r" = red, "g" = green minor, "G" green major)</td>
+<td>The state of the connection</td>
+</tr>
+</tbody>
+</table>
+<p>When creating these connections without netconvert (not recommended) it
+should be taken into account that a connection with an internal lane
+follows a special pattern. For example when lane 1_f_0 needs to be
+connected to 1_t_0 through 1_v_0, the following connection entries
+exist: [from=1_f_0, to=1_t_0 via=1_v_0] and [from=1_v_0
+to=1_t_0]. If the latter is omitted, SUMO will not load the network.
+It will also not load if next to the necessary connections a connection
+[from=1_f_0 to=1_v_0] exists.</p>
+<h4 id="indices-of-a-connection">Indices of a connection<a class="headerlink" href="#indices-of-a-connection" title="Permanent link">&para;</a></h4>
+<p>Each connection has associated indices which can be shown in
+<a href="../../sumo-gui/">sumo-gui</a> by customizing gui settings and
+activating <em>Junctions-&gt;Show ... index</em>. These indices are usually
+identical but may be configured independently of each other.</p>
+<ul>
+<li>
+<p><strong>Junction Index</strong>: This index is described in section
+  <a href="#requests">#Requests</a>. It cannot be modified. The index
+  corresponds to the order of the <code>&lt;junctions&gt;</code>s <em>incLanes</em>-attribute and also to
+  the order of the <code>&lt;connection&gt;</code> elements. These indices run clockwise (in a
+  right-hand network) around the junction starting at the top.</p>
+</li>
+<li>
+<p><strong>TLS Index</strong>: This index is assigned to connections which are
+  <a href="../../Simulation/Traffic_Lights/#default_link_indices">controlled by a traffic
+  light</a>.
+  For joined traffic lights (controlling multiple junctions) this
+  index differs from the <strong>junction index</strong> because the latter is no
+  longer unique. The TLS Index may be <a href="../PlainXML/#controlled_connections">configured with a <em>.con.xml</em>
+  file</a>.
+  Custom indices may be used to create signal groups (multiple
+  connections that always have the same state and share the same
+  index) and thus simplify the <em>state</em> definition for the traffic light
+  phases.</p>
+</li>
+</ul>
+<h3 id="roundabouts">Roundabouts<a class="headerlink" href="#roundabouts" title="Permanent link">&para;</a></h3>
+<p>Roundabouts in a network influence the right of way (encoded in the
+<a href="#requests">Requests</a> <code>&lt;request&gt;</code> elements of a junction
+during network building). Their presence in the network file has two
+reasons:</p>
+<ul>
+<li>It facilitates re-importing a <em>.net.xml</em>-file with
+  <a href="../../netconvert/">netconvert</a></li>
+<li>lane-changing models may take roundabouts into account</li>
+</ul>
+<p>Each roundabout is defined (somewhat redundantly) by its nodes and
+edges:</p>
+<pre><code class="language-xml">&lt;roundabout nodes=&quot;nodeID1 nodeID2 ...&quot; edges=&quot;edgeID1 edgeID2 ...&quot;/&gt;
+</code></pre>
+<h2 id="software-for-viewing-editing-and-processing">Software for Viewing, Editing and Processing<a class="headerlink" href="#software-for-viewing-editing-and-processing" title="Permanent link">&para;</a></h2>
+<p>To create a SUMO network file, <a href="../../netconvert/">netconvert</a> helps
+to generate it from maps in other formats and
+<a href="../../netgenerate/">netgenerate</a> constructs a new map with simple
+geometries. <a href="../../sumo/">sumo</a> performs its simulation directly in
+the map of this file. Most other SUMO tools read such files to generate
+or import information that must be the mapped onto a road network.</p>
+<p>Networks can be created and edited graphically using
+<a href="../../Netedit/">netedit</a>.</p>
+<p>The SUMO net file is not meant for manual editing. Convert it to the
+<a href="../PlainXML/">SUMO native XML
+descriptions</a>
+with <a href="../../netconvert/">netconvert</a> instead. You can then process
+these files by hand and rebuild the network with
+<a href="../../netconvert/">netconvert</a>.</p>
+<h2 id="further-documentation">Further Documentation<a class="headerlink" href="#further-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Network Import</li>
+<li>
+<ul>
+<li><a href="../PlainXML/">Defining own networks using XML and netconvert</a></li>
+<li><a href="../Import/">Importing networks from other applications using netconvert</a></li>
+</ul>
+</li>
+<li><a href="../../netconvert/">netconvert</a> manual</li>
+<li>Generation of abstract road networks</li>
+<li><a href="../Abstract_Network_Generation/">Generating abstract networks using
+      netgenerate</a></li>
+<li><a href="../../netgenerate/">netgenerate</a> manual</li>
+<li><a href="../../Netedit/">netedit</a> manual</li>
+<li><a href="../../Developer/Network_Building_Process/">Developer/Network Building
+  Process</a></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please see the <a href="../../ChangeLog/">ChangeLog</a> when dealing with networks generated by old versions of <a href="../../netconvert/">netconvert</a> / <a href="../../netgenerate/">netgenerate</a>.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

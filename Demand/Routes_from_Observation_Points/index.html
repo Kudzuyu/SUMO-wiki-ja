@@ -1,0 +1,671 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Demand/Routes_from_Observation_Points/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Routes from Observation Points - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Routes from Observation Points
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-right-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing the right tool
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>Traffic counts are a common form of traffic data. This data may be available from automated counting devices such as induction loops or radar detectors or it may be obtained from manual counts. The counts apply to a specific time range and the data may cover multiple time slices. It is also possible to distinguish counts for different types of vehicles.</p>
+<p>SUMO provides several tools to generate traffic demand from such counting data. The generated traffic demand typically describes vehicles and their routes through the network along with their departure time. Sometimes vehicles that use the same route are grouped into <code>&lt;flow&gt;</code>-definitions.</p>
+<p>The generated traffic should obviously match the counting data but this requirement alone does not define a unique solution. The provided SUMO tools differ in their algorithm to resolve the ambiguity and arrive at a specific set of routes and vehicles. The tools can also be distinguished by the type of counting data they consume:</p>
+<ul>
+<li><a href="../../dfrouter/">dfrouter</a> uses edge based counts</li>
+<li><a href="../../Tools/Detector/#flowrouterpy">flowrouter</a> uses edge based counts</li>
+<li><a href="../../Tools/Turns/#jtcrouterpy">jtcrouter</a> uses turn-counts</li>
+<li><a href="../../Tools/Turns/#routesamplerpy">routeSampler</a> uses turn-counts and edge counts (and also origin-destination counts)</li>
+</ul>
+<p>There is also a large suite of tools to import and transform different counting data formats. An overview of these can be found at <a href="https://github.com/eclipse-sumo/sumo/issues/6609">Counting data meta ticket</a>.</p>
+<h2 id="choosing-the-right-tool">Choosing the right tool<a class="headerlink" href="#choosing-the-right-tool" title="Permanent link">&para;</a></h2>
+<p>The algorithms listed above where developed to solve different problems and may work badly when used on the wrong kind of problem.</p>
+<ul>
+<li><a href="../../dfrouter/">dfrouter</a> requires that all edges which are used as sources and sinks of traffic are provided with traffic count data. In contrast, flowrouter can infer traffic on those edges from measurements at intermediate locations.</li>
+<li><a href="../../dfrouter/">dfrouter</a> and - <a href="../../Tools/Turns/#jtcrouterpy">jtcrouter</a> have no capability for calibrating generated routes among the set of all routes that fit the measurement data. They can provide good results on motorway networks but produce implausible routes in highly meshed networks (i.e. cities).</li>
+<li><a href="../../Tools/Detector/#flowrouterpy">flowrouter</a> can use a blacklist to avoid implausible routes. The tool <a href="../../Tools/Routes/#implausibleroutespy">implausibleRoutes.py</a> can be used to generate restrictions for routes that are implausible according to a configurable heuristic. When the set of implausible routes is very large (which is often the case due to a combinatorial explosion of possible routes), creating such a blacklist may be infeasible.</li>
+<li><a href="../../Tools/Turns/#routesamplerpy">routeSampler</a> features</li>
+<li>uses a whitelist to restrict the set of routes that can be used to construct a solution. Generating a sufficient set of plausible routes is often easier than listing all implausible routes.</li>
+<li>can use edge-count data together with turn-count data</li>
+<li>can distinguish between passing counts, departure counts and arrival counts on edges</li>
+<li>supports building pedestrian scenarios from counts</li>
+</ul>
+<h1 id="dfrouter">dfrouter<a class="headerlink" href="#dfrouter" title="Permanent link">&para;</a></h1>
+<p>Since version 0.9.5, the SUMO-package contains a routing module named
+<a href="../../dfrouter/">dfrouter</a>. The idea behind this router is that
+nowadays, most highways are well equipped with induction loops,
+measuring each of the highways' entering and leaving flows. Given this
+information one may assume that the flows on the highway are completely
+known. <a href="../../dfrouter/">dfrouter</a> uses directly the information
+collected from induction loops to rebuild the vehicle amounts and
+routes. This is done in several steps, being mainly:</p>
+<ol>
+<li>Computing (and optionally saving) the detector types in the means
+    that each induction is set to be a source detector, a sink detector
+    or an in-between detector</li>
+<li>Computing (and optionally saving) the routes between the detectors</li>
+<li>Computing the flow amounts between the detectors</li>
+<li>Saving the flow amounts and further control structures</li>
+</ol>
+<h2 id="computing-detector-types">Computing Detector Types<a class="headerlink" href="#computing-detector-types" title="Permanent link">&para;</a></h2>
+<p>The idea behind the <a href="../../dfrouter/">dfrouter</a> assumes that a
+network is completely covered by detectors, meaning that all off- and
+on-ramps have an induction loop placed on them. Such an information
+whether an induction loop is a pure source or sink or whether it is
+placed between such is but not given initially. It must be computed. To
+do this, the <a href="../../dfrouter/">dfrouter</a> needs the underlying
+network as well as a list of detector definitions where each describes
+the position of an induction loop. The network, being a previously built
+SUMO-network, is supplied to the <a href="../../dfrouter/">dfrouter</a> as
+usual using the <strong>--net-file &lt;SUMO_NET_FILE&gt;</strong> (<strong>-n</strong>) option, the list of induction loops using <strong>--detector-files &lt;DETECTOR_FILE&gt;[,&lt;DETECTOR_FILE&gt;]+</strong> (<strong>-d</strong> for
+short). A detector file should look as follows:</p>
+<pre><code class="language-xml">&lt;detectors&gt;
+    &lt;detectorDefinition id=&quot;&lt;DETECTOR_ID&gt;&quot; lane=&quot;&lt;LANE_ID&gt;&quot; pos=&quot;&lt;POS&gt;&quot;/&gt;
+... further detectors ...
+&lt;/detectors&gt;
+</code></pre>
+<p>This means that each detector is initially described using its id, a
+lane it is placed on, and a position on the lane. To be exact:</p>
+<ul>
+<li>id: A string holding the id of the detector</li>
+<li>lane: The id of the lane the detector lies on. Must be a lane within
+  the network.</li>
+<li>pos: The position on the lane the detector shall be laid on in
+  meters. The position must be a value between -1*lane's length and
+  the lane's length. In the case of a negative value, the position
+  will be computed backward from the lane's end (the position the
+  vehicles drive towards).</li>
+</ul>
+<p>Given a network and the list of detectors,
+<a href="../../dfrouter/">dfrouter</a> assigns types to detectors and saves the
+so extended list into a file if the option <strong>--detectors-output &lt;DETECTOR_OUTPUT_FILE&gt;</strong> is given. This list looks
+like the input described above except that an additional attribute is
+given for each detector, "type", which may have one of the following
+values: "source", "sink", "between", and "discarded". You can also
+generate a list of points of interests (POIs) which can be read by
+<a href="../../sumo-gui/">sumo-gui</a> where each POI represents a detector and
+is colored by the detector type: green for source detectors, red for
+sink detectors, blue for in-between detectors, and black for discarded
+detectors. To force <a href="../../dfrouter/">dfrouter</a> to do this, use <strong>--detectors-poi-output &lt;POI_FILENAME&gt;</strong>.</p>
+<p>When wished, if for example other parameters change, the extended
+&lt;DETECTOR_OUTPUT_FILE&gt; can be fed back again into
+<a href="../../dfrouter/">dfrouter</a> instead of the previous &lt;DETECTOR_FILE&gt;.
+In this case the detector types do not have to be computed again. To
+force <a href="../../dfrouter/">dfrouter</a> to recompute the types, use <strong>--revalidate-detectors</strong>.</p>
+<h2 id="computing-routes">Computing Routes<a class="headerlink" href="#computing-routes" title="Permanent link">&para;</a></h2>
+<p>Now that we do know where vehicles enter and where they leave the
+network, we may compute routes for each of the pairs. The
+<a href="../../dfrouter/">dfrouter</a> is told to build and save routes using <strong>--routes-output &lt;ROUTE_OUTPUT_FILE&gt;</strong>
+where &lt;ROUTE_OUTPUT_FILE&gt; is the name of the file the computed routes
+shall be written to. The generated file only contains routes, no vehicle
+type definitions and no vehicles.</p>
+<p>Normally, only routes starting at source detectors and ending at sink
+detectors are computed. Using the option <strong>--routes-for-all</strong> you can force
+<a href="../../dfrouter/">dfrouter</a> to also build routes that start at
+in-between detectors. The option <strong>--all-end-follower</strong> will make the routes not end at the
+edge the source detector is placed on, but on all edges that follow this
+edge. <strong>--keep-unfinished-routes</strong> will also keep those routes where a sink detector could not be
+found for what may be the case if the network is not completely covered
+with induction loops.</p>
+<h2 id="computing-flows">Computing Flows<a class="headerlink" href="#computing-flows" title="Permanent link">&para;</a></h2>
+<p>The next step is to use the computed routes and flow amounts from the
+real-world detectors to compute flows across the modelled network. The
+flows are given to dfrouter using <strong>--measure-files</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;STRING&gt;</em></a> (or <strong>-f &lt;DETECTOR_FLOWS&gt;[,&lt;DETECTOR_FLOWS&gt;]+</strong>. They are assumed to be stored
+in CSV-format using ';' as dividing character. The file should look as
+follows:</p>
+<pre><code>Detector;Time;qPKW;qLKW;vPKW;vLKW
+myDet1;0;10;2;100;80
+... further entries ...
+</code></pre>
+<p>This means the first line contains the header with the column names. Their order
+is not of importance, but at least the following columns must be
+included:</p>
+<ul>
+<li>Detector: A string holding the id of the detector this line
+  describes; should be one of the ids used in &lt;DETECTOR_FILE&gt;</li>
+<li>Time: The time period begin that this entry describes (<strong>in minutes</strong>)</li>
+<li>qPKW: The number of passenger cars that drove over the detector
+  within this time period</li>
+<li>vPKW: The average speed of passenger cars that drove over the
+  detector within this time period in km/h</li>
+</ul>
+<p>The following columns may optionally be included:</p>
+<ul>
+<li>qLKW: The number of transport vehicles that drove over the detector
+  within this time period</li>
+<li>vLKW: The average speed of transport vehicles that drove over the
+  detector within this time period in km/h</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Using a different separator character or changing the name of an obligatory column will make dfrouter skip the data.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><a href="../../dfrouter/">dfrouter</a> assumes that counts are given once per minute. To handle data with a different granularity, option <strong>--time-step SECONDS</strong> must be used.</p>
+</div>
+<p>Because in some cases one reads detector flow definitions starting at a
+certain time but wants the simulation to begin at another, it is
+possible to add a time offset using <strong>--time-offset</strong> <a href="/Basics/Notation/#データタイプ"><em>&lt;INT&gt;</em></a> which is the number of seconds to
+subtracted from the read times.</p>
+<h3 id="algorithm-properties">Algorithm Properties<a class="headerlink" href="#algorithm-properties" title="Permanent link">&para;</a></h3>
+<p><a href="../../dfrouter/">dfrouter</a> works best when all possible source and
+sink edges are supplied with detector values and these values are evenly
+spaced in time. The algorithm works under the assumption that the sum of
+source flows matches the sum of sink flows for every measurement
+interval (thus somewhat ignoring travel time). Some properties of
+<a href="#generating_vehicles">Vehicle generation</a>:</p>
+<ul>
+<li>The number of generated vehicles for each measurement interval is
+determined by source detectors alone.</li>
+<li>Excess flow at sink detectors is ignored</li>
+<li>If sink detectors measure less flow, it will nevertheless arrive
+    there in proportion to the measured flow</li>
+<li>If sink detectors measure no flow at all, all vehicles will
+    drive to one (arbitrary) sink</li>
+</ul>
+<h2 id="generating-vehicles">Generating Vehicles<a class="headerlink" href="#generating-vehicles" title="Permanent link">&para;</a></h2>
+<p>If flow definitions were supplied, we can let the dfrouter save the
+computed vehicles together with their routes. Vehicles will be generated
+at the source detectors which are placed at certain positions of the
+networks' lanes. dfrouter generates vehicle with the option <strong>--emitters-output &lt;EMITTER_OUTPUT_FILE&gt;</strong>. This file
+will contain vehicle (emitter) declarations for each of the source
+detectors. If no value is given, vehicles will not be written.
+Accompanying, there will be <code>routeDistributions</code> each with the same name as a detector.
+These reflect the distribution of routes at the detector with the same
+ID.</p>
+<p>By default vehicles are inserted with even spacing over each measurement
+interval. This can be changed by adding the option <strong>--randomize-flows</strong>.</p>
+<p>The generated file contains individual vehicles which are assigned
+routes from the <a href="#computing_routes">routes-output file</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The emitters output also contains a <code>&lt;routeDistribution&gt;</code> for each source detector but this distribution is not used by the vehicles. It is generated for information purposes and shows the route distribution aggregated over the whole simulation time (this distribution assumes that source flows data matches sink flow data).</p>
+</div>
+<h2 id="further-outputs">Further Outputs<a class="headerlink" href="#further-outputs" title="Permanent link">&para;</a></h2>
+<h3 id="variable-speed-signs">Variable Speed Signs<a class="headerlink" href="#variable-speed-signs" title="Permanent link">&para;</a></h3>
+<p>As some approaches use a speed limit to avoid open-end boundary
+problems, the dfrouter can generate a list of speed triggers (see
+"Variable Speed Signs (VSS)") placed on the positions of sink detectors.
+The name to save the declaration of these speed triggers into is given
+using the option <strong>--variable-speed-sign-output &lt;VSS_OUTPUT_FILE&gt;</strong>. The according variable speed sign definitions will be
+written into files named "vss_&lt;DETECTOR_ID&gt;.def.xml" where
+&lt;DETECTOR_ID&gt; is the name of the according sink detector.</p>
+<h3 id="rerouters">Rerouters<a class="headerlink" href="#rerouters" title="Permanent link">&para;</a></h3>
+<p>In order not to end vehicle routes on off-ramps, it is possible to place
+rerouters (see "Rerouter") at the positions of the sink detectors, too.
+Giving the option <strong>--end-reroute-output &lt;REROUTER_OUTPUT_FILE&gt;</strong> will generate a list of rerouter declarations. Please
+remark that in this case, no rerouter definitions are written, because
+the dfrouter has no further information about possible routes beyond the
+area covered by the detectors.</p>
+<h3 id="validation-detectors">Validation Detectors<a class="headerlink" href="#validation-detectors" title="Permanent link">&para;</a></h3>
+<p>It's quite nice to have the possibility to check whether the simulation
+does what one wants. To validate whether the same flows are found within
+the simulation as within the reality, the option <strong>--validation-output &lt;SUMO_DETECTORS_OUTPUT&gt;</strong> may be helpful. It
+generates a list of detector definitions (see "<a href="../../Simulation/Output/Induction_Loops_Detectors_%28E1%29/">inductive loop
+detectors</a>")
+placed at the positions of sink and in-between detectors. Their output
+will be saved into files named "validation_det_&lt;DETECTOR_ID&gt;.xml" and
+should be easily comparable to the detector flows previously fed to the
+router. The option <strong>--validation-output.add-sources</strong> will let dfrouter also build inductive loop
+detectors for source detectors which are place 1m behind the real-life
+detector's position.</p>
+<h2 id="how-to-include-the-files">How to include the files<a class="headerlink" href="#how-to-include-the-files" title="Permanent link">&para;</a></h2>
+<p>The <a href="../../dfrouter/">dfrouter</a> is unique among the <strong>SUMO</strong>-routing
+applications in that it outputs routes and vehicles separately. <a href="../../sumo/#loading_order_of_input_files">You
+need to make sure that the list of input files is in the correct order
+for resolving references</a>.
+Furthermore, <a href="../../dfrouter/">dfrouter</a> currently returns unsorted
+vehicles in its emitters-output. Assuming that
+<a href="../../dfrouter/">dfrouter</a> was called with the options</p>
+<pre><code>dfrouter --net-file net.net.xml --routes-output routes.rou.xml --emitters-output vehicles.rou.xml --measure-files flows.txt
+</code></pre>
+<p>sumo must be called in the following way:</p>
+<pre><code>sumo --net-file net.net.xml --additional-files routes.rou.xml,vehicles.rou.xml
+</code></pre>
+<p>If you run the tool
+<a href="../../Tools/Routes/#sort_routespy">Tools/Routes#sort_routes.py</a>
+to sort the vehicles, either of the following will work:</p>
+<pre><code>sumo --net-file net.net.xml --route-files routes.rou.xml,sorted_vehicles.rou.xml
+sumo --net-file net.net.xml --route-files sorted_vehicles.rou.xml --additional-files routes.rou.xml
+</code></pre>
+<h1 id="flowrouterpy">flowrouter.py<a class="headerlink" href="#flowrouterpy" title="Permanent link">&para;</a></h1>
+<p>The <a href="../../Tools/Detector/#flowrouterpy">flowrouter</a> tool <a href="https://doi.org/10.29007/rjj7">improves on dfrouter</a> by dealing better with missing data and finding a set of routes that maximize the total flow (within the limits given by the count data). It provides several options to restrict the set of generated routes and thus allows for calibrating the generated traffic.</p>
+<h1 id="jtcrouterpy">jtcrouter.py<a class="headerlink" href="#jtcrouterpy" title="Permanent link">&para;</a></h1>
+<p>The <a href="../../Tools/Turns/#jtcrouterpy">jtcrouter.py</a> tool (available since version 1.5.0) can build a traffic demand from turn-count data. It does so by transforming the counts into flows and turn-ratios and then passing these files to <a href="../../jtrrouter/">jtrrouter</a>.</p>
+<h1 id="routesamplerpy">routeSampler.py<a class="headerlink" href="#routesamplerpy" title="Permanent link">&para;</a></h1>
+<p>The <a href="../../Tools/Turns/#routesamplerpy">routeSampler.py</a> tool (available since version 1.5.0) builds traffic demand from turn-count data as well as edge-count data. It uses a route file as input and then repeatedly selects from this set of routes to fulfill the given count data.</p>
+<p>A suitable route file for a given network can be generated with <a href="../../Tools/Trip/#randomtripspy">randomTrips.py</a>. Such a route file covers the network with shortest-path routes. Routes that deviate from the shortest path can also be generated with the help of <a href="../../duarouter/">duarouter</a> option <strong>--weights.random-factor</strong>.</p>
+<p>By changing the route file used as input, the generated traffic can be calibrated.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

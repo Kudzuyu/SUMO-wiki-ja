@@ -1,0 +1,536 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/Simulation/GLOSA/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>GLOSA - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GLOSA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>Since version 1.9.1 SUMO supports simulation of Green Light Optimal Speed
+Advisory (GLOSA) via the glosa device. This allows vehicles to avoid stops at
+traffic lights when the phase is about to change.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While the glosa capabilities are under development, their status can be checked via Issue #7721.</p>
+</div>
+<h1 id="equipping-vehicles">Equipping vehicles<a class="headerlink" href="#equipping-vehicles" title="Permanent link">&para;</a></h1>
+<p>To attach a glosa device to a vehicle, the <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#devices">standard device-equipment
+procedures</a> can
+be applied using <code>&lt;device name&gt;=glosa</code>.</p>
+<p>For instance, a single vehicle can be equipped with glosa as in the following minimal example</p>
+<pre><code class="language-xml">    &lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot;&gt;
+        &lt;param key=&quot;has.glosa.device&quot; value=&quot;true&quot;/&gt;
+    &lt;/vehicle&gt;
+</code></pre>
+<h1 id="glosa-functions">GLOSA functions<a class="headerlink" href="#glosa-functions" title="Permanent link">&para;</a></h1>
+<h2 id="slowing-down">Slowing Down<a class="headerlink" href="#slowing-down" title="Permanent link">&para;</a></h2>
+<p>When a vehicle is approaching a red light the time until reaching the stop line
+is compared with the time until the signal (for the intended movement) changes to green.
+If the vehicle would reach the stop line before the switch, a slow-down maneuver
+may be undertaken (speedFactor is changed to a lower value).</p>
+<p>If the speed can be reduced within reasonable bounds (glosa.min-speed), the
+speed is reduced to the maximum possible value so that the vehicle reaches the
+stop line at the time of the phase change. Speed adaptation follows a trapezoid:</p>
+<ol>
+<li>Decelerate/Accelerate to the calculated speed value</li>
+<li>Maintain the calculated speed value</li>
+<li>Accelerate back to the desired maximum speed before crossing the junction</li>
+</ol>
+<h2 id="speeding-up">Speeding up<a class="headerlink" href="#speeding-up" title="Permanent link">&para;</a></h2>
+<p>When a vehicle is approaching a green light and the time until reaching the stop
+line is higher than the remaining green phase duration, a speed-up maneuver may
+be undertaken.</p>
+<p>If driving with a higher <a href="../../Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes/#speed_distributions">speedFactor</a>
+(configured with glosa.max-speedfactor) allows to reach the stop line within
+the remaining green time, the speedFactor is set to a higher value.</p>
+<p>The speedFactor is changed back to the default after passing the traffic light.</p>
+<h2 id="queue-length-calculation-since-v122">Queue length calculation (since v1.22)<a class="headerlink" href="#queue-length-calculation-since-v122" title="Permanent link">&para;</a></h2>
+<p>By default, a vehicle with a glosa device approaches the stop line with the highest
+possible velocity and ignores vehicles, that are already queuing at the traffic light.</p>
+<p>To estimate the queue length of waiting vehicles, a traffic light can be equipped with sensors.
+This information is sent to other vehicles, which then adapt their arrival time.
+The behavior can be simulated by setting param <code>device.glosa.use-queue</code> to true.</p>
+<pre><code class="language-xml">    &lt;vehicle id=&quot;v0&quot; route=&quot;route0&quot; depart=&quot;0&quot;&gt;
+        &lt;param key=&quot;has.glosa.device&quot; value=&quot;true&quot;/&gt;
+        &lt;param key=&quot;device.glosa.use-queue&quot; value=&quot;true&quot;/&gt;
+    &lt;/vehicle&gt;
+</code></pre>
+<p>The traffic light also needs to be equipped with detectors, e.g. by setting the tls to <code>delay_based</code>.
+The maximal detection length can be changed via <code>detectorRange</code>.</p>
+<pre><code class="language-xml">    &lt;tlLogic id=&quot;C&quot; type=&quot;delay_based&quot; programID=&quot;0&quot;&gt;
+        &lt;param key=&quot;detectorRange&quot; value=&quot;100&quot; /&gt;
+    &lt;/tlLogic&gt;
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the traffic light may be of type <code>delay_based</code>, it can still run a static program.</p>
+</div>
+<h1 id="traffic-lights">Traffic lights<a class="headerlink" href="#traffic-lights" title="Permanent link">&para;</a></h1>
+<p>All traffic lights types supply time-to-switch information via the duration attribute of their phases.
+Since v1.22, the glosa device not only calculates the time to the next phase switch,
+but rather retrieves the phase when the vehicle arrives at the intersection (may be multiple phase switches ahead).</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This may cause invalid maneuvers with traffic-actuated traffic lights that
+may vary their phase duration.</p>
+</div>
+<p>The communication range may be customized by setting param "device.glosa.range" on the tlLogic. This may also be used to disable glosa functions for specific intersections.
+To update the parameter for a program that is embedded in the .net.xml file the following element can be loaded via <strong>--additional-files</strong>:</p>
+<pre><code class="language-xml">    &lt;tlLogic id=&quot;C&quot; programID=&quot;0&quot;&gt;
+        &lt;param key=&quot;device.glosa.range&quot; value=&quot;60&quot;/&gt;
+    &lt;/tlLogic&gt;
+</code></pre>
+<h1 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h1>
+<p>The following parameters affect the operation of the glosa device.</p>
+<ul>
+<li>device.glosa.range: (maximum range from stop line at which glosa functions
+  become active (default 100). If the current traffic light also sets this parameter, the minimum value of the device and tls parameter is used.</li>
+<li>device.glosa.min-speed: minimum speed for slow-down maneuver (default 5m/s)</li>
+<li>device.glosa.max-speedfactor: maximum speedFactor for trying to reach a green
+  light (default 1.1) Setting a value of 1 will ensure perfect compliance with the speed
+  limit but may still cause slow drivers to speed up.</li>
+<li>device.glosa.add-switchtime (v1.21): A vehicle with GLOSA tries to reach the intersection
+  with maximal speed just before the light signal turns green. This results in late braking maneuvers.
+  By adding a time offset to the phase change, the vehicle arrives X s later (default 0 s).</li>
+<li>device.glosa.override-safety (v1.21): Default behavior is that a vehicle with glosa receives a speed advice
+  and the driver tries to match this speed. When approaching a red light, the driver would start to decelerate,
+  despite a higher speed advice. That's because we can't be sure, if the traffic light will really switch
+  By setting this boolean parameter to true, the vehicle will ignore the current traffic light phase and strictly follow the speed advice (default false).
+  This would somewhat be possible with automated vehicles and guaranteed phase durations.</li>
+<li>device.glosa.ignore-cfmodel (v1.21): Default behavior is that a vehicle with glosa receives a speed advice
+  and this advice changes the speedFactor. Therefore, the speed of the vehicle in the next time step is dependent on the car-following model.
+  By setting this boolean parameter to true, the device calculates a specific speed time line (default false). This is explicitly followed by the vehicle.
+  This would somewhat mimic the behavior of an automated vehicle.</li>
+<li>device.glosa.use-queue (v1.22): By setting this boolean parameter to true,
+  the vehicle takes the queue length in front of the traffic light into account (default false).</li>
+<li>jmDriveAfterYellowTime: This junction model parameter encodes willingness to
+  continue driving at yellow depending on running duration of the yellow phase
+  (default 0). The value will be taken into account when checking the
+  feasibility of a speed-up maneuver</li>
+</ul>
+<p>All device parameters may be set via</p>
+<ul>
+<li>sumo option: <strong>--device.glosa.range 150</strong></li>
+<li>vType parameter: <code>&lt;param key="device.glosa.min-speed" value="6"/&gt;</code></li>
+<li>vehicle parameter: <code>&lt;param key="device.max.speedfactor" value="1.2"/&gt;</code></li>
+</ul>
+<h1 id="traci">TraCI<a class="headerlink" href="#traci" title="Permanent link">&para;</a></h1>
+<h1 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h1>
+<h2 id="parameter-retrieval">Parameter Retrieval<a class="headerlink" href="#parameter-retrieval" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

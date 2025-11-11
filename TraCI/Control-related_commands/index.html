@@ -1,0 +1,721 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kudzuyu.github.io/SUMO-wiki-ja/TraCI/Control-related_commands/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Control-related commands - SUMO wiki ja</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-0x00-get-version" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="SUMO wiki ja" class="md-header__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SUMO wiki ja
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Control-related commands
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ドキュメント
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Downloads/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ダウンロード
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  出版物
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SUMO wiki ja" class="md-nav__button md-logo" aria-label="SUMO wiki ja" data-md-component="logo">
+      
+  <img src="../../images/sumo-logo.png" alt="logo">
+
+    </a>
+    SUMO wiki ja
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ドキュメント
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ダウンロード
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    出版物
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-0x00-get-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x00: Get Version
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command 0x00: Get Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-0x00-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response 0x00: Version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-0x02-simulation-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x02: Simulation Step
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command 0x02: Simulation Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-0x02-simulation-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response 0x02: Simulation Step
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-0x7d-execute-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x7D: Execute Move
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-0x7f-close" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x7F: Close
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-0x01-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x01: Load
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-0x03-setorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command 0x03: SetOrder
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Control-related commands</h1>
+
+<h2 id="command-0x00-get-version">Command 0x00: Get Version<a class="headerlink" href="#command-0x00-get-version" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: center;"><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><a href="https://sumo.dlr.de/pydoc/traci.main.html#-getVersion">getVersion</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-0x00-version">Response 0x00: Version<a class="headerlink" href="#response-0x00-version" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>ValueType</th>
+<th>Description</th>
+<th><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tuple</td>
+<td>Returns a tuple containing the TraCI API version number (integer) and a string identifying the SUMO version running on the TraCI server in human-readable form.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci.main.html#-getVersion">getVersion</a></td>
+</tr>
+</tbody>
+</table>
+<p>The server responds to a <strong>Get Version</strong> command by sending two items:</p>
+<ul>
+<li>an integer API version number identifying the current state of the TraCI API</li>
+<li>It is guaranteed to increase as soon as<ul>
+<li>the TraCI message format changes</li>
+<li>the TraCI command format changes</li>
+<li>any TraCI command has a different meaning (e.g., "0xff:
+  stop" changes from "stop immediately" to "slow down, then
+  stop if possible")</li>
+<li>any TraCI parameter or return value has a different meaning (e.g., a "time"
+  parameter changes from seconds to milliseconds)</li>
+<li>any TraCI parameter or return value has a different type (e.g., a "time"
+  parameter changes from int to double)</li>
+<li>removal of a command</li>
+</ul>
+</li>
+<li>It will not increase in the following events<ul>
+<li>addition of a new command</li>
+<li>addition of optional parameters</li>
+<li>addition of parameter types</li>
+<li>addition of result types</li>
+<li>changes in the python (or any other) client implementation which do not affect the byte sequence sent</li>
+</ul>
+</li>
+<li>The API version should be incremented as soon as the change is introduced
+    but at least at the next release</li>
+<li>an identifier string identifies the software version running on the
+TraCI server in human-readable form</li>
+<li>no guarantee is made regarding the content of this string</li>
+<li>for SUMO, this string has the format "SUMO " and then the version, e.g. "SUMO v1_6_0" or "SUMO v1_6_0+1493-02f4414fa4"</li>
+<li>for further information concerning the SUMO version have a look at <a href="../../Versioning/">Versioning</a>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The client can find out if a particular command is supported by the
+current TraCI server (i.e., SUMO) by looking at the <a href="../Protocol/#status_response">status response</a> of the command. It
+may report "not implemented".</p>
+</div>
+<h2 id="command-0x02-simulation-step">Command 0x02: Simulation Step<a class="headerlink" href="#command-0x02-simulation-step" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>ValueType</th>
+<th>Description</th>
+<th><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>simulationStep (0x02)</td>
+<td>double</td>
+<td>Make a simulation step.</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci.main.html#-simulationStep">simulationStep</a></td>
+</tr>
+</tbody>
+</table>
+<p>Forces SUMO to perform simulation. If <em>TargetTime</em> is 0 (zero), SUMO
+performs exactly one time step. Otherwise SUMO performs the simulation
+until the given time step is reached. If the given time step is smaller
+than or equal to the current simulation step then SUMO does nothing. For
+multi client scenarios currently only TargetTime 0 is supported.</p>
+<h3 id="response-0x02-simulation-step">Response 0x02: Simulation Step<a class="headerlink" href="#response-0x02-simulation-step" title="Permanent link">&para;</a></h3>
+<p>The response of this command is a list of subscription responses to
+<a href="../Object_Variable_Subscription/">TraCI/Object Variable Subscriptions</a> and/or
+<a href="../Object_Context_Subscription/">TraCI/Object Context Subscriptions</a> referring
+to the last step executed:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">integer</td>
+<td style="text-align: center;">&lt;SUBSCRIPTION RESPONSE&gt;</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">&lt;SUBSCRIPTION RESPONSE&gt;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Number of following subscription responses</strong></td>
+<td style="text-align: center;"><strong>&lt;RESPONSE#1&gt;</strong></td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;"><strong>&lt;RESPONSE#n&gt;</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Please note, that both subscription types differ in their return values,
+so the parser should regard the id of the returned command.</p>
+<h2 id="command-0x7d-execute-move">Command 0x7D: Execute Move<a class="headerlink" href="#command-0x7d-execute-move" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: center;"><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><a href="https://sumo.dlr.de/pydoc/traci.main.html#-executeMove">executeMove</a></td>
+</tr>
+</tbody>
+</table>
+<p>Performs only the first part of a simulation step until the vehicles have moved but before the outputs are generated.
+A subsequent call to simulation step will then create the output.</p>
+<h2 id="command-0x7f-close">Command 0x7F: Close<a class="headerlink" href="#command-0x7f-close" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: center;"><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><a href="https://sumo.dlr.de/pydoc/traci.main.html#-close">close</a></td>
+</tr>
+</tbody>
+</table>
+<p>Tells TraCI to close the connection to any client, stop simulation and
+shut down sumo.</p>
+<h2 id="command-0x01-load">Command 0x01: Load<a class="headerlink" href="#command-0x01-load" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Options</th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;"><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">stringList</td>
+<td style="text-align: center;">Let sumo load a simulation using the given command line like options</td>
+<td style="text-align: center;"><a href="https://sumo.dlr.de/pydoc/traci.main.html#-load">load</a></td>
+</tr>
+</tbody>
+</table>
+<p>Tells TraCI to reload the simulation with the given options.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Loading does not work when using multiple clients, currently.</p>
+</div>
+<h2 id="command-0x03-setorder">Command 0x03: SetOrder<a class="headerlink" href="#command-0x03-setorder" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>ValueType</th>
+<th>Description</th>
+<th><a href="../Interfacing_TraCI_from_Python/">Python Method</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number of the client</td>
+<td>int</td>
+<td>Specify the execution order (when using multiple clients)</td>
+<td><a href="https://sumo.dlr.de/pydoc/traci.main.html#-setOrder">setOrder</a></td>
+</tr>
+</tbody>
+</table>
+<p>Tells TraCI to give the current client the given position in the
+execution order. It is mandatory to send this as the first command after
+connecting to the TraCI server when using multiple clients. Each client
+must be assigned a unique integer but there are not further restrictions
+on numbering.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
